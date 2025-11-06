@@ -1,0 +1,69 @@
+{
+  "project": "OrbitChain_exp",
+  "generated_at": "2025-11-04T16:34:58.313050",
+  "generation_method": "storage_and_runtime_analysis",
+  "source_file": "autopath/OrbitChain_exp_analysis.json",
+  "attack_tx": "0xae40745553c370b32b5134c7a8f5a2bd5eca5211eb3c22bc5593195c194af1a5",
+  "monitor_summary": {
+    "gas_used": 21000,
+    "call_depth": 0,
+    "reentrancy_depth": 0,
+    "loop_iterations": 0
+  },
+  "storage_invariants": [
+    {
+      "id": "SINV_001",
+      "type": "bounded_change_rate",
+      "severity": "high",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "formula": "|slot_2_after - slot_2_before| / slot_2_before <= 0.5",
+      "contracts": [
+        "0xC355fe6E4e99C0B93577F08c4e9a599714435912"
+      ],
+      "slots": {
+        "monitored_slot": "2",
+        "contract": "0xC355fe6E4e99C0B93577F08c4e9a599714435912",
+        "semantic_type": "totalSupply"
+      },
+      "threshold": 0.5,
+      "reason": "Large totalSupply changes indicate potential manipulation",
+      "violation_impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "confidence": 0.7,
+      "metadata": {
+        "slot_semantic": "totalSupply",
+        "contract": "0xC355fe6E4e99C0B93577F08c4e9a599714435912"
+      }
+    }
+  ],
+  "runtime_invariants": [
+    {
+      "id": "RINV_004",
+      "type": "runtime_balance_change_limit",
+      "severity": "high",
+      "description": "单笔交易中关键合约的余额变化率不应超过 0.04%",
+      "formula": "max(balance_change_rate) <= 0.00037800904263701957",
+      "threshold": 0.00037800904263701957,
+      "observed_value": 0.0007560180852740391,
+      "monitored_addresses": [
+        "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+      ],
+      "rationale": "攻击交易中地址 0xc02aaa39... 的余额变化率为 0.0756%，正常值应低于 0.0378%",
+      "details": {
+        "max_change_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "max_change_before": 3296666961297240067733303,
+        "max_change_after": 3296691884695678728975480,
+        "max_change_diff": 24923398438661242177
+      }
+    }
+  ],
+  "storage_analysis_metadata": {
+    "protocol_info": {
+      "type": "vault",
+      "confidence": 0.0,
+      "evidence": [],
+      "primary_contract": null,
+      "metadata": {}
+    },
+    "relationships_detected": 1
+  }
+}

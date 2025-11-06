@@ -1,0 +1,100 @@
+[
+  {
+    "address": "0x5bb5b6d41c3e5e41d9b9ed33d12f1537a1293d5f",
+    "name": "Attacker",
+    "chain": "bsc",
+    "source": "comment",
+    "context": "// Attacker : https://bscscan.com/address/0x5bb5b6d41c3e5e41d9b9ed33d12f1537a1293d5f"
+  },
+  {
+    "address": "0xf436f8fe7b26d87eb74e5446acec2e8ad4075e47",
+    "name": "Vulnerable_Contract",
+    "chain": "bsc",
+    "source": "comment",
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0xf436f8fe7b26d87eb74e5446acec2e8ad4075e47"
+  },
+  {
+    "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+    "name": "ETH",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant ETH = IERC20(0x2170Ed0880ac9A755fd29B2688956BD959F933F8)"
+  },
+  {
+    "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+    "name": "USDC",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant USDC = IERC20(0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d)"
+  },
+  {
+    "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+    "name": "BTCB",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant BTCB = IERC20(0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c)"
+  },
+  {
+    "address": "0x55d398326f99059fF775485246999027B3197955",
+    "name": "BUSDT",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant BUSDT = IERC20(0x55d398326f99059fF775485246999027B3197955)"
+  },
+  {
+    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "name": "WBNB",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant WBNB = IERC20(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c)"
+  },
+  {
+    "address": "0xB7E2713CF55cf4b469B5a8421Ae6Fc0ED18F1467",
+    "name": "OLE",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant OLE = IERC20(0xB7E2713CF55cf4b469B5a8421Ae6Fc0ED18F1467)"
+  },
+  {
+    "address": "0x71F1158D76aF5B6762D5EbCdEE19105eab2C77d2",
+    "name": "xOLE",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant xOLE = IxOLE(0x71F1158D76aF5B6762D5EbCdEE19105eab2C77d2)"
+  },
+  {
+    "address": "0x44f508dcDa27E8AFa647cD978510EAC5e63E16a4",
+    "name": "USDC_OLE",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant USDC_OLE = Uni_Pair_V2(0x44f508dcDa27E8AFa647cD978510EAC5e63E16a4)"
+  },
+  {
+    "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "name": "Router",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant Router = Uni_Router_V2(0x10ED43C718714eb63d5aA57B78B54704E256024E)"
+  },
+  {
+    "address": "0x6A75aC4b8d8E76d15502E69Be4cb6325422833B4",
+    "name": "TradeController",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant TradeController = ITradeController(0x6A75aC4b8d8E76d15502E69Be4cb6325422833B4)"
+  },
+  {
+    "address": "0x7c5e04894410e98b1788fbdB181FfACbf8e60617",
+    "name": null,
+    "chain": "bsc",
+    "source": "static",
+    "context": "payable(0x7c5e04894410e98b1788fbdB181FfACbf8e60617)"
+  },
+  {
+    "address": "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "contract created"
+  }
+]

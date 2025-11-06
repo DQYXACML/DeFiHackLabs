@@ -1,0 +1,65 @@
+[
+  {
+    "address": "0x1fd0a6a5e232eeba8020a40535ad07013ec4ef12",
+    "name": "Attacker",
+    "chain": "mainnet",
+    "source": "comment",
+    "context": "// Attacker : https://optimistic.etherscan.io/address/0x1fd0a6a5e232eeba8020a40535ad07013ec4ef12"
+  },
+  {
+    "address": "0xe4d41bdd6459198b33cc795ff280cee02d91087b",
+    "name": "Attack_Contract",
+    "chain": "mainnet",
+    "source": "comment",
+    "context": "// Attack Contracts : https://optimistic.etherscan.io/address/0xe4d41bdd6459198b33cc795ff280cee02d91087b"
+  },
+  {
+    "address": "0x534e1a8a89548C44BE7abA1c3c27951801940C10",
+    "name": "NBF",
+    "chain": "optimism",
+    "source": "static",
+    "context": "private constant NBF = IERC721(0x534e1a8a89548C44BE7abA1c3c27951801940C10)"
+  },
+  {
+    "address": "0x4B03afC91295ed778320c2824bAd5eb5A1d852DD",
+    "name": "NBL",
+    "chain": "optimism",
+    "source": "static",
+    "context": "private constant NBL = IERC20(0x4B03afC91295ed778320c2824bAd5eb5A1d852DD)"
+  },
+  {
+    "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+    "name": "USDT",
+    "chain": "optimism",
+    "source": "static",
+    "context": "private constant USDT = IERC20(0x94b008aA00579c1307B0EF2c499aD98a8ce58e58)"
+  },
+  {
+    "address": "0x4200000000000000000000000000000000000006",
+    "name": "WETH",
+    "chain": "optimism",
+    "source": "static",
+    "context": "private constant WETH = IERC20(0x4200000000000000000000000000000000000006)"
+  },
+  {
+    "address": "0xfAF037caAfA9620bFAebc04C298Bf4A104963613",
+    "name": "NBL_USDT",
+    "chain": "optimism",
+    "source": "static",
+    "context": "private constant NBL_USDT = Uni_Pair_V3(0xfAF037caAfA9620bFAebc04C298Bf4A104963613)"
+  },
+  {
+    "address": "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45",
+    "name": "Router",
+    "chain": "optimism",
+    "source": "static",
+    "context": "private constant Router = IRouterV3(0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45)"
+  },
+  {
+    "address": "0x5499178919C79086fd580d6c5f332a4253244D91",
+    "name": "NblNftStake",
+    "chain": "optimism",
+    "source": "static",
+    "context": "private constant NblNftStake = INblNftStake(0x5499178919C79086fd580d6c5f332a4253244D91)"
+  }
+]

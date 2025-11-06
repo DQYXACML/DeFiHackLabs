@@ -56,5 +56,5 @@ contract AttackerC {
         return weth;
     }
 
-    function fallback() external payable {}
+    fallback() external payable {}
 }

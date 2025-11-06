@@ -1,0 +1,135 @@
+[
+  {
+    "address": "0x851aa754c39bf23cdaac2025367514dfd7530418",
+    "name": "Attacker",
+    "chain": "arbitrum",
+    "source": "comment",
+    "context": "// Attacker : https://arbiscan.io/address/0x851aa754c39bf23cdaac2025367514dfd7530418"
+  },
+  {
+    "address": "0x3e52c217a902002ca296fe6769c22fedaee9fda1",
+    "name": "Attack_Contract",
+    "chain": "arbitrum",
+    "source": "comment",
+    "context": "// Attack Contract 1: https://arbiscan.io/address/0x3e52c217a902002ca296fe6769c22fedaee9fda1"
+  },
+  {
+    "address": "0x42fae47296b26385c4a5b62c46e4305a27c88988",
+    "name": "Attack_Contract",
+    "chain": "arbitrum",
+    "source": "comment",
+    "context": "// Attack Contract 2: https://arbiscan.io/address/0x42fae47296b26385c4a5b62c46e4305a27c88988"
+  },
+  {
+    "address": "0x7746872c6892bcfb4254390283719f2bd2d4da76",
+    "name": "Vulnerable_Contract",
+    "chain": "arbitrum",
+    "source": "comment",
+    "context": "// Vulnerable Contract : https://arbiscan.io/address/0x7746872c6892bcfb4254390283719f2bd2d4da76#code"
+  },
+  {
+    "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+    "name": "USDC",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant USDC = IERC20(0xaf88d065e77c8cC2239327C5EDb3A432268e5831)"
+  },
+  {
+    "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+    "name": "USDCe",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant USDCe = IERC20(0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8)"
+  },
+  {
+    "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+    "name": "USDT",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant USDT = IUSDT(0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9)"
+  },
+  {
+    "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+    "name": "WETH",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant WETH = IERC20(0x82aF49447D8a07e3bd95BD0d56f35241523fBab1)"
+  },
+  {
+    "address": "0x5979D7b546E38E414F7E9822514be443A4800529",
+    "name": "wstETH",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant wstETH = IERC20(0x5979D7b546E38E414F7E9822514be443A4800529)"
+  },
+  {
+    "address": "0x1e482f0606152890F84dD59617e13EC06581B45a",
+    "name": "ausdcUsdcLP",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant ausdcUsdcLP = IERC20(0x1e482f0606152890F84dD59617e13EC06581B45a)"
+  },
+  {
+    "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    "name": "BalancerVault",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant BalancerVault = IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)"
+  },
+  {
+    "address": "0x10bdA01aC4E644fD84a04Dab01E15A5eDcEE46dD",
+    "name": "USDC_USDC_LP",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant USDC_USDC_LP = IUniV3Wrapper(0x10bdA01aC4E644fD84a04Dab01E15A5eDcEE46dD)"
+  },
+  {
+    "address": "0xC6962004f452bE9203591991D15f6b388e09E8D0",
+    "name": "WETH_USDC",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant WETH_USDC = Uni_Pair_V3(0xC6962004f452bE9203591991D15f6b388e09E8D0)"
+  },
+  {
+    "address": "0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443",
+    "name": "WETH_USDCe",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant WETH_USDCe = Uni_Pair_V3(0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443)"
+  },
+  {
+    "address": "0x8e295789c9465487074a65b1ae9Ce0351172393f",
+    "name": "USDC_USDCe",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant USDC_USDCe = Uni_Pair_V3(0x8e295789c9465487074a65b1ae9Ce0351172393f)"
+  },
+  {
+    "address": "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
+    "name": "AaveFlashloan",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant AaveFlashloan = IAaveFlashloan(0x794a61358D6845594F94dc1DB02A252b5b4814aD)"
+  },
+  {
+    "address": "0x403049E886b13E42C149f15450CEB795216cddC6",
+    "name": "LendingPool",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant LendingPool = ILendingPoolProxy(0x403049E886b13E42C149f15450CEB795216cddC6)"
+  },
+  {
+    "address": "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "contract created"
+  },
+  {
+    "address": "0x2e234DAe75C793f67A35089C9d99245E1C58470b",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "contract created"
+  }
+]

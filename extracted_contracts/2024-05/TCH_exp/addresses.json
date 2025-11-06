@@ -1,0 +1,44 @@
+[
+  {
+    "address": "0xb9596d6e53d81981b9f06ca2ca6d3e422232d575",
+    "name": "Attacker",
+    "chain": "bsc",
+    "source": "comment",
+    "context": "// Attacker : https://bscscan.com/address/0xb9596d6e53d81981b9f06ca2ca6d3e422232d575"
+  },
+  {
+    "address": "0x258850ec735f6532fe34fe24ef9628992a9b7e84",
+    "name": "Attack_Contract",
+    "chain": "bsc",
+    "source": "comment",
+    "context": "// Attack Contract : https://bscscan.com/address/0x258850ec735f6532fe34fe24ef9628992a9b7e84"
+  },
+  {
+    "address": "0x5d78cfc8732fd328015c9b73699de9556ef06e8e",
+    "name": "Vulnerable_Contract",
+    "chain": "bsc",
+    "source": "comment",
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0x5d78cfc8732fd328015c9b73699de9556ef06e8e"
+  },
+  {
+    "address": "0x4f31Fa980a675570939B737Ebdde0471a4Be40Eb",
+    "name": "BUSDT_USDC",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant BUSDT_USDC = Uni_Pair_V3(0x4f31Fa980a675570939B737Ebdde0471a4Be40Eb)"
+  },
+  {
+    "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "name": "PancakeRouter",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant PancakeRouter = Uni_Router_V2(0x10ED43C718714eb63d5aA57B78B54704E256024E)"
+  },
+  {
+    "address": "0x55d398326f99059fF775485246999027B3197955",
+    "name": "BUSDT",
+    "chain": "bsc",
+    "source": "static",
+    "context": "private constant BUSDT = IERC20(0x55d398326f99059fF775485246999027B3197955)"
+  }
+]

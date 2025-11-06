@@ -4,23 +4,38 @@ out = 'out'
 libs = ['lib']
 fs_permissions = [{ access = "read", path = "./"}]
 evm_version = 'shanghai'
+# via_ir = false  # 默认不启用，避免 Yul 栈深度问题
+optimizer = true  # 启用优化器
+optimizer_runs = 200  # 优化运行次数
+
+# Profile for contracts with Solidity "stack too deep" issues
+# Usage: FOUNDRY_PROFILE=via-ir forge build --contracts src/test/XXX.sol
+[profile.via-ir]
+src = 'src'
+out = 'out'
+libs = ['lib']
+fs_permissions = [{ access = "read", path = "./"}]
+evm_version = 'shanghai'
+via_ir = true  # 启用 via-IR 解决 Solidity stack too deep
+optimizer = true
+optimizer_runs = 200
 
 [rpc_endpoints]
-mainnet = "https://eth.llamarpc.com"
-blast = "https://rpc.ankr.com/blast"
-optimism = "https://optimism.llamarpc.com"
-fantom = "https://fantom-pokt.nodies.app"
-arbitrum =  "https://arb1.arbitrum.io/rpc" # https://arbitrum.llamarpc.com
-bsc = "https://binance.llamarpc.com"
-moonriver = "https://moonriver.public.blastapi.io"
-gnosis = "https://gnosis-mainnet.public.blastapi.io"
-avalanche = "https://avax.meowrpc.com"
-polygon = "https://rpc.ankr.com/polygon"
-celo = "https://rpc.ankr.com/celo"
-base = "https://developer-access-mainnet.base.org"
-linea = "https://linea.drpc.org"
-mantle = "https://rpc.mantle.xyz"
-sei = "wss://sei.drpc.org"
+mainnet = "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+blast = "https://lb.drpc.live/blast/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+optimism = "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+fantom = "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+arbitrum =  "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk" # https://arbitrum.llamarpc.com
+bsc = "https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/"
+moonriver = "https://lb.drpc.live/moonriver/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+gnosis = "https://lb.drpc.live/gnosis/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+avalanche = "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+polygon = "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+celo = "https://lb.drpc.live/celo/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+base = "https://lb.drpc.live/base/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+linea = "https://lb.drpc.live/linea/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+mantle = "https://lb.drpc.live/mantle/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+sei = "https://lb.drpc.live/sei/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/.config
 

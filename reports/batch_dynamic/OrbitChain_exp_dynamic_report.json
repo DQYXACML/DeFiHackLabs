@@ -1,0 +1,61 @@
+{
+  "report_metadata": {
+    "event_name": "OrbitChain_exp",
+    "year_month": "2024-01",
+    "generated_at": "2025-11-05T17:06:15.377623",
+    "detection_method": "dynamic_execution",
+    "attack_tx_hash": "0x9b3aa1f20c3dc7bfb96c660fc829879e939e684beca7b11ba05755d55edfc9b7"
+  },
+  "summary": {
+    "total_invariants": 1,
+    "violations_detected": 0,
+    "passed": 1,
+    "violation_rate": 0.0
+  },
+  "runtime_metrics": {
+    "gas_used": 1928348,
+    "call_depth": 0,
+    "reentrancy_depth": 0,
+    "loop_iterations": 0,
+    "pool_utilization": 0.0,
+    "balance_changes": {},
+    "function_calls": {},
+    "call_sequence": []
+  },
+  "violation_results": [
+    {
+      "invariant_id": "SINV_001",
+      "invariant_type": "bounded_change_rate",
+      "severity": "high",
+      "violated": false,
+      "threshold": "50.0%",
+      "actual_value": "0.0%",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "evidence": {
+        "contract": "0xC355fe6E4e99C0B93577F08c4e9a599714435912",
+        "slot": 2,
+        "value_before": 159640809091657385044880442714860994612349847706,
+        "value_after": 159640809091657385044880442714860994612349847706,
+        "absolute_change": 0,
+        "change_rate": "0.0%"
+      },
+      "confidence": 0.7
+    }
+  ],
+  "storage_changes_summary": {
+    "total_contracts_changed": 1,
+    "total_slots_changed": 1,
+    "max_change_rate": 0,
+    "top_changes": [
+      {
+        "contract": "0xC355fe6E4e99C0B93577F08c4e9a599714435912",
+        "slot": 2,
+        "before": 159640809091657385044880442714860994612349847706,
+        "after": 159640809091657385044880442714860994612349847706,
+        "change_rate": 0.0,
+        "change_pct": "0.00%"
+      }
+    ]
+  }
+}

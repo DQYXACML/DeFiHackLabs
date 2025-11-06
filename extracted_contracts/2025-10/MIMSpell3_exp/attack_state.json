@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "chain": "mainnet",
+    "block_number": 23504544,
+    "timestamp": 1759582439,
+    "block_hash": "647356d6413ab1acaf5f2f89b6feaeed8f866b4a53fbb79f3bd0509a6380229e",
+    "collected_at": "2025-11-04T19:06:08.646676",
+    "total_addresses": 3,
+    "collected_addresses": 3,
+    "collection_method": "trace",
+    "attack_tx_hash": "0x842aae91c89a9e5043e64af34f53dc66daf0f033ad8afbf35ef0c93f99a9e5e6"
+  },
+  "addresses": {
+    "0x1aaade3e9062d124b7deb0ed6ddc7055efa7354d": {
+      "balance_wei": "173504352583541000",
+      "balance_eth": "0.173504352583541",
+      "nonce": 1,
+      "code": "",
+      "code_size": 0,
+      "is_contract": false,
+      "storage": {},
+      "erc20_balances": {},
+      "name": "Attacker"
+    },
+    "0xb8e0a4758df2954063ca4ba3d094f2d6eda9b993": {
+      "balance_wei": "0",
+      "balance_eth": "0",
+      "nonce": 0,
+      "code": "",
+      "code_size": 0,
+      "is_contract": false,
+      "storage": {},
+      "erc20_balances": {},
+      "name": "Attack_Contract"
+    },
+    "0x46f54d434063e5f1a2b2cc6d9aaa657b1b9ff82c": {
+      "balance_wei": "0",
+      "balance_eth": "0",
+      "nonce": 1,
+      "code": "363d3d373d3d3d363d735e70f7acb8ec0231c00220d11c74dc2b231871035af43d82803e903d91602b57fd5bf3",
+      "code_size": 45,
+      "is_contract": true,
+      "storage": {
+        "5": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "7": "00000000000016227aac87e23179dac80000000000001bba2da8630a1f50459f",
+        "12": "000000011b5046f4000000000000000000000000000000000000000068e07fdb",
+        "15": "00000000000000000000000000000000000000000000000000000000000001f4"
+      },
+      "erc20_balances": {},
+      "name": "Vulnerable_Contract"
+    }
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "summary": {
+    "total_scripts": 855,
+    "total_networks": 14,
+    "etherscan_compatible": {
+      "networks": 5,
+      "scripts": 305,
+      "percentage": 35.7
+    },
+    "independent_key_required": {
+      "networks": 9,
+      "scripts": 385,
+      "percentage": 45.0
+    }
+  },
+  "networks": {
+    "bsc": {
+      "script_count": 319,
+      "percentage": 37.3,
+      "api_info": {
+        "api_service": "BscScan",
+        "api_url": "https://api.bscscan.com/v2/api",
+        "api_key_url": "https://bscscan.com/myapikey",
+        "chainid": 56,
+        "uses_etherscan_key": false,
+        "notes": "\u9700\u8981\u72ec\u7acb\u7684BscScan API Key"
+      },
+      "example_scripts": [
+        "2021-07/Chainswap_exp2.sol",
+        "2021-07/Levyathan_exp.sol",
+        "2022-08/ANCH_exp.sol",
+        "2022-08/EtnProduct_exp.sol",
+        "2022-08/EGD_Finance_exp.sol"
+      ]
+    },
+    "mainnet": {
+      "script_count": 275,
+      "percentage": 32.2,
+      "api_info": {
+        "api_service": "Etherscan",
+        "api_url": "https://api.etherscan.io/v2/api",
+        "api_key_url": "https://etherscan.io/myapikey",
+        "chainid": 1,
+        "uses_etherscan_key": true,
+        "notes": "\u4ee5\u592a\u574a\u4e3b\u7f51"
+      },
+      "example_scripts": [
+        "IUNMI_db27_exp.sol",
+        "2018-10/SpankChain_exp.sol",
+        "2021-07/Chainswap_exp1.sol",
+        "2022-08/XST_exp2.sol",
+        "2022-08/LuckyTiger_exp.sol"
+      ]
+    },
+    "arbitrum": {
+      "script_count": 29,
+      "percentage": 3.4,
+      "api_info": {
+        "api_service": "Arbiscan",
+        "api_url": "https://api.arbiscan.io/v2/api",
+        "api_key_url": "https://arbiscan.io/myapikey",
+        "chainid": 42161,
+        "uses_etherscan_key": false,
+        "notes": "\u9700\u8981\u72ec\u7acb\u7684Arbiscan API Key"
+      },
+      "example_scripts": [
+        "2025-06/Stead_exp.sol",
+        "2023-11/TheStandard_io_exp.sol",
+        "2024-03/Woofi_exp.sol",
+        "2024-03/LavaLending_exp.sol",
+        "2022-03/TreasureDAO_exp.sol"
+      ]
+    },
+    "base": {
+      "script_count": 17,
+      "percentage": 2.0,
+      "api_info": {
+        "api_service": "BaseScan",
+        "api_url": "https://api.basescan.org/v2/api",
+        "api_key_url": "https://basescan.org/myapikey",
+        "chainid": 8453,
+        "uses_etherscan_key": true,
+        "notes": "\u53ef\u4f7f\u7528Etherscan Key (Coinbase\u8fd0\u8425)"
+      },
+      "example_scripts": [
+        "2023-11/CAROLProtocol_exp.sol",
+        "2025-03/DUCKVADER_exp.sol",
+        "2025-08/0x8d2e_exp.sol",
+        "2024-05/NORMIE_exp.sol",
+        "2024-05/TSURU_exp.sol"
+      ]
+    },
+    "polygon": {
+      "script_count": 16,
+      "percentage": 1.9,
+      "api_info": {
+        "api_service": "PolygonScan",
+        "api_url": "https://api.polygonscan.com/v2/api",
+        "api_key_url": "https://polygonscan.com/myapikey",
+        "chainid": 137,
+        "uses_etherscan_key": false,
+        "notes": "\u9700\u8981\u72ec\u7acb\u7684PolygonScan API Key"
+      },
+      "example_scripts": [
+        "2023-09/FireBirdPair_exp.sol",
+        "2023-12/Telcoin_exp.sol",
+        "2021-06/SafeDollar_exp.sol",
+        "2023-01/Midas_exp.sol",
+        "2023-02/BonqDAO_exp.sol"
+      ]
+    },
+    "optimism": {
+      "script_count": 10,
+      "percentage": 1.2,
+      "api_info": {
+        "api_service": "Optimism Etherscan",
+        "api_url": "https://api-optimistic.etherscan.io/v2/api",
+        "api_key_url": "https://optimistic.etherscan.io/myapikey",
+        "chainid": 10,
+        "uses_etherscan_key": true,
+        "notes": "\u53ef\u4f7f\u7528Etherscan Key"
+      },
+      "example_scripts": [
+        "2022-11/Polynomial_exp.sol",
+        "2024-03/MO_exp.sol",
+        "2022-06/Optimism_exp.sol",
+        "2023-07/ArcadiaFi_exp.sol",
+        "2024-05/Sonne_exp.sol"
+      ]
+    },
+    "avalanche": {
+      "script_count": 10,
+      "percentage": 1.2,
+      "api_info": {
+        "api_service": "SnowTrace",
+        "api_url": "https://api.snowtrace.io/v2/api",
+        "api_key_url": "https://snowtrace.io/myapikey",
+        "chainid": 43114,
+        "uses_etherscan_key": false,
+        "notes": "\u9700\u8981\u72ec\u7acb\u7684SnowTrace API Key"
+      },
+      "example_scripts": [
+        "2023-10/Platypus03_exp.sol",
+        "2023-10/StarsArena_exp.sol",
+        "2021-09/ZABU_exp.sol",
+        "2023-02/Platypus_exp.sol",
+        "2023-07/Platypus02_exp.sol"
+      ]
+    },
+    "fantom": {
+      "script_count": 6,
+      "percentage": 0.7,
+      "api_info": {
+        "api_service": "FTMScan",
+        "api_url": "https://api.ftmscan.com/v2/api",
+        "api_key_url": "https://ftmscan.com/myapikey",
+        "chainid": 250,
+        "uses_etherscan_key": false,
+        "notes": "\u9700\u8981\u72ec\u7acb\u7684FTMScan API Key"
+      },
+      "example_scripts": [
+        "2022-08/ReaperFarm_exp.sol",
+        "2022-03/OneRing_exp.sol",
+        "2022-03/Fantasm_exp.sol",
+        "2021-12/Grim_exp.sol",
+        "2022-04/deus_exp.sol"
+      ]
+    },
+    "blast": {
+      "script_count": 2,
+      "percentage": 0.2,
+      "api_info": {
+        "api_service": "BlastScan",
+        "api_url": "https://api.blastscan.io/v2/api",
+        "api_key_url": "https://blastscan.io/myapikey",
+        "chainid": 81457,
+        "uses_etherscan_key": true,
+        "notes": "\u53ef\u4f7f\u7528Etherscan Key"
+      },
+      "example_scripts": [
+        "2024-06/Bazaar_exp.sol",
+        "2024-03/SSS_exp.sol"
+      ]
+    },
+    "gnosis": {
+      "script_count": 2,
+      "percentage": 0.2,
+      "api_info": {
+        "api_service": "Gnosisscan",
+        "api_url": "https://api.gnosisscan.io/v2/api",
+        "api_key_url": "https://gnosisscan.io/myapikey",
+        "chainid": 100,
+        "uses_etherscan_key": false,
+        "notes": "\u9700\u8981\u72ec\u7acb\u7684Gnosisscan API Key"
+      },
+      "example_scripts": [
+        "2022-03/Agave_exp.sol",
+        "2022-03/HundredFinance_exp.sol"
+      ]
+    },
+    "linea": {
+      "script_count": 1,
+      "percentage": 0.1,
+      "api_info": {
+        "api_service": "Lineascan",
+        "api_url": "https://api.lineascan.build/v2/api",
+        "api_key_url": "https://lineascan.build/myapikey",
+        "chainid": 59144,
+        "uses_etherscan_key": true,
+        "notes": "\u53ef\u4f7f\u7528Etherscan Key"
+      },
+      "example_scripts": [
+        "2024-06/Velocore_exp.sol"
+      ]
+    },
+    "sei": {
+      "script_count": 1,
+      "percentage": 0.1,
+      "api_info": {
+        "api_service": "Seitrace",
+        "api_url": "https://seitrace.com/api",
+        "api_key_url": "https://seitrace.com",
+        "chainid": 1329,
+        "uses_etherscan_key": false,
+        "notes": "\u9700\u8981\u72ec\u7acb\u7684Seitrace API Key"
+      },
+      "example_scripts": [
+        "2025-09/Kame_exp.sol"
+      ]
+    },
+    "moonriver": {
+      "script_count": 1,
+      "percentage": 0.1,
+      "api_info": {
+        "api_service": "Moonscan",
+        "api_url": "https://api-moonriver.moonscan.io/v2/api",
+        "api_key_url": "https://moonriver.moonscan.io/myapikey",
+        "chainid": 1285,
+        "uses_etherscan_key": false,
+        "notes": "\u9700\u8981\u72ec\u7acb\u7684Moonscan API Key"
+      },
+      "example_scripts": [
+        "2022-02/Meter_exp.sol"
+      ]
+    },
+    "mantle": {
+      "script_count": 1,
+      "percentage": 0.1,
+      "api_info": {
+        "api_service": "Mantle Explorer",
+        "api_url": "https://explorer.mantle.xyz/api",
+        "api_key_url": "https://explorer.mantle.xyz",
+        "chainid": 5000,
+        "uses_etherscan_key": false,
+        "notes": "\u53ef\u80fd\u9700\u8981\u72ec\u7acbAPI Key\u6216\u65e0\u9700Key"
+      },
+      "example_scripts": [
+        "2024-07/Minterest_exp.sol"
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "address": "0x826d5f4d8084980366f975e10db6c4cf1f9dde6d",
+    "name": "Attacker",
+    "chain": "arbitrum",
+    "source": "comment",
+    "context": "// Attacker : https://arbiscan.io/address/0x826d5f4d8084980366f975e10db6c4cf1f9dde6d"
+  },
+  {
+    "address": "0x39519c027b503f40867548fb0c890b11728faa8f",
+    "name": "Attack_Contract",
+    "chain": "arbitrum",
+    "source": "comment",
+    "context": "// Attack Contract : https://arbiscan.io/address/0x39519c027b503f40867548fb0c890b11728faa8f"
+  },
+  {
+    "address": "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
+    "name": "AaveV3Pool",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant AaveV3Pool = IAaveFlashloan(0x794a61358D6845594F94dc1DB02A252b5b4814aD)"
+  },
+  {
+    "address": "0xF4B1486DD74D07706052A33d31d7c0AAFD0659E1",
+    "name": "RadiantLendingPool",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant RadiantLendingPool = IRadiant(0xF4B1486DD74D07706052A33d31d7c0AAFD0659E1)"
+  },
+  {
+    "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+    "name": "USDC",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant USDC = IERC20(0xaf88d065e77c8cC2239327C5EDb3A432268e5831)"
+  },
+  {
+    "address": "0x3a2d44e354f2d88EF6DA7A5A4646fd70182A7F55",
+    "name": "rUSDCn",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant rUSDCn = IERC20(0x3a2d44e354f2d88EF6DA7A5A4646fd70182A7F55)"
+  },
+  {
+    "address": "0x0dF5dfd95966753f01cb80E76dc20EA958238C46",
+    "name": "rWETH",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant rWETH = IERC20(0x0dF5dfd95966753f01cb80E76dc20EA958238C46)"
+  },
+  {
+    "address": "0xC6962004f452bE9203591991D15f6b388e09E8D0",
+    "name": "WETH_USDC",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant WETH_USDC = Uni_Pair_V3(0xC6962004f452bE9203591991D15f6b388e09E8D0)"
+  },
+  {
+    "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "payable(0x82aF49447D8a07e3bd95BD0d56f35241523fBab1)"
+  },
+  {
+    "address": "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "contract created"
+  }
+]

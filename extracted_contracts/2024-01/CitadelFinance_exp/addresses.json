@@ -1,0 +1,65 @@
+[
+  {
+    "address": "0xfcf88e5e1314ca3b6be7eed851568834233f8b49",
+    "name": "Attacker",
+    "chain": "arbitrum",
+    "source": "comment",
+    "context": "// Attacker : https://arbiscan.io/address/0xfcf88e5e1314ca3b6be7eed851568834233f8b49"
+  },
+  {
+    "address": "0xfcbf411237ac830dc892edec054f15ba7f9ea5a6",
+    "name": "Attack_Contract",
+    "chain": "arbitrum",
+    "source": "comment",
+    "context": "// Attack Contract : https://arbiscan.io/address/0xfcbf411237ac830dc892edec054f15ba7f9ea5a6"
+  },
+  {
+    "address": "0x5e93c07a22111b327EE0EaEC64028064448ae848",
+    "name": "CitadelStaking",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant CitadelStaking = ICitadelStaking(0x5e93c07a22111b327EE0EaEC64028064448ae848)"
+  },
+  {
+    "address": "0x34b666992fcCe34669940ab6B017fE11e5750799",
+    "name": "CitadelRedeem",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant CitadelRedeem = ICitadelRedeem(0x34b666992fcCe34669940ab6B017fE11e5750799)"
+  },
+  {
+    "address": "0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443",
+    "name": "WETH_USDC",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant WETH_USDC = Uni_Pair_V3(0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443)"
+  },
+  {
+    "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+    "name": "WETH",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant WETH = IERC20(0x82aF49447D8a07e3bd95BD0d56f35241523fBab1)"
+  },
+  {
+    "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+    "name": "USDC",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant USDC = IERC20(0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8)"
+  },
+  {
+    "address": "0x43cF1856606df2CB22AEdbA1a3e23725f1594E81",
+    "name": "CIT",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant CIT = IERC20(0x43cF1856606df2CB22AEdbA1a3e23725f1594E81)"
+  },
+  {
+    "address": "0xc873fEcbd354f5A56E00E710B90EF4201db2448d",
+    "name": "CamelotRouter",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "private constant CamelotRouter = ICamelotRouter(0xc873fEcbd354f5A56E00E710B90EF4201db2448d)"
+  }
+]
