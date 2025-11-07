@@ -1,6 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: AGPL-3.0
 pragma solidity ^0.8.10;
 
-interface IParaSwapAugustusRegistry {
-  function isValidAugustus(address augustus) external view returns (bool);
-}
+import "./@aave/periphery-v3/contracts/adapters/paraswap/interfaces/IParaSwapAugustusRegistry.sol";

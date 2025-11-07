@@ -1,6 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-interface IPledge {
-    function dividendHandle(uint256 dividend) external;
-}
+import "./contracts/interface/IPledge.sol";

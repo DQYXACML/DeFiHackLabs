@@ -1,5 +1,4 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 pragma solidity ^0.8.24;
 
-interface ITreasury {
-    function treasury() external view returns (address);
-}
+import "./lib/Cork-Hook/src/interfaces/ITreasury.sol";

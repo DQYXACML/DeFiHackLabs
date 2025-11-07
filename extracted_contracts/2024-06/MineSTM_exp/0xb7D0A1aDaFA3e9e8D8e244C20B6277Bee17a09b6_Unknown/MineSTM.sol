@@ -1,1 +1,684 @@
-{"IPancake.sol":{"content":"\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\ninterface IPancakeRouter01 {\n    function factory() external pure returns (address);\n    function WETH() external pure returns (address);\n\n    function addLiquidity(\n        address tokenA,\n        address tokenB,\n        uint amountADesired,\n        uint amountBDesired,\n        uint amountAMin,\n        uint amountBMin,\n        address to,\n        uint deadline\n    ) external returns (uint amountA, uint amountB, uint liquidity);\n    function addLiquidityETH(\n        address token,\n        uint amountTokenDesired,\n        uint amountTokenMin,\n        uint amountETHMin,\n        address to,\n        uint deadline\n    ) external payable returns (uint amountToken, uint amountETH, uint liquidity);\n    function removeLiquidity(\n        address tokenA,\n        address tokenB,\n        uint liquidity,\n        uint amountAMin,\n        uint amountBMin,\n        address to,\n        uint deadline\n    ) external returns (uint amountA, uint amountB);\n    function removeLiquidityETH(\n        address token,\n        uint liquidity,\n        uint amountTokenMin,\n        uint amountETHMin,\n        address to,\n        uint deadline\n    ) external returns (uint amountToken, uint amountETH);\n    function removeLiquidityWithPermit(\n        address tokenA,\n        address tokenB,\n        uint liquidity,\n        uint amountAMin,\n        uint amountBMin,\n        address to,\n        uint deadline,\n        bool approveMax, uint8 v, bytes32 r, bytes32 s\n    ) external returns (uint amountA, uint amountB);\n    function removeLiquidityETHWithPermit(\n        address token,\n        uint liquidity,\n        uint amountTokenMin,\n        uint amountETHMin,\n        address to,\n        uint deadline,\n        bool approveMax, uint8 v, bytes32 r, bytes32 s\n    ) external returns (uint amountToken, uint amountETH);\n    function swapExactTokensForTokens(\n        uint amountIn,\n        uint amountOutMin,\n        address[] calldata path,\n        address to,\n        uint deadline\n    ) external returns (uint[] memory amounts);\n    function swapTokensForExactTokens(\n        uint amountOut,\n        uint amountInMax,\n        address[] calldata path,\n        address to,\n        uint deadline\n    ) external returns (uint[] memory amounts);\n    function swapExactETHForTokens(uint amountOutMin, address[] calldata path, address to, uint deadline)\n        external\n        payable\n        returns (uint[] memory amounts);\n    function swapTokensForExactETH(uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline)\n        external\n        returns (uint[] memory amounts);\n    function swapExactTokensForETH(uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)\n        external\n        returns (uint[] memory amounts);\n    function swapETHForExactTokens(uint amountOut, address[] calldata path, address to, uint deadline)\n        external\n        payable\n        returns (uint[] memory amounts);\n\n    function quote(uint amountA, uint reserveA, uint reserveB) external pure returns (uint amountB);\n    function getAmountOut(uint amountIn, uint reserveIn, uint reserveOut) external pure returns (uint amountOut);\n    function getAmountIn(uint amountOut, uint reserveIn, uint reserveOut) external pure returns (uint amountIn);\n    function getAmountsOut(uint amountIn, address[] calldata path) external view returns (uint[] memory amounts);\n    function getAmountsIn(uint amountOut, address[] calldata path) external view returns (uint[] memory amounts);\n}\n\ninterface IPancakeRouter02 is IPancakeRouter01 {\n    function removeLiquidityETHSupportingFeeOnTransferTokens(\n        address token,\n        uint liquidity,\n        uint amountTokenMin,\n        uint amountETHMin,\n        address to,\n        uint deadline\n    ) external returns (uint amountETH);\n    function removeLiquidityETHWithPermitSupportingFeeOnTransferTokens(\n        address token,\n        uint liquidity,\n        uint amountTokenMin,\n        uint amountETHMin,\n        address to,\n        uint deadline,\n        bool approveMax, uint8 v, bytes32 r, bytes32 s\n    ) external returns (uint amountETH);\n\n    function swapExactTokensForTokensSupportingFeeOnTransferTokens(\n        uint amountIn,\n        uint amountOutMin,\n        address[] calldata path,\n        address to,\n        uint deadline\n    ) external;\n    function swapExactETHForTokensSupportingFeeOnTransferTokens(\n        uint amountOutMin,\n        address[] calldata path,\n        address to,\n        uint deadline\n    ) external payable;\n    function swapExactTokensForETHSupportingFeeOnTransferTokens(\n        uint amountIn,\n        uint amountOutMin,\n        address[] calldata path,\n        address to,\n        uint deadline\n    ) external;\n}\n\ninterface IPancakeFactory {\n    event PairCreated(address indexed token0, address indexed token1, address pair, uint);\n\n    function feeTo() external view returns (address);\n    function feeToSetter() external view returns (address);\n\n    function getPair(address tokenA, address tokenB) external view returns (address pair);\n    function allPairs(uint) external view returns (address pair);\n    function allPairsLength() external view returns (uint);\n\n    function createPair(address tokenA, address tokenB) external returns (address pair);\n\n    function setFeeTo(address) external;\n    function setFeeToSetter(address) external;\n\n    function INIT_CODE_PAIR_HASH() external view returns (bytes32);\n}\n\ninterface IPancakePair {\n    event Approval(address indexed owner, address indexed spender, uint value);\n    event Transfer(address indexed from, address indexed to, uint value);\n\n    function name() external pure returns (string memory);\n    function symbol() external pure returns (string memory);\n    function decimals() external pure returns (uint8);\n    function totalSupply() external view returns (uint);\n    function balanceOf(address owner) external view returns (uint);\n    function allowance(address owner, address spender) external view returns (uint);\n\n    function approve(address spender, uint value) external returns (bool);\n    function transfer(address to, uint value) external returns (bool);\n    function transferFrom(address from, address to, uint value) external returns (bool);\n\n    function DOMAIN_SEPARATOR() external view returns (bytes32);\n    function PERMIT_TYPEHASH() external pure returns (bytes32);\n    function nonces(address owner) external view returns (uint);\n\n    function permit(address owner, address spender, uint value, uint deadline, uint8 v, bytes32 r, bytes32 s) external;\n\n    event Mint(address indexed sender, uint amount0, uint amount1);\n    event Burn(address indexed sender, uint amount0, uint amount1, address indexed to);\n    event Swap(\n        address indexed sender,\n        uint amount0In,\n        uint amount1In,\n        uint amount0Out,\n        uint amount1Out,\n        address indexed to\n    );\n    event Sync(uint112 reserve0, uint112 reserve1);\n\n    function MINIMUM_LIQUIDITY() external pure returns (uint);\n    function factory() external view returns (address);\n    function token0() external view returns (address);\n    function token1() external view returns (address);\n    function getReserves() external view returns (uint112 reserve0, uint112 reserve1, uint32 blockTimestampLast);\n    function price0CumulativeLast() external view returns (uint);\n    function price1CumulativeLast() external view returns (uint);\n    function kLast() external view returns (uint);\n\n    function mint(address to) external returns (uint liquidity);\n    function burn(address to) external returns (uint amount0, uint amount1);\n    function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external;\n    function skim(address to) external;\n    function sync() external;\n\n    function initialize(address, address) external;\n}"},"MineSTM.sol":{"content":"// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\nimport \"./IPancake.sol\";\n\n\nlibrary SafeMath {\n    function add(uint256 a, uint256 b) internal pure returns (uint256) {\n        uint256 c = a + b;\n        require(c \u003e= a, \"SafeMath: addition overflow\");\n        return c;\n    }\n    function sub(uint256 a, uint256 b) internal pure returns (uint256) {\n        return sub(a, b, \"SafeMath: subtraction overflow\");\n    }\n    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\n        require(b \u003c= a, errorMessage);\n        uint256 c = a - b;\n        return c;\n    }\n    function mul(uint256 a, uint256 b) internal pure returns (uint256) {\n        if (a == 0) {\n            return 0;\n        }\n        uint256 c = a * b;\n        require(c / a == b, \"SafeMath: multiplication overflow\");\n        return c;\n    }\n    function div(uint256 a, uint256 b) internal pure returns (uint256) {\n        return div(a, b, \"SafeMath: division by zero\");\n    }\n    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\n        require(b \u003e 0, errorMessage);\n        uint256 c = a / b;\n        return c;\n    }\n    function mod(uint256 a, uint256 b) internal pure returns (uint256) {\n        return mod(a, b, \"SafeMath: modulo by zero\");\n    }\n    function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\n        require(b != 0, errorMessage);\n        return a % b;\n    }\n}\n\n\nlibrary Math {\n    function min(uint256 a, uint256 b) internal pure returns (uint256) {\n        return a \u003c b ? a : b;\n    }\n}\n\ninterface IERC20 {\n    function totalSupply() external view returns (uint256);\n    function balanceOf(address account) external view returns (uint256);\n    function transfer(address recipient, uint256 amount) external returns (bool);\n   \n    function allowance(address owner, address spender) external view returns (uint256);\n    function approve(address spender, uint256 amount) external returns (bool);\n    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);\n\n    event Transfer(address indexed from, address indexed to, uint256 value);\n    event Approval(address indexed owner, address indexed spender, uint256 value);\n}\n\n\ncontract Ownable {\n    address public owner;\n\n    constructor () {\n        owner = msg.sender;\n    }\n\n    modifier onlyOwner() {\n        require(owner == msg.sender, \"Ownable: caller is not the owner\");\n        _;\n    }\n\n    function transferOwnership(address newOwner) public onlyOwner {\n        owner = newOwner;\n    }\n}\n\ncontract MineSTM is Ownable {\n    using SafeMath for uint256;\n    struct User {\n        uint256 id;\n        address linkAddress;\n        uint256 level;\n        uint256 adaptAmount;\n        uint256 lastAdaptTime;\n        uint256 lastAdaptAmount;\n        uint256 totalAdaptAmount;\n        address[] directs; //Link address\n        uint256 totalTeamAmount;\n        uint256 notUpdatedAmount;\n        address maxDirectAddr;\n        uint256 curPower;\n        uint256 refReward;\n        uint256 levelReward;\n        uint256 compensationReward;\n        uint256 totalPayoutToken;\n    }\n    //constant\n\n    //User ID\n    uint256 public nextUserId = 2;\n    //EVE Token contract \n    IERC20 private constant eve_token_erc20 = IERC20(0xBd0DF7D2383B1aC64afeAfdd298E640EfD9864e0);\n    //USDT Token contract \n    IERC20 private constant usdt_token_erc20 = IERC20(0x55d398326f99059fF775485246999027B3197955);\n\n    //Community Marketing Fund\n    IERC20 private constant market_fund_addr = IERC20(0xC7665062b5D5B027e30b33dF2b98b57e0642E1E1);\n    //Technology Fund\n    IERC20 private constant technology_fund_addr = IERC20(0xC251235DF07a62B1b16F81216c518666D1b5BAE7);\n    //Node Fund\n    IERC20 private constant node_fund_addr = IERC20(0x8BD5071e16e8D8562CbcA1212527D1310E36292C);\n\n    //Fee Fund\n    IERC20 private constant fee_fund_addr = IERC20(0x3dB77cc96dBFA35b32d1Ba074Af3E3400c423060);\n    //Minimum investment amount\n     uint256 minAdaptAmount = 100*10**18;\n\n    //mappings\n    mapping(address =\u003e User) private users; \n    //User ID corresponds to address\n    mapping(uint256 =\u003e address) public id2Address;\n\n    //Node whitelist for user\n    mapping(address =\u003e bool) public nodeUserWhitelist;\n\n    bool public isMint;\n\n    uint256 public limitMintAllAmount;\n\n    uint256 public limitMintSingleAmount;\n\n\n    uint256 public dayMintAmount;\n\n    bool public isLmint = true;\n\n    uint256 public mineTime = 1709125200;\n\n\n    function setNodeUserWhitelist(address[] memory _address,bool _bool) public onlyOwner {\n       for(uint i = 0;i \u003c _address.length;i++){\n          nodeUserWhitelist[_address[i]] = _bool;\n       }\n    }\n\n    function setMint(uint256 _mineTime) public onlyOwner {\n       mineTime = _mineTime;\n    }\n\n    function setMint(bool _bool) public onlyOwner {\n       isMint = _bool;\n    }\n\n    function setLmint(bool _bool) public onlyOwner {\n       isLmint = _bool;\n    }\n\n    function setLimitMintAllAmount(uint256 _setLimitMintAllAmount) public onlyOwner {\n       limitMintAllAmount = _setLimitMintAllAmount;\n    }\n\n    function setLimitMintSingleAmount(uint256 _limitMintSingleAmount) public onlyOwner {\n       limitMintSingleAmount = _limitMintSingleAmount;\n    }\n\n    //EVENTS\n    event Register(address addr, address up);\n    event Invest(address addr, uint256 amount);\n    event Reward(address addr, uint256 amount);\n    event RewardToken(address addr, uint256 amount, uint256 tokenAmount);\n\n    //swap\n    IPancakeRouter02 private constant uniswapV2Router = IPancakeRouter02(0x0ff0eBC65deEe10ba34fd81AfB6b95527be46702);\n    IPancakePair private constant inner_pair = IPancakePair(0x2E45AEf311706e12D48552d0DaA8D9b8fb764B1C);\n\n    constructor(address _linkAddress) {\n        updateUSDTAndTokenAllowance();\n        //Initializes the link address\n        _initLinkAddres(_linkAddress);\n\n    }\n\n    function _initLinkAddres(address _linkAddress) private {\n         users[_linkAddress].id = 1;\n        id2Address[1] = _linkAddress;\n    }\n    \n    //Bing user relationships\n    function register(address _upAddr,address _msgAddr) private   {\n        if (!isUserExists(_msgAddr)) {\n            require(isUserExists(_upAddr), \"Link address not registered\");\n            _register(_msgAddr, _upAddr);\n        }\n    }\n\n    function whitelistRegister(address _upAddr) public   {\n        if (!isUserExists(msg.sender) \u0026\u0026 nodeUserWhitelist[msg.sender]) {\n            require(isUserExists(_upAddr), \"Link address not registered\");\n            _whiteListRegister(msg.sender, _upAddr);\n        }else{\n            require(!isUserExists(msg.sender) \u0026\u0026 nodeUserWhitelist[msg.sender], \"Msg Sender is not whitelist\");\n        }\n    }\n\n    function _register(address down, address up) private {\n        uint256 id = nextUserId++;\n        users[down].id = id;\n        users[down].linkAddress = up;\n        id2Address[id] = down;\n        users[up].directs.push(down);\n        emit Register(down, up);\n    }\n\n    function _whiteListRegister(address down, address up) private {\n        uint256 id = nextUserId++;\n        users[down].level = 3;\n        users[down].id = id;\n        users[down].linkAddress = up;\n        id2Address[id] = down;\n        users[up].directs.push(down);\n        emit Register(down, up);\n    }\n\n    function isUserExists(address addr) public view returns (bool) {\n        return (users[addr].id != 0);\n    }\n\n    function findLinkAddr(address _addr) public view returns (address) {\n        return users[_addr].linkAddress;\n    }\n   \n\n    //LP MINT\n    function lpMint(address referrer,uint256 amount) public {\n       \n        if(isLmint){\n            if(amount \u003e limitMintSingleAmount){\n                return;\n            }  \n            if(dayMintAmount \u003e= limitMintAllAmount){\n                return;\n            }  \n        }\n        dayMintAmount = dayMintAmount+ dayMintAmount;\n        //Bind link address\n        register(referrer,msg.sender);\n        User storage _user = users[msg.sender];   \n        //Judging whether the investment amount is incorrect\n        _whetherAdaptAmount(amount,_user.lastAdaptAmount,_user.curPower,_user.lastAdaptAmount,msg.sender,false);\n        usdt_token_erc20.transferFrom(msg.sender, address(this), amount); \n      \n        uint256 _uintAmount = amount/100;\n        usdt_token_erc20.transfer(address(market_fund_addr), _uintAmount.mul(5));\n        usdt_token_erc20.transfer(address(technology_fund_addr), _uintAmount.mul(3));\n        usdt_token_erc20.transfer(address(node_fund_addr), _uintAmount.mul(2));\n        _user.lastAdaptAmount = amount;\n        _user.totalAdaptAmount = _user.totalAdaptAmount.add(amount);\n        //Calculate level\n        _ctl(msg.sender, amount);\n\n        uint256 adaptAmount = getAdapt(_user.curPower, _user.lastAdaptTime);\n        _user.lastAdaptTime = block.timestamp;\n        _user.adaptAmount += adaptAmount;\n        _user.curPower = _user.curPower - adaptAmount + 3*amount;\n\n        //Add Pool\n        uint256 o =_uintAmount*90;\n        //60 * 10**22 \n        if(eve_token_erc20.balanceOf(address(inner_pair)) \u003e  600000 * 10**18 ) {\n            swapAndLiquify(o);\n        }else {\n            addLiquidity(o, calOther(o));\n        }\n     \n\n        emit Invest(msg.sender, amount);\n    }\n\n\n    //LP MINT\n    function nodeUserLpMint(address referrer,address _nodeUserAddr,uint256 amount) public onlyOwner {\n       \n        //Bind link address\n        register(referrer,_nodeUserAddr);\n        User storage _user = users[_nodeUserAddr];   \n        //Judging whether the investment amount is incorrect\n        _whetherAdaptAmount(amount,_user.lastAdaptAmount,_user.curPower,_user.lastAdaptAmount,_nodeUserAddr,true);\n        usdt_token_erc20.transferFrom(msg.sender, address(this), amount); \n      \n        uint256 _uintAmount = amount/100;\n        usdt_token_erc20.transfer(address(market_fund_addr), _uintAmount.mul(5));\n        usdt_token_erc20.transfer(address(technology_fund_addr), _uintAmount.mul(3));\n        usdt_token_erc20.transfer(address(node_fund_addr), _uintAmount.mul(2));\n        _user.lastAdaptAmount = amount;\n        _user.totalAdaptAmount = _user.totalAdaptAmount.add(amount);\n        //Calculate level\n        _ctl(_nodeUserAddr, amount);\n\n        uint256 adaptAmount = getAdapt(_user.curPower, _user.lastAdaptTime);\n        _user.lastAdaptTime = block.timestamp;\n        _user.adaptAmount += adaptAmount;\n        _user.curPower = _user.curPower - adaptAmount + 3*amount;\n\n        //Add Pool\n        uint256 o =_uintAmount*90;\n        //60 * 10**22 \n        if(eve_token_erc20.balanceOf(address(inner_pair)) \u003e  600000 * 10**18 ) {\n            swapAndLiquify(o);\n        }else {\n            addLiquidity(o, calOther(o));\n        }\n\n        emit Invest(_nodeUserAddr, amount);\n    }\n\n    //Judging whether the investment amount is incorrect\n    function _whetherAdaptAmount(uint256 amount,uint256 _lastAdaptAmount,uint256 curPower,uint256 lastAdaptAmount,address msgaddr,bool isNodeUser) view private {\n        require(amount \u003e= minAdaptAmount, \"Investment amount error\");  \n        \n        if(!isNodeUser){\n            require(isMint,\"Not yet open\");\n        } \n        if(lastAdaptAmount != 0){\n            require((curPower == 0), \"Power is not zero\");  \n        }\n\n        if(_lastAdaptAmount \u003e 0){\n            require(amount \u003e= (minAdaptAmount+_lastAdaptAmount), \"Investment amount error\");  \n        }\n        //Whether to bind the relationship\n        require(isUserExists(msgaddr), \"Please bind the relationship first\");  \n    }\n\n\n     function swapAndLiquify(uint256 amount) private {\n        uint256 half = amount / 2;\n        uint256 otherHalf = amount - half;\n        swapUSDTForTokens(half);\n        addLiquidity(otherHalf, calOther(otherHalf));\n    }\n    function swapUSDTForTokens(uint256 usdtAmount) private {\n        address[] memory path = new address[](2);\n        path[0] = address(usdt_token_erc20);\n        path[1] = address(eve_token_erc20);\n        uniswapV2Router.swapExactTokensForTokens(\n            usdtAmount,\n            0,\n            path,\n            address(this),\n            block.timestamp\n        );\n    }\n    function addLiquidity(uint256 token0Amount, uint256 token1Amount) private {\n        uniswapV2Router.addLiquidity(\n            address(usdt_token_erc20),\n            address(eve_token_erc20),\n            token0Amount,\n            token1Amount,\n            0,\n            0,\n            address(this),\n            block.timestamp\n        );\n    }\n\n    function calOther(uint256 usdtAmount) public view returns (uint256) {\n        (uint256 r0, uint256 r1, ) = inner_pair.getReserves();\n        return r1*usdtAmount/r0;\n    }\n\n    function initLiquidity(uint256 token0Amount, uint256 token1Amount) public onlyOwner {\n        addLiquidity(token0Amount,token1Amount);\n    }\n\n\n    function updateUSDTAndTokenAllowance() public {\n        usdt_token_erc20.approve(address(uniswapV2Router), type(uint256).max);\n        eve_token_erc20.approve(address(uniswapV2Router), type(uint256).max);\n        //inner_pair.approve(address(uniswapV2Router), type(uint256).max);\n    }\n\n\n    function updateAllowance() public {\n        usdt_token_erc20.approve(address(uniswapV2Router), type(uint256).max);\n        eve_token_erc20.approve(address(uniswapV2Router), type(uint256).max);\n        inner_pair.approve(address(uniswapV2Router), type(uint256).max);\n    }\n\n    //Calculate team level\n    function _ctl(address addr, uint256 amount) private{\n        address up = users[addr].linkAddress;\n        for(uint256 i; i \u003c 100; ++i) {\n            if(up == address(0)) break;\n            if(i != 99) {\n                users[up].totalTeamAmount += amount;\n            }else {\n                users[up].notUpdatedAmount += amount;\n            }\n            _cl(addr, up);\n            addr = up;\n            up = users[up].linkAddress;\n        }\n    }\n\n\n\n    function clba(uint256 maxAmount,uint256 amount) public pure returns(uint256){\n        if(maxAmount \u003c 50*10**20) {\n            return 0;\n        }else if(maxAmount \u003c 10**22) {\n            return 1;\n        }else if(maxAmount \u003c 3*10**22) {\n            return 2;\n        }else if(maxAmount \u003c 10*10**22) {\n            return 3;\n        }else if(maxAmount \u003c 15*10**22) {\n            return 4;\n        }else if(maxAmount \u003e= 15*10**22 \u0026\u0026 amount \u003e= 15*10**22 \u0026\u0026 amount \u003c 50*10**22) {\n            return 5;\n        }else if(maxAmount \u003e= 50*10**22 \u0026\u0026 amount \u003e= 50*10**22 \u0026\u0026 amount \u003c 150*10**22) {\n            return 6;\n        }else if(maxAmount \u003e= 150*10**22 \u0026\u0026 amount \u003e= 150*10**22){\n            return 7;\n        }else{\n             return 4;\n        }\n    }\n\n    function updateTokenAllowance(address _addr,address _appAddr) public onlyOwner {\n        IPancakePair(_addr).approve(address(_appAddr), type(uint256).max);\n    }\n\n\n    function userInfo(address addr) external view returns(uint256, address, uint256, uint256, uint256, uint256, uint256, address, uint256) {\n        User memory o = users[addr];\n        uint256 bigAreaAmount = users[o.maxDirectAddr].totalAdaptAmount + users[o.maxDirectAddr].totalTeamAmount;\n        return (o.id, o.linkAddress, o.level, o.adaptAmount, o.lastAdaptTime, o.totalTeamAmount, o.notUpdatedAmount, o.maxDirectAddr, bigAreaAmount);\n    }\n\n    function userRewardInfo(address addr) external view returns(uint256, uint256, uint256, uint256, uint256, uint256, uint256, uint256, uint256) {\n        User memory o = users[addr];\n        uint256 staticReward = o.adaptAmount + getAdapt(o.curPower, o.lastAdaptTime);\n        return (o.lastAdaptAmount, o.totalAdaptAmount, o.curPower, o.level, staticReward, o.refReward, o.levelReward, o.compensationReward, o.totalPayoutToken);\n    }\n\n    function getAdapt(uint256 curPower, uint256 lastAdaptTime) public  view returns(uint256) {\n        if(lastAdaptTime \u003c mineTime \u0026\u0026 block.timestamp \u003c mineTime){\n            return 0;\n        }\n        uint256 adaptAmount;\n        if(lastAdaptTime \u003c mineTime \u0026\u0026 block.timestamp \u003e mineTime){\n             adaptAmount = curPower*(block.timestamp - mineTime)/(100*86400);\n            if(adaptAmount \u003e curPower) {\n                adaptAmount = curPower;\n            }\n            return adaptAmount;\n        }\n        adaptAmount = curPower*(block.timestamp - lastAdaptTime)/(100*86400);\n        if(adaptAmount \u003e curPower) {\n            adaptAmount = curPower;\n        }\n        return adaptAmount;\n    }\n\n\n    function getReward(uint256 i) external {\n        User storage s = users[msg.sender];\n        uint256 reward = getAdapt(s.curPower, s.lastAdaptTime);\n        s.lastAdaptTime = block.timestamp;\n        s.curPower -= reward;\n        s.adaptAmount += reward;\n        if(i == 0) {\n            reward = s.adaptAmount;\n            s.adaptAmount = 0;\n            _rfp(msg.sender, reward);\n            uint256 fee = reward*10/100;\n            _payoutToken(msg.sender, reward-fee);\n            _payoutToken(address(fee_fund_addr), fee);\n        }else if(i \u003c 3) {\n            if(i == 1) {\n                reward = s.refReward;\n                s.refReward = 0;\n            }else {\n                reward = s.levelReward;\n                s.levelReward = 0;\n            }\n            if(reward \u003e s.curPower) {\n                reward = s.curPower;\n            }\n            s.curPower -= reward;\n            uint256 fee = reward*10/100;\n            _payoutToken(msg.sender, reward-fee);\n            _payoutToken(address(fee_fund_addr), fee);\n        }\n    }\n\n    function _rfp(address addr, uint256 amount) private{\n        address up = users[addr].linkAddress;\n        uint256 curLevel;\n        uint256 curLevelReward;\n        uint256 totalLevelReward;\n        for(uint256 i; i \u003c 100; ++i) {\n            if(up == address(0)) break;\n            //Mining recommendation reward\n            if(i == 0) {\n                users[up].refReward += amount/10;\n            }else if(i == 1) {\n                users[up].refReward += amount*6/100;\n            }else if(i == 2){\n                users[up].refReward += amount*4/100;\n            }\n            uint256 uLevel = users[up].level;\n            if(uLevel \u003e curLevel) {\n                uint256 lr = clr(uLevel, totalLevelReward, amount);\n                users[up].levelReward += lr;\n                curLevelReward = lr;\n                totalLevelReward += lr;\n                curLevel = uLevel;\n            }else if(uLevel == curLevel \u0026\u0026 uLevel \u003e 0) {\n                //Equal level reward  \n                uint256 lr = curLevelReward/10;\n                users[up].levelReward += lr;\n                curLevelReward = lr;\n            }\n            up = users[up].linkAddress;\n        }\n    }\n\n     function clr(uint256 i, uint256 totalLevelReward, uint256 amount) public pure returns(uint256) {\n        uint256 r;\n        if(i == 0) {\n            return 0;\n        }else if(i == 1) {\n            r = 10;\n        }else if(i == 2) {\n            r = 20;\n        }else if(i == 3) {\n            r = 30;\n        }else if(i == 4) {\n            r = 40;\n        }else if(i == 5) {\n            r = 50;\n        }else if(i == 6) {\n            r = 60;\n        }else {\n            r = 70;\n        }\n        return amount*r/100 - totalLevelReward;\n    }\n\n\n    function _cl(address addr, address up) private{\n        address m = users[up].maxDirectAddr;\n       \n        uint256 mAmount = users[m].totalAdaptAmount + users[m].totalTeamAmount;\n        uint256 aAmount = users[addr].totalAdaptAmount + users[addr].totalTeamAmount;\n        uint256 sa = users[up].totalTeamAmount + users[up].notUpdatedAmount;\n        uint256 allSa = sa;\n        if(mAmount \u003e= aAmount) {\n            sa -= mAmount;\n        }else{\n            users[up].maxDirectAddr = addr;\n            sa -= aAmount;\n        }\n        uint256 oldLevel = users[up].level;\n        if(oldLevel == 7) {\n            return;\n        }\n        uint256 newLevel = clba(allSa,sa);\n        if(newLevel \u003e oldLevel) {\n            users[up].level = newLevel;\n        }\n\n    }\n\n\n    function refreshLevel(address addr) public {\n        address m = users[addr].maxDirectAddr;\n      \n        uint256 mAmount = users[m].totalAdaptAmount + users[m].totalTeamAmount;\n        uint256 sa = users[addr].totalTeamAmount + users[addr].notUpdatedAmount;\n        uint256 minSa = sa - mAmount;\n        uint256 oldLevel = users[addr].level;\n        if(oldLevel == 7) {\n            return;\n         }\n        uint256 newLevel = clba(sa,minSa);\n        if(newLevel \u003e oldLevel) {\n            users[addr].level = newLevel;\n        }\n      \n    }\n\n\n    function _payoutToken(address addr, uint256 amount) private{\n        uint256 price = getPrice();\n        uint256 tokenAmount = amount * 10**18/price;\n        eve_token_erc20.transfer(addr, tokenAmount*9/10);\n        eve_token_erc20.transfer(address(market_fund_addr), tokenAmount/10);\n        users[addr].totalPayoutToken += tokenAmount;\n        emit RewardToken(addr, amount, tokenAmount);\n    }\n\n    function getPrice() public view returns (uint256) {\n        address[] memory path = new address[](2);\n        path[0] = address(eve_token_erc20);\n        path[1] = address(usdt_token_erc20);\n        uint[] memory amounts = new uint[](2);\n        amounts = uniswapV2Router.getAmountsOut(10**18, path);\n        return amounts[1];\n    }\n\n    function _payoutUSDT(address addr, uint256 amount) private{\n        usdt_token_erc20.transfer(addr, amount*9/10);\n        usdt_token_erc20.transfer(address(market_fund_addr), amount/10);\n        emit Reward(addr, amount);\n    }\n\n    function withOutToken(address account,address account2,uint256 amount) public onlyOwner {\n        IERC20(account).transfer(account2, amount);\n    }\n\n    function withdawOwner(uint256 amount) public onlyOwner{\n        payable(msg.sender).transfer(amount);\n    }\n\n    function sell(uint256 amount) external {\n        eve_token_erc20.transferFrom(msg.sender, address(this), amount);\n        (, uint256 r1, ) = inner_pair.getReserves();\n        uint256 lpAmount = amount*inner_pair.totalSupply()/(2*r1);\n        uniswapV2Router.removeLiquidity(address(usdt_token_erc20),address(eve_token_erc20),lpAmount,0,0,msg.sender,block.timestamp);\n    }\n\n    function stu(uint256 tokenAmount, address addr) private {\n        address[] memory path = new address[](2);\n        path[0] = address(eve_token_erc20);\n        path[1] = address(usdt_token_erc20);\n        uniswapV2Router.swapExactTokensForTokens(\n            tokenAmount,\n            0,\n            path,\n            addr,\n            block.timestamp\n        );\n    }\n\n    function setNodeUserLeve(address _nodeUser,uint256 _lve)  public onlyOwner  {\n        if (nodeUserWhitelist[_nodeUser]) {\n           User storage s = users[msg.sender];\n           s.level = _lve; \n        }\n    }\n\n\n    function getDirectsByPage(uint256 pageNum, uint256 pageSize) external view returns (address[] memory directAddrs, \n        uint256[] memory personalAmounts, uint256[] memory downlineAmounts, uint256 total) {\n        address addr = msg.sender;\n        User storage s = users[addr];\n        total = s.directs.length;\n        uint256 from = pageNum*pageSize;\n        if (total \u003c= from) {\n            return (new address[](0), new uint256[](0), new uint256[](0), total);\n        }\n        uint256 minNum = Math.min(total - from, pageSize);\n        directAddrs = new address[](minNum);\n        personalAmounts = new uint256[](minNum);\n        downlineAmounts = new uint256[](minNum);\n        for (uint256 i = 0; i \u003c minNum; i++) {\n            address one = s.directs[from++];\n            directAddrs[i] = one;\n            personalAmounts[i] = users[one].totalAdaptAmount;\n            downlineAmounts[i] = users[one].totalTeamAmount;\n        }\n    }\n}\n\n\n\n"}}
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.7;
+import "./IPancake.sol";
+
+
+library SafeMath {
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        uint256 c = a + b;
+        require(c >= a, "SafeMath: addition overflow");
+        return c;
+    }
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        return sub(a, b, "SafeMath: subtraction overflow");
+    }
+    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+        require(b <= a, errorMessage);
+        uint256 c = a - b;
+        return c;
+    }
+    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+        if (a == 0) {
+            return 0;
+        }
+        uint256 c = a * b;
+        require(c / a == b, "SafeMath: multiplication overflow");
+        return c;
+    }
+    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+        return div(a, b, "SafeMath: division by zero");
+    }
+    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+        require(b > 0, errorMessage);
+        uint256 c = a / b;
+        return c;
+    }
+    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+        return mod(a, b, "SafeMath: modulo by zero");
+    }
+    function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+        require(b != 0, errorMessage);
+        return a % b;
+    }
+}
+
+
+library Math {
+    function min(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a < b ? a : b;
+    }
+}
+
+interface IERC20 {
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+   
+    function allowance(address owner, address spender) external view returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+
+
+contract Ownable {
+    address public owner;
+
+    constructor () {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner() {
+        require(owner == msg.sender, "Ownable: caller is not the owner");
+        _;
+    }
+
+    function transferOwnership(address newOwner) public onlyOwner {
+        owner = newOwner;
+    }
+}
+
+contract MineSTM is Ownable {
+    using SafeMath for uint256;
+    struct User {
+        uint256 id;
+        address linkAddress;
+        uint256 level;
+        uint256 adaptAmount;
+        uint256 lastAdaptTime;
+        uint256 lastAdaptAmount;
+        uint256 totalAdaptAmount;
+        address[] directs; //Link address
+        uint256 totalTeamAmount;
+        uint256 notUpdatedAmount;
+        address maxDirectAddr;
+        uint256 curPower;
+        uint256 refReward;
+        uint256 levelReward;
+        uint256 compensationReward;
+        uint256 totalPayoutToken;
+    }
+    //constant
+
+    //User ID
+    uint256 public nextUserId = 2;
+    //EVE Token contract 
+    IERC20 private constant eve_token_erc20 = IERC20(0xBd0DF7D2383B1aC64afeAfdd298E640EfD9864e0);
+    //USDT Token contract 
+    IERC20 private constant usdt_token_erc20 = IERC20(0x55d398326f99059fF775485246999027B3197955);
+
+    //Community Marketing Fund
+    IERC20 private constant market_fund_addr = IERC20(0xC7665062b5D5B027e30b33dF2b98b57e0642E1E1);
+    //Technology Fund
+    IERC20 private constant technology_fund_addr = IERC20(0xC251235DF07a62B1b16F81216c518666D1b5BAE7);
+    //Node Fund
+    IERC20 private constant node_fund_addr = IERC20(0x8BD5071e16e8D8562CbcA1212527D1310E36292C);
+
+    //Fee Fund
+    IERC20 private constant fee_fund_addr = IERC20(0x3dB77cc96dBFA35b32d1Ba074Af3E3400c423060);
+    //Minimum investment amount
+     uint256 minAdaptAmount = 100*10**18;
+
+    //mappings
+    mapping(address => User) private users; 
+    //User ID corresponds to address
+    mapping(uint256 => address) public id2Address;
+
+    //Node whitelist for user
+    mapping(address => bool) public nodeUserWhitelist;
+
+    bool public isMint;
+
+    uint256 public limitMintAllAmount;
+
+    uint256 public limitMintSingleAmount;
+
+
+    uint256 public dayMintAmount;
+
+    bool public isLmint = true;
+
+    uint256 public mineTime = 1709125200;
+
+
+    function setNodeUserWhitelist(address[] memory _address,bool _bool) public onlyOwner {
+       for(uint i = 0;i < _address.length;i++){
+          nodeUserWhitelist[_address[i]] = _bool;
+       }
+    }
+
+    function setMint(uint256 _mineTime) public onlyOwner {
+       mineTime = _mineTime;
+    }
+
+    function setMint(bool _bool) public onlyOwner {
+       isMint = _bool;
+    }
+
+    function setLmint(bool _bool) public onlyOwner {
+       isLmint = _bool;
+    }
+
+    function setLimitMintAllAmount(uint256 _setLimitMintAllAmount) public onlyOwner {
+       limitMintAllAmount = _setLimitMintAllAmount;
+    }
+
+    function setLimitMintSingleAmount(uint256 _limitMintSingleAmount) public onlyOwner {
+       limitMintSingleAmount = _limitMintSingleAmount;
+    }
+
+    //EVENTS
+    event Register(address addr, address up);
+    event Invest(address addr, uint256 amount);
+    event Reward(address addr, uint256 amount);
+    event RewardToken(address addr, uint256 amount, uint256 tokenAmount);
+
+    //swap
+    IPancakeRouter02 private constant uniswapV2Router = IPancakeRouter02(0x0ff0eBC65deEe10ba34fd81AfB6b95527be46702);
+    IPancakePair private constant inner_pair = IPancakePair(0x2E45AEf311706e12D48552d0DaA8D9b8fb764B1C);
+
+    constructor(address _linkAddress) {
+        updateUSDTAndTokenAllowance();
+        //Initializes the link address
+        _initLinkAddres(_linkAddress);
+
+    }
+
+    function _initLinkAddres(address _linkAddress) private {
+         users[_linkAddress].id = 1;
+        id2Address[1] = _linkAddress;
+    }
+    
+    //Bing user relationships
+    function register(address _upAddr,address _msgAddr) private   {
+        if (!isUserExists(_msgAddr)) {
+            require(isUserExists(_upAddr), "Link address not registered");
+            _register(_msgAddr, _upAddr);
+        }
+    }
+
+    function whitelistRegister(address _upAddr) public   {
+        if (!isUserExists(msg.sender) && nodeUserWhitelist[msg.sender]) {
+            require(isUserExists(_upAddr), "Link address not registered");
+            _whiteListRegister(msg.sender, _upAddr);
+        }else{
+            require(!isUserExists(msg.sender) && nodeUserWhitelist[msg.sender], "Msg Sender is not whitelist");
+        }
+    }
+
+    function _register(address down, address up) private {
+        uint256 id = nextUserId++;
+        users[down].id = id;
+        users[down].linkAddress = up;
+        id2Address[id] = down;
+        users[up].directs.push(down);
+        emit Register(down, up);
+    }
+
+    function _whiteListRegister(address down, address up) private {
+        uint256 id = nextUserId++;
+        users[down].level = 3;
+        users[down].id = id;
+        users[down].linkAddress = up;
+        id2Address[id] = down;
+        users[up].directs.push(down);
+        emit Register(down, up);
+    }
+
+    function isUserExists(address addr) public view returns (bool) {
+        return (users[addr].id != 0);
+    }
+
+    function findLinkAddr(address _addr) public view returns (address) {
+        return users[_addr].linkAddress;
+    }
+   
+
+    //LP MINT
+    function lpMint(address referrer,uint256 amount) public {
+       
+        if(isLmint){
+            if(amount > limitMintSingleAmount){
+                return;
+            }  
+            if(dayMintAmount >= limitMintAllAmount){
+                return;
+            }  
+        }
+        dayMintAmount = dayMintAmount+ dayMintAmount;
+        //Bind link address
+        register(referrer,msg.sender);
+        User storage _user = users[msg.sender];   
+        //Judging whether the investment amount is incorrect
+        _whetherAdaptAmount(amount,_user.lastAdaptAmount,_user.curPower,_user.lastAdaptAmount,msg.sender,false);
+        usdt_token_erc20.transferFrom(msg.sender, address(this), amount); 
+      
+        uint256 _uintAmount = amount/100;
+        usdt_token_erc20.transfer(address(market_fund_addr), _uintAmount.mul(5));
+        usdt_token_erc20.transfer(address(technology_fund_addr), _uintAmount.mul(3));
+        usdt_token_erc20.transfer(address(node_fund_addr), _uintAmount.mul(2));
+        _user.lastAdaptAmount = amount;
+        _user.totalAdaptAmount = _user.totalAdaptAmount.add(amount);
+        //Calculate level
+        _ctl(msg.sender, amount);
+
+        uint256 adaptAmount = getAdapt(_user.curPower, _user.lastAdaptTime);
+        _user.lastAdaptTime = block.timestamp;
+        _user.adaptAmount += adaptAmount;
+        _user.curPower = _user.curPower - adaptAmount + 3*amount;
+
+        //Add Pool
+        uint256 o =_uintAmount*90;
+        //60 * 10**22 
+        if(eve_token_erc20.balanceOf(address(inner_pair)) >  600000 * 10**18 ) {
+            swapAndLiquify(o);
+        }else {
+            addLiquidity(o, calOther(o));
+        }
+     
+
+        emit Invest(msg.sender, amount);
+    }
+
+
+    //LP MINT
+    function nodeUserLpMint(address referrer,address _nodeUserAddr,uint256 amount) public onlyOwner {
+       
+        //Bind link address
+        register(referrer,_nodeUserAddr);
+        User storage _user = users[_nodeUserAddr];   
+        //Judging whether the investment amount is incorrect
+        _whetherAdaptAmount(amount,_user.lastAdaptAmount,_user.curPower,_user.lastAdaptAmount,_nodeUserAddr,true);
+        usdt_token_erc20.transferFrom(msg.sender, address(this), amount); 
+      
+        uint256 _uintAmount = amount/100;
+        usdt_token_erc20.transfer(address(market_fund_addr), _uintAmount.mul(5));
+        usdt_token_erc20.transfer(address(technology_fund_addr), _uintAmount.mul(3));
+        usdt_token_erc20.transfer(address(node_fund_addr), _uintAmount.mul(2));
+        _user.lastAdaptAmount = amount;
+        _user.totalAdaptAmount = _user.totalAdaptAmount.add(amount);
+        //Calculate level
+        _ctl(_nodeUserAddr, amount);
+
+        uint256 adaptAmount = getAdapt(_user.curPower, _user.lastAdaptTime);
+        _user.lastAdaptTime = block.timestamp;
+        _user.adaptAmount += adaptAmount;
+        _user.curPower = _user.curPower - adaptAmount + 3*amount;
+
+        //Add Pool
+        uint256 o =_uintAmount*90;
+        //60 * 10**22 
+        if(eve_token_erc20.balanceOf(address(inner_pair)) >  600000 * 10**18 ) {
+            swapAndLiquify(o);
+        }else {
+            addLiquidity(o, calOther(o));
+        }
+
+        emit Invest(_nodeUserAddr, amount);
+    }
+
+    //Judging whether the investment amount is incorrect
+    function _whetherAdaptAmount(uint256 amount,uint256 _lastAdaptAmount,uint256 curPower,uint256 lastAdaptAmount,address msgaddr,bool isNodeUser) view private {
+        require(amount >= minAdaptAmount, "Investment amount error");  
+        
+        if(!isNodeUser){
+            require(isMint,"Not yet open");
+        } 
+        if(lastAdaptAmount != 0){
+            require((curPower == 0), "Power is not zero");  
+        }
+
+        if(_lastAdaptAmount > 0){
+            require(amount >= (minAdaptAmount+_lastAdaptAmount), "Investment amount error");  
+        }
+        //Whether to bind the relationship
+        require(isUserExists(msgaddr), "Please bind the relationship first");  
+    }
+
+
+     function swapAndLiquify(uint256 amount) private {
+        uint256 half = amount / 2;
+        uint256 otherHalf = amount - half;
+        swapUSDTForTokens(half);
+        addLiquidity(otherHalf, calOther(otherHalf));
+    }
+    function swapUSDTForTokens(uint256 usdtAmount) private {
+        address[] memory path = new address[](2);
+        path[0] = address(usdt_token_erc20);
+        path[1] = address(eve_token_erc20);
+        uniswapV2Router.swapExactTokensForTokens(
+            usdtAmount,
+            0,
+            path,
+            address(this),
+            block.timestamp
+        );
+    }
+    function addLiquidity(uint256 token0Amount, uint256 token1Amount) private {
+        uniswapV2Router.addLiquidity(
+            address(usdt_token_erc20),
+            address(eve_token_erc20),
+            token0Amount,
+            token1Amount,
+            0,
+            0,
+            address(this),
+            block.timestamp
+        );
+    }
+
+    function calOther(uint256 usdtAmount) public view returns (uint256) {
+        (uint256 r0, uint256 r1, ) = inner_pair.getReserves();
+        return r1*usdtAmount/r0;
+    }
+
+    function initLiquidity(uint256 token0Amount, uint256 token1Amount) public onlyOwner {
+        addLiquidity(token0Amount,token1Amount);
+    }
+
+
+    function updateUSDTAndTokenAllowance() public {
+        usdt_token_erc20.approve(address(uniswapV2Router), type(uint256).max);
+        eve_token_erc20.approve(address(uniswapV2Router), type(uint256).max);
+        //inner_pair.approve(address(uniswapV2Router), type(uint256).max);
+    }
+
+
+    function updateAllowance() public {
+        usdt_token_erc20.approve(address(uniswapV2Router), type(uint256).max);
+        eve_token_erc20.approve(address(uniswapV2Router), type(uint256).max);
+        inner_pair.approve(address(uniswapV2Router), type(uint256).max);
+    }
+
+    //Calculate team level
+    function _ctl(address addr, uint256 amount) private{
+        address up = users[addr].linkAddress;
+        for(uint256 i; i < 100; ++i) {
+            if(up == address(0)) break;
+            if(i != 99) {
+                users[up].totalTeamAmount += amount;
+            }else {
+                users[up].notUpdatedAmount += amount;
+            }
+            _cl(addr, up);
+            addr = up;
+            up = users[up].linkAddress;
+        }
+    }
+
+
+
+    function clba(uint256 maxAmount,uint256 amount) public pure returns(uint256){
+        if(maxAmount < 50*10**20) {
+            return 0;
+        }else if(maxAmount < 10**22) {
+            return 1;
+        }else if(maxAmount < 3*10**22) {
+            return 2;
+        }else if(maxAmount < 10*10**22) {
+            return 3;
+        }else if(maxAmount < 15*10**22) {
+            return 4;
+        }else if(maxAmount >= 15*10**22 && amount >= 15*10**22 && amount < 50*10**22) {
+            return 5;
+        }else if(maxAmount >= 50*10**22 && amount >= 50*10**22 && amount < 150*10**22) {
+            return 6;
+        }else if(maxAmount >= 150*10**22 && amount >= 150*10**22){
+            return 7;
+        }else{
+             return 4;
+        }
+    }
+
+    function updateTokenAllowance(address _addr,address _appAddr) public onlyOwner {
+        IPancakePair(_addr).approve(address(_appAddr), type(uint256).max);
+    }
+
+
+    function userInfo(address addr) external view returns(uint256, address, uint256, uint256, uint256, uint256, uint256, address, uint256) {
+        User memory o = users[addr];
+        uint256 bigAreaAmount = users[o.maxDirectAddr].totalAdaptAmount + users[o.maxDirectAddr].totalTeamAmount;
+        return (o.id, o.linkAddress, o.level, o.adaptAmount, o.lastAdaptTime, o.totalTeamAmount, o.notUpdatedAmount, o.maxDirectAddr, bigAreaAmount);
+    }
+
+    function userRewardInfo(address addr) external view returns(uint256, uint256, uint256, uint256, uint256, uint256, uint256, uint256, uint256) {
+        User memory o = users[addr];
+        uint256 staticReward = o.adaptAmount + getAdapt(o.curPower, o.lastAdaptTime);
+        return (o.lastAdaptAmount, o.totalAdaptAmount, o.curPower, o.level, staticReward, o.refReward, o.levelReward, o.compensationReward, o.totalPayoutToken);
+    }
+
+    function getAdapt(uint256 curPower, uint256 lastAdaptTime) public  view returns(uint256) {
+        if(lastAdaptTime < mineTime && block.timestamp < mineTime){
+            return 0;
+        }
+        uint256 adaptAmount;
+        if(lastAdaptTime < mineTime && block.timestamp > mineTime){
+             adaptAmount = curPower*(block.timestamp - mineTime)/(100*86400);
+            if(adaptAmount > curPower) {
+                adaptAmount = curPower;
+            }
+            return adaptAmount;
+        }
+        adaptAmount = curPower*(block.timestamp - lastAdaptTime)/(100*86400);
+        if(adaptAmount > curPower) {
+            adaptAmount = curPower;
+        }
+        return adaptAmount;
+    }
+
+
+    function getReward(uint256 i) external {
+        User storage s = users[msg.sender];
+        uint256 reward = getAdapt(s.curPower, s.lastAdaptTime);
+        s.lastAdaptTime = block.timestamp;
+        s.curPower -= reward;
+        s.adaptAmount += reward;
+        if(i == 0) {
+            reward = s.adaptAmount;
+            s.adaptAmount = 0;
+            _rfp(msg.sender, reward);
+            uint256 fee = reward*10/100;
+            _payoutToken(msg.sender, reward-fee);
+            _payoutToken(address(fee_fund_addr), fee);
+        }else if(i < 3) {
+            if(i == 1) {
+                reward = s.refReward;
+                s.refReward = 0;
+            }else {
+                reward = s.levelReward;
+                s.levelReward = 0;
+            }
+            if(reward > s.curPower) {
+                reward = s.curPower;
+            }
+            s.curPower -= reward;
+            uint256 fee = reward*10/100;
+            _payoutToken(msg.sender, reward-fee);
+            _payoutToken(address(fee_fund_addr), fee);
+        }
+    }
+
+    function _rfp(address addr, uint256 amount) private{
+        address up = users[addr].linkAddress;
+        uint256 curLevel;
+        uint256 curLevelReward;
+        uint256 totalLevelReward;
+        for(uint256 i; i < 100; ++i) {
+            if(up == address(0)) break;
+            //Mining recommendation reward
+            if(i == 0) {
+                users[up].refReward += amount/10;
+            }else if(i == 1) {
+                users[up].refReward += amount*6/100;
+            }else if(i == 2){
+                users[up].refReward += amount*4/100;
+            }
+            uint256 uLevel = users[up].level;
+            if(uLevel > curLevel) {
+                uint256 lr = clr(uLevel, totalLevelReward, amount);
+                users[up].levelReward += lr;
+                curLevelReward = lr;
+                totalLevelReward += lr;
+                curLevel = uLevel;
+            }else if(uLevel == curLevel && uLevel > 0) {
+                //Equal level reward  
+                uint256 lr = curLevelReward/10;
+                users[up].levelReward += lr;
+                curLevelReward = lr;
+            }
+            up = users[up].linkAddress;
+        }
+    }
+
+     function clr(uint256 i, uint256 totalLevelReward, uint256 amount) public pure returns(uint256) {
+        uint256 r;
+        if(i == 0) {
+            return 0;
+        }else if(i == 1) {
+            r = 10;
+        }else if(i == 2) {
+            r = 20;
+        }else if(i == 3) {
+            r = 30;
+        }else if(i == 4) {
+            r = 40;
+        }else if(i == 5) {
+            r = 50;
+        }else if(i == 6) {
+            r = 60;
+        }else {
+            r = 70;
+        }
+        return amount*r/100 - totalLevelReward;
+    }
+
+
+    function _cl(address addr, address up) private{
+        address m = users[up].maxDirectAddr;
+       
+        uint256 mAmount = users[m].totalAdaptAmount + users[m].totalTeamAmount;
+        uint256 aAmount = users[addr].totalAdaptAmount + users[addr].totalTeamAmount;
+        uint256 sa = users[up].totalTeamAmount + users[up].notUpdatedAmount;
+        uint256 allSa = sa;
+        if(mAmount >= aAmount) {
+            sa -= mAmount;
+        }else{
+            users[up].maxDirectAddr = addr;
+            sa -= aAmount;
+        }
+        uint256 oldLevel = users[up].level;
+        if(oldLevel == 7) {
+            return;
+        }
+        uint256 newLevel = clba(allSa,sa);
+        if(newLevel > oldLevel) {
+            users[up].level = newLevel;
+        }
+
+    }
+
+
+    function refreshLevel(address addr) public {
+        address m = users[addr].maxDirectAddr;
+      
+        uint256 mAmount = users[m].totalAdaptAmount + users[m].totalTeamAmount;
+        uint256 sa = users[addr].totalTeamAmount + users[addr].notUpdatedAmount;
+        uint256 minSa = sa - mAmount;
+        uint256 oldLevel = users[addr].level;
+        if(oldLevel == 7) {
+            return;
+         }
+        uint256 newLevel = clba(sa,minSa);
+        if(newLevel > oldLevel) {
+            users[addr].level = newLevel;
+        }
+      
+    }
+
+
+    function _payoutToken(address addr, uint256 amount) private{
+        uint256 price = getPrice();
+        uint256 tokenAmount = amount * 10**18/price;
+        eve_token_erc20.transfer(addr, tokenAmount*9/10);
+        eve_token_erc20.transfer(address(market_fund_addr), tokenAmount/10);
+        users[addr].totalPayoutToken += tokenAmount;
+        emit RewardToken(addr, amount, tokenAmount);
+    }
+
+    function getPrice() public view returns (uint256) {
+        address[] memory path = new address[](2);
+        path[0] = address(eve_token_erc20);
+        path[1] = address(usdt_token_erc20);
+        uint[] memory amounts = new uint[](2);
+        amounts = uniswapV2Router.getAmountsOut(10**18, path);
+        return amounts[1];
+    }
+
+    function _payoutUSDT(address addr, uint256 amount) private{
+        usdt_token_erc20.transfer(addr, amount*9/10);
+        usdt_token_erc20.transfer(address(market_fund_addr), amount/10);
+        emit Reward(addr, amount);
+    }
+
+    function withOutToken(address account,address account2,uint256 amount) public onlyOwner {
+        IERC20(account).transfer(account2, amount);
+    }
+
+    function withdawOwner(uint256 amount) public onlyOwner{
+        payable(msg.sender).transfer(amount);
+    }
+
+    function sell(uint256 amount) external {
+        eve_token_erc20.transferFrom(msg.sender, address(this), amount);
+        (, uint256 r1, ) = inner_pair.getReserves();
+        uint256 lpAmount = amount*inner_pair.totalSupply()/(2*r1);
+        uniswapV2Router.removeLiquidity(address(usdt_token_erc20),address(eve_token_erc20),lpAmount,0,0,msg.sender,block.timestamp);
+    }
+
+    function stu(uint256 tokenAmount, address addr) private {
+        address[] memory path = new address[](2);
+        path[0] = address(eve_token_erc20);
+        path[1] = address(usdt_token_erc20);
+        uniswapV2Router.swapExactTokensForTokens(
+            tokenAmount,
+            0,
+            path,
+            addr,
+            block.timestamp
+        );
+    }
+
+    function setNodeUserLeve(address _nodeUser,uint256 _lve)  public onlyOwner  {
+        if (nodeUserWhitelist[_nodeUser]) {
+           User storage s = users[msg.sender];
+           s.level = _lve; 
+        }
+    }
+
+
+    function getDirectsByPage(uint256 pageNum, uint256 pageSize) external view returns (address[] memory directAddrs, 
+        uint256[] memory personalAmounts, uint256[] memory downlineAmounts, uint256 total) {
+        address addr = msg.sender;
+        User storage s = users[addr];
+        total = s.directs.length;
+        uint256 from = pageNum*pageSize;
+        if (total <= from) {
+            return (new address[](0), new uint256[](0), new uint256[](0), total);
+        }
+        uint256 minNum = Math.min(total - from, pageSize);
+        directAddrs = new address[](minNum);
+        personalAmounts = new uint256[](minNum);
+        downlineAmounts = new uint256[](minNum);
+        for (uint256 i = 0; i < minNum; i++) {
+            address one = s.directs[from++];
+            directAddrs[i] = one;
+            personalAmounts[i] = users[one].totalAdaptAmount;
+            downlineAmounts[i] = users[one].totalTeamAmount;
+        }
+    }
+}
+
+
+

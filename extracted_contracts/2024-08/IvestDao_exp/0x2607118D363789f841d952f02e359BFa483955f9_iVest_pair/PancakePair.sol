@@ -2,7 +2,7 @@
 
 pragma solidity >=0.5.0;
 
-import {IRouter} from "../../../src/Interface/IRouter.sol";
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 
 interface IPancakePair {
     // 防火墙路由器

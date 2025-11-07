@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.14;
 
-import {IRouter} from "../../../src/Interface/IRouter.sol";
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 
 interface IERC20 {
     // 防火墙路由器

@@ -1,8 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.23;
 
-interface IMintableNft {
-    function transfer(address to) external;
-
-    function isTransferred() external view returns (bool);
-}
+import "./contracts/nft/IMintableNft.sol";

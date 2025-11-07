@@ -1,8 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0;
 
-interface IPancakeV3LmPool {
-  function accumulateReward(uint32 currTimestamp) external;
-
-  function crossLmTick(int24 tick, bool zeroForOne) external;
-}
+import "./@pancakeswap/v3-lm-pool/contracts/interfaces/IPancakeV3LmPool.sol";

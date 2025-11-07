@@ -1,14 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: MIT
-
 pragma solidity 0.5.17;
 
-// NOTE: Basically an alias for Vaults
-interface yERC20 {
-    function balanceOf(address owner) external view returns (uint256);
-
-    function deposit(uint256 _amount) external;
-
-    function withdraw(uint256 _amount) external;
-
-    function getPricePerFullShare() external view returns (uint256);
-}
+import "./rewards/dumpers/imports/yERC20.sol";

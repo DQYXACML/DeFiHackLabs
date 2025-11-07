@@ -1,3 +1,4 @@
-interface IOrionPoolV2Callee {
-    function orionpoolV2Call(address sender, uint amount0, uint amount1, bytes calldata data) external;
-}
+// AUTO-GENERATED SHIM - DO NOT EDIT
+pragma solidity ^0.8.0;
+
+import "./Users/koloale/orion-projects/orion-exchange/dev/contracts/utils/orionpool/core/interfaces/IOrionPoolV2Callee.sol";

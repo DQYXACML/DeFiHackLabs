@@ -1,10 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.4;
 
-interface IERC20Details {
-    function name() external view returns (string memory);
-
-    function symbol() external view returns (string memory);
-
-    function decimals() external view returns (uint8);
-}
+import "./contracts/interfaces/IERC20Details.sol";

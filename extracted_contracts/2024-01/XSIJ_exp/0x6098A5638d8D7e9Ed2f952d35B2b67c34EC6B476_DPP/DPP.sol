@@ -9,7 +9,7 @@
 
 pragma solidity 0.6.9;
 
-import {IRouter} from "../../../src/Interface/IRouter.sol";
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 pragma experimental ABIEncoderV2;
 
 /**

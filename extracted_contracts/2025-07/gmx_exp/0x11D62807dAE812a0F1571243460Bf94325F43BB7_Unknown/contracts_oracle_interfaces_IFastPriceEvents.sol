@@ -1,7 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: MIT
-
 pragma solidity 0.6.12;
 
-interface IFastPriceEvents {
-    function emitPriceEvent(address _token, uint256 _price) external;
-}
+import "./contracts/oracle/interfaces/IFastPriceEvents.sol";

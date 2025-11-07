@@ -1,27 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.28;
 
-import {ICore} from "../interfaces/ICore.sol";
-
-/**
-    @title Core Ownable
-    @author Prisma Finance (with edits by Resupply Finance)
-    @notice Contracts inheriting `CoreOwnable` have the same owner as `Core`.
-            The ownership cannot be independently modified or renounced.
- */
-contract CoreOwnable {
-    ICore public immutable core;
-
-    constructor(address _core) {
-        core = ICore(_core);
-    }
-
-    modifier onlyOwner() {
-        require(msg.sender == address(core), "!core");
-        _;
-    }
-
-    function owner() public view returns (address) {
-        return address(core);
-    }
-}
+import "./src/dependencies/CoreOwnable.sol";

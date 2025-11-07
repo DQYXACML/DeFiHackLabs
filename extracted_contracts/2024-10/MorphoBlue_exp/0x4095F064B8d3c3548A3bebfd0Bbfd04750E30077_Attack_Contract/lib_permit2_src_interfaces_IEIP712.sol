@@ -1,6 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-interface IEIP712 {
-    function DOMAIN_SEPARATOR() external view returns (bytes32);
-}
+import "./lib/permit2/src/interfaces/IEIP712.sol";

@@ -1,6 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts v4.4.1 (interfaces/IERC721.sol)
-
 pragma solidity ^0.8.0;
 
-import "../token/ERC721/IERC721.sol";
+import "./lib/openzeppelin-contracts/contracts/interfaces/IERC721.sol";

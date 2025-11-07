@@ -1,10 +1,5 @@
+// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: MIT
-
 pragma solidity 0.8.17;
 
-import "@1inch/limit-order-protocol-contract/contracts/interfaces/IInteractionNotificationReceiver.sol";
-import "./IFeeBankCharger.sol";
-
-interface ISettlement is IInteractionNotificationReceiver, IFeeBankCharger {
-    function settleOrders(bytes calldata order) external;
-}
+import "./contracts/interfaces/ISettlement.sol";
