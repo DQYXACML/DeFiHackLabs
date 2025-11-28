@@ -1,0 +1,198 @@
+{
+  "project": "Binemon_exp",
+  "protocol_type": "erc20",
+  "invariants": [
+    {
+      "id": "PATTERN_flash_change_001",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.25",
+      "threshold": 0.25,
+      "severity": "critical",
+      "contracts": [
+        "0xe56842ed550ff2794f010738554db45e60730371"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "50873185974756554017296592944440794240831285986180561776493526624516347856259",
+          "threshold": 0.25,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_ratio_break_001",
+      "type": "ratio_stability",
+      "category": "ratio_bound",
+      "description": "Ensure ratio stability between related values",
+      "formula": "abs(ratio_after - ratio_before) / ratio_before <= 0.3",
+      "threshold": 0.3,
+      "severity": "high",
+      "contracts": [
+        "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+        "0xe56842ed550ff2794f010738554db45e60730371"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "92639957533052256873145611451077437578864295538071564854669033163197283662566",
+          "threshold": 0.3,
+          "severity": "high"
+        },
+        "slot_1": {
+          "index": "88107076048094708554917451724260546305911452453393238545717313546038785626691",
+          "threshold": 0.3,
+          "severity": "high"
+        },
+        "slot_2": {
+          "index": "50873185974756554017296592944440794240831285986180561776493526624516347856259",
+          "threshold": 0.3,
+          "severity": "high"
+        },
+        "slot_3": {
+          "index": "72120402882770842457270405943719607522331758380080080366265068930979202045111",
+          "threshold": 0.3,
+          "severity": "high"
+        },
+        "slot_4": {
+          "index": "37553789715422909038981996360485086839421711411830299291851654431698861699903",
+          "threshold": 0.3,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.8
+      },
+      "protocol_type": null,
+      "attack_pattern": "ratio_break"
+    },
+    {
+      "id": "PATTERN_monotonic_increase_001",
+      "type": "growth_rate_limit",
+      "category": "bounded_growth",
+      "description": "Limit abnormal value growth rate",
+      "formula": "(value_after - value_before) / value_before <= 0.3",
+      "threshold": 0.3,
+      "severity": "high",
+      "contracts": [
+        "0xe56842ed550ff2794f010738554db45e60730371"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "50873185974756554017296592944440794240831285986180561776493526624516347856259",
+          "threshold": 0.3,
+          "severity": "high"
+        },
+        "slot_1": {
+          "index": "37553789715422909038981996360485086839421711411830299291851654431698861699903",
+          "threshold": 0.3,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.7
+      },
+      "protocol_type": null,
+      "attack_pattern": "monotonic_increase"
+    },
+    {
+      "id": "PATTERN_reentrancy_balance_001",
+      "type": "balance_change_limit",
+      "category": "bounded_value",
+      "description": "Limit balance changes to prevent reentrancy attacks",
+      "formula": "abs(balance_after - balance_before) / balance_before <= 0.25",
+      "threshold": 0.25,
+      "severity": "high",
+      "contracts": [
+        "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+      ],
+      "slots": {},
+      "detection_confidence": {
+        "pattern_match": 0.75
+      },
+      "protocol_type": null,
+      "attack_pattern": "reentrancy_balance"
+    },
+    {
+      "id": "PATTERN_reentrancy_balance_002",
+      "type": "balance_change_limit",
+      "category": "bounded_value",
+      "description": "Limit balance changes to prevent reentrancy attacks",
+      "formula": "abs(balance_after - balance_before) / balance_before <= 0.25",
+      "threshold": 0.25,
+      "severity": "high",
+      "contracts": [
+        "0x835b45d38cbdccf99e609436ff38e31ac05bc502"
+      ],
+      "slots": {},
+      "detection_confidence": {
+        "pattern_match": 0.75
+      },
+      "protocol_type": null,
+      "attack_pattern": "reentrancy_balance"
+    }
+  ],
+  "statistics": {
+    "total_invariants": 5,
+    "by_category": {
+      "bounded_value": 3,
+      "ratio_bound": 1,
+      "bounded_growth": 1
+    },
+    "by_severity": {
+      "critical": 1,
+      "high": 4
+    }
+  },
+  "errors": [],
+  "protocol_confidence": 1.0,
+  "semantic_mapping_coverage": 0.023255813953488372,
+  "state_changes": {
+    "contracts_changed": 6,
+    "slots_changed": 30,
+    "extreme_changes": 3
+  },
+  "attack_patterns": [
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "ratio_break",
+      "severity": "high",
+      "confidence": 0.8,
+      "description": "Correlated extreme changes across contracts (potential ratio manipulation)"
+    },
+    {
+      "type": "monotonic_increase",
+      "severity": "high",
+      "confidence": 0.7,
+      "description": "Multiple slots with large increases (potential price manipulation)"
+    },
+    {
+      "type": "reentrancy_balance",
+      "severity": "high",
+      "confidence": 0.75,
+      "description": "Large balance decrease: 141981.79 ETH"
+    },
+    {
+      "type": "reentrancy_balance",
+      "severity": "high",
+      "confidence": 0.75,
+      "description": "Large balance decrease: 2.77 ETH"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 812168007252679721862647"
+    }
+  ]
+}

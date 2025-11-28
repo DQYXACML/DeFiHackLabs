@@ -4,34 +4,111 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker: https://etherscan.io/address/0x394ba273315240510b61ca22ba152e3478a45892"
+    "context": "// Attacker: https://etherscan.io/address/0x394ba273315240510b61ca22ba152e3478a45892",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x93d4f6f84d242c7959f8d1f1917ddbc9fb925ada",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract: https://etherscan.io/address/0x93d4f6f84d242c7959f8d1f1917ddbc9fb925ada"
+    "context": "// Attack Contract: https://etherscan.io/address/0x93d4f6f84d242c7959f8d1f1917ddbc9fb925ada",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xA1cE40702E15d0417a6c74D0bAB96772F36F4E99",
-    "name": null,
+    "name": "WIFStaking",
     "chain": "mainnet",
     "source": "static",
-    "context": "WIFStaking(0xA1cE40702E15d0417a6c74D0bAB96772F36F4E99)"
+    "context": "WIFStaking WifStake = WIFStaking(0xA1cE40702E15d0417a6c74D0bAB96772F36F4E99)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WIFStaking"
+    ]
   },
   {
     "address": "0xBFae33128ecF041856378b57adf0449181FFFDE7",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xBFae33128ecF041856378b57adf0449181FFFDE7)"
+    "context": "IERC20 Wif = IERC20(0xBFae33128ecF041856378b57adf0449181FFFDE7)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
     "name": null,
     "chain": "mainnet",
     "source": "static",
-    "context": "address(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)"
+    "context": "address(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x64571ea88C809abeeA5DdbEb7427eF37F87946D0",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2504",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 23974",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

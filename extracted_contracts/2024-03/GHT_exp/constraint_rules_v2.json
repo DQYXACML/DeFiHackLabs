@@ -1,0 +1,97 @@
+{
+  "protocol": "GHT_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": "0x528e046acfb52bd3f9c400e7a5c79a8a2c2863d0",
+    "name": "GHT"
+  },
+  "constraints": [
+    {
+      "function": "swap",
+      "signature": "swap(...)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large swap causing price manipulation",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "0"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(...)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large swap causing price manipulation",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "amountOut"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [],
+    "total_changed_slots": 0
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 4
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

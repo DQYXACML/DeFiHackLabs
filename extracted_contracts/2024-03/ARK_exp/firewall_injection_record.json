@@ -1,0 +1,21 @@
+{
+  "protocol": "ARK_exp",
+  "year_month": "2024-03",
+  "injection_timestamp": "2025-11-23T05:05:43.899472Z",
+  "main_contract": {
+    "name": "Uni_Pair_V2",
+    "actual_contract_name": "PancakeERC20",
+    "address": "0xc0F54B8755DAF1Fd78933335EfCD761e3D5B4a6F"
+  },
+  "injected_contracts": [
+    {
+      "file": "PancakePair.sol",
+      "functions": [
+        "getReserves",
+        "swap"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

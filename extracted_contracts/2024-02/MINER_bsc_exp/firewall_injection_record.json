@@ -1,0 +1,21 @@
+{
+  "protocol": "MINER_bsc_exp",
+  "year_month": "2024-02",
+  "injection_timestamp": "2025-11-23T03:18:47.318234Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "PancakeERC20",
+    "address": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e"
+  },
+  "injected_contracts": [
+    {
+      "file": "PancakePair.sol",
+      "functions": [
+        "swap",
+        "skim"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

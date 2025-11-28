@@ -4,41 +4,191 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0x835b45d38cbdccf99e609436ff38e31ac05bc502"
+    "context": "// Attacker : https://bscscan.com/address/0x835b45d38cbdccf99e609436ff38e31ac05bc502",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x132e1ea5db918dae00eef685b845c409a83dfa82",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x132e1ea5db918dae00eef685b845c409a83dfa82"
+    "context": "// Attack Contract : https://bscscan.com/address/0x132e1ea5db918dae00eef685b845c409a83dfa82",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xe56842ed550ff2794f010738554db45e60730371",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0xe56842ed550ff2794f010738554db45e60730371"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0xe56842ed550ff2794f010738554db45e60730371",
+    "onchain_name": null,
+    "symbol": "BIN",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "BIN",
+      "Vulnerable_Contract",
+      "bin",
+      "IBIN"
+    ]
+  },
+  {
+    "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "name": "IPancakeRouter",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IPancakeRouter Router = IPancakeRouter(payable(0x10ED43C718714eb63d5aA57B78B54704E256024E))",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IPancakeRouter"
+    ]
   },
   {
     "address": "0xAb7BF20f8Ebbb286644b2C57ea448F27ef0598d4",
     "name": "otherUser",
     "chain": "bsc",
     "source": "static",
-    "context": "address otherUser = 0xAb7BF20f8Ebbb286644b2C57ea448F27ef0598d4"
+    "context": "address otherUser = 0xAb7BF20f8Ebbb286644b2C57ea448F27ef0598d4",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "otherUser"
+    ]
   },
   {
     "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c)"
+    "context": "IERC20 WBNB = IERC20(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c)",
+    "onchain_name": null,
+    "symbol": "WBNB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WBNB",
+      "IERC20",
+      "wbnb",
+      "IWBNB"
+    ]
   },
   {
-    "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "address": "0xe432afB7283A08Be24E9038C30CA6336A7cC8218",
     "name": null,
     "chain": "bsc",
-    "source": "static",
-    "context": "payable(0x10ED43C718714eb63d5aA57B78B54704E256024E)"
+    "source": "dynamic",
+    "context": "called with gas 2893",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
+  },
+  {
+    "address": "0x621f589e3CBb8e710241DDfbc2b291cDBf69b453",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1da434b76eba4736d6e760bfd78cbf883a0776ee",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x5ff10565516c110180bb9cc111cdbc2b0a68e09f",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x2d95b34855a4692fd417388e3bb320333be94a29",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x564461b75e245267209194b869465fae25d065bc",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

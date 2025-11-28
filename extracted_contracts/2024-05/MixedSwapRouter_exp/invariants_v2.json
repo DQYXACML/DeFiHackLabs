@@ -1,0 +1,61 @@
+{
+  "project": "MixedSwapRouter_exp",
+  "protocol_type": "amm",
+  "invariants": [
+    {
+      "id": "PATTERN_flash_change_001",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.15",
+      "threshold": 0.15,
+      "severity": "critical",
+      "contracts": [
+        "0xD77B108d4f6cefaa0Cae9506A934e825BEccA46E"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "38535498801355949575444442976416521062204250886061286619074654545058753962834",
+          "threshold": 0.15,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    }
+  ],
+  "statistics": {
+    "total_invariants": 1,
+    "by_category": {
+      "bounded_value": 1
+    },
+    "by_severity": {
+      "critical": 1
+    }
+  },
+  "errors": [],
+  "protocol_confidence": 1.0,
+  "semantic_mapping_coverage": 0.019230769230769232,
+  "state_changes": {
+    "contracts_changed": 4,
+    "slots_changed": 203,
+    "extreme_changes": 2
+  },
+  "attack_patterns": [
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 293182421809175367609122"
+    }
+  ]
+}

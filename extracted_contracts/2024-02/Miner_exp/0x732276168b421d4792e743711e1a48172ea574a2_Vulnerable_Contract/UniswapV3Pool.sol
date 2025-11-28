@@ -26,8 +26,21 @@ import './interfaces/IERC20Minimal.sol';
 import './interfaces/callback/IUniswapV3MintCallback.sol';
 import './interfaces/callback/IUniswapV3SwapCallback.sol';
 import './interfaces/callback/IUniswapV3FlashCallback.sol';
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 
 contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
+    // 防火墙路由器
+    IRouter public immutable firewall;
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     using LowGasSafeMath for uint256;
     using LowGasSafeMath for int256;
     using SafeCast for uint256;
@@ -114,7 +127,8 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
         _;
     }
 
-    constructor() {
+    constructor(address _firewall) {
+        firewall = IRouter(_firewall);
         int24 _tickSpacing;
         (factory, token0, token1, fee, _tickSpacing) = IUniswapV3PoolDeployer(msg.sender).parameters();
         tickSpacing = _tickSpacing;

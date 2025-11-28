@@ -27,6 +27,12 @@ contract InitializableOwnable {
     constructor(address _firewall) {
         firewall = IRouter(_firewall);
     }
+    // 初始化函数：注入防火墙路由器（仅可调用一次）
+    function initialize(address _firewall) public initializer {
+        firewall = IRouter(_firewall);
+    }
+
+
 
 
     modifier firewallProtected() {

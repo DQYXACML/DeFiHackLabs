@@ -1,0 +1,103 @@
+{
+  "protocol": "BlueberryProtocol_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0xffadb0bba4379dfabfb20ca6823f6ec439429ec2",
+    "name": "BlueberryProtocol"
+  },
+  "constraints": [
+    {
+      "function": "enterMarkets",
+      "signature": "enterMarkets(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "tokenList > 394099893532312177414665613456844869695868764160",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 1313666311774373982231574085632 iterations (capped)",
+        "variables": {
+          "tokenList": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "tokenList"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "97973384997205482711442486779699112671946612529115689405524164420430543948166",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 1313666311774373926703301556414089127328028889526
+          }
+        },
+        "danger_condition": "tokenList >= 1182299680596936532243996840370534609087606292480",
+        "safe_condition": "tokenList <= 394099893532312177414665613456844869695868764160",
+        "threshold_value": 394099893532312177414665613456844869695868764160
+      },
+      "analysis": {
+        "state_value": 1313666311774373926703301556414089127328028889526,
+        "threshold": 656833155887186963351650778207044563664014444763,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代1313666311774373982231574085632次超过上限10000，使用保守阈值394099893532312177414665613456844869695868764160",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.313666311774374e+30,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "97973384997205482711442486779699112671946612529115689405524164420430543948166",
+        "before": 0,
+        "after": 1313666311774373926703301556414089127328028889526,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "97973384997205482711442486779699112671946612529115689405524164420430543948165",
+        "before": 0,
+        "after": 574136153464250505202474970751865860621998632417,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "97973384997205482711442486779699112671946612529115689405524164420430543948163",
+        "before": 0,
+        "after": 572265394125576997003567379738782310454637620690,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "97973384997205482711442486779699112671946612529115689405524164420430543948164",
+        "before": 0,
+        "after": 48593343064111869732142122557559526894743378204,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "4621508801004731693724123244131014089597138042107790960363381237838569841880",
+        "before": 0,
+        "after": 4,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 9
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 10
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

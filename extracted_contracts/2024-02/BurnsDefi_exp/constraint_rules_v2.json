@@ -1,0 +1,103 @@
+{
+  "protocol": "BurnsDefi_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+    "name": "BurnsBuild"
+  },
+  "constraints": [
+    {
+      "function": "burnToHolder",
+      "signature": "burnToHolder(...)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "exploiter > 34737626769213695565514836164503977698005748977364513567099950545353310208000",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 79448442482009020885502385278863428412102770950144 iterations (capped)",
+        "variables": {
+          "exploiter": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "exploiter"
+          },
+          "balance_mapping_decreased": {
+            "source": "storage",
+            "slot": "84698862266991854904005734286741600295973971312225846189512318546084701436236",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_decreased",
+            "before_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
+            "after_value": 115792089151263877708212007105076049899476168743876059489568517392279208352122
+          }
+        },
+        "danger_condition": "exploiter >= 104212880307641093124296685529473035261865616296743950790111826767231271829504",
+        "safe_condition": "exploiter <= 34737626769213695565514836164503977698005748977364513567099950545353310208000",
+        "threshold_value": 34737626769213695565514836164503977698005748977364513567099950545353310208000
+      },
+      "analysis": {
+        "state_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
+        "threshold": 34737626769213696057066308958677210601967537462352961162819771231134026831409,
+        "coefficient": 0.3,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代79448442482009020885502385278863428412102770950144次超过上限10000，使用保守阈值34737626769213695565514836164503977698005748977364513567099950545353310208000",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 7.944844248200902e+49,
+        "change_direction": "decrease"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "84698862266991854904005734286741600295973971312225846189512318546084701436236",
+        "before": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
+        "after": 115792089151263877708212007105076049899476168743876059489568517392279208352122,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "8",
+        "before": 115792089234435451691210408734372287152517739725046579312049480992491922601307,
+        "after": 115792089178748581544977283843866212842292857053854107239022392453920056253496,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "98521912898304110675870976153671229506380941016514884467413255631823579132687",
+        "before": 842387768628802597799297778540369909942724041966391214537089097915,
+        "after": 24595887922627494642916807203614156224445131570941558234007091058324,
+        "change_pct": 2819.78,
+        "is_new_slot": false
+      },
+      {
+        "slot": "27807938720363268233309785251301088404070365511070192663780122587860553147706",
+        "before": 0,
+        "after": 27106912255452883129714992257350424159861354648380838301,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "10226609745416142990264504704077599687481401731047828770274135821331276713286",
+        "before": 0,
+        "after": 1153122685558070724741731928046350697416412873529,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 20
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 5
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

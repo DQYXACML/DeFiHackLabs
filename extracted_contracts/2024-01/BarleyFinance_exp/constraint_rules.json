@@ -1,0 +1,103 @@
+{
+  "protocol": "BarleyFinance_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x04c80bb477890f3021f03b068238836ee20aa0b8",
+    "name": "wBARL"
+  },
+  "constraints": [
+    {
+      "function": "flash",
+      "signature": "flash(address,address,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > totalLiquidity * 0.3",
+        "semantics": "Large flashloan exceeding 30% of pool liquidity",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "BARL.balanceOf(address(wBARL))"
+          },
+          "totalLiquidity": {
+            "source": "storage",
+            "slot": "0x3",
+            "type": "uint256",
+            "semantic_name": "totalLiquidity"
+          }
+        },
+        "danger_condition": "amount > totalLiquidity * 0.3",
+        "safe_condition": "amount <= totalLiquidity * 0.05"
+      }
+    },
+    {
+      "function": "debond",
+      "signature": "debond(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > totalSupply * 0.5",
+        "semantics": "Large deposit exceeding 50% of total supply",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "wBARL.balanceOf(address(this))"
+          },
+          "totalSupply": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "totalSupply"
+          }
+        },
+        "danger_condition": "amount > totalSupply * 0.5",
+        "safe_condition": "amount <= totalSupply * 0.1"
+      }
+    },
+    {
+      "function": "bond",
+      "signature": "bond(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > totalSupply * 0.5",
+        "semantics": "Large deposit exceeding 50% of total supply",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "BARL.balanceOf(address(this))"
+          },
+          "totalSupply": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "totalSupply"
+          }
+        },
+        "danger_condition": "amount > totalSupply * 0.5",
+        "safe_condition": "amount <= totalSupply * 0.1"
+      }
+    }
+  ],
+  "storage_analysis": {
+    "changed_slots": [
+      "2",
+      "27345345294061825628103022900114978450352795135033401968609844108243198926249"
+    ],
+    "total_slots": 11
+  },
+  "attack_metadata": {
+    "loop_count": 20,
+    "total_calls": 3
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

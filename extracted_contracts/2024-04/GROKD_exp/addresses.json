@@ -4,34 +4,181 @@
     "name": "_grokd",
     "chain": "bsc",
     "source": "static",
-    "context": "address _grokd = 0xa4133feD73Ea3361f2f928f98313b1e1e5049612"
+    "context": "address _grokd = 0xa4133feD73Ea3361f2f928f98313b1e1e5049612",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "_grokd"
+    ]
   },
   {
     "address": "0x8AF65d9114DfcCd050e7352D77eeC98f40c42CFD",
     "name": "_pair",
     "chain": "bsc",
     "source": "static",
-    "context": "address _pair = 0x8AF65d9114DfcCd050e7352D77eeC98f40c42CFD"
+    "context": "address _pair = 0x8AF65d9114DfcCd050e7352D77eeC98f40c42CFD",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "_pair"
+    ]
   },
   {
     "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
     "name": "_wBNB",
     "chain": "bsc",
     "source": "static",
-    "context": "address _wBNB = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+    "context": "address _wBNB = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "onchain_name": null,
+    "symbol": "WBNB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WBNB",
+      "_wBNB",
+      "wbnb",
+      "IWBNB"
+    ]
   },
   {
     "address": "0x31d3231cDa62C0b7989b488cA747245676a32D81",
     "name": "_deposite",
     "chain": "bsc",
     "source": "static",
-    "context": "address _deposite = 0x31d3231cDa62C0b7989b488cA747245676a32D81"
+    "context": "address _deposite = 0x31d3231cDa62C0b7989b488cA747245676a32D81",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "_deposite"
+    ]
   },
   {
     "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-    "name": null,
+    "name": "_route",
     "chain": "bsc",
     "source": "static",
-    "context": "payable(0x10ED43C718714eb63d5aA57B78B54704E256024E)"
+    "context": "address _route = payable(0x10ED43C718714eb63d5aA57B78B54704E256024E)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "_route"
+    ]
+  },
+  {
+    "address": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2676",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xC20e1671ABFcd8998DFF7EbDADA96363C4DAdDF6",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x80F68A60f403691b8b426832816667cC68ac78e5",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xcFf994BB6a1DdF2c9b9b1Bbfabe66592f5d6f544",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xec61196d3E2AE276eEcF070110075118aBD1f63E",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 12796",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0ED943Ce24BaEBf257488771759F9BF482C39706",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

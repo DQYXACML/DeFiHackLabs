@@ -1,0 +1,20 @@
+{
+  "protocol": "WiseLending02_exp",
+  "year_month": "2024-01",
+  "injection_timestamp": "2025-11-26T04:21:29.118469Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "WiseLowLevelHelper",
+    "address": "0x37e49bf3749513a02fa535f0cbc383796e8107e4"
+  },
+  "injected_contracts": [
+    {
+      "file": "WiseLowLevelHelper.sol",
+      "functions": [
+        "getPositionLendingShares"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

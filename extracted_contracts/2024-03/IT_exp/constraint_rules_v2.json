@@ -1,0 +1,48 @@
+{
+  "protocol": "IT_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": null,
+    "name": null
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "8",
+        "before": 46110538846244129485705111156364825820343572043379802604281284487325730018030,
+        "after": 46110581550799650252254088247085887545514712003900340533514593217823565392808,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "10",
+        "before": 43445445314897796118634452290503694059953,
+        "after": 43518298265005772029410749889021781713745,
+        "change_pct": 0.17,
+        "is_new_slot": false
+      },
+      {
+        "slot": "9",
+        "before": 165146056520074444037417041706680846415,
+        "after": 166074557230679005771659525599721657263,
+        "change_pct": 0.56,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 3
+  },
+  "attack_metadata": {
+    "loop_count": 9,
+    "total_calls": 4
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

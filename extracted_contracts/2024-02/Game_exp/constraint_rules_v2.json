@@ -1,0 +1,48 @@
+{
+  "protocol": "Game_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0x52d69c67536f55efefe02941868e5e762538dbd6",
+    "name": "Game"
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "1160",
+        "before": 106172368653390111657278550645583938185423854464,
+        "after": 806704607451162428533056415470847445111900786986,
+        "change_pct": 659.81,
+        "is_new_slot": false
+      },
+      {
+        "slot": "1161",
+        "before": 3675000000000001,
+        "after": 14700000000000001,
+        "change_pct": 300.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "1162",
+        "before": 1707860255,
+        "after": 1707862775,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 3
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 0
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

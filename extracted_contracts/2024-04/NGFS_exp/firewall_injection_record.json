@@ -1,0 +1,22 @@
+{
+  "protocol": "NGFS_exp",
+  "year_month": "2024-04",
+  "injection_timestamp": "2025-11-23T05:06:27.366488Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "NGFSToken",
+    "address": "0xa608985f5b40cdf6862bec775207f84280a91e3a"
+  },
+  "injected_contracts": [
+    {
+      "file": "NGFSToken.sol",
+      "functions": [
+        "setProxySync",
+        "delegateCallReserves",
+        "reserveMultiSync"
+      ]
+    }
+  ],
+  "total_functions": 3,
+  "status": "success"
+}

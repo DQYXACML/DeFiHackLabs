@@ -1,30 +1,107 @@
 [
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": "WETH",
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "private constant WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "IERC20 private constant WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0x6A7eFF1e2c355AD6eb91BEbB5ded49257F3FED98",
-    "name": "OPSEC",
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "private constant OPSEC = IERC20(0x6A7eFF1e2c355AD6eb91BEbB5ded49257F3FED98)"
+    "context": "IERC20 private constant OPSEC = IERC20(0x6A7eFF1e2c355AD6eb91BEbB5ded49257F3FED98)",
+    "onchain_name": null,
+    "symbol": "OPSEC",
+    "decimals": 18,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "OPSEC",
+      "IERC20",
+      "opsec",
+      "IOPSEC"
+    ]
   },
   {
     "address": "0x77E06c9eCCf2E797fd462A92B6D7642EF85b0A44",
-    "name": "wTAO",
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "private constant wTAO = IERC20(0x77E06c9eCCf2E797fd462A92B6D7642EF85b0A44)"
+    "context": "IERC20 private constant wTAO = IERC20(0x77E06c9eCCf2E797fd462A92B6D7642EF85b0A44)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x00000000FdAC7708D0D360BDDc1bc7d097F47439",
-    "name": "AugustusV6",
+    "name": "IParaSwapAugustusV6",
     "chain": "mainnet",
     "source": "static",
-    "context": "private constant AugustusV6 = IParaSwapAugustusV6(0x00000000FdAC7708D0D360BDDc1bc7d097F47439)"
+    "context": "IParaSwapAugustusV6 private constant AugustusV6 = IParaSwapAugustusV6(0x00000000FdAC7708D0D360BDDc1bc7d097F47439)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IParaSwapAugustusV6"
+    ]
+  },
+  {
+    "address": "0x45f4d60405b797a2b0e5eA581fe6EA445CB46b8f",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 256557",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0cc396F558aAE5200bb0aBB23225aCcafCA31E27",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

@@ -1,0 +1,20 @@
+{
+  "protocol": "TCH_exp",
+  "year_month": "2024-05",
+  "injection_timestamp": "2025-11-23T05:07:38.516178Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "ERC20",
+    "address": "0x5d78cfc8732fd328015c9b73699de9556ef06e8e"
+  },
+  "injected_contracts": [
+    {
+      "file": "tch.sol",
+      "functions": [
+        "burnToken"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

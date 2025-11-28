@@ -1,0 +1,48 @@
+{
+  "protocol": "DAO_SoulMate_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x82c063afefb226859abd427ae40167cb77174b68",
+    "name": "SoulMateContract"
+  },
+  "constraints": [
+    {
+      "function": "redeem",
+      "signature": "redeem(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > userBalance * 0.9",
+        "semantics": "Draining large portion of user balance",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "BUI.balanceOf(address(SoulMateContract))"
+          },
+          "userBalance": {
+            "source": "storage",
+            "slot": "dynamic",
+            "type": "uint256",
+            "semantic_name": "balanceOf(attacker)"
+          }
+        },
+        "danger_condition": "amount > userBalance * 0.9",
+        "safe_condition": "amount <= userBalance * 0.5"
+      }
+    }
+  ],
+  "storage_analysis": {
+    "changed_slots": [],
+    "total_slots": 2
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 1
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

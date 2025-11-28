@@ -1,0 +1,250 @@
+{
+  "project": "ParticleTrade_exp",
+  "protocol_type": "unknown",
+  "invariants": [
+    {
+      "id": "PATTERN_flash_change_001",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0xe55607b2967ddbe5fa9a6a921991545b8277ef8f"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "17133922932846127391933629947377044050857426110071017118950864706899715806438",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_1": {
+          "index": "84138226555030715670016883210065006068407234727292564952573111326339097064324",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_flash_change_002",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0x7c5C9AfEcf4013c43217Fb6A626A4687381f080D"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "65270577854416049530209873914687241795127981885329514402743814953937347836848",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_1": {
+          "index": "65896303339357344996574975889399042533000871586828985470767317312479395684625",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_ratio_break_001",
+      "type": "ratio_stability",
+      "category": "ratio_bound",
+      "description": "Ensure ratio stability between related values",
+      "formula": "abs(ratio_after - ratio_before) / ratio_before <= 0.12",
+      "threshold": 0.12,
+      "severity": "high",
+      "contracts": [
+        "0xe55607b2967ddbe5fa9a6a921991545b8277ef8f",
+        "0x7c5C9AfEcf4013c43217Fb6A626A4687381f080D"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "17133922932846127391933629947377044050857426110071017118950864706899715806438",
+          "threshold": 0.12,
+          "severity": "high"
+        },
+        "slot_1": {
+          "index": "84138226555030715670016883210065006068407234727292564952573111326339097064324",
+          "threshold": 0.12,
+          "severity": "high"
+        },
+        "slot_2": {
+          "index": "65270577854416049530209873914687241795127981885329514402743814953937347836848",
+          "threshold": 0.12,
+          "severity": "high"
+        },
+        "slot_3": {
+          "index": "65896303339357344996574975889399042533000871586828985470767317312479395684625",
+          "threshold": 0.12,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.8
+      },
+      "protocol_type": null,
+      "attack_pattern": "ratio_break"
+    },
+    {
+      "id": "PATTERN_monotonic_increase_001",
+      "type": "growth_rate_limit",
+      "category": "bounded_growth",
+      "description": "Limit abnormal value growth rate",
+      "formula": "(value_after - value_before) / value_before <= 0.16",
+      "threshold": 0.16,
+      "severity": "high",
+      "contracts": [
+        "0xe55607b2967ddbe5fa9a6a921991545b8277ef8f"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "17133922932846127391933629947377044050857426110071017118950864706899715806438",
+          "threshold": 0.16,
+          "severity": "high"
+        },
+        "slot_1": {
+          "index": "84138226555030715670016883210065006068407234727292564952573111326339097064324",
+          "threshold": 0.16,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.7
+      },
+      "protocol_type": null,
+      "attack_pattern": "monotonic_increase"
+    },
+    {
+      "id": "PATTERN_monotonic_increase_002",
+      "type": "growth_rate_limit",
+      "category": "bounded_growth",
+      "description": "Limit abnormal value growth rate",
+      "formula": "(value_after - value_before) / value_before <= 0.16",
+      "threshold": 0.16,
+      "severity": "high",
+      "contracts": [
+        "0x7c5C9AfEcf4013c43217Fb6A626A4687381f080D"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "65270577854416049530209873914687241795127981885329514402743814953937347836848",
+          "threshold": 0.16,
+          "severity": "high"
+        },
+        "slot_1": {
+          "index": "65896303339357344996574975889399042533000871586828985470767317312479395684625",
+          "threshold": 0.16,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.7
+      },
+      "protocol_type": null,
+      "attack_pattern": "monotonic_increase"
+    },
+    {
+      "id": "PATTERN_reentrancy_balance_001",
+      "type": "balance_change_limit",
+      "category": "bounded_value",
+      "description": "Limit balance changes to prevent reentrancy attacks",
+      "formula": "abs(balance_after - balance_before) / balance_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "high",
+      "contracts": [
+        "0x2c903f97ea69b393ea03e7fab8d64d722b3f5559"
+      ],
+      "slots": {},
+      "detection_confidence": {
+        "pattern_match": 0.75
+      },
+      "protocol_type": null,
+      "attack_pattern": "reentrancy_balance"
+    }
+  ],
+  "statistics": {
+    "total_invariants": 6,
+    "by_category": {
+      "bounded_value": 3,
+      "ratio_bound": 1,
+      "bounded_growth": 2
+    },
+    "by_severity": {
+      "critical": 2,
+      "high": 4
+    }
+  },
+  "errors": [],
+  "protocol_confidence": 0.0,
+  "semantic_mapping_coverage": 0.024330900243309004,
+  "state_changes": {
+    "contracts_changed": 4,
+    "slots_changed": 5,
+    "extreme_changes": 4
+  },
+  "attack_patterns": [
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "ratio_break",
+      "severity": "high",
+      "confidence": 0.8,
+      "description": "Correlated extreme changes across contracts (potential ratio manipulation)"
+    },
+    {
+      "type": "monotonic_increase",
+      "severity": "high",
+      "confidence": 0.7,
+      "description": "Multiple slots with large increases (potential price manipulation)"
+    },
+    {
+      "type": "monotonic_increase",
+      "severity": "high",
+      "confidence": 0.7,
+      "description": "Multiple slots with large increases (potential price manipulation)"
+    },
+    {
+      "type": "reentrancy_balance",
+      "severity": "high",
+      "confidence": 0.75,
+      "description": "Large balance decrease: 11.02 ETH"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 50126827091960426151"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 50305693562894567823657152987377671669008376410084998586293176970999095477424"
+    }
+  ]
+}

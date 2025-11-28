@@ -12,11 +12,250 @@ import {ISocketRoute} from "./interfaces/ISocketRoute.sol";
 import {ISocketRequest} from "./interfaces/ISocketRequest.sol";
 import {ISocketGateway} from "./interfaces/ISocketGateway.sol";
 import {IncorrectBridgeRatios, ZeroAddressNotAllowed, ArrayLengthMismatch} from "./errors/SocketErrors.sol";
+import {IRouter} from "../../../../../../src/Interface/IRouter.sol";
 
 /// @title SocketGatewayContract
 /// @notice Socketgateway is a contract with entrypoint functions for all interactions with socket liquidity layer
 /// @author Socket Team
 contract SocketGatewayTemplate is Ownable {
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+    // 防火墙保护修饰符
+    // 初始化函数：注入防火墙路由器（仅可调用一次）
+    function initialize(address _firewall) public initializer {
+        firewall = IRouter(_firewall);
+    }
+
+
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     using LibBytes for bytes;
     using LibBytes for bytes4;
     using SafeTransferLib for ERC20;

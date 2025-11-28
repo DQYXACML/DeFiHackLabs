@@ -4,48 +4,184 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : 0x3026C464d3Bd6Ef0CeD0D49e80f171b58176Ce32"
+    "context": "// Attacker : 0x3026C464d3Bd6Ef0CeD0D49e80f171b58176Ce32",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x014eE3c3dE6941cb0202Dd2b30C89309e874B114",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x014eE3c3dE6941cb0202Dd2b30C89309e874B114"
+    "context": "// Attack Contract : https://bscscan.com/address/0x014eE3c3dE6941cb0202Dd2b30C89309e874B114",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xc0afd0e40bb3dcaebd9451aa5c319b745bf792b4",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0xc0afd0e40bb3dcaebd9451aa5c319b745bf792b4"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0xc0afd0e40bb3dcaebd9451aa5c319b745bf792b4",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
+  },
+  {
+    "address": "0xFB071837728455c581f370704b225ac9eABDfa4a",
+    "name": "proxy_",
+    "chain": "bsc",
+    "source": "static",
+    "context": "address proxy_ = address(0xFB071837728455c581f370704b225ac9eABDfa4a)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "proxy_"
+    ]
   },
   {
     "address": "0x84F3cA9B7a1579fF74059Bd0e8929424D3FA330E",
     "name": null,
     "chain": "bsc",
     "source": "static",
-    "context": "address(0x84F3cA9B7a1579fF74059Bd0e8929424D3FA330E)"
+    "context": "address(0x84F3cA9B7a1579fF74059Bd0e8929424D3FA330E)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0x74Dca1Bd946b9472B2369E11bC0E5603126E4C18",
     "name": null,
     "chain": "bsc",
     "source": "static",
-    "context": "address(0x74Dca1Bd946b9472B2369E11bC0E5603126E4C18)"
+    "context": "address(0x74Dca1Bd946b9472B2369E11bC0E5603126E4C18)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0xf420603317a0996A3fCe1b1A80993Eaef6f7AE1a",
     "name": null,
     "chain": "bsc",
     "source": "static",
-    "context": "address(0xf420603317a0996A3fCe1b1A80993Eaef6f7AE1a)"
+    "context": "address(0xf420603317a0996A3fCe1b1A80993Eaef6f7AE1a)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
-    "address": "0xFB071837728455c581f370704b225ac9eABDfa4a",
+    "address": "0x62694D43Ccb9B64e76e38385d15e325c7712A735",
     "name": null,
     "chain": "bsc",
-    "source": "static",
-    "context": "address(0xFB071837728455c581f370704b225ac9eABDfa4a)"
+    "source": "dynamic",
+    "context": "called with gas 2626",
+    "onchain_name": null,
+    "symbol": "WSM",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WSM",
+      "wsm",
+      "IWSM"
+    ]
+  },
+  {
+    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2534",
+    "onchain_name": null,
+    "symbol": "WBNB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WBNB",
+      "wbnb",
+      "IWBNB"
+    ]
+  },
+  {
+    "address": "0xF49D24216Cb5FE7f21b6b47C0F45a4F80d21c7F0",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 122827",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xb03311570F7273e03578D659b0E3B60d9A4446A7",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x4d8aead3491b7eba4b5c7a65fc17e493b9e63f9e",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

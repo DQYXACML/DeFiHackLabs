@@ -1,0 +1,103 @@
+{
+  "protocol": "TGBS_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": "0xedecfa18cae067b2489a2287784a543069f950f4",
+    "name": "TGBS"
+  },
+  "constraints": [
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(...)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "baseAmount > 846234522904405307555840",
+        "semantics": "High-frequency operation: parameter affects address_22319543940156734216667496420354822292769097754564526160162824613150041746376 with estimated 873923 iterations (capped)",
+        "variables": {
+          "baseAmount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "baseAmount"
+          },
+          "address_22319543940156734216667496420354822292769097754564526160162824613150041746376": {
+            "source": "storage",
+            "slot": "22319543940156734216667496420354822292769097754564526160162824613150041746376",
+            "type": "uint256",
+            "semantic_name": "address_22319543940156734216667496420354822292769097754564526160162824613150041746376",
+            "before_value": 2820781743014684189121858,
+            "after_value": 1946858775346490905890064
+          }
+        },
+        "danger_condition": "baseAmount >= 2538703568713216325320704",
+        "safe_condition": "baseAmount <= 846234522904405307555840",
+        "threshold_value": 846234522904405307555840
+      },
+      "analysis": {
+        "state_value": 2820781743014684189121858,
+        "threshold": 1974547220110278932385300,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代873923次超过上限10000，使用保守阈值846234522904405307555840",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 873922.9676681933,
+        "change_direction": "decrease"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "22319543940156734216667496420354822292769097754564526160162824613150041746376",
+        "before": 2820781743014684189121858,
+        "after": 1946858775346490905890064,
+        "change_pct": 30.98,
+        "is_new_slot": false
+      },
+      {
+        "slot": "78338746147236970124700731725183845421594913511827187288591969170390706184117",
+        "before": 8523403154087158003634964,
+        "after": 9187670797111192603045251,
+        "change_pct": 7.79,
+        "is_new_slot": false
+      },
+      {
+        "slot": "3",
+        "before": 191476596845912841996365036,
+        "after": 190812329202888807396954749,
+        "change_pct": 0.35,
+        "is_new_slot": false
+      },
+      {
+        "slot": "48221377187798417120336668687882216931067392546215442996675338360804189313428",
+        "before": 74998417306502541253,
+        "after": 188204738543735008373288,
+        "change_pct": 250844.95,
+        "is_new_slot": false
+      },
+      {
+        "slot": "31063888810065305784377451194046110542589701094491830545216746748656552103811",
+        "before": 51882920831972941677627442,
+        "after": 51904446416490671855616914,
+        "change_pct": 0.04,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 7
+  },
+  "attack_metadata": {
+    "loop_count": 1600,
+    "total_calls": 6
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

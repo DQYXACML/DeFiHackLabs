@@ -1,0 +1,108 @@
+{
+  "protocol": "DAO_SoulMate_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x82c063afefb226859abd427ae40167cb77174b68",
+    "name": "SoulMateContract"
+  },
+  "solved_constraints": [
+    {
+      "function": "redeem",
+      "signature": "redeem(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "function": "redeem",
+        "signature": "redeem(uint256,address[],uint8[])",
+        "attack_pattern": "drain_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > userBalance * 0.9",
+          "semantics": "Draining large portion of user balance",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 0,
+              "type": "uint256",
+              "value_expr": "BUI.balanceOf(address(SoulMateContract))"
+            },
+            "userBalance": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "balanceOf(attacker)"
+            }
+          },
+          "danger_condition": "amount > userBalance * 0.9",
+          "safe_condition": "amount <= userBalance * 0.5"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 2507878258630713597949,
+        "state_value": 2786531398478570664388,
+        "coefficient": 0.9,
+        "expression": "amount > userBalance * 0.9",
+        "resolved_expression": "amount > 2507878258630713597949"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 2507878258630713597950,
+          "description": "刚好超过阈值 (2507878258630713597949+1)"
+        },
+        {
+          "type": "safe",
+          "value": 1393265699239285332194,
+          "description": "安全范围 (50%)"
+        },
+        {
+          "type": "attack",
+          "value": 2647204828554642131168,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 2786531398478570664388,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    }
+  ],
+  "param_check_rules": {
+    "protocol": "DAO_SoulMate_exp",
+    "version": "1.0.0",
+    "rules": [
+      {
+        "function_sig": "0xa29dfce1",
+        "function_name": "redeem",
+        "param_index": 0,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "2507878258630713597949",
+        "threshold": 2507878258630713597949,
+        "state_value": 2786531398478570664388,
+        "coefficient": 0.9,
+        "attack_pattern": "drain_attack",
+        "description": "Draining large portion of user balance"
+      }
+    ],
+    "metadata": {
+      "generated_by": "solve_constraints.py",
+      "total_rules": 1
+    }
+  },
+  "summary": {
+    "total_constraints": 1,
+    "resolved_constraints": 1,
+    "resolution_rate": "100.0%"
+  },
+  "metadata": {
+    "solver_version": "1.0.0",
+    "generated_by": "solve_constraints.py"
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "protocol": "PeapodsFinance_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xdbb20a979a92cccce15229e41c9b082d5b5d7e31",
+    "name": "ppPP"
+  },
+  "solved_constraints": [
+    {
+      "function": "flash",
+      "signature": "flash(address,address,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "function": "flash",
+        "signature": "flash(address,address,address,uint256,bytes)",
+        "attack_pattern": "flashloan_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > totalLiquidity * 0.3",
+          "semantics": "Large flashloan exceeding 30% of pool liquidity",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 2,
+              "type": "uint256",
+              "value_expr": "Peas.balanceOf(address(ppPP))"
+            },
+            "totalLiquidity": {
+              "source": "storage",
+              "slot": "0x3",
+              "type": "uint256",
+              "semantic_name": "totalLiquidity"
+            }
+          },
+          "danger_condition": "amount > totalLiquidity * 0.3",
+          "safe_condition": "amount <= totalLiquidity * 0.05"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 27000000000000000000,
+        "state_value": 90000000000000000000,
+        "coefficient": 0.3,
+        "expression": "amount > totalLiquidity * 0.3",
+        "resolved_expression": "amount > 27000000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 27000000000000000001,
+          "description": "刚好超过阈值 (27000000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 4500000000000000000,
+          "description": "安全范围 (5%)"
+        },
+        {
+          "type": "attack",
+          "value": 85500000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 90000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "debond",
+      "signature": "debond(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "function": "debond",
+        "signature": "debond(address,uint256)",
+        "attack_pattern": "large_deposit",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > totalSupply * 0.5",
+          "semantics": "Large deposit exceeding 50% of total supply",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 0,
+              "type": "uint256",
+              "value_expr": "ppPP.balanceOf(address(this))"
+            },
+            "totalSupply": {
+              "source": "storage",
+              "slot": "0x2",
+              "type": "uint256",
+              "semantic_name": "totalSupply"
+            }
+          },
+          "danger_condition": "amount > totalSupply * 0.5",
+          "safe_condition": "amount <= totalSupply * 0.1"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 146938947379941314872939,
+        "state_value": 293877894759882629745878,
+        "coefficient": 0.5,
+        "expression": "amount > totalSupply * 0.5",
+        "resolved_expression": "amount > 146938947379941314872939"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 146938947379941314872940,
+          "description": "刚好超过阈值 (146938947379941314872939+1)"
+        },
+        {
+          "type": "safe",
+          "value": 29387789475988262974587,
+          "description": "安全范围 (10%)"
+        },
+        {
+          "type": "attack",
+          "value": 279184000021888498258584,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 293877894759882629745878,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "bond",
+      "signature": "bond(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "function": "bond",
+        "signature": "bond(address,uint256)",
+        "attack_pattern": "large_deposit",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > totalSupply * 0.5",
+          "semantics": "Large deposit exceeding 50% of total supply",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256",
+              "value_expr": "Peas.balanceOf(address(this))"
+            },
+            "totalSupply": {
+              "source": "storage",
+              "slot": "0x2",
+              "type": "uint256",
+              "semantic_name": "totalSupply"
+            }
+          },
+          "danger_condition": "amount > totalSupply * 0.5",
+          "safe_condition": "amount <= totalSupply * 0.1"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 146938947379941314872939,
+        "state_value": 293877894759882629745878,
+        "coefficient": 0.5,
+        "expression": "amount > totalSupply * 0.5",
+        "resolved_expression": "amount > 146938947379941314872939"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 146938947379941314872940,
+          "description": "刚好超过阈值 (146938947379941314872939+1)"
+        },
+        {
+          "type": "safe",
+          "value": 29387789475988262974587,
+          "description": "安全范围 (10%)"
+        },
+        {
+          "type": "attack",
+          "value": 279184000021888498258584,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 293877894759882629745878,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    }
+  ],
+  "param_check_rules": {
+    "protocol": "PeapodsFinance_exp",
+    "version": "1.0.0",
+    "rules": [
+      {
+        "function_sig": "0x4d3928ae",
+        "function_name": "flash",
+        "param_index": 2,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "27000000000000000000",
+        "threshold": 27000000000000000000,
+        "state_value": 90000000000000000000,
+        "coefficient": 0.3,
+        "attack_pattern": "flashloan_attack",
+        "description": "Large flashloan exceeding 30% of pool liquidity"
+      },
+      {
+        "function_sig": "0x27be7b99",
+        "function_name": "debond",
+        "param_index": 0,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "146938947379941314872939",
+        "threshold": 146938947379941314872939,
+        "state_value": 293877894759882629745878,
+        "coefficient": 0.5,
+        "attack_pattern": "large_deposit",
+        "description": "Large deposit exceeding 50% of total supply"
+      },
+      {
+        "function_sig": "0xa515366a",
+        "function_name": "bond",
+        "param_index": 1,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "146938947379941314872939",
+        "threshold": 146938947379941314872939,
+        "state_value": 293877894759882629745878,
+        "coefficient": 0.5,
+        "attack_pattern": "large_deposit",
+        "description": "Large deposit exceeding 50% of total supply"
+      }
+    ],
+    "metadata": {
+      "generated_by": "solve_constraints.py",
+      "total_rules": 3
+    }
+  },
+  "summary": {
+    "total_constraints": 3,
+    "resolved_constraints": 3,
+    "resolution_rate": "100.0%"
+  },
+  "metadata": {
+    "solver_version": "1.0.0",
+    "generated_by": "solve_constraints.py"
+  }
+}

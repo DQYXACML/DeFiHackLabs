@@ -1,0 +1,21 @@
+{
+  "protocol": "SMOOFSStaking_exp",
+  "year_month": "2024-02",
+  "injection_timestamp": "2025-11-22T03:10:44.837911Z",
+  "main_contract": {
+    "name": "ISMOOFSStaking",
+    "actual_contract_name": "ISMOOFSStaking",
+    "address": "0x757C2d1Ef0942F7a1B9FC1E618Aea3a6F3441A3C"
+  },
+  "injected_contracts": [
+    {
+      "file": "SMOOFSStaking_exp.sol",
+      "functions": [
+        "Stake",
+        "Withdraw"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

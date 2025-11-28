@@ -4,174 +4,846 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0xdaaa6294c47b5743bdafe0613d1926ee27ae8cf5"
+    "context": "// Attacker : https://etherscan.io/address/0xdaaa6294c47b5743bdafe0613d1926ee27ae8cf5",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x1e791527aea32cddbd7ceb7f04612db536816545",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0x1e791527aea32cddbd7ceb7f04612db536816545"
+    "context": "// Attack Contract : https://etherscan.io/address/0x1e791527aea32cddbd7ceb7f04612db536816545",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
     "address": "0x85705829c2f71EE3c40A7C28f6903e7c797c9433",
-    "name": null,
+    "name": "Uni_Pair_V2",
     "chain": "mainnet",
     "source": "static",
-    "context": "Uni_Pair_V2(0x85705829c2f71EE3c40A7C28f6903e7c797c9433)"
+    "context": "Uni_Pair_V2 Pair = Uni_Pair_V2(0x85705829c2f71EE3c40A7C28f6903e7c797c9433)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Uni_Pair_V2"
+    ]
   },
   {
     "address": "0x579A3244f38112b8AAbefcE0227555C9b6e7aaF0",
-    "name": null,
+    "name": "IDSChief",
     "chain": "mainnet",
     "source": "static",
-    "context": "IDSChief(0x579A3244f38112b8AAbefcE0227555C9b6e7aaF0)"
+    "context": "IDSChief chief = IDSChief(0x579A3244f38112b8AAbefcE0227555C9b6e7aaF0)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IDSChief"
+    ]
   },
   {
     "address": "0x1e692eF9cF786Ed4534d5Ca11EdBa7709602c69f",
-    "name": null,
+    "name": "IDSPause",
     "chain": "mainnet",
     "source": "static",
-    "context": "IDSPause(0x1e692eF9cF786Ed4534d5Ca11EdBa7709602c69f)"
+    "context": "IDSPause pause = IDSPause(0x1e692eF9cF786Ed4534d5Ca11EdBa7709602c69f)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IDSPause"
+    ]
   },
   {
     "address": "0xfDcdfA378818AC358739621ddFa8582E6ac1aDcB",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xfDcdfA378818AC358739621ddFa8582E6ac1aDcB)"
+    "context": "IERC20 csc = IERC20(0xfDcdfA378818AC358739621ddFa8582E6ac1aDcB)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x73d7c860998CA3c01Ce8c808F5577d94d545d1b4",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x73d7c860998CA3c01Ce8c808F5577d94d545d1b4)"
+    "context": "IERC20 ixs = IERC20(0x73d7c860998CA3c01Ce8c808F5577d94d545d1b4)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x111111111117dC0aa78b770fA6A738034120C302",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x111111111117dC0aa78b770fA6A738034120C302)"
+    "context": "IERC20 oinch = IERC20(0x111111111117dC0aa78b770fA6A738034120C302)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984)"
+    "context": "IERC20 uni = IERC20(0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x514910771AF9Ca656af840dff83E8264EcF986CA)"
+    "context": "IERC20 link = IERC20(0x514910771AF9Ca656af840dff83E8264EcF986CA)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0xB4272071eCAdd69d933AdcD19cA99fe80664fc08",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xB4272071eCAdd69d933AdcD19cA99fe80664fc08)"
+    "context": "IERC20 xchf = IERC20(0xB4272071eCAdd69d933AdcD19cA99fe80664fc08)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x00c83aeCC790e8a4453e5dD3B0B4b3680501a7A7",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x00c83aeCC790e8a4453e5dD3B0B4b3680501a7A7)"
+    "context": "IERC20 skl = IERC20(0x00c83aeCC790e8a4453e5dD3B0B4b3680501a7A7)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "IERC20 weth = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x6B175474E89094C44Da98b954EedeAC495271d0F)"
+    "context": "IERC20 dai = IERC20(0x6B175474E89094C44Da98b954EedeAC495271d0F)",
+    "onchain_name": null,
+    "symbol": "DAI",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "DAI",
+      "IERC20",
+      "dai",
+      "IDAI"
+    ]
   },
   {
     "address": "0xF56b164efd3CFc02BA739b719B6526A6FA1cA32a",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xF56b164efd3CFc02BA739b719B6526A6FA1cA32a)"
+    "context": "IERC20 cgt = IERC20(0xF56b164efd3CFc02BA739b719B6526A6FA1cA32a)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0xDc6844cED486Ec04803f02F2Ee40BBDBEf615f21",
-    "name": null,
+    "name": "IRouterV3s",
     "chain": "mainnet",
     "source": "static",
-    "context": "IRouterV3s(0xDc6844cED486Ec04803f02F2Ee40BBDBEf615f21)"
+    "context": "IRouterV3s router = IRouterV3s(0xDc6844cED486Ec04803f02F2Ee40BBDBEf615f21)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IRouterV3s"
+    ]
   },
   {
     "address": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
-    "name": null,
+    "name": "IRouterV3s",
     "chain": "mainnet",
     "source": "static",
-    "context": "IRouterV3s(0xE592427A0AEce92De3Edee1F18E0157C05861564)"
+    "context": "IRouterV3s routerV3 = IRouterV3s(0xE592427A0AEce92De3Edee1F18E0157C05861564)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IRouterV3s"
+    ]
   },
   {
     "address": "0x69c707d975e8d883920003CC357E556a4732CD03",
-    "name": null,
+    "name": "IOmniBridge",
     "chain": "mainnet",
     "source": "static",
-    "context": "IOmniBridge(0x69c707d975e8d883920003CC357E556a4732CD03)"
+    "context": "IOmniBridge omniBridge = IOmniBridge(0x69c707d975e8d883920003CC357E556a4732CD03)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IOmniBridge"
+    ]
   },
   {
     "address": "0x8fB1A35bB6fB9c47Fb5065BE5062cB8dC1687669",
-    "name": null,
+    "name": "ISkaleB",
     "chain": "mainnet",
     "source": "static",
-    "context": "ISkaleB(0x8fB1A35bB6fB9c47Fb5065BE5062cB8dC1687669)"
+    "context": "ISkaleB skaleB = ISkaleB(0x8fB1A35bB6fB9c47Fb5065BE5062cB8dC1687669)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ISkaleB"
+    ]
   },
   {
     "address": "0x9b8A09b3f538666479a66888441E15DDE8d13412",
-    "name": null,
+    "name": "IParachainB",
     "chain": "mainnet",
     "source": "static",
-    "context": "IParachainB(0x9b8A09b3f538666479a66888441E15DDE8d13412)"
+    "context": "IParachainB parachainB = IParachainB(0x9b8A09b3f538666479a66888441E15DDE8d13412)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IParachainB"
+    ]
   },
   {
     "address": "0xdc1664458d2f0B6090bEa60A8793A4E66c2F1c00",
-    "name": null,
+    "name": "IBobaB",
     "chain": "mainnet",
     "source": "static",
-    "context": "IBobaB(0xdc1664458d2f0B6090bEa60A8793A4E66c2F1c00)"
+    "context": "IBobaB bobaB = IBobaB(0xdc1664458d2f0B6090bEa60A8793A4E66c2F1c00)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBobaB"
+    ]
+  },
+  {
+    "address": "0x8B2B0c101adB9C3654B226A3273e256a74688E57",
+    "name": "IVat",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "IVat vat = IVat(0x8B2B0c101adB9C3654B226A3273e256a74688E57)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IVat"
+    ]
+  },
+  {
+    "address": "0xE35Fc6305984a6811BD832B0d7A2E6694e37dfaF",
+    "name": "IJoin",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "IJoin daiJoin = IJoin(0xE35Fc6305984a6811BD832B0d7A2E6694e37dfaF)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IJoin"
+    ]
   },
   {
     "address": "0x46683747B55C4A0fF783B1A502cE682eB819eb75",
     "name": null,
     "chain": "mainnet",
     "source": "static",
-    "context": "address(0x46683747B55C4A0fF783B1A502cE682eB819eb75)"
+    "context": "address(0x46683747B55C4A0fF783B1A502cE682eB819eb75)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
-    "address": "0x8B2B0c101adB9C3654B226A3273e256a74688E57",
+    "address": "0xD29CAB1a24fC9fa22a035A7c3a0bF54a7cE7598D",
     "name": null,
     "chain": "mainnet",
-    "source": "static",
-    "context": "IVat(0x8B2B0c101adB9C3654B226A3273e256a74688E57)"
+    "source": "dynamic",
+    "context": "called with gas 31728",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
-    "address": "0xE35Fc6305984a6811BD832B0d7A2E6694e37dfaF",
+    "address": "0x20EBbd71998e189A8d6909BBD650D9C47A8085dC",
     "name": null,
     "chain": "mainnet",
-    "source": "static",
-    "context": "IJoin(0xE35Fc6305984a6811BD832B0d7A2E6694e37dfaF)"
+    "source": "dynamic",
+    "context": "called with gas 189185",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xAbD54e07D46464F1cCA4e5e93334Ebf5a2B424cc",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2662",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x9a7c27F2BfD86001c0E9B5b9096564F64F37439E",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x03407772F5EBFB9B10Df007A2DD6FFf4EdE47B53",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2426",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xB2C747Aed3e54da0ad14D41B710CC40F88E51aA9",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 9825",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xA04E2222d35891724069dF36ad138f16Ba6ACEbF",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2549",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xB9FcE07dB9737810CbC573E43ba700aA4655b6Bc",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x88682534fCF23111BB1cfeEc7D4f699B9C9Bef90",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xe2817e5edf6f8260F24C3Ace81a0FBd49F67765f",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7e6bACE61d6F504e2cE186025309676f461d44B8",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x6456F0176d27265C8B530Aacfc1fdADae3d60B04",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x84Cf47f732f5b115a304Ba1B4B5dD88f34fCAd45",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2942",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xC04A10Fd5e6513242558f47331568aBD6185a310",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 10551",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x538D2B8Cc2335C9495a6bFc9A57eB8E9c389d5f1",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 3271",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x4eE5F270572285776814e32952446e9B7Ee15C86",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 22734",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x2db9ccb342003421544FAba8CDf670AB922DE5d3",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 15463",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x06dD71dAb27C1A3e0B172d53735f00Bf1a66Eb79",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 9879",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1D085Cd2f8b5B64923FBEE60Ee399d5069B6E735",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2608",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xdE61e107382dc530b190D5EE748C5Cf119a1816D",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xF67C990798221fDF41a4E77b6be2cE5c87Df771e",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x5C2BbDa450b60F30d4558817A51415ffAC9bF1e8",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2517",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xb643e24dBB6D21885911a296fdBB30486e87aCa3",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 99302",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x4858411a69af3351ED7d448A0d65C6146C11C218",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 103276",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xC2e9F25Be6257c210d7Adf0D4Cd6E3E881ba25f8",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 53495",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xd35EFAE4097d005720608Eaf37E42a5936C94B44",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 113964",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1d42064Fc4Beb5F8aAF85F4617AE8b3b5B8Bd801",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 81247",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xa6Cc3C2531FdaA6Ae1A3CA84c2855806728693e8",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 75287",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0f6798a560793a54c3bcfe86a93cde1e73087d94",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x6bc85c0902a8a63ff898f02fc68a9e71da7dcf6b",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x52a08e9c1ee3187b6070343a0da4282bcb6a33c5",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x29ddb589b1fb5fc7cf394961c1adf5f8c6454761",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xb281fc8c12954d22544db45de3159a39272895b1",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

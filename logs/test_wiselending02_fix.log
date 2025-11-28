@@ -1,0 +1,42 @@
+[0;32m[SUCCESS][0m V3增强组件已加载 (Storage推断 + 符号执行)
+[0;34m[INFO][0m 防火墙配置读取器已初始化
+[0;34m[INFO][0m === 单协议提取模式 (V2) ===
+[0;34m[INFO][0m 开始提取约束 (V2): WiseLending02_exp
+[0;36m[DEBUG][0m   发现 7 个函数: ['setUp', 'test_poc', '_simulateOracleCall', 'depositExactAmount', 'mintPosition', 'latestRoundData', 'depositExactAmount']
+[0;34m[INFO][0m   识别到 1 个入口点: ['test_poc']
+[0;34m[INFO][0m   可达函数: 1/7
+[0;34m[INFO][0m   收集到 13 个唯一外部调用
+[0;34m[INFO][0m   转换为 13 个attack_calls
+[0;34m[INFO][0m   被攻击合约: wiseLending (0x37e49bf3749513a02fa535f0cbc383796e8107e4)
+[0;34m[INFO][0m   识别到 13 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 1 个
+[0;34m[INFO][0m   0x37e49bf374...: 108 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x37e49bf374... (108 slots)
+[0;34m[INFO][0m 检测到 108 个slot变化
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;32m[SUCCESS][0m   生成约束: 22 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/WiseLending02_exp/constraint_rules_v2.json

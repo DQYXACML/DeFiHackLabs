@@ -1,0 +1,28 @@
+[0;32m[SUCCESS][0m V3增强组件已加载 (Storage推断 + 符号执行)
+[0;34m[INFO][0m 防火墙配置读取器已初始化
+[0;34m[INFO][0m === 单协议提取模式 (V2) ===
+[0;34m[INFO][0m 开始提取约束 (V2): SocketGateway_exp
+[0;36m[DEBUG][0m   发现 7 个函数: ['executeRoute', 'performAction', 'setUp', 'getCallData', 'getRouteData', 'testExploit', 'receive']
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   识别到 2 个入口点: ['testExploit', 'receive']
+[0;34m[INFO][0m   可达函数: 4/7
+[0;34m[INFO][0m   收集到 2 个唯一外部调用
+[0;34m[INFO][0m   转换为 2 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   被攻击合约: _gateway (0x3a23F943181408EAC424116Af7b7790c94Cb97a5)
+[0;34m[INFO][0m   识别到 2 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[0;36m[DEBUG][0m   检测到状态变化: 0xf2D5951bB0...
+[0;36m[DEBUG][0m   检测到状态变化: 0xA0b86991c6...
+[0;34m[INFO][0m   动态检测到 2 个合约有状态变化
+[0;34m[INFO][0m   0xa0b86991c6...: 255 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0xa0b86991c6... (255 slots)
+[0;34m[INFO][0m 检测到 255 个slot变化
+[0;36m[DEBUG][0m 未找到匹配: _gateway
+[0;36m[DEBUG][0m 未找到匹配: _gateway
+[0;36m[DEBUG][0m 未找到匹配: _gateway
+[0;32m[SUCCESS][0m   生成约束: 3 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/SocketGateway_exp/constraint_rules_v2.json

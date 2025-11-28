@@ -26,8 +26,41 @@ import './interfaces/IERC20Minimal.sol';
 import './interfaces/callback/IUniswapV3MintCallback.sol';
 import './interfaces/callback/IUniswapV3SwapCallback.sol';
 import './interfaces/callback/IUniswapV3FlashCallback.sol';
+import {IRouter} from "../../../../../../src/Interface/IRouter.sol";
 
 contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     using LowGasSafeMath for uint256;
     using LowGasSafeMath for int256;
     using SafeCast for uint256;
@@ -268,7 +301,8 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
 
     /// @inheritdoc IUniswapV3PoolActions
     /// @dev not locked because it initializes unlocked
-    function initialize(uint160 sqrtPriceX96) external override {
+    function initialize(address _firewall, uint160 sqrtPriceX96) external override {
+        firewall = IRouter(_firewall);
         require(slot0.sqrtPriceX96 == 0, 'AI');
 
         int24 tick = TickMath.getTickAtSqrtRatio(sqrtPriceX96);

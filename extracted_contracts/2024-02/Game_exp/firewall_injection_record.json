@@ -1,0 +1,21 @@
+{
+  "protocol": "Game_exp",
+  "year_month": "2024-02",
+  "injection_timestamp": "2025-11-23T03:18:46.796220Z",
+  "main_contract": {
+    "name": "IGame",
+    "actual_contract_name": "Game",
+    "address": "0x52d69c67536f55EfEfe02941868e5e762538dBD6"
+  },
+  "injected_contracts": [
+    {
+      "file": "contracts_game_Game.sol",
+      "functions": [
+        "newBidEtherMin",
+        "makeBid"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

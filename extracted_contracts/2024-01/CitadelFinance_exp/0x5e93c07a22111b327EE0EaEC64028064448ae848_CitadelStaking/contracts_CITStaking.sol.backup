@@ -16,7 +16,7 @@ import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "./interfaces/ICIT.sol";
 import "./interfaces/IBCIT.sol";
 import "./interfaces/ICITReferral.sol";
-import {IRouter} from "../../../src/Interface/IRouter.sol";
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 
 contract CitadelStaking is Ownable, ReentrancyGuard {
     // 防火墙路由器

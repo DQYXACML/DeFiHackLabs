@@ -1,0 +1,48 @@
+{
+  "protocol": "UnizenIO2_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": "0xd3f64baa732061f8b3626ee44bab354f854877ac",
+    "name": "TradeAggregator"
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "40076406917182461431728759373204403362810156456658349318991626910412889374148",
+        "before": 115792089237316195423570985008687907853269984665640564039457584007913129639935,
+        "after": 115792089237316195423570985008687907853269984665640563997846255457377554792447,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "64803038329847086260752784990269232137895150441428429132130916192226952072571",
+        "before": 83222657101071150518154,
+        "after": 41611328550535575670666,
+        "change_pct": 50.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "49212136813177002628749076704838153231279645123408615035770978948622932370242",
+        "before": 499649999999999970115584,
+        "after": 541261328550535544963072,
+        "change_pct": 8.33,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 3
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 2
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

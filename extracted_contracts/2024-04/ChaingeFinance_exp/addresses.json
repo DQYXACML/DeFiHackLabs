@@ -4,125 +4,395 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker1 : https://bscscan.com/address/0x6eec0f4c017afe3dfadf32b51339c37e9fd59dfb"
+    "context": "// Attacker1 : https://bscscan.com/address/0x6eec0f4c017afe3dfadf32b51339c37e9fd59dfb",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x791c6542bc52efe4f20df0ee672b88579ae3fd9a",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x791c6542bc52efe4f20df0ee672b88579ae3fd9a"
+    "context": "// Attack Contract : https://bscscan.com/address/0x791c6542bc52efe4f20df0ee672b88579ae3fd9a",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x80a0d7a6fd2a22982ce282933b384568e5c852bf",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0x80a0d7a6fd2a22982ce282933b384568e5c852bf"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0x80a0d7a6fd2a22982ce282933b384568e5c852bf",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0xacdbe7b770a14ca3bc34865ac3986c0ce771fd68",
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker2 : https://bscscan.com/address/0xacdbe7b770a14ca3bc34865ac3986c0ce771fd68"
+    "context": "// Attacker2 : https://bscscan.com/address/0xacdbe7b770a14ca3bc34865ac3986c0ce771fd68",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x52b19de39476823d33ab4b1edbec91e29dadba38",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x52b19de39476823d33ab4b1edbec91e29dadba38"
+    "context": "// Attack Contract : https://bscscan.com/address/0x52b19de39476823d33ab4b1edbec91e29dadba38",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x8A4AA176007196D48d39C89402d3753c39AE64c1",
     "name": "victim",
     "chain": "bsc",
     "source": "static",
-    "context": "address constant victim = 0x8A4AA176007196D48d39C89402d3753c39AE64c1"
+    "context": "address constant victim = 0x8A4AA176007196D48d39C89402d3753c39AE64c1",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "victim"
+    ]
   },
   {
     "address": "0x55d398326f99059fF775485246999027B3197955",
-    "name": "usdt",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant usdt = IBEP20(0x55d398326f99059fF775485246999027B3197955)"
+    "context": "IBEP20 constant usdt = IBEP20(0x55d398326f99059fF775485246999027B3197955)",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "IBEP20",
+      "usdt",
+      "IUSDT"
+    ]
   },
   {
     "address": "0x570A5D26f7765Ecb712C0924E4De545B89fD43dF",
-    "name": "sol",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant sol = IBEP20(0x570A5D26f7765Ecb712C0924E4De545B89fD43dF)"
+    "context": "IBEP20 constant sol = IBEP20(0x570A5D26f7765Ecb712C0924E4De545B89fD43dF)",
+    "onchain_name": null,
+    "symbol": "SOL",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "SOL",
+      "IBEP20",
+      "sol",
+      "ISOL"
+    ]
   },
   {
     "address": "0x1CE0c2827e2eF14D5C4f29a091d735A204794041",
-    "name": "AVAX",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant AVAX = IBEP20(0x1CE0c2827e2eF14D5C4f29a091d735A204794041)"
+    "context": "IBEP20 constant AVAX = IBEP20(0x1CE0c2827e2eF14D5C4f29a091d735A204794041)",
+    "onchain_name": null,
+    "symbol": "AVAX",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "AVAX",
+      "IBEP20",
+      "avax",
+      "IAVAX"
+    ]
   },
   {
     "address": "0xc748673057861a797275CD8A068AbB95A902e8de",
-    "name": "babydoge",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant babydoge = IBEP20(0xc748673057861a797275CD8A068AbB95A902e8de)"
+    "context": "IBEP20 constant babydoge = IBEP20(0xc748673057861a797275CD8A068AbB95A902e8de)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBEP20"
+    ]
   },
   {
     "address": "0xfb5B838b6cfEEdC2873aB27866079AC55363D37E",
-    "name": "FOLKI",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant FOLKI = IBEP20(0xfb5B838b6cfEEdC2873aB27866079AC55363D37E)"
+    "context": "IBEP20 constant FOLKI = IBEP20(0xfb5B838b6cfEEdC2873aB27866079AC55363D37E)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBEP20"
+    ]
   },
   {
     "address": "0x0Eb3a705fc54725037CC9e008bDede697f62F335",
-    "name": "ATOM",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant ATOM = IBEP20(0x0Eb3a705fc54725037CC9e008bDede697f62F335)"
+    "context": "IBEP20 constant ATOM = IBEP20(0x0Eb3a705fc54725037CC9e008bDede697f62F335)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBEP20"
+    ]
   },
   {
     "address": "0xb6C53431608E626AC81a9776ac3e999c5556717c",
-    "name": "TLOS",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant TLOS = IBEP20(0xb6C53431608E626AC81a9776ac3e999c5556717c)"
+    "context": "IBEP20 constant TLOS = IBEP20(0xb6C53431608E626AC81a9776ac3e999c5556717c)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBEP20"
+    ]
   },
   {
     "address": "0x9678E42ceBEb63F23197D726B29b1CB20d0064E5",
-    "name": "IOTX",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant IOTX = IBEP20(0x9678E42ceBEb63F23197D726B29b1CB20d0064E5)"
+    "context": "IBEP20 constant IOTX = IBEP20(0x9678E42ceBEb63F23197D726B29b1CB20d0064E5)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBEP20"
+    ]
   },
   {
     "address": "0x111111111117dC0aa78b770fA6A738034120C302",
-    "name": "linch",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant linch = IBEP20(0x111111111117dC0aa78b770fA6A738034120C302)"
+    "context": "IBEP20 constant linch = IBEP20(0x111111111117dC0aa78b770fA6A738034120C302)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBEP20"
+    ]
   },
   {
     "address": "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD",
-    "name": "link",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant link = IBEP20(0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD)"
+    "context": "IBEP20 constant link = IBEP20(0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD)",
+    "onchain_name": null,
+    "symbol": "LINK",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "LINK",
+      "IBEP20",
+      "link",
+      "ILINK"
+    ]
   },
   {
     "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-    "name": "btcb",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant btcb = IBEP20(0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c)"
+    "context": "IBEP20 constant btcb = IBEP20(0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c)",
+    "onchain_name": null,
+    "symbol": "BTCB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "BTCB",
+      "IBEP20",
+      "btcb",
+      "IBTCB"
+    ]
   },
   {
     "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-    "name": "eth",
+    "name": "IBEP20",
     "chain": "bsc",
     "source": "static",
-    "context": "IBEP20 constant eth = IBEP20(0x2170Ed0880ac9A755fd29B2688956BD959F933F8)"
+    "context": "IBEP20 constant eth = IBEP20(0x2170Ed0880ac9A755fd29B2688956BD959F933F8)",
+    "onchain_name": null,
+    "symbol": "ETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ETH",
+      "IBEP20",
+      "eth",
+      "IETH"
+    ]
+  },
+  {
+    "address": "0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2553",
+    "onchain_name": null,
+    "symbol": "USDC",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDC",
+      "usdc",
+      "IUSDC"
+    ]
+  },
+  {
+    "address": "0xaBbee6E231010dE7AAEDfc4a8F18e5E1D6f92D88",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 7885",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xbBD372407eaD5729657Aeb2DEB86468a0d593520",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 11887",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7b4111CbE43959369831B232818bF418D5Ff8C90",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2510",
+    "onchain_name": null,
+    "symbol": "",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2942",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x29ddb589b1fb5fc7cf394961c1adf5f8c6454761",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xb281fc8c12954d22544db45de3159a39272895b1",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

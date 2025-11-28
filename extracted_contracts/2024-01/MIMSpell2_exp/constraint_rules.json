@@ -1,0 +1,255 @@
+{
+  "protocol": "MIMSpell2_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x7259e152103756e1616a77ae982353c3751a6a90",
+    "name": "CauldronV4"
+  },
+  "constraints": [
+    {
+      "function": "addCollateral",
+      "signature": "addCollateral(address,bool,uint256)",
+      "attack_pattern": "collateral_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > userCollateral * 0.9",
+        "semantics": "Large collateral change affecting liquidation threshold",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "depositAmount - 100"
+          },
+          "userCollateral": {
+            "source": "storage",
+            "slot": "dynamic",
+            "type": "uint256",
+            "semantic_name": "userCollateralShare"
+          }
+        },
+        "danger_condition": "amount > userCollateral * 0.9",
+        "safe_condition": "amount <= userCollateral * 0.3"
+      }
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > availableLiquidity * 0.8",
+        "semantics": "Excessive borrowing depleting pool liquidity",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "DegenBox.balanceOf(address(MIM), address(CauldronV4))"
+          },
+          "availableLiquidity": {
+            "source": "storage",
+            "slot": "0x4",
+            "type": "uint256",
+            "semantic_name": "availableLiquidity"
+          }
+        },
+        "danger_condition": "amount > availableLiquidity * 0.8",
+        "safe_condition": "amount <= availableLiquidity * 0.3"
+      }
+    },
+    {
+      "function": "repay",
+      "signature": "repay(address,bool,uint256)",
+      "attack_pattern": "repay_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > borrowedAmount * 0.9",
+        "semantics": "Large repayment potentially manipulating debt tracking",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "1"
+          },
+          "borrowedAmount": {
+            "source": "storage",
+            "slot": "dynamic",
+            "type": "uint256",
+            "semantic_name": "userBorrowPart"
+          }
+        },
+        "danger_condition": "amount > borrowedAmount * 0.9",
+        "safe_condition": "amount <= borrowedAmount * 0.5"
+      }
+    },
+    {
+      "function": "addCollateral",
+      "signature": "addCollateral(address,bool,uint256)",
+      "attack_pattern": "collateral_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > userCollateral * 0.9",
+        "semantics": "Large collateral change affecting liquidation threshold",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "100"
+          },
+          "userCollateral": {
+            "source": "storage",
+            "slot": "dynamic",
+            "type": "uint256",
+            "semantic_name": "userCollateralShare"
+          }
+        },
+        "danger_condition": "amount > userCollateral * 0.9",
+        "safe_condition": "amount <= userCollateral * 0.3"
+      }
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > availableLiquidity * 0.8",
+        "semantics": "Excessive borrowing depleting pool liquidity",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "1"
+          },
+          "availableLiquidity": {
+            "source": "storage",
+            "slot": "0x4",
+            "type": "uint256",
+            "semantic_name": "availableLiquidity"
+          }
+        },
+        "danger_condition": "amount > availableLiquidity * 0.8",
+        "safe_condition": "amount <= availableLiquidity * 0.3"
+      }
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > availableLiquidity * 0.8",
+        "semantics": "Excessive borrowing depleting pool liquidity",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "1"
+          },
+          "availableLiquidity": {
+            "source": "storage",
+            "slot": "0x4",
+            "type": "uint256",
+            "semantic_name": "availableLiquidity"
+          }
+        },
+        "danger_condition": "amount > availableLiquidity * 0.8",
+        "safe_condition": "amount <= availableLiquidity * 0.3"
+      }
+    },
+    {
+      "function": "repay",
+      "signature": "repay(address,bool,uint256)",
+      "attack_pattern": "repay_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > borrowedAmount * 0.9",
+        "semantics": "Large repayment potentially manipulating debt tracking",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "1"
+          },
+          "borrowedAmount": {
+            "source": "storage",
+            "slot": "dynamic",
+            "type": "uint256",
+            "semantic_name": "userBorrowPart"
+          }
+        },
+        "danger_condition": "amount > borrowedAmount * 0.9",
+        "safe_condition": "amount <= borrowedAmount * 0.5"
+      }
+    },
+    {
+      "function": "repay",
+      "signature": "repay(address,bool,uint256)",
+      "attack_pattern": "repay_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > borrowedAmount * 0.9",
+        "semantics": "Large repayment potentially manipulating debt tracking",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "1"
+          },
+          "borrowedAmount": {
+            "source": "storage",
+            "slot": "dynamic",
+            "type": "uint256",
+            "semantic_name": "userBorrowPart"
+          }
+        },
+        "danger_condition": "amount > borrowedAmount * 0.9",
+        "safe_condition": "amount <= borrowedAmount * 0.5"
+      }
+    }
+  ],
+  "storage_analysis": {
+    "changed_slots": [
+      "59164789226929902010516559673846098092811056797190729771158278631949878295020",
+      "14405904596795727171854106436492390296503914738607195201727632870488326488356",
+      "13",
+      "40459814860966550212097361268945729191959395785233913735347427942697244895877",
+      "7",
+      "8",
+      "12",
+      "43261897037321765866482826652468568901201584759145306974883719501640710018919",
+      "56716464167982550685385396373953848492367318929501996691515364133557999113908",
+      "27862794724552863794267428180833012567479178538714633831302395534858159838546",
+      "90606516957020999911058066165547058617663976663662713265780853577292908519273",
+      "49585740352662435542717696059335070399800089094968441454219092371307535356101",
+      "103852258880105441409008374343423695947320328432527423558016773400457294889794",
+      "46057834907028144672368302126502861332309347349153932519666992844495524592901",
+      "79024616532851456885615722936339208867622371047768037978393114234566830713246",
+      "54046451028207438803582425042475619375135949225205308555425714391037677112109",
+      "131934097198848795419260839469887926092110100780607324505044451516066163437",
+      "72917804307240526372984388676258924862218114040466898048580707596426750880804",
+      "67828280014163985389840729353858788464681482252176824536696028341613585041307",
+      "91539886147451228696466875023421066059554183201225772362681495448834715812807",
+      "27159765373835803214705002171816880589512863583604786412071543344208974070534",
+      "22645259862889379571629973266441741234380643001798174416263407950913799402017",
+      "67892911047738170119392240244104535290025872045478024038613771377214660603397",
+      "17782178586021423182194408428604592413205211274170860189825288062877102427016"
+    ],
+    "total_slots": 30
+  },
+  "attack_metadata": {
+    "loop_count": 90,
+    "total_calls": 15
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

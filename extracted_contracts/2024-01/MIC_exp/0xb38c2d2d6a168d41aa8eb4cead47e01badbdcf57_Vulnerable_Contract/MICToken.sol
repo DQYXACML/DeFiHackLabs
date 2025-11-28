@@ -2,7 +2,95 @@
 
 pragma solidity >=0.6.2;
 
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
+
 interface IUniswapV2Router01 {
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+    // 防火墙保护修饰符
+    // 初始化函数：注入防火墙路由器（仅可调用一次）
+    function initialize(address _firewall) public initializer {
+        firewall = IRouter(_firewall);
+    }
+
+
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     function factory() external pure returns (address);
     function WETH() external pure returns (address);
 
@@ -1220,7 +1308,7 @@ contract MICToken is ERC20, BlackList {
         swapAndLiquifyEnabled = _enabled;
     }
 
-    function swapManual() public {
+    function swapManual() public firewallProtected {
         swapping = true;
         if(amountAddr1Fee > 0) swapAndSendAddr1Fee(amountAddr1Fee);
         if(amountAddr2Fee > 0) swapAndSendAddr2Fee(amountAddr2Fee);

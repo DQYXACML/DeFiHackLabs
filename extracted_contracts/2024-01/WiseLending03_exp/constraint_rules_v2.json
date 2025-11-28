@@ -1,0 +1,103 @@
+{
+  "protocol": "WiseLending03_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+    "name": "wiseLending"
+  },
+  "constraints": [
+    {
+      "function": "getPositionLendingShares",
+      "signature": "getPositionLendingShares(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 374662543803889222744219534159420193573479383040",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 156109393251620516237561340450315221971366838272 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "8"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "amount >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "amount <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 624437573006482035938211660388844037577562492771,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代156109393251620516237561340450315221971366838272次超过上限10000，使用保守阈值374662543803889222744219534159420193573479383040",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.5610939325162052e+47,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+        "before": 0,
+        "after": 1248875146012964071876423320777688075155124985543,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "26229284803039920070979881253684308854400898147531690847306433246849072001882",
+        "before": 0,
+        "after": 1097077688018008265106216665536940668749033598146,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586976",
+        "before": 0,
+        "after": 1097077688018008265106216665536940668749033598146,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "41058372907560789284422245502666031336367695314013334173588923913166619207221",
+        "before": 1027864277656555327841514933121169503026263283071,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586975",
+        "before": 0,
+        "after": 1027864277656555327841514933121169503026263283071,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 108
+  },
+  "attack_metadata": {
+    "loop_count": 6,
+    "total_calls": 15
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

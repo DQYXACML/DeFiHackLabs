@@ -1,0 +1,21 @@
+{
+  "protocol": "HedgeyFinance_exp",
+  "year_month": "2024-04",
+  "injection_timestamp": "2025-11-23T05:06:25.883694Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "ClaimCampaigns",
+    "address": "0xBc452fdC8F851d7c5B72e1Fe74DFB63bb793D511"
+  },
+  "injected_contracts": [
+    {
+      "file": "ClaimCampaigns.sol",
+      "functions": [
+        "createLockedCampaign",
+        "cancelCampaign"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

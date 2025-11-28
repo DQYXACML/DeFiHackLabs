@@ -1,0 +1,412 @@
+{
+  "protocol": "OrbitChain_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x1bf68a9d1eaee7826b3593c20a0ca93293cb489a",
+    "name": "OrbitEthVault"
+  },
+  "constraints": [
+    {
+      "function": "withdraw",
+      "signature": "withdraw(...)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "orbitHubContractAddress > 0",
+        "semantics": "Heuristic constraint based on drain_attack pattern",
+        "variables": {
+          "orbitHubContractAddress": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "orbitHubContractAddress"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "93620093199362202704163751923340356158945286135929826590037253250997316625886",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 1,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "orbitHubContractAddress >= 0",
+        "safe_condition": "orbitHubContractAddress <= 0",
+        "threshold_value": 0
+      },
+      "analysis": {
+        "state_value": 1,
+        "threshold": 0,
+        "coefficient": 0.3,
+        "attack_intensity": 1e+18,
+        "reasoning": "启发式约束，基于drain_attack模式，阈值设为0",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,bytes,uint256,uint256,address,address[],uint256[],bytes,uint8[],address[],address[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "1 length in [7,7]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "\"ORBIT\""
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "bytes",
+            "value_expr": "\"ORBIT\""
+          }
+        },
+        "range": {
+          "min_len": 7,
+          "max_len": 7
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(...)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "abi > 0",
+        "semantics": "Heuristic constraint based on drain_attack pattern",
+        "variables": {
+          "abi": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "abi.encodePacked(orbitExploiterFromAddr)"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "93620093199362202704163751923340356158945286135929826590037253250997316625886",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 1,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "abi >= 0",
+        "safe_condition": "abi <= 0",
+        "threshold_value": 0
+      },
+      "analysis": {
+        "state_value": 1,
+        "threshold": 0,
+        "coefficient": 0.3,
+        "attack_intensity": 1e+18,
+        "reasoning": "启发式约束，基于drain_attack模式，阈值设为0",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(...)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "orbitExploiterToAddr > 0",
+        "semantics": "Heuristic constraint based on drain_attack pattern",
+        "variables": {
+          "orbitExploiterToAddr": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "orbitExploiterToAddr"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "93620093199362202704163751923340356158945286135929826590037253250997316625886",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 1,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "orbitExploiterToAddr >= 0",
+        "safe_condition": "orbitExploiterToAddr <= 0",
+        "threshold_value": 0
+      },
+      "analysis": {
+        "state_value": 1,
+        "threshold": 0,
+        "coefficient": 0.3,
+        "attack_intensity": 1e+18,
+        "reasoning": "启发式约束，基于drain_attack模式，阈值设为0",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,bytes,uint256,uint256,address,address[],uint256[],bytes,uint8[],address[],address[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "5 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x0000000000000000000000000000000000000000",
+          "0xffffffffffffffffffffffffffffffffffffffff"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 5,
+            "type": "address[]",
+            "value_expr": "bytes32s"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,bytes,uint256,uint256,address,address[],uint256[],bytes,uint8[],address[],address[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "capped_array",
+        "expression": "6 elements in [0,8735]",
+        "semantics": "Restrict numeric array elements to observed range",
+        "attack_values": [
+          23,
+          87,
+          900,
+          0,
+          8735
+        ],
+        "range": {
+          "min": 0,
+          "max": 8735
+        },
+        "variables": {
+          "values": {
+            "source": "function_parameter",
+            "index": 6,
+            "type": "uint256[]",
+            "value_expr": "uints"
+          }
+        },
+        "len_range": {
+          "min": 5,
+          "max": 5
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Numeric array bounded by observed values",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,bytes,uint256,uint256,address,address[],uint256[],bytes,uint8[],address[],address[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "7 length in [2,2]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "\"\""
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 7,
+            "type": "bytes",
+            "value_expr": "\"\""
+          }
+        },
+        "range": {
+          "min_len": 2,
+          "max_len": 2
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,bytes,uint256,uint256,address,address[],uint256[],bytes,uint8[],address[],address[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "capped_array",
+        "expression": "8 elements in [27,28]",
+        "semantics": "Restrict numeric array elements to observed range",
+        "attack_values": [
+          27,
+          28,
+          28,
+          27,
+          28,
+          28,
+          27
+        ],
+        "range": {
+          "min": 27,
+          "max": 28
+        },
+        "variables": {
+          "values": {
+            "source": "function_parameter",
+            "index": 8,
+            "type": "uint8[]",
+            "value_expr": "v"
+          }
+        },
+        "len_range": {
+          "min": 7,
+          "max": 7
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Numeric array bounded by observed values",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,bytes,uint256,uint256,address,address[],uint256[],bytes,uint8[],address[],address[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "9 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x3b7169e2ee2b73dcfbabae1400b811b95616cb5d",
+          "0xe06c17f1a6630bfa47f0fe0cfba02f40f0901e24",
+          "0xff7c705149017ce467d05717eadb0a2718aedc7a",
+          "0xd4b7fd0617b28e1eeb018e1dbf924e662d1a0520",
+          "0xdecb2622da70fee1c343b93dc946eb855fd32c59",
+          "0x3ef06a27b3565a82b6d72af184ca3d787e3dd8fc",
+          "0xf1d81597f32c9376e90d22b9a1f121f1a99a1c19"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 9,
+            "type": "address[]",
+            "value_expr": "r"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,bytes,uint256,uint256,address,address[],uint256[],bytes,uint8[],address[],address[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "10 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x37da521031f0a65dd8466d4def41c44a69796f69",
+          "0x5443cf63033ab211f205076622b2426b994ce370",
+          "0x725fa18d06acb4f6f8a5b143bca088d76f77d953",
+          "0x0cc266abfa2ba924ffa7dab0cd8f7bb1a14891ec",
+          "0x6b6ddbaaafc5f0580b670ad9d0913ca4c60df275",
+          "0x18303ee09818b0575ea4a5c2ed25b1e78523aa2b",
+          "0x739fe72bab59a2eead1e36fdf71441e0407332c5"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 10,
+            "type": "address[]",
+            "value_expr": "s"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "93620093199362202704163751923340356158945286135929826590037253250997316625886",
+        "before": 0,
+        "after": 1,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 1
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 2
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

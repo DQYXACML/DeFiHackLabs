@@ -32,7 +32,7 @@ interface IParticleExchange {
         address borrower; // NFT trade executor address
         address collection; // NFT collection address
         uint256 tokenId;
-        /// NFT ID  (@dev: at borrower bidding, this field is used to store margin)
+        /// NFT ID  (at borrower bidding, this field is used to store margin)
         uint256 price; // NFT supplier's desired sold price
         uint256 rate; // APR in bips, _BASIS_POINTS defined in MathUtils.sol
         uint256 loanStartTime; // loan start block.timestamp

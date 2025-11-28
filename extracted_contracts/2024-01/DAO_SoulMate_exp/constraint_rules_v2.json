@@ -1,0 +1,133 @@
+{
+  "protocol": "DAO_SoulMate_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x82c063afefb226859abd427ae40167cb77174b68",
+    "name": "SoulMateContract"
+  },
+  "constraints": [
+    {
+      "function": "redeem",
+      "signature": "redeem(...)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 33717133866183772471955249164526725578448703054886240656514683880624820846592",
+        "semantics": "High-frequency operation: parameter affects accumulated_value with estimated 112390446220612576229020735821632679114562890506722424651776 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "BUI.balanceOf(address(SoulMateContract))"
+          },
+          "accumulated_value": {
+            "source": "storage",
+            "slot": "18034134962244354050",
+            "type": "uint256",
+            "semantic_name": "accumulated_value",
+            "before_value": 0,
+            "after_value": 112390446220612570621349379191115017149596763939853862129174296181301842018304
+          }
+        },
+        "danger_condition": "amount >= 101151401598551310988113570457619074567497739800008311880732076510703121334272",
+        "safe_condition": "amount <= 33717133866183772471955249164526725578448703054886240656514683880624820846592",
+        "threshold_value": 33717133866183772471955249164526725578448703054886240656514683880624820846592
+      },
+      "analysis": {
+        "state_value": 112390446220612570621349379191115017149596763939853862129174296181301842018304,
+        "threshold": 33717133866183771186404813757334505144879029181956158638752288854390552605491,
+        "coefficient": 0.3,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代112390446220612576229020735821632679114562890506722424651776次超过上限10000，使用保守阈值33717133866183772471955249164526725578448703054886240656514683880624820846592",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.1239044622061258e+59,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "redeem",
+      "signature": "redeem(uint256,address)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xd129d8c12f0e7aa51157d9e6cc3f7ece2dc84ecd"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "18034134962244354050",
+        "before": 0,
+        "after": 112390446220612570621349379191115017149596763939853862129174296181301842018304,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "18034134962244812802",
+        "before": 0,
+        "after": 103862475890859480241500308978788967574911862416115828241951602187269836898304,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "18034134962244878341",
+        "before": 0,
+        "after": 98235136268625904439607076823903625419551669710251431780664347889638672695296,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "18034134962244485122",
+        "before": 0,
+        "after": 87668515037843013364906257518044232965375035721501036555540127337088792133632,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "18034134962244026370",
+        "before": 0,
+        "after": 84752120003289539521451614515636315367212747565329690183177206263604385415168,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 49
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 1
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

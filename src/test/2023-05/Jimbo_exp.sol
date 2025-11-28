@@ -54,7 +54,7 @@ interface ILBRouter {
      * - amountYMin: The min amount of token Y added to liquidity
      * - activeIdDesired: The active id that user wants to add liquidity from
      * - idSlippage: The number of id that are allowed to slip
-     * - deltaIds: The list of delta ids to add liquidity (`deltaId = activeId - desiredId`) //@note: wrong comment here, should be `activeId + deltaId = desireId`
+     * - deltaIds: The list of delta ids to add liquidity (`deltaId = activeId - desiredId`) // note: wrong comment here, should be `activeId + deltaId = desireId`
      * - distributionX: The distribution of tokenX with sum(distributionX) = 100e18 (100%) or 0 (0%)
      * - distributionY: The distribution of tokenY with sum(distributionY) = 100e18 (100%) or 0 (0%)
      * - to: The address of the recipient

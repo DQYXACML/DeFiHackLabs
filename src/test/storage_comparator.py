@@ -83,6 +83,9 @@ class StorageComparator:
                 }
             }
         """
+        # 规范化地址为小写（修复地址大小写匹配问题）
+        contracts_and_slots = [(addr.lower(), slot) for addr, slot in contracts_and_slots]
+
         snapshot = {
             'storage': {},
             'balances': {}
@@ -223,13 +226,13 @@ class StorageComparator:
 
             # 提取totalSupply槽
             if 'totalSupply_slot' in inv_slots and 'totalSupply_contract' in inv_slots:
-                contract = inv_slots['totalSupply_contract']
+                contract = inv_slots['totalSupply_contract'].lower()  # 规范化为小写
                 slot = int(inv_slots['totalSupply_slot'])
                 slots.add((contract, slot))
 
             # 提取reserves槽
             if 'reserves_slot' in inv_slots and 'reserves_contract' in inv_slots:
-                contract = inv_slots['reserves_contract']
+                contract = inv_slots['reserves_contract'].lower()  # 规范化为小写
                 slot = int(inv_slots['reserves_slot'])
                 slots.add((contract, slot))
 
@@ -237,6 +240,7 @@ class StorageComparator:
             if 'monitored_slot' in inv_slots:
                 contract = inv_slots.get('contract') or inv.get('contracts', [None])[0]
                 if contract:
+                    contract = contract.lower()  # 规范化为小写
                     slot = int(inv_slots['monitored_slot'])
                     slots.add((contract, slot))
 
@@ -244,6 +248,7 @@ class StorageComparator:
             contracts = inv.get('contracts', [])
             for contract in contracts:
                 # 默认查询slot 2（ERC20 totalSupply）
+                contract = contract.lower()  # 规范化为小写
                 slots.add((contract, 2))
 
         return list(slots)
@@ -283,6 +288,8 @@ class StorageComparator:
         batch_requests = []
 
         for i, (contract, slot) in enumerate(contracts_and_slots):
+            # 确保地址为小写格式
+            contract = contract.lower()
             batch_requests.append({
                 'jsonrpc': '2.0',
                 'method': 'eth_getStorageAt',
@@ -360,6 +367,9 @@ class StorageComparator:
         """批量查询合约余额"""
         if not contracts:
             return {}
+
+        # 规范化地址为小写
+        contracts = [addr.lower() for addr in contracts]
 
         # 使用RPC批量请求
         batch_requests = []

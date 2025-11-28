@@ -1,0 +1,27 @@
+[0;32m[SUCCESS][0m V3增强组件已加载 (Storage推断 + 符号执行)
+[0;34m[INFO][0m 防火墙配置读取器已初始化
+[0;34m[INFO][0m === 单协议提取模式 (V2) ===
+[0;34m[INFO][0m 开始提取约束 (V2): XSIJ_exp
+[0;36m[DEBUG][0m   发现 6 个函数: ['flashLoan', 'removePoolAmount', 'setUp', 'testExploit', 'DPPFlashLoanCall', 'getMyVariable']
+[0;36m[DEBUG][0m   识别回调函数: DPPFlashLoanCall (协议: dodo)
+[0;34m[INFO][0m   识别到 2 个入口点: ['testExploit', 'DPPFlashLoanCall']
+[0;34m[INFO][0m   可达函数: 2/6
+[0;34m[INFO][0m   收集到 6 个唯一外部调用
+[0;34m[INFO][0m   转换为 6 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: DPPFlashLoanCall (协议: dodo)
+[0;34m[INFO][0m   被攻击合约: None (None)
+[0;34m[INFO][0m   识别到 6 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 20 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 3 个
+[0;34m[INFO][0m   0xf43fd71f40...: 3 个slot变化
+[0;34m[INFO][0m   0x31bfa137c7...: 7 个slot变化
+[0;34m[INFO][0m   0x55d398326f...: 26 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x55d398326f... (26 slots)
+[0;34m[INFO][0m 检测到 26 个slot变化
+[0;36m[DEBUG][0m V3推断失败: 'NoneType' object has no attribute 'lower', 回退到V2
+[0;36m[DEBUG][0m V3推断失败: 'NoneType' object has no attribute 'lower', 回退到V2
+[0;36m[DEBUG][0m V3推断失败: 'NoneType' object has no attribute 'lower', 回退到V2
+[0;32m[SUCCESS][0m   生成约束: 3 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/XSIJ_exp/constraint_rules_v2.json

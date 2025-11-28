@@ -3,8 +3,27 @@
 pragma solidity =0.8.23;
 
 import "./WiseLendingDeclaration.sol";
+import {IRouter} from "../../../../../../src/Interface/IRouter.sol";
 
 abstract contract WiseLowLevelHelper is WiseLendingDeclaration {
+    // 防火墙路由器
+    IRouter public immutable firewall;
+
+    // 防火墙保护修饰符
+    // 构造函数：注入防火墙路由器
+    constructor(address _firewall) {
+        firewall = IRouter(_firewall);
+    }
+
+
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
 
     modifier onlyFeeManager() {
         _onlyFeeManager();

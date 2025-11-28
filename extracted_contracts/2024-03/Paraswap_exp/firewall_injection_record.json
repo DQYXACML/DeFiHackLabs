@@ -1,0 +1,20 @@
+{
+  "protocol": "Paraswap_exp",
+  "year_month": "2024-03",
+  "injection_timestamp": "2025-11-23T03:18:55.225730Z",
+  "main_contract": {
+    "name": "IParaSwapAugustusV6",
+    "actual_contract_name": "UniswapV3Utils",
+    "address": "0x00000000FdAC7708D0D360BDDc1bc7d097F47439"
+  },
+  "injected_contracts": [
+    {
+      "file": "UniswapV3Utils.sol",
+      "functions": [
+        "uniswapV3SwapCallback"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

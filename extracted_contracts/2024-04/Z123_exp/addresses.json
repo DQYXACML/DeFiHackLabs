@@ -4,48 +4,177 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : 0x3026C464d3Bd6Ef0CeD0D49e80f171b58176Ce32"
+    "context": "// Attacker : 0x3026C464d3Bd6Ef0CeD0D49e80f171b58176Ce32",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x61dd07ce0cecf0d7bacf5eb208c57d16bbdee168",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x61dd07ce0cecf0d7bacf5eb208c57d16bbdee168"
+    "context": "// Attack Contract : https://bscscan.com/address/0x61dd07ce0cecf0d7bacf5eb208c57d16bbdee168",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xb000f121A173D7Dd638bb080fEe669a2F3Af9760",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0xb000f121A173D7Dd638bb080fEe669a2F3Af9760"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0xb000f121A173D7Dd638bb080fEe669a2F3Af9760",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x36696169C63e42cd08ce11f5deeBbCeBae652050",
-    "name": null,
+    "name": "IPancakeV3Pool",
     "chain": "bsc",
     "source": "static",
-    "context": "IPancakeV3Pool(0x36696169C63e42cd08ce11f5deeBbCeBae652050)"
+    "context": "IPancakeV3Pool pancakeV3_ = IPancakeV3Pool(0x36696169C63e42cd08ce11f5deeBbCeBae652050)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IPancakeV3Pool"
+    ]
   },
   {
     "address": "0x55d398326f99059fF775485246999027B3197955",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0x55d398326f99059fF775485246999027B3197955)"
+    "context": "IERC20 bsc_usd_ = IERC20(0x55d398326f99059fF775485246999027B3197955)",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "IERC20",
+      "usdt",
+      "IUSDT"
+    ]
   },
   {
     "address": "0x901c0967DF19fA0Af98Fd958E70F30301d7580dD",
     "name": null,
     "chain": "bsc",
     "source": "static",
-    "context": "address(0x901c0967DF19fA0Af98Fd958E70F30301d7580dD)"
+    "context": "address(0x901c0967DF19fA0Af98Fd958E70F30301d7580dD)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0x6125c643a2D4A927ACd63C1185c6be902eFd5dC8",
     "name": null,
     "chain": "bsc",
     "source": "static",
-    "context": "address(0x6125c643a2D4A927ACd63C1185c6be902eFd5dC8)"
+    "context": "address(0x6125c643a2D4A927ACd63C1185c6be902eFd5dC8)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2534",
+    "onchain_name": null,
+    "symbol": "WBNB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WBNB",
+      "wbnb",
+      "IWBNB"
+    ]
+  },
+  {
+    "address": "0x93515A5Dbc2834D687721111d966DE472d682a47",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2482",
+    "onchain_name": null,
+    "symbol": "Tether USD-Z123",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Tether USD-Z123",
+      "tether usd-z123",
+      "TETHER USD-Z123",
+      "ITether USD-Z123"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xa82e362Cd004fC3394dBc320A0Bf2BA96831c192",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1d05B82259CE82181ca5377105e77992e430679E",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

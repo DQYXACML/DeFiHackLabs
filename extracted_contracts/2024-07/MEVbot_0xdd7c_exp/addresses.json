@@ -4,90 +4,266 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x98250d30aed204e5cbb8fef7f099bc68dbc4b896"
+    "context": "// Attacker : https://etherscan.io/address/0x98250d30aed204e5cbb8fef7f099bc68dbc4b896",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xe10b2cfa421d0ecd5153c7a9d53dad949e1990dd",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0xe10b2cfa421d0ecd5153c7a9d53dad949e1990dd"
+    "context": "// Attack Contract : https://etherscan.io/address/0xe10b2cfa421d0ecd5153c7a9d53dad949e1990dd",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x0000000000E715268E0fe41ced1dd101Fc696355",
     "name": "Victim",
     "chain": "mainnet",
     "source": "static",
-    "context": "address Victim = 0x0000000000E715268E0fe41ced1dd101Fc696355"
+    "context": "address Victim = 0x0000000000E715268E0fe41ced1dd101Fc696355",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Victim"
+    ]
   },
   {
     "address": "0xDd7c2987686B21f656F036458C874D154A923685",
     "name": "VulnContract",
     "chain": "mainnet",
     "source": "static",
-    "context": "address public VulnContract = 0xDd7c2987686B21f656F036458C874D154A923685"
+    "context": "address public VulnContract = 0xDd7c2987686B21f656F036458C874D154A923685",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "VulnContract"
+    ]
   },
   {
     "address": "0xF929bA2AEec16cFfcfc66858A9434E194BAaf80D",
     "name": "other",
     "chain": "mainnet",
     "source": "static",
-    "context": "address other = 0xF929bA2AEec16cFfcfc66858A9434E194BAaf80D"
+    "context": "address other = 0xF929bA2AEec16cFfcfc66858A9434E194BAaf80D",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "other"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": "WETH",
+    "name": "WETH9",
     "chain": "mainnet",
     "source": "static",
-    "context": "private constant WETH = WETH9(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "WETH9 private constant WETH = WETH9(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH9"
+    ]
   },
   {
     "address": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
-    "name": null,
+    "name": "IAaveFlashloan",
     "chain": "mainnet",
     "source": "static",
-    "context": "IAaveFlashloan(0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2)"
+    "context": "IAaveFlashloan aave = IAaveFlashloan(0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IAaveFlashloan"
+    ]
   },
   {
     "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xdAC17F958D2ee523a2206206994597C13D831ec7)"
+    "context": "IERC20 USDT = IERC20(0xdAC17F958D2ee523a2206206994597C13D831ec7)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)"
+    "context": "IERC20 USDC = IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
-    "address": "0xCBc7b47a7dA132C378f013B87C0E8223Ad180802",
+    "address": "0x43506849D7C04F9138D1A2050bbF3A0c054402dd",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "called with gas 2553",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
-    "address": "0xDa45cD13485ccBA2dC89Ef1813372c5d8AdC8158",
+    "address": "0xFe12671eaD8A088d36E9457d8bDf1Ff78DbC6D19",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
-    "address": "0xE20491be2845B038C524c16D3F54b08Fb65349Bb",
+    "address": "0xFDa1D589B49295D4FD772B303b22d93c04Cf7320",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x4a92bAce6488163ddA534DD30DdA39603948D8c2",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xbb3180d53784b97845aaaa049e815f4912511194",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x6080604052600436106100de575f3560e01c8063",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x800c32eaa2a6c93cf4cb51794450ed77fbfbb172",
+    "name": "IERC20_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0x97287a4f35e583d924f78ad88db8afce1379189a",
+    "name": "IAaveFlashloan_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

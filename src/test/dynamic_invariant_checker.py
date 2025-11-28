@@ -239,12 +239,48 @@ class DynamicInvariantChecker:
 
         logger.info(f"  监控 {len(slots)} 个存储槽")
 
+        # 打印前3个槽用于调试
+        if slots:
+            logger.debug("  前3个监控槽:")
+            for i, (addr, slot) in enumerate(slots[:3], 1):
+                logger.debug(f"    {i}. {addr}[{slot}]")
+
         snapshot = self.storage_comparator.capture_snapshot(
             contracts_and_slots=slots,
             include_balances=True
         )
 
+        # 验证快照数据
+        total_storage_values = sum(len(v) for v in snapshot.get('storage', {}).values())
+        total_balances = len(snapshot.get('balances', {}))
+
         logger.info(f"  ✓ 快照捕获成功")
+        logger.info(f"    - 存储值数量: {total_storage_values}")
+        logger.info(f"    - 余额数量: {total_balances}")
+
+        # 检查是否所有存储值都是0（可能表示部署问题）
+        all_storage_zero = True
+        for contract_slots in snapshot.get('storage', {}).values():
+            for val in contract_slots.values():
+                if val != 0:
+                    all_storage_zero = False
+                    break
+            if not all_storage_zero:
+                break
+
+        if all_storage_zero and total_storage_values > 0:
+            logger.warning("  ⚠️  所有存储值都是0,请检查:")
+            logger.warning("     1. 合约是否正确部署到Anvil")
+            logger.warning("     2. attack_state.json 是否包含存储数据")
+            logger.warning("     3. 地址格式是否正确")
+
+        # 打印一些样本数据用于调试
+        if logger.level <= logging.DEBUG:
+            logger.debug("  存储快照样本 (前2个合约):")
+            for i, (contract, slots_data) in enumerate(list(snapshot.get('storage', {}).items())[:2], 1):
+                logger.debug(f"    合约 {i}: {contract[:10]}...{contract[-6:]}")
+                for slot, value in list(slots_data.items())[:2]:
+                    logger.debug(f"      槽 {slot}: {value:,}")
 
         return snapshot
 
@@ -303,7 +339,21 @@ class DynamicInvariantChecker:
             include_balances=True
         )
 
-        logger.info("  ✓ 快照捕获成功")
+        # 验证快照数据
+        total_storage_values = sum(len(v) for v in snapshot.get('storage', {}).values())
+        total_balances = len(snapshot.get('balances', {}))
+
+        logger.info(f"  ✓ 快照捕获成功")
+        logger.info(f"    - 存储值数量: {total_storage_values}")
+        logger.info(f"    - 余额数量: {total_balances}")
+
+        # 打印一些样本数据用于调试
+        if logger.level <= logging.DEBUG:
+            logger.debug("  存储快照样本 (前2个合约):")
+            for i, (contract, slots_data) in enumerate(list(snapshot.get('storage', {}).items())[:2], 1):
+                logger.debug(f"    合约 {i}: {contract[:10]}...{contract[-6:]}")
+                for slot, value in list(slots_data.items())[:2]:
+                    logger.debug(f"      槽 {slot}: {value:,}")
 
         return snapshot
 

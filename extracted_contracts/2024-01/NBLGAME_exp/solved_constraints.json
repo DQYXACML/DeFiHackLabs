@@ -1,0 +1,424 @@
+{
+  "protocol": "NBLGAME_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x5499178919c79086fd580d6c5f332a4253244d91",
+    "name": "NblNftStake"
+  },
+  "solved_constraints": [
+    {
+      "function": "depositNft",
+      "signature": "depositNft(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "function": "depositNft",
+        "signature": "depositNft(address,uint256)",
+        "attack_pattern": "large_deposit",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > totalSupply * 0.5",
+          "semantics": "Large deposit exceeding 50% of total supply",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 0,
+              "type": "uint256",
+              "value_expr": "737"
+            },
+            "totalSupply": {
+              "source": "storage",
+              "slot": "0x2",
+              "type": "uint256",
+              "semantic_name": "totalSupply"
+            }
+          },
+          "danger_condition": "amount > totalSupply * 0.5",
+          "safe_condition": "amount <= totalSupply * 0.1"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 237794002082404081657385990029546039783801357832,
+        "state_value": 475588004164808163314771980059092079567602715664,
+        "coefficient": 0.5,
+        "expression": "amount > totalSupply * 0.5",
+        "resolved_expression": "amount > 237794002082404081657385990029546039783801357832"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 237794002082404081657385990029546039783801357833,
+          "description": "刚好超过阈值 (237794002082404081657385990029546039783801357832+1)"
+        },
+        {
+          "type": "safe",
+          "value": 47558800416480816331477198005909207956760271566,
+          "description": "安全范围 (10%)"
+        },
+        {
+          "type": "attack",
+          "value": 451808603956567755149033381056137475589222579880,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 475588004164808163314771980059092079567602715664,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "depositNbl",
+      "signature": "depositNbl(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "function": "depositNbl",
+        "signature": "depositNbl(address,uint256)",
+        "attack_pattern": "large_deposit",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > totalSupply * 0.5",
+          "semantics": "Large deposit exceeding 50% of total supply",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 0,
+              "type": "uint256",
+              "value_expr": "0"
+            },
+            "totalSupply": {
+              "source": "storage",
+              "slot": "0x2",
+              "type": "uint256",
+              "semantic_name": "totalSupply"
+            }
+          },
+          "danger_condition": "amount > totalSupply * 0.5",
+          "safe_condition": "amount <= totalSupply * 0.1"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 237794002082404081657385990029546039783801357832,
+        "state_value": 475588004164808163314771980059092079567602715664,
+        "coefficient": 0.5,
+        "expression": "amount > totalSupply * 0.5",
+        "resolved_expression": "amount > 237794002082404081657385990029546039783801357832"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 237794002082404081657385990029546039783801357833,
+          "description": "刚好超过阈值 (237794002082404081657385990029546039783801357832+1)"
+        },
+        {
+          "type": "safe",
+          "value": 47558800416480816331477198005909207956760271566,
+          "description": "安全范围 (10%)"
+        },
+        {
+          "type": "attack",
+          "value": 451808603956567755149033381056137475589222579880,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 475588004164808163314771980059092079567602715664,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "withdrawNft",
+      "signature": "withdrawNft(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "function": "withdrawNft",
+        "signature": "withdrawNft(uint256,address[],uint8[])",
+        "attack_pattern": "drain_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > userBalance * 0.9",
+          "semantics": "Draining large portion of user balance",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 0,
+              "type": "uint256",
+              "value_expr": "0"
+            },
+            "userBalance": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "balanceOf(attacker)"
+            }
+          },
+          "danger_condition": "amount > userBalance * 0.9",
+          "safe_condition": "amount <= userBalance * 0.5"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "expression": "amount > userBalance * 0.9",
+        "resolved_expression": "amount > 900000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 900000000000000001,
+          "description": "刚好超过阈值 (900000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 500000000000000000,
+          "description": "安全范围 (50%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "withdrawNft",
+      "signature": "withdrawNft(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "function": "withdrawNft",
+        "signature": "withdrawNft(uint256,address[],uint8[])",
+        "attack_pattern": "drain_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > userBalance * 0.9",
+          "semantics": "Draining large portion of user balance",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 0,
+              "type": "uint256",
+              "value_expr": "0"
+            },
+            "userBalance": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "balanceOf(attacker)"
+            }
+          },
+          "danger_condition": "amount > userBalance * 0.9",
+          "safe_condition": "amount <= userBalance * 0.5"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "expression": "amount > userBalance * 0.9",
+        "resolved_expression": "amount > 900000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 900000000000000001,
+          "description": "刚好超过阈值 (900000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 500000000000000000,
+          "description": "安全范围 (50%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "depositNft",
+      "signature": "depositNft(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "function": "depositNft",
+        "signature": "depositNft(address,uint256)",
+        "attack_pattern": "large_deposit",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > totalSupply * 0.5",
+          "semantics": "Large deposit exceeding 50% of total supply",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 0,
+              "type": "uint256",
+              "value_expr": "737"
+            },
+            "totalSupply": {
+              "source": "storage",
+              "slot": "0x2",
+              "type": "uint256",
+              "semantic_name": "totalSupply"
+            }
+          },
+          "danger_condition": "amount > totalSupply * 0.5",
+          "safe_condition": "amount <= totalSupply * 0.1"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 237794002082404081657385990029546039783801357832,
+        "state_value": 475588004164808163314771980059092079567602715664,
+        "coefficient": 0.5,
+        "expression": "amount > totalSupply * 0.5",
+        "resolved_expression": "amount > 237794002082404081657385990029546039783801357832"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 237794002082404081657385990029546039783801357833,
+          "description": "刚好超过阈值 (237794002082404081657385990029546039783801357832+1)"
+        },
+        {
+          "type": "safe",
+          "value": 47558800416480816331477198005909207956760271566,
+          "description": "安全范围 (10%)"
+        },
+        {
+          "type": "attack",
+          "value": 451808603956567755149033381056137475589222579880,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 475588004164808163314771980059092079567602715664,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    }
+  ],
+  "param_check_rules": {
+    "protocol": "NBLGAME_exp",
+    "version": "1.0.0",
+    "rules": [
+      {
+        "function_sig": "0xa72e2cd6",
+        "function_name": "depositNft",
+        "param_index": 0,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "237794002082404081657385990029546039783801357832",
+        "threshold": 237794002082404081657385990029546039783801357832,
+        "state_value": 475588004164808163314771980059092079567602715664,
+        "coefficient": 0.5,
+        "attack_pattern": "large_deposit",
+        "description": "Large deposit exceeding 50% of total supply"
+      },
+      {
+        "function_sig": "0x7e13ae8c",
+        "function_name": "depositNbl",
+        "param_index": 0,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "237794002082404081657385990029546039783801357832",
+        "threshold": 237794002082404081657385990029546039783801357832,
+        "state_value": 475588004164808163314771980059092079567602715664,
+        "coefficient": 0.5,
+        "attack_pattern": "large_deposit",
+        "description": "Large deposit exceeding 50% of total supply"
+      },
+      {
+        "function_sig": "0x2e919860",
+        "function_name": "withdrawNft",
+        "param_index": 0,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "900000000000000000",
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "attack_pattern": "drain_attack",
+        "description": "Draining large portion of user balance"
+      },
+      {
+        "function_sig": "0x2e919860",
+        "function_name": "withdrawNft",
+        "param_index": 0,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "900000000000000000",
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "attack_pattern": "drain_attack",
+        "description": "Draining large portion of user balance"
+      },
+      {
+        "function_sig": "0xa72e2cd6",
+        "function_name": "depositNft",
+        "param_index": 0,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "237794002082404081657385990029546039783801357832",
+        "threshold": 237794002082404081657385990029546039783801357832,
+        "state_value": 475588004164808163314771980059092079567602715664,
+        "coefficient": 0.5,
+        "attack_pattern": "large_deposit",
+        "description": "Large deposit exceeding 50% of total supply"
+      }
+    ],
+    "metadata": {
+      "generated_by": "solve_constraints.py",
+      "total_rules": 5
+    }
+  },
+  "summary": {
+    "total_constraints": 5,
+    "resolved_constraints": 5,
+    "resolution_rate": "100.0%"
+  },
+  "metadata": {
+    "solver_version": "1.0.0",
+    "generated_by": "solve_constraints.py"
+  }
+}

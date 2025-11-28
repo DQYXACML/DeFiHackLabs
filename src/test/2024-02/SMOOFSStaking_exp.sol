@@ -12,14 +12,16 @@ import "./../interface.sol";
 
 // @Analysis
 // https://twitter.com/AnciliaInc/status/1762893563103428783
- 
 
 interface ISMOOFSStaking {
     function Stake(
         uint256 _tokenId
     ) external;
 
-    function Withdraw(uint256 _tokenId, bool forceWithTax) external;
+    function Withdraw(
+        uint256 _tokenId,
+        bool forceWithTax
+    ) external;
 }
 
 contract ContractTest is Test {

@@ -418,6 +418,8 @@ class AttackExecutor:
                 "--match-contract", match_contract,
                 "--skip", "src/test/2025-05/Corkprotocol_exp.sol",  # 已知 Stack too deep
                 "--skip", "src/test/2024-11/proxy_b7e1_exp.sol",    # 已知 Stack too deep
+                "--skip", "src/test/2024-01/XSIJ_exp.sol",          # 导入 Firewall IRouter
+                "--skip", "src/test/2024-01/XSIJ_exp.sol.backup",   # 导入 Firewall IRouter
                 "--rpc-url", self.rpc_url,
                 "-vvv"  # 详细输出以便获取 tx hash
             ]
@@ -535,6 +537,166 @@ class AttackExecutor:
             logger.debug(f"获取最新交易失败: {e}")
 
         return None
+
+# ============================================================================
+# 状态收集器
+# ============================================================================
+
+class StateCollector:
+    """收集 Anvil/链上的合约状态"""
+
+    def __init__(self, rpc_url: str):
+        """
+        初始化状态收集器
+
+        Args:
+            rpc_url: RPC 端点 URL
+        """
+        try:
+            from web3 import Web3
+            self.Web3 = Web3
+            self.w3 = Web3(Web3.HTTPProvider(rpc_url))
+            self.logger = logging.getLogger(__name__ + '.StateCollector')
+
+            # 测试连接
+            if not self.w3.is_connected():
+                self.logger.warning(f"无法连接到 RPC: {rpc_url}")
+            else:
+                self.logger.debug(f"✓ 已连接到 RPC: {rpc_url}")
+
+        except ImportError:
+            self.logger.error("需要安装 web3 库: pip install web3")
+            raise
+        except Exception as e:
+            self.logger.error(f"初始化 StateCollector 失败: {e}")
+            raise
+
+    def collect_storage_for_known_slots(
+        self,
+        address: str,
+        known_slots: List[str]
+    ) -> Dict[str, str]:
+        """
+        收集已知槽位的存储值
+
+        Args:
+            address: 合约地址
+            known_slots: 已知槽位列表 (来自 attack_state.json)
+
+        Returns:
+            槽位 -> 值的映射 {"0x2": "0x123...", ...}
+        """
+        storage = {}
+
+        for slot in known_slots:
+            try:
+                # 转换槽号为整数
+                if isinstance(slot, str):
+                    if slot.startswith('0x'):
+                        slot_int = int(slot, 16)
+                    else:
+                        slot_int = int(slot)
+                else:
+                    slot_int = int(slot)
+
+                # 查询存储值
+                value = self.w3.eth.get_storage_at(address, slot_int)
+
+                # 转换为十六进制字符串
+                if isinstance(value, bytes):
+                    storage[slot] = '0x' + value.hex()
+                elif isinstance(value, self.Web3.HexBytes):
+                    storage[slot] = value.hex()
+                else:
+                    storage[slot] = str(value)
+
+            except Exception as e:
+                self.logger.debug(f"查询 slot {slot} 失败 ({address[:10]}...): {e}")
+                storage[slot] = "0x0"
+
+        return storage
+
+    def collect(
+        self,
+        addresses_with_slots: Dict[str, List[str]],
+        output_file: Path,
+        label: str = "state",
+        metadata: Optional[Dict] = None
+    ) -> bool:
+        """
+        收集指定地址的完整状态
+
+        Args:
+            addresses_with_slots: {地址: [槽位列表]} 映射
+            output_file: 输出文件路径
+            label: 状态标签 (before/after)
+            metadata: 额外的元数据信息
+
+        Returns:
+            是否成功
+        """
+        try:
+            current_block = self.w3.eth.block_number
+
+            state_data = {
+                "metadata": {
+                    "label": label,
+                    "collected_at": datetime.now().isoformat(),
+                    "block_number": current_block,
+                    "total_addresses": len(addresses_with_slots),
+                    **(metadata or {})
+                },
+                "addresses": {}
+            }
+
+            for addr, known_slots in addresses_with_slots.items():
+                self.logger.debug(f"收集 {addr[:10]}... 的状态")
+
+                # 1. 查询基础信息
+                try:
+                    balance = self.w3.eth.get_balance(addr)
+                    code = self.w3.eth.get_code(addr)
+                    nonce = self.w3.eth.get_transaction_count(addr)
+
+                    # 转换 code 为十六进制字符串
+                    if isinstance(code, bytes):
+                        code_hex = '0x' + code.hex()
+                    elif isinstance(code, self.Web3.HexBytes):
+                        code_hex = code.hex()
+                    else:
+                        code_hex = str(code)
+
+                    # 2. 查询存储槽
+                    storage = self.collect_storage_for_known_slots(addr, known_slots)
+
+                    state_data["addresses"][addr] = {
+                        "balance_wei": str(balance),
+                        "nonce": nonce,
+                        "code": code_hex,
+                        "code_size": len(code_hex) // 2 if code_hex.startswith('0x') else len(code_hex),
+                        "is_contract": len(code_hex) > 2,
+                        "storage": storage
+                    }
+
+                except Exception as e:
+                    self.logger.warning(f"收集 {addr[:10]}... 失败: {e}")
+                    state_data["addresses"][addr] = {
+                        "error": str(e)
+                    }
+
+            # 保存到文件
+            output_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(state_data, f, indent=2, ensure_ascii=False)
+
+            self.logger.info(f"✓ 状态已保存: {output_file} ({len(addresses_with_slots)} 个地址)")
+            return True
+
+        except Exception as e:
+            self.logger.error(f"收集状态失败: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
 
 # ============================================================================
 # Monitor 运行器
@@ -764,6 +926,45 @@ class MonitorOutputGenerator:
                 return False
 
             logger.info(f"✓ 重放成功，Anvil 交易: {anvil_tx_hash}")
+
+            # 5.5. 收集攻击后状态
+            logger.info(f"\n[4.5/6] 收集攻击后状态...")
+            after_state_file = project_dir / "attack_state_after.json"
+
+            try:
+                # 创建状态收集器
+                state_collector = StateCollector(ANVIL_RPC)
+
+                # 读取原始 attack_state.json 获取地址和槽位列表
+                addresses_with_slots = {}
+                for addr, addr_data in before_state['addresses'].items():
+                    # 获取该地址的已知槽位列表
+                    known_slots = list(addr_data.get('storage', {}).keys())
+                    if known_slots:  # 只收集有存储槽的地址
+                        addresses_with_slots[addr] = known_slots
+
+                if addresses_with_slots:
+                    # 收集攻击后状态
+                    success = state_collector.collect(
+                        addresses_with_slots=addresses_with_slots,
+                        output_file=after_state_file,
+                        label="after_attack",
+                        metadata={
+                            "attack_tx_hash": anvil_tx_hash,
+                            "original_attack_tx": original_tx_hash
+                        }
+                    )
+
+                    if success:
+                        logger.info(f"✓ 攻击后状态已保存: {after_state_file.name}")
+                    else:
+                        logger.warning("收集攻击后状态失败，继续执行...")
+                else:
+                    logger.warning("未找到需要收集的存储槽，跳过状态收集")
+
+            except Exception as e:
+                logger.warning(f"收集攻击后状态时出错: {e}")
+                logger.warning("继续执行剩余流程...")
 
             # 6. 确保 Monitor 已编译
             logger.info(f"\n[5/6] 检查 Monitor 二进制...")

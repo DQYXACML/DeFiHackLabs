@@ -129,14 +129,14 @@ class InvariantEvaluator:
         slots = invariant.get('slots', {})
 
         # 提取totalSupply变化
-        supply_contract = slots.get('totalSupply_contract')
+        supply_contract = slots.get('totalSupply_contract', '').lower()  # 规范化为小写
         supply_slot = int(slots.get('totalSupply_slot', 0))
 
         supply_before = storage_changes.get(supply_contract, {}).get(supply_slot, {}).get('before', 0)
         supply_after = storage_changes.get(supply_contract, {}).get(supply_slot, {}).get('after', 0)
 
         # 提取reserves变化（可能是合约余额）
-        reserves_contract = slots.get('reserves_contract')
+        reserves_contract = slots.get('reserves_contract', '').lower()  # 规范化为小写
 
         # reserves可能是存储槽或者是合约余额
         if 'reserves_slot' in slots:
@@ -148,16 +148,52 @@ class InvariantEvaluator:
             reserves_before = storage_changes.get('balances', {}).get(reserves_contract, {}).get('before', 0)
             reserves_after = storage_changes.get('balances', {}).get(reserves_contract, {}).get('after', 0)
 
+        # 数据有效性检查（防止除零和inf%）
+        if supply_before == 0 and supply_after == 0:
+            # 存储槽未正确捕获,返回低置信度结果
+            logger.warning(f"[{invariant.get('id')}] totalSupply前后都为0,可能合约未部署或存储槽错误")
+            return ViolationResult(
+                invariant_id=invariant.get('id', 'UNKNOWN'),
+                invariant_type='share_price_stability',
+                severity=ViolationSeverity(invariant.get('severity', 'critical')),
+                violated=False,
+                threshold=f"{invariant.get('threshold', 0.05) * 100:.1f}%",
+                actual_value="N/A (数据未捕获)",
+                description=invariant.get('description', ''),
+                impact=invariant.get('violation_impact', ''),
+                evidence={
+                    'error': '存储槽数据全为0,可能未正确部署',
+                    'supply_contract': supply_contract,
+                    'reserves_contract': reserves_contract
+                },
+                confidence=0.0  # 置信度为0表示数据无效
+            )
+
+        if reserves_before == 0 and reserves_after == 0:
+            logger.warning(f"[{invariant.get('id')}] reserves前后都为0,可能地址错误或未部署")
+
         # 计算份额价格
         price_before = reserves_before / supply_before if supply_before > 0 else 0
         price_after = reserves_after / supply_after if supply_after > 0 else 0
 
-        # 计算变化率
-        change_rate = abs(price_after - price_before) / price_before if price_before > 0 else float('inf')
+        # 计算变化率（防止除零）
+        if price_before == 0:
+            # 无法计算变化率
+            if price_after > 0:
+                # 从0变为有值，视为无限变化
+                change_rate = float('inf')
+                actual_value = "INF (从0开始)"
+            else:
+                # 前后都是0
+                change_rate = 0.0
+                actual_value = "0.0% (无变化)"
+        else:
+            change_rate = abs(price_after - price_before) / price_before
+            actual_value = f"{change_rate * 100:.1f}%"
 
         # 检查是否违规
         threshold = invariant.get('threshold', 0.05)
-        is_violated = change_rate > threshold
+        is_violated = change_rate > threshold and change_rate != float('inf')
 
         return ViolationResult(
             invariant_id=invariant.get('id', 'UNKNOWN'),
@@ -165,7 +201,7 @@ class InvariantEvaluator:
             severity=ViolationSeverity(invariant.get('severity', 'critical')),
             violated=is_violated,
             threshold=f"{threshold * 100:.1f}%",
-            actual_value=f"{change_rate * 100:.1f}%",
+            actual_value=actual_value,
             description=invariant.get('description', ''),
             impact=invariant.get('violation_impact', ''),
             evidence={
@@ -177,9 +213,9 @@ class InvariantEvaluator:
                 'reserves_change_pct': f"{abs(reserves_after - reserves_before) / reserves_before * 100:.1f}%" if reserves_before > 0 else 'N/A',
                 'share_price_before': f"{price_before:.6f}",
                 'share_price_after': f"{price_after:.6f}",
-                'share_price_change_pct': f"{change_rate * 100:.1f}%"
+                'share_price_change_pct': actual_value
             },
-            confidence=invariant.get('confidence', 1.0)
+            confidence=invariant.get('confidence', 1.0) if supply_before > 0 else 0.5
         )
 
     def _eval_supply_backing_consistency(
@@ -244,18 +280,47 @@ class InvariantEvaluator:
         """
         slots = invariant.get('slots', {})
 
-        contract = slots.get('contract') or invariant.get('contracts', [None])[0]
+        contract = (slots.get('contract') or invariant.get('contracts', [None])[0] or '').lower()  # 规范化为小写
         slot = int(slots.get('monitored_slot', 0))
 
         value_before = storage_changes.get(contract, {}).get(slot, {}).get('before', 0)
         value_after = storage_changes.get(contract, {}).get(slot, {}).get('after', 0)
 
-        # 计算变化率
-        change_rate = abs(value_after - value_before) / value_before if value_before > 0 else float('inf')
+        # 数据有效性检查
+        if value_before == 0 and value_after == 0:
+            logger.warning(f"[{invariant.get('id')}] 监控槽前后都为0,可能合约未部署")
+            return ViolationResult(
+                invariant_id=invariant.get('id', 'UNKNOWN'),
+                invariant_type='bounded_change_rate',
+                severity=ViolationSeverity(invariant.get('severity', 'medium')),
+                violated=False,
+                threshold=f"{invariant.get('threshold', 0.5) * 100:.1f}%",
+                actual_value="N/A (数据未捕获)",
+                description=invariant.get('description', ''),
+                impact=invariant.get('violation_impact', ''),
+                evidence={
+                    'error': '存储槽数据全为0',
+                    'contract': contract,
+                    'slot': slot
+                },
+                confidence=0.0
+            )
+
+        # 计算变化率（防止除零）
+        if value_before == 0:
+            if value_after > 0:
+                change_rate = float('inf')
+                actual_value = "INF (从0开始)"
+            else:
+                change_rate = 0.0
+                actual_value = "0.0% (无变化)"
+        else:
+            change_rate = abs(value_after - value_before) / value_before
+            actual_value = f"{change_rate * 100:.1f}%"
 
         # 检查是否违规
         threshold = invariant.get('threshold', 0.5)
-        is_violated = change_rate > threshold
+        is_violated = change_rate > threshold and change_rate != float('inf')
 
         return ViolationResult(
             invariant_id=invariant.get('id', 'UNKNOWN'),
@@ -263,7 +328,7 @@ class InvariantEvaluator:
             severity=ViolationSeverity(invariant.get('severity', 'medium')),
             violated=is_violated,
             threshold=f"{threshold * 100:.1f}%",
-            actual_value=f"{change_rate * 100:.1f}%",
+            actual_value=actual_value,
             description=invariant.get('description', ''),
             impact=invariant.get('violation_impact', ''),
             evidence={
@@ -272,9 +337,9 @@ class InvariantEvaluator:
                 'value_before': value_before,
                 'value_after': value_after,
                 'absolute_change': value_after - value_before,
-                'change_rate': f"{change_rate * 100:.1f}%"
+                'change_rate': actual_value
             },
-            confidence=invariant.get('confidence', 1.0)
+            confidence=invariant.get('confidence', 1.0) if value_before > 0 else 0.5
         )
 
     # ==================== 运行时不变量评估 ====================

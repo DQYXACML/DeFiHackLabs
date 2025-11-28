@@ -1,0 +1,20 @@
+{
+  "protocol": "GAIN_exp",
+  "year_month": "2024-02",
+  "injection_timestamp": "2025-11-23T03:18:47.972160Z",
+  "main_contract": {
+    "name": "Uni_Pair_V3",
+    "actual_contract_name": "UniswapV3Pool",
+    "address": "0xc7bBeC68d12a0d1830360F8Ec58fA599bA1b0e9b"
+  },
+  "injected_contracts": [
+    {
+      "file": "UniswapV3Pool.sol",
+      "functions": [
+        "flash"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

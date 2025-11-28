@@ -1,0 +1,23 @@
+{
+  "protocol": "MIMSpell2_exp",
+  "year_month": "2024-01",
+  "injection_timestamp": "2025-11-26T04:21:27.700553Z",
+  "main_contract": {
+    "name": "ICauldronV4",
+    "actual_contract_name": "CauldronV4",
+    "address": "0x7259e152103756e1616A77Ae982353c3751A6a90"
+  },
+  "injected_contracts": [
+    {
+      "file": "src_cauldrons_CauldronV4.sol",
+      "functions": [
+        "addCollateral",
+        "borrow",
+        "repay",
+        "repayForAll"
+      ]
+    }
+  ],
+  "total_functions": 4,
+  "status": "success"
+}

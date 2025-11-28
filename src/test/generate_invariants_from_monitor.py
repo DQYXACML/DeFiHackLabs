@@ -36,6 +36,13 @@ from storage_invariant_generator import (
     ContractState as StorageContractState
 )
 
+# Import improved threshold calculator
+from improved_threshold_calculator import (
+    ImprovedThresholdCalculator,
+    AttackType,
+    format_attack_type
+)
+
 # ============================================================================
 # 配置
 # ============================================================================
@@ -91,6 +98,8 @@ class InvariantFromMonitorController:
     def __init__(self):
         self.parser = MonitorOutputParser()
         self.storage_analyzer = StorageInvariantAnalyzer()
+        # 🆕 添加改进的阈值计算器
+        self.threshold_calculator = ImprovedThresholdCalculator()
         self.logger = logging.getLogger(__name__ + '.Controller')
 
     def generate(self, monitor_file: Path, output_file: Path, project_name: Optional[str] = None) -> bool:
@@ -181,9 +190,9 @@ class InvariantFromMonitorController:
 
     def _analyze_storage_invariants(self, output_file: Path, project_name: str) -> Optional[Dict[str, Any]]:
         """
-        分析存储级不变量
+        分析存储级不变量（支持攻击前后对比）
 
-        尝试加载 attack_state.json 并运行存储分析
+        尝试加载 attack_state.json 和 attack_state_after.json 并运行存储分析
 
         Args:
             output_file: 输出文件路径（用于推断 attack_state.json 位置）
@@ -203,14 +212,15 @@ class InvariantFromMonitorController:
             return None
 
         try:
-            self.logger.info(f"加载 attack_state.json...")
+            # 1. 加载攻击前状态
+            self.logger.info(f"加载 attack_state.json (攻击前状态)...")
             with open(attack_state_file, 'r') as f:
-                attack_state = json.load(f)
+                before_state = json.load(f)
 
             # 转换为 StorageContractState 格式
-            contracts = {}
-            for addr, contract_data in attack_state.get('addresses', {}).items():
-                contracts[addr] = StorageContractState(
+            contracts_before = {}
+            for addr, contract_data in before_state.get('addresses', {}).items():
+                contracts_before[addr] = StorageContractState(
                     address=addr,
                     balance_wei=contract_data.get('balance_wei', '0'),
                     nonce=contract_data.get('nonce', 0),
@@ -221,9 +231,37 @@ class InvariantFromMonitorController:
                     name=contract_data.get('name', 'Unknown')
                 )
 
-            # 运行存储分析
+            # 2. 尝试加载攻击后状态
+            attack_state_after_file = project_dir / 'attack_state_after.json'
+            contracts_after = None
+
+            if attack_state_after_file.exists():
+                self.logger.info(f"✓ 找到 attack_state_after.json，将进行 diff 分析")
+                with open(attack_state_after_file, 'r') as f:
+                    after_state = json.load(f)
+
+                contracts_after = {}
+                for addr, contract_data in after_state.get('addresses', {}).items():
+                    contracts_after[addr] = StorageContractState(
+                        address=addr,
+                        balance_wei=contract_data.get('balance_wei', '0'),
+                        nonce=contract_data.get('nonce', 0),
+                        code=contract_data.get('code', ''),
+                        code_size=contract_data.get('code_size', 0),
+                        is_contract=contract_data.get('is_contract', False),
+                        storage=contract_data.get('storage', {}),
+                        name=contract_data.get('name', 'Unknown')
+                    )
+            else:
+                self.logger.warning("⚠️ 未找到 attack_state_after.json，仅使用 before 状态分析")
+                self.logger.warning("   提示: 使用新版 generate_monitor_output.py 可自动生成 after 状态")
+
+            # 3. 运行存储分析（传入 before 和 after）
             self.logger.info(f"运行存储槽分析...")
-            storage_analysis = self.storage_analyzer.analyze(contracts)
+            storage_analysis = self.storage_analyzer.analyze(
+                contracts_before=contracts_before,
+                contracts_after=contracts_after  # 如果为 None，分析器会降级到单状态模式
+            )
 
             return storage_analysis
 
@@ -233,15 +271,49 @@ class InvariantFromMonitorController:
             traceback.print_exc()
             return None
 
+    def _infer_protocol_type(self, monitor_data: Dict[str, Any]) -> str:
+        """
+        从monitor数据推断协议类型
+
+        根据项目名称和存储分析结果推断DeFi协议类型。
+        协议类型用于调整阈值系数。
+
+        Args:
+            monitor_data: Monitor输出的完整数据
+
+        Returns:
+            协议类型字符串 ('vault', 'amm', 'lending', 'staking', 'unknown')
+        """
+        project_name = monitor_data.get('project', '').lower()
+
+        # 基于项目名称的关键词匹配
+        if any(keyword in project_name for keyword in ['vault', 'wrapper', 'yearn', 'convex']):
+            return 'vault'
+        elif any(keyword in project_name for keyword in ['swap', 'amm', 'dex', 'uniswap', 'sushiswap', 'pancake']):
+            return 'amm'
+        elif any(keyword in project_name for keyword in ['lend', 'borrow', 'aave', 'compound', 'maker']):
+            return 'lending'
+        elif any(keyword in project_name for keyword in ['stake', 'staking', 'reward']):
+            return 'staking'
+
+        # 如果无法从名称判断，返回unknown
+        self.logger.debug(f"无法从项目名推断协议类型: {project_name}")
+        return 'unknown'
+
     def _generate_runtime_invariants(self, monitor_data: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
-        从 Monitor 运行时数据生成不变量
+        从 Monitor 运行时数据生成不变量（改进版 - 使用智能阈值计算）
 
         基于实际观察到的运行时行为生成不变量：
         - 循环次数限制
         - 调用深度限制
         - 重入深度限制
         - 余额变化率限制
+
+        改进点：
+        - 自动检测攻击类型
+        - 根据攻击类型和协议特征动态调整阈值
+        - 在metadata中记录计算依据
 
         Args:
             monitor_data: Monitor 输出的完整数据
@@ -264,10 +336,28 @@ class InvariantFromMonitorController:
         self.logger.info(f"    - 重入深度: {reentrancy_depth}")
         self.logger.info(f"    - 余额变化: {len(balance_changes)} 个地址")
 
-        # 1. 循环次数限制
-        # 基于观察值设置阈值：正常情况不应超过观察值的 50%
+        # 🆕 步骤1: 自动检测攻击类型
+        attack_type = self.threshold_calculator.detect_attack_type(monitor_data)
+        self.logger.info(f"\n  🔍 检测到攻击类型: {format_attack_type(attack_type)}")
+
+        # 🆕 步骤2: 推断协议类型
+        protocol_type = self._infer_protocol_type(monitor_data)
+        self.logger.info(f"  🔍 推断协议类型: {protocol_type}\n")
+
+        # 1. 循环次数限制（使用智能阈值）
         if loop_iterations > 0:
-            loop_threshold = max(1, int(loop_iterations * 0.5))
+            loop_threshold = self.threshold_calculator.calculate_adaptive_threshold(
+                metric_name='loop',
+                observed_value=loop_iterations,
+                attack_type=attack_type,
+                protocol_type=protocol_type
+            )
+
+            # 获取计算元数据
+            metadata = self.threshold_calculator.get_calculation_metadata(
+                'loop', attack_type, protocol_type
+            )
+
             invariants.append({
                 'id': 'RINV_001',
                 'type': 'runtime_loop_limit',
@@ -276,14 +366,24 @@ class InvariantFromMonitorController:
                 'formula': f'loop_iterations <= {loop_threshold}',
                 'threshold': loop_threshold,
                 'observed_value': loop_iterations,
-                'rationale': f'攻击交易观察到 {loop_iterations} 次循环，正常值应低于 {loop_threshold}'
+                'rationale': f'基于{format_attack_type(attack_type)}特征和{protocol_type}协议特性计算',
+                'metadata': metadata
             })
             self.logger.info(f"  ✓ 生成循环限制不变量: <= {loop_threshold}")
 
-        # 2. 调用深度限制
-        # 基于观察值设置阈值：正常情况不应超过观察值的 50%
+        # 2. 调用深度限制（使用智能阈值）
         if call_depth > 1:
-            call_depth_threshold = max(2, int(call_depth * 0.5))
+            call_depth_threshold = self.threshold_calculator.calculate_adaptive_threshold(
+                metric_name='call_depth',
+                observed_value=call_depth,
+                attack_type=attack_type,
+                protocol_type=protocol_type
+            )
+
+            metadata = self.threshold_calculator.get_calculation_metadata(
+                'call_depth', attack_type, protocol_type
+            )
+
             invariants.append({
                 'id': 'RINV_002',
                 'type': 'runtime_call_depth_limit',
@@ -292,12 +392,12 @@ class InvariantFromMonitorController:
                 'formula': f'call_depth <= {call_depth_threshold}',
                 'threshold': call_depth_threshold,
                 'observed_value': call_depth,
-                'rationale': f'攻击交易观察到调用深度 {call_depth}，正常值应低于 {call_depth_threshold}'
+                'rationale': f'基于{format_attack_type(attack_type)}特征和{protocol_type}协议特性计算',
+                'metadata': metadata
             })
             self.logger.info(f"  ✓ 生成调用深度限制不变量: <= {call_depth_threshold}")
 
-        # 3. 重入深度限制
-        # 正常情况下应该为 0（无重入）
+        # 3. 重入深度限制（重入始终应该为0，无需调整）
         if reentrancy_depth > 0:
             invariants.append({
                 'id': 'RINV_003',
@@ -307,16 +407,18 @@ class InvariantFromMonitorController:
                 'formula': 'reentrancy_depth == 0',
                 'threshold': 0,
                 'observed_value': reentrancy_depth,
-                'rationale': f'攻击交易检测到重入深度 {reentrancy_depth}，这是异常行为'
+                'rationale': f'检测到重入深度 {reentrancy_depth}，这是异常行为',
+                'metadata': {
+                    'attack_type': attack_type.value,
+                    'note': '重入检测不需要阈值调整，始终应为0'
+                }
             })
             self.logger.info(f"  ⚠️  检测到重入 (depth={reentrancy_depth})，生成重入限制不变量")
 
-        # 4. 余额变化率限制
-        # 对于每个发生显著余额变化的地址，生成不变量
+        # 4. 余额变化率限制（使用智能阈值）
         significant_changes = []
         for addr, change_data in balance_changes.items():
             change_rate = abs(change_data.get('change_rate', 0))
-
             # 只关注变化率 > 0.01% 的地址
             if change_rate > 0.0001:
                 significant_changes.append((addr, change_rate, change_data))
@@ -325,8 +427,17 @@ class InvariantFromMonitorController:
             # 找到最大变化率
             max_change_addr, max_change_rate, max_change_data = max(significant_changes, key=lambda x: x[1])
 
-            # 设置阈值为观察值的 50%
-            balance_threshold = max(0.0001, max_change_rate * 0.5)
+            # 使用智能阈值计算
+            balance_threshold = self.threshold_calculator.calculate_adaptive_threshold(
+                metric_name='balance',
+                observed_value=max_change_rate,
+                attack_type=attack_type,
+                protocol_type=protocol_type
+            )
+
+            metadata = self.threshold_calculator.get_calculation_metadata(
+                'balance', attack_type, protocol_type
+            )
 
             invariants.append({
                 'id': 'RINV_004',
@@ -337,18 +448,19 @@ class InvariantFromMonitorController:
                 'threshold': balance_threshold,
                 'observed_value': max_change_rate,
                 'monitored_addresses': [addr for addr, _, _ in significant_changes],
-                'rationale': f'攻击交易中地址 {max_change_addr[:10]}... 的余额变化率为 {max_change_rate:.4%}，正常值应低于 {balance_threshold:.4%}',
+                'rationale': f'基于{format_attack_type(attack_type)}特征和{protocol_type}协议特性计算，攻击中最大变化为 {max_change_rate:.4%}',
                 'details': {
                     'max_change_address': max_change_addr,
                     'max_change_before': max_change_data.get('before', 0),
                     'max_change_after': max_change_data.get('after', 0),
                     'max_change_diff': max_change_data.get('difference', 0)
-                }
+                },
+                'metadata': metadata
             })
             self.logger.info(f"  ✓ 生成余额变化限制不变量: <= {balance_threshold:.4%}")
             self.logger.info(f"    最大变化: {max_change_addr[:10]}... ({max_change_rate:.4%})")
 
-        self.logger.info(f"  共生成 {len(invariants)} 个运行时不变量")
+        self.logger.info(f"\n  📊 共生成 {len(invariants)} 个运行时不变量")
         return invariants
 
 # ============================================================================

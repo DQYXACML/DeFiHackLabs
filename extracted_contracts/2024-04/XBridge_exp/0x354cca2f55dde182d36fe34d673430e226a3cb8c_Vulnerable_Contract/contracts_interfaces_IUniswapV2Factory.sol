@@ -1,5 +1,9 @@
-// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: Unlicense
+
 pragma solidity ^0.8.0;
 
-import "./contracts/interfaces/IUniswapV2Factory.sol";
+interface IUniswapV2Factory {
+    
+    function getPair(address tokenA, address tokenB) external view returns (address pair);
+    
+}

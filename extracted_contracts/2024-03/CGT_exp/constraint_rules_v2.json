@@ -1,0 +1,62 @@
+{
+  "protocol": "CGT_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": null,
+    "name": null
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "1",
+        "before": 1427008706424000568462136444864854190974359106697,
+        "after": 2888510343754903486665821277581137210630291649673,
+        "change_pct": 102.42,
+        "is_new_slot": false
+      },
+      {
+        "slot": "2",
+        "before": 63000000000000000000000000,
+        "after": 1000063000000000000000000000000,
+        "change_pct": 1587301.59,
+        "is_new_slot": false
+      },
+      {
+        "slot": "98797971065788501329526794271296758580055713967055390370907933653017706198447",
+        "before": 0,
+        "after": 999100000000000000000000000000,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "25639888659607543835188278690807552536800781809745640202753953121029636742189",
+        "before": 80000000000000000000,
+        "after": 996000145077000000000000000000,
+        "change_pct": 1245000181246.25,
+        "is_new_slot": false
+      },
+      {
+        "slot": "2376520538543151877345948821694231739326989454121312399714227418144489405079",
+        "before": 1669613783820438659287620,
+        "after": 1001669613783820438659287620,
+        "change_pct": 59894.09,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 19
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 0
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

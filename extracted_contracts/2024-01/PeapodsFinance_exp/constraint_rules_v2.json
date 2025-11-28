@@ -1,0 +1,255 @@
+{
+  "protocol": "PeapodsFinance_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xdbb20a979a92cccce15229e41c9b082d5b5d7e31",
+    "name": "ppPP"
+  },
+  "constraints": [
+    {
+      "function": "flash",
+      "signature": "flash(address,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xdbb20a979a92cccce15229e41c9b082d5b5d7e31"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(...)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "amount > 88163368427964784967680",
+        "semantics": "Heuristic constraint based on flashloan_attack pattern",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "Peas.balanceOf(address(ppPP))"
+          },
+          "totalSupply": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "totalSupply",
+            "before_value": 293877894759882629745878,
+            "after_value": 293877894759882629745878
+          }
+        },
+        "danger_condition": "amount >= 264490105283894354903040",
+        "safe_condition": "amount <= 88163368427964784967680",
+        "threshold_value": 88163368427964784967680
+      },
+      "analysis": {
+        "state_value": 293877894759882629745878,
+        "threshold": 88163368427964788923763,
+        "coefficient": 0.3,
+        "attack_intensity": 1.0,
+        "reasoning": "启发式约束，基于flashloan_attack模式，阈值设为88163368427964784967680",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "3 length in [2,2]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "\"\""
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bytes",
+            "value_expr": "\"\""
+          }
+        },
+        "range": {
+          "min_len": 2,
+          "max_len": 2
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "debond",
+      "signature": "debond(...)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "amount > 88163368427964784967680",
+        "semantics": "Heuristic constraint based on drain_attack pattern",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "ppPP.balanceOf(address(this))"
+          },
+          "totalSupply": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "totalSupply",
+            "before_value": 293877894759882629745878,
+            "after_value": 293877894759882629745878
+          }
+        },
+        "danger_condition": "amount >= 264490105283894354903040",
+        "safe_condition": "amount <= 88163368427964784967680",
+        "threshold_value": 88163368427964784967680
+      },
+      "analysis": {
+        "state_value": 293877894759882629745878,
+        "threshold": 88163368427964788923763,
+        "coefficient": 0.3,
+        "attack_intensity": 1.0,
+        "reasoning": "启发式约束，基于drain_attack模式，阈值设为88163368427964784967680",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "debond",
+      "signature": "debond(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x0000000000000000000000000000000000000000",
+          "0xffffffffffffffffffffffffffffffffffffffff"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address[]",
+            "value_expr": "token"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "debond",
+      "signature": "debond(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "capped_array",
+        "expression": "2 elements in [100,100]",
+        "semantics": "Restrict numeric array elements to observed range",
+        "attack_values": [
+          100
+        ],
+        "range": {
+          "min": 100,
+          "max": 100
+        },
+        "variables": {
+          "values": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint8[]",
+            "value_expr": "percentage"
+          }
+        },
+        "len_range": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Numeric array bounded by observed values",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "2",
+        "before": 293877894759882629745878,
+        "after": 280453998054889070563849,
+        "change_pct": 4.57,
+        "is_new_slot": false
+      },
+      {
+        "slot": "43338921159469841899711384791100799473247905780846710754558330455962694164420",
+        "before": 18962873888275452765844,
+        "after": 20369952108996267717656,
+        "change_pct": 7.42,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 2
+  },
+  "attack_metadata": {
+    "loop_count": 20,
+    "total_calls": 3
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

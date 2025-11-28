@@ -1,0 +1,21 @@
+{
+  "protocol": "Gamma_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x1F1Ca4e8236CD13032653391dB7e9544a6ad123E",
+    "name": "Uniproxy"
+  },
+  "constraints": [],
+  "storage_analysis": {
+    "changed_slots": [],
+    "total_slots": 2
+  },
+  "attack_metadata": {
+    "loop_count": 15,
+    "total_calls": 0
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

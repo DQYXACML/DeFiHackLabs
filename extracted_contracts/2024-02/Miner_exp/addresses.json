@@ -4,41 +4,121 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0xea75aec151f968b8de3789ca201a2a3a7faeefba"
+    "context": "// Attacker : https://etherscan.io/address/0xea75aec151f968b8de3789ca201a2a3a7faeefba",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xbff51c9c3d50d6168dfef72133f5dbda453ebf29",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0xbff51c9c3d50d6168dfef72133f5dbda453ebf29"
+    "context": "// Attack Contract : https://etherscan.io/address/0xbff51c9c3d50d6168dfef72133f5dbda453ebf29",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x732276168b421d4792e743711e1a48172ea574a2",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://etherscan.io/address/0x732276168b421d4792e743711e1a48172ea574a2"
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0x732276168b421d4792e743711e1a48172ea574a2",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0xE77EC1bF3A5C95bFe3be7BDbACfe3ac1c7E454CD",
-    "name": null,
+    "name": "IMiner",
     "chain": "mainnet",
     "source": "static",
-    "context": "IMiner(0xE77EC1bF3A5C95bFe3be7BDbACfe3ac1c7E454CD)"
+    "context": "IMiner MINER = IMiner(0xE77EC1bF3A5C95bFe3be7BDbACfe3ac1c7E454CD)",
+    "onchain_name": null,
+    "symbol": "MINER",
+    "decimals": 18,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "MINER",
+      "IMiner",
+      "miner",
+      "IMINER"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "IERC20 WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

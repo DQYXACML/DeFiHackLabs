@@ -1,0 +1,21 @@
+{
+  "protocol": "Juice_exp",
+  "year_month": "2024-03",
+  "injection_timestamp": "2025-11-23T05:05:44.618814Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "JuiceStaking",
+    "address": "0x8584ddbd1e28bca4bc6fb96bafe39f850301940e"
+  },
+  "injected_contracts": [
+    {
+      "file": "JuiceStaking.sol",
+      "functions": [
+        "stake",
+        "harvest"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

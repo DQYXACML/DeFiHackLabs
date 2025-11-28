@@ -1,0 +1,26 @@
+{
+  "protocol": "ZongZi_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+    "name": "ZZF"
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [],
+    "total_changed_slots": 0
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 6
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

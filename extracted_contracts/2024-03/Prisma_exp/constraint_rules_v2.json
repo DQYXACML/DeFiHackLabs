@@ -1,0 +1,26 @@
+{
+  "protocol": "Prisma_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": "0xcc7218100da61441905e0c327749972e3cbee9ee",
+    "name": "Unknown"
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [],
+    "total_changed_slots": 0
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 11
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

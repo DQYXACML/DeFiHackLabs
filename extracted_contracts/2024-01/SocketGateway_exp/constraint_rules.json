@@ -1,0 +1,21 @@
+{
+  "protocol": "SocketGateway_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x3a23F943181408EAC424116Af7b7790c94Cb97a5",
+    "name": "_gateway"
+  },
+  "constraints": [],
+  "storage_analysis": {
+    "changed_slots": [],
+    "total_slots": 1
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 0
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

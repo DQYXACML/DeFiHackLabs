@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 
-pragma solidity 0.7.6;
+pragma solidity >=0.7.6 <0.9.0;
 
 import "./@openzeppelin/contracts/math/Math.sol";
 import "./@openzeppelin/contracts/math/SafeMath.sol";
@@ -96,8 +96,8 @@ contract Hypervisor is IUniswapV3MintCallback, ERC20Permit, ReentrancyGuard {
         owner = _owner;
 
         maxTotalSupply = 0; /// no cap
-        deposit0Max = uint256(-1);
-        deposit1Max = uint256(-1);
+        deposit0Max = ~uint256(0);
+        deposit1Max = ~uint256(0);
     }
 
     /// @notice Deposit tokens

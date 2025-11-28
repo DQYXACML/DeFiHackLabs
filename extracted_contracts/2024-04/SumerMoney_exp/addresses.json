@@ -4,76 +4,433 @@
     "name": "Attacker",
     "chain": "base",
     "source": "comment",
-    "context": "// Attacker : /address/https://basescan.org/address/0xbb344544ad328b5492397e967fe81737855e7e77"
+    "context": "// Attacker : /address/https://basescan.org/address/0xbb344544ad328b5492397e967fe81737855e7e77",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x13d27a2d66ea33a4bc581d5fefb0b2a8defe9fe7",
     "name": "Attack_Contract",
     "chain": "base",
     "source": "comment",
-    "context": "// Attack Contract : /address/https://basescan.org/address/0x13d27a2d66ea33a4bc581d5fefb0b2a8defe9fe7"
+    "context": "// Attack Contract : /address/https://basescan.org/address/0x13d27a2d66ea33a4bc581d5fefb0b2a8defe9fe7",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x23811c17bac40500decd5fb92d4feb972ae1e607",
     "name": "Vulnerable_Contract",
     "chain": "base",
     "source": "comment",
-    "context": "// Vulnerable Contract : /address/https://basescan.org/address/0x23811c17bac40500decd5fb92d4feb972ae1e607"
+    "context": "// Vulnerable Contract : /address/https://basescan.org/address/0x23811c17bac40500decd5fb92d4feb972ae1e607",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
-    "name": null,
+    "name": "IBalancerVault",
     "chain": "base",
     "source": "static",
-    "context": "IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)"
+    "context": "IBalancerVault Balancer = IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBalancerVault"
+    ]
+  },
+  {
+    "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "name": "IERC20",
+    "chain": "base",
+    "source": "static",
+    "context": "IERC20 USDC = IERC20(0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
+  },
+  {
+    "address": "0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22",
+    "name": "IERC20",
+    "chain": "base",
+    "source": "static",
+    "context": "IERC20 cbETH = IERC20(0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
+  },
+  {
+    "address": "0x142017b52c99d3dFe55E49d79Df0bAF7F4478c0c",
+    "name": "ICErc20Delegate",
+    "chain": "base",
+    "source": "static",
+    "context": "ICErc20Delegate sdrUSDC = ICErc20Delegate(0x142017b52c99d3dFe55E49d79Df0bAF7F4478c0c)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ICErc20Delegate"
+    ]
+  },
+  {
+    "address": "0x6345aF6dA3EBd9DF468e37B473128Fd3079C4a4b",
+    "name": "ICErc20Delegate",
+    "chain": "base",
+    "source": "static",
+    "context": "ICErc20Delegate sdrcbETH = ICErc20Delegate(0x6345aF6dA3EBd9DF468e37B473128Fd3079C4a4b)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ICErc20Delegate"
+    ]
+  },
+  {
+    "address": "0x549D0CdC753601fbE29f9DE186868429a8558E07",
+    "name": "IClaimer",
+    "chain": "base",
+    "source": "static",
+    "context": "IClaimer claimer = IClaimer(0x549D0CdC753601fbE29f9DE186868429a8558E07)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IClaimer"
+    ]
   },
   {
     "address": "0x4200000000000000000000000000000000000006",
     "name": null,
     "chain": "base",
     "source": "static",
-    "context": "address(0x4200000000000000000000000000000000000006)"
-  },
-  {
-    "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-    "name": null,
-    "chain": "base",
-    "source": "static",
-    "context": "IERC20(0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913)"
-  },
-  {
-    "address": "0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22",
-    "name": null,
-    "chain": "base",
-    "source": "static",
-    "context": "IERC20(0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22)"
+    "context": "address(0x4200000000000000000000000000000000000006)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0x7b5969bB51fa3B002579D7ee41A454AC691716DC",
     "name": null,
     "chain": "base",
     "source": "static",
-    "context": "address(0x7b5969bB51fa3B002579D7ee41A454AC691716DC)"
+    "context": "address(0x7b5969bB51fa3B002579D7ee41A454AC691716DC)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
-    "address": "0x142017b52c99d3dFe55E49d79Df0bAF7F4478c0c",
+    "address": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
     "name": null,
     "chain": "base",
-    "source": "static",
-    "context": "ICErc20Delegate(0x142017b52c99d3dFe55E49d79Df0bAF7F4478c0c)"
+    "source": "dynamic",
+    "context": "called with gas 2350",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
-    "address": "0x6345aF6dA3EBd9DF468e37B473128Fd3079C4a4b",
+    "address": "0x2Ce6311ddAE708829bc0784C967b7d77D19FD779",
     "name": null,
     "chain": "base",
-    "source": "static",
-    "context": "ICErc20Delegate(0x6345aF6dA3EBd9DF468e37B473128Fd3079C4a4b)"
+    "source": "dynamic",
+    "context": "called with gas 2553",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
-    "address": "0x549D0CdC753601fbE29f9DE186868429a8558E07",
+    "address": "0xd16D4BbE76C873d8a1e499Bf2aAc91710165E3C9",
     "name": null,
     "chain": "base",
-    "source": "static",
-    "context": "IClaimer(0x549D0CdC753601fbE29f9DE186868429a8558E07)"
+    "source": "dynamic",
+    "context": "called with gas 7056",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x611375907733D9576907E125Fb29704712F0BAfA",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 151110",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1167e762541374fEBeeA0f6Ed2AD4473AFa1CcEa",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 144060",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x5EA97142b444c6eC5791a5f1C24A1265Aa1FA40C",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 17489",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xc538166A773b22c60ed3b3E343E506F3fdAe0555",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 10451",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xBc6590A7b15513e4D649b158393175a839F27ED8",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 223926",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x60B8067Cf3640bCc7c3b2CfbE6Eac3c2CA40934e",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 29114",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 5595",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x57d2d46Fc7ff2A7142d479F2f59e1E3F95447077",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 253",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x36C379883c9A293e7DdF76031c4a0AD053eB4bfF",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 191470",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x873449359d2d99691436E724C6C219a39b159B4a",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 184408",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7e860098F58bBFC8648a4311b374B1D669a2bc6B",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 5595",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0Ee7145e1370653533e2F2E824424bE2AA95A4Aa",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 253",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x07a71B9B835c9ebA242836704d17DA0953324E1F",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 2559",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x04C13c475223CaEb3F23f4F4A69707D82C47dA50",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 7056",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xd7818272B9e248357d13057AAb0B417aF31E817d",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 5661",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x330eC3210511cC8f5A87A737A08905092e033AF3",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "called with gas 341",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "base",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

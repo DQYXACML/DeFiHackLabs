@@ -1,0 +1,21 @@
+{
+  "protocol": "MO_exp",
+  "year_month": "2024-03",
+  "injection_timestamp": "2025-11-23T05:05:44.484556Z",
+  "main_contract": {
+    "name": "Loan",
+    "actual_contract_name": "Loan",
+    "address": "0xAe7b6514Af26BcB2332FEA53B8Dd57bc13A7838E"
+  },
+  "injected_contracts": [
+    {
+      "file": "contracts_Loan.sol",
+      "functions": [
+        "borrow",
+        "redeem"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

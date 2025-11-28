@@ -1,0 +1,33 @@
+{
+  "protocol": "ALP_exp",
+  "year_month": "2024-03",
+  "injection_timestamp": "2025-11-23T05:05:44.315062Z",
+  "main_contract": {
+    "name": "Alp",
+    "actual_contract_name": "BasePortfolioV2",
+    "address": "0x9Ad45D46e2A2ca19BBB5D5a50Df319225aD60e0d"
+  },
+  "injected_contracts": [
+    {
+      "file": "contracts_BasePortfolioV2.sol",
+      "functions": [
+        "redeem"
+      ]
+    },
+    {
+      "file": "contracts_interfaces_AbstractVaultV2.sol",
+      "functions": [
+        "redeem"
+      ]
+    },
+    {
+      "file": "@openzeppelin_contracts-upgradeable_token_ERC20_extensions_ERC4626Upgradeable.sol",
+      "functions": [
+        "maxRedeem",
+        "redeem"
+      ]
+    }
+  ],
+  "total_functions": 4,
+  "status": "success"
+}

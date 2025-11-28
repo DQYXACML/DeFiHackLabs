@@ -4,41 +4,92 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0x65bba34c11add305cb2a1f8a68cecbd6e75089cd"
+    "context": "// Attacker : https://bscscan.com/address/0x65bba34c11add305cb2a1f8a68cecbd6e75089cd",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x73ceea4C6571DbCf9BCc9eA77b1D8107b1D46280",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x73ceea4C6571DbCf9BCc9eA77b1D8107b1D46280"
+    "context": "// Attack Contract : https://bscscan.com/address/0x73ceea4C6571DbCf9BCc9eA77b1D8107b1D46280",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xee6De822159765daf0Fd72d71529d7ab026ec2f2",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0xee6De822159765daf0Fd72d71529d7ab026ec2f2"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0xee6De822159765daf0Fd72d71529d7ab026ec2f2",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-    "name": null,
+    "name": "IRouter",
     "chain": "bsc",
     "source": "static",
-    "context": "IRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E)"
+    "context": "IRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IRouter"
+    ]
   },
   {
     "address": "0x55d398326f99059fF775485246999027B3197955",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0x55d398326f99059fF775485246999027B3197955)"
+    "context": "IERC20(0x55d398326f99059fF775485246999027B3197955)",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "IERC20",
+      "usdt",
+      "IUSDT"
+    ]
   },
   {
     "address": "0x46Cf1cF8c69595804ba91dFdd8d6b960c9B0a7C4",
-    "name": null,
+    "name": "Uni_Pair_V3",
     "chain": "bsc",
     "source": "static",
-    "context": "Uni_Pair_V3(0x46Cf1cF8c69595804ba91dFdd8d6b960c9B0a7C4)"
+    "context": "Uni_Pair_V3(0x46Cf1cF8c69595804ba91dFdd8d6b960c9B0a7C4)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Uni_Pair_V3"
+    ]
   }
 ]

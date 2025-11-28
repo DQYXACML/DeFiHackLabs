@@ -4,48 +4,146 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x38f68f119243adbca187e1ef64344ed475a8c69c"
+    "context": "// Attacker : https://etherscan.io/address/0x38f68f119243adbca187e1ef64344ed475a8c69c",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x3aa228a80f50763045bdfc45012da124bd0a6809",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0x3aa228a80f50763045bdfc45012da124bd0a6809"
+    "context": "// Attack Contract : https://etherscan.io/address/0x3aa228a80f50763045bdfc45012da124bd0a6809",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x2b9dc65253c035eb21778cb3898eab5a0ada0cce",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://etherscan.io/address/0x2b9dc65253c035eb21778cb3898eab5a0ada0cce"
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0x2b9dc65253c035eb21778cb3898eab5a0ada0cce",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0xD08E245Fdb3f1504aea4056e2C71615DA7001440",
-    "name": null,
+    "name": "IXTOKEN",
     "chain": "mainnet",
     "source": "static",
-    "context": "IXTOKEN(0xD08E245Fdb3f1504aea4056e2C71615DA7001440)"
+    "context": "IXTOKEN XTOKEN = IXTOKEN(0xD08E245Fdb3f1504aea4056e2C71615DA7001440)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IXTOKEN"
+    ]
   },
   {
     "address": "0x0a3fbF5B4cF80DB51fCAe21efe63f6a36D45d2B2",
-    "name": null,
+    "name": "IXTOKEN",
     "chain": "mainnet",
     "source": "static",
-    "context": "IXTOKEN(0x0a3fbF5B4cF80DB51fCAe21efe63f6a36D45d2B2)"
+    "context": "IXTOKEN XTOKEN2 = IXTOKEN(0x0a3fbF5B4cF80DB51fCAe21efe63f6a36D45d2B2)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IXTOKEN"
+    ]
   },
   {
     "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x6B175474E89094C44Da98b954EedeAC495271d0F)"
+    "context": "IERC20 DAI = IERC20(0x6B175474E89094C44Da98b954EedeAC495271d0F)",
+    "onchain_name": null,
+    "symbol": "DAI",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "DAI",
+      "IERC20",
+      "dai",
+      "IDAI"
+    ]
   },
   {
     "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)"
+    "context": "IERC20 USDC = IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
+  },
+  {
+    "address": "0x43506849D7C04F9138D1A2050bbF3A0c054402dd",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2553",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

@@ -1,0 +1,103 @@
+{
+  "protocol": "AffineDeFi_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0xcd6ca2f0d0c182c5049d9a1f65cde51a706ae142",
+    "name": "LidoLevV3"
+  },
+  "constraints": [
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(...)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "IFlashLoanRecipient > 1585502811907539209787399118435342997174636596574208551978795008",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 2657445925281874995626728256114145947747339979541020313387008 iterations (capped)",
+        "variables": {
+          "IFlashLoanRecipient": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "IFlashLoanRecipient(LidoLevV3"
+          },
+          "balance_mapping_decreased": {
+            "source": "storage",
+            "slot": "112225801447630911021174354684661177440979189781136739879716453091386613243584",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_decreased",
+            "before_value": 5285009373025131264954417589996411404712258042244451282274271263,
+            "after_value": 5277037035249285640313844131172975724889546400543421348316866027
+          }
+        },
+        "danger_condition": "IFlashLoanRecipient >= 4756508435722617994737606688031758542445117968793380569919520768",
+        "safe_condition": "IFlashLoanRecipient <= 1585502811907539209787399118435342997174636596574208551978795008",
+        "threshold_value": 1585502811907539209787399118435342997174636596574208551978795008
+      },
+      "analysis": {
+        "state_value": 5285009373025131264954417589996411404712258042244451282274271263,
+        "threshold": 1585502811907539379486325276998923421413677412673335384682281378,
+        "coefficient": 0.3,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代2657445925281874995626728256114145947747339979541020313387008次超过上限10000，使用保守阈值1585502811907539209787399118435342997174636596574208551978795008",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 2.657445925281875e+60,
+        "change_direction": "decrease"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "112225801447630911021174354684661177440979189781136739879716453091386613243584",
+        "before": 5285009373025131264954417589996411404712258042244451282274271263,
+        "after": 5277037035249285640313844131172975724889546400543421348316866027,
+        "change_pct": 0.15,
+        "is_new_slot": false
+      },
+      {
+        "slot": "112225801447630911021174354684661177440979189781136739879716453091386613243585",
+        "before": 8113176079345536404241671580640792677557282286083931238525447360,
+        "after": 8107054482721976146509134453695473529046181779859589494689730071,
+        "change_pct": 0.08,
+        "is_new_slot": false
+      },
+      {
+        "slot": "91296385459012478428676260853528172884045194268039939082224277439449243976116",
+        "before": 1012995211097165009224597614421616077413094729517241720420811004,
+        "after": 1013054548416963636015789969539390363639849814894970184424149830,
+        "change_pct": 0.01,
+        "is_new_slot": false
+      },
+      {
+        "slot": "91296385459012478428676260853528172884045194268039939082224277439449243976115",
+        "before": 4106546485994835210610697462736671548325876284440642055116412,
+        "after": 4108288583034986588141873356362270166208868027047644493530519,
+        "change_pct": 0.04,
+        "is_new_slot": false
+      },
+      {
+        "slot": "91296385459012478428676260853528172884045194268039939082224277439449243976117",
+        "before": 374725205883523084803398808784554608338744450761696,
+        "after": 374725207177957208570648723799386616529671218846167,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 10
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 3
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

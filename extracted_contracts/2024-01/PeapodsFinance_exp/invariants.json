@@ -1,0 +1,243 @@
+{
+  "project": "PeapodsFinance_exp",
+  "generated_at": "2025-11-15T14:27:21.119803",
+  "generation_method": "storage_and_runtime_analysis",
+  "source_file": "autopath/PeapodsFinance_exp_analysis.json",
+  "attack_tx": "0x9ba3f155fb9d13ae077890095ff83d5bd0d158d3dae497b9448729db211cc88e",
+  "monitor_summary": {
+    "gas_used": 21000,
+    "call_depth": 0,
+    "reentrancy_depth": 0,
+    "loop_iterations": 0
+  },
+  "storage_invariants": [
+    {
+      "id": "SINV_001",
+      "type": "share_price_stability",
+      "severity": "critical",
+      "description": "Vault share price must not change more than 5% per transaction",
+      "formula": "|(reserves/totalSupply)_after - (reserves/totalSupply)_before| / (reserves/totalSupply)_before <= 0.05",
+      "contracts": [
+        "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31",
+        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+      ],
+      "slots": {
+        "totalSupply_slot": "2",
+        "totalSupply_contract": "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31",
+        "reserves_contract": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "reserves_query": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.balanceOf(0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31)"
+      },
+      "threshold": 0.05,
+      "reason": "Vault pattern detected. Share price manipulation indicates attack.",
+      "violation_impact": "Allows attacker to mint underpriced shares and drain underlying assets",
+      "confidence": 0.85,
+      "metadata": {
+        "protocol_type": "vault",
+        "relationship_type": "share_price_ratio"
+      }
+    },
+    {
+      "id": "SINV_002",
+      "type": "supply_backing_consistency",
+      "severity": "critical",
+      "description": "Total supply must be backed by proportional underlying reserves",
+      "formula": "totalSupply <= reserves * max_leverage_ratio",
+      "contracts": [
+        "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31",
+        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+      ],
+      "slots": {
+        "totalSupply_slot": "2",
+        "totalSupply_contract": "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31",
+        "underlying_contract": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+      },
+      "threshold": 1.1,
+      "reason": "Vault shares should not exceed underlying assets by more than 10%",
+      "violation_impact": "Indicates phantom shares minted without backing",
+      "confidence": 0.85,
+      "metadata": {
+        "share_token": "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31",
+        "underlying_token": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "description": "Total shares should not exceed underlying assets",
+        "note": "This is an absolute constraint, not dynamically adjusted"
+      }
+    },
+    {
+      "id": "SINV_003",
+      "type": "bounded_change_rate",
+      "severity": "high",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "formula": "|slot_2_after - slot_2_before| / slot_2_before <= 0.5",
+      "contracts": [
+        "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31"
+      ],
+      "slots": {
+        "monitored_slot": "2",
+        "contract": "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31",
+        "semantic_type": "totalSupply"
+      },
+      "threshold": 0.5,
+      "reason": "Large totalSupply changes indicate potential manipulation",
+      "violation_impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "confidence": 0.7,
+      "metadata": {
+        "slot_semantic": "totalSupply",
+        "contract": "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31",
+        "threshold_method": "static",
+        "observed_attack_change": null,
+        "safety_coefficient": null
+      }
+    },
+    {
+      "id": "SINV_004",
+      "type": "bounded_change_rate",
+      "severity": "high",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "formula": "|slot_2_after - slot_2_before| / slot_2_before <= 0.5",
+      "contracts": [
+        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+      ],
+      "slots": {
+        "monitored_slot": "2",
+        "contract": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "semantic_type": "totalSupply"
+      },
+      "threshold": 0.5,
+      "reason": "Large totalSupply changes indicate potential manipulation",
+      "violation_impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "confidence": 0.7,
+      "metadata": {
+        "slot_semantic": "totalSupply",
+        "contract": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "threshold_method": "static",
+        "observed_attack_change": null,
+        "safety_coefficient": null
+      }
+    },
+    {
+      "id": "SINV_005",
+      "type": "bounded_change_rate",
+      "severity": "high",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "formula": "|slot_2_after - slot_2_before| / slot_2_before <= 0.5",
+      "contracts": [
+        "0xE592427A0AEce92De3Edee1F18E0157C05861564"
+      ],
+      "slots": {
+        "monitored_slot": "2",
+        "contract": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+        "semantic_type": "totalSupply"
+      },
+      "threshold": 0.5,
+      "reason": "Large totalSupply changes indicate potential manipulation",
+      "violation_impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "confidence": 0.7,
+      "metadata": {
+        "slot_semantic": "totalSupply",
+        "contract": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+        "threshold_method": "static",
+        "observed_attack_change": null,
+        "safety_coefficient": null
+      }
+    },
+    {
+      "id": "SINV_006",
+      "type": "bounded_change_rate",
+      "severity": "high",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "formula": "|slot_2_after - slot_2_before| / slot_2_before <= 0.5",
+      "contracts": [
+        "0x60594a405d53811d3BC4766596EFD80fd545A270"
+      ],
+      "slots": {
+        "monitored_slot": "2",
+        "contract": "0x60594a405d53811d3BC4766596EFD80fd545A270",
+        "semantic_type": "totalSupply"
+      },
+      "threshold": 0.5,
+      "reason": "Large totalSupply changes indicate potential manipulation",
+      "violation_impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "confidence": 0.7,
+      "metadata": {
+        "slot_semantic": "totalSupply",
+        "contract": "0x60594a405d53811d3BC4766596EFD80fd545A270",
+        "threshold_method": "static",
+        "observed_attack_change": null,
+        "safety_coefficient": null
+      }
+    },
+    {
+      "id": "SINV_007",
+      "type": "bounded_change_rate",
+      "severity": "high",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "formula": "|slot_2_after - slot_2_before| / slot_2_before <= 0.5",
+      "contracts": [
+        "0x37B87BA4C3edB420ed4552F1982c983B55D8B9d1"
+      ],
+      "slots": {
+        "monitored_slot": "2",
+        "contract": "0x37B87BA4C3edB420ed4552F1982c983B55D8B9d1",
+        "semantic_type": "totalSupply"
+      },
+      "threshold": 0.5,
+      "reason": "Large totalSupply changes indicate potential manipulation",
+      "violation_impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "confidence": 0.7,
+      "metadata": {
+        "slot_semantic": "totalSupply",
+        "contract": "0x37B87BA4C3edB420ed4552F1982c983B55D8B9d1",
+        "threshold_method": "static",
+        "observed_attack_change": null,
+        "safety_coefficient": null
+      }
+    }
+  ],
+  "runtime_invariants": [
+    {
+      "id": "RINV_004",
+      "type": "runtime_balance_change_limit",
+      "severity": "high",
+      "description": "单笔交易中关键合约的余额变化率不应超过 0.02%",
+      "formula": "max(balance_change_rate) <= 0.00017616312577601548",
+      "threshold": 0.00017616312577601548,
+      "observed_value": 0.00035232625155203097,
+      "monitored_addresses": [
+        "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+      ],
+      "rationale": "基于未知类型特征和unknown协议特性计算，攻击中最大变化为 0.0352%",
+      "details": {
+        "max_change_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "max_change_before": 3290010878899469400874857,
+        "max_change_after": 3289999287327464120346034,
+        "max_change_diff": -11591572005280528823
+      },
+      "metadata": {
+        "attack_type": "unknown",
+        "protocol_type": "unknown",
+        "base_coefficient": 0.5,
+        "protocol_modifier": 1.0,
+        "final_coefficient": 0.5,
+        "calculation_method": "adaptive_threshold"
+      }
+    }
+  ],
+  "storage_analysis_metadata": {
+    "protocol_info": {
+      "type": "vault",
+      "confidence": 0.65,
+      "evidence": [
+        "Contract 0xdbB20A97... has totalSupply at slot 2",
+        "Found 3 address references in storage",
+        "Found 4 other ERC20 contracts in the set"
+      ],
+      "primary_contract": "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31",
+      "metadata": {
+        "share_token": "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31",
+        "underlying_token": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "detection_method": "inferred_from_multiple_erc20s"
+      }
+    },
+    "relationships_detected": 7
+  }
+}

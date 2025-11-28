@@ -1,0 +1,62 @@
+{
+  "protocol": "EGGX_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0xFb35DE57B117FA770761C1A344784075745F84F9",
+    "name": "EGGXCliam"
+  },
+  "constraints": [
+    {
+      "function": "check",
+      "signature": "check(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "nftid"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [],
+    "total_changed_slots": 0
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 8
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

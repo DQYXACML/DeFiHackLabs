@@ -18,9 +18,15 @@ import "./../interface.sol";
 interface INblNftStake {
     function unlockSlot() external;
 
-    function depositNft(uint256 _tokenid, uint256 _index) external;
+    function depositNft(
+        uint256 _tokenid,
+        uint256 _index
+    ) external;
 
-    function depositNbl(uint256 _index, uint256 _amount) external;
+    function depositNbl(
+        uint256 _index,
+        uint256 _amount
+    ) external;
 
     function withdrawNft(
         uint256 _index
@@ -96,7 +102,11 @@ contract ContractTest is Test {
         );
     }
 
-    function uniswapV3FlashCallback(uint256 fee0, uint256 fee1, bytes calldata data) external {
+    function uniswapV3FlashCallback(
+        uint256 fee0,
+        uint256 fee1,
+        bytes calldata data
+    ) external {
         USDT.approve(address(Router), type(uint256).max);
         USDT.approve(address(NblNftStake), type(uint256).max);
         NBL.approve(address(Router), type(uint256).max);

@@ -1,0 +1,21 @@
+{
+  "protocol": "NORMIE_exp",
+  "year_month": "2024-05",
+  "injection_timestamp": "2025-11-23T05:07:37.269349Z",
+  "main_contract": {
+    "name": "SLP",
+    "actual_contract_name": "UniswapV2ERC20",
+    "address": "0x24605E0bb933f6EC96E6bBbCEa0be8cC880F6E6f"
+  },
+  "injected_contracts": [
+    {
+      "file": "UniswapV2Pair.sol",
+      "functions": [
+        "swap",
+        "skim"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

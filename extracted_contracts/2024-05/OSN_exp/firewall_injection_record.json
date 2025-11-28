@@ -1,0 +1,20 @@
+{
+  "protocol": "OSN_exp",
+  "year_month": "2024-05",
+  "injection_timestamp": "2025-11-23T05:07:38.025486Z",
+  "main_contract": {
+    "name": "Uni_Pair_V3",
+    "actual_contract_name": "PancakeV3Pool",
+    "address": "0x46Cf1cF8c69595804ba91dFdd8d6b960c9B0a7C4"
+  },
+  "injected_contracts": [
+    {
+      "file": "PancakeV3Pool.sol",
+      "functions": [
+        "flash"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

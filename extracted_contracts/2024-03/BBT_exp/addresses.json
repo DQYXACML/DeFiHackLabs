@@ -4,76 +4,254 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0xc9a5643ed8e4cd68d16fe779d378c0e8e7225a54"
+    "context": "// Attacker : https://etherscan.io/address/0xc9a5643ed8e4cd68d16fe779d378c0e8e7225a54",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xf5610cf8c27454b6d7c86fccf1830734501425c5",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0xf5610cf8c27454b6d7c86fccf1830734501425c5"
+    "context": "// Attack Contract : https://etherscan.io/address/0xf5610cf8c27454b6d7c86fccf1830734501425c5",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-    "name": "USDC",
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "private constant USDC = IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)"
+    "context": "IERC20 private constant USDC = IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
     "address": "0x3541499cda8CA51B24724Bb8e7Ce569727406E04",
-    "name": null,
+    "name": "BBtoken",
     "chain": "mainnet",
     "source": "static",
-    "context": "BBtoken(0x3541499cda8CA51B24724Bb8e7Ce569727406E04)"
+    "context": "BBtoken BBT = BBtoken(0x3541499cda8CA51B24724Bb8e7Ce569727406E04)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "BBtoken"
+    ]
   },
   {
     "address": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
-    "name": null,
+    "name": "Uni_Router_V2",
     "chain": "mainnet",
     "source": "static",
-    "context": "Uni_Router_V2(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)"
+    "context": "Uni_Router_V2 Router = Uni_Router_V2(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Uni_Router_V2"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "IERC20 WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0xEa0abF7AB2F8f8435e7Dc4932FFaB37761267843",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xEa0abF7AB2F8f8435e7Dc4932FFaB37761267843)"
+    "context": "IERC20 BLM = IERC20(0xEa0abF7AB2F8f8435e7Dc4932FFaB37761267843)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0xaC4d2F229A3499F7E4E90A5932758A6829d69CFF",
-    "name": null,
+    "name": "BBtoken",
     "chain": "mainnet",
     "source": "static",
-    "context": "BBtoken(0xaC4d2F229A3499F7E4E90A5932758A6829d69CFF)"
+    "context": "BBtoken BBT = BBtoken(0xaC4d2F229A3499F7E4E90A5932758A6829d69CFF)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "BBtoken"
+    ]
   },
   {
-    "address": "0x3D87faa3634F71Af044D83C3935e45971B03f13a",
+    "address": "0x74463eD91bfA45bCa06d59e8B383A89709842F69",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "called with gas 5397",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
-    "address": "0x82Ef1e6A07C21dc9dEdB19DFfE93B4f728465837",
+    "address": "0xDEC556c2DDF5D79f56801e8A669a1eEba23af94d",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "called with gas 2504",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x5d16f9736f42bBA1917Ee446BBE9fFb244D31c96",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2504",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x454bd6d9cB1a33dD74AD07048659cF280dd315A4",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2504",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2504",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xee7f38c2AD27f90d101705C3b92f8A395FDEB917",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 12904",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x43506849D7C04F9138D1A2050bbF3A0c054402dd",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 16263",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x45914Fe0655A775723463E146B036e81A4DE85aF",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x249dED038717B1ab3F3a3725c6918DaBb964c32F",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

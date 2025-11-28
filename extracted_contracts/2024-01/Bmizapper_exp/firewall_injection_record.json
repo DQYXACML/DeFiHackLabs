@@ -1,0 +1,20 @@
+{
+  "protocol": "Bmizapper_exp",
+  "year_month": "2024-01",
+  "injection_timestamp": "2025-11-26T04:21:28.601954Z",
+  "main_contract": {
+    "name": "IBMIZapper",
+    "actual_contract_name": "BMIZapper",
+    "address": "0x4622aFF8E521A444C9301dA0efD05f6b482221b8"
+  },
+  "injected_contracts": [
+    {
+      "file": "BMIZapper.sol",
+      "functions": [
+        "zapToBMI"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

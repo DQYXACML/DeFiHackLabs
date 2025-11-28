@@ -3,21 +3,7 @@
 
 pragma solidity 0.8.19;
 
-import {IRouter} from "../../../src/Interface/IRouter.sol";
-
 interface IERC20 {
-    // 防火墙路由器
-    IRouter public immutable firewall;
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
-        }
-        _;
-    }
-
-
     function transfer(address to, uint256 amount) external returns (bool);
 
     function transferFrom(
@@ -37,8 +23,7 @@ abstract contract Ownable {
         address indexed newOwner
     );
 
-    constructor(address _firewall) {
-        firewall = IRouter(_firewall);
+    constructor() {
         _transferOwnership(msg.sender);
     }
 
@@ -181,7 +166,7 @@ contract RedKeysGame is Ownable, ReentrancyGuard {
         uint16 choice,
         uint16 ratio,
         uint256 amount
-    ) external nonReentrant firewallProtected {
+    ) external nonReentrant {
         // read once
         uint16 benefit = ratios[ratio];
 

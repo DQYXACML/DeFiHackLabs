@@ -4,62 +4,317 @@
     "name": "Attacker",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Attacker : https://arbiscan.io/address/0x76b02ab483482740248e2ab38b5a879a31c6d008"
+    "context": "// Attacker : https://arbiscan.io/address/0x76b02ab483482740248e2ab38b5a879a31c6d008",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xb79714634895f52a4f6a75eceb58c96246370149",
     "name": "Attack_Contract",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Attack Contract : https://arbiscan.io/address/0xb79714634895f52a4f6a75eceb58c96246370149"
+    "context": "// Attack Contract : https://arbiscan.io/address/0xb79714634895f52a4f6a75eceb58c96246370149",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x7b8b944ab2f24c829504a7a6d70fce5298f2147c",
     "name": "Vulnerable_Contract",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://arbiscan.io/address/0x7b8b944ab2f24c829504a7a6d70fce5298f2147c"
+    "context": "// Vulnerable Contract : https://arbiscan.io/address/0x7b8b944ab2f24c829504a7a6d70fce5298f2147c",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
-    "name": null,
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IERC20(0xaf88d065e77c8cC2239327C5EDb3A432268e5831)"
+    "context": "IERC20 USDC = IERC20(0xaf88d065e77c8cC2239327C5EDb3A432268e5831)",
+    "onchain_name": null,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDC",
+      "IERC20",
+      "usdc",
+      "IUSDC"
+    ]
   },
   {
     "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-    "name": null,
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IERC20(0x82aF49447D8a07e3bd95BD0d56f35241523fBab1)"
+    "context": "IERC20 WETH = IERC20(0x82aF49447D8a07e3bd95BD0d56f35241523fBab1)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0x9215748657319B17fecb2b5D086A3147BFBC8613",
-    "name": null,
+    "name": "IPredyPool",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IPredyPool(0x9215748657319B17fecb2b5D086A3147BFBC8613)"
+    "context": "IPredyPool predyPool = IPredyPool(0x9215748657319B17fecb2b5D086A3147BFBC8613)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IPredyPool"
+    ]
   },
   {
     "address": "0xC6962004f452bE9203591991D15f6b388e09E8D0",
     "name": null,
     "chain": "arbitrum",
     "source": "static",
-    "context": "address(0xC6962004f452bE9203591991D15f6b388e09E8D0)"
+    "context": "address(0xC6962004f452bE9203591991D15f6b388e09E8D0)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x86E721b43d4ECFa71119Dd38c0f938A75Fdb57B3",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 3081",
+    "onchain_name": null,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x8b194bEae1d3e0788A1a35173978001ACDFba668",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 24562",
+    "onchain_name": null,
+    "symbol": "RKA",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "RKA",
+      "rka",
+      "IRKA"
+    ]
+  },
+  {
+    "address": "0x2D756f7912B5c61f35ca3E5b310C7C133A90977c",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 2053417",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 2666",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xdE12Aa19734DaCbd34CeDdE14F8290a70A85537f",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 545804",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x8D9Eb354B3858E9E93be3ffc8b2A98732804383C",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 118261",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x5E8d28Bd2abE77e9D3e9DD8CCc1727EDa616ACE0",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 78373",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0x3Dd636919d4180B59d9225370CB84F1BA849aba2",
     "name": null,
     "chain": "arbitrum",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "called with gas 46736",
+    "onchain_name": null,
+    "symbol": "pWETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "pWETH",
+      "pweth",
+      "PWETH",
+      "IpWETH"
+    ]
   },
   {
     "address": "0x0b9F4DFb6eB2A8c2F26E98C4538422E6b8C4599F",
     "name": null,
     "chain": "arbitrum",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "called with gas 46736",
+    "onchain_name": null,
+    "symbol": "pUSDC",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "pUSDC",
+      "pusdc",
+      "PUSDC",
+      "IpUSDC"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x2629b119f06606374582e6c88170c0a494bde68b",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xd6b5c308a56f1f33cb6d586d7f76c5e6fbf851f4",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xfdb6fb8e49892b73d8187dbef8b7b09543994120",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xafecffdfc9906da328a7d048a7235b0a331352cf",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xf732e00cf418a865e6ec6c29e41dfed06596a41a",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

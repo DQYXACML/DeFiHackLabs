@@ -17,9 +17,18 @@ import "./../interface.sol";
 // https://app.blocksec.com/explorer/security-incidents
 
 interface IDegenBox {
-    function balanceOf(address, address) external view returns (uint256);
+    function balanceOf(
+        address,
+        address
+    ) external view returns (uint256);
 
-    function flashLoan(address borrower, address receiver, address token, uint256 amount, bytes memory data) external;
+    function flashLoan(
+        address borrower,
+        address receiver,
+        address token,
+        uint256 amount,
+        bytes memory data
+    ) external;
 
     function deposit(
         address token_,
@@ -39,13 +48,27 @@ interface IDegenBox {
 }
 
 interface ICauldronV4 {
-    function addCollateral(address to, bool skim, uint256 share) external;
+    function addCollateral(
+        address to,
+        bool skim,
+        uint256 share
+    ) external;
 
-    function borrow(address to, uint256 amount) external returns (uint256 part, uint256 share);
+    function borrow(
+        address to,
+        uint256 amount
+    ) external returns (uint256 part, uint256 share);
 
-    function repay(address to, bool skim, uint256 part) external returns (uint256 amount);
+    function repay(
+        address to,
+        bool skim,
+        uint256 part
+    ) external returns (uint256 amount);
 
-    function repayForAll(uint128 amount, bool skim) external returns (uint128);
+    function repayForAll(
+        uint128 amount,
+        bool skim
+    ) external returns (uint128);
 
     function userBorrowPart(
         address
@@ -175,9 +198,8 @@ contract ContractTest is Test {
         require(success);
 
         // yvCurve_3Crypto_f.deposit(Crv3_USD_BTC_ETH.balanceOf(address(this)));
-        (success,) = address(yvCurve_3Crypto_f).call(
-            abi.encodeWithSelector(bytes4(0xb6b55f25), Crv3_USD_BTC_ETH.balanceOf(address(this)))
-        );
+        (success,) = address(yvCurve_3Crypto_f)
+            .call(abi.encodeWithSelector(bytes4(0xb6b55f25), Crv3_USD_BTC_ETH.balanceOf(address(this))));
         require(success);
 
         // Deposit yvCurve_3Crypto_f balance
@@ -199,7 +221,11 @@ contract ContractTest is Test {
         return keccak256("ERC3156FlashBorrower.onFlashLoan");
     }
 
-    function uniswapV3SwapCallback(int256 amount0Delta, int256 amount1Delta, bytes calldata data) external {
+    function uniswapV3SwapCallback(
+        int256 amount0Delta,
+        int256 amount1Delta,
+        bytes calldata data
+    ) external {
         if (msg.sender == address(MIM_USDC)) {
             MIM.transfer(address(MIM_USDC), uint256(amount0Delta));
         } else {

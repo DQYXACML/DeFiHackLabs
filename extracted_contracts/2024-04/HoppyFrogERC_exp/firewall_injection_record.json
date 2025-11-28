@@ -1,0 +1,20 @@
+{
+  "protocol": "HoppyFrogERC_exp",
+  "year_month": "2024-04",
+  "injection_timestamp": "2025-11-23T05:06:26.544789Z",
+  "main_contract": {
+    "name": "Uni_Pair_V3",
+    "actual_contract_name": "UniswapV3Pool",
+    "address": "0xaA6f337f16E6658d9c9599c967D3126051b6c726"
+  },
+  "injected_contracts": [
+    {
+      "file": "UniswapV3Pool.sol",
+      "functions": [
+        "flash"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

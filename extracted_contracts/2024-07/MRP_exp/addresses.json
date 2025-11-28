@@ -4,41 +4,142 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0x132d9bbdbe718365af6cc9e43bac109a9a53b138"
+    "context": "// Attacker : https://bscscan.com/address/0x132d9bbdbe718365af6cc9e43bac109a9a53b138",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x2bd8980a925e6f5a910be8cc0ad1cff663e62d9d",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x2bd8980a925e6f5a910be8cc0ad1cff663e62d9d"
+    "context": "// Attack Contract : https://bscscan.com/address/0x2bd8980a925e6f5a910be8cc0ad1cff663e62d9d",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "bsc",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
     "address": "0x55d398326f99059fF775485246999027B3197955",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0x55d398326f99059fF775485246999027B3197955)"
+    "context": "IERC20 BUSD = IERC20(0x55d398326f99059fF775485246999027B3197955)",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "IERC20",
+      "usdt",
+      "IUSDT"
+    ]
   },
   {
     "address": "0x35F5cEf517317694DF8c50C894080caA8c92AF7D",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0x35F5cEf517317694DF8c50C894080caA8c92AF7D)"
+    "context": "IERC20 WMRP = IERC20(0x35F5cEf517317694DF8c50C894080caA8c92AF7D)",
+    "onchain_name": null,
+    "symbol": "WMRP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WMRP",
+      "IERC20",
+      "wmrp",
+      "IWMRP"
+    ]
   },
   {
     "address": "0xA0Ba9d82014B33137B195b5753F3BC8Bf15700a3",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0xA0Ba9d82014B33137B195b5753F3BC8Bf15700a3)"
+    "context": "IERC20 MRP = IERC20(0xA0Ba9d82014B33137B195b5753F3BC8Bf15700a3)",
+    "onchain_name": null,
+    "symbol": "MRP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "MRP",
+      "IERC20",
+      "mrp",
+      "IMRP"
+    ]
+  },
+  {
+    "address": "0x2712c550f5f92001057dbF277d479C7a35e37343",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x70c4acA828e79e22d73dEDbd80FA99E585db3bf1",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 14197",
+    "onchain_name": null,
+    "symbol": "MRPDestroy",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "MRPDestroy",
+      "mrpdestroy",
+      "MRPDESTROY",
+      "IMRPDestroy"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

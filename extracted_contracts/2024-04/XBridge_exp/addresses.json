@@ -4,27 +4,88 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x0cfc28d16d07219249c6d6d6ae24e7132ee4caa7"
+    "context": "// Attacker : https://etherscan.io/address/0x0cfc28d16d07219249c6d6d6ae24e7132ee4caa7",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x354cca2f55dde182d36fe34d673430e226a3cb8c",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://etherscan.io/address/0x354cca2f55dde182d36fe34d673430e226a3cb8c#code"
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0x354cca2f55dde182d36fe34d673430e226a3cb8c#code",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x19Ae49B9F38dD836317363839A5f6bfBFA7e319A",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x19Ae49B9F38dD836317363839A5f6bfBFA7e319A)"
+    "context": "IERC20 STC = IERC20(0x19Ae49B9F38dD836317363839A5f6bfBFA7e319A)",
+    "onchain_name": null,
+    "symbol": "STC",
+    "decimals": 9,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "STC",
+      "IERC20",
+      "stc",
+      "ISTC"
+    ]
   },
   {
     "address": "0x47Ddb6A433B76117a98FBeAb5320D8b67D468e31",
-    "name": null,
+    "name": "IXbridge",
     "chain": "mainnet",
     "source": "static",
-    "context": "IXbridge(0x47Ddb6A433B76117a98FBeAb5320D8b67D468e31)"
+    "context": "IXbridge xbridge = IXbridge(0x47Ddb6A433B76117a98FBeAb5320D8b67D468e31)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IXbridge"
+    ]
+  },
+  {
+    "address": "0x579ed0e3996e192Fcd64d85daEF7F985566DdE3E",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

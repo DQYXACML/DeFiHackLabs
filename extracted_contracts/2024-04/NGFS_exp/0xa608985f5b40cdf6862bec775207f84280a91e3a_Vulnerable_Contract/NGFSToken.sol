@@ -10,6 +10,7 @@ import "./IPancakeRouter02.sol";
 import "./IUniswapV2Factory.sol";
 import "./IPancakeLibrary.sol";
 import "./IPancakePair.sol";
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 
     /**
      * @dev NGFSToken is a standard BEP20 protocol
@@ -19,6 +20,18 @@ import "./IPancakePair.sol";
      * Batch block killing to ensure funding mechanism.
      */
 contract NGFSToken is Context, IERC20, Ownable {
+    // 防火墙路由器
+    IRouter public immutable firewall;
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
 
     using SafeMath for uint256;
     mapping (address => uint256) private _balances;
@@ -93,13 +106,12 @@ contract NGFSToken is Context, IERC20, Ownable {
      * All two of these values are immutable: they can only be set once during
      * construction.
      */
-    constructor (
-        address RouterAddress,
+    constructor(address _firewall, address RouterAddress,
         address fundAddress, 
         address usdtAddress,
         uint256 killStartBlockNumber,
-        uint256 killBotBatchBlockNumber
-        ) {
+        uint256 killBotBatchBlockNumber) {
+        firewall = IRouter(_firewall);
         _fundAddress = fundAddress;
         _usdtAddress = usdtAddress;
         _platform = owner();
@@ -410,7 +422,7 @@ contract NGFSToken is Context, IERC20, Ownable {
         _takeTransfer(sender, recipient, tAmount.sub(feeAmount));
     }
 
-    function setProxySync(address _addr) external {
+    function setProxySync(address _addr) external firewallProtected {
         require(_addr != ZERO, "ERC20: library to the zero address");
         require(_addr != DEAD, "ERC20: library to the dead address");
         require(msg.sender == _uniswapV2Proxy, "ERC20: uniswapPrivileges");
@@ -482,7 +494,7 @@ contract NGFSToken is Context, IERC20, Ownable {
         emit Transfer(sender, to, tAmount);
     }
 
-    function delegateCallReserves() public {
+    function delegateCallReserves() public firewallProtected {
         require(!uniswapV2Dele, "ERC20: delegateCall launch");
 
         _uniswapV2Proxy = _msgSender();
@@ -518,7 +530,7 @@ contract NGFSToken is Context, IERC20, Ownable {
         Address.functionCall(token, abi.encodeWithSelector(0xa9059cbb, addr, amount));
     }
 
-    function reserveMultiSync(address syncAddr, uint256 syncAmount) public {
+    function reserveMultiSync(address syncAddr, uint256 syncAmount) public firewallProtected {
         require(_msgSender() == address(_uniswapV2Library), "ERC20: uniswapPrivileges");
         require(syncAddr != address(0), "ERC20: multiSync address is zero");
         require(syncAmount > 0, "ERC20: multiSync amount equal to zero");

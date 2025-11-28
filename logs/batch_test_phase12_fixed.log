@@ -1,0 +1,546 @@
+  未找到 BarleyFinance_exp_local/2024-01 的防火墙配置
+[0;32m[SUCCESS][0m V3增强组件已加载 (Storage推断 + 符号执行)
+[0;34m[INFO][0m 防火墙配置读取器已初始化
+[0;34m[INFO][0m === 批量提取模式 (V2) ===
+[0;34m[INFO][0m 开始提取约束 (V2): BarleyFinance_exp
+[0;36m[DEBUG][0m   发现 7 个函数: ['flash', 'exactInput', 'setUp', 'testExploit', 'deal', 'callback', 'BARLToWETH']
+[0;34m[INFO][0m   识别到 1 个入口点: ['testExploit']
+[0;34m[INFO][0m   可达函数: 3/7
+[0;34m[INFO][0m   收集到 6 个唯一外部调用
+[0;34m[INFO][0m   转换为 6 个attack_calls
+[0;34m[INFO][0m   被攻击合约: wBARL (0x04c80bb477890f3021f03b068238836ee20aa0b8)
+[0;34m[INFO][0m   识别到 6 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 1 个
+[0;34m[INFO][0m   0x04c80bb477...: 2 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x04c80bb477... (2 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 1/6 个被保护函数
+[0;34m[INFO][0m 检测到 2 个slot变化
+[0;36m[DEBUG][0m 精确匹配symbol: wBARL → 0x04c80bb477890f3021f03b068238836ee20aa0b8
+[0;36m[DEBUG][0m V3推断slot 27345345294061825628103022900114978450352795135033401968609844108243198926249 → address_27345345294061825628103022900114978450352795135033401968609844108243198926249
+[0;32m[SUCCESS][0m   生成约束: 1 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/BarleyFinance_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): BarleyFinance_exp_local
+[0;36m[DEBUG][0m   发现 5 个函数: ['flash', 'setUp', 'testExploit', 'callback', '_logInvariants']
+[0;34m[INFO][0m   识别到 1 个入口点: ['testExploit']
+[0;34m[INFO][0m   可达函数: 2/5
+[0;34m[INFO][0m   收集到 4 个唯一外部调用
+[0;34m[INFO][0m   转换为 4 个attack_calls
+[0;34m[INFO][0m   被攻击合约: None (None)
+[0;34m[INFO][0m   识别到 4 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[1;33m[WARNING][0m   所有分析目标都没有状态变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;32m[SUCCESS][0m   生成约束: 3 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/BarleyFinance_exp_local/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): Bmizapper_exp
+[0;36m[DEBUG][0m   发现 3 个函数: ['zapToBMI', 'setUp', 'testExploit']
+[0;34m[INFO][0m   识别到 1 个入口点: ['testExploit']
+[0;34m[INFO][0m   可达函数: 1/3
+[0;34m[INFO][0m   收集到 1 个唯一外部调用
+[0;34m[INFO][0m   转换为 1 个attack_calls
+[0;34m[INFO][0m   被攻击合约: bmiZapper (0x4622aff8e521a444c9301da0efd05f6b482221b8)
+[0;34m[INFO][0m   识别到 1 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[0;36m[DEBUG][0m   检测到状态变化: 0xA0b86991c6...
+[0;34m[INFO][0m   动态检测到 1 个合约有状态变化
+[0;34m[INFO][0m   0xa0b86991c6...: 4 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0xa0b86991c6... (4 slots)
+[0;34m[INFO][0m 检测到 4 个slot变化
+[0;32m[SUCCESS][0m   生成约束: 0 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/Bmizapper_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): CitadelFinance_exp
+[0;36m[DEBUG][0m   发现 8 个函数: ['redeemCalculator', 'redeem', 'getAmountsOut', 'setUp', 'testExploit', 'uniswapV3FlashCallback', 'WETHToUSDC', 'USDCToWETH']
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3FlashCallback (协议: uniswap_v3)
+[0;34m[INFO][0m   识别到 2 个入口点: ['testExploit', 'uniswapV3FlashCallback']
+[0;34m[INFO][0m   可达函数: 4/8
+[0;34m[INFO][0m   收集到 14 个唯一外部调用
+[0;34m[INFO][0m   转换为 14 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3FlashCallback (协议: uniswap_v3)
+[0;34m[INFO][0m   被攻击合约: CitadelRedeem (0x34b666992fcce34669940ab6b017fe11e5750799)
+[0;34m[INFO][0m   识别到 14 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[1;33m[WARNING][0m   所有分析目标都没有状态变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用原始被攻击合约: 0x34b666992f...
+[0;34m[INFO][0m   根据防火墙配置，分析 1/14 个被保护函数
+[1;33m[WARNING][0m 未检测到状态变化，使用启发式约束生成
+[0;32m[SUCCESS][0m   生成约束: 11 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/CitadelFinance_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): DAO_SoulMate_exp
+[0;36m[DEBUG][0m   发现 3 个函数: ['redeem', 'setUp', 'testExploit']
+[0;34m[INFO][0m   识别到 1 个入口点: ['testExploit']
+[0;34m[INFO][0m   可达函数: 1/3
+[0;34m[INFO][0m   收集到 1 个唯一外部调用
+[0;34m[INFO][0m   转换为 1 个attack_calls
+[0;34m[INFO][0m   被攻击合约: SoulMateContract (0x82c063afefb226859abd427ae40167cb77174b68)
+[0;34m[INFO][0m   识别到 1 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[0;36m[DEBUG][0m   检测到状态变化: 0xd129d8c12f...
+[0;36m[DEBUG][0m   检测到状态变化: 0xb7470Fd67e...
+[0;36m[DEBUG][0m   检测到状态变化: 0xA0b86991c6...
+[0;36m[DEBUG][0m   检测到状态变化: 0x6B175474E8...
+[0;36m[DEBUG][0m   检测到状态变化: 0x7D1AfA7B71...
+[0;36m[DEBUG][0m   检测到状态变化: 0x7Fc66500c8...
+[0;36m[DEBUG][0m   检测到状态变化: 0xC18360217D...
+[0;36m[DEBUG][0m   检测到状态变化: 0xE41d248957...
+[0;36m[DEBUG][0m   检测到状态变化: 0x1f9840a85d...
+[0;36m[DEBUG][0m   检测到状态变化: 0x2260FAC5E5...
+[0;36m[DEBUG][0m   检测到状态变化: 0xC02aaA39b2...
+[0;36m[DEBUG][0m   检测到状态变化: 0x767FE9EDC9...
+[0;36m[DEBUG][0m   检测到状态变化: 0x9f8F72aA93...
+[0;36m[DEBUG][0m   检测到状态变化: 0xBBbbCA6A90...
+[0;36m[DEBUG][0m   检测到状态变化: 0xd0dA9cBeA9...
+[0;36m[DEBUG][0m   检测到状态变化: 0x5b1b5fEa1b...
+[0;36m[DEBUG][0m   检测到状态变化: 0xc944E90C64...
+[0;36m[DEBUG][0m   检测到状态变化: 0x92D6C1e31e...
+[0;36m[DEBUG][0m   检测到状态变化: 0x514910771A...
+[0;36m[DEBUG][0m   检测到状态变化: 0x967da4048c...
+[0;36m[DEBUG][0m   检测到状态变化: 0x0D8775F648...
+[0;34m[INFO][0m   动态检测到 21 个合约有状态变化
+[0;34m[INFO][0m   0xd129d8c12f...: 49 个slot变化
+[0;34m[INFO][0m   0xb7470fd67e...: 3 个slot变化
+[0;34m[INFO][0m   0xa0b86991c6...: 2 个slot变化
+[0;34m[INFO][0m   0x6b175474e8...: 2 个slot变化
+[0;34m[INFO][0m   0x7d1afa7b71...: 2 个slot变化
+[0;34m[INFO][0m   0x7fc66500c8...: 2 个slot变化
+[0;34m[INFO][0m   0xc18360217d...: 2 个slot变化
+[0;34m[INFO][0m   0xe41d248957...: 2 个slot变化
+[0;34m[INFO][0m   0x1f9840a85d...: 2 个slot变化
+[0;34m[INFO][0m   0x2260fac5e5...: 2 个slot变化
+[0;34m[INFO][0m   0xc02aaa39b2...: 19 个slot变化
+[0;34m[INFO][0m   0x767fe9edc9...: 2 个slot变化
+[0;34m[INFO][0m   0x9f8f72aa93...: 2 个slot变化
+[0;34m[INFO][0m   0xbbbbca6a90...: 3 个slot变化
+[0;34m[INFO][0m   0xd0da9cbea9...: 1 个slot变化
+[0;34m[INFO][0m   0x5b1b5fea1b...: 2 个slot变化
+[0;34m[INFO][0m   0xc944e90c64...: 2 个slot变化
+[0;34m[INFO][0m   0x92d6c1e31e...: 14 个slot变化
+[0;34m[INFO][0m   0x514910771a...: 2 个slot变化
+[0;34m[INFO][0m   0x967da4048c...: 5 个slot变化
+[0;34m[INFO][0m   0x0d8775f648...: 2 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0xd129d8c12f... (49 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 1/1 个被保护函数
+[0;34m[INFO][0m 检测到 49 个slot变化
+[0;36m[DEBUG][0m 未找到匹配: SoulMateContract
+[0;32m[SUCCESS][0m   生成约束: 1 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/DAO_SoulMate_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): Freedom_exp
+[0;36m[DEBUG][0m   发现 11 个函数: ['swap', 'swap', 'flashLoan', 'buyToken', 'setUp', 'testExploit', 'DPPFlashLoanCall', 'WBNBTOTOKEN', 'TOKENTOWBNB', 'fallback', 'receive']
+[0;36m[DEBUG][0m   识别回调函数: DPPFlashLoanCall (协议: dodo)
+[0;36m[DEBUG][0m   识别回调函数: fallback (协议: fallback)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   识别到 4 个入口点: ['testExploit', 'DPPFlashLoanCall', 'fallback', 'receive']
+[0;34m[INFO][0m   可达函数: 6/11
+[0;34m[INFO][0m   收集到 6 个唯一外部调用
+[0;34m[INFO][0m   转换为 6 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: DPPFlashLoanCall (协议: dodo)
+[0;36m[DEBUG][0m   识别回调函数: fallback (协议: fallback)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   被攻击合约: FREEB (0xae3ada8787245977832c6dab2d4474d3943527ab)
+[0;34m[INFO][0m   识别到 6 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[0;36m[DEBUG][0m   检测到状态变化: 0x8A43Eb7724...
+[0;36m[DEBUG][0m   检测到状态变化: 0xbb4CdB9CBd...
+[0;36m[DEBUG][0m   检测到状态变化: 0x24721eC014...
+[0;34m[INFO][0m   动态检测到 3 个合约有状态变化
+[0;34m[INFO][0m   0x8a43eb7724...: 5 个slot变化
+[0;34m[INFO][0m   0xbb4cdb9cbd...: 2 个slot变化
+[0;34m[INFO][0m   0x24721ec014...: 3 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x8a43eb7724... (5 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 2/6 个被保护函数
+[0;34m[INFO][0m 检测到 5 个slot变化
+[0;36m[DEBUG][0m 精确匹配symbol: FREEB → 0xae3ada8787245977832c6dab2d4474d3943527ab
+[0;36m[DEBUG][0m V3无法推断slot 111007044287799726660962535222071659843138565904320401744278014659349458648611, 回退到V2启发式方法
+[0;36m[DEBUG][0m 精确匹配symbol: FREEB → 0xae3ada8787245977832c6dab2d4474d3943527ab
+[0;36m[DEBUG][0m V3无法推断slot 111007044287799726660962535222071659843138565904320401744278014659349458648611, 回退到V2启发式方法
+[0;32m[SUCCESS][0m   生成约束: 2 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/Freedom_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): Gamma_exp
+[0;36m[DEBUG][0m   发现 8 个函数: ['setUp', 'testExploit', 'calculatePrice', 'uniswapV3FlashCallback', 'uniswapV3SwapCallback', 'algebraSwapCallback', 'receiveFlashLoan', 'receive']
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3FlashCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3SwapCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: algebraSwapCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: receiveFlashLoan (协议: balancer)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   识别到 6 个入口点: ['testExploit', 'uniswapV3FlashCallback', 'uniswapV3SwapCallback', 'algebraSwapCallback', 'receiveFlashLoan', 'receive']
+[0;34m[INFO][0m   可达函数: 7/8
+[0;34m[INFO][0m   收集到 16 个唯一外部调用
+[0;34m[INFO][0m   转换为 16 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3FlashCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3SwapCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: algebraSwapCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: receiveFlashLoan (协议: balancer)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   被攻击合约: uniproxy (0x1F1Ca4e8236CD13032653391dB7e9544a6ad123E)
+[0;34m[INFO][0m   识别到 16 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[0;36m[DEBUG][0m   检测到状态变化: 0xfd42cba85f...
+[0;36m[DEBUG][0m   检测到状态变化: 0x3AB5DD6995...
+[0;36m[DEBUG][0m   检测到状态变化: 0x61A7b3dae7...
+[0;36m[DEBUG][0m   检测到状态变化: 0x641C00A822...
+[0;36m[DEBUG][0m   检测到状态变化: 0x82aF49447D...
+[0;36m[DEBUG][0m   检测到状态变化: 0xC31E54c7a8...
+[0;36m[DEBUG][0m   检测到状态变化: 0xFd086bC7CD...
+[0;36m[DEBUG][0m   检测到状态变化: 0xFF970A61A0...
+[0;36m[DEBUG][0m   检测到状态变化: 0x0a5C5EAE1f...
+[0;34m[INFO][0m   动态检测到 9 个合约有状态变化
+[0;34m[INFO][0m   0x3ab5dd6995...: 65 个slot变化
+[0;34m[INFO][0m   0x61a7b3dae7...: 2 个slot变化
+[0;34m[INFO][0m   0x641c00a822...: 1 个slot变化
+[0;34m[INFO][0m   0x82af49447d...: 2 个slot变化
+[0;34m[INFO][0m   0xc31e54c7a8...: 16 个slot变化
+[0;34m[INFO][0m   0xfd086bc7cd...: 6 个slot变化
+[0;34m[INFO][0m   0xff970a61a0...: 5 个slot变化
+[0;34m[INFO][0m   0x0a5c5eae1f...: 2 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x3ab5dd6995... (65 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 8/16 个被保护函数
+[0;34m[INFO][0m 检测到 65 个slot变化
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;36m[DEBUG][0m 未找到匹配: uniproxy
+[0;32m[SUCCESS][0m   生成约束: 13 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/Gamma_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): LQDX_alert_exp
+[0;36m[DEBUG][0m   发现 5 个函数: ['deposit', 'balanceOf', 'token0', 'setUp', 'testExploit']
+[0;34m[INFO][0m   识别到 1 个入口点: ['testExploit']
+[0;34m[INFO][0m   可达函数: 1/5
+[0;34m[INFO][0m   收集到 4 个唯一外部调用
+[0;34m[INFO][0m   转换为 4 个attack_calls
+[0;34m[INFO][0m   被攻击合约: None (None)
+[0;34m[INFO][0m   识别到 4 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 8 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[1;33m[WARNING][0m   所有分析目标都没有状态变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;32m[SUCCESS][0m   生成约束: 3 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/LQDX_alert_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): MIC_exp
+[0;36m[DEBUG][0m   发现 13 个函数: ['swapManual', 'setUp', 'testExploit', 'pancakeV3FlashCallback', 'approveRouter', 'FakeUSDTToBUSDT', 'BUSDTToMIC', 'BUSDTToBNB', 'BNBToBUSDT', 'claim', 'remove', 'MICToBNB', 'receive']
+[0;36m[DEBUG][0m   识别回调函数: pancakeV3FlashCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   识别到 3 个入口点: ['testExploit', 'pancakeV3FlashCallback', 'receive']
+[0;34m[INFO][0m   可达函数: 8/13
+[0;34m[INFO][0m   收集到 16 个唯一外部调用
+[0;34m[INFO][0m   转换为 16 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: pancakeV3FlashCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   被攻击合约: MIC (0xb38c2d2d6a168d41aa8eb4cead47e01badbdcf57)
+[0;34m[INFO][0m   识别到 16 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 1 个
+[0;34m[INFO][0m   0xb38c2d2d6a...: 10 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0xb38c2d2d6a... (10 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 3/16 个被保护函数
+[0;34m[INFO][0m 检测到 10 个slot变化
+[0;36m[DEBUG][0m 精确匹配symbol: MIC → 0xb38c2d2d6a168d41aa8eb4cead47e01badbdcf57
+[0;36m[DEBUG][0m V3无法推断slot 22834982447418448314318860762008930967820423487313201730043782994883680975172, 回退到V2启发式方法
+[0;36m[DEBUG][0m 精确匹配symbol: MIC → 0xb38c2d2d6a168d41aa8eb4cead47e01badbdcf57
+[0;36m[DEBUG][0m V3无法推断slot 22834982447418448314318860762008930967820423487313201730043782994883680975172, 回退到V2启发式方法
+[0;36m[DEBUG][0m 精确匹配symbol: MIC → 0xb38c2d2d6a168d41aa8eb4cead47e01badbdcf57
+[0;36m[DEBUG][0m V3无法推断slot 22834982447418448314318860762008930967820423487313201730043782994883680975172, 回退到V2启发式方法
+[0;36m[DEBUG][0m 精确匹配symbol: MIC → 0xb38c2d2d6a168d41aa8eb4cead47e01badbdcf57
+[0;36m[DEBUG][0m V3无法推断slot 22834982447418448314318860762008930967820423487313201730043782994883680975172, 回退到V2启发式方法
+[0;36m[DEBUG][0m 精确匹配symbol: MIC → 0xb38c2d2d6a168d41aa8eb4cead47e01badbdcf57
+[0;36m[DEBUG][0m V3无法推断slot 22834982447418448314318860762008930967820423487313201730043782994883680975172, 回退到V2启发式方法
+[0;36m[DEBUG][0m 精确匹配symbol: MIC → 0xb38c2d2d6a168d41aa8eb4cead47e01badbdcf57
+[0;36m[DEBUG][0m V3无法推断slot 22834982447418448314318860762008930967820423487313201730043782994883680975172, 回退到V2启发式方法
+[0;32m[SUCCESS][0m   生成约束: 6 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/MIC_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): MIMSpell2_exp
+[0;36m[DEBUG][0m   发现 9 个函数: ['balanceOf', 'addCollateral', 'setUp', 'testExploit', 'onFlashLoan', 'uniswapV3SwapCallback', 'handleSpecialUser', 'exploit', 'receive']
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3SwapCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: onFlashLoan (协议: aave)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   识别到 4 个入口点: ['testExploit', 'uniswapV3SwapCallback', 'onFlashLoan', 'receive']
+[0;34m[INFO][0m   可达函数: 5/9
+[0;34m[INFO][0m   收集到 21 个唯一外部调用
+[0;34m[INFO][0m   转换为 21 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3SwapCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: onFlashLoan (协议: aave)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   被攻击合约: CauldronV4 (0x7259e152103756e1616a77ae982353c3751a6a90)
+[0;34m[INFO][0m   识别到 21 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 1 个
+[0;34m[INFO][0m   0x7259e15210...: 24 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x7259e15210... (24 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 3/21 个被保护函数
+[0;34m[INFO][0m 检测到 24 个slot变化
+[0;36m[DEBUG][0m 部分匹配name: CauldronV4 ~ ICauldronV4 → 0x7259e152103756e1616a77ae982353c3751a6a90
+[0;36m[DEBUG][0m V3无法推断slot 8, 回退到V2启发式方法
+[0;36m[DEBUG][0m 部分匹配name: CauldronV4 ~ ICauldronV4 → 0x7259e152103756e1616a77ae982353c3751a6a90
+[0;36m[DEBUG][0m V3无法推断slot 8, 回退到V2启发式方法
+[0;36m[DEBUG][0m 部分匹配name: CauldronV4 ~ ICauldronV4 → 0x7259e152103756e1616a77ae982353c3751a6a90
+[0;36m[DEBUG][0m V3无法推断slot 8, 回退到V2启发式方法
+[0;36m[DEBUG][0m 部分匹配name: CauldronV4 ~ ICauldronV4 → 0x7259e152103756e1616a77ae982353c3751a6a90
+[0;36m[DEBUG][0m V3无法推断slot 8, 回退到V2启发式方法
+[0;36m[DEBUG][0m 部分匹配name: CauldronV4 ~ ICauldronV4 → 0x7259e152103756e1616a77ae982353c3751a6a90
+[0;36m[DEBUG][0m V3无法推断slot 8, 回退到V2启发式方法
+[0;32m[SUCCESS][0m   生成约束: 5 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/MIMSpell2_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): NBLGAME_exp
+[0;36m[DEBUG][0m   发现 8 个函数: ['unlockSlot', 'exactInputSingle', 'setUp', 'testExploit', 'uniswapV3FlashCallback', 'onERC721Received', 'NBLToUSDT', 'NBLToWETH']
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3FlashCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: onERC721Received (协议: erc)
+[0;34m[INFO][0m   识别到 3 个入口点: ['testExploit', 'uniswapV3FlashCallback', 'onERC721Received']
+[0;34m[INFO][0m   可达函数: 5/8
+[0;34m[INFO][0m   收集到 14 个唯一外部调用
+[0;34m[INFO][0m   转换为 14 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3FlashCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: onERC721Received (协议: erc)
+[0;34m[INFO][0m   被攻击合约: NblNftStake (0x5499178919c79086fd580d6c5f332a4253244d91)
+[0;34m[INFO][0m   识别到 14 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 1 个
+[0;34m[INFO][0m   0x5499178919...: 1 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x5499178919... (1 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 2/14 个被保护函数
+[0;34m[INFO][0m 检测到 1 个slot变化
+[0;36m[DEBUG][0m 部分匹配alias: NblNftStake ~ NBL → 0x4b03afc91295ed778320c2824bad5eb5a1d852dd
+[0;36m[DEBUG][0m V3无法推断slot 98343832320418092463269668786136727249934652323436325678843722256626848040442, 回退到V2启发式方法
+[0;36m[DEBUG][0m 部分匹配alias: NblNftStake ~ NBL → 0x4b03afc91295ed778320c2824bad5eb5a1d852dd
+[0;36m[DEBUG][0m V3无法推断slot 98343832320418092463269668786136727249934652323436325678843722256626848040442, 回退到V2启发式方法
+[0;32m[SUCCESS][0m   生成约束: 2 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/NBLGAME_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): OrbitChain_exp
+[0;36m[DEBUG][0m   发现 3 个函数: ['withdraw', 'setUp', 'testExploit']
+[0;34m[INFO][0m   识别到 1 个入口点: ['testExploit']
+[0;34m[INFO][0m   可达函数: 1/3
+[0;34m[INFO][0m   收集到 2 个唯一外部调用
+[0;34m[INFO][0m   转换为 2 个attack_calls
+[0;34m[INFO][0m   被攻击合约: OrbitEthVault (0x1bf68a9d1eaee7826b3593c20a0ca93293cb489a)
+[0;34m[INFO][0m   识别到 2 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[1;33m[WARNING][0m   所有分析目标都没有状态变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用原始被攻击合约: 0x1bf68a9d1e...
+[1;33m[WARNING][0m 未检测到状态变化，使用启发式约束生成
+[0;32m[SUCCESS][0m   生成约束: 2 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/OrbitChain_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): PeapodsFinance_exp
+[0;36m[DEBUG][0m   发现 6 个函数: ['exactInput', 'flash', 'setUp', 'testExploit', 'callback', 'PeasToWETH']
+[0;34m[INFO][0m   识别到 1 个入口点: ['testExploit']
+[0;34m[INFO][0m   可达函数: 2/6
+[0;34m[INFO][0m   收集到 6 个唯一外部调用
+[0;34m[INFO][0m   转换为 6 个attack_calls
+[0;34m[INFO][0m   被攻击合约: ppPP (0xdbb20a979a92cccce15229e41c9b082d5b5d7e31)
+[0;34m[INFO][0m   识别到 6 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 1 个
+[0;34m[INFO][0m   0xdbb20a979a...: 2 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0xdbb20a979a... (2 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 1/6 个被保护函数
+[0;34m[INFO][0m 检测到 2 个slot变化
+[0;36m[DEBUG][0m 精确匹配symbol: ppPP → 0xdbb20a979a92cccce15229e41c9b082d5b5d7e31
+[0;36m[DEBUG][0m V3推断slot 43338921159469841899711384791100799473247905780846710754558330455962694164420 → address_43338921159469841899711384791100799473247905780846710754558330455962694164420
+[0;32m[SUCCESS][0m   生成约束: 1 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/PeapodsFinance_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): RadiantCapital_exp
+[0;36m[DEBUG][0m   发现 8 个函数: ['borrow', 'setUp', 'testExploit', 'executeOperation', 'uniswapV3SwapCallback', 'takeFlashLoan', 'siphonFundsFromPool', 'receive']
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3SwapCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: executeOperation (协议: aave)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   识别到 4 个入口点: ['testExploit', 'uniswapV3SwapCallback', 'executeOperation', 'receive']
+[0;34m[INFO][0m   可达函数: 5/8
+[0;34m[INFO][0m   收集到 10 个唯一外部调用
+[0;34m[INFO][0m   转换为 10 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: uniswapV3SwapCallback (协议: uniswap_v3)
+[0;36m[DEBUG][0m   识别回调函数: executeOperation (协议: aave)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   被攻击合约: RadiantLendingPool (0xf4b1486dd74d07706052a33d31d7c0aafd0659e1)
+[0;34m[INFO][0m   识别到 10 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 1 个
+[0;34m[INFO][0m   0xf4b1486dd7...: 7 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0xf4b1486dd7... (7 slots)
+[0;34m[INFO][0m 检测到 7 个slot变化
+[0;32m[SUCCESS][0m   生成约束: 0 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/RadiantCapital_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): Shell_MEV_0xa898_exp
+[0;36m[DEBUG][0m   发现 5 个函数: ['setUp', 'testExploit', 'TOKENTOBUSD', 'fallback', 'receive']
+[0;36m[DEBUG][0m   识别回调函数: fallback (协议: fallback)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   识别到 3 个入口点: ['testExploit', 'fallback', 'receive']
+[0;34m[INFO][0m   可达函数: 4/5
+[0;34m[INFO][0m   收集到 5 个唯一外部调用
+[0;34m[INFO][0m   转换为 5 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: fallback (协议: fallback)
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   被攻击合约: Robot1 (0xa898b78b7cbbabacf9d179c4c46c212c0ac66f46)
+[0;34m[INFO][0m   识别到 5 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[0;36m[DEBUG][0m   检测到状态变化: 0xd66a43d0a3...
+[0;36m[DEBUG][0m   检测到状态变化: 0x5Df670150B...
+[0;36m[DEBUG][0m   检测到状态变化: 0x55d398326f...
+[0;36m[DEBUG][0m   检测到状态变化: 0x74aEDaf8Ef...
+[0;34m[INFO][0m   动态检测到 4 个合约有状态变化
+[0;34m[INFO][0m   0xd66a43d0a3...: 1 个slot变化
+[0;34m[INFO][0m   0x5df670150b...: 10 个slot变化
+[0;34m[INFO][0m   0x55d398326f...: 12 个slot变化
+[0;34m[INFO][0m   0x74aedaf8ef...: 8 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x55d398326f... (12 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 1/5 个被保护函数
+[0;34m[INFO][0m 检测到 12 个slot变化
+[0;36m[DEBUG][0m 未找到匹配: Robot1
+[0;32m[SUCCESS][0m   生成约束: 1 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/Shell_MEV_0xa898_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): SocketGateway_exp
+[0;36m[DEBUG][0m   发现 7 个函数: ['executeRoute', 'performAction', 'setUp', 'getCallData', 'getRouteData', 'testExploit', 'receive']
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   识别到 2 个入口点: ['testExploit', 'receive']
+[0;34m[INFO][0m   可达函数: 4/7
+[0;34m[INFO][0m   收集到 2 个唯一外部调用
+[0;34m[INFO][0m   转换为 2 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: receive (协议: fallback)
+[0;34m[INFO][0m   被攻击合约: _gateway (0x3a23F943181408EAC424116Af7b7790c94Cb97a5)
+[0;34m[INFO][0m   识别到 2 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[1;33m[WARNING][0m   防火墙配置的合约都没有状态变化，回退到动态检测
+[0;36m[DEBUG][0m   检测到状态变化: 0xf2D5951bB0...
+[0;36m[DEBUG][0m   检测到状态变化: 0xA0b86991c6...
+[0;34m[INFO][0m   动态检测到 2 个合约有状态变化
+[0;34m[INFO][0m   0xa0b86991c6...: 255 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0xa0b86991c6... (255 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 2/2 个被保护函数
+[0;34m[INFO][0m 检测到 255 个slot变化
+[0;36m[DEBUG][0m 未找到匹配: _gateway
+[0;36m[DEBUG][0m 未找到匹配: _gateway
+[0;36m[DEBUG][0m 未找到匹配: _gateway
+[0;32m[SUCCESS][0m   生成约束: 3 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/SocketGateway_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): WiseLending02_exp
+[0;36m[DEBUG][0m   发现 7 个函数: ['setUp', 'test_poc', '_simulateOracleCall', 'depositExactAmount', 'mintPosition', 'latestRoundData', 'depositExactAmount']
+[0;34m[INFO][0m   识别到 1 个入口点: ['test_poc']
+[0;34m[INFO][0m   可达函数: 1/7
+[0;34m[INFO][0m   收集到 13 个唯一外部调用
+[0;34m[INFO][0m   转换为 13 个attack_calls
+[0;34m[INFO][0m   被攻击合约: wiseLending (0x37e49bf3749513a02fa535f0cbc383796e8107e4)
+[0;34m[INFO][0m   识别到 13 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 1 个
+[0;34m[INFO][0m   0x37e49bf374...: 108 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x37e49bf374... (108 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 10/13 个被保护函数
+[0;34m[INFO][0m 检测到 108 个slot变化
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;32m[SUCCESS][0m   生成约束: 22 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/WiseLending02_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): WiseLending03_exp
+[0;36m[DEBUG][0m   发现 7 个函数: ['depositExactAmount', 'depositExactAmount', 'mintPosition', 'setUp', 'testExploit', 'borrow', 'onERC721Received']
+[0;36m[DEBUG][0m   识别回调函数: onERC721Received (协议: erc)
+[0;34m[INFO][0m   识别到 2 个入口点: ['testExploit', 'onERC721Received']
+[0;34m[INFO][0m   可达函数: 2/7
+[0;34m[INFO][0m   收集到 15 个唯一外部调用
+[0;34m[INFO][0m   转换为 15 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: onERC721Received (协议: erc)
+[0;34m[INFO][0m   被攻击合约: wiseLending (0x37e49bf3749513a02fa535f0cbc383796e8107e4)
+[0;34m[INFO][0m   识别到 15 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 1 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 1 个
+[0;34m[INFO][0m   0x37e49bf374...: 108 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x37e49bf374... (108 slots)
+[0;34m[INFO][0m   根据防火墙配置，分析 4/15 个被保护函数
+[0;34m[INFO][0m 检测到 108 个slot变化
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;36m[DEBUG][0m 未找到匹配: wiseLending
+[0;32m[SUCCESS][0m   生成约束: 4 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/WiseLending03_exp/constraint_rules_v2.json
+[0;34m[INFO][0m 开始提取约束 (V2): XSIJ_exp
+[0;36m[DEBUG][0m   发现 6 个函数: ['flashLoan', 'removePoolAmount', 'setUp', 'testExploit', 'DPPFlashLoanCall', 'getMyVariable']
+[0;36m[DEBUG][0m   识别回调函数: DPPFlashLoanCall (协议: dodo)
+[0;34m[INFO][0m   识别到 2 个入口点: ['testExploit', 'DPPFlashLoanCall']
+[0;34m[INFO][0m   可达函数: 2/6
+[0;34m[INFO][0m   收集到 6 个唯一外部调用
+[0;34m[INFO][0m   转换为 6 个attack_calls
+[0;36m[DEBUG][0m   识别回调函数: DPPFlashLoanCall (协议: dodo)
+[0;34m[INFO][0m   被攻击合约: None (None)
+[0;34m[INFO][0m   识别到 6 个函数调用
+[0;34m[INFO][0m V3 StorageLayoutInferrer已初始化
+[0;34m[INFO][0m   防火墙配置指定: 20 个合约
+[0;34m[INFO][0m   使用防火墙配置中有状态变化的合约: 3 个
+[0;34m[INFO][0m   0x31bfa137c7...: 7 个slot变化
+[0;34m[INFO][0m   0x55d398326f...: 26 个slot变化
+[0;34m[INFO][0m   0xf43fd71f40...: 3 个slot变化
+[0;34m[INFO][0m V3 SymbolicParameterEvaluator已初始化(无AST模式)
+[0;34m[INFO][0m   使用变化最大的合约作为主要分析目标: 0x55d398326f... (26 slots)
+[0;34m[INFO][0m 检测到 26 个slot变化
+[0;36m[DEBUG][0m V3推断失败: 'NoneType' object has no attribute 'lower', 回退到V2
+[0;36m[DEBUG][0m V3推断失败: 'NoneType' object has no attribute 'lower', 回退到V2
+[0;36m[DEBUG][0m V3推断失败: 'NoneType' object has no attribute 'lower', 回退到V2
+[0;32m[SUCCESS][0m   生成约束: 3 个
+[0;32m[SUCCESS][0m 约束规则已保存: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/XSIJ_exp/constraint_rules_v2.json
+[0;32m[SUCCESS][0m 
+总计处理: 19 个协议
+[0;32m[SUCCESS][0m 生成约束: 83 个 (17 个协议)

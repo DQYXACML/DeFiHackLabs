@@ -1,0 +1,661 @@
+{
+  "protocol": "MIMSpell2_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x7259e152103756e1616a77ae982353c3751a6a90",
+    "name": "CauldronV4"
+  },
+  "solved_constraints": [
+    {
+      "function": "addCollateral",
+      "signature": "addCollateral(address,bool,uint256)",
+      "attack_pattern": "collateral_manipulation",
+      "constraint": {
+        "function": "addCollateral",
+        "signature": "addCollateral(address,bool,uint256)",
+        "attack_pattern": "collateral_manipulation",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > userCollateral * 0.9",
+          "semantics": "Large collateral change affecting liquidation threshold",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 2,
+              "type": "uint256",
+              "value_expr": "depositAmount - 100"
+            },
+            "userCollateral": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "userCollateralShare"
+            }
+          },
+          "danger_condition": "amount > userCollateral * 0.9",
+          "safe_condition": "amount <= userCollateral * 0.3"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "expression": "amount > userCollateral * 0.9",
+        "resolved_expression": "amount > 900000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 900000000000000001,
+          "description": "刚好超过阈值 (900000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 300000000000000000,
+          "description": "安全范围 (30%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "function": "borrow",
+        "signature": "borrow(address,uint256)",
+        "attack_pattern": "borrow_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > availableLiquidity * 0.8",
+          "semantics": "Excessive borrowing depleting pool liquidity",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256",
+              "value_expr": "DegenBox.balanceOf(address(MIM), address(CauldronV4))"
+            },
+            "availableLiquidity": {
+              "source": "storage",
+              "slot": "0x4",
+              "type": "uint256",
+              "semantic_name": "availableLiquidity"
+            }
+          },
+          "danger_condition": "amount > availableLiquidity * 0.8",
+          "safe_condition": "amount <= availableLiquidity * 0.3"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 870542610060029798551030642050703907253763566750,
+        "state_value": 1088178262575037248188788302563379884067204458438,
+        "coefficient": 0.8,
+        "expression": "amount > availableLiquidity * 0.8",
+        "resolved_expression": "amount > 870542610060029798551030642050703907253763566750"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 870542610060029798551030642050703907253763566751,
+          "description": "刚好超过阈值 (870542610060029798551030642050703907253763566750+1)"
+        },
+        {
+          "type": "safe",
+          "value": 326453478772511174456636490769013965220161337531,
+          "description": "安全范围 (30%)"
+        },
+        {
+          "type": "attack",
+          "value": 1033769349446285385779348887435210889863844235516,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1088178262575037248188788302563379884067204458438,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "repay",
+      "signature": "repay(address,bool,uint256)",
+      "attack_pattern": "repay_manipulation",
+      "constraint": {
+        "function": "repay",
+        "signature": "repay(address,bool,uint256)",
+        "attack_pattern": "repay_manipulation",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > borrowedAmount * 0.9",
+          "semantics": "Large repayment potentially manipulating debt tracking",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 2,
+              "type": "uint256",
+              "value_expr": "1"
+            },
+            "borrowedAmount": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "userBorrowPart"
+            }
+          },
+          "danger_condition": "amount > borrowedAmount * 0.9",
+          "safe_condition": "amount <= borrowedAmount * 0.5"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "expression": "amount > borrowedAmount * 0.9",
+        "resolved_expression": "amount > 900000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 900000000000000001,
+          "description": "刚好超过阈值 (900000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 500000000000000000,
+          "description": "安全范围 (50%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "addCollateral",
+      "signature": "addCollateral(address,bool,uint256)",
+      "attack_pattern": "collateral_manipulation",
+      "constraint": {
+        "function": "addCollateral",
+        "signature": "addCollateral(address,bool,uint256)",
+        "attack_pattern": "collateral_manipulation",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > userCollateral * 0.9",
+          "semantics": "Large collateral change affecting liquidation threshold",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 2,
+              "type": "uint256",
+              "value_expr": "100"
+            },
+            "userCollateral": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "userCollateralShare"
+            }
+          },
+          "danger_condition": "amount > userCollateral * 0.9",
+          "safe_condition": "amount <= userCollateral * 0.3"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "expression": "amount > userCollateral * 0.9",
+        "resolved_expression": "amount > 900000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 900000000000000001,
+          "description": "刚好超过阈值 (900000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 300000000000000000,
+          "description": "安全范围 (30%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "function": "borrow",
+        "signature": "borrow(address,uint256)",
+        "attack_pattern": "borrow_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > availableLiquidity * 0.8",
+          "semantics": "Excessive borrowing depleting pool liquidity",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256",
+              "value_expr": "1"
+            },
+            "availableLiquidity": {
+              "source": "storage",
+              "slot": "0x4",
+              "type": "uint256",
+              "semantic_name": "availableLiquidity"
+            }
+          },
+          "danger_condition": "amount > availableLiquidity * 0.8",
+          "safe_condition": "amount <= availableLiquidity * 0.3"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 870542610060029798551030642050703907253763566750,
+        "state_value": 1088178262575037248188788302563379884067204458438,
+        "coefficient": 0.8,
+        "expression": "amount > availableLiquidity * 0.8",
+        "resolved_expression": "amount > 870542610060029798551030642050703907253763566750"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 870542610060029798551030642050703907253763566751,
+          "description": "刚好超过阈值 (870542610060029798551030642050703907253763566750+1)"
+        },
+        {
+          "type": "safe",
+          "value": 326453478772511174456636490769013965220161337531,
+          "description": "安全范围 (30%)"
+        },
+        {
+          "type": "attack",
+          "value": 1033769349446285385779348887435210889863844235516,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1088178262575037248188788302563379884067204458438,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "function": "borrow",
+        "signature": "borrow(address,uint256)",
+        "attack_pattern": "borrow_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > availableLiquidity * 0.8",
+          "semantics": "Excessive borrowing depleting pool liquidity",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256",
+              "value_expr": "1"
+            },
+            "availableLiquidity": {
+              "source": "storage",
+              "slot": "0x4",
+              "type": "uint256",
+              "semantic_name": "availableLiquidity"
+            }
+          },
+          "danger_condition": "amount > availableLiquidity * 0.8",
+          "safe_condition": "amount <= availableLiquidity * 0.3"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 870542610060029798551030642050703907253763566750,
+        "state_value": 1088178262575037248188788302563379884067204458438,
+        "coefficient": 0.8,
+        "expression": "amount > availableLiquidity * 0.8",
+        "resolved_expression": "amount > 870542610060029798551030642050703907253763566750"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 870542610060029798551030642050703907253763566751,
+          "description": "刚好超过阈值 (870542610060029798551030642050703907253763566750+1)"
+        },
+        {
+          "type": "safe",
+          "value": 326453478772511174456636490769013965220161337531,
+          "description": "安全范围 (30%)"
+        },
+        {
+          "type": "attack",
+          "value": 1033769349446285385779348887435210889863844235516,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1088178262575037248188788302563379884067204458438,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "repay",
+      "signature": "repay(address,bool,uint256)",
+      "attack_pattern": "repay_manipulation",
+      "constraint": {
+        "function": "repay",
+        "signature": "repay(address,bool,uint256)",
+        "attack_pattern": "repay_manipulation",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > borrowedAmount * 0.9",
+          "semantics": "Large repayment potentially manipulating debt tracking",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 2,
+              "type": "uint256",
+              "value_expr": "1"
+            },
+            "borrowedAmount": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "userBorrowPart"
+            }
+          },
+          "danger_condition": "amount > borrowedAmount * 0.9",
+          "safe_condition": "amount <= borrowedAmount * 0.5"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "expression": "amount > borrowedAmount * 0.9",
+        "resolved_expression": "amount > 900000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 900000000000000001,
+          "description": "刚好超过阈值 (900000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 500000000000000000,
+          "description": "安全范围 (50%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "repay",
+      "signature": "repay(address,bool,uint256)",
+      "attack_pattern": "repay_manipulation",
+      "constraint": {
+        "function": "repay",
+        "signature": "repay(address,bool,uint256)",
+        "attack_pattern": "repay_manipulation",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > borrowedAmount * 0.9",
+          "semantics": "Large repayment potentially manipulating debt tracking",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 2,
+              "type": "uint256",
+              "value_expr": "1"
+            },
+            "borrowedAmount": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "userBorrowPart"
+            }
+          },
+          "danger_condition": "amount > borrowedAmount * 0.9",
+          "safe_condition": "amount <= borrowedAmount * 0.5"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "expression": "amount > borrowedAmount * 0.9",
+        "resolved_expression": "amount > 900000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 900000000000000001,
+          "description": "刚好超过阈值 (900000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 500000000000000000,
+          "description": "安全范围 (50%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    }
+  ],
+  "param_check_rules": {
+    "protocol": "MIMSpell2_exp",
+    "version": "1.0.0",
+    "rules": [
+      {
+        "function_sig": "0x860ffea1",
+        "function_name": "addCollateral",
+        "param_index": 2,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "900000000000000000",
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "attack_pattern": "collateral_manipulation",
+        "description": "Large collateral change affecting liquidation threshold"
+      },
+      {
+        "function_sig": "0x4b8a3529",
+        "function_name": "borrow",
+        "param_index": 1,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "870542610060029798551030642050703907253763566750",
+        "threshold": 870542610060029798551030642050703907253763566750,
+        "state_value": 1088178262575037248188788302563379884067204458438,
+        "coefficient": 0.8,
+        "attack_pattern": "borrow_attack",
+        "description": "Excessive borrowing depleting pool liquidity"
+      },
+      {
+        "function_sig": "0x15294c40",
+        "function_name": "repay",
+        "param_index": 2,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "900000000000000000",
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "attack_pattern": "repay_manipulation",
+        "description": "Large repayment potentially manipulating debt tracking"
+      },
+      {
+        "function_sig": "0x860ffea1",
+        "function_name": "addCollateral",
+        "param_index": 2,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "900000000000000000",
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "attack_pattern": "collateral_manipulation",
+        "description": "Large collateral change affecting liquidation threshold"
+      },
+      {
+        "function_sig": "0x4b8a3529",
+        "function_name": "borrow",
+        "param_index": 1,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "870542610060029798551030642050703907253763566750",
+        "threshold": 870542610060029798551030642050703907253763566750,
+        "state_value": 1088178262575037248188788302563379884067204458438,
+        "coefficient": 0.8,
+        "attack_pattern": "borrow_attack",
+        "description": "Excessive borrowing depleting pool liquidity"
+      },
+      {
+        "function_sig": "0x4b8a3529",
+        "function_name": "borrow",
+        "param_index": 1,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "870542610060029798551030642050703907253763566750",
+        "threshold": 870542610060029798551030642050703907253763566750,
+        "state_value": 1088178262575037248188788302563379884067204458438,
+        "coefficient": 0.8,
+        "attack_pattern": "borrow_attack",
+        "description": "Excessive borrowing depleting pool liquidity"
+      },
+      {
+        "function_sig": "0x15294c40",
+        "function_name": "repay",
+        "param_index": 2,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "900000000000000000",
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "attack_pattern": "repay_manipulation",
+        "description": "Large repayment potentially manipulating debt tracking"
+      },
+      {
+        "function_sig": "0x15294c40",
+        "function_name": "repay",
+        "param_index": 2,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "900000000000000000",
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "attack_pattern": "repay_manipulation",
+        "description": "Large repayment potentially manipulating debt tracking"
+      }
+    ],
+    "metadata": {
+      "generated_by": "solve_constraints.py",
+      "total_rules": 8
+    }
+  },
+  "summary": {
+    "total_constraints": 8,
+    "resolved_constraints": 8,
+    "resolution_rate": "100.0%"
+  },
+  "metadata": {
+    "solver_version": "1.0.0",
+    "generated_by": "solve_constraints.py"
+  }
+}

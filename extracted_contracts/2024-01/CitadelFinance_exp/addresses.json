@@ -4,62 +4,272 @@
     "name": "Attacker",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Attacker : https://arbiscan.io/address/0xfcf88e5e1314ca3b6be7eed851568834233f8b49"
+    "context": "// Attacker : https://arbiscan.io/address/0xfcf88e5e1314ca3b6be7eed851568834233f8b49",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xfcbf411237ac830dc892edec054f15ba7f9ea5a6",
     "name": "Attack_Contract",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Attack Contract : https://arbiscan.io/address/0xfcbf411237ac830dc892edec054f15ba7f9ea5a6"
+    "context": "// Attack Contract : https://arbiscan.io/address/0xfcbf411237ac830dc892edec054f15ba7f9ea5a6",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x5e93c07a22111b327EE0EaEC64028064448ae848",
-    "name": "CitadelStaking",
+    "name": "ICitadelStaking",
     "chain": "arbitrum",
     "source": "static",
-    "context": "private constant CitadelStaking = ICitadelStaking(0x5e93c07a22111b327EE0EaEC64028064448ae848)"
+    "context": "ICitadelStaking private constant CitadelStaking = ICitadelStaking(0x5e93c07a22111b327EE0EaEC64028064448ae848)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ICitadelStaking"
+    ]
   },
   {
     "address": "0x34b666992fcCe34669940ab6B017fE11e5750799",
-    "name": "CitadelRedeem",
+    "name": "ICitadelRedeem",
     "chain": "arbitrum",
     "source": "static",
-    "context": "private constant CitadelRedeem = ICitadelRedeem(0x34b666992fcCe34669940ab6B017fE11e5750799)"
+    "context": "ICitadelRedeem private constant CitadelRedeem = ICitadelRedeem(0x34b666992fcCe34669940ab6B017fE11e5750799)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ICitadelRedeem"
+    ]
   },
   {
     "address": "0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443",
-    "name": "WETH_USDC",
+    "name": "Uni_Pair_V3",
     "chain": "arbitrum",
     "source": "static",
-    "context": "private constant WETH_USDC = Uni_Pair_V3(0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443)"
+    "context": "Uni_Pair_V3 private constant WETH_USDC = Uni_Pair_V3(0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Uni_Pair_V3"
+    ]
   },
   {
     "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-    "name": "WETH",
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "private constant WETH = IERC20(0x82aF49447D8a07e3bd95BD0d56f35241523fBab1)"
+    "context": "IERC20 private constant WETH = IERC20(0x82aF49447D8a07e3bd95BD0d56f35241523fBab1)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
-    "name": "USDC",
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "private constant USDC = IERC20(0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8)"
+    "context": "IERC20 private constant USDC = IERC20(0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8)",
+    "onchain_name": null,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDC",
+      "IERC20",
+      "usdc",
+      "IUSDC"
+    ]
   },
   {
     "address": "0x43cF1856606df2CB22AEdbA1a3e23725f1594E81",
-    "name": "CIT",
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "private constant CIT = IERC20(0x43cF1856606df2CB22AEdbA1a3e23725f1594E81)"
+    "context": "IERC20 private constant CIT = IERC20(0x43cF1856606df2CB22AEdbA1a3e23725f1594E81)",
+    "onchain_name": null,
+    "symbol": "CIT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CIT",
+      "IERC20",
+      "cit",
+      "ICIT"
+    ]
   },
   {
     "address": "0xc873fEcbd354f5A56E00E710B90EF4201db2448d",
-    "name": "CamelotRouter",
+    "name": "ICamelotRouter",
     "chain": "arbitrum",
     "source": "static",
-    "context": "private constant CamelotRouter = ICamelotRouter(0xc873fEcbd354f5A56E00E710B90EF4201db2448d)"
+    "context": "ICamelotRouter private constant CamelotRouter = ICamelotRouter(0xc873fEcbd354f5A56E00E710B90EF4201db2448d)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ICamelotRouter"
+    ]
+  },
+  {
+    "address": "0xCaF5460bEbB5631F925251DB95e539B761A305fD",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 2612",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x8b194bEae1d3e0788A1a35173978001ACDFba668",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 2553",
+    "onchain_name": null,
+    "symbol": "RKA",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "RKA",
+      "rka",
+      "IRKA"
+    ]
+  },
+  {
+    "address": "0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 2553",
+    "onchain_name": null,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDC",
+      "usdc",
+      "IUSDC"
+    ]
+  },
+  {
+    "address": "0x84652bb2539513BAf36e225c930Fdd8eaa63CE27",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 2529",
+    "onchain_name": null,
+    "symbol": "CMLT-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CMLT-LP",
+      "cmlt-lp",
+      "ICMLT-LP"
+    ]
+  },
+  {
+    "address": "0x5ed32847e33844155c18944Ae84459404e432620",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 41033",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x5ff10565516c110180bb9cc111cdbc2b0a68e09f",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xffffffffffffffffffffffffffffffffffffffff",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

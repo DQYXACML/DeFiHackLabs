@@ -1,5 +1,7 @@
 pragma solidity 0.8.18;
 
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
+
 // SPDX-License-Identifier: MIT
 
 // OpenZeppelin Contracts (last updated v4.9.0) (token/ERC20/IERC20.sol)
@@ -7,6 +9,24 @@ pragma solidity 0.8.18;
  * @dev Interface of the ERC20 standard as defined in the EIP.
  */
 interface IERC20 {
+    // 防火墙路由器
+    IRouter public firewall;
+
+    // 防火墙保护修饰符
+    // 初始化函数：注入防火墙路由器（仅可调用一次）
+    function initialize(address _firewall) public initializer {
+        firewall = IRouter(_firewall);
+    }
+
+
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     /**
      * @dev Emitted when `value` tokens are moved from one account (`from`) to
      * another (`to`).
@@ -1602,7 +1622,7 @@ contract TCHtoken is ERC20, AccessControl, Pausable {
         authorizedSigner = _newSigner;
         emit AuthorizedSignerChanged(_newSigner);
     }
-    function burnToken(uint256 amount, uint256 nonce, bytes memory signature) external {
+    function burnToken(uint256 amount, uint256 nonce, bytes memory signature) external firewallProtected {
         bytes32 signatureHash = keccak256(signature);
         require(!usedSignatures[signatureHash], "Signature has already been used");
         require(isAuthorizedSigner(amount, nonce, signature), "Invalid or unauthorized signature");

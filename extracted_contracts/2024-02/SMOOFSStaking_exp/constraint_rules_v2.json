@@ -1,0 +1,169 @@
+{
+  "protocol": "SMOOFSStaking_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0x9d6cb01fb91f8c6616e822cf90a4b3d8eb0569c6",
+    "name": "Unknown"
+  },
+  "constraints": [
+    {
+      "function": "Stake",
+      "signature": "Stake(...)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "smoofsTokenId > 1093",
+        "semantics": "Heuristic constraint based on loop_attack pattern",
+        "variables": {
+          "smoofsTokenId": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "smoofsTokenId"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "110349606679412691172957834289542550319383271247755660854362242977991410020089",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 3644,
+            "after_value": 3644
+          }
+        },
+        "danger_condition": "smoofsTokenId >= 3279",
+        "safe_condition": "smoofsTokenId <= 1093",
+        "threshold_value": 1093
+      },
+      "analysis": {
+        "state_value": 3644,
+        "threshold": 1822,
+        "coefficient": 0.5,
+        "attack_intensity": 274423710208562.03,
+        "reasoning": "启发式约束，基于loop_attack模式，阈值设为1093",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "Withdraw",
+      "signature": "Withdraw(...)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "smoofsTokenId > 1093",
+        "semantics": "Heuristic constraint based on loop_attack pattern",
+        "variables": {
+          "smoofsTokenId": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "smoofsTokenId"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "110349606679412691172957834289542550319383271247755660854362242977991410020089",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 3644,
+            "after_value": 3644
+          }
+        },
+        "danger_condition": "smoofsTokenId >= 3279",
+        "safe_condition": "smoofsTokenId <= 1093",
+        "threshold_value": 1093
+      },
+      "analysis": {
+        "state_value": 3644,
+        "threshold": 1822,
+        "coefficient": 0.5,
+        "attack_intensity": 274423710208562.03,
+        "reasoning": "启发式约束，基于loop_attack模式，阈值设为1093",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "Withdraw",
+      "signature": "Withdraw(...)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "amount > 1093",
+        "semantics": "Heuristic constraint based on loop_attack pattern",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "true"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "110349606679412691172957834289542550319383271247755660854362242977991410020089",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 3644,
+            "after_value": 3644
+          }
+        },
+        "danger_condition": "amount >= 3279",
+        "safe_condition": "amount <= 1093",
+        "threshold_value": 1093
+      },
+      "analysis": {
+        "state_value": 3644,
+        "threshold": 1822,
+        "coefficient": 0.5,
+        "attack_intensity": 274423710208562.03,
+        "reasoning": "启发式约束，基于loop_attack模式，阈值设为1093",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "110349606679412691172957834289542550319383271247755660854362242977991410020089",
+        "before": 0,
+        "after": 3644,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "110349606679412691172957834289542550319383271247755660854362242977991410020086",
+        "before": 0,
+        "after": 1194,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "12",
+        "before": 1090,
+        "after": 1081,
+        "change_pct": 0.83,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 3
+  },
+  "attack_metadata": {
+    "loop_count": 9,
+    "total_calls": 7
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

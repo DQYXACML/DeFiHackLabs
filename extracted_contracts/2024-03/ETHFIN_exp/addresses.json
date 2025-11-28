@@ -4,76 +4,263 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0x52e38d496f8d712394d5ed55e4d4cdd21f1957de"
+    "context": "// Attacker : https://bscscan.com/address/0x52e38d496f8d712394d5ed55e4d4cdd21f1957de",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x11bfd986299bb0d5666536e361f312198e882642",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x11bfd986299bb0d5666536e361f312198e882642"
+    "context": "// Attack Contract : https://bscscan.com/address/0x11bfd986299bb0d5666536e361f312198e882642",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x17bd2e09fa4585c15749f40bb32a6e3db58522ba",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0x17bd2e09fa4585c15749f40bb32a6e3db58522ba"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0x17bd2e09fa4585c15749f40bb32a6e3db58522ba",
+    "onchain_name": null,
+    "symbol": "ETHFIN",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ETHFIN",
+      "Vulnerable_Contract",
+      "ethfin",
+      "IETHFIN"
+    ]
   },
   {
     "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
     "name": "wbnbAddress",
     "chain": "bsc",
     "source": "static",
-    "context": "address wbnbAddress = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+    "context": "address wbnbAddress = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "onchain_name": null,
+    "symbol": "WBNB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WBNB",
+      "wbnbAddress",
+      "wbnb",
+      "IWBNB"
+    ]
   },
   {
     "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
     "name": "router_address",
     "chain": "bsc",
     "source": "static",
-    "context": "address router_address = 0x10ED43C718714eb63d5aA57B78B54704E256024E"
+    "context": "address router_address = 0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "router_address"
+    ]
   },
   {
     "address": "0x172fcD41E0913e95784454622d1c3724f546f849",
     "name": "pancakeV3Pool",
     "chain": "bsc",
     "source": "static",
-    "context": "address pancakeV3Pool = 0x172fcD41E0913e95784454622d1c3724f546f849"
+    "context": "address pancakeV3Pool = 0x172fcD41E0913e95784454622d1c3724f546f849",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "pancakeV3Pool"
+    ]
   },
   {
     "address": "0xA964a6dab034A4b5985603f7e86a596c7e0eA96e",
     "name": "eftoken",
     "chain": "bsc",
     "source": "static",
-    "context": "address eftoken = 0xA964a6dab034A4b5985603f7e86a596c7e0eA96e"
+    "context": "address eftoken = 0xA964a6dab034A4b5985603f7e86a596c7e0eA96e",
+    "onchain_name": null,
+    "symbol": "ETHFIN",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ETHFIN",
+      "eftoken",
+      "ethfin",
+      "IETHFIN"
+    ]
   },
   {
     "address": "0x2b73Ee230dB9d7ddB51B859a3B59Ce48eB5aB4D9",
     "name": "pancakeSwap",
     "chain": "bsc",
     "source": "static",
-    "context": "address pancakeSwap = 0x2b73Ee230dB9d7ddB51B859a3B59Ce48eB5aB4D9"
+    "context": "address pancakeSwap = 0x2b73Ee230dB9d7ddB51B859a3B59Ce48eB5aB4D9",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "pancakeSwap",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
   },
   {
     "address": "0x168FDb7C2d4249485836595c8576D8f2D7c53a46",
     "name": "pancakeSwap2",
     "chain": "bsc",
     "source": "static",
-    "context": "address pancakeSwap2 = 0x168FDb7C2d4249485836595c8576D8f2D7c53a46"
+    "context": "address pancakeSwap2 = 0x168FDb7C2d4249485836595c8576D8f2D7c53a46",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "pancakeSwap2",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
   },
   {
     "address": "0x3544DA62afB297b5cE9DA14845C89b96D376D98C",
     "name": "pancakeSwap3",
     "chain": "bsc",
     "source": "static",
-    "context": "address pancakeSwap3 = 0x3544DA62afB297b5cE9DA14845C89b96D376D98C"
+    "context": "address pancakeSwap3 = 0x3544DA62afB297b5cE9DA14845C89b96D376D98C",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "pancakeSwap3",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "bsc",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
+  },
+  {
+    "address": "0x55d398326f99059fF775485246999027B3197955",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2531",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "usdt",
+      "IUSDT"
+    ]
+  },
+  {
+    "address": "0x16efb88BAaA33650367eBd64Ae301066eb85121b",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2893",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
+  },
+  {
+    "address": "0x573a1f238d45CE783bD116E9C9960DB6833916E7",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2836",
+    "onchain_name": null,
+    "symbol": "finsimp",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "finsimp",
+      "FINSIMP",
+      "Ifinsimp"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xb2bE75AE48f753B9a3D94D75251679702aE87382",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

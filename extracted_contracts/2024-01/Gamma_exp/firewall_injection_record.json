@@ -1,0 +1,38 @@
+{
+  "protocol": "Gamma_exp",
+  "year_month": "2024-01",
+  "injection_timestamp": "2025-11-26T04:21:29.506771Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "Hypervisor",
+    "address": "0x1F1Ca4e8236CD13032653391dB7e9544a6ad123E"
+  },
+  "injected_contracts": [
+    {
+      "file": "Hypervisor.sol",
+      "functions": [
+        "deposit"
+      ]
+    },
+    {
+      "file": "UniProxy.sol",
+      "functions": [
+        "deposit"
+      ]
+    },
+    {
+      "file": "TokeHypervisor.sol",
+      "functions": [
+        "deposit"
+      ]
+    },
+    {
+      "file": "MockUniswapV3Pool.sol",
+      "functions": [
+        "deposit"
+      ]
+    }
+  ],
+  "total_functions": 4,
+  "status": "success"
+}

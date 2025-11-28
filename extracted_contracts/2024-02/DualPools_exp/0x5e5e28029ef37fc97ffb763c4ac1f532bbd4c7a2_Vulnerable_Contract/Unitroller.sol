@@ -17,6 +17,7 @@ pragma solidity ^0.5.16;
 
 import "./ErrorReporter.sol";
 import "./ComptrollerStorage.sol";
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 /**
  *
  * @title ComptrollerCore
@@ -24,6 +25,24 @@ import "./ComptrollerStorage.sol";
  * VTokens should reference this contract as their comptroller.
  */
 contract Unitroller is UnitrollerAdminStorage, ComptrollerErrorReporter {
+    // 防火墙路由器
+    IRouter public firewall;
+
+    // 防火墙保护修饰符
+    // 初始化函数：注入防火墙路由器（仅可调用一次）
+    function initialize(address _firewall) public initializer {
+        firewall = IRouter(_firewall);
+    }
+
+
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
 
     /**
       * @notice Emitted when pendingComptrollerImplementation is changed

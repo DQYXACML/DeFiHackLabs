@@ -4,55 +4,149 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x2c903f97ea69b393ea03e7fab8d64d722b3f5559"
+    "context": "// Attacker : https://etherscan.io/address/0x2c903f97ea69b393ea03e7fab8d64d722b3f5559",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xe55607b2967ddbe5fa9a6a921991545b8277ef8f",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0xe55607b2967ddbe5fa9a6a921991545b8277ef8f"
+    "context": "// Attack Contract : https://etherscan.io/address/0xe55607b2967ddbe5fa9a6a921991545b8277ef8f",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xe4764f9cd8ecc9659d3abf35259638b20ac536e4",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://etherscan.io/address/0xe4764f9cd8ecc9659d3abf35259638b20ac536e4"
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0xe4764f9cd8ecc9659d3abf35259638b20ac536e4",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x0000000000000000000000000000000000000000",
     "name": "zero",
     "chain": "mainnet",
     "source": "static",
-    "context": "address zero = 0x0000000000000000000000000000000000000000"
+    "context": "address zero = 0x0000000000000000000000000000000000000000",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "zero"
+    ]
   },
   {
     "address": "0xB6a37b5d14D502c3Ab0Ae6f3a0E058BC9517786e",
     "name": "Azuki",
     "chain": "mainnet",
     "source": "static",
-    "context": "address Azuki = 0xB6a37b5d14D502c3Ab0Ae6f3a0E058BC9517786e"
+    "context": "address Azuki = 0xB6a37b5d14D502c3Ab0Ae6f3a0E058BC9517786e",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Azuki"
+    ]
   },
   {
     "address": "0xC2c862322E9c97D6244a3506655DA95F05246Fd8",
     "name": "Reservoir",
     "chain": "mainnet",
     "source": "static",
-    "context": "address Reservoir = 0xC2c862322E9c97D6244a3506655DA95F05246Fd8"
+    "context": "address Reservoir = 0xC2c862322E9c97D6244a3506655DA95F05246Fd8",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Reservoir"
+    ]
   },
   {
     "address": "0x7c5C9AfEcf4013c43217Fb6A626A4687381f080D",
-    "name": null,
+    "name": "IParticleExchange",
     "chain": "mainnet",
     "source": "static",
-    "context": "IParticleExchange(0x7c5C9AfEcf4013c43217Fb6A626A4687381f080D)"
+    "context": "IParticleExchange proxy = IParticleExchange(0x7c5C9AfEcf4013c43217Fb6A626A4687381f080D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IParticleExchange"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
+  },
+  {
+    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2534",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "weth",
+      "IWETH"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

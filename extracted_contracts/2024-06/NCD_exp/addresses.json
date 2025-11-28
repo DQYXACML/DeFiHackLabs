@@ -4,41 +4,99 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0xd52f125085b70f7f52bd112500a9c334b7246984"
+    "context": "// Attacker : https://bscscan.com/address/0xd52f125085b70f7f52bd112500a9c334b7246984",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xfad2a0642a44a68606c2295e69d383700643be68",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0xfad2a0642a44a68606c2295e69d383700643be68"
+    "context": "// Attack Contract : https://bscscan.com/address/0xfad2a0642a44a68606c2295e69d383700643be68",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x94Bb269518Ad17F1C10C85E600BDE481d4999bfF",
-    "name": "ncd_usdc_pair_",
+    "name": "IUniswapV2Pair",
     "chain": "bsc",
     "source": "static",
-    "context": "private constant ncd_usdc_pair_ = IUniswapV2Pair(0x94Bb269518Ad17F1C10C85E600BDE481d4999bfF)"
+    "context": "IUniswapV2Pair private constant ncd_usdc_pair_ = IUniswapV2Pair(0x94Bb269518Ad17F1C10C85E600BDE481d4999bfF)",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "IUniswapV2Pair",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
   },
   {
     "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-    "name": "router",
+    "name": "IRouter",
     "chain": "bsc",
     "source": "static",
-    "context": "private constant router = IRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E)"
+    "context": "IRouter private constant router = IRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IRouter"
+    ]
   },
   {
     "address": "0x9601313572eCd84B6B42DBC3e47bc54f8177558E",
-    "name": null,
+    "name": "INcd",
     "chain": "bsc",
     "source": "static",
-    "context": "INcd(0x9601313572eCd84B6B42DBC3e47bc54f8177558E)"
+    "context": "INcd ncd_ = INcd(0x9601313572eCd84B6B42DBC3e47bc54f8177558E)",
+    "onchain_name": null,
+    "symbol": "NCD",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "NCD",
+      "INcd",
+      "ncd",
+      "INCD"
+    ]
   },
   {
     "address": "0x55d398326f99059fF775485246999027B3197955",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0x55d398326f99059fF775485246999027B3197955)"
+    "context": "IERC20 usdc_ = IERC20(0x55d398326f99059fF775485246999027B3197955)",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "IERC20",
+      "usdt",
+      "IUSDT"
+    ]
   }
 ]

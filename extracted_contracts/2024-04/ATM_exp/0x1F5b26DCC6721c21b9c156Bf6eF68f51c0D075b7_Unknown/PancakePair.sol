@@ -2,7 +2,21 @@
 
 pragma solidity >=0.5.0;
 
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
+
 interface IPancakePair {
+    // 防火墙路由器
+    IRouter public firewall;
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     event Approval(address indexed owner, address indexed spender, uint value);
     event Transfer(address indexed from, address indexed to, uint value);
 
@@ -356,7 +370,8 @@ contract PancakePair is IPancakePair, PancakeERC20 {
     }
 
     // called once by the factory at time of deployment
-    function initialize(address _token0, address _token1) external {
+    function initialize(address _firewall, address _token0, address _token1) external {
+        firewall = IRouter(_firewall);
         require(msg.sender == factory, 'Pancake: FORBIDDEN'); // sufficient check
         token0 = _token0;
         token1 = _token1;
@@ -480,7 +495,7 @@ contract PancakePair is IPancakePair, PancakeERC20 {
     }
 
     // force balances to match reserves
-    function skim(address to) external lock {
+    function skim(address to) external lock firewallProtected {
         address _token0 = token0; // gas savings
         address _token1 = token1; // gas savings
         _safeTransfer(_token0, to, IERC20(_token0).balanceOf(address(this)).sub(reserve0));

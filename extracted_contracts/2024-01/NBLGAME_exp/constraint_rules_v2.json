@@ -1,0 +1,115 @@
+{
+  "protocol": "NBLGAME_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x5499178919c79086fd580d6c5f332a4253244d91",
+    "name": "NblNftStake"
+  },
+  "constraints": [
+    {
+      "function": "depositNft",
+      "signature": "depositNft(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "amount > 0",
+        "semantics": "Heuristic constraint based on large_deposit pattern",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "737"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "98343832320418092463269668786136727249934652323436325678843722256626848040442",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 1,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "amount >= 0",
+        "safe_condition": "amount <= 0",
+        "threshold_value": 0
+      },
+      "analysis": {
+        "state_value": 1,
+        "threshold": 0,
+        "coefficient": 0.5,
+        "attack_intensity": 737.0,
+        "reasoning": "启发式约束，基于large_deposit模式，阈值设为0",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "depositNbl",
+      "signature": "depositNbl(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "amount > 0",
+        "semantics": "Heuristic constraint based on large_deposit pattern",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "NBL.balanceOf(address(this))"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "98343832320418092463269668786136727249934652323436325678843722256626848040442",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 1,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "amount >= 0",
+        "safe_condition": "amount <= 0",
+        "threshold_value": 0
+      },
+      "analysis": {
+        "state_value": 1,
+        "threshold": 0,
+        "coefficient": 0.5,
+        "attack_intensity": 4.7558800416480816e+47,
+        "reasoning": "启发式约束，基于large_deposit模式，阈值设为0",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "98343832320418092463269668786136727249934652323436325678843722256626848040442",
+        "before": 0,
+        "after": 1,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 1
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 12
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

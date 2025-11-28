@@ -5,7 +5,23 @@ import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 
 interface ILiquidXv2Pair {
     // 防火墙路由器
-    IRouter public immutable firewall;
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
 
     // 防火墙保护修饰符
     modifier firewallProtected() {
@@ -102,8 +118,7 @@ contract LiquidXv2ERC20 is ILiquidXv2ERC20 {
   event Approval(address indexed owner, address indexed spender, uint value);
   event Transfer(address indexed from, address indexed to, uint value);
 
-  constructor(address _firewall) {
-        firewall = IRouter(_firewall);
+  constructor() {
     DOMAIN_SEPARATOR = keccak256(
       abi.encode(
         keccak256('EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)'),
@@ -291,7 +306,8 @@ contract LiquidXv2Pair is LiquidXv2ERC20 {
   }
 
   // called once by the factory at time of deployment
-  function initialize(address _token0, address _token1) external {
+  function initialize(address _firewall, address _token0, address _token1) external {
+        firewall = IRouter(_firewall);
     require(msg.sender == factory, 'LiquidXv2: FORBIDDEN'); // sufficient check
     token0 = _token0;
     token1 = _token1;

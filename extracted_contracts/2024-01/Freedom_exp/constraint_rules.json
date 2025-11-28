@@ -1,0 +1,47 @@
+{
+  "protocol": "Freedom_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xae3ada8787245977832c6dab2d4474d3943527ab",
+    "name": "FREEB"
+  },
+  "constraints": [
+    {
+      "function": "buyToken",
+      "signature": "buyToken(uint256)",
+      "attack_pattern": "price_oracle_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > poolBalance * 0.25",
+        "semantics": "Trade volume manipulating oracle price",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256"
+          },
+          "poolBalance": {
+            "source": "storage",
+            "slot": "0x6",
+            "type": "uint256",
+            "semantic_name": "poolBalance"
+          }
+        },
+        "danger_condition": "amount > poolBalance * 0.25",
+        "safe_condition": "amount <= poolBalance * 0.05"
+      }
+    }
+  ],
+  "storage_analysis": {
+    "changed_slots": [],
+    "total_slots": 4
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 1
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

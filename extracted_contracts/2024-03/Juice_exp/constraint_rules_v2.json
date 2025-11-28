@@ -1,0 +1,103 @@
+{
+  "protocol": "Juice_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": "0x8584ddbd1e28bca4bc6fb96bafe39f850301940e",
+    "name": "JuiceStaking"
+  },
+  "constraints": [
+    {
+      "function": "stake",
+      "signature": "stake(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "iterated_threshold",
+        "expression": "amount * 1240 > likely_totalSupply * 0.5",
+        "semantics": "Loop attack: parameter applied 1240 times affects likely_totalSupply",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "JUICE.balanceOf(address(this"
+          },
+          "likely_totalSupply": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "likely_totalSupply",
+            "before_value": 813678000000000000000000,
+            "after_value": 814918000000000000000000
+          }
+        },
+        "danger_condition": "amount >= 656191935483870967741",
+        "safe_condition": "amount <= 196857580645161271296",
+        "threshold_value": 196857580645161271296
+      },
+      "analysis": {
+        "state_value": 813678000000000000000000,
+        "threshold": 406839000000000000000000,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "循环攻击1240次，单次参数1000000000000000000，阈值设为196857580645161271296",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1240.0,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "2",
+        "before": 813678000000000000000000,
+        "after": 814918000000000000000000,
+        "change_pct": 0.15,
+        "is_new_slot": false
+      },
+      {
+        "slot": "33532592336999166752823169347762347003309681758295725776888119397367230235039",
+        "before": 0,
+        "after": 1000000000000000000000,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "33532592336999166752823169347762347003309681758295725776888119397367230235043",
+        "before": 0,
+        "after": 1628415562577794000,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "8",
+        "before": 1621782563725906,
+        "after": 1628415562577794,
+        "change_pct": 0.41,
+        "is_new_slot": false
+      },
+      {
+        "slot": "33532592336999166752823169347762347003309681758295725776888119397367230235042",
+        "before": 0,
+        "after": 3000000000,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 6
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 5
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

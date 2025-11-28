@@ -4,34 +4,108 @@
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://etherscan.io/address/0xFb35DE57B117FA770761C1A344784075745F84F9"
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0xFb35DE57B117FA770761C1A344784075745F84F9",
+    "onchain_name": null,
+    "symbol": "EGGX-APP1",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "EGGX-APP1",
+      "Vulnerable_Contract",
+      "eggx-app1",
+      "IEGGX-APP1"
+    ]
   },
   {
     "address": "0x26beBB6995a4736F088D129E82620eBA899B944F",
-    "name": null,
+    "name": "IEGGXUNIV3POOL",
     "chain": "mainnet",
     "source": "static",
-    "context": "IEGGXUNIV3POOL(0x26beBB6995a4736F088D129E82620eBA899B944F)"
+    "context": "IEGGXUNIV3POOL pool = IEGGXUNIV3POOL(0x26beBB6995a4736F088D129E82620eBA899B944F)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IEGGXUNIV3POOL"
+    ]
   },
   {
     "address": "0xe2f95ee8B72fFed59bC4D2F35b1d19b909A6e6b3",
-    "name": null,
+    "name": "IEGGX",
     "chain": "mainnet",
     "source": "static",
-    "context": "IEGGX(0xe2f95ee8B72fFed59bC4D2F35b1d19b909A6e6b3)"
+    "context": "IEGGX EGGX = IEGGX(0xe2f95ee8B72fFed59bC4D2F35b1d19b909A6e6b3)",
+    "onchain_name": null,
+    "symbol": "EGGX",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "EGGX",
+      "IEGGX",
+      "eggx"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": null,
+    "name": "IWeth",
     "chain": "mainnet",
     "source": "static",
-    "context": "IWeth(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "IWeth WETH = IWeth(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IWeth",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

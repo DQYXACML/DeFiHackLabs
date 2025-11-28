@@ -1,0 +1,40 @@
+{
+  "protocol": "Yield_exp",
+  "year_month": "2024-04",
+  "injection_timestamp": "2025-11-23T05:06:25.290278Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "Strategy",
+    "address": "0x3b4ffd93ce5fcf97e61aa8275ec241c76cc01a47"
+  },
+  "injected_contracts": [
+    {
+      "file": "@yield-protocol_strategy-v2_src_Strategy.sol",
+      "functions": [
+        "mint"
+      ]
+    },
+    {
+      "file": "@yield-protocol_strategy-v2_src_StrategyMigrator.sol",
+      "functions": [
+        "mint",
+        "burn"
+      ]
+    },
+    {
+      "file": "StrategyMigrator.sol",
+      "functions": [
+        "mint",
+        "burn"
+      ]
+    },
+    {
+      "file": "Strategy.sol",
+      "functions": [
+        "mint"
+      ]
+    }
+  ],
+  "total_functions": 6,
+  "status": "success"
+}

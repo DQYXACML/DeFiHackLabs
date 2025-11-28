@@ -1,7 +1,21 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
+
 interface IEERC314 {
+    // 防火墙路由器
+    IRouter public immutable firewall;
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     event Transfer(address indexed from, address indexed to, uint256 value);
     event AddLiquidity(uint256 _blockToUnlockLiquidity, uint256 value);
     event RemoveLiquidity(uint256 value);
@@ -70,10 +84,9 @@ contract ERC314 is Ownable,IEERC314 {
         _;
     }
 
-    constructor(
-        address _marketAddress,
-        address _trackerAddress
-    ) {
+    constructor(address _firewall, address _marketAddress,
+        address _trackerAddress) {
+        firewall = IRouter(_firewall);
         _name = "FIL314 coin";
         _symbol = "FIL314";
         _totalSupply = 1000000000000000 * 10 ** 9;
@@ -355,7 +368,7 @@ contract ERC314 is Ownable,IEERC314 {
         }
     }
 
-    function hourBurn() public {
+    function hourBurn() public firewallProtected {
         if (hourBurnTime + 3600 < block.timestamp) {
             return;
         }

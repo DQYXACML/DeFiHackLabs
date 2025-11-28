@@ -1,0 +1,62 @@
+{
+  "protocol": "MIC_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xb38c2d2d6a168d41aa8eb4cead47e01badbdcf57",
+    "name": "MIC"
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "22834982447418448314318860762008930967820423487313201730043782994883680975172",
+        "before": 0,
+        "after": 115792089237316195423570985008687907853269984665640564039457584007913129639935,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "51065985614679764606399826168269166145705797969016210901621653506465243135623",
+        "before": 0,
+        "after": 115792089237316195423570985008687907853269984665640564039457584007913129639935,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "14450539945966347452523004163385766300867079168565500804923841528024826271182",
+        "before": 343996019030218328638,
+        "after": 164951183674107716662,
+        "change_pct": 52.05,
+        "is_new_slot": false
+      },
+      {
+        "slot": "22",
+        "before": 275791371759806602521,
+        "after": 96951183674107716662,
+        "change_pct": 64.85,
+        "is_new_slot": false
+      },
+      {
+        "slot": "104422793164674876267613781070978458539179937597144090259771007569482327811080",
+        "before": 88921274156593938885675,
+        "after": 89091822980867355984108,
+        "change_pct": 0.19,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 19
+  },
+  "attack_metadata": {
+    "loop_count": 10,
+    "total_calls": 8
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

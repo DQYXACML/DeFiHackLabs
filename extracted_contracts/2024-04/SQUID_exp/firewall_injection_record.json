@@ -1,0 +1,20 @@
+{
+  "protocol": "SQUID_exp",
+  "year_month": "2024-04",
+  "injection_timestamp": "2025-11-23T05:06:26.854392Z",
+  "main_contract": {
+    "name": "Uni_Pair_V3",
+    "actual_contract_name": "Uni_Pair_V3",
+    "address": "0x36696169C63e42cd08ce11f5deeBbCeBae652050"
+  },
+  "injected_contracts": [
+    {
+      "file": "contracts_PancakeV3Pool.sol",
+      "functions": [
+        "flash"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

@@ -1,0 +1,103 @@
+{
+  "protocol": "SSS_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": "0xdfDCdbC789b56F99B0d0692d14DBC61906D9Deed",
+    "name": "SSS"
+  },
+  "constraints": [
+    {
+      "function": "burn",
+      "signature": "burn(...)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 5429408782739883647771164507373568",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 18098029275799616 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "SSS.balanceOf(address(this"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "89449075597411502628256964916939946361767827289978987201067943804938597348516",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 18098029275799614549771263372951552
+          }
+        },
+        "danger_condition": "amount >= 16288226348219653249156502735814656",
+        "safe_condition": "amount <= 5429408782739883647771164507373568",
+        "threshold_value": 5429408782739883647771164507373568
+      },
+      "analysis": {
+        "state_value": 18098029275799614549771263372951552,
+        "threshold": 12668620493059730184839884361066086,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代18098029275799616次超过上限10000，使用保守阈值5429408782739883647771164507373568",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.8098029275799616e+16,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "89449075597411502628256964916939946361767827289978987201067943804938597348516",
+        "before": 0,
+        "after": 18098029275799614549771263372951552,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "38701237865117229579163471656413609687472154489512393960987220918471655443555",
+        "before": 0,
+        "after": 18098029275799614549771263372951552,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "20",
+        "before": 1168632957645236393063177622886771,
+        "after": 6235176547617093819361874490668574,
+        "change_pct": 433.54,
+        "is_new_slot": false
+      },
+      {
+        "slot": "58116290658358066606489176817322986266004414752392548315912915674211390828878",
+        "before": 104180797942977573825697523777868,
+        "after": 5065172119332159682156502998168339,
+        "change_pct": 4761.91,
+        "is_new_slot": false
+      },
+      {
+        "slot": "18178409659391571422690485033020214758141142137984903228830626536059556975514",
+        "before": 51159976774221743073065825321274,
+        "after": 152490848573658891599039762676741,
+        "change_pct": 198.07,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 9
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 9
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

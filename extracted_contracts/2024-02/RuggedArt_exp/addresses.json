@@ -4,62 +4,161 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x9733303117504c146a4e22261f2685ddb79780ef"
+    "context": "// Attacker : https://etherscan.io/address/0x9733303117504c146a4e22261f2685ddb79780ef",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x9bb0ca1e54025232e18f3874f972a851a910e9cb",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0x9bb0ca1e54025232e18f3874f972a851a910e9cb"
+    "context": "// Attack Contract : https://etherscan.io/address/0x9bb0ca1e54025232e18f3874f972a851a910e9cb",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xfe380fe1db07e531e3519b9ae3ea9f7888ce20c6",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://etherscan.io/address/0xfe380fe1db07e531e3519b9ae3ea9f7888ce20c6"
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0xfe380fe1db07e531e3519b9ae3ea9f7888ce20c6",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x99147452078fa5C6642D3E5F7efD51113A9527a5",
-    "name": null,
+    "name": "IRUGGEDUNIV3POOL",
     "chain": "mainnet",
     "source": "static",
-    "context": "IRUGGEDUNIV3POOL(0x99147452078fa5C6642D3E5F7efD51113A9527a5)"
+    "context": "IRUGGEDUNIV3POOL pool = IRUGGEDUNIV3POOL(0x99147452078fa5C6642D3E5F7efD51113A9527a5)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IRUGGEDUNIV3POOL"
+    ]
   },
   {
     "address": "0x2648f5592c09a260C601ACde44e7f8f2944944Fb",
-    "name": null,
+    "name": "IRUGGEDPROXY",
     "chain": "mainnet",
     "source": "static",
-    "context": "IRUGGEDPROXY(0x2648f5592c09a260C601ACde44e7f8f2944944Fb)"
+    "context": "IRUGGEDPROXY proxy = IRUGGEDPROXY(0x2648f5592c09a260C601ACde44e7f8f2944944Fb)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IRUGGEDPROXY"
+    ]
   },
   {
     "address": "0xbE33F57f41a20b2f00DEc91DcC1169597f36221F",
-    "name": null,
+    "name": "IRUGGED",
     "chain": "mainnet",
     "source": "static",
-    "context": "IRUGGED(0xbE33F57f41a20b2f00DEc91DcC1169597f36221F)"
+    "context": "IRUGGED RUGGED = IRUGGED(0xbE33F57f41a20b2f00DEc91DcC1169597f36221F)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IRUGGED"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": null,
+    "name": "IWeth",
     "chain": "mainnet",
     "source": "static",
-    "context": "IWeth(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "IWeth WETH = IWeth(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IWeth",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
     "address": "0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD",
     "name": null,
     "chain": "mainnet",
     "source": "static",
-    "context": "address(0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD)"
+    "context": "address(0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

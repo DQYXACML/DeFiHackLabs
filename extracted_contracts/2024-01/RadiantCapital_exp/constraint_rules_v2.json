@@ -1,0 +1,203 @@
+{
+  "protocol": "RadiantCapital_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xf4b1486dd74d07706052a33d31d7c0aafd0659e1",
+    "name": "RadiantLendingPool"
+  },
+  "constraints": [
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256,uint256,uint256,address)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x82af49447d8a07e3bd95bd0d56f35241523fbab1"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(WETH)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(...)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amountToBorrow > 7409955085495616714993358871954755253294214822281557532376825856",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_increased with estimated 86971248379534486661786352217532687580135424 iterations (capped)",
+        "variables": {
+          "amountToBorrow": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "amountToBorrow"
+          },
+          "balance_mapping_increased": {
+            "source": "storage",
+            "slot": "84256926498927865192852918307713916261833686476600280815498151818262639548358",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_increased",
+            "before_value": 24699850284985390873492940201907641836219635939387438328389412915,
+            "after_value": 24786821533364925364820978118306192364067956305752582236256385402
+          }
+        },
+        "danger_condition": "amountToBorrow >= 22229865256486853067983351277670102167252309899410711908995563520",
+        "safe_condition": "amountToBorrow <= 7409955085495616714993358871954755253294214822281557532376825856",
+        "threshold_value": 7409955085495616714993358871954755253294214822281557532376825856
+      },
+      "analysis": {
+        "state_value": 24699850284985390873492940201907641836219635939387438328389412915,
+        "threshold": 12349925142492695436746470100953820918109817969693719164194706457,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代86971248379534486661786352217532687580135424次超过上限10000，使用保守阈值7409955085495616714993358871954755253294214822281557532376825856",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 8.697124837953449e+43,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(...)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 7409955085495616714993358871954755253294214822281557532376825856",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_increased with estimated 43485624189767246418240362478941228305997960861082512282091520 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "2"
+          },
+          "balance_mapping_increased": {
+            "source": "storage",
+            "slot": "84256926498927865192852918307713916261833686476600280815498151818262639548358",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_increased",
+            "before_value": 24699850284985390873492940201907641836219635939387438328389412915,
+            "after_value": 24786821533364925364820978118306192364067956305752582236256385402
+          }
+        },
+        "danger_condition": "amount >= 22229865256486853067983351277670102167252309899410711908995563520",
+        "safe_condition": "amount <= 7409955085495616714993358871954755253294214822281557532376825856",
+        "threshold_value": 7409955085495616714993358871954755253294214822281557532376825856
+      },
+      "analysis": {
+        "state_value": 24699850284985390873492940201907641836219635939387438328389412915,
+        "threshold": 12349925142492695436746470100953820918109817969693719164194706457,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代43485624189767246418240362478941228305997960861082512282091520次超过上限10000，使用保守阈值7409955085495616714993358871954755253294214822281557532376825856",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 4.3485624189767246e+61,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256,uint256,uint256,address)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "4 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xf4b1486dd74d07706052a33d31d7c0aafd0659e1"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 4,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "84256926498927865192852918307713916261833686476600280815498151818262639548358",
+        "before": 24699850284985390873492940201907641836219635939387438328389412915,
+        "after": 24786821533364925364820978118306192364067956305752582236256385402,
+        "change_pct": 0.35,
+        "is_new_slot": false
+      },
+      {
+        "slot": "84256926498927865192852918307713916261833686476600280815498151818262639548357",
+        "before": 368111045868596114994012727261245371517702780157607266320429674358,
+        "after": 368111078912529989740019930997604802095380727887563535483797039620,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "96568755110846509362245362021344370985405705439376477906403841861368347570184",
+        "before": 0,
+        "after": 579916565930871426281986157217482845928510455808,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "84256926498927865192852918307713916261833686476600280815498151818262639548359",
+        "before": 579916552659859116366141945507777070968109560027,
+        "after": 579916565930871426282744576434665613427601836055,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "96568755110846509362245362021344370985405705439376477906403841861368347570182",
+        "before": 340282366920938463463374607431768211457000000000000000000000000000,
+        "after": 340282366920938463463374607703568211456999999999999998631966035920,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 7
+  },
+  "attack_metadata": {
+    "loop_count": 151,
+    "total_calls": 9
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

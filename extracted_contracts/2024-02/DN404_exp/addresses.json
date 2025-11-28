@@ -4,48 +4,135 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0xd215ffaf0f85fb6f93f11e49bd6175ad58af0dfd"
+    "context": "// Attacker : https://etherscan.io/address/0xd215ffaf0f85fb6f93f11e49bd6175ad58af0dfd",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xd129d8c12f0e7aa51157d9e6cc3f7ece2dc84ecd",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0xd129d8c12f0e7aa51157d9e6cc3f7ece2dc84ecd"
+    "context": "// Attack Contract : https://etherscan.io/address/0xd129d8c12f0e7aa51157d9e6cc3f7ece2dc84ecd",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x2c7112245fc4af701ebf90399264a7e89205dad4",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://etherscan.io/address/0x2c7112245fc4af701ebf90399264a7e89205dad4"
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0x2c7112245fc4af701ebf90399264a7e89205dad4",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "name": "WETH",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    "context": "address constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0x83Cb9449b7077947a13Bf32025A8eAA3Fb1D8A5e",
     "name": "FLIX",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant FLIX = 0x83Cb9449b7077947a13Bf32025A8eAA3Fb1D8A5e"
+    "context": "address constant FLIX = 0x83Cb9449b7077947a13Bf32025A8eAA3Fb1D8A5e",
+    "onchain_name": null,
+    "symbol": "FILX",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "FILX",
+      "FLIX",
+      "filx",
+      "IFILX"
+    ]
   },
   {
     "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
     "name": "USDT",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant USDT = 0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    "context": "address constant USDT = 0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT"
+    ]
   },
   {
     "address": "0xa7434b755852F2555D6F96B9E28bAfE92F08Df97",
     "name": "UniV3Pair",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant UniV3Pair = 0xa7434b755852F2555D6F96B9E28bAfE92F08Df97"
+    "context": "address constant UniV3Pair = 0xa7434b755852F2555D6F96B9E28bAfE92F08Df97",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "UniV3Pair"
+    ]
+  },
+  {
+    "address": "0xe58aCB560FC33e283ab70c700A0F2eed0E333e0a",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 21104",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

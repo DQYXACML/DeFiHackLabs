@@ -1,0 +1,38 @@
+{
+  "protocol": "SocketGateway_exp",
+  "year_month": "2024-01",
+  "injection_timestamp": "2025-11-26T04:21:28.003070Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "SocketGatewayTemplate",
+    "address": "0x3a23F943181408EAC424116Af7b7790c94Cb97a5"
+  },
+  "injected_contracts": [
+    {
+      "file": "src_SocketGateway.sol",
+      "functions": [
+        "executeRoute"
+      ]
+    },
+    {
+      "file": "src_SocketGatewayDeployment.sol",
+      "functions": [
+        "executeRoute"
+      ]
+    },
+    {
+      "file": "SocketGateway.sol",
+      "functions": [
+        "executeRoute"
+      ]
+    },
+    {
+      "file": "SocketGatewayDeployment.sol",
+      "functions": [
+        "executeRoute"
+      ]
+    }
+  ],
+  "total_functions": 4,
+  "status": "success"
+}

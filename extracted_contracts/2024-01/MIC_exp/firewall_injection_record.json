@@ -1,0 +1,20 @@
+{
+  "protocol": "MIC_exp",
+  "year_month": "2024-01",
+  "injection_timestamp": "2025-11-26T04:21:29.897873Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "ERC20",
+    "address": "0xb38c2d2d6a168d41aa8eb4cead47e01badbdcf57"
+  },
+  "injected_contracts": [
+    {
+      "file": "MICToken.sol",
+      "functions": [
+        "swapManual"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

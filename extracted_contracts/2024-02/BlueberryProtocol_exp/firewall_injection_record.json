@@ -1,0 +1,20 @@
+{
+  "protocol": "BlueberryProtocol_exp",
+  "year_month": "2024-02",
+  "injection_timestamp": "2025-11-23T03:18:46.533454Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "Comptroller",
+    "address": "0xffadb0bba4379dfabfb20ca6823f6ec439429ec2"
+  },
+  "injected_contracts": [
+    {
+      "file": "Comptroller.sol",
+      "functions": [
+        "enterMarkets"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

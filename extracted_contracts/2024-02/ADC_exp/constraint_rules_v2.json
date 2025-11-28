@@ -1,0 +1,41 @@
+{
+  "protocol": "ADC_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": null,
+    "name": null
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "20847553505133914552257704385947491495280584372107674490781730384335512955552",
+        "before": 1551434380952380952375000,
+        "after": 1533434380952380952375000,
+        "change_pct": 1.16,
+        "is_new_slot": false
+      },
+      {
+        "slot": "5",
+        "before": 4448565619047619047625000,
+        "after": 4466565619047619047625000,
+        "change_pct": 0.4,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 2
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 2
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

@@ -438,10 +438,13 @@ class RelationshipDetector:
     def __init__(self):
         self.logger = logging.getLogger(__name__ + '.RelationshipDetector')
 
-    def find_relationships(self,
-                          slots: List[StorageSlot],
-                          protocol_info: Dict[str, Any],
-                          all_contracts: Dict[str, ContractState]) -> List[StorageRelationship]:
+    def find_relationships(
+        self,
+        slots: List[StorageSlot],
+        protocol_info: Dict[str, Any],
+        all_contracts: Dict[str, ContractState],
+        storage_diffs: Optional[Dict[str, Dict]] = None
+    ) -> List[StorageRelationship]:
         """
         Find mathematical relationships between slots based on protocol type
 
@@ -449,6 +452,7 @@ class RelationshipDetector:
             slots: All analyzed storage slots
             protocol_info: Result from ProtocolDetector
             all_contracts: All contract states
+            storage_diffs: Storage changes from attack (optional)
 
         Returns:
             List of detected storage relationships
@@ -457,12 +461,16 @@ class RelationshipDetector:
         protocol_type = protocol_info['type']
 
         if protocol_type == ProtocolType.VAULT:
-            relationships.extend(self._detect_vault_relationships(slots, protocol_info, all_contracts))
+            relationships.extend(
+                self._detect_vault_relationships(
+                    slots, protocol_info, all_contracts, storage_diffs
+                )
+            )
         elif protocol_type == ProtocolType.AMM:
             relationships.extend(self._detect_amm_relationships(slots, protocol_info))
 
         # Universal: bounded change rate for critical slots
-        relationships.extend(self._detect_bounded_changes(slots))
+        relationships.extend(self._detect_bounded_changes(slots, storage_diffs))
 
         self.logger.info(f"Detected {len(relationships)} storage relationships")
         return relationships
@@ -470,11 +478,20 @@ class RelationshipDetector:
     def _detect_vault_relationships(self,
                                    slots: List[StorageSlot],
                                    protocol_info: Dict[str, Any],
-                                   all_contracts: Dict[str, ContractState]) -> List[StorageRelationship]:
+                                   all_contracts: Dict[str, ContractState],
+                                   storage_diffs: Optional[Dict[str, Dict]] = None) -> List[StorageRelationship]:
         """
         Detect vault-specific relationships:
         - Share price stability: (reserves / totalSupply) should be stable
         - Supply backing: totalSupply <= reserves * leverage_ratio
+
+        支持基于攻击 diff 的动态阈值计算
+
+        Args:
+            slots: 所有槽位
+            protocol_info: 协议信息
+            all_contracts: 所有合约状态
+            storage_diffs: 攻击前后的存储变化（可选）
         """
         relationships = []
 
@@ -493,22 +510,61 @@ class RelationshipDetector:
         )
 
         if total_supply_slot:
+            # 检查是否有 totalSupply 的实际变化数据
+            share_price_threshold = 0.05  # 默认5%
+            threshold_method = 'static'
+            observed_change = None
+
+            if storage_diffs:
+                addr = total_supply_slot.contract_address
+                slot_num = total_supply_slot.slot_number
+
+                if addr in storage_diffs:
+                    slot_diffs = storage_diffs[addr].get('slot_diffs', {})
+
+                    if slot_num in slot_diffs:
+                        diff_data = slot_diffs[slot_num]
+
+                        # 如果是数值变化，使用观察到的变化率
+                        if 'change_rate' in diff_data and diff_data['change_rate'] != float('inf'):
+                            observed_change = diff_data['change_rate']
+
+                            # 动态阈值 = 观察到的变化 × 安全系数 (0.5)
+                            share_price_threshold = observed_change * 0.5
+
+                            # 限制最小阈值为 1%
+                            share_price_threshold = max(share_price_threshold, 0.01)
+
+                            # 限制最大阈值为 50%
+                            share_price_threshold = min(share_price_threshold, 0.5)
+
+                            threshold_method = 'attack_based'
+
+                            self.logger.debug(
+                                f"  Vault share price 动态阈值: {total_supply_slot.contract_address[:10]}... "
+                                f"观察变化 {observed_change:.2%} → 阈值 {share_price_threshold:.2%}"
+                            )
+
             # Relationship 1: Share price stability
             rel = StorageRelationship(
                 relationship_type='share_price_ratio',
                 involved_slots=[total_supply_slot],
                 formula=f'|(reserves/totalSupply)_after - (reserves/totalSupply)_before| / (reserves/totalSupply)_before',
-                threshold=0.05,  # 5% max change per transaction
-                confidence=0.9,
+                threshold=share_price_threshold,
+                confidence=0.9 if threshold_method == 'attack_based' else 0.85,
                 metadata={
                     'share_token': share_token_addr,
                     'underlying_token': underlying_token_addr,
-                    'reserves_query': f'{underlying_token_addr}.balanceOf({share_token_addr})'
+                    'reserves_query': f'{underlying_token_addr}.balanceOf({share_token_addr})',
+                    'threshold_method': threshold_method,
+                    'observed_attack_change': observed_change,
+                    'safety_coefficient': 0.5 if threshold_method == 'attack_based' else None
                 }
             )
             relationships.append(rel)
 
             # Relationship 2: Supply backing consistency
+            # 此不变量通常是绝对约束，不需要动态调整
             rel2 = StorageRelationship(
                 relationship_type='supply_backing',
                 involved_slots=[total_supply_slot],
@@ -518,7 +574,8 @@ class RelationshipDetector:
                 metadata={
                     'share_token': share_token_addr,
                     'underlying_token': underlying_token_addr,
-                    'description': 'Total shares should not exceed underlying assets'
+                    'description': 'Total shares should not exceed underlying assets',
+                    'note': 'This is an absolute constraint, not dynamically adjusted'
                 }
             )
             relationships.append(rel2)
@@ -560,11 +617,21 @@ class RelationshipDetector:
 
         return relationships
 
-    def _detect_bounded_changes(self, slots: List[StorageSlot]) -> List[StorageRelationship]:
+    def _detect_bounded_changes(
+        self,
+        slots: List[StorageSlot],
+        storage_diffs: Optional[Dict[str, Dict]] = None
+    ) -> List[StorageRelationship]:
         """
         Detect bounded change rate constraints for critical slots
 
+        支持基于攻击 diff 的动态阈值计算
+
         Any totalSupply or reserve should not change dramatically in one tx
+
+        Args:
+            slots: 所有槽位
+            storage_diffs: 攻击前后的存储变化（可选）
         """
         relationships = []
 
@@ -578,15 +645,54 @@ class RelationshipDetector:
         ]
 
         for slot in critical_slots:
+            # 默认阈值
+            threshold = 0.5  # 50% max change per transaction
+            threshold_method = 'static'
+            observed_change = None
+
+            # 如果有 diff 信息，尝试使用动态阈值
+            if storage_diffs:
+                addr = slot.contract_address
+                slot_num = slot.slot_number
+
+                if addr in storage_diffs:
+                    slot_diffs = storage_diffs[addr].get('slot_diffs', {})
+
+                    if slot_num in slot_diffs:
+                        diff_data = slot_diffs[slot_num]
+
+                        # 如果是数值变化，使用观察到的变化率
+                        if 'change_rate' in diff_data and diff_data['change_rate'] != float('inf'):
+                            observed_change = diff_data['change_rate']
+
+                            # 动态阈值 = 观察到的变化 × 安全系数 (0.5)
+                            threshold = observed_change * 0.5
+
+                            # 限制最小阈值为 1%
+                            threshold = max(threshold, 0.01)
+
+                            # 限制最大阈值为 100% (避免过于宽松)
+                            threshold = min(threshold, 1.0)
+
+                            threshold_method = 'attack_based'
+
+                            self.logger.debug(
+                                f"  动态阈值: {slot.contract_address[:10]}.../{slot_num[:8]}... "
+                                f"观察变化 {observed_change:.2%} → 阈值 {threshold:.2%}"
+                            )
+
             rel = StorageRelationship(
                 relationship_type='bounded_change',
                 involved_slots=[slot],
                 formula=f'|slot_{slot.slot_number[:8]}_after - slot_{slot.slot_number[:8]}_before| / slot_{slot.slot_number[:8]}_before',
-                threshold=0.5,  # 50% max change per transaction
-                confidence=0.7,
+                threshold=threshold,
+                confidence=0.8 if threshold_method == 'attack_based' else 0.7,
                 metadata={
                     'slot_semantic': slot.semantic_type.value,
-                    'contract': slot.contract_address
+                    'contract': slot.contract_address,
+                    'threshold_method': threshold_method,
+                    'observed_attack_change': observed_change,
+                    'safety_coefficient': 0.5 if threshold_method == 'attack_based' else None
                 }
             )
             relationships.append(rel)
@@ -767,12 +873,17 @@ class StorageInvariantAnalyzer:
         self.invariant_generator = StorageInvariantGenerator()
         self.logger = logging.getLogger(__name__ + '.Analyzer')
 
-    def analyze(self, contracts: Dict[str, ContractState]) -> Dict[str, Any]:
+    def analyze(
+        self,
+        contracts_before: Dict[str, ContractState],
+        contracts_after: Optional[Dict[str, ContractState]] = None
+    ) -> Dict[str, Any]:
         """
-        Main analysis pipeline
+        Main analysis pipeline (支持攻击前后状态对比)
 
         Args:
-            contracts: Dictionary of contract addresses to ContractState
+            contracts_before: 攻击前的合约状态字典
+            contracts_after: 攻击后的合约状态字典 (可选)
 
         Returns:
             Dictionary containing:
@@ -780,39 +891,66 @@ class StorageInvariantAnalyzer:
             - protocol_info: Detected protocol type and metadata
             - relationships: Detected storage relationships
             - invariants: Generated invariants
+            - storage_diffs: Storage changes (if contracts_after provided)
         """
         self.logger.info("="*80)
         self.logger.info("Storage Slot Relationship Analysis")
+        if contracts_after:
+            self.logger.info("模式: 攻击前后对比分析")
+        else:
+            self.logger.info("模式: 单状态分析")
         self.logger.info("="*80)
 
-        # Step 1: Analyze all storage slots
-        self.logger.info("\n[1/4] Analyzing storage slots...")
+        # Step 0: 如果有 after 状态，计算 diff
+        storage_diffs = {}
+        if contracts_after:
+            self.logger.info("\n[0/5] 计算存储槽变化...")
+            storage_diffs = self._compute_storage_diffs(contracts_before, contracts_after)
+
+            total_changed_slots = sum(len(diff['slot_diffs']) for diff in storage_diffs.values())
+            self.logger.info(f"检测到 {len(storage_diffs)} 个合约有存储变化")
+            self.logger.info(f"总计 {total_changed_slots} 个槽位发生变化")
+
+        # Step 1: Analyze all storage slots (基于 before 状态)
+        step_num = 1 if not contracts_after else 1
+        total_steps = 4 if not contracts_after else 5
+        self.logger.info(f"\n[{step_num}/{total_steps}] Analyzing storage slots...")
         all_slots = []
-        for addr, contract in contracts.items():
+        for addr, contract in contracts_before.items():
             if contract.is_contract and contract.storage:
                 slots = self.slot_analyzer.analyze_contract_slots(contract)
                 all_slots.extend(slots)
 
-        self.logger.info(f"Analyzed {len(all_slots)} storage slots across {len([c for c in contracts.values() if c.is_contract])} contracts")
+        self.logger.info(f"Analyzed {len(all_slots)} storage slots across {len([c for c in contracts_before.values() if c.is_contract])} contracts")
 
         # Step 2: Detect protocol type
-        self.logger.info("\n[2/4] Detecting protocol type...")
-        protocol_info = self.protocol_detector.detect_protocol_type(all_slots, contracts)
+        step_num += 1
+        self.logger.info(f"\n[{step_num}/{total_steps}] Detecting protocol type...")
+        protocol_info = self.protocol_detector.detect_protocol_type(all_slots, contracts_before)
         self.logger.info(f"Protocol type: {protocol_info['type'].value} (confidence: {protocol_info['confidence']:.2f})")
 
-        # Step 3: Find relationships
-        self.logger.info("\n[3/4] Detecting storage relationships...")
-        relationships = self.relationship_detector.find_relationships(all_slots, protocol_info, contracts)
+        # Step 3: Find relationships (传入 diff 信息)
+        step_num += 1
+        self.logger.info(f"\n[{step_num}/{total_steps}] Detecting storage relationships...")
+        relationships = self.relationship_detector.find_relationships(
+            all_slots,
+            protocol_info,
+            contracts_before,
+            storage_diffs=storage_diffs if storage_diffs else None
+        )
 
         # Step 4: Generate invariants
-        self.logger.info("\n[4/4] Generating invariants...")
+        step_num += 1
+        self.logger.info(f"\n[{step_num}/{total_steps}] Generating invariants...")
         invariants = self.invariant_generator.generate_invariants(relationships, protocol_info)
 
         self.logger.info("\n" + "="*80)
         self.logger.info(f"Analysis complete: {len(invariants)} storage invariants generated")
+        if storage_diffs:
+            self.logger.info(f"使用了基于攻击 diff 的动态阈值计算")
         self.logger.info("="*80)
 
-        return {
+        result = {
             'storage_slots': [asdict(s) for s in all_slots],
             'protocol_info': {
                 'type': protocol_info['type'].value,
@@ -824,3 +962,121 @@ class StorageInvariantAnalyzer:
             'relationships': [asdict(r) for r in relationships],
             'invariants': [asdict(inv) for inv in invariants]
         }
+
+        # 如果有 diff，添加到结果中
+        if storage_diffs:
+            result['storage_diffs'] = storage_diffs
+            result['used_diff_analysis'] = True
+        else:
+            result['used_diff_analysis'] = False
+
+        return result
+
+    def _compute_storage_diffs(
+        self,
+        contracts_before: Dict[str, ContractState],
+        contracts_after: Dict[str, ContractState]
+    ) -> Dict[str, Dict[str, Any]]:
+        """
+        计算攻击前后的存储槽变化
+
+        Args:
+            contracts_before: 攻击前合约状态
+            contracts_after: 攻击后合约状态
+
+        Returns:
+            {
+                "0xAddress": {
+                    "changed_slots": ["0x2", "0x5"],
+                    "slot_diffs": {
+                        "0x2": {
+                            "before": "0x123",
+                            "after": "0x456",
+                            "before_int": 123,
+                            "after_int": 456,
+                            "change_rate": 0.5
+                        }
+                    }
+                }
+            }
+        """
+        diffs = {}
+
+        for addr, before_contract in contracts_before.items():
+            # 跳过不在 after 中的合约
+            if addr not in contracts_after:
+                continue
+
+            after_contract = contracts_after[addr]
+
+            changed_slots = []
+            slot_diffs = {}
+
+            # 对比每个槽位
+            for slot, before_val in before_contract.storage.items():
+                after_val = after_contract.storage.get(slot, "0x0")
+
+                # 规范化值格式（确保都是 hex 字符串）
+                if not before_val.startswith('0x'):
+                    before_val = '0x' + before_val
+                if not after_val.startswith('0x'):
+                    after_val = '0x' + after_val
+
+                # 检查是否变化
+                if before_val != after_val:
+                    changed_slots.append(slot)
+
+                    # 尝试转换为整数计算变化率
+                    try:
+                        before_int = int(before_val, 16)
+                        after_int = int(after_val, 16)
+
+                        change_rate = 0.0
+                        if before_int != 0:
+                            change_rate = abs(after_int - before_int) / before_int
+                        elif after_int != 0:
+                            # before 为 0，after 非 0，认为是无穷大变化
+                            change_rate = float('inf')
+
+                        slot_diffs[slot] = {
+                            "before": before_val,
+                            "after": after_val,
+                            "before_int": before_int,
+                            "after_int": after_int,
+                            "change_rate": change_rate,
+                            "absolute_change": abs(after_int - before_int)
+                        }
+
+                    except (ValueError, OverflowError):
+                        # 非数值槽位 (如地址、字节数据)
+                        slot_diffs[slot] = {
+                            "before": before_val,
+                            "after": after_val,
+                            "change_type": "non_numeric"
+                        }
+
+            # 只记录有变化的合约
+            if changed_slots:
+                diffs[addr] = {
+                    "changed_slots": changed_slots,
+                    "slot_diffs": slot_diffs,
+                    "total_changes": len(changed_slots)
+                }
+
+                # 记录最大变化率（用于日志）
+                numeric_changes = [
+                    d['change_rate']
+                    for d in slot_diffs.values()
+                    if 'change_rate' in d and d['change_rate'] != float('inf')
+                ]
+
+                if numeric_changes:
+                    max_change = max(numeric_changes)
+                    diffs[addr]['max_change_rate'] = max_change
+                    self.logger.debug(
+                        f"  {addr[:10]}...: {len(changed_slots)} 槽变化, "
+                        f"最大变化率 {max_change:.2%}"
+                    )
+
+        return diffs
+

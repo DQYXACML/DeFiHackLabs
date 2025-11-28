@@ -1,0 +1,186 @@
+{
+  "protocol": "RadiantCapital_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xf4b1486dd74d07706052a33d31d7c0aafd0659e1",
+    "name": "RadiantLendingPool"
+  },
+  "constraints": [
+    {
+      "function": "deposit",
+      "signature": "deposit(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > totalSupply * 0.5",
+        "semantics": "Large deposit exceeding 50% of total supply",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "0"
+          },
+          "totalSupply": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "totalSupply"
+          }
+        },
+        "danger_condition": "amount > totalSupply * 0.5",
+        "safe_condition": "amount <= totalSupply * 0.1"
+      }
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > availableLiquidity * 0.8",
+        "semantics": "Excessive borrowing depleting pool liquidity",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "amountToBorrow"
+          },
+          "availableLiquidity": {
+            "source": "storage",
+            "slot": "0x4",
+            "type": "uint256",
+            "semantic_name": "availableLiquidity"
+          }
+        },
+        "danger_condition": "amount > availableLiquidity * 0.8",
+        "safe_condition": "amount <= availableLiquidity * 0.3"
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > totalSupply * 0.5",
+        "semantics": "Large deposit exceeding 50% of total supply",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "amount"
+          },
+          "totalSupply": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "totalSupply"
+          }
+        },
+        "danger_condition": "amount > totalSupply * 0.5",
+        "safe_condition": "amount <= totalSupply * 0.1"
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > totalSupply * 0.5",
+        "semantics": "Large deposit exceeding 50% of total supply",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "amount << 1"
+          },
+          "totalSupply": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "totalSupply"
+          }
+        },
+        "danger_condition": "amount > totalSupply * 0.5",
+        "safe_condition": "amount <= totalSupply * 0.1"
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > userBalance * 0.9",
+        "semantics": "Draining large portion of user balance",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "((amount * 3) >> 1) - 1"
+          },
+          "userBalance": {
+            "source": "storage",
+            "slot": "dynamic",
+            "type": "uint256",
+            "semantic_name": "balanceOf(attacker)"
+          }
+        },
+        "danger_condition": "amount > userBalance * 0.9",
+        "safe_condition": "amount <= userBalance * 0.5"
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > userBalance * 0.9",
+        "semantics": "Draining large portion of user balance",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "USDC.balanceOf(address(rUSDCn))"
+          },
+          "userBalance": {
+            "source": "storage",
+            "slot": "dynamic",
+            "type": "uint256",
+            "semantic_name": "balanceOf(attacker)"
+          }
+        },
+        "danger_condition": "amount > userBalance * 0.9",
+        "safe_condition": "amount <= userBalance * 0.5"
+      }
+    }
+  ],
+  "storage_analysis": {
+    "changed_slots": [
+      "83560280942775862046894021934750233012217831995640112757625239660694931732871",
+      "96568755110846509362245362021344370985405705439376477906403841861368347570182",
+      "96568755110846509362245362021344370985405705439376477906403841861368347570184",
+      "84256926498927865192852918307713916261833686476600280815498151818262639548357",
+      "37225363757100051602534729449307574226820704653371942402363976045439546061237",
+      "84256926498927865192852918307713916261833686476600280815498151818262639548358",
+      "84256926498927865192852918307713916261833686476600280815498151818262639548359"
+    ],
+    "total_slots": 25
+  },
+  "attack_metadata": {
+    "loop_count": 151,
+    "total_calls": 7
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

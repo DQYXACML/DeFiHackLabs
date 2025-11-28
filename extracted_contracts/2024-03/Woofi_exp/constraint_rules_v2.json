@@ -1,0 +1,55 @@
+{
+  "protocol": "Woofi_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": "0xeff23b4be1091b53205e35f3afcd9c7182bf3062",
+    "name": "Unknown"
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "109993908671577530316287924463628841959978742404246336820612249610343396013809",
+        "before": 156927543384667019095894735580191662954846579880260422154174,
+        "after": 156927543384667019095894735580191660405122689146087507002658,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "19386302955548374253438956546586068293061884638547301654929600459042139315610",
+        "before": 156927543384667019095894735580191660403946357205042716418856,
+        "after": 156927543384667019095894735580191660403424061943798556949836,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "44902585782132518172097828656418906324445951726753536359623677642600521174684",
+        "before": 1939203712076,
+        "after": 1791225088543,
+        "change_pct": 7.63,
+        "is_new_slot": false
+      },
+      {
+        "slot": "3",
+        "before": 9964496456,
+        "after": 11051360324,
+        "change_pct": 10.91,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 4
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 6
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

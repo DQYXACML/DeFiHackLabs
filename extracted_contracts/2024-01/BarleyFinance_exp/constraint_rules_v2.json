@@ -1,0 +1,284 @@
+{
+  "protocol": "BarleyFinance_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x04c80bb477890f3021f03b068238836ee20aa0b8",
+    "name": "wBARL"
+  },
+  "constraints": [
+    {
+      "function": "flash",
+      "signature": "flash(address,address,uint256,bytes)",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x04c80bb477890f3021f03b068238836ee20aa0b8"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,address,uint256,bytes)",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x3e2324342bf5b8a1dca42915f0489497203d640e"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(BARL)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(...)",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "ratio_threshold",
+        "expression": "amount > 3418944620969774259634176",
+        "semantics": "Partial extraction: 79.4% of _totalSupply affected per unit",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "BARL.balanceOf(address(wBARL))"
+          },
+          "_totalSupply": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "_totalSupply",
+            "before_value": 8611951186321848770844714,
+            "after_value": 15449840428261396694895415
+          }
+        },
+        "danger_condition": "amount >= 6837889241939548519268352",
+        "safe_condition": "amount <= 3418944620969774259634176",
+        "threshold_value": 3418944620969774259634176
+      },
+      "analysis": {
+        "state_value": 8611951186321848770844714,
+        "threshold": 4305975593160924385422357,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "部分提取模式，提取比例0.79，阈值设为3418944620969774259634176",
+        "correlation_type": "partial",
+        "correlation_confidence": 0.7,
+        "ratio": 0.794,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,address,uint256,bytes)",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "3 length in [2,2]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "\"\""
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bytes",
+            "value_expr": "\"\""
+          }
+        },
+        "range": {
+          "min_len": 2,
+          "max_len": 2
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "debond",
+      "signature": "debond(...)",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "ratio_threshold",
+        "expression": "amount > 3418944620969774259634176",
+        "semantics": "Partial extraction: 79.4% of _totalSupply affected per unit",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "wBARL.balanceOf(address(this))"
+          },
+          "_totalSupply": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "_totalSupply",
+            "before_value": 8611951186321848770844714,
+            "after_value": 15449840428261396694895415
+          }
+        },
+        "danger_condition": "amount >= 6837889241939548519268352",
+        "safe_condition": "amount <= 3418944620969774259634176",
+        "threshold_value": 3418944620969774259634176
+      },
+      "analysis": {
+        "state_value": 8611951186321848770844714,
+        "threshold": 4305975593160924385422357,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "部分提取模式，提取比例0.79，阈值设为3418944620969774259634176",
+        "correlation_type": "partial",
+        "correlation_confidence": 0.7,
+        "ratio": 0.794,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "debond",
+      "signature": "debond(uint256,address[],uint8[])",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x3e2324342bf5b8a1dca42915f0489497203d640e"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address[]",
+            "value_expr": "token"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "debond",
+      "signature": "debond(uint256,address[],uint8[])",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "capped_array",
+        "expression": "2 elements in [100,100]",
+        "semantics": "Restrict numeric array elements to observed range",
+        "attack_values": [
+          100
+        ],
+        "range": {
+          "min": 100,
+          "max": 100
+        },
+        "variables": {
+          "values": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint8[]",
+            "value_expr": "percentage"
+          }
+        },
+        "len_range": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Numeric array bounded by observed values",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "2",
+        "before": 8611951186321848770844714,
+        "after": 15449840428261396694895415,
+        "change_pct": 79.4,
+        "is_new_slot": false
+      },
+      {
+        "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
+        "before": 9558478989355222963846,
+        "after": 6847447720928903147014547,
+        "change_pct": 71537.42,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 2
+  },
+  "attack_metadata": {
+    "loop_count": 20,
+    "total_calls": 3
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

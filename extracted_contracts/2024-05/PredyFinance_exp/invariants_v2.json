@@ -1,0 +1,485 @@
+{
+  "project": "PredyFinance_exp",
+  "protocol_type": "unknown",
+  "invariants": [
+    {
+      "id": "PATTERN_flash_change_001",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0x9215748657319B17fecb2b5D086A3147BFBC8613"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293725",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_1": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293745",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_2": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293767",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_3": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293749",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_4": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293729",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_5": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293750",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_6": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293742",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_7": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293748",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_8": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293721",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_9": {
+          "index": "103152614514282143362494205470160505176950347431410563510240310482754856988505",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_10": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293768",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_11": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293719",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_12": {
+          "index": "103152614514282143362494205470160505176950347431410563510240310482754856988507",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_13": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293717",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_14": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293731",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_15": {
+          "index": "103152614514282143362494205470160505176950347431410563510240310482754856988504",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_16": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293739",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_17": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293734",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_18": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293728",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_19": {
+          "index": "103152614514282143362494205470160505176950347431410563510240310482754856988502",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_20": {
+          "index": "103152614514282143362494205470160505176950347431410563510240310482754856988508",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_21": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293718",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_22": {
+          "index": "103152614514282143362494205470160505176950347431410563510240310482754856988503",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_23": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293730",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_24": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293735",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_25": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293743",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_26": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293720",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_27": {
+          "index": "58716921933932079953536422377324357151363015442291732420666770403407384293744",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_flash_change_002",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "59883148254727520580944735104970211289325368982914577592034098188507811966891",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_1": {
+          "index": "31134104888956253713499814195004771452631274046539756082133189661644674000483",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_flash_change_003",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "75320848257486476888921828969953931849166689677404174141850397413055074163843",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_1": {
+          "index": "112198370434974840662050953646333223017016289912340633456056349072069717050353",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_ratio_break_001",
+      "type": "ratio_stability",
+      "category": "ratio_bound",
+      "description": "Ensure ratio stability between related values",
+      "formula": "abs(ratio_after - ratio_before) / ratio_before <= 0.12",
+      "threshold": 0.12,
+      "severity": "high",
+      "contracts": [
+        "0x9215748657319B17fecb2b5D086A3147BFBC8613",
+        "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+        "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+      ],
+      "slots": {
+        "slot_52": {
+          "index": "52",
+          "threshold": 0.12,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.8
+      },
+      "protocol_type": null,
+      "attack_pattern": "ratio_break"
+    },
+    {
+      "id": "PATTERN_monotonic_increase_001",
+      "type": "growth_rate_limit",
+      "category": "bounded_growth",
+      "description": "Limit abnormal value growth rate",
+      "formula": "(value_after - value_before) / value_before <= 0.27",
+      "threshold": 0.27,
+      "severity": "high",
+      "contracts": [
+        "0x9215748657319B17fecb2b5D086A3147BFBC8613"
+      ],
+      "slots": {
+        "slot_52": {
+          "index": "52",
+          "threshold": 0.27,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.7
+      },
+      "protocol_type": null,
+      "attack_pattern": "monotonic_increase"
+    },
+    {
+      "id": "PATTERN_monotonic_increase_001",
+      "type": "growth_rate_limit",
+      "category": "bounded_growth",
+      "description": "Limit abnormal value growth rate",
+      "formula": "(value_after - value_before) / value_before <= 0.16",
+      "threshold": 0.16,
+      "severity": "high",
+      "contracts": [
+        "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "59883148254727520580944735104970211289325368982914577592034098188507811966891",
+          "threshold": 0.16,
+          "severity": "high"
+        },
+        "slot_1": {
+          "index": "31134104888956253713499814195004771452631274046539756082133189661644674000483",
+          "threshold": 0.16,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.7
+      },
+      "protocol_type": null,
+      "attack_pattern": "monotonic_increase"
+    },
+    {
+      "id": "PATTERN_monotonic_increase_002",
+      "type": "growth_rate_limit",
+      "category": "bounded_growth",
+      "description": "Limit abnormal value growth rate",
+      "formula": "(value_after - value_before) / value_before <= 0.16",
+      "threshold": 0.16,
+      "severity": "high",
+      "contracts": [
+        "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "75320848257486476888921828969953931849166689677404174141850397413055074163843",
+          "threshold": 0.16,
+          "severity": "high"
+        },
+        "slot_1": {
+          "index": "112198370434974840662050953646333223017016289912340633456056349072069717050353",
+          "threshold": 0.16,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.7
+      },
+      "protocol_type": null,
+      "attack_pattern": "monotonic_increase"
+    }
+  ],
+  "statistics": {
+    "total_invariants": 7,
+    "by_category": {
+      "bounded_value": 3,
+      "ratio_bound": 1,
+      "bounded_growth": 3
+    },
+    "by_severity": {
+      "critical": 3,
+      "high": 4
+    }
+  },
+  "errors": [],
+  "protocol_confidence": 0.0,
+  "semantic_mapping_coverage": 0.01864035087719298,
+  "state_changes": {
+    "contracts_changed": 8,
+    "slots_changed": 337,
+    "extreme_changes": 34
+  },
+  "attack_patterns": [
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "ratio_break",
+      "severity": "high",
+      "confidence": 0.8,
+      "description": "Correlated extreme changes across contracts (potential ratio manipulation)"
+    },
+    {
+      "type": "monotonic_increase",
+      "severity": "high",
+      "confidence": 0.7,
+      "description": "Multiple slots with large increases (potential price manipulation)"
+    },
+    {
+      "type": "monotonic_increase",
+      "severity": "high",
+      "confidence": 0.7,
+      "description": "Multiple slots with large increases (potential price manipulation)"
+    },
+    {
+      "type": "monotonic_increase",
+      "severity": "high",
+      "confidence": 0.7,
+      "description": "Multiple slots with large increases (potential price manipulation)"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 2509616136946799676081512242388674780858957627721"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 5451911701461569010239903497283698689000"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 24544447122140166698246308150975650479848364894814982498512"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 353025550106152188091435603927988608799420820386"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 1048114499615896757877827409672391761203025084745"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 1048114499615896757877827409672391761203025084745"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 1048114499615896757877827409672391761203025084745"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 1002124440272863313389528143402176764941454694449"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 746077813119786162781824270067693791825153211057"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 746077813119786162781824270067693791825153211057"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 66351510169662177807880843431835280982449346975"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 746077813119786162781824270067693791825153211057"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 999916089005070169970152"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 83910994929830029848"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 999999999999780414262186"
+    }
+  ]
+}

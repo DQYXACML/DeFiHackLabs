@@ -1,0 +1,20 @@
+{
+  "protocol": "CompoundUni_exp",
+  "year_month": "2024-02",
+  "injection_timestamp": "2025-11-23T03:18:48.122584Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "UniswapAnchoredView",
+    "address": "0x50ce56A3239671Ab62f185704Caedf626352741e"
+  },
+  "injected_contracts": [
+    {
+      "file": "UniswapAnchoredView.sol",
+      "functions": [
+        "getUnderlyingPrice"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

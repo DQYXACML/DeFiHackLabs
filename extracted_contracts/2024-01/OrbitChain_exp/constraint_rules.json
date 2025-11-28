@@ -1,0 +1,21 @@
+{
+  "protocol": "OrbitChain_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x1bf68a9d1eaee7826b3593c20a0ca93293cb489a",
+    "name": "OrbitEthVault"
+  },
+  "constraints": [],
+  "storage_analysis": {
+    "changed_slots": [],
+    "total_slots": 100
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 2
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

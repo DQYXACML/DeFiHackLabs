@@ -4,48 +4,133 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0xd215ffaf0f85fb6f93f11e49bd6175ad58af0dfd"
+    "context": "// Attacker : https://etherscan.io/address/0xd215ffaf0f85fb6f93f11e49bd6175ad58af0dfd",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xd129d8c12f0e7aa51157d9e6cc3f7ece2dc84ecd",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0xd129d8c12f0e7aa51157d9e6cc3f7ece2dc84ecd"
+    "context": "// Attack Contract : https://etherscan.io/address/0xd129d8c12f0e7aa51157d9e6cc3f7ece2dc84ecd",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xb57e874082417b66877429481473cf9fcd8e0b8a",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://etherscan.io/address/0xb57e874082417b66877429481473cf9fcd8e0b8a#code"
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0xb57e874082417b66877429481473cf9fcd8e0b8a#code",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
+  },
+  {
+    "address": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+    "name": "IUniswapV2Router",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "IUniswapV2Router router = IUniswapV2Router(payable(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D))",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IUniswapV2Router"
+    ]
   },
   {
     "address": "0x1fB4904b26DE8C043959201A63b4b23C414251E2",
     "name": "pair",
     "chain": "mainnet",
     "source": "static",
-    "context": "address pair = 0x1fB4904b26DE8C043959201A63b4b23C414251E2"
+    "context": "address pair = 0x1fB4904b26DE8C043959201A63b4b23C414251E2",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "pair"
+    ]
   },
   {
     "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
-    "name": null,
+    "name": "IBalancerVault",
     "chain": "mainnet",
     "source": "static",
-    "context": "IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)"
+    "context": "IBalancerVault vault = IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBalancerVault"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "IERC20 WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
-    "address": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+    "address": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
     "name": null,
     "chain": "mainnet",
-    "source": "static",
-    "context": "payable(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)"
+    "source": "dynamic",
+    "context": "called with gas 2350",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

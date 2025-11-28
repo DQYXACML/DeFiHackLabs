@@ -1,0 +1,20 @@
+{
+  "protocol": "TSURU_exp",
+  "year_month": "2024-05",
+  "injection_timestamp": "2025-11-23T05:07:37.652106Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "TSURUWrapper",
+    "address": "0x75Ac62EA5D058A7F88f0C3a5F8f73195277c93dA"
+  },
+  "injected_contracts": [
+    {
+      "file": "TSURUWrapper.sol",
+      "functions": [
+        "onERC1155Received"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

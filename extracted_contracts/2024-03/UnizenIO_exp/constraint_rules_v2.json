@@ -1,0 +1,48 @@
+{
+  "protocol": "UnizenIO_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": null,
+    "name": null
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "97563254120271894683832819514037811140661132383631324069031716187984047925566",
+        "before": 40435797665369649920,
+        "after": 10,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "56794411487869976603763636367917910875759757664722329479763261228443596103146",
+        "before": 19045959129995937971841,
+        "after": 19086394927661307621751,
+        "change_pct": 0.21,
+        "is_new_slot": false
+      },
+      {
+        "slot": "19587223220176772758462130921153786124664650115193654555894116183536334847580",
+        "before": 62802284581179879618031,
+        "after": 62761848783514509968121,
+        "change_pct": 0.06,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 3
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 1
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

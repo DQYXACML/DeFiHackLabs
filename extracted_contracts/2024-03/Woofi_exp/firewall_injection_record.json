@@ -1,0 +1,21 @@
+{
+  "protocol": "Woofi_exp",
+  "year_month": "2024-03",
+  "injection_timestamp": "2025-11-23T05:05:45.124656Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "WooPPV2",
+    "address": "0xeff23b4be1091b53205e35f3afcd9c7182bf3062"
+  },
+  "injected_contracts": [
+    {
+      "file": "WooPPV2.sol",
+      "functions": [
+        "swap",
+        "poolSize"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

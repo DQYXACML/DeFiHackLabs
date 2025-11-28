@@ -4,83 +4,257 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x24a0c66f185874b251eb70bee2c2e35e39848419"
+    "context": "// Attacker : https://etherscan.io/address/0x24a0c66f185874b251eb70bee2c2e35e39848419",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x2ffdce5f0c09a8ee3a568bc01f35894b2d77a6d6",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0x2ffdce5f0c09a8ee3a568bc01f35894b2d77a6d6"
-  },
-  {
-    "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-    "name": "USDC",
-    "chain": "mainnet",
-    "source": "static",
-    "context": "private constant USDC = IUSDC(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)"
-  },
-  {
-    "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
-    "name": null,
-    "chain": "mainnet",
-    "source": "static",
-    "context": "IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)"
-  },
-  {
-    "address": "0xaE2C7af5fc2dDF45e6250a4C5495e61afC7AcF50",
-    "name": null,
-    "chain": "mainnet",
-    "source": "static",
-    "context": "Ticket(0xaE2C7af5fc2dDF45e6250a4C5495e61afC7AcF50)"
-  },
-  {
-    "address": "0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8",
-    "name": null,
-    "chain": "mainnet",
-    "source": "static",
-    "context": "MainPool(0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8)"
-  },
-  {
-    "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
-    "chain": "mainnet",
-    "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "// Attack Contract : https://etherscan.io/address/0x2ffdce5f0c09a8ee3a568bc01f35894b2d77a6d6",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": null,
+    "name": "WETH",
     "chain": "mainnet",
     "source": "static",
-    "context": "payable(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
-  },
-  {
-    "address": "0x0B925eD163218f6662a35e0f0371Ac234f9E9371",
-    "name": null,
-    "chain": "mainnet",
-    "source": "static",
-    "context": "IERC20(0x0B925eD163218f6662a35e0f0371Ac234f9E9371)"
+    "context": "constant WETH = IWETH(payable(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2))",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
-    "name": null,
+    "name": "IUniswapV2Router",
     "chain": "mainnet",
     "source": "static",
-    "context": "payable(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)"
+    "context": "IUniswapV2Router UniRouter = IUniswapV2Router(payable(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D))",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IUniswapV2Router"
+    ]
+  },
+  {
+    "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "name": "IUSDC",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "IUSDC private constant USDC = IUSDC(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IUSDC"
+    ]
+  },
+  {
+    "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    "name": "IBalancerVault",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "IBalancerVault Balancer = IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBalancerVault"
+    ]
+  },
+  {
+    "address": "0xaE2C7af5fc2dDF45e6250a4C5495e61afC7AcF50",
+    "name": "Ticket",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "Ticket tick = Ticket(0xaE2C7af5fc2dDF45e6250a4C5495e61afC7AcF50)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Ticket"
+    ]
+  },
+  {
+    "address": "0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8",
+    "name": "MainPool",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "MainPool mainpool = MainPool(0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "MainPool"
+    ]
+  },
+  {
+    "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
+    "name": "CheatCodes",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
+  },
+  {
+    "address": "0x0B925eD163218f6662a35e0f0371Ac234f9E9371",
+    "name": "IERC20",
+    "chain": "mainnet",
+    "source": "static",
+    "context": "IERC20 AAVEETH = IERC20(0x0B925eD163218f6662a35e0f0371Ac234f9E9371)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
-    "name": null,
+    "name": "IAaveFlashloan",
     "chain": "mainnet",
     "source": "static",
-    "context": "IAaveFlashloan(0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2)"
+    "context": "IAaveFlashloan AAVE = IAaveFlashloan(0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IAaveFlashloan"
+    ]
+  },
+  {
+    "address": "0xD357e4940b34Eb1406ef6A1Af53954e641273a3B",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2519",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1d13502CfB73FCa360d1af7703cD3F47abA809b5",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x49E298B95Bda30e6518509187Ff348e01117f404",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 5753",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x000000000000000000000000de46fcf6ab7559e4",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

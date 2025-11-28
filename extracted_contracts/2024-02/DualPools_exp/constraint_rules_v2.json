@@ -1,0 +1,143 @@
+{
+  "protocol": "DualPools_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0x5e5e28029ef37fc97ffb763c4ac1f532bbd4c7a2",
+    "name": "Dualpools"
+  },
+  "constraints": [
+    {
+      "function": "enterMarkets",
+      "signature": "enterMarkets(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "tokenList > 292346425608896064658285446358102296818785312776200692331664910191052193792",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 974488085362986951610311062837479013070525661733034393600 iterations (capped)",
+        "variables": {
+          "tokenList": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "tokenList"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "43984987826851242223001582372847987836313467884002313341118020757431384996444",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 974488085362986915672160743255971729853494633028223193651445404445024714752
+          }
+        },
+        "danger_condition": "tokenList >= 877039276826688244191670222167753001142671323989933405813838286285432684544",
+        "safe_condition": "tokenList <= 292346425608896064658285446358102296818785312776200692331664910191052193792",
+        "threshold_value": 292346425608896064658285446358102296818785312776200692331664910191052193792
+      },
+      "analysis": {
+        "state_value": 974488085362986915672160743255971729853494633028223193651445404445024714752,
+        "threshold": 487244042681493457836080371627985864926747316514111596825722702222512357376,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代974488085362986951610311062837479013070525661733034393600次超过上限10000，使用保守阈值292346425608896064658285446358102296818785312776200692331664910191052193792",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 9.74488085362987e+56,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "enterMarkets",
+      "signature": "enterMarkets(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "tokenList1 > 0",
+        "semantics": "Direct deposit/mint: parameter directly increases new_mapping_entry",
+        "variables": {
+          "tokenList1": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "tokenList1"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "92920595854393050527642830396128758008017849079650634959660611585367349627448",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "tokenList1 >= 1",
+        "safe_condition": "tokenList1 <= 0",
+        "threshold_value": 0
+      },
+      "analysis": {
+        "state_value": 1,
+        "threshold": 0,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致new_mapping_entry增加1，阈值设为0",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "43984987826851242223001582372847987836313467884002313341118020757431384996444",
+        "before": 0,
+        "after": 974488085362986915672160743255971729853494633028223193651445404445024714752,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "56041761105864507788527041772763760605016465975263045187342211938411007809280",
+        "before": 854773790184837857195931596112815410828742575077152908577728878313893527552,
+        "after": 974488085362986915672160743255971729853494633028223193651445404445024714752,
+        "change_pct": 14.01,
+        "is_new_slot": false
+      },
+      {
+        "slot": "83156426901974757811839479434255340173011102535595635139170888610412143444678",
+        "before": 911249055104038343027563344645019321504990182002896705249491137573473240417,
+        "after": 974488085362986915672160750973739517606565165684026823918791610822901914999,
+        "change_pct": 6.94,
+        "is_new_slot": false
+      },
+      {
+        "slot": "50456530330202396688526168477189293237328317696870128574330048832722542799363",
+        "before": 911249270783611680232681701981122727388032970792860435188212497770430443467,
+        "after": 974488085362986915672160768076637947446316312794082513804565577275355093374,
+        "change_pct": 6.94,
+        "is_new_slot": false
+      },
+      {
+        "slot": "27797052969672087473459225395512839825322499387383088128138770501252752311897",
+        "before": 911270299542012057731721542252751312760567877008140588088794290635724553627,
+        "after": 974488085362986915672160743255989242363635418627128461530320085379300276303,
+        "change_pct": 6.94,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 32
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 23
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

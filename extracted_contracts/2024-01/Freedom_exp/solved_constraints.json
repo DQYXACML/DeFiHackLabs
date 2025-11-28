@@ -1,0 +1,107 @@
+{
+  "protocol": "Freedom_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xae3ada8787245977832c6dab2d4474d3943527ab",
+    "name": "FREEB"
+  },
+  "solved_constraints": [
+    {
+      "function": "buyToken",
+      "signature": "buyToken(uint256)",
+      "attack_pattern": "price_oracle_attack",
+      "constraint": {
+        "function": "buyToken",
+        "signature": "buyToken(uint256)",
+        "attack_pattern": "price_oracle_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > poolBalance * 0.25",
+          "semantics": "Trade volume manipulating oracle price",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256"
+            },
+            "poolBalance": {
+              "source": "storage",
+              "slot": "0x6",
+              "type": "uint256",
+              "semantic_name": "poolBalance"
+            }
+          },
+          "danger_condition": "amount > poolBalance * 0.25",
+          "safe_condition": "amount <= poolBalance * 0.05"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 1534310776822955245874,
+        "state_value": 6137243107291820983496,
+        "coefficient": 0.25,
+        "expression": "amount > poolBalance * 0.25",
+        "resolved_expression": "amount > 1534310776822955245874"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 1534310776822955245875,
+          "description": "刚好超过阈值 (1534310776822955245874+1)"
+        },
+        {
+          "type": "safe",
+          "value": 306862155364591049174,
+          "description": "安全范围 (5%)"
+        },
+        {
+          "type": "attack",
+          "value": 5830380951927229934321,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 6137243107291820983496,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    }
+  ],
+  "param_check_rules": {
+    "protocol": "Freedom_exp",
+    "version": "1.0.0",
+    "rules": [
+      {
+        "function_sig": "0x2d296bf1",
+        "function_name": "buyToken",
+        "param_index": 1,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "1534310776822955245874",
+        "threshold": 1534310776822955245874,
+        "state_value": 6137243107291820983496,
+        "coefficient": 0.25,
+        "attack_pattern": "price_oracle_attack",
+        "description": "Trade volume manipulating oracle price"
+      }
+    ],
+    "metadata": {
+      "generated_by": "solve_constraints.py",
+      "total_rules": 1
+    }
+  },
+  "summary": {
+    "total_constraints": 1,
+    "resolved_constraints": 1,
+    "resolution_rate": "100.0%"
+  },
+  "metadata": {
+    "solver_version": "1.0.0",
+    "generated_by": "solve_constraints.py"
+  }
+}

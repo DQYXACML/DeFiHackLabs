@@ -1,0 +1,1332 @@
+2025-11-13 10:04:53,005 - INFO - 使用硬编码的API Keys配置
+2025-11-13 10:04:53,005 - INFO - ================================================================================
+2025-11-13 10:04:53,005 - INFO - 开始提取DeFi攻击合约
+2025-11-13 10:04:53,005 - INFO - ================================================================================
+2025-11-13 10:04:53,008 - INFO - 找到 19 个测试脚本
+2025-11-13 10:04:53,008 - INFO - 
+[1/19] 处理: 2024-01/LQDX_alert_exp
+2025-11-13 10:04:53,008 - INFO - 静态分析: LQDX_alert_exp
+2025-11-13 10:04:53,009 - INFO -   静态提取到 4 个地址
+2025-11-13 10:04:53,009 - INFO - 动态分析: LQDX_alert_exp
+2025-11-13 10:04:53,009 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/LQDX_alert_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:04:53,009 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:04:55,469 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:04:55,470 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/LQDX_alert_exp.sol:Exploit
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] Exploit::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19165893 [1.916e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.04ms (0.00ns CPU time)
+
+Ran 1 test suite in 53.44ms (19.04ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/LQDX_alert_exp.sol:Exploit
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:04:55,470 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:04:55,470 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/LQDX_alert_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:04:55,470 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:04:57,946 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:04:57,947 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/LQDX_alert_exp.sol:Exploit
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] Exploit::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19165893 [1.916e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.59ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.67ms (20.59ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/LQDX_alert_exp.sol:Exploit
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:04:57,947 - INFO -   动态提取到 0 个地址
+2025-11-13 10:04:57,947 - INFO -   共提取到 4 个唯一地址
+2025-11-13 10:04:57,948 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:04:57,948 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:04:57,948 - INFO - 
+[2/19] 处理: 2024-01/BarleyFinance_exp_local
+2025-11-13 10:04:57,948 - INFO - 静态分析: BarleyFinance_exp_local
+2025-11-13 10:04:57,952 - INFO -   静态提取到 4 个地址
+2025-11-13 10:04:57,952 - INFO - 动态分析: BarleyFinance_exp_local
+2025-11-13 10:04:57,953 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/BarleyFinance_exp_local.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:04:57,953 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:00,449 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:00,450 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/BarleyFinance_exp_local.sol:BarleyFinanceLocalTest
+[FAIL: call to non-contract address 0x6B175474E89094C44Da98b954EedeAC495271d0F] testExploit() (gas: 8443)
+Logs:
+  ================================================================================
+  BarleyFinance Attack Test (Local Anvil Mode)
+  ================================================================================
+
+Traces:
+  [4894] AttackContract::setUp()
+    ├─ [0] VM::label(DAI: [0x6B175474E89094C44Da98b954EedeAC495271d0F], "DAI")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(BARL: [0x3e2324342bF5B8A1Dca42915f0489497203d640E], "BARL")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(WETH: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], "WETH")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(wBARL: [0x04c80Bb477890F3021F03B068238836Ee20aA0b8], "wBARL")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(AttackContract: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], "AttackContract")
+    │   └─ ← [Return]
+    └─ ← [Stop]
+
+  [8443] AttackContract::testExploit()
+    ├─ [0] console::log("================================================================================") [staticcall]
+    │   └─ ← [Stop]
+    ├─ [0] console::log("BarleyFinance Attack Test (Local Anvil Mode)") [staticcall]
+    │   └─ ← [Stop]
+    ├─ [0] console::log("================================================================================") [staticcall]
+    │   └─ ← [Stop]
+    ├─ [0] DAI::balanceOf(AttackContract: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Stop]
+    └─ ← [Revert] call to non-contract address 0x6B175474E89094C44Da98b954EedeAC495271d0F
+
+Backtrace:
+  at AttackContract.testExploit
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.35ms (236.89µs CPU time)
+
+Ran 1 test suite in 67.80ms (1.35ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/BarleyFinance_exp_local.sol:BarleyFinanceLocalTest
+[FAIL: call to non-contract address 0x6B175474E89094C44Da98b954EedeAC495271d0F] testExploit() (gas: 8443)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:00,450 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:00,450 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/BarleyFinance_exp_local.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:00,450 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:02,956 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:02,956 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/BarleyFinance_exp_local.sol:BarleyFinanceLocalTest
+[FAIL: call to non-contract address 0x6B175474E89094C44Da98b954EedeAC495271d0F] testExploit() (gas: 8443)
+Logs:
+  ================================================================================
+  BarleyFinance Attack Test (Local Anvil Mode)
+  ================================================================================
+
+Traces:
+  [4894] AttackContract::setUp()
+    ├─ [0] VM::label(DAI: [0x6B175474E89094C44Da98b954EedeAC495271d0F], "DAI")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(BARL: [0x3e2324342bF5B8A1Dca42915f0489497203d640E], "BARL")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(WETH: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], "WETH")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(wBARL: [0x04c80Bb477890F3021F03B068238836Ee20aA0b8], "wBARL")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(AttackContract: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], "AttackContract")
+    │   └─ ← [Return]
+    └─ ← [Stop]
+
+  [8443] AttackContract::testExploit()
+    ├─ [0] console::log("================================================================================") [staticcall]
+    │   └─ ← [Stop]
+    ├─ [0] console::log("BarleyFinance Attack Test (Local Anvil Mode)") [staticcall]
+    │   └─ ← [Stop]
+    ├─ [0] console::log("================================================================================") [staticcall]
+    │   └─ ← [Stop]
+    ├─ [0] DAI::balanceOf(AttackContract: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Stop]
+    └─ ← [Revert] call to non-contract address 0x6B175474E89094C44Da98b954EedeAC495271d0F
+
+Backtrace:
+  at AttackContract.testExploit
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.61ms (1.46ms CPU time)
+
+Ran 1 test suite in 68.57ms (2.61ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/BarleyFinance_exp_local.sol:BarleyFinanceLocalTest
+[FAIL: call to non-contract address 0x6B175474E89094C44Da98b954EedeAC495271d0F] testExploit() (gas: 8443)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:02,957 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:02,957 - INFO -   共提取到 4 个唯一地址
+2025-11-13 10:05:02,958 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:02,958 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:02,958 - INFO - 
+[3/19] 处理: 2024-01/Freedom_exp
+2025-11-13 10:05:02,958 - INFO - 静态分析: Freedom_exp
+2025-11-13 10:05:02,963 - INFO -   静态提取到 8 个地址
+2025-11-13 10:05:02,963 - INFO - 动态分析: Freedom_exp
+2025-11-13 10:05:02,963 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/Freedom_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:02,963 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:05,434 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:05,435 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/Freedom_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3010] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("bsc", 35123710 [3.512e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.18ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.61ms (19.18ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/Freedom_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:05,435 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:05,435 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/Freedom_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:05,435 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:07,904 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:07,904 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/Freedom_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3010] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("bsc", 35123710 [3.512e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.66ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.04ms (20.66ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/Freedom_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:07,904 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:07,904 - INFO -   共提取到 8 个唯一地址
+2025-11-13 10:05:07,905 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:07,905 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:07,905 - INFO - 
+[4/19] 处理: 2024-01/RadiantCapital_exp
+2025-11-13 10:05:07,906 - INFO - 静态分析: RadiantCapital_exp
+2025-11-13 10:05:07,912 - INFO -   静态提取到 9 个地址
+2025-11-13 10:05:07,912 - INFO - 动态分析: RadiantCapital_exp
+2025-11-13 10:05:07,912 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/RadiantCapital_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:07,912 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:10,372 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:10,372 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/RadiantCapital_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3004] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("arbitrum", 166405686 [1.664e8])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.41ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.69ms (19.41ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/RadiantCapital_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:10,373 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:10,373 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/RadiantCapital_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:10,373 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:12,866 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:12,867 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/RadiantCapital_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3004] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("arbitrum", 166405686 [1.664e8])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.87ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.80ms (19.87ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/RadiantCapital_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:12,867 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:12,867 - INFO -   共提取到 9 个唯一地址
+2025-11-13 10:05:12,868 - INFO -   diff 结果: +0 -1 ~0
+2025-11-13 10:05:12,868 - INFO -     - 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f (-)
+2025-11-13 10:05:12,868 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:12,868 - INFO - 
+[5/19] 处理: 2024-01/Bmizapper_exp
+2025-11-13 10:05:12,868 - INFO - 静态分析: Bmizapper_exp
+2025-11-13 10:05:12,872 - INFO -   静态提取到 5 个地址
+2025-11-13 10:05:12,872 - INFO - 动态分析: Bmizapper_exp
+2025-11-13 10:05:12,873 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/Bmizapper_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:12,873 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:15,316 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:15,316 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/Bmizapper_exp.sol:ExploitTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [5134] ExploitTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19029289 [1.902e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.90ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.31ms (19.90ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/Bmizapper_exp.sol:ExploitTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:15,316 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:15,317 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/Bmizapper_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:15,317 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:17,731 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:17,732 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/Bmizapper_exp.sol:ExploitTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [5134] ExploitTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19029289 [1.902e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.61ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.09ms (20.61ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/Bmizapper_exp.sol:ExploitTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:17,732 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:17,732 - INFO -   共提取到 5 个唯一地址
+2025-11-13 10:05:17,733 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:17,733 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:17,733 - INFO - 
+[6/19] 处理: 2024-01/SocketGateway_exp
+2025-11-13 10:05:17,733 - INFO - 静态分析: SocketGateway_exp
+2025-11-13 10:05:17,737 - INFO -   静态提取到 6 个地址
+2025-11-13 10:05:17,737 - INFO - 动态分析: SocketGateway_exp
+2025-11-13 10:05:17,737 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/SocketGateway_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:17,737 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:20,214 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:20,215 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/SocketGateway_exp.sol:SocketGatewayExp
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3004] SocketGatewayExp::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19021453 [1.902e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.23ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.96ms (20.23ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/SocketGateway_exp.sol:SocketGatewayExp
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:20,215 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:20,215 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/SocketGateway_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:20,215 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:22,682 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:22,683 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/SocketGateway_exp.sol:SocketGatewayExp
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3004] SocketGatewayExp::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19021453 [1.902e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.62ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.48ms (19.62ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/SocketGateway_exp.sol:SocketGatewayExp
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:22,683 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:22,683 - INFO -   共提取到 6 个唯一地址
+2025-11-13 10:05:22,684 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:22,684 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:22,684 - INFO - 
+[7/19] 处理: 2024-01/DAO_SoulMate_exp
+2025-11-13 10:05:22,684 - INFO - 静态分析: DAO_SoulMate_exp
+2025-11-13 10:05:22,688 - INFO -   静态提取到 11 个地址
+2025-11-13 10:05:22,688 - INFO - 动态分析: DAO_SoulMate_exp
+2025-11-13 10:05:22,688 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/DAO_SoulMate_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:22,688 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:25,137 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:25,137 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/DAO_SoulMate_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19063676 [1.906e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.12ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.86ms (19.12ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/DAO_SoulMate_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:25,137 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:25,137 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/DAO_SoulMate_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:25,137 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:27,572 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:27,572 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/DAO_SoulMate_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19063676 [1.906e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.12ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.04ms (20.12ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/DAO_SoulMate_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:27,572 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:27,572 - INFO -   共提取到 11 个唯一地址
+2025-11-13 10:05:27,574 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:27,574 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:27,574 - INFO - 
+[8/19] 处理: 2024-01/OrbitChain_exp
+2025-11-13 10:05:27,574 - INFO - 静态分析: OrbitChain_exp
+2025-11-13 10:05:27,583 - INFO -   静态提取到 3 个地址
+2025-11-13 10:05:27,583 - INFO - 动态分析: OrbitChain_exp
+2025-11-13 10:05:27,584 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/OrbitChain_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:27,584 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:30,048 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:30,049 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/OrbitChain_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 18908049 [1.89e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.00ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.27ms (20.00ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/OrbitChain_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:30,049 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:30,049 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/OrbitChain_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:30,049 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:32,508 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:32,509 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/OrbitChain_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 18908049 [1.89e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 18.96ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.39ms (18.96ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/OrbitChain_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:32,509 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:32,509 - INFO -   共提取到 3 个唯一地址
+2025-11-13 10:05:32,510 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:32,510 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:32,510 - INFO - 
+[9/19] 处理: 2024-01/MIC_exp
+2025-11-13 10:05:32,510 - INFO - 静态分析: MIC_exp
+2025-11-13 10:05:32,518 - INFO -   静态提取到 10 个地址
+2025-11-13 10:05:32,518 - INFO - 动态分析: MIC_exp
+2025-11-13 10:05:32,519 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/MIC_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:32,519 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:34,976 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:34,977 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/MIC_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3039] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("bsc", 34905161 [3.49e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.35ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.59ms (20.35ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/MIC_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:34,977 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:34,977 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/MIC_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:34,977 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:37,450 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:37,450 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/MIC_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3039] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("bsc", 34905161 [3.49e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.04ms (0.00ns CPU time)
+
+Ran 1 test suite in 53.60ms (19.04ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/MIC_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:37,451 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:37,451 - INFO -   共提取到 10 个唯一地址
+2025-11-13 10:05:37,452 - INFO -   diff 结果: +0 -10 ~0
+2025-11-13 10:05:37,452 - INFO -     - 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f (-)
+2025-11-13 10:05:37,452 - INFO -     - 0x2e234DAe75C793f67A35089C9d99245E1C58470b (-)
+2025-11-13 10:05:37,452 - INFO -     - 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a (-)
+2025-11-13 10:05:37,453 - INFO -     - 0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9 (-)
+2025-11-13 10:05:37,453 - INFO -     - 0xc7183455a4C133Ae270771860664b6B7ec320bB1 (-)
+2025-11-13 10:05:37,453 - INFO -     - 0xa0Cb889707d426A7A386870A03bc70d1b0697598 (-)
+2025-11-13 10:05:37,453 - INFO -     - 0x1d1499e622D69689cdf9004d05Ec547d650Ff211 (-)
+2025-11-13 10:05:37,453 - INFO -     - 0xA4AD4f68d0b91CFD19687c881e50f3A00242828c (-)
+2025-11-13 10:05:37,453 - INFO -     - 0x03A6a84cD762D9707A21605b548aaaB891562aAb (-)
+2025-11-13 10:05:37,453 - INFO -     - 0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF (-)
+2025-11-13 10:05:37,453 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:37,453 - INFO - 
+[10/19] 处理: 2024-01/PeapodsFinance_exp
+2025-11-13 10:05:37,453 - INFO - 静态分析: PeapodsFinance_exp
+2025-11-13 10:05:37,457 - INFO -   静态提取到 6 个地址
+2025-11-13 10:05:37,457 - INFO - 动态分析: PeapodsFinance_exp
+2025-11-13 10:05:37,457 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/PeapodsFinance_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:37,457 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:39,916 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:39,916 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/PeapodsFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19109652 [1.91e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.75ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.21ms (19.75ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/PeapodsFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:39,916 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:39,916 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/PeapodsFinance_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:39,917 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:42,342 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:42,343 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/PeapodsFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19109652 [1.91e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.76ms (0.00ns CPU time)
+
+Ran 1 test suite in 54.00ms (20.76ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/PeapodsFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:42,343 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:42,343 - INFO -   共提取到 6 个唯一地址
+2025-11-13 10:05:42,344 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:42,344 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:42,344 - INFO - 
+[11/19] 处理: 2024-01/WiseLending02_exp
+2025-11-13 10:05:42,344 - INFO - 静态分析: WiseLending02_exp
+2025-11-13 10:05:42,351 - INFO -   静态提取到 9 个地址
+2025-11-13 10:05:42,351 - INFO - 动态分析: WiseLending02_exp
+2025-11-13 10:05:42,351 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/WiseLending02_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:42,352 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:44,853 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:44,853 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/WiseLending02_exp.sol:WiseLendingTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [5142] WiseLendingTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 18983652 [1.898e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 21.34ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.46ms (21.34ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/WiseLending02_exp.sol:WiseLendingTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:44,853 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:44,854 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/WiseLending02_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:44,854 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:47,312 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:47,312 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/WiseLending02_exp.sol:WiseLendingTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [5142] WiseLendingTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 18983652 [1.898e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 9.41ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.75ms (9.41ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/WiseLending02_exp.sol:WiseLendingTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:47,312 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:47,312 - INFO -   共提取到 9 个唯一地址
+2025-11-13 10:05:47,314 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:47,314 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:47,314 - INFO - 
+[12/19] 处理: 2024-01/Shell_MEV_0xa898_exp
+2025-11-13 10:05:47,314 - INFO - 静态分析: Shell_MEV_0xa898_exp
+2025-11-13 10:05:47,318 - INFO -   静态提取到 11 个地址
+2025-11-13 10:05:47,318 - INFO - 动态分析: Shell_MEV_0xa898_exp
+2025-11-13 10:05:47,318 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/Shell_MEV_0xa898_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:47,319 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:49,781 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:49,781 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/Shell_MEV_0xa898_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3010] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("bsc", 35273750 [3.527e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 18.74ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.79ms (18.74ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/Shell_MEV_0xa898_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:49,781 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:49,782 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/Shell_MEV_0xa898_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:49,782 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:52,232 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:52,232 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/Shell_MEV_0xa898_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3010] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("bsc", 35273750 [3.527e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.25ms (0.00ns CPU time)
+
+Ran 1 test suite in 53.37ms (19.25ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/Shell_MEV_0xa898_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:52,233 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:52,233 - INFO -   共提取到 11 个唯一地址
+2025-11-13 10:05:52,234 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:52,234 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:52,234 - INFO - 
+[13/19] 处理: 2024-01/BarleyFinance_exp
+2025-11-13 10:05:52,235 - INFO - 静态分析: BarleyFinance_exp
+2025-11-13 10:05:52,239 - INFO -   静态提取到 7 个地址
+2025-11-13 10:05:52,239 - INFO - 动态分析: BarleyFinance_exp
+2025-11-13 10:05:52,239 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/BarleyFinance_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:52,239 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:54,678 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:54,678 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/BarleyFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19106654 [1.91e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.69ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.44ms (20.69ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/BarleyFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:54,679 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:54,679 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/BarleyFinance_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:54,679 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:57,136 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:57,136 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/BarleyFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19106654 [1.91e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.65ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.82ms (20.65ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/BarleyFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:57,137 - INFO -   动态提取到 0 个地址
+2025-11-13 10:05:57,137 - INFO -   共提取到 7 个唯一地址
+2025-11-13 10:05:57,138 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:05:57,138 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:05:57,138 - INFO - 
+[14/19] 处理: 2024-01/NBLGAME_exp
+2025-11-13 10:05:57,138 - INFO - 静态分析: NBLGAME_exp
+2025-11-13 10:05:57,144 - INFO -   静态提取到 9 个地址
+2025-11-13 10:05:57,144 - INFO - 动态分析: NBLGAME_exp
+2025-11-13 10:05:57,144 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/NBLGAME_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:05:57,144 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:05:59,511 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:05:59,511 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/NBLGAME_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("optimism", 115293068 [1.152e8])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.16ms (0.00ns CPU time)
+
+Ran 1 test suite in 53.77ms (20.16ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/NBLGAME_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:05:59,512 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:05:59,512 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/NBLGAME_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:05:59,512 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:01,949 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:01,950 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/NBLGAME_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("optimism", 115293068 [1.152e8])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.15ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.04ms (20.15ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/NBLGAME_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:01,950 - INFO -   动态提取到 0 个地址
+2025-11-13 10:06:01,950 - INFO -   共提取到 9 个唯一地址
+2025-11-13 10:06:01,951 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:06:01,951 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:06:01,951 - INFO - 
+[15/19] 处理: 2024-01/CitadelFinance_exp
+2025-11-13 10:06:01,951 - INFO - 静态分析: CitadelFinance_exp
+2025-11-13 10:06:01,959 - INFO -   静态提取到 9 个地址
+2025-11-13 10:06:01,959 - INFO - 动态分析: CitadelFinance_exp
+2025-11-13 10:06:01,959 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/CitadelFinance_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:06:01,959 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:04,476 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:04,476 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/CitadelFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("arbitrum", 174659183 [1.746e8])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.94ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.31ms (19.94ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/CitadelFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:04,477 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:06:04,477 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/CitadelFinance_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:06:04,477 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:06,942 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:06,942 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/CitadelFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("arbitrum", 174659183 [1.746e8])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.93ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.91ms (20.93ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/CitadelFinance_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:06,942 - INFO -   动态提取到 0 个地址
+2025-11-13 10:06:06,943 - INFO -   共提取到 9 个唯一地址
+2025-11-13 10:06:06,944 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:06:06,944 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:06:06,944 - INFO - 
+[16/19] 处理: 2024-01/MIMSpell2_exp
+2025-11-13 10:06:06,944 - INFO - 静态分析: MIMSpell2_exp
+2025-11-13 10:06:06,954 - INFO -   静态提取到 15 个地址
+2025-11-13 10:06:06,954 - INFO - 动态分析: MIMSpell2_exp
+2025-11-13 10:06:06,954 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/MIMSpell2_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:06:06,954 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:09,415 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:09,415 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/MIMSpell2_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19118659 [1.911e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 8.31ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.91ms (8.31ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/MIMSpell2_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:09,415 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:06:09,415 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/MIMSpell2_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:06:09,415 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:11,900 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:11,900 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/MIMSpell2_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3033] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("mainnet", 19118659 [1.911e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.16ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.34ms (20.16ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/MIMSpell2_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:11,900 - INFO -   动态提取到 0 个地址
+2025-11-13 10:06:11,901 - INFO -   共提取到 15 个唯一地址
+2025-11-13 10:06:11,902 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:06:11,902 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:06:11,902 - INFO - 
+[17/19] 处理: 2024-01/WiseLending03_exp
+2025-11-13 10:06:11,902 - INFO - 静态分析: WiseLending03_exp
+2025-11-13 10:06:11,913 - INFO -   静态提取到 8 个地址
+2025-11-13 10:06:11,913 - INFO - 动态分析: WiseLending03_exp
+2025-11-13 10:06:11,913 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/WiseLending03_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:06:11,913 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:14,366 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:14,366 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/WiseLending03_exp.sol:WiseLending
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [20436] WiseLending::setUp()
+    ├─ [0] VM::label(PendleLPT: [0xC374f7eC85F8C7DE3207a10bB1978bA104bdA3B2], "PendleLPT")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(LPTPoolToken: [0xB40b073d7E47986D3A45Ca7Fd30772C25A2AD57f], "LPTPoolToken")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(wiseLending: [0x37e49bf3749513A02FA535F0CbC383796E8107E4], "wiseLending")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(wstETH: [0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0], "wstETH")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(WETH: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], "WETH")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(PositionNFTs: [0x32E0A7F7C4b1A19594d25bD9b63EBA912b1a5f61], "PositionNFTs")
+    │   └─ ← [Return]
+    ├─ [0] VM::createSelectFork("mainnet", 18992907 [1.899e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.44ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.75ms (19.44ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/WiseLending03_exp.sol:WiseLending
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:14,366 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:06:14,366 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/WiseLending03_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:06:14,367 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:16,832 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:16,832 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/WiseLending03_exp.sol:WiseLending
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [20436] WiseLending::setUp()
+    ├─ [0] VM::label(PendleLPT: [0xC374f7eC85F8C7DE3207a10bB1978bA104bdA3B2], "PendleLPT")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(LPTPoolToken: [0xB40b073d7E47986D3A45Ca7Fd30772C25A2AD57f], "LPTPoolToken")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(wiseLending: [0x37e49bf3749513A02FA535F0CbC383796E8107E4], "wiseLending")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(wstETH: [0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0], "wstETH")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(WETH: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], "WETH")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(PositionNFTs: [0x32E0A7F7C4b1A19594d25bD9b63EBA912b1a5f61], "PositionNFTs")
+    │   └─ ← [Return]
+    ├─ [0] VM::createSelectFork("mainnet", 18992907 [1.899e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.18ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.05ms (20.18ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/WiseLending03_exp.sol:WiseLending
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:16,833 - INFO -   动态提取到 0 个地址
+2025-11-13 10:06:16,833 - INFO -   共提取到 8 个唯一地址
+2025-11-13 10:06:16,834 - INFO -   diff 结果: +0 -6 ~0
+2025-11-13 10:06:16,834 - INFO -     - 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f (-)
+2025-11-13 10:06:16,834 - INFO -     - 0x2e234DAe75C793f67A35089C9d99245E1C58470b (-)
+2025-11-13 10:06:16,834 - INFO -     - 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a (-)
+2025-11-13 10:06:16,834 - INFO -     - 0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9 (-)
+2025-11-13 10:06:16,834 - INFO -     - 0xc7183455a4C133Ae270771860664b6B7ec320bB1 (-)
+2025-11-13 10:06:16,835 - INFO -     - 0xa0Cb889707d426A7A386870A03bc70d1b0697598 (-)
+2025-11-13 10:06:16,835 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:06:16,835 - INFO - 
+[18/19] 处理: 2024-01/Gamma_exp
+2025-11-13 10:06:16,835 - INFO - 静态分析: Gamma_exp
+2025-11-13 10:06:16,842 - INFO -   静态提取到 11 个地址
+2025-11-13 10:06:16,842 - INFO - 动态分析: Gamma_exp
+2025-11-13 10:06:16,842 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/Gamma_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:06:16,842 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:19,304 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:19,304 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/Gamma_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3004] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("arbitrum", 166873291 [1.668e8])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.94ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.74ms (19.94ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/Gamma_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:19,304 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:06:19,304 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/Gamma_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:06:19,305 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:21,742 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:21,742 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/Gamma_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [3004] ContractTest::setUp()
+    ├─ [0] VM::createSelectFork("arbitrum", 166873291 [1.668e8])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 20.25ms (0.00ns CPU time)
+
+Ran 1 test suite in 51.81ms (20.25ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/Gamma_exp.sol:ContractTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider lb.drpc.live; error sending request for url (https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:21,743 - INFO -   动态提取到 0 个地址
+2025-11-13 10:06:21,743 - INFO -   共提取到 11 个唯一地址
+2025-11-13 10:06:21,744 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:06:21,744 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:06:21,744 - INFO - 
+[19/19] 处理: 2024-01/XSIJ_exp
+2025-11-13 10:06:21,744 - INFO - 静态分析: XSIJ_exp
+2025-11-13 10:06:21,748 - INFO -   静态提取到 8 个地址
+2025-11-13 10:06:21,748 - INFO - 动态分析: XSIJ_exp
+2025-11-13 10:06:21,748 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/XSIJ_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvv
+2025-11-13 10:06:21,748 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:24,226 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:24,226 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/XSIJ_exp.sol:Exploit
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [5142] Exploit::setUp()
+    ├─ [0] VM::createSelectFork("bsc", 35702095 [3.57e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.84ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.68ms (19.84ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/XSIJ_exp.sol:Exploit
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:24,227 - INFO -   未解析到trace，使用 -vvvvv 重新运行以强制输出
+2025-11-13 10:06:24,227 - DEBUG -   执行命令: forge test --match-path src/test/2024-01/XSIJ_exp.sol --skip src/test/2025-05/Corkprotocol_exp.sol --skip src/test/2024-11/proxy_b7e1_exp.sol -vvvvv
+2025-11-13 10:06:24,227 - DEBUG -   工作目录: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs
+2025-11-13 10:06:26,686 - WARNING -   测试返回非零状态码: 1
+2025-11-13 10:06:26,686 - WARNING -   forge 输出:
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-01/XSIJ_exp.sol:Exploit
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+Traces:
+  [5142] Exploit::setUp()
+    ├─ [0] VM::createSelectFork("bsc", 35702095 [3.57e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 19.65ms (0.00ns CPU time)
+
+Ran 1 test suite in 52.69ms (19.65ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/XSIJ_exp.sol:Exploit
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider frequent-magical-tree.bsc.quiknode.pro; error sending request for url (https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/); client error (Connect); dns error; failed to lookup address information: Temporary failure in name resolution] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment.
+2025-11-13 10:06:26,686 - INFO -   动态提取到 0 个地址
+2025-11-13 10:06:26,686 - INFO -   共提取到 8 个唯一地址
+2025-11-13 10:06:26,687 - INFO -   diff 结果: +0 -0 ~0
+2025-11-13 10:06:26,687 - INFO -   diff模式：已展示差异，如需覆盖请增加 --force
+2025-11-13 10:06:26,688 - INFO - 
+================================================================================
+2025-11-13 10:06:26,688 - INFO - 执行摘要
+2025-11-13 10:06:26,688 - INFO - ================================================================================
+2025-11-13 10:06:26,689 - INFO - 总脚本数:        19
+2025-11-13 10:06:26,689 - INFO - 成功:            19
+2025-11-13 10:06:26,689 - INFO - 失败:            0
+2025-11-13 10:06:26,689 - INFO - 总地址数:        153
+2025-11-13 10:06:26,689 - INFO - 已验证合约:      0
+2025-11-13 10:06:26,689 - INFO - 未验证合约:      0
+2025-11-13 10:06:26,689 - INFO - API调用次数:     0
+2025-11-13 10:06:26,689 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-11-13 10:06:26,689 - INFO - ================================================================================
+2025-11-13 10:06:26,689 - INFO - 
+================================================================================
+2025-11-13 10:06:26,689 - INFO - Diff 报告
+2025-11-13 10:06:26,689 - INFO - ================================================================================
+2025-11-13 10:06:26,690 - INFO - 2024-01/LQDX_alert_exp: +0 -0 ~0
+2025-11-13 10:06:26,690 - INFO - 2024-01/BarleyFinance_exp_local: +0 -0 ~0
+2025-11-13 10:06:26,690 - INFO - 2024-01/Freedom_exp: +0 -0 ~0
+2025-11-13 10:06:26,690 - INFO - 2024-01/RadiantCapital_exp: +0 -1 ~0
+2025-11-13 10:06:26,690 - INFO -   - 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f (-)
+2025-11-13 10:06:26,690 - INFO - 2024-01/Bmizapper_exp: +0 -0 ~0
+2025-11-13 10:06:26,690 - INFO - 2024-01/SocketGateway_exp: +0 -0 ~0
+2025-11-13 10:06:26,690 - INFO - 2024-01/DAO_SoulMate_exp: +0 -0 ~0
+2025-11-13 10:06:26,690 - INFO - 2024-01/OrbitChain_exp: +0 -0 ~0
+2025-11-13 10:06:26,690 - INFO - 2024-01/MIC_exp: +0 -10 ~0
+2025-11-13 10:06:26,690 - INFO -   - 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f (-)
+2025-11-13 10:06:26,691 - INFO -   - 0x2e234DAe75C793f67A35089C9d99245E1C58470b (-)
+2025-11-13 10:06:26,691 - INFO -   - 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a (-)
+2025-11-13 10:06:26,691 - INFO -   - 0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9 (-)
+2025-11-13 10:06:26,691 - INFO -   - 0xc7183455a4C133Ae270771860664b6B7ec320bB1 (-)
+2025-11-13 10:06:26,691 - INFO -   - 0xa0Cb889707d426A7A386870A03bc70d1b0697598 (-)
+2025-11-13 10:06:26,691 - INFO -   - 0x1d1499e622D69689cdf9004d05Ec547d650Ff211 (-)
+2025-11-13 10:06:26,691 - INFO -   - 0xA4AD4f68d0b91CFD19687c881e50f3A00242828c (-)
+2025-11-13 10:06:26,691 - INFO -   - 0x03A6a84cD762D9707A21605b548aaaB891562aAb (-)
+2025-11-13 10:06:26,691 - INFO -   - 0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF (-)
+2025-11-13 10:06:26,691 - INFO - 2024-01/PeapodsFinance_exp: +0 -0 ~0
+2025-11-13 10:06:26,691 - INFO - 2024-01/WiseLending02_exp: +0 -0 ~0
+2025-11-13 10:06:26,691 - INFO - 2024-01/Shell_MEV_0xa898_exp: +0 -0 ~0
+2025-11-13 10:06:26,691 - INFO - 2024-01/BarleyFinance_exp: +0 -0 ~0
+2025-11-13 10:06:26,692 - INFO - 2024-01/NBLGAME_exp: +0 -0 ~0
+2025-11-13 10:06:26,692 - INFO - 2024-01/CitadelFinance_exp: +0 -0 ~0
+2025-11-13 10:06:26,692 - INFO - 2024-01/MIMSpell2_exp: +0 -0 ~0
+2025-11-13 10:06:26,692 - INFO - 2024-01/WiseLending03_exp: +0 -6 ~0
+2025-11-13 10:06:26,692 - INFO -   - 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f (-)
+2025-11-13 10:06:26,692 - INFO -   - 0x2e234DAe75C793f67A35089C9d99245E1C58470b (-)
+2025-11-13 10:06:26,692 - INFO -   - 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a (-)
+2025-11-13 10:06:26,692 - INFO -   - 0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9 (-)
+2025-11-13 10:06:26,692 - INFO -   - 0xc7183455a4C133Ae270771860664b6B7ec320bB1 (-)
+2025-11-13 10:06:26,692 - INFO -   - 0xa0Cb889707d426A7A386870A03bc70d1b0697598 (-)
+2025-11-13 10:06:26,692 - INFO - 2024-01/Gamma_exp: +0 -0 ~0
+2025-11-13 10:06:26,692 - INFO - 2024-01/XSIJ_exp: +0 -0 ~0

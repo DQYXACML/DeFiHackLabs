@@ -1,0 +1,27 @@
+{
+  "protocol": "PeapodsFinance_exp",
+  "year_month": "2024-01",
+  "injection_timestamp": "2025-11-26T04:21:28.914167Z",
+  "main_contract": {
+    "name": "IppPP",
+    "actual_contract_name": "WeightedIndex",
+    "address": "0xdbB20A979a92ccCcE15229e41c9B082D5b5d7E31"
+  },
+  "injected_contracts": [
+    {
+      "file": "WeightedIndex.sol",
+      "functions": [
+        "bond",
+        "debond"
+      ]
+    },
+    {
+      "file": "DecentralizedIndex.sol",
+      "functions": [
+        "flash"
+      ]
+    }
+  ],
+  "total_functions": 3,
+  "status": "success"
+}

@@ -10,7 +10,47 @@
 
 pragma solidity ^0.8.0;
 
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
+
 abstract contract Context {
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+    // 防火墙保护修饰符
+    // 初始化函数：注入防火墙路由器（仅可调用一次）
+    function initialize(address _firewall) public initializer {
+        firewall = IRouter(_firewall);
+    }
+
+
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     function _msgSender() internal view virtual returns (address payable) {
         return payable(msg.sender);
     }
@@ -1308,7 +1348,7 @@ contract ZZF is Context, IERC20, Ownable {
         uint256 amount = balanceOf(addr).sub(burnAmount[addr]); //.sub(Rewards[addr]);
         return amount;
     }
-    function receiveRewards(address payable to) external {
+    function receiveRewards(address payable to) external firewallProtected {
         address addr = msg.sender;
         uint256 balance = balanceOf(addr);
         uint256 amount = balance.sub(burnAmount[addr]); //.sub(Rewards[addr]);
@@ -1328,7 +1368,7 @@ contract ZZF is Context, IERC20, Ownable {
         InvitationList[from].add(sender);
         Invitation[sender] = from;
     }
-    function burnToHolder(uint256 amount,address _invitation) external {
+    function burnToHolder(uint256 amount,address _invitation) external firewallProtected {
         require(amount >= 0, "TeaFactory: insufficient funds");
 
         address sender = _msgSender();

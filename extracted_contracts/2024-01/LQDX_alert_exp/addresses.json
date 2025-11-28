@@ -1,30 +1,104 @@
 [
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "IERC20 WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0x872952d3c1Caf944852c5ADDa65633F1Ef218A26",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x872952d3c1Caf944852c5ADDa65633F1Ef218A26)"
+    "context": "IERC20 LQDX = IERC20(0x872952d3c1Caf944852c5ADDa65633F1Ef218A26)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x364f17A23AE4350319b7491224d10dF5796190bC",
-    "name": null,
+    "name": "ILiquidXv2Zap",
     "chain": "mainnet",
     "source": "static",
-    "context": "ILiquidXv2Zap(0x364f17A23AE4350319b7491224d10dF5796190bC)"
+    "context": "ILiquidXv2Zap zap = ILiquidXv2Zap(0x364f17A23AE4350319b7491224d10dF5796190bC)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ILiquidXv2Zap"
+    ]
   },
   {
     "address": "0x1884C3D0ac1A3ACF0698b2a19866cee4cE27c31A",
-    "name": null,
+    "name": "ILiquidXv2Pair",
     "chain": "mainnet",
     "source": "static",
-    "context": "ILiquidXv2Pair(0x1884C3D0ac1A3ACF0698b2a19866cee4cE27c31A)"
+    "context": "ILiquidXv2Pair WETH_LQDX_pair = ILiquidXv2Pair(0x1884C3D0ac1A3ACF0698b2a19866cee4cE27c31A)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ILiquidXv2Pair"
+    ]
+  },
+  {
+    "address": "0xBC7D212939FBe696e514226F3FAfA3697B96Bf59",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2787",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xeba22665C355457FA4e5A07B3A7559F22fd74923",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 87337",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x21e6fA0156a91142342469f75278a1A715d46691",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 7110",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

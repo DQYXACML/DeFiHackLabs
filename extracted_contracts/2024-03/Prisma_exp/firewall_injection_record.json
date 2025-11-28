@@ -1,0 +1,20 @@
+{
+  "protocol": "Prisma_exp",
+  "year_month": "2024-03",
+  "injection_timestamp": "2025-11-23T05:05:44.073794Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "MigrateTroveZap",
+    "address": "0xcc7218100da61441905e0c327749972e3cbee9ee"
+  },
+  "injected_contracts": [
+    {
+      "file": "MigrateTroveZap.sol",
+      "functions": [
+        "onFlashLoan"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

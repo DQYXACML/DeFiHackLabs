@@ -4,27 +4,70 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0xabee16e74dd268105f166c27a847edc2b8e7cc4e"
+    "context": "// Attacker : https://etherscan.io/address/0xabee16e74dd268105f166c27a847edc2b8e7cc4e",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x27b27842771df79af6a69795f6fca0948c8333c0",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0x27b27842771df79af6a69795f6fca0948c8333c0"
+    "context": "// Attack Contract : https://etherscan.io/address/0x27b27842771df79af6a69795f6fca0948c8333c0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x452E253EeB3Bb16e40337D647c01b6c910Aa84B3",
-    "name": null,
+    "name": "victime_",
     "chain": "mainnet",
     "source": "static",
-    "context": "address(0x452E253EeB3Bb16e40337D647c01b6c910Aa84B3)"
+    "context": "address victime_ = address(0x452E253EeB3Bb16e40337D647c01b6c910Aa84B3)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "victime_"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "name": null,
     "chain": "mainnet",
     "source": "static",
-    "context": "address(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "address(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

@@ -1,0 +1,377 @@
+{
+  "protocol": "LQDX_alert_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": null,
+    "name": null
+  },
+  "constraints": [
+    {
+      "function": "startPrank",
+      "signature": "startPrank(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "attacker"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large deposit potentially manipulating pool",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "victim"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large deposit potentially manipulating pool",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "address(WETH)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large deposit potentially manipulating pool",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "address(WETH)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large deposit potentially manipulating pool",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "ILiquidXv2Zap.swapPath({path: path})"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large deposit potentially manipulating pool",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 4,
+            "type": "uint256",
+            "value_expr": "address(WETH)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large deposit potentially manipulating pool",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 5,
+            "type": "uint256",
+            "value_expr": "address(LQDX)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large deposit potentially manipulating pool",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 6,
+            "type": "uint256",
+            "value_expr": "amounts"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large deposit potentially manipulating pool",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 7,
+            "type": "uint256",
+            "value_expr": "0"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swapPath",
+      "signature": "swapPath(...)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large swap causing price manipulation",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "{path: path}"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [],
+    "total_changed_slots": 0
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 4
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

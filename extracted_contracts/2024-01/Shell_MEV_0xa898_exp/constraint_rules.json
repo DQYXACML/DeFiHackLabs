@@ -1,0 +1,21 @@
+{
+  "protocol": "Shell_MEV_0xa898_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xa898b78b7cbbabacf9d179c4c46c212c0ac66f46",
+    "name": "Robot1"
+  },
+  "constraints": [],
+  "storage_analysis": {
+    "changed_slots": [],
+    "total_slots": 4
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 1
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

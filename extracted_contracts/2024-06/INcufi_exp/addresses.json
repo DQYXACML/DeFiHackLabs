@@ -4,62 +4,142 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0xb6911dee6a5b1c65ad1ac11a99aec09c2cf83c0e"
+    "context": "// Attacker : https://bscscan.com/address/0xb6911dee6a5b1c65ad1ac11a99aec09c2cf83c0e",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x4237d006471b38af0e1691c00d96193a8ff5709f",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x4237d006471b38af0e1691c00d96193a8ff5709f"
+    "context": "// Attack Contract : https://bscscan.com/address/0x4237d006471b38af0e1691c00d96193a8ff5709f",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
+  },
+  {
+    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "name": "IWBNB",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IWBNB WBNB = IWBNB(payable(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c))",
+    "onchain_name": null,
+    "symbol": "WBNB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WBNB",
+      "IWBNB",
+      "wbnb"
+    ]
   },
   {
     "address": "0xcFa207a442084a2c343996D09f06b40970247afF",
     "name": "Referer",
     "chain": "bsc",
     "source": "static",
-    "context": "address Referer = 0xcFa207a442084a2c343996D09f06b40970247afF"
+    "context": "address Referer = 0xcFa207a442084a2c343996D09f06b40970247afF",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Referer"
+    ]
   },
   {
     "address": "0xEB1Df3Bed5bd20c010CAAd4EE18Ff7A697334E68",
     "name": "Referer",
     "chain": "bsc",
     "source": "static",
-    "context": "address Referer = 0xEB1Df3Bed5bd20c010CAAd4EE18Ff7A697334E68"
+    "context": "address Referer = 0xEB1Df3Bed5bd20c010CAAd4EE18Ff7A697334E68",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Referer"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "bsc",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
     "address": "0x55d398326f99059fF775485246999027B3197955",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0x55d398326f99059fF775485246999027B3197955)"
+    "context": "IERC20 BUSD = IERC20(0x55d398326f99059fF775485246999027B3197955)",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "IERC20",
+      "usdt",
+      "IUSDT"
+    ]
   },
   {
     "address": "0x80df77b2Ae5828FF499A735ee823D6CD7Cf95f5a",
-    "name": null,
+    "name": "INcufi",
     "chain": "bsc",
     "source": "static",
-    "context": "INcufi(0x80df77b2Ae5828FF499A735ee823D6CD7Cf95f5a)"
+    "context": "INcufi Ncufi = INcufi(0x80df77b2Ae5828FF499A735ee823D6CD7Cf95f5a)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "INcufi"
+    ]
   },
   {
     "address": "0x3213573C46eb905bA17F0Bb650E10C2352552e8a",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0x3213573C46eb905bA17F0Bb650E10C2352552e8a)"
-  },
-  {
-    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-    "name": null,
-    "chain": "bsc",
-    "source": "static",
-    "context": "payable(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c)"
+    "context": "IERC20 AKITADEF = IERC20(0x3213573C46eb905bA17F0Bb650E10C2352552e8a)",
+    "onchain_name": null,
+    "symbol": "AKITADEF",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "AKITADEF",
+      "IERC20",
+      "akitadef",
+      "IAKITADEF"
+    ]
   }
 ]

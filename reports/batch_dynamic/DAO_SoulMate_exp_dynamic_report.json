@@ -2,15 +2,15 @@
   "report_metadata": {
     "event_name": "DAO_SoulMate_exp",
     "year_month": "2024-01",
-    "generated_at": "2025-11-05T16:59:31.373682",
+    "generated_at": "2025-11-14T04:10:48.441482",
     "detection_method": "dynamic_execution",
     "attack_tx_hash": null
   },
   "summary": {
-    "total_invariants": 5,
-    "violations_detected": 2,
-    "passed": 3,
-    "violation_rate": 0.4
+    "total_invariants": 13,
+    "violations_detected": 1,
+    "passed": 12,
+    "violation_rate": 0.07692307692307693
   },
   "runtime_metrics": {},
   "violation_results": [
@@ -18,9 +18,9 @@
       "invariant_id": "SINV_001",
       "invariant_type": "share_price_stability",
       "severity": "critical",
-      "violated": true,
+      "violated": false,
       "threshold": "5.0%",
-      "actual_value": "inf%",
+      "actual_value": "0.0% (\u65e0\u53d8\u5316)",
       "description": "Vault share price must not change more than 5% per transaction",
       "impact": "Allows attacker to mint underpriced shares and drain underlying assets",
       "evidence": {
@@ -32,7 +32,7 @@
         "reserves_change_pct": "N/A",
         "share_price_before": "0.000000",
         "share_price_after": "0.000000",
-        "share_price_change_pct": "inf%"
+        "share_price_change_pct": "0.0% (\u65e0\u53d8\u5316)"
       },
       "confidence": 0.9
     },
@@ -46,7 +46,7 @@
       "description": "Total supply must be backed by proportional underlying reserves",
       "impact": "Indicates phantom shares minted without backing",
       "evidence": {
-        "totalSupply": 5653242151909592475339,
+        "totalSupply": 0,
         "reserves": 0,
         "leverage_ratio": "inf",
         "max_allowed_ratio": "1.10"
@@ -63,7 +63,7 @@
       "description": "totalSupply should not change more than 50% in single transaction",
       "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
       "evidence": {
-        "contract": "0xb7470Fd67e997b73f55F85A6AF0DeB2c96194885",
+        "contract": "0xb7470fd67e997b73f55f85a6af0deb2c96194885",
         "slot": 2,
         "value_before": 5653242151909592475339,
         "value_after": 5653242151909592475339,
@@ -82,10 +82,10 @@
       "description": "totalSupply should not change more than 50% in single transaction",
       "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
       "evidence": {
-        "contract": "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
+        "contract": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
         "slot": 2,
-        "value_before": 1192345297180548096712617744156072417476312272946,
-        "value_after": 1192345297180548096712617744156072417476312272946,
+        "value_before": 10000000000000000000000000000,
+        "value_after": 10000000000000000000000000000,
         "absolute_change": 0,
         "change_rate": "0.0%"
       },
@@ -101,7 +101,7 @@
       "description": "totalSupply should not change more than 50% in single transaction",
       "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
       "evidence": {
-        "contract": "0x43506849D7C04F9138D1A2050bbF3A0c054402dd",
+        "contract": "0x43506849d7c04f9138d1a2050bbf3a0c054402dd",
         "slot": 2,
         "value_before": 1,
         "value_after": 1,
@@ -109,23 +109,163 @@
         "change_rate": "0.0%"
       },
       "confidence": 0.7
+    },
+    {
+      "invariant_id": "SINV_006",
+      "invariant_type": "bounded_change_rate",
+      "severity": "high",
+      "violated": false,
+      "threshold": "50.0%",
+      "actual_value": "N/A (\u6570\u636e\u672a\u6355\u83b7)",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "evidence": {
+        "error": "\u5b58\u50a8\u69fd\u6570\u636e\u5168\u4e3a0",
+        "contract": "0x5d4aa78b08bc7c530e21bf7447988b1be7991322",
+        "slot": 2
+      },
+      "confidence": 0.0
+    },
+    {
+      "invariant_id": "SINV_007",
+      "invariant_type": "bounded_change_rate",
+      "severity": "high",
+      "violated": false,
+      "threshold": "50.0%",
+      "actual_value": "0.0%",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "evidence": {
+        "contract": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+        "slot": 2,
+        "value_before": 1192345297180548096712617744156072417476312272946,
+        "value_after": 1192345297180548096712617744156072417476312272946,
+        "absolute_change": 0,
+        "change_rate": "0.0%"
+      },
+      "confidence": 0.7
+    },
+    {
+      "invariant_id": "SINV_008",
+      "invariant_type": "bounded_change_rate",
+      "severity": "high",
+      "violated": false,
+      "threshold": "50.0%",
+      "actual_value": "0.0%",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "evidence": {
+        "contract": "0xd0da9cbea9c3852c5d63a95f9abcc4f6ea0f9032",
+        "slot": 2,
+        "value_before": 1096519909824644452797339332042888007914135431791,
+        "value_after": 1096519909824644452797339332042888007914135431791,
+        "absolute_change": 0,
+        "change_rate": "0.0%"
+      },
+      "confidence": 0.7
+    },
+    {
+      "invariant_id": "SINV_009",
+      "invariant_type": "bounded_change_rate",
+      "severity": "high",
+      "violated": false,
+      "threshold": "50.0%",
+      "actual_value": "0.0%",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "evidence": {
+        "contract": "0x4e3b31eb0e5cb73641ee1e65e7dcefe520ba3ef2",
+        "slot": 2,
+        "value_before": 743504763666437780821606488780725136116801976963,
+        "value_after": 743504763666437780821606488780725136116801976963,
+        "absolute_change": 0,
+        "change_rate": "0.0%"
+      },
+      "confidence": 0.7
+    },
+    {
+      "invariant_id": "SINV_010",
+      "invariant_type": "bounded_change_rate",
+      "severity": "high",
+      "violated": false,
+      "threshold": "50.0%",
+      "actual_value": "0.0%",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "evidence": {
+        "contract": "0x5b1b5fea1b99d83ad479df0c222f0492385381dd",
+        "slot": 2,
+        "value_before": 1192345297180548096712617744156072417476312272946,
+        "value_after": 1192345297180548096712617744156072417476312272946,
+        "absolute_change": 0,
+        "change_rate": "0.0%"
+      },
+      "confidence": 0.7
+    },
+    {
+      "invariant_id": "SINV_011",
+      "invariant_type": "bounded_change_rate",
+      "severity": "high",
+      "violated": false,
+      "threshold": "50.0%",
+      "actual_value": "N/A (\u6570\u636e\u672a\u6355\u83b7)",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "evidence": {
+        "error": "\u5b58\u50a8\u69fd\u6570\u636e\u5168\u4e3a0",
+        "contract": "0xa69babef1ca67a37ffaf7a485dfff3382056e78c",
+        "slot": 2
+      },
+      "confidence": 0.0
+    },
+    {
+      "invariant_id": "SINV_012",
+      "invariant_type": "bounded_change_rate",
+      "severity": "high",
+      "violated": false,
+      "threshold": "50.0%",
+      "actual_value": "N/A (\u6570\u636e\u672a\u6355\u83b7)",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "evidence": {
+        "error": "\u5b58\u50a8\u69fd\u6570\u636e\u5168\u4e3a0",
+        "contract": "0x62b00335cbe05ceb3b776165e724a647f9fc0891",
+        "slot": 2
+      },
+      "confidence": 0.0
+    },
+    {
+      "invariant_id": "SINV_013",
+      "invariant_type": "bounded_change_rate",
+      "severity": "high",
+      "violated": false,
+      "threshold": "50.0%",
+      "actual_value": "N/A (\u6570\u636e\u672a\u6355\u83b7)",
+      "description": "totalSupply should not change more than 50% in single transaction",
+      "impact": "Flash mint attacks, accounting manipulation, or reentrancy",
+      "evidence": {
+        "error": "\u5b58\u50a8\u69fd\u6570\u636e\u5168\u4e3a0",
+        "contract": "0x86c3ffee349a7cff7ca88c449717b1b133bfb517",
+        "slot": 2
+      },
+      "confidence": 0.0
     }
   ],
   "storage_changes_summary": {
-    "total_contracts_changed": 3,
-    "total_slots_changed": 3,
+    "total_contracts_changed": 11,
+    "total_slots_changed": 11,
     "max_change_rate": 0,
     "top_changes": [
       {
-        "contract": "0x43506849D7C04F9138D1A2050bbF3A0c054402dd",
+        "contract": "0x5d4aa78b08bc7c530e21bf7447988b1be7991322",
         "slot": 2,
-        "before": 1,
-        "after": 1,
+        "before": 0,
+        "after": 0,
         "change_rate": 0.0,
         "change_pct": "0.00%"
       },
       {
-        "contract": "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
+        "contract": "0x5b1b5fea1b99d83ad479df0c222f0492385381dd",
         "slot": 2,
         "before": 1192345297180548096712617744156072417476312272946,
         "after": 1192345297180548096712617744156072417476312272946,
@@ -133,10 +273,66 @@
         "change_pct": "0.00%"
       },
       {
-        "contract": "0xb7470Fd67e997b73f55F85A6AF0DeB2c96194885",
+        "contract": "0x86c3ffee349a7cff7ca88c449717b1b133bfb517",
+        "slot": 2,
+        "before": 0,
+        "after": 0,
+        "change_rate": 0.0,
+        "change_pct": "0.00%"
+      },
+      {
+        "contract": "0x4e3b31eb0e5cb73641ee1e65e7dcefe520ba3ef2",
+        "slot": 2,
+        "before": 743504763666437780821606488780725136116801976963,
+        "after": 743504763666437780821606488780725136116801976963,
+        "change_rate": 0.0,
+        "change_pct": "0.00%"
+      },
+      {
+        "contract": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+        "slot": 2,
+        "before": 1192345297180548096712617744156072417476312272946,
+        "after": 1192345297180548096712617744156072417476312272946,
+        "change_rate": 0.0,
+        "change_pct": "0.00%"
+      },
+      {
+        "contract": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+        "slot": 2,
+        "before": 10000000000000000000000000000,
+        "after": 10000000000000000000000000000,
+        "change_rate": 0.0,
+        "change_pct": "0.00%"
+      },
+      {
+        "contract": "0x62b00335cbe05ceb3b776165e724a647f9fc0891",
+        "slot": 2,
+        "before": 0,
+        "after": 0,
+        "change_rate": 0.0,
+        "change_pct": "0.00%"
+      },
+      {
+        "contract": "0xd0da9cbea9c3852c5d63a95f9abcc4f6ea0f9032",
+        "slot": 2,
+        "before": 1096519909824644452797339332042888007914135431791,
+        "after": 1096519909824644452797339332042888007914135431791,
+        "change_rate": 0.0,
+        "change_pct": "0.00%"
+      },
+      {
+        "contract": "0xb7470fd67e997b73f55f85a6af0deb2c96194885",
         "slot": 2,
         "before": 5653242151909592475339,
         "after": 5653242151909592475339,
+        "change_rate": 0.0,
+        "change_pct": "0.00%"
+      },
+      {
+        "contract": "0x43506849d7c04f9138d1a2050bbf3a0c054402dd",
+        "slot": 2,
+        "before": 1,
+        "after": 1,
         "change_rate": 0.0,
         "change_pct": "0.00%"
       }

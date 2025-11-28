@@ -4,20 +4,122 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x2ad8aed847e8d4d3da52aabb7d0f5c25729d10df"
+    "context": "// Attacker : https://etherscan.io/address/0x2ad8aed847e8d4d3da52aabb7d0f5c25729d10df",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xd3f64BAa732061F8B3626ee44bab354f854877AC",
-    "name": "TradeAggregator",
+    "name": "ITradeAggregator",
     "chain": "mainnet",
     "source": "static",
-    "context": "private constant TradeAggregator = ITradeAggregator(0xd3f64BAa732061F8B3626ee44bab354f854877AC)"
+    "context": "ITradeAggregator private constant TradeAggregator = ITradeAggregator(0xd3f64BAa732061F8B3626ee44bab354f854877AC)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ITradeAggregator"
+    ]
   },
   {
     "address": "0xF411903cbC70a74d22900a5DE66A2dda66507255",
-    "name": "VRA",
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "private constant VRA = IERC20(0xF411903cbC70a74d22900a5DE66A2dda66507255)"
+    "context": "IERC20 private constant VRA = IERC20(0xF411903cbC70a74d22900a5DE66A2dda66507255)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
+  },
+  {
+    "address": "0xA051Fc7D38bAa0ace811ad9DE4E9f7024e5d8A30",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 97564",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2942",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x12fe4bC7D0B969055F763C5587F2ED0cA1b334f3",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x29ddb589b1fb5fc7cf394961c1adf5f8c6454761",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xb281fc8c12954d22544db45de3159a39272895b1",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

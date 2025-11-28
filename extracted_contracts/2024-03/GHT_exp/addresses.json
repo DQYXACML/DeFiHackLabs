@@ -4,34 +4,90 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x096f0f03e4be68d7e6dd39b22a3846b8ce9849a3"
+    "context": "// Attacker : https://etherscan.io/address/0x096f0f03e4be68d7e6dd39b22a3846b8ce9849a3",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xcc5159b5538268f45afda7b5756fa8769ce3e21f",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0xcc5159b5538268f45afda7b5756fa8769ce3e21f"
+    "context": "// Attack Contract : https://etherscan.io/address/0xcc5159b5538268f45afda7b5756fa8769ce3e21f",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
+  },
+  {
+    "address": "0x528e046acfb52bd3f9c400e7a5c79a8a2c2863d0",
+    "name": "Vuln_Contract",
+    "chain": "mainnet",
+    "source": "comment",
+    "context": "// Vuln Contract : https://etherscan.io/address/0x528e046acfb52bd3f9c400e7a5c79a8a2c2863d0",
+    "onchain_name": null,
+    "symbol": "GHT",
+    "decimals": 18,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "GHT",
+      "Vuln_Contract",
+      "ght",
+      "IGHT"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": "WETH",
-    "chain": null,
+    "name": "WETH9",
+    "chain": "mainnet",
     "source": "static",
-    "context": "private constant WETH = WETH9(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
-  },
-  {
-    "address": "0x528e046ACfb52bD3f9c400e7A5c79A8a2c2863d0",
-    "name": "GHT",
-    "chain": null,
-    "source": "static",
-    "context": "private constant GHT = IGHT(0x528e046ACfb52bD3f9c400e7A5c79A8a2c2863d0)"
+    "context": "WETH9 private constant WETH = WETH9(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH9"
+    ]
   },
   {
     "address": "0x706206EabD6A70ca4992eEc1646B6D1599259CAe",
-    "name": "WETH_GHT",
-    "chain": null,
+    "name": "Uni_Pair_V2",
+    "chain": "mainnet",
     "source": "static",
-    "context": "private constant WETH_GHT = Uni_Pair_V2(0x706206EabD6A70ca4992eEc1646B6D1599259CAe)"
+    "context": "Uni_Pair_V2 private constant WETH_GHT = Uni_Pair_V2(0x706206EabD6A70ca4992eEc1646B6D1599259CAe)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Uni_Pair_V2"
+    ]
+  },
+  {
+    "address": "0x17dfb09194ab77dcf318839cfdd01f587a73a77e",
+    "name": "Vuln_Contract_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

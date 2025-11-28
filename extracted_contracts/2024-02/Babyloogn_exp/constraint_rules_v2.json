@@ -1,0 +1,62 @@
+{
+  "protocol": "Babyloogn_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0x971d08bba900230298add23e61e04b04226b5073",
+    "name": "Airdrop"
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "103448077763543642041768778766889699131356211104712556977929000024092211497389",
+        "before": 397020000000000000000000,
+        "after": 112020000000000000000000,
+        "change_pct": 71.78,
+        "is_new_slot": false
+      },
+      {
+        "slot": "59131428169948014147492679264747953137668626218014842773093985791580045630882",
+        "before": 1704273487031430208360528,
+        "after": 1880631487031430208360523,
+        "change_pct": 10.35,
+        "is_new_slot": false
+      },
+      {
+        "slot": "64187803103832283464554320241147603631077555214001991684808716893924374733167",
+        "before": 5358000000000000000000,
+        "after": 114000000000000000000000,
+        "change_pct": 2027.66,
+        "is_new_slot": false
+      },
+      {
+        "slot": "77205057296039895051367496634857413537659065273001388858187864769134954672172",
+        "before": 0,
+        "after": 1,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "69211091518408371317364414154485209216827048186847257424605758515120352301053",
+        "before": 0,
+        "after": 1,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 8
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 2
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

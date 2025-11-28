@@ -1,0 +1,21 @@
+{
+  "protocol": "FIL314_exp",
+  "year_month": "2024-04",
+  "injection_timestamp": "2025-11-23T05:06:26.035355Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "Ownable",
+    "address": "0xe8a290c6fc6fa6c0b79c9cfae1878d195aeb59af"
+  },
+  "injected_contracts": [
+    {
+      "file": "ERC314.sol",
+      "functions": [
+        "getAmountOut",
+        "hourBurn"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

@@ -1,0 +1,25 @@
+{
+  "protocol": "XSIJ_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xf43Fd71f404CC450c470d42E3F478a6D38C96311",
+    "name": "PancakePair"
+  },
+  "constraints": [],
+  "storage_analysis": {
+    "changed_slots": [
+      "10",
+      "8",
+      "9"
+    ],
+    "total_slots": 30
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 0
+  },
+  "metadata": {
+    "extraction_version": "1.0.0",
+    "generated_by": "extract_param_state_constraints.py"
+  }
+}

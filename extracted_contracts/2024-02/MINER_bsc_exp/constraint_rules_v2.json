@@ -1,0 +1,89 @@
+{
+  "protocol": "MINER_bsc_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+    "name": "Pair"
+  },
+  "constraints": [
+    {
+      "function": "swap",
+      "signature": "swap(...)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "High-frequency operation: parameter affects slot_8 with estimated 3632354407103507655346761468963318298624359845835050620358472278999040 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "3_500_751_853_374_879_579"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46043880782508799535992623678186061440923953691464661636767295907635878767790
+          }
+        },
+        "danger_condition": "amount >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "amount <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 32228481560089468887010679464639418689380084260663322564968257137232130753145,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代3632354407103507655346761468963318298624359845835050620358472278999040次超过上限10000，使用保守阈值13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 3.632354407103508e+69,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "8",
+        "before": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "after": 46043880782508799535992623678186061440923953691464661636767295907635878767790,
+        "change_pct": 0.01,
+        "is_new_slot": false
+      },
+      {
+        "slot": "10",
+        "before": 935812941563653843112326088295331845473996,
+        "after": 16740967913091564154637131730877455003360312,
+        "change_pct": 1688.92,
+        "is_new_slot": false
+      },
+      {
+        "slot": "9",
+        "before": 1415279128518805712163031220923451,
+        "after": 25339422400159572911048428051919601,
+        "change_pct": 1690.42,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 3
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 7
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

@@ -8,9 +8,22 @@ import "IOracleConnector.sol";
 import "ReentrancyGuard.sol";
 import "ERC20.sol";
 import "SafeERC20.sol";
+import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 
 
 interface IUniswapRouterV3 {
+    // 防火墙路由器
+    IRouter public immutable firewall;
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     struct ExactInputSingleParams {
         address tokenIn;
         address tokenOut;
@@ -117,13 +130,10 @@ contract SpotVault is Utils, DefaultAccess, ReentrancyGuard, ERC20 {
         payable(msg.sender).sendValue((initialGas - gasleft()) * tx.gasprice);
     }
 
-    constructor(
-        string memory name, string memory symbol, address nativeToken,
+    constructor(address _firewall, string memory name, string memory symbol, address nativeToken,
         address oneinchRouter, address directSwapRouter, uint256 feeInterval,
-        address initFeeAsset
-    )
-    ERC20(name, symbol)
-    {
+        address initFeeAsset) ERC20(name, symbol){
+        firewall = IRouter(_firewall);
         require(nativeToken != address(0), "z1");
         require(oneinchRouter != address(0), "z2");
         require(directSwapRouter != address(0), "z3");

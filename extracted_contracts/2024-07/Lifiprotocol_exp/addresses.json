@@ -4,90 +4,253 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x8b3cb6bf982798fba233bca56749e22eec42dcf3"
+    "context": "// Attacker : https://etherscan.io/address/0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x986aca5f2ca6b120f4361c519d7a49c5ac50c240",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0x986aca5f2ca6b120f4361c519d7a49c5ac50c240"
+    "context": "// Attack Contract : https://etherscan.io/address/0x986aca5f2ca6b120f4361c519d7a49c5ac50c240",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xABE45eA636df7Ac90Fb7D8d8C74a081b169F92eF",
     "name": "Victim",
     "chain": "mainnet",
     "source": "static",
-    "context": "address Victim = 0xABE45eA636df7Ac90Fb7D8d8C74a081b169F92eF"
+    "context": "address Victim = 0xABE45eA636df7Ac90Fb7D8d8C74a081b169F92eF",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Victim"
+    ]
   },
   {
     "address": "0xF929bA2AEec16cFfcfc66858A9434E194BAaf80D",
     "name": "other",
     "chain": "mainnet",
     "source": "static",
-    "context": "address other = 0xF929bA2AEec16cFfcfc66858A9434E194BAaf80D"
+    "context": "address other = 0xF929bA2AEec16cFfcfc66858A9434E194BAaf80D",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "other"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": "WETH",
+    "name": "WETH9",
     "chain": "mainnet",
     "source": "static",
-    "context": "private constant WETH = WETH9(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "WETH9 private constant WETH = WETH9(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH9"
+    ]
   },
   {
     "address": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
-    "name": null,
+    "name": "IAaveFlashloan",
     "chain": "mainnet",
     "source": "static",
-    "context": "IAaveFlashloan(0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2)"
+    "context": "IAaveFlashloan aave = IAaveFlashloan(0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IAaveFlashloan"
+    ]
   },
   {
     "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0xdAC17F958D2ee523a2206206994597C13D831ec7)"
+    "context": "IERC20 USDT = IERC20(0xdAC17F958D2ee523a2206206994597C13D831ec7)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x1231DEB6f5749EF6cE6943a275A1D3E7486F4EaE",
-    "name": null,
+    "name": "LiFiDiamond",
     "chain": "mainnet",
     "source": "static",
-    "context": "LiFiDiamond(0x1231DEB6f5749EF6cE6943a275A1D3E7486F4EaE)"
+    "context": "LiFiDiamond Vulncontract = LiFiDiamond(0x1231DEB6f5749EF6cE6943a275A1D3E7486F4EaE)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "LiFiDiamond"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
     "address": "0x7122985656e38BDC0302Db86685bb972b145bD3C",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x7122985656e38BDC0302Db86685bb972b145bD3C)"
+    "context": "IERC20 Stone = IERC20(0x7122985656e38BDC0302Db86685bb972b145bD3C)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
+  },
+  {
+    "address": "0xf28A352377663cA134bd27B582b1a9A4dad7e534",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2020065",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x9E22ebeC84c7e4C4bD6D4aE7FF6f4D436D6D8390",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2231",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0x104fBc016F4bb334D775a19E8A6510109AC63E00",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0x037eDa3aDB1198021A9b2e88C22B464fD38db3f3",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x29bedc1be2eecb654f7a9cd3f21b466c148186c2",
+    "name": "LiFiDiamond_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0x97287a4f35e583d924f78ad88db8afce1379189a",
+    "name": "IAaveFlashloan_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

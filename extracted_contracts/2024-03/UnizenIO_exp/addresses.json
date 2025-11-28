@@ -4,27 +4,75 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x2ad8aed847e8d4d3da52aabb7d0f5c25729d10df"
+    "context": "// Attacker : https://etherscan.io/address/0x2ad8aed847e8d4d3da52aabb7d0f5c25729d10df",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xd3f64baa732061f8b3626ee44bab354f854877ac",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : (Unizen: Trade Aggregator Proxy) https://etherscan.io/address/0xd3f64baa732061f8b3626ee44bab354f854877ac"
+    "context": "// Vulnerable Contract : (Unizen: Trade Aggregator Proxy) https://etherscan.io/address/0xd3f64baa732061f8b3626ee44bab354f854877ac",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x7feAeE6094B8B630de3F7202d04C33f3BDC3828a",
-    "name": null,
+    "name": "victim",
     "chain": "mainnet",
     "source": "static",
-    "context": "address(0x7feAeE6094B8B630de3F7202d04C33f3BDC3828a)"
+    "context": "address victim = address(0x7feAeE6094B8B630de3F7202d04C33f3BDC3828a)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "victim"
+    ]
   },
   {
     "address": "0x51cB253744189f11241becb29BeDd3F1b5384fdB",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x51cB253744189f11241becb29BeDd3F1b5384fdB)"
+    "context": "IERC20 DMTR = IERC20(0x51cB253744189f11241becb29BeDd3F1b5384fdB)",
+    "onchain_name": null,
+    "symbol": "DMTR",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "DMTR",
+      "IERC20",
+      "dmtr",
+      "IDMTR"
+    ]
+  },
+  {
+    "address": "0xA051Fc7D38bAa0ace811ad9DE4E9f7024e5d8A30",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 62502",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

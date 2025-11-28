@@ -4,97 +4,532 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0x5bb5b6d41c3e5e41d9b9ed33d12f1537a1293d5f"
+    "context": "// Attacker : https://bscscan.com/address/0x5bb5b6d41c3e5e41d9b9ed33d12f1537a1293d5f",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xf436f8fe7b26d87eb74e5446acec2e8ad4075e47",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0xf436f8fe7b26d87eb74e5446acec2e8ad4075e47"
-  },
-  {
-    "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-    "name": "ETH",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant ETH = IERC20(0x2170Ed0880ac9A755fd29B2688956BD959F933F8)"
-  },
-  {
-    "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
-    "name": "USDC",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant USDC = IERC20(0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d)"
-  },
-  {
-    "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-    "name": "BTCB",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant BTCB = IERC20(0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c)"
-  },
-  {
-    "address": "0x55d398326f99059fF775485246999027B3197955",
-    "name": "BUSDT",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant BUSDT = IERC20(0x55d398326f99059fF775485246999027B3197955)"
-  },
-  {
-    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-    "name": "WBNB",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant WBNB = IERC20(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c)"
-  },
-  {
-    "address": "0xB7E2713CF55cf4b469B5a8421Ae6Fc0ED18F1467",
-    "name": "OLE",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant OLE = IERC20(0xB7E2713CF55cf4b469B5a8421Ae6Fc0ED18F1467)"
-  },
-  {
-    "address": "0x71F1158D76aF5B6762D5EbCdEE19105eab2C77d2",
-    "name": "xOLE",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant xOLE = IxOLE(0x71F1158D76aF5B6762D5EbCdEE19105eab2C77d2)"
-  },
-  {
-    "address": "0x44f508dcDa27E8AFa647cD978510EAC5e63E16a4",
-    "name": "USDC_OLE",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant USDC_OLE = Uni_Pair_V2(0x44f508dcDa27E8AFa647cD978510EAC5e63E16a4)"
-  },
-  {
-    "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-    "name": "Router",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant Router = Uni_Router_V2(0x10ED43C718714eb63d5aA57B78B54704E256024E)"
-  },
-  {
-    "address": "0x6A75aC4b8d8E76d15502E69Be4cb6325422833B4",
-    "name": "TradeController",
-    "chain": "bsc",
-    "source": "static",
-    "context": "private constant TradeController = ITradeController(0x6A75aC4b8d8E76d15502E69Be4cb6325422833B4)"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0xf436f8fe7b26d87eb74e5446acec2e8ad4075e47",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x7c5e04894410e98b1788fbdB181FfACbf8e60617",
-    "name": null,
+    "name": "LToken",
     "chain": "bsc",
     "source": "static",
-    "context": "payable(0x7c5e04894410e98b1788fbdB181FfACbf8e60617)"
+    "context": "constant LToken = ILToken(payable(0x7c5e04894410e98b1788fbdB181FfACbf8e60617))",
+    "onchain_name": null,
+    "symbol": "LToken",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "LToken",
+      "ltoken",
+      "LTOKEN",
+      "ILToken"
+    ]
+  },
+  {
+    "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+    "name": "IERC20",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IERC20 private constant ETH = IERC20(0x2170Ed0880ac9A755fd29B2688956BD959F933F8)",
+    "onchain_name": null,
+    "symbol": "ETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ETH",
+      "IERC20",
+      "eth",
+      "IETH"
+    ]
+  },
+  {
+    "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+    "name": "IERC20",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IERC20 private constant USDC = IERC20(0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d)",
+    "onchain_name": null,
+    "symbol": "USDC",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDC",
+      "IERC20",
+      "usdc",
+      "IUSDC"
+    ]
+  },
+  {
+    "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+    "name": "IERC20",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IERC20 private constant BTCB = IERC20(0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c)",
+    "onchain_name": null,
+    "symbol": "BTCB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "BTCB",
+      "IERC20",
+      "btcb",
+      "IBTCB"
+    ]
+  },
+  {
+    "address": "0x55d398326f99059fF775485246999027B3197955",
+    "name": "IERC20",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IERC20 private constant BUSDT = IERC20(0x55d398326f99059fF775485246999027B3197955)",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "IERC20",
+      "usdt",
+      "IUSDT"
+    ]
+  },
+  {
+    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "name": "IERC20",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IERC20 private constant WBNB = IERC20(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c)",
+    "onchain_name": null,
+    "symbol": "WBNB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WBNB",
+      "IERC20",
+      "wbnb",
+      "IWBNB"
+    ]
+  },
+  {
+    "address": "0xB7E2713CF55cf4b469B5a8421Ae6Fc0ED18F1467",
+    "name": "IERC20",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IERC20 private constant OLE = IERC20(0xB7E2713CF55cf4b469B5a8421Ae6Fc0ED18F1467)",
+    "onchain_name": null,
+    "symbol": "OLE",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "OLE",
+      "IERC20",
+      "ole",
+      "IOLE"
+    ]
+  },
+  {
+    "address": "0x71F1158D76aF5B6762D5EbCdEE19105eab2C77d2",
+    "name": "IxOLE",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IxOLE private constant xOLE = IxOLE(0x71F1158D76aF5B6762D5EbCdEE19105eab2C77d2)",
+    "onchain_name": null,
+    "symbol": "xOLE",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "xOLE",
+      "IxOLE",
+      "xole",
+      "XOLE"
+    ]
+  },
+  {
+    "address": "0x44f508dcDa27E8AFa647cD978510EAC5e63E16a4",
+    "name": "Uni_Pair_V2",
+    "chain": "bsc",
+    "source": "static",
+    "context": "Uni_Pair_V2 private constant USDC_OLE = Uni_Pair_V2(0x44f508dcDa27E8AFa647cD978510EAC5e63E16a4)",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "Uni_Pair_V2",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
+  },
+  {
+    "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "name": "Uni_Router_V2",
+    "chain": "bsc",
+    "source": "static",
+    "context": "Uni_Router_V2 private constant Router = Uni_Router_V2(0x10ED43C718714eb63d5aA57B78B54704E256024E)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Uni_Router_V2"
+    ]
+  },
+  {
+    "address": "0x6A75aC4b8d8E76d15502E69Be4cb6325422833B4",
+    "name": "ITradeController",
+    "chain": "bsc",
+    "source": "static",
+    "context": "ITradeController private constant TradeController = ITradeController(0x6A75aC4b8d8E76d15502E69Be4cb6325422833B4)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ITradeController"
+    ]
+  },
+  {
+    "address": "0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 24562",
+    "onchain_name": null,
+    "symbol": "USDC",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDC",
+      "usdc",
+      "IUSDC"
+    ]
+  },
+  {
+    "address": "0xd99c7F6C65857AC913a8f880A4cb84032AB2FC5b",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2893",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
+  },
+  {
+    "address": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2354",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x10551D76f20f0Ee53f3812B4092D5E00550aadA7",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 245931",
+    "onchain_name": null,
+    "symbol": "xOLE",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "xOLE",
+      "xole",
+      "XOLE",
+      "IxOLE"
+    ]
+  },
+  {
+    "address": "0x88a149aC891AF29e0b59616af8D146a58e17Fbc0",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 15735",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xe307E9C4aa77E69FF084E4FFCd7de93F497D68b6",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 5331",
+    "onchain_name": null,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2893",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
+  },
+  {
+    "address": "0x665C2e9C433f07cB464Fa1315942c2e05be19208",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 11593",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x912C0462474c933499a6923a6Afc6AC1E58b8Ce4",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 23752",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xbdc76cD9B04f17473aafE4569F4776Cec76F0526",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 18504",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xd3150b1242315e16845Fe21b536F53A82B6B85a5",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 2899",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xE9E321D1cb6b540E922a5e4d8720FEed0749e93F",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 53783",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0EFF0F83Aeb1A3573AE15E864Ac75f45b970e159",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 48538",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x1111111254EEB25477B68fb85Ed929f73A960582",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 203870",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x6BC99aa7412f7Af5770AEE7Dcf81723730DB33f2",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 19084",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x9781E326ca458c86c0d78b67cA5cF80344C5f3aF",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "called with gas 13894",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   },
   {
     "address": "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
     "name": null,
     "chain": "bsc",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0ED943Ce24BaEBf257488771759F9BF482C39706",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xa75323e651e0EAC7756003F7E0c3Fc8967FB1925",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": "LToken",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "LToken",
+      "ltoken",
+      "LTOKEN",
+      "ILToken"
+    ]
+  },
+  {
+    "address": "0x74e4Fb918480D57718Ad1e46113F70a110ff7Fbe",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xdb82e1381d96059d471eb24fae1327014620c977",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

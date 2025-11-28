@@ -1,0 +1,20 @@
+{
+  "protocol": "SSS_exp",
+  "year_month": "2024-03",
+  "injection_timestamp": "2025-11-23T05:05:45.303795Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "ERC20",
+    "address": "0xdfDCdbC789b56F99B0d0692d14DBC61906D9Deed"
+  },
+  "injected_contracts": [
+    {
+      "file": "contracts_ERC20.sol",
+      "functions": [
+        "burn"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

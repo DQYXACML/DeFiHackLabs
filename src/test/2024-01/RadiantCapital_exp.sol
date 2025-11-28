@@ -102,7 +102,11 @@ contract ContractTest is Test {
         return true;
     }
 
-    function uniswapV3SwapCallback(int256 amount0Delta, int256 amount1Delta, bytes calldata data) external {
+    function uniswapV3SwapCallback(
+        int256 amount0Delta,
+        int256 amount1Delta,
+        bytes calldata data
+    ) external {
         if (amount0Delta > 0) {
             WETH.transfer(address(WETH_USDC), uint256(amount0Delta));
         } else {
@@ -112,7 +116,11 @@ contract ContractTest is Test {
 
     receive() external payable {}
 
-    function takeFlashLoan(address where, uint256 amount, bytes memory params) internal {
+    function takeFlashLoan(
+        address where,
+        uint256 amount,
+        bytes memory params
+    ) internal {
         address[] memory assets = new address[](1);
         assets[0] = address(USDC);
         uint256[] memory amounts = new uint256[](1);

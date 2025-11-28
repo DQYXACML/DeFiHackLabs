@@ -26,8 +26,21 @@ import './interfaces/callback/IPancakeV3SwapCallback.sol';
 import './interfaces/callback/IPancakeV3FlashCallback.sol';
 
 import '../@pancakeswap/v3-lm-pool/contracts/interfaces/IPancakeV3LmPool.sol';
+import {IRouter} from "../../../../../../src/Interface/IRouter.sol";
 
 contract PancakeV3Pool is IPancakeV3Pool {
+    // 防火墙路由器
+    IRouter public firewall;
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+
     using LowGasSafeMath for uint256;
     using LowGasSafeMath for int256;
     using SafeCast for uint256;
@@ -278,7 +291,8 @@ contract PancakeV3Pool is IPancakeV3Pool {
 
     /// @inheritdoc IPancakeV3PoolActions
     /// @dev not locked because it initializes unlocked
-    function initialize(uint160 sqrtPriceX96) external override {
+    function initialize(address _firewall, uint160 sqrtPriceX96) external override {
+        firewall = IRouter(_firewall);
         require(slot0.sqrtPriceX96 == 0, 'AI');
 
         int24 tick = TickMath.getTickAtSqrtRatio(sqrtPriceX96);
@@ -824,7 +838,7 @@ contract PancakeV3Pool is IPancakeV3Pool {
         uint256 amount0,
         uint256 amount1,
         bytes calldata data
-    ) external override lock {
+    ) external override lock firewallProtected {
         uint128 _liquidity = liquidity;
         require(_liquidity > 0, 'L');
 

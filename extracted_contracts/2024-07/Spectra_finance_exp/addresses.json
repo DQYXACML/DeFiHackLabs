@@ -4,48 +4,154 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x53635bf7b92b9512f6de0eb7450b26d5d1ad9a4c"
+    "context": "// Attacker : https://etherscan.io/address/0x53635bf7b92b9512f6de0eb7450b26d5d1ad9a4c",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xba8ce86147ded54c0879c9a954f9754a472704aa",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0xba8ce86147ded54c0879c9a954f9754a472704aa"
+    "context": "// Attack Contract : https://etherscan.io/address/0xba8ce86147ded54c0879c9a954f9754a472704aa",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x3d20601ac0Ba9CAE4564dDf7870825c505B69F1a",
     "name": "VulnContract",
     "chain": "mainnet",
     "source": "static",
-    "context": "address public VulnContract = 0x3d20601ac0Ba9CAE4564dDf7870825c505B69F1a"
+    "context": "address public VulnContract = 0x3d20601ac0Ba9CAE4564dDf7870825c505B69F1a",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "VulnContract"
+    ]
   },
   {
     "address": "0x279a7DBFaE376427FFac52fcb0883147D42165FF",
     "name": "victim",
     "chain": "mainnet",
     "source": "static",
-    "context": "address victim = 0x279a7DBFaE376427FFac52fcb0883147D42165FF"
+    "context": "address victim = 0x279a7DBFaE376427FFac52fcb0883147D42165FF",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "victim"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
     "address": "0x43E54C2E7b3e294De3A155785F52AB49d87B9922",
-    "name": null,
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20(0x43E54C2E7b3e294De3A155785F52AB49d87B9922)"
+    "context": "IERC20 asdCRV = IERC20(0x43E54C2E7b3e294De3A155785F52AB49d87B9922)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
     "name": null,
     "chain": "mainnet",
     "source": "static",
-    "context": "address(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)"
+    "context": "address(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x606e2D9Ba601662881B260BB6C2dc3B10D0ABb2E",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2676",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x51BdbfCd7656e2C25Ad1BC8037F70572B7142eCC",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 60554",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7dcdea738c2765398baf66e4dbbcd2769f4c00dc",
+    "name": "VulnContract_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

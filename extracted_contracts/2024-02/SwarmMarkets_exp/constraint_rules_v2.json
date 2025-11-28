@@ -1,0 +1,26 @@
+{
+  "protocol": "SwarmMarkets_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0x2b9dc65253c035eb21778cb3898eab5a0ada0cce",
+    "name": "wrapper"
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [],
+    "total_changed_slots": 0
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 3
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

@@ -4,83 +4,608 @@
     "name": "Attacker",
     "chain": "mantle",
     "source": "comment",
-    "context": "// Attacker : https://mantlescan.info/address/0x618f768af6291705eb13e0b2e96600b3851911d1"
+    "context": "// Attacker : https://mantlescan.info/address/0x618f768af6291705eb13e0b2e96600b3851911d1",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x5fdac50aa48e3e86299a04ad18a68750b2074d2d",
     "name": "Attack_Contract",
     "chain": "mantle",
     "source": "comment",
-    "context": "// Attack Contract : https://mantlescan.info/address/0x5fdac50aa48e3e86299a04ad18a68750b2074d2d"
+    "context": "// Attack Contract : https://mantlescan.info/address/0x5fdac50aa48e3e86299a04ad18a68750b2074d2d",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xe38E3a804eF845e36F277D86Fb2b24b8C32B3340",
     "name": "vulncontract",
     "chain": "mantle",
     "source": "static",
-    "context": "address vulncontract = 0xe38E3a804eF845e36F277D86Fb2b24b8C32B3340"
+    "context": "address vulncontract = 0xe38E3a804eF845e36F277D86Fb2b24b8C32B3340",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "vulncontract"
+    ]
   },
   {
     "address": "0xe53a90EFd263363993A3B41Aa29f7DaBde1a932D",
     "name": "Proxy",
     "chain": "mantle",
     "source": "static",
-    "context": "address Proxy = 0xe53a90EFd263363993A3B41Aa29f7DaBde1a932D"
+    "context": "address Proxy = 0xe53a90EFd263363993A3B41Aa29f7DaBde1a932D",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Proxy"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mantle",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
     "address": "0x5edBD8808F48Ffc9e6D4c0D6845e0A0B4711FD5c",
-    "name": null,
+    "name": "Musdy",
     "chain": "mantle",
     "source": "static",
-    "context": "Musdy(0x5edBD8808F48Ffc9e6D4c0D6845e0A0B4711FD5c)"
+    "context": "Musdy musdy = Musdy(0x5edBD8808F48Ffc9e6D4c0D6845e0A0B4711FD5c)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Musdy"
+    ]
   },
   {
     "address": "0xab575258d37EaA5C8956EfABe71F4eE8F6397cF3",
-    "name": null,
+    "name": "Musd",
     "chain": "mantle",
     "source": "static",
-    "context": "Musd(0xab575258d37EaA5C8956EfABe71F4eE8F6397cF3)"
+    "context": "Musd musd = Musd(0xab575258d37EaA5C8956EfABe71F4eE8F6397cF3)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Musd"
+    ]
   },
   {
     "address": "0xfa1444aC7917d6B96Cac8307E97ED9c862E387Be",
-    "name": null,
+    "name": "Meth",
     "chain": "mantle",
     "source": "static",
-    "context": "Meth(0xfa1444aC7917d6B96Cac8307E97ED9c862E387Be)"
+    "context": "Meth mWETH = Meth(0xfa1444aC7917d6B96Cac8307E97ED9c862E387Be)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Meth"
+    ]
   },
   {
     "address": "0x5aA322875a7c089c1dB8aE67b6fC5AbD11cf653d",
-    "name": null,
+    "name": "Meth",
     "chain": "mantle",
     "source": "static",
-    "context": "Meth(0x5aA322875a7c089c1dB8aE67b6fC5AbD11cf653d)"
+    "context": "Meth mMETH = Meth(0x5aA322875a7c089c1dB8aE67b6fC5AbD11cf653d)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Meth"
+    ]
   },
   {
     "address": "0xdEAddEaDdeadDEadDEADDEAddEADDEAddead1111",
-    "name": null,
+    "name": "IERC20",
     "chain": "mantle",
     "source": "static",
-    "context": "IERC20(0xdEAddEaDdeadDEadDEADDEAddEADDEAddead1111)"
+    "context": "IERC20 WETH = IERC20(0xdEAddEaDdeadDEadDEADDEAddEADDEAddead1111)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0xcDA86A272531e8640cD7F1a92c01839911B90bb0",
-    "name": null,
+    "name": "IERC20",
     "chain": "mantle",
     "source": "static",
-    "context": "IERC20(0xcDA86A272531e8640cD7F1a92c01839911B90bb0)"
+    "context": "IERC20 mETH = IERC20(0xcDA86A272531e8640cD7F1a92c01839911B90bb0)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
   },
   {
     "address": "0x5bE26527e817998A7206475496fDE1E68957c5A6",
-    "name": null,
+    "name": "IERC20",
     "chain": "mantle",
     "source": "static",
-    "context": "IERC20(0x5bE26527e817998A7206475496fDE1E68957c5A6)"
+    "context": "IERC20 usdy = IERC20(0x5bE26527e817998A7206475496fDE1E68957c5A6)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
+  },
+  {
+    "address": "0x3b355A7A25E75A320f631F9736afB3Dcc9F3Ef66",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 24680",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x907D8399d13cee098cEf486a8427933aaC7E6271",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 26826",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x4B351368459ccC0024197D24Ab7ba278E4c6f510",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 24623",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xe56c0d4d6A08C05ec42E923EFd06497F115D4799",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 71878",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x201EBa5CC46D216Ce6DC03F6a759e8E766e956aE",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 2563",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xdBd7a7d8807f0C98c9A58f7732f2799c8587e5c6",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 2703",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xBB0209E02b3Cc33EF00321E8d20b78CA1cDcc8A0",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 23481",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x42c5bd6e6aF0E7DE65AB50771C7bc7dAa58ECCa4",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 18426",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xC0D3C0d3C0D3c0D3C0d3c0D3C0d3c0d3C0d30013",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 10406",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xc0d3C0D3C0D3c0D3C0D3C0d3C0D3c0D3c0d30015",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 2336",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x4031A7d63E19BFc2a4a1f2803E3d762d621ED626",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 1008",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xA96abbe61AfEdEB0D14a20440Ae7100D9aB4882f",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 15590",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x156Fc102f77D0A05Ca500D93D6CeA1f6e011bB8f",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 271",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xCE281e54E6Aa816a7c6b6aeAD4e248a36db36d66",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 2605",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xb3958B3A215c0Fec56a20dFeB55971B68Cc34179",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 103937",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x53Bc0546fd1425eeA887aE87e6362f259e80e1F8",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 98879",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x438e2F70dEfc85610EA8fF596D2e643711Cc6469",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 7421",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x82816E87702fBBf5E6A5624A068938571385Aeda",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 2366",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x2bd26Ba2EF62ff90f807365C2Bf363FB3Bee9979",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 11976",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x62Aa33F94598Ab4f6f95C3D18F59C3601f08F385",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 6906",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x067820894867c71672387282533d3d3ABAD44095",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 11663",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xEb70eB1A325B03796aE8280BdBa38Ee4885D3853",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 315351",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x12bf7971CeB3d09b13E0328F7821d3f55367507E",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 1325",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x009E9B1eec955E9Fe7FE64f80aE868e661cb4729",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 8096",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x709944a48cAf83535e43471680fDA4905FB3920a",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 4877",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xf8E2459f6961aBA36C218aD35dC7077053ccB958",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 331487",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xa1f06B96F082C470E9759D1090d281b2493c6A2C",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 2602",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xC167d70515313DF14eE3564F63d77906d2448B6B",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 1008",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xF55faBDf4C4F19D48d12A94209c735ca5AC43c78",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "called with gas 5596",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x439148f0bbc682ca079e46d6e2c2f0c1e3b820f1",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x9e6138f8f57d7b493a8364edb0a0ac92399dfd89",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xc4a2854b0815f87a4b90e3bbfd85b129a583a8d2",
+    "name": null,
+    "chain": "mantle",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

@@ -1,5 +1,17 @@
-// AUTO-GENERATED SHIM - DO NOT EDIT
 // SPDX-License-Identifier: -- WISE --
+
 pragma solidity =0.8.23;
 
-import "./contracts/InterfaceHub/IWETH.sol";
+import "./IERC20.sol";
+
+interface IWETH is IERC20 {
+
+    function deposit()
+        external
+        payable;
+
+    function withdraw(
+        uint256
+    )
+        external;
+}

@@ -1,44 +1,134 @@
 [
   {
+    "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "name": "IPancakeRouter",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IPancakeRouter Router = IPancakeRouter(payable(0x10ED43C718714eb63d5aA57B78B54704E256024E))",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IPancakeRouter"
+    ]
+  },
+  {
     "address": "0xbCbCb0e7E28414e084c4a40C1cCC30B75629a7DE",
     "name": "Reward",
     "chain": "bsc",
     "source": "static",
-    "context": "address Reward = 0xbCbCb0e7E28414e084c4a40C1cCC30B75629a7DE"
+    "context": "address Reward = 0xbCbCb0e7E28414e084c4a40C1cCC30B75629a7DE",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Reward"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "bsc",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
   },
   {
     "address": "0x875AC38Bc56E2c6FBEDa4354Ac085CB94d0D2D2F",
-    "name": null,
+    "name": "IPancakePair",
     "chain": "bsc",
     "source": "static",
-    "context": "IPancakePair(0x875AC38Bc56E2c6FBEDa4354Ac085CB94d0D2D2F)"
-  },
-  {
-    "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-    "name": null,
-    "chain": "bsc",
-    "source": "static",
-    "context": "payable(0x10ED43C718714eb63d5aA57B78B54704E256024E)"
+    "context": "IPancakePair Pair = IPancakePair(0x875AC38Bc56E2c6FBEDa4354Ac085CB94d0D2D2F)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IPancakePair"
+    ]
   },
   {
     "address": "0x55d398326f99059fF775485246999027B3197955",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0x55d398326f99059fF775485246999027B3197955)"
+    "context": "IERC20 BUSD = IERC20(0x55d398326f99059fF775485246999027B3197955)",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "IERC20",
+      "usdt",
+      "IUSDT"
+    ]
   },
   {
     "address": "0x278ce7151Bfd1b035e8Bc99e15b4d9773969D4eD",
-    "name": null,
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20(0x278ce7151Bfd1b035e8Bc99e15b4d9773969D4eD)"
+    "context": "IERC20 GFA = IERC20(0x278ce7151Bfd1b035e8Bc99e15b4d9773969D4eD)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x78f5d8fd3232beb9b491e81B1cC53cFe000f66eE",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0xE83d8a3C45b77d95C850C00aca53A57cE9D49314",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

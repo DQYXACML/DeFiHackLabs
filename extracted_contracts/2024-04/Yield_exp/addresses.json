@@ -4,41 +4,141 @@
     "name": "Attacker",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Attacker : https://arbiscan.io/address/0x1abe06f451e2d569b3e9123baf33b51f68878656"
+    "context": "// Attacker : https://arbiscan.io/address/0x1abe06f451e2d569b3e9123baf33b51f68878656",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xd775fd7b76424a553e4adce6c2f99be419ce8d41",
     "name": "Attack_Contract",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Attack Contract : https://arbiscan.io/address/0xd775fd7b76424a553e4adce6c2f99be419ce8d41"
+    "context": "// Attack Contract : https://arbiscan.io/address/0xd775fd7b76424a553e4adce6c2f99be419ce8d41",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x3b4ffd93ce5fcf97e61aa8275ec241c76cc01a47",
     "name": "Vulnerable_Contract",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://arbiscan.io/address/0x3b4ffd93ce5fcf97e61aa8275ec241c76cc01a47"
+    "context": "// Vulnerable Contract : https://arbiscan.io/address/0x3b4ffd93ce5fcf97e61aa8275ec241c76cc01a47",
+    "onchain_name": null,
+    "symbol": "YSUSDC6MMS",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "YSUSDC6MMS",
+      "Vulnerable_Contract",
+      "ysusdc6mms",
+      "IYSUSDC6MMS"
+    ]
   },
   {
     "address": "0x7012aF43F8a3c1141Ee4e955CC568Ad2af59C3fa",
-    "name": null,
+    "name": "IYieldStrategy",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IYieldStrategy(0x7012aF43F8a3c1141Ee4e955CC568Ad2af59C3fa)"
+    "context": "IYieldStrategy YieldStrategy_1 = IYieldStrategy(0x7012aF43F8a3c1141Ee4e955CC568Ad2af59C3fa)",
+    "onchain_name": null,
+    "symbol": "YSUSDC6MMS",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "YSUSDC6MMS",
+      "IYieldStrategy",
+      "ysusdc6mms",
+      "IYSUSDC6MMS"
+    ]
   },
   {
     "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
-    "name": null,
+    "name": "IBalancerVault",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)"
+    "context": "IBalancerVault Balancer = IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBalancerVault"
+    ]
   },
   {
     "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
-    "name": null,
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IERC20(0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8)"
+    "context": "IERC20 USDC = IERC20(0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8)",
+    "onchain_name": null,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDC",
+      "IERC20",
+      "usdc",
+      "IUSDC"
+    ]
+  },
+  {
+    "address": "0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 2553",
+    "onchain_name": null,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDC",
+      "usdc",
+      "IUSDC"
+    ]
+  },
+  {
+    "address": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "called with gas 2350",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "arbitrum",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

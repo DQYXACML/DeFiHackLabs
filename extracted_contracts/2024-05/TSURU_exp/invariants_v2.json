@@ -1,0 +1,104 @@
+{
+  "project": "TSURU_exp",
+  "protocol_type": "unknown",
+  "invariants": [
+    {
+      "id": "PATTERN_flash_change_001",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0x75Ac62EA5D058A7F88f0C3a5F8f73195277c93dA"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "88978693094876282901979132822004708562182916891058221400776344777276531102798",
+          "threshold": 0.1,
+          "severity": "critical"
+        },
+        "slot_1": {
+          "index": "111141141965367953891251968560572836771628463321627031873536160722001862685576",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_monotonic_increase_001",
+      "type": "growth_rate_limit",
+      "category": "bounded_growth",
+      "description": "Limit abnormal value growth rate",
+      "formula": "(value_after - value_before) / value_before <= 0.5",
+      "threshold": 0.5,
+      "severity": "high",
+      "contracts": [
+        "0x75Ac62EA5D058A7F88f0C3a5F8f73195277c93dA"
+      ],
+      "slots": {
+        "slot_2": {
+          "index": "2",
+          "threshold": 0.5,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.7
+      },
+      "protocol_type": null,
+      "attack_pattern": "monotonic_increase"
+    }
+  ],
+  "statistics": {
+    "total_invariants": 2,
+    "by_category": {
+      "bounded_value": 1,
+      "bounded_growth": 1
+    },
+    "by_severity": {
+      "critical": 1,
+      "high": 1
+    }
+  },
+  "errors": [],
+  "protocol_confidence": 0.0,
+  "semantic_mapping_coverage": 0.019672131147540985,
+  "state_changes": {
+    "contracts_changed": 4,
+    "slots_changed": 7,
+    "extreme_changes": 3
+  },
+  "attack_patterns": [
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "monotonic_increase",
+      "severity": "high",
+      "confidence": 0.7,
+      "description": "Multiple slots with large increases (potential price manipulation)"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 167200000000000000000000000"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 167200000000000000000000000"
+    }
+  ]
+}

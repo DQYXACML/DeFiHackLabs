@@ -1,0 +1,277 @@
+{
+  "project": "Miner_exp",
+  "protocol_type": "unknown",
+  "invariants": [
+    {
+      "id": "PATTERN_flash_change_001",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0xE77EC1bF3A5C95bFe3be7BDbACfe3ac1c7E454CD"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "38354273872160941492160430328935567984642174718927244424346086442833848723891",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_flash_change_002",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0xbff51c9c3d50d6168dfef72133f5dbda453ebf29"
+      ],
+      "slots": {
+        "slot_1": {
+          "index": "1",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_flash_change_003",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "81734723324382035447507314166659510395344486922522045189918896042063067599133",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_flash_change_004",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 4.4",
+      "threshold": 4.4,
+      "severity": "critical",
+      "contracts": [
+        "0x732276168b421d4792e743711e1a48172ea574a2"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "98485924989225617068775635590640135915835481452016032419463228236516021094086",
+          "threshold": 4.4,
+          "severity": "critical"
+        },
+        "slot_1": {
+          "index": "98485924989225617068775635590640135915835481452016032419463228236516021094085",
+          "threshold": 4.4,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_ratio_break_001",
+      "type": "ratio_stability",
+      "category": "ratio_bound",
+      "description": "Ensure ratio stability between related values",
+      "formula": "abs(ratio_after - ratio_before) / ratio_before <= 0.12",
+      "threshold": 0.12,
+      "severity": "high",
+      "contracts": [
+        "0xE77EC1bF3A5C95bFe3be7BDbACfe3ac1c7E454CD",
+        "0xbff51c9c3d50d6168dfef72133f5dbda453ebf29",
+        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "0x732276168b421d4792e743711e1a48172ea574a2"
+      ],
+      "slots": {
+        "slot_1": {
+          "index": "1",
+          "threshold": 0.12,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.8
+      },
+      "protocol_type": null,
+      "attack_pattern": "ratio_break"
+    },
+    {
+      "id": "PATTERN_monotonic_increase_001",
+      "type": "growth_rate_limit",
+      "category": "bounded_growth",
+      "description": "Limit abnormal value growth rate",
+      "formula": "(value_after - value_before) / value_before <= 4.43",
+      "threshold": 4.43,
+      "severity": "high",
+      "contracts": [
+        "0x732276168b421d4792e743711e1a48172ea574a2"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "98485924989225617068775635590640135915835481452016032419463228236516021094087",
+          "threshold": 4.43,
+          "severity": "high"
+        },
+        "slot_1": {
+          "index": "53931690029878991515273240460388005135791775755762095288146317312513539189659",
+          "threshold": 4.43,
+          "severity": "high"
+        },
+        "slot_2": {
+          "index": "98485924989225617068775635590640135915835481452016032419463228236516021094086",
+          "threshold": 4.43,
+          "severity": "high"
+        },
+        "slot_3": {
+          "index": "98485924989225617068775635590640135915835481452016032419463228236516021094085",
+          "threshold": 4.43,
+          "severity": "high"
+        },
+        "slot_4": {
+          "index": "53931690029878991515273240460388005135791775755762095288146317312513539189658",
+          "threshold": 4.43,
+          "severity": "high"
+        },
+        "slot_5": {
+          "index": "53931690029878991515273240460388005135791775755762095288146317312513539189660",
+          "threshold": 4.43,
+          "severity": "high"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.7
+      },
+      "protocol_type": null,
+      "attack_pattern": "monotonic_increase"
+    },
+    {
+      "id": "PATTERN_reentrancy_balance_001",
+      "type": "balance_change_limit",
+      "category": "bounded_value",
+      "description": "Limit balance changes to prevent reentrancy attacks",
+      "formula": "abs(balance_after - balance_before) / balance_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "high",
+      "contracts": [
+        "0xea75aec151f968b8de3789ca201a2a3a7faeefba"
+      ],
+      "slots": {},
+      "detection_confidence": {
+        "pattern_match": 0.75
+      },
+      "protocol_type": null,
+      "attack_pattern": "reentrancy_balance"
+    }
+  ],
+  "statistics": {
+    "total_invariants": 7,
+    "by_category": {
+      "bounded_value": 5,
+      "ratio_bound": 1,
+      "bounded_growth": 1
+    },
+    "by_severity": {
+      "critical": 4,
+      "high": 3
+    }
+  },
+  "errors": [],
+  "protocol_confidence": 0.0,
+  "semantic_mapping_coverage": 0.07407407407407407,
+  "state_changes": {
+    "contracts_changed": 5,
+    "slots_changed": 19,
+    "extreme_changes": 7
+  },
+  "attack_patterns": [
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "ratio_break",
+      "severity": "high",
+      "confidence": 0.8,
+      "description": "Correlated extreme changes across contracts (potential ratio manipulation)"
+    },
+    {
+      "type": "monotonic_increase",
+      "severity": "high",
+      "confidence": 0.7,
+      "description": "Multiple slots with large increases (potential price manipulation)"
+    },
+    {
+      "type": "reentrancy_balance",
+      "severity": "high",
+      "confidence": 0.75,
+      "description": "Large balance decrease: 3620.10 ETH"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 3999999999999999999"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 28210613620184568130"
+    }
+  ]
+}

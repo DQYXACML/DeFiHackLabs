@@ -1,30 +1,97 @@
 [
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "name": "WETH",
+    "name": "IERC20",
     "chain": "mainnet",
     "source": "static",
-    "context": "IERC20 constant WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)"
+    "context": "IERC20 constant WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0xddaDF1bf44363D07E750C20219C2347Ed7D826b9",
-    "name": "PANDORA",
+    "name": "NoReturnTransferFrom",
     "chain": "mainnet",
     "source": "static",
-    "context": "NoReturnTransferFrom constant PANDORA = NoReturnTransferFrom(0xddaDF1bf44363D07E750C20219C2347Ed7D826b9)"
+    "context": "NoReturnTransferFrom constant PANDORA = NoReturnTransferFrom(0xddaDF1bf44363D07E750C20219C2347Ed7D826b9)",
+    "onchain_name": null,
+    "symbol": "BLOCK",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "BLOCK",
+      "NoReturnTransferFrom",
+      "block",
+      "IBLOCK"
+    ]
   },
   {
     "address": "0x89CB997C36776D910Cfba8948Ce38613636CBc3c",
-    "name": null,
+    "name": "Uni_Pair_V2",
     "chain": "mainnet",
     "source": "static",
-    "context": "Uni_Pair_V2(0x89CB997C36776D910Cfba8948Ce38613636CBc3c)"
+    "context": "Uni_Pair_V2 V2_PAIR = Uni_Pair_V2(0x89CB997C36776D910Cfba8948Ce38613636CBc3c)",
+    "onchain_name": null,
+    "symbol": "UNI-V2",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "UNI-V2",
+      "Uni_Pair_V2",
+      "uni-v2",
+      "IUNI-V2"
+    ]
   },
   {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
-    "name": null,
+    "name": "CheatCodes",
     "chain": "mainnet",
     "source": "static",
-    "context": "CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)"
+    "context": "CheatCodes cheats = CheatCodes(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CheatCodes"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

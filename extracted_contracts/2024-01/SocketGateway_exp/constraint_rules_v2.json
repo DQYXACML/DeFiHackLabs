@@ -1,0 +1,143 @@
+{
+  "protocol": "SocketGateway_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x3a23F943181408EAC424116Af7b7790c94Cb97a5",
+    "name": "_gateway"
+  },
+  "constraints": [
+    {
+      "function": "executeRoute",
+      "signature": "executeRoute(...)",
+      "attack_pattern": "large_withdraw",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "routeId > 770994056912",
+        "semantics": "Heuristic constraint based on large_withdraw pattern",
+        "variables": {
+          "routeId": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "routeId"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "90598234900054307995722345735337251336628784422463505215821707809724155282288",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 2569980189709,
+            "after_value": 2569980189709
+          }
+        },
+        "danger_condition": "routeId >= 2312982170738",
+        "safe_condition": "routeId <= 770994056912",
+        "threshold_value": 770994056912
+      },
+      "analysis": {
+        "state_value": 2569980189709,
+        "threshold": 1284990094854,
+        "coefficient": 0.5,
+        "attack_intensity": 389108.0577,
+        "reasoning": "启发式约束，基于large_withdraw模式，阈值设为770994056912",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "executeRoute",
+      "signature": "executeRoute(...)",
+      "attack_pattern": "large_withdraw",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "getRouteData > 770994056912",
+        "semantics": "Heuristic constraint based on large_withdraw pattern",
+        "variables": {
+          "getRouteData": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "getRouteData(_usdc, targetUser)"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "90598234900054307995722345735337251336628784422463505215821707809724155282288",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 2569980189709,
+            "after_value": 2569980189709
+          }
+        },
+        "danger_condition": "getRouteData >= 2312982170738",
+        "safe_condition": "getRouteData <= 770994056912",
+        "threshold_value": 770994056912
+      },
+      "analysis": {
+        "state_value": 2569980189709,
+        "threshold": 1284990094854,
+        "coefficient": 0.5,
+        "attack_intensity": 389108.0577,
+        "reasoning": "启发式约束，基于large_withdraw模式，阈值设为770994056912",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "90598234900054307995722345735337251336628784422463505215821707809724155282288",
+        "before": 0,
+        "after": 2569980189709,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "32621392007125843880811723470429057479694966944279354554547446578534681973899",
+        "before": 115792089237316195423570985008687907853269984665640564039457584007913029639935,
+        "after": 115792089237316195423570985008687907853269984665640564039457584007256604655499,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "25237463513630661527061538961904601929936825465357017181786854028034196222294",
+        "before": 656424984436,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "115423257724541336627300982565046009547615839300894947263661898421728913361048",
+        "before": 276966710000,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "61895945783756664986065206569310664816763057358460395439720732442535626597378",
+        "before": 115792089237316195423570985008687907853269984665640564039457584007912129639935,
+        "after": 115792089237316195423570985008687907853269984665640564039457584007635162929935,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 255
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 1
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

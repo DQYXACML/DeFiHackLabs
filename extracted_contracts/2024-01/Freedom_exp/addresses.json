@@ -4,55 +4,133 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0x835b45d38cbdccf99e609436ff38e31ac05bc502"
+    "context": "// Attacker : https://bscscan.com/address/0x835b45d38cbdccf99e609436ff38e31ac05bc502",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x4512abb79f1f80830f4641caefc5ab33654a2d49",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x4512abb79f1f80830f4641caefc5ab33654a2d49"
+    "context": "// Attack Contract : https://bscscan.com/address/0x4512abb79f1f80830f4641caefc5ab33654a2d49",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xae3ada8787245977832c6dab2d4474d3943527ab",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0xae3ada8787245977832c6dab2d4474d3943527ab"
-  },
-  {
-    "address": "0x8A43Eb772416f934DE3DF8F9Af627359632CB53F",
-    "name": null,
-    "chain": "bsc",
-    "source": "static",
-    "context": "IERC20(0x8A43Eb772416f934DE3DF8F9Af627359632CB53F)"
-  },
-  {
-    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-    "name": null,
-    "chain": "bsc",
-    "source": "static",
-    "context": "IERC20(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c)"
-  },
-  {
-    "address": "0xcd4CDAa8e96ad88D82EABDdAe6b9857c010f4Ef2",
-    "name": null,
-    "chain": "bsc",
-    "source": "static",
-    "context": "IFREEWBNBPOOL(0xcd4CDAa8e96ad88D82EABDdAe6b9857c010f4Ef2)"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0xae3ada8787245977832c6dab2d4474d3943527ab",
+    "onchain_name": null,
+    "symbol": "FreeB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "FreeB",
+      "Vulnerable_Contract",
+      "freeb",
+      "FREEB",
+      "IFreeB"
+    ]
   },
   {
     "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-    "name": null,
+    "name": "IPancakeRouter",
     "chain": "bsc",
     "source": "static",
-    "context": "payable(0x10ED43C718714eb63d5aA57B78B54704E256024E)"
+    "context": "IPancakeRouter Router = IPancakeRouter(payable(0x10ED43C718714eb63d5aA57B78B54704E256024E))",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IPancakeRouter"
+    ]
+  },
+  {
+    "address": "0x8A43Eb772416f934DE3DF8F9Af627359632CB53F",
+    "name": "IERC20",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IERC20 FREE = IERC20(0x8A43Eb772416f934DE3DF8F9Af627359632CB53F)",
+    "onchain_name": null,
+    "symbol": "FREE",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "FREE",
+      "IERC20",
+      "free",
+      "IFREE"
+    ]
+  },
+  {
+    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "name": "IERC20",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IERC20 WBNB = IERC20(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c)",
+    "onchain_name": null,
+    "symbol": "WBNB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WBNB",
+      "IERC20",
+      "wbnb",
+      "IWBNB"
+    ]
+  },
+  {
+    "address": "0xcd4CDAa8e96ad88D82EABDdAe6b9857c010f4Ef2",
+    "name": "IFREEWBNBPOOL",
+    "chain": "bsc",
+    "source": "static",
+    "context": "IFREEWBNBPOOL Pair = IFREEWBNBPOOL(0xcd4CDAa8e96ad88D82EABDdAe6b9857c010f4Ef2)",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "IFREEWBNBPOOL",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
   },
   {
     "address": "0x6098A5638d8D7e9Ed2f952d35B2b67c34EC6B476",
-    "name": null,
+    "name": "IDPPAdvanced",
     "chain": "bsc",
     "source": "static",
-    "context": "IDPPAdvanced(0x6098A5638d8D7e9Ed2f952d35B2b67c34EC6B476)"
+    "context": "IDPPAdvanced DODO = IDPPAdvanced(0x6098A5638d8D7e9Ed2f952d35B2b67c34EC6B476)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IDPPAdvanced"
+    ]
   }
 ]

@@ -1,0 +1,21 @@
+{
+  "protocol": "ZongZi_exp",
+  "year_month": "2024-03",
+  "injection_timestamp": "2025-11-23T05:05:45.511290Z",
+  "main_contract": {
+    "name": "IZZF",
+    "actual_contract_name": "Ownable",
+    "address": "0xB7a254237E05cccA0a756f75FB78Ab2Df222911b"
+  },
+  "injected_contracts": [
+    {
+      "file": "ZZF.sol",
+      "functions": [
+        "receiveRewards",
+        "burnToHolder"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

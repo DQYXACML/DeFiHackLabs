@@ -7,6 +7,8 @@ evm_version = 'shanghai'
 # via_ir = false  # 默认不启用，避免 Yul 栈深度问题
 optimizer = true  # 启用优化器
 optimizer_runs = 200  # 优化运行次数
+extra_output = ["storageLayout"]  # 为Slither生成额外输出
+build_info = true  # 生成build-info
 
 # Profile for contracts with Solidity "stack too deep" issues
 # Usage: FOUNDRY_PROFILE=via-ir forge build --contracts src/test/XXX.sol
@@ -26,7 +28,7 @@ blast = "https://lb.drpc.live/blast/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk
 optimism = "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
 fantom = "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
 arbitrum =  "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk" # https://arbitrum.llamarpc.com
-bsc = "https://frequent-magical-tree.bsc.quiknode.pro/366dcd223ff09bb824b35ca8d190632061cdf022/"
+bsc = "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
 moonriver = "https://lb.drpc.live/moonriver/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
 gnosis = "https://lb.drpc.live/gnosis/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
 avalanche = "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"

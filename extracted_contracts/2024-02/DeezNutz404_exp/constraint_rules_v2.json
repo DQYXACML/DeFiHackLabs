@@ -1,0 +1,183 @@
+{
+  "protocol": "DeezNutz404_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0xb57e874082417b66877429481473cf9fcd8e0b8a",
+    "name": "DeezNutz"
+  },
+  "constraints": [
+    {
+      "function": "swapExactTokensForTokens",
+      "signature": "swapExactTokensForTokens(...)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 34379950010189857863769715350785567298767476665084886659811948399220888698880",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 58574631544590244142485196186590962651705232884889408241664 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "WETH.balanceOf(address(this"
+          },
+          "balance_mapping_decreased": {
+            "source": "storage",
+            "slot": "2989340288091959939850",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_decreased",
+            "before_value": 114599833367299539393568592644220770900423089686197703399537972166287334186892,
+            "after_value": 56025201822709298031424097300391252356473530275584716709441421761614590966339
+          }
+        },
+        "danger_condition": "amount >= 103139850030569592874565677160240008399847538089205890245871770591176689713152",
+        "safe_condition": "amount <= 34379950010189857863769715350785567298767476665084886659811948399220888698880",
+        "threshold_value": 34379950010189857863769715350785567298767476665084886659811948399220888698880
+      },
+      "analysis": {
+        "state_value": 114599833367299539393568592644220770900423089686197703399537972166287334186892,
+        "threshold": 80219883357109677575498014850954539630296162780338392379676580516401133930824,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代58574631544590244142485196186590962651705232884889408241664次超过上限10000，使用保守阈值34379950010189857863769715350785567298767476665084886659811948399220888698880",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 5.857463154459024e+58,
+        "change_direction": "decrease"
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(...)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "msg > 34379950010189857863769715350785567298767476665084886659811948399220888698880",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 58574631544590244142485196186590962651705232884889408241664 iterations (capped)",
+        "variables": {
+          "msg": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "msg.sender"
+          },
+          "balance_mapping_decreased": {
+            "source": "storage",
+            "slot": "2989340288091959939850",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_decreased",
+            "before_value": 114599833367299539393568592644220770900423089686197703399537972166287334186892,
+            "after_value": 56025201822709298031424097300391252356473530275584716709441421761614590966339
+          }
+        },
+        "danger_condition": "msg >= 103139850030569592874565677160240008399847538089205890245871770591176689713152",
+        "safe_condition": "msg <= 34379950010189857863769715350785567298767476665084886659811948399220888698880",
+        "threshold_value": 34379950010189857863769715350785567298767476665084886659811948399220888698880
+      },
+      "analysis": {
+        "state_value": 114599833367299539393568592644220770900423089686197703399537972166287334186892,
+        "threshold": 80219883357109677575498014850954539630296162780338392379676580516401133930824,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代58574631544590244142485196186590962651705232884889408241664次超过上限10000，使用保守阈值34379950010189857863769715350785567298767476665084886659811948399220888698880",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 5.857463154459024e+58,
+        "change_direction": "decrease"
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(...)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "ether > 34379950010189857863769715350785567298767476665084886659811948399220888698880",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 29272679432578831890395844906387992406512495989689203850631103638346399744 iterations (capped)",
+        "variables": {
+          "ether": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "2001 ether"
+          },
+          "balance_mapping_decreased": {
+            "source": "storage",
+            "slot": "2989340288091959939850",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_decreased",
+            "before_value": 114599833367299539393568592644220770900423089686197703399537972166287334186892,
+            "after_value": 56025201822709298031424097300391252356473530275584716709441421761614590966339
+          }
+        },
+        "danger_condition": "ether >= 103139850030569592874565677160240008399847538089205890245871770591176689713152",
+        "safe_condition": "ether <= 34379950010189857863769715350785567298767476665084886659811948399220888698880",
+        "threshold_value": 34379950010189857863769715350785567298767476665084886659811948399220888698880
+      },
+      "analysis": {
+        "state_value": 114599833367299539393568592644220770900423089686197703399537972166287334186892,
+        "threshold": 80219883357109677575498014850954539630296162780338392379676580516401133930824,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代29272679432578831890395844906387992406512495989689203850631103638346399744次超过上限10000，使用保守阈值34379950010189857863769715350785567298767476665084886659811948399220888698880",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 2.927267943257883e+73,
+        "change_direction": "decrease"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "2989340288091959939850",
+        "before": 114599833367299539393568592644220770900423089686197703399537972166287334186892,
+        "after": 56025201822709298031424097300391252356473530275584716709441421761614590966339,
+        "change_pct": 51.11,
+        "is_new_slot": false
+      },
+      {
+        "slot": "3551566122319005658183396688186025605570549727890851621878169640804667947742",
+        "before": 10205809817991856511689623301670119584214412278418358659415416701724696758543,
+        "after": 47727416267864127651613516637553369535016044689762134476104647945457747370465,
+        "change_pct": 367.65,
+        "is_new_slot": false
+      },
+      {
+        "slot": "3551566122319005658183396688186025605570549727890851621878169640804667947740",
+        "before": 88616327605537887017535208688580258915395545167819571733491393721599524864,
+        "after": 12052264025480664356259189765846451823326821331092931831229604464312587386880,
+        "change_pct": 13500.5,
+        "is_new_slot": false
+      },
+      {
+        "slot": "89325702938433803335373738182538449901111100489167546852639115400868251890709",
+        "before": 0,
+        "after": 45578312850365780481244841898989118719017773215762,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "3551566122319005658183396688186025605570549727890851621878169640804667947741",
+        "before": 60633751849484929170081096,
+        "after": 8246493686788717247500790512,
+        "change_pct": 13500.5,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 7
+  },
+  "attack_metadata": {
+    "loop_count": 5,
+    "total_calls": 6
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

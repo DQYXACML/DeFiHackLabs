@@ -4,27 +4,72 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0x36a6135672035507b772279d99a9f7445f2d1601"
+    "context": "// Attacker : https://bscscan.com/address/0x36a6135672035507b772279d99a9f7445f2d1601",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x471038827c05c87c23e9dba5331c753337fd918b",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0x471038827c05c87c23e9dba5331c753337fd918b"
+    "context": "// Attack Contract : https://bscscan.com/address/0x471038827c05c87c23e9dba5331c753337fd918b",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x71e3056aa4985de9f5441f079e6c74454a3c95f0",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0x71e3056aa4985de9f5441f079e6c74454a3c95f0"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0x71e3056aa4985de9f5441f079e6c74454a3c95f0",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x00e62b6CCf1fe3e5E01CE07F6232d7F378518b6b",
-    "name": "coin",
+    "name": "IERC20",
     "chain": "bsc",
     "source": "static",
-    "context": "IERC20 constant coin = IERC20(0x00e62b6CCf1fe3e5E01CE07F6232d7F378518b6b)"
+    "context": "IERC20 constant coin = IERC20(0x00e62b6CCf1fe3e5E01CE07F6232d7F378518b6b)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": []
   }
 ]

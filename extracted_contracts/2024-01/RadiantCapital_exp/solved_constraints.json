@@ -1,0 +1,464 @@
+{
+  "protocol": "RadiantCapital_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0xf4b1486dd74d07706052a33d31d7c0aafd0659e1",
+    "name": "RadiantLendingPool"
+  },
+  "solved_constraints": [
+    {
+      "function": "deposit",
+      "signature": "deposit(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "function": "deposit",
+        "signature": "deposit(address,uint256)",
+        "attack_pattern": "large_deposit",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > totalSupply * 0.5",
+          "semantics": "Large deposit exceeding 50% of total supply",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 3,
+              "type": "uint256",
+              "value_expr": "0"
+            },
+            "totalSupply": {
+              "source": "storage",
+              "slot": "0x2",
+              "type": "uint256",
+              "semantic_name": "totalSupply"
+            }
+          },
+          "danger_condition": "amount > totalSupply * 0.5",
+          "safe_condition": "amount <= totalSupply * 0.1"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 500000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.5,
+        "expression": "amount > totalSupply * 0.5",
+        "resolved_expression": "amount > 500000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 500000000000000001,
+          "description": "刚好超过阈值 (500000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 100000000000000000,
+          "description": "安全范围 (10%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "function": "borrow",
+        "signature": "borrow(address,uint256)",
+        "attack_pattern": "borrow_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > availableLiquidity * 0.8",
+          "semantics": "Excessive borrowing depleting pool liquidity",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256",
+              "value_expr": "amountToBorrow"
+            },
+            "availableLiquidity": {
+              "source": "storage",
+              "slot": "0x4",
+              "type": "uint256",
+              "semantic_name": "availableLiquidity"
+            }
+          },
+          "danger_condition": "amount > availableLiquidity * 0.8",
+          "safe_condition": "amount <= availableLiquidity * 0.3"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 800000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.8,
+        "expression": "amount > availableLiquidity * 0.8",
+        "resolved_expression": "amount > 800000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 800000000000000001,
+          "description": "刚好超过阈值 (800000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 300000000000000000,
+          "description": "安全范围 (30%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "function": "deposit",
+        "signature": "deposit(address,uint256)",
+        "attack_pattern": "large_deposit",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > totalSupply * 0.5",
+          "semantics": "Large deposit exceeding 50% of total supply",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256",
+              "value_expr": "amount"
+            },
+            "totalSupply": {
+              "source": "storage",
+              "slot": "0x2",
+              "type": "uint256",
+              "semantic_name": "totalSupply"
+            }
+          },
+          "danger_condition": "amount > totalSupply * 0.5",
+          "safe_condition": "amount <= totalSupply * 0.1"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 500000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.5,
+        "expression": "amount > totalSupply * 0.5",
+        "resolved_expression": "amount > 500000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 500000000000000001,
+          "description": "刚好超过阈值 (500000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 100000000000000000,
+          "description": "安全范围 (10%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "deposit",
+      "signature": "deposit(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "function": "deposit",
+        "signature": "deposit(address,uint256)",
+        "attack_pattern": "large_deposit",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > totalSupply * 0.5",
+          "semantics": "Large deposit exceeding 50% of total supply",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256",
+              "value_expr": "amount << 1"
+            },
+            "totalSupply": {
+              "source": "storage",
+              "slot": "0x2",
+              "type": "uint256",
+              "semantic_name": "totalSupply"
+            }
+          },
+          "danger_condition": "amount > totalSupply * 0.5",
+          "safe_condition": "amount <= totalSupply * 0.1"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 500000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.5,
+        "expression": "amount > totalSupply * 0.5",
+        "resolved_expression": "amount > 500000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 500000000000000001,
+          "description": "刚好超过阈值 (500000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 100000000000000000,
+          "description": "安全范围 (10%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "function": "withdraw",
+        "signature": "withdraw(uint256,address[],uint8[])",
+        "attack_pattern": "drain_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > userBalance * 0.9",
+          "semantics": "Draining large portion of user balance",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256",
+              "value_expr": "((amount * 3) >> 1) - 1"
+            },
+            "userBalance": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "balanceOf(attacker)"
+            }
+          },
+          "danger_condition": "amount > userBalance * 0.9",
+          "safe_condition": "amount <= userBalance * 0.5"
+        }
+      },
+      "solved": {
+        "resolved": true,
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "expression": "amount > userBalance * 0.9",
+        "resolved_expression": "amount > 900000000000000000"
+      },
+      "fuzzing_seeds": [
+        {
+          "type": "boundary",
+          "value": 900000000000000001,
+          "description": "刚好超过阈值 (900000000000000000+1)"
+        },
+        {
+          "type": "safe",
+          "value": 500000000000000000,
+          "description": "安全范围 (50%)"
+        },
+        {
+          "type": "attack",
+          "value": 950000000000000000,
+          "description": "典型攻击值 (95%)"
+        },
+        {
+          "type": "extreme",
+          "value": 1000000000000000000,
+          "description": "完全耗尽 (100%)"
+        },
+        {
+          "type": "zero",
+          "value": 0,
+          "description": "零值边界"
+        }
+      ]
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(uint256,address[],uint8[])",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "function": "withdraw",
+        "signature": "withdraw(uint256,address[],uint8[])",
+        "attack_pattern": "drain_attack",
+        "constraint": {
+          "type": "inequality",
+          "expression": "amount > userBalance * 0.9",
+          "semantics": "Draining large portion of user balance",
+          "variables": {
+            "amount": {
+              "source": "function_parameter",
+              "index": 1,
+              "type": "uint256",
+              "value_expr": "USDC.balanceOf(address(rUSDCn))"
+            },
+            "userBalance": {
+              "source": "storage",
+              "slot": "dynamic",
+              "type": "uint256",
+              "semantic_name": "balanceOf(attacker)"
+            }
+          },
+          "danger_condition": "amount > userBalance * 0.9",
+          "safe_condition": "amount <= userBalance * 0.5"
+        }
+      },
+      "solved": {
+        "resolved": false,
+        "threshold": null,
+        "state_value": null,
+        "coefficient": null,
+        "expression": "amount > userBalance * 0.9",
+        "resolved_expression": null
+      },
+      "fuzzing_seeds": []
+    }
+  ],
+  "param_check_rules": {
+    "protocol": "RadiantCapital_exp",
+    "version": "1.0.0",
+    "rules": [
+      {
+        "function_sig": "0x47e7ef24",
+        "function_name": "deposit",
+        "param_index": 3,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "500000000000000000",
+        "threshold": 500000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.5,
+        "attack_pattern": "large_deposit",
+        "description": "Large deposit exceeding 50% of total supply"
+      },
+      {
+        "function_sig": "0x4b8a3529",
+        "function_name": "borrow",
+        "param_index": 1,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "800000000000000000",
+        "threshold": 800000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.8,
+        "attack_pattern": "borrow_attack",
+        "description": "Excessive borrowing depleting pool liquidity"
+      },
+      {
+        "function_sig": "0x47e7ef24",
+        "function_name": "deposit",
+        "param_index": 1,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "500000000000000000",
+        "threshold": 500000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.5,
+        "attack_pattern": "large_deposit",
+        "description": "Large deposit exceeding 50% of total supply"
+      },
+      {
+        "function_sig": "0x47e7ef24",
+        "function_name": "deposit",
+        "param_index": 1,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "500000000000000000",
+        "threshold": 500000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.5,
+        "attack_pattern": "large_deposit",
+        "description": "Large deposit exceeding 50% of total supply"
+      },
+      {
+        "function_sig": "0x1b99148f",
+        "function_name": "withdraw",
+        "param_index": 1,
+        "rule_type": "RANGE",
+        "min_value": "0",
+        "max_value": "900000000000000000",
+        "threshold": 900000000000000000,
+        "state_value": 1000000000000000000,
+        "coefficient": 0.9,
+        "attack_pattern": "drain_attack",
+        "description": "Draining large portion of user balance"
+      }
+    ],
+    "metadata": {
+      "generated_by": "solve_constraints.py",
+      "total_rules": 5
+    }
+  },
+  "summary": {
+    "total_constraints": 6,
+    "resolved_constraints": 5,
+    "resolution_rate": "83.3%"
+  },
+  "metadata": {
+    "solver_version": "1.0.0",
+    "generated_by": "solve_constraints.py"
+  }
+}
