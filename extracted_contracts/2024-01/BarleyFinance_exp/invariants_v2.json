@@ -7,30 +7,6 @@
       "type": "flash_change_prevention",
       "category": "bounded_value",
       "description": "Prevent extreme value changes (flash loan attack)",
-      "formula": "abs(value_after - value_before) / value_before <= 5.0",
-      "threshold": 5.0,
-      "severity": "critical",
-      "contracts": [
-        "0x04c80Bb477890F3021F03B068238836Ee20aA0b8"
-      ],
-      "slots": {
-        "slot_0": {
-          "index": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
-          "threshold": 5.0,
-          "severity": "critical"
-        }
-      },
-      "detection_confidence": {
-        "pattern_match": 0.9
-      },
-      "protocol_type": null,
-      "attack_pattern": "flash_change"
-    },
-    {
-      "id": "PATTERN_flash_change_002",
-      "type": "flash_change_prevention",
-      "category": "bounded_value",
-      "description": "Prevent extreme value changes (flash loan attack)",
       "formula": "abs(value_after - value_before) / value_before <= 0.15",
       "threshold": 0.15,
       "severity": "critical",
@@ -51,6 +27,30 @@
       "attack_pattern": "flash_change"
     },
     {
+      "id": "PATTERN_flash_change_002",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 5.0",
+      "threshold": 5.0,
+      "severity": "critical",
+      "contracts": [
+        "0x04c80Bb477890F3021F03B068238836Ee20aA0b8"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
+          "threshold": 5.0,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
       "id": "PATTERN_ratio_break_001",
       "type": "ratio_stability",
       "category": "ratio_bound",
@@ -59,10 +59,10 @@
       "threshold": 0.18,
       "severity": "high",
       "contracts": [
-        "0x3e2324342bF5B8A1Dca42915f0489497203d640E",
-        "0x04c80Bb477890F3021F03B068238836Ee20aA0b8",
         "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-        "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+        "0x04c80Bb477890F3021F03B068238836Ee20aA0b8",
+        "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "0x3e2324342bF5B8A1Dca42915f0489497203d640E"
       ],
       "slots": {
         "slot_2": {
@@ -134,11 +134,11 @@
   },
   "errors": [],
   "protocol_confidence": 1.0,
-  "semantic_mapping_coverage": 0.045714285714285714,
+  "semantic_mapping_coverage": 0.04657534246575343,
   "state_changes": {
     "contracts_changed": 7,
-    "slots_changed": 16,
-    "extreme_changes": 6
+    "slots_changed": 33,
+    "extreme_changes": 9
   },
   "attack_patterns": [
     {

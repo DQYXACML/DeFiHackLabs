@@ -85,6 +85,14 @@ contract SocketGateway is Ownable {
     // 防火墙路由器
     IRouter public firewall;
 
+
+    // 防火墙路由器
+    IRouter public firewall;
+
+
+    // 防火墙路由器
+    IRouter public firewall;
+
     // 防火墙保护修饰符
     // 初始化函数：注入防火墙路由器（仅可调用一次）
     function initialize(address _firewall) public initializer {

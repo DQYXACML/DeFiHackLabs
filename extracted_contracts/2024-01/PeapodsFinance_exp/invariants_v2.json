@@ -11,11 +11,16 @@
       "threshold": 0.25,
       "severity": "critical",
       "contracts": [
-        "0xbed4fbf7c3e36727ccdab4c6706c3c0e17b10397"
+        "0x6B175474E89094C44Da98b954EedeAC495271d0F"
       ],
       "slots": {
-        "reserve0_slot": {
-          "index": "8",
+        "slot_0": {
+          "index": "30645486631603752361223653315915313192754344272179238389287990517191522147541",
+          "threshold": 0.25,
+          "severity": "critical"
+        },
+        "slot_1": {
+          "index": "1311428694430413507064611963368844046692563004276897792095973957181437681423",
           "threshold": 0.25,
           "severity": "critical"
         }
@@ -35,16 +40,11 @@
       "threshold": 0.25,
       "severity": "critical",
       "contracts": [
-        "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+        "0xbed4fbf7c3e36727ccdab4c6706c3c0e17b10397"
       ],
       "slots": {
-        "slot_0": {
-          "index": "1311428694430413507064611963368844046692563004276897792095973957181437681423",
-          "threshold": 0.25,
-          "severity": "critical"
-        },
-        "slot_1": {
-          "index": "30645486631603752361223653315915313192754344272179238389287990517191522147541",
+        "reserve0_slot": {
+          "index": "8",
           "threshold": 0.25,
           "severity": "critical"
         }
@@ -64,9 +64,9 @@
       "threshold": 0.3,
       "severity": "high",
       "contracts": [
-        "0xbed4fbf7c3e36727ccdab4c6706c3c0e17b10397",
+        "0x6B175474E89094C44Da98b954EedeAC495271d0F",
         "0x02f92800F57BCD74066F5709F1Daa1A4302Df875",
-        "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+        "0xbed4fbf7c3e36727ccdab4c6706c3c0e17b10397"
       ],
       "slots": {
         "reserve0_slot": {
@@ -90,11 +90,16 @@
       "threshold": 0.4,
       "severity": "high",
       "contracts": [
-        "0xbed4fbf7c3e36727ccdab4c6706c3c0e17b10397"
+        "0x6B175474E89094C44Da98b954EedeAC495271d0F"
       ],
       "slots": {
-        "reserve0_slot": {
-          "index": "8",
+        "slot_0": {
+          "index": "30645486631603752361223653315915313192754344272179238389287990517191522147541",
+          "threshold": 0.4,
+          "severity": "high"
+        },
+        "slot_1": {
+          "index": "1311428694430413507064611963368844046692563004276897792095973957181437681423",
           "threshold": 0.4,
           "severity": "high"
         }
@@ -114,16 +119,11 @@
       "threshold": 0.4,
       "severity": "high",
       "contracts": [
-        "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+        "0xbed4fbf7c3e36727ccdab4c6706c3c0e17b10397"
       ],
       "slots": {
-        "slot_0": {
-          "index": "1311428694430413507064611963368844046692563004276897792095973957181437681423",
-          "threshold": 0.4,
-          "severity": "high"
-        },
-        "slot_1": {
-          "index": "30645486631603752361223653315915313192754344272179238389287990517191522147541",
+        "reserve0_slot": {
+          "index": "8",
           "threshold": 0.4,
           "severity": "high"
         }
@@ -214,13 +214,7 @@
       "type": "zero_value_change",
       "severity": "medium",
       "confidence": 0.6,
-      "description": "Value changed from 0 to 1254239434166719369926487200362448726174423940657"
-    },
-    {
-      "type": "zero_value_change",
-      "severity": "medium",
-      "confidence": 0.6,
-      "description": "Value changed from 0 to 16974351913822753187905831322544975275205982325"
+      "description": "Value changed from 0 to 259552543223355301726"
     },
     {
       "type": "zero_value_change",
@@ -232,7 +226,13 @@
       "type": "zero_value_change",
       "severity": "medium",
       "confidence": 0.6,
-      "description": "Value changed from 0 to 259552543223355301726"
+      "description": "Value changed from 0 to 16974351913822753187905831322544975275205982325"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 1254239434166719369926487200362448726174423940657"
     }
   ]
 }

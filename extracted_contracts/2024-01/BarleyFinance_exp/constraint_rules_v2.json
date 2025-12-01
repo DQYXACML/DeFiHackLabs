@@ -72,8 +72,8 @@
       "attack_pattern": "inflate_attack",
       "constraint": {
         "type": "ratio_threshold",
-        "expression": "amount > 3418944620969774259634176",
-        "semantics": "Partial extraction: 79.4% of _totalSupply affected per unit",
+        "expression": "amount > 3794716158774023815168",
+        "semantics": "Partial extraction: 79.4% of balance_mapping_increased affected per unit",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -81,25 +81,25 @@
             "type": "uint256",
             "value_expr": "BARL.balanceOf(address(wBARL))"
           },
-          "_totalSupply": {
+          "balance_mapping_increased": {
             "source": "storage",
-            "slot": "2",
+            "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
             "type": "uint256",
-            "semantic_name": "_totalSupply",
-            "before_value": 8611951186321848770844714,
-            "after_value": 15449840428261396694895415
+            "semantic_name": "balance_mapping_increased",
+            "before_value": 9558478989355222963846,
+            "after_value": 6847447720928903147014547
           }
         },
-        "danger_condition": "amount >= 6837889241939548519268352",
-        "safe_condition": "amount <= 3418944620969774259634176",
-        "threshold_value": 3418944620969774259634176
+        "danger_condition": "amount >= 7589432317548047630336",
+        "safe_condition": "amount <= 3794716158774023815168",
+        "threshold_value": 3794716158774023815168
       },
       "analysis": {
-        "state_value": 8611951186321848770844714,
-        "threshold": 4305975593160924385422357,
+        "state_value": 9558478989355222963846,
+        "threshold": 4779239494677611481923,
         "coefficient": 0.5,
-        "attack_intensity": 1.0,
-        "reasoning": "部分提取模式，提取比例0.79，阈值设为3418944620969774259634176",
+        "attack_intensity": 900.9751,
+        "reasoning": "部分提取模式，提取比例0.79，阈值设为3794716158774023815168",
         "correlation_type": "partial",
         "correlation_confidence": 0.7,
         "ratio": 0.794,
@@ -146,8 +146,8 @@
       "attack_pattern": "inflate_attack",
       "constraint": {
         "type": "ratio_threshold",
-        "expression": "amount > 3418944620969774259634176",
-        "semantics": "Partial extraction: 79.4% of _totalSupply affected per unit",
+        "expression": "amount > 3794716158774023815168",
+        "semantics": "Partial extraction: 79.4% of balance_mapping_increased affected per unit",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -155,25 +155,25 @@
             "type": "uint256",
             "value_expr": "wBARL.balanceOf(address(this))"
           },
-          "_totalSupply": {
+          "balance_mapping_increased": {
             "source": "storage",
-            "slot": "2",
+            "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
             "type": "uint256",
-            "semantic_name": "_totalSupply",
-            "before_value": 8611951186321848770844714,
-            "after_value": 15449840428261396694895415
+            "semantic_name": "balance_mapping_increased",
+            "before_value": 9558478989355222963846,
+            "after_value": 6847447720928903147014547
           }
         },
-        "danger_condition": "amount >= 6837889241939548519268352",
-        "safe_condition": "amount <= 3418944620969774259634176",
-        "threshold_value": 3418944620969774259634176
+        "danger_condition": "amount >= 7589432317548047630336",
+        "safe_condition": "amount <= 3794716158774023815168",
+        "threshold_value": 3794716158774023815168
       },
       "analysis": {
-        "state_value": 8611951186321848770844714,
-        "threshold": 4305975593160924385422357,
+        "state_value": 9558478989355222963846,
+        "threshold": 4779239494677611481923,
         "coefficient": 0.5,
-        "attack_intensity": 1.0,
-        "reasoning": "部分提取模式，提取比例0.79，阈值设为3418944620969774259634176",
+        "attack_intensity": 900.9751,
+        "reasoning": "部分提取模式，提取比例0.79，阈值设为3794716158774023815168",
         "correlation_type": "partial",
         "correlation_confidence": 0.7,
         "ratio": 0.794,
@@ -252,17 +252,17 @@
   "state_analysis": {
     "slot_changes": [
       {
-        "slot": "2",
-        "before": 8611951186321848770844714,
-        "after": 15449840428261396694895415,
-        "change_pct": 79.4,
-        "is_new_slot": false
-      },
-      {
         "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
         "before": 9558478989355222963846,
         "after": 6847447720928903147014547,
         "change_pct": 71537.42,
+        "is_new_slot": false
+      },
+      {
+        "slot": "2",
+        "before": 8611951186321848770844714,
+        "after": 15449840428261396694895415,
+        "change_pct": 79.4,
         "is_new_slot": false
       }
     ],

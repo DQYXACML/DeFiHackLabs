@@ -56,7 +56,7 @@
       "attack_pattern": "flash_change"
     },
     {
-      "id": "PATTERN_ratio_break_001",
+      "id": "PATTERN_ratio_break_002",
       "type": "ratio_stability",
       "category": "ratio_bound",
       "description": "Ensure ratio stability between related values",
@@ -79,12 +79,12 @@
           "severity": "high"
         },
         "slot_2": {
-          "index": "8716723288581646255131403314278644605423388218695568063616216947913555652453",
+          "index": "111007044287799726660962535222071659843138565904320401744278014659349458648611",
           "threshold": 0.12,
           "severity": "high"
         },
         "slot_3": {
-          "index": "111007044287799726660962535222071659843138565904320401744278014659349458648611",
+          "index": "8716723288581646255131403314278644605423388218695568063616216947913555652453",
           "threshold": 0.12,
           "severity": "high"
         },
@@ -106,7 +106,7 @@
       "attack_pattern": "ratio_break"
     },
     {
-      "id": "PATTERN_monotonic_increase_001",
+      "id": "PATTERN_monotonic_increase_004",
       "type": "growth_rate_limit",
       "category": "bounded_growth",
       "description": "Limit abnormal value growth rate",
@@ -140,7 +140,7 @@
       "attack_pattern": "monotonic_increase"
     },
     {
-      "id": "PATTERN_monotonic_increase_002",
+      "id": "PATTERN_monotonic_increase_005",
       "type": "growth_rate_limit",
       "category": "bounded_growth",
       "description": "Limit abnormal value growth rate",
@@ -177,7 +177,7 @@
       "threshold": 0.1,
       "severity": "high",
       "contracts": [
-        "0x835b45d38cbdccf99e609436ff38e31ac05bc502"
+        "0xae3ada8787245977832c6dab2d4474d3943527ab"
       ],
       "slots": {},
       "detection_confidence": {
@@ -195,7 +195,7 @@
       "threshold": 0.1,
       "severity": "high",
       "contracts": [
-        "0xae3ada8787245977832c6dab2d4474d3943527ab"
+        "0x835b45d38cbdccf99e609436ff38e31ac05bc502"
       ],
       "slots": {},
       "detection_confidence": {
@@ -260,13 +260,13 @@
       "type": "reentrancy_balance",
       "severity": "high",
       "confidence": 0.75,
-      "description": "Large balance decrease: 1.54 ETH"
+      "description": "Large balance decrease: 1197377.85 ETH"
     },
     {
       "type": "reentrancy_balance",
       "severity": "high",
       "confidence": 0.75,
-      "description": "Large balance decrease: 1197377.85 ETH"
+      "description": "Large balance decrease: 1.54 ETH"
     },
     {
       "type": "zero_value_change",
