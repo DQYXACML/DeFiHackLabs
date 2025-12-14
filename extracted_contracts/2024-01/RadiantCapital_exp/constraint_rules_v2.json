@@ -121,6 +121,40 @@
       "signature": "borrow(address,uint256,uint256,uint256,address)",
       "attack_pattern": "borrow_attack",
       "constraint": {
+        "type": "discrete_numeric",
+        "expression": "3 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(address,uint256,uint256,uint256,address)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
         "type": "discrete_addresses",
         "expression": "4 in observed_addresses",
         "semantics": "Restrict addresses to observed attack set",

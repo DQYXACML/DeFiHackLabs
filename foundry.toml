@@ -2,13 +2,13 @@
 src = 'src'
 out = 'out'
 libs = ['lib']
-fs_permissions = [{ access = "read", path = "./"}]
+fs_permissions = [{ access = "read", path = "./" }]
 evm_version = 'shanghai'
 # via_ir = false  # 默认不启用，避免 Yul 栈深度问题
-optimizer = true  # 启用优化器
-optimizer_runs = 200  # 优化运行次数
-extra_output = ["storageLayout"]  # 为Slither生成额外输出
-build_info = true  # 生成build-info
+optimizer = true                 # 启用优化器
+optimizer_runs = 200             # 优化运行次数
+extra_output = ["storageLayout"] # 为Slither生成额外输出
+build_info = true                # 生成build-info
 
 # Profile for contracts with Solidity "stack too deep" issues
 # Usage: FOUNDRY_PROFILE=via-ir forge build --contracts src/test/XXX.sol
@@ -16,35 +16,35 @@ build_info = true  # 生成build-info
 src = 'src'
 out = 'out'
 libs = ['lib']
-fs_permissions = [{ access = "read", path = "./"}]
+fs_permissions = [{ access = "read", path = "./" }]
 evm_version = 'shanghai'
-via_ir = true  # 启用 via-IR 解决 Solidity stack too deep
+via_ir = true                                       # 启用 via-IR 解决 Solidity stack too deep
 optimizer = true
 optimizer_runs = 200
 
 [rpc_endpoints]
-mainnet = "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-blast = "https://lb.drpc.live/blast/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-optimism = "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-fantom = "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-arbitrum =  "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk" # https://arbitrum.llamarpc.com
-bsc = "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-moonriver = "https://lb.drpc.live/moonriver/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-gnosis = "https://lb.drpc.live/gnosis/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-avalanche = "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-polygon = "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-celo = "https://lb.drpc.live/celo/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-base = "https://lb.drpc.live/base/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-linea = "https://lb.drpc.live/linea/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-mantle = "https://lb.drpc.live/mantle/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
-sei = "https://lb.drpc.live/sei/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+mainnet = "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+blast = "https://lb.drpc.live/blast/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+optimism = "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+fantom = "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+arbitrum = "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+bsc = "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+moonriver = "https://lb.drpc.live/moonriver/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+gnosis = "https://lb.drpc.live/gnosis/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+avalanche = "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+polygon = "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+celo = "https://lb.drpc.live/celo/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+base = "https://lb.drpc.live/base/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+linea = "https://lb.drpc.live/linea/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+mantle = "https://lb.drpc.live/mantle/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+sei = "https://lb.drpc.live/sei/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/.config
 
 [fmt]
 line_length = 120
 tab_width = 4
-bracket_spacing=false
+bracket_spacing = false
 int_types = "long"
 func_attrs_with_params_multiline = false
 quote_style = "double"
@@ -54,6 +54,3 @@ single_line_statement_blocks = 'preserve'
 variable_override_spacing = true
 wrap_comments = false
 ignore = []
-
-
-

@@ -1060,7 +1060,7 @@ class StorageLayoutInferrer:
                         return True
 
                     # 4. 回退: 基于name关键词判断
-                    name = info.get('name', '').lower()
+                    name = (info.get('name') or '').lower()
                     keywords = ['token', 'coin', 'erc20', 'weth', 'wbtc', 'dai', 'usdc', 'usdt', 'barl']
                     if any(kw in name for kw in keywords):
                         return True
@@ -1244,8 +1244,8 @@ class StorageLayoutInferrer:
         info1 = self.addresses_info.get(addr1, {})
         info2 = self.addresses_info.get(addr2, {})
 
-        name1 = info1.get('name', '').lower()
-        name2 = info2.get('name', '').lower()
+        name1 = (info1.get('name') or '').lower()
+        name2 = (info2.get('name') or '').lower()
 
         if 'pair' in name1 or 'pool' in name1:
             if 'reserve' not in [v.name for v in layout_cache.get(addr1, StorageLayout(addr1)).variables.values()]:

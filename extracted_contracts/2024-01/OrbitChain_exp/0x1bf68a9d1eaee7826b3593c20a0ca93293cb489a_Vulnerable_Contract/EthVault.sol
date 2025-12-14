@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "./MultiSigWallet.sol";
-import {IRouter} from "../../../../../src/Interface/IRouter.sol";
+import {IRouter} from "./interfaces/IRouter.sol";
 
 contract EthVault is MultiSigWallet{
     // 防火墙路由器

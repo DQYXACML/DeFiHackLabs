@@ -9,28 +9,17 @@ import './interfaces/IERC20Metadata.sol';
 import './interfaces/IUniswapV2Pair.sol';
 import './interfaces/IV3TwapUtilities.sol';
 import './DecentralizedIndex.sol';
-import {IRouter} from "../../../../../../src/Interface/IRouter.sol";
+import {IRouter} from "./interfaces/IRouter.sol";
 
 contract WeightedIndex is DecentralizedIndex {
-    // 防火墙路由器
-    IRouter public immutable firewall;
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
-        }
-        _;
-    }
-
-
   using SafeERC20 for IERC20;
 
   IUniswapV2Factory immutable V2_FACTORY;
 
   uint256 _totalWeights;
 
-  constructor(address _firewall, string memory _name,
+  constructor(
+    string memory _name,
     string memory _symbol,
     uint256 _bondFee,
     uint256 _debondFee,
@@ -40,8 +29,8 @@ contract WeightedIndex is DecentralizedIndex {
     address _v2Router,
     address _dai,
     bool _stakeRestriction,
-    IV3TwapUtilities _v3TwapUtilities) DecentralizedIndex(
-      _name,
+    IV3TwapUtilities _v3TwapUtilities
+  ) DecentralizedIndex(_name,
       _symbol,
       _bondFee,
       _debondFee,
@@ -49,9 +38,7 @@ contract WeightedIndex is DecentralizedIndex {
       _v2Router,
       _dai,
       _stakeRestriction,
-      _v3TwapUtilities
-    ){
-        firewall = IRouter(_firewall);
+      _v3TwapUtilities){
     indexType = IndexType.WEIGHTED;
     V2_FACTORY = IUniswapV2Factory(IUniswapV2Router02(_v2Router).factory());
     require(_tokens.length == _weights.length, 'INIT');

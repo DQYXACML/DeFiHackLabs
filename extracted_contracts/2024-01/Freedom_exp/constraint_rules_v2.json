@@ -7,13 +7,83 @@
   },
   "constraints": [
     {
+      "function": "approve",
+      "signature": "approve(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "address(Router)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "type(uint256).max"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
       "function": "flashLoan",
       "signature": "flashLoan(...)",
-      "attack_pattern": "drain_attack",
+      "attack_pattern": "flashloan_attack",
       "constraint": {
-        "type": "heuristic_threshold",
-        "expression": "amount > 1000000000000000000",
-        "semantics": "Heuristic constraint based on drain_attack pattern",
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large flashloan exceeding safe threshold",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -21,96 +91,338 @@
             "type": "uint256",
             "value_expr": "500 * 1e18"
           },
-          "likely_totalSupply": {
+          "state": {
             "source": "storage",
-            "slot": "2",
+            "slot": "0x2",
             "type": "uint256",
-            "semantic_name": "likely_totalSupply",
-            "before_value": 0,
-            "after_value": 0
+            "semantic_name": "estimated_state"
           }
         },
-        "danger_condition": "amount >= 0",
-        "safe_condition": "amount <= 1000000000000000000",
-        "threshold_value": 1000000000000000000
-      },
-      "analysis": {
-        "state_value": 0,
-        "threshold": 250,
-        "coefficient": 0.5,
-        "attack_intensity": 1.0,
-        "reasoning": "启发式约束，基于drain_attack模式，阈值设为1000000000000000000",
-        "correlation_type": "heuristic",
-        "correlation_confidence": 0.5,
-        "ratio": 1.0,
-        "change_direction": "increase"
-      }
-    },
-    {
-      "function": "flashLoan",
-      "signature": "flashLoan(uint256,uint256,address,uint256[])",
-      "attack_pattern": "drain_attack",
-      "constraint": {
-        "type": "discrete_addresses",
-        "expression": "2 in observed_addresses",
-        "semantics": "Restrict addresses to observed attack set",
-        "attack_values": [
-          "0x877f5427fe449a33baa103acf1f14808e6fb9488"
-        ],
-        "variables": {
-          "addresses": {
-            "source": "function_parameter",
-            "index": 2,
-            "type": "address",
-            "value_expr": "address(this)"
-          }
-        }
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
       },
       "analysis": {
         "state_value": null,
         "threshold": null,
-        "coefficient": null,
+        "coefficient": 0.5,
         "attack_intensity": null,
-        "reasoning": "Address whitelist derived from attack script",
-        "correlation_type": "discrete",
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
         "correlation_confidence": 0.3
       }
     },
     {
       "function": "flashLoan",
-      "signature": "flashLoan(uint256,uint256,address,uint256[])",
-      "attack_pattern": "drain_attack",
+      "signature": "flashLoan(...)",
+      "attack_pattern": "flashloan_attack",
       "constraint": {
-        "type": "capped_array",
-        "expression": "3 elements in [1,1]",
-        "semantics": "Restrict numeric array elements to observed range",
-        "attack_values": [
-          1
-        ],
-        "range": {
-          "min": 1,
-          "max": 1
-        },
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large flashloan exceeding safe threshold",
         "variables": {
-          "values": {
+          "amount": {
             "source": "function_parameter",
-            "index": 3,
-            "type": "uint256[]",
-            "value_expr": "new bytes(1)"
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "0"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
           }
         },
-        "len_range": {
-          "min": 1,
-          "max": 1
-        }
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
       },
       "analysis": {
         "state_value": null,
         "threshold": null,
-        "coefficient": null,
+        "coefficient": 0.5,
         "attack_intensity": null,
-        "reasoning": "Numeric array bounded by observed values",
-        "correlation_type": "discrete",
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(...)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large flashloan exceeding safe threshold",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "address(this)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(...)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large flashloan exceeding safe threshold",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "new bytes(1)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "address(Router)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "type(uint256).max"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "buyToken",
+      "signature": "buyToken(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "FREEBProxy.balance"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "buyToken",
+      "signature": "buyToken(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "5 * 1e18"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "address(DODO)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(...)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "500 * 1e18"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1"
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
         "correlation_confidence": 0.3
       }
     }
@@ -118,42 +430,28 @@
   "state_analysis": {
     "slot_changes": [
       {
-        "slot": "2",
-        "before": 0,
-        "after": 0,
-        "change_pct": 0,
+        "slot": "8",
+        "before": 45963847970111736155411232929215513268668190339309333243256333626069604971112,
+        "after": 45963848374510936162671008394611823528178964550767774156465649198860154324508,
+        "change_pct": 0.0,
         "is_new_slot": false
       },
       {
-        "slot": "51",
-        "before": 0,
-        "after": 0,
-        "change_pct": 0,
+        "slot": "10",
+        "before": 299627194588044847419139770150259356395767,
+        "after": 299631746669553320858479756075505174725042,
+        "change_pct": 0.0,
         "is_new_slot": false
       },
       {
-        "slot": "41",
-        "before": 0,
-        "after": 0,
-        "change_pct": 0,
-        "is_new_slot": false
-      },
-      {
-        "slot": "90",
-        "before": 0,
-        "after": 0,
-        "change_pct": 0,
-        "is_new_slot": false
-      },
-      {
-        "slot": "27",
-        "before": 0,
-        "after": 0,
-        "change_pct": 0,
+        "slot": "9",
+        "before": 15521791142423337623639614778519191888,
+        "after": 15523123716980453396781653418420000763,
+        "change_pct": 0.01,
         "is_new_slot": false
       }
     ],
-    "total_changed_slots": 38
+    "total_changed_slots": 3
   },
   "attack_metadata": {
     "loop_count": 1,

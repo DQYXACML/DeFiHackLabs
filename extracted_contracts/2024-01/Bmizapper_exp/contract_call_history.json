@@ -1,0 +1,1578 @@
+{
+  "protocol": "Bmizapper_exp",
+  "contract_address": "0x4622aFF8E521A444C9301dA0efD05f6b482221b8",
+  "target_functions": [
+    "zapToBMI"
+  ],
+  "tx_count": 20,
+  "txs": [
+    {
+      "hash": "0xebf266bff72f12f5e793e7e8449b2538342e5bbf79f8cf20f640ea16b16e902a",
+      "from": "0x67230329e35353c93b28c77b5aa4b455356d983d",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 20568561,
+      "time": "2024-08-20T08:12:11Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0x57ab1ec28d129707052df4df418d58a2d46d5f51"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0x5072df0cbeabde8ad3581e93210898b95e7b4a51"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": []
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            999000000000000000
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x4fabb145d64652a948d72533023f6e7a623c7c53"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0xa9059cbb00000000000000000000000067230329e35353c93b28c77b5aa4b455356d983d000000000000000000000000000000000000000000000001e5b8fa8fe2ac0000"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x39b6e126c68dd9d73a176f66cb26a111c224553ebdf1a0c03e0c81de540d88f0",
+      "from": "0xcfe43e33568371bcef4d8bcf5d4ebced956f1b5d",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 14575392,
+      "time": "2022-04-13T05:45:37Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0x4fabb145d64652a948d72533023f6e7a623c7c53"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0x4fabb145d64652a948d72533023f6e7a623c7c53"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": []
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            999000000000000000
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0xa9059cbb000000000000000000000000cfe43e33568371bcef4d8bcf5d4ebced956f1b5d0000000000000000000000000000000000000000000000000000000003750280"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x4b63abd64d855858c54879e7e75e22597b35a7fefcfc9a62f088476f61747c37",
+      "from": "0x7780e86699e941254c8f4d9b7eb08ff7e96bbe10",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12940819,
+      "time": "2021-08-01T16:56:38Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 1109145329196
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 1109145329196
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 1093586898193962956330921
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56517576756068501,
+            200172875589166812,
+            200537598784773210,
+            163829244368113696,
+            34382817636471122,
+            199225455208306293,
+            51490285416231458,
+            93844146240868905
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x389a071dd7ca15df1ceeefa60f5a16ea5c997ae56eb7385e73bd5cf7d56251c4",
+      "from": "0xf552836bf7159ec0151f329633502f6417ca20b9",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12938799,
+      "time": "2021-08-01T09:19:18Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 24970159640699924174922
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 26322257148
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 25956720733918042667348
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56522345510022360,
+            200189399277799029,
+            200552076366886786,
+            163776529279056396,
+            34385140668537793,
+            199241332326178994,
+            51481250347254468,
+            93851926224264170
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0xece9bfd70e9559319cd11678809985bc79cd87d4ac4aa44382560c492423550a",
+      "from": "0xe519f4cd2803ba53a40e6377e82406e548418660",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12937122,
+      "time": "2021-08-01T02:55:54Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 156506831418
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 156506831418
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 154381952733946843139023
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56525548527330904,
+            200183684951968215,
+            200536771356508809,
+            163785557999880338,
+            34386555193701595,
+            199244070790633857,
+            51480620047232420,
+            93857191132743858
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x8465680408bcf163690659c2bfab4efac4aaa11a601d541f6e963b6a8f0357ce",
+      "from": "0xbdfa4f4492dd7b7cf211209c4791af8d52bf5c50",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12933601,
+      "time": "2021-07-31T13:32:22Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 130000000000
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 130000000000
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 128263969904116557023541
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56525118516467323,
+            200193512997422286,
+            200513006081233162,
+            163802382186196291,
+            34385618277649165,
+            199261359276630898,
+            51485862177992306,
+            93833140486408564
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x926396a8624043d50cca82fa8705c7efd6781ae45886ca61af1f3560723ba1aa",
+      "from": "0xea5ed53ec1244a1baf72086c6f5726b1dd913fdc",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12911625,
+      "time": "2021-07-28T01:59:40Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 1000000000000
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 1000000000000
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 987424241107184592617072
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56523552430552499,
+            200213814550723015,
+            200442636658429871,
+            163788105916046292,
+            34406115723998289,
+            199321463957870771,
+            51454301853431141,
+            93850008908948118
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x902e28564492f3cb1e4fd95fd3ba34eb07ffeef54f71acbba468f180b11625b2",
+      "from": "0xbdfa4f4492dd7b7cf211209c4791af8d52bf5c50",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12905279,
+      "time": "2021-07-27T01:41:14Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 450000000000
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 450000000000
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 444577364456476849222867
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56539747271687270,
+            200248360283850158,
+            200448159768129579,
+            163822243276464801,
+            34385951492313625,
+            199264025995575906,
+            51469336091738322,
+            93822175820240335
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0xf77f285048a8d5ef2855ab6cba320bc924f0a94793a2c1dc89a7193a5a6263cb",
+      "from": "0x7b3999575cbe9ce590891d99d4854ba23af4c13d",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12886860,
+      "time": "2021-07-24T04:23:59Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 516121117847
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 516121117847
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 510201977530500448823864
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56509727074019505,
+            200219044945235652,
+            200397750196906198,
+            163829948610583738,
+            34404023980478573,
+            199322837657945491,
+            51471262972317556,
+            93845404562513283
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x429a89a748a40258cef66cb1872397595eb4deee56092fe06a84be7fb8f2a40f",
+      "from": "0x203cf11d3063ceda85dfa017177ffcad1ccc10f8",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12883423,
+      "time": "2021-07-23T15:35:27Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 1255477887928
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 1255477887928
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 1241135602056179025453893
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56508884433011718,
+            200223655322977070,
+            200401859456886338,
+            163826050183469827,
+            34404911581005163,
+            199334617869286033,
+            51467353833949332,
+            93832667319414515
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0xd8cd76de1b3acf5496874b7bcd1ed2722ea8eb52ab6722be33da024a1f7d24c4",
+      "from": "0xbb79fea646c9f79d658e53d3a5df674051bf78cb",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12883367,
+      "time": "2021-07-23T15:18:58Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 112505679004
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 112505679004
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 111220865086814624703134
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56508918770497459,
+            200223577198379142,
+            200401786241352567,
+            163826150861024230,
+            34404827957131691,
+            199334628220579316,
+            51467386000898704,
+            93832724750136888
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x2517bf703227a96747fe7d13e80db47635c2900008fc0a88b736d3162a0ff351",
+      "from": "0x5a14e4dc3aed9a2de038994b3ed4f3053428458a",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12881801,
+      "time": "2021-07-23T09:21:54Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 478525000000
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 478525000000
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 473082207471795680378796
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56510840685625168,
+            200227512633201400,
+            200387360249307583,
+            163826740916653423,
+            34405318583010717,
+            199339253728961368,
+            51469131583096853,
+            93833841620143485
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x1148944f9d0da07a26d7719352e0fd410ad88a5b7d1bbb55ae203a2cfbf063a2",
+      "from": "0xf2ae3d7c03e2e77536c17e3f0fcacc612f0180fa",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12881479,
+      "time": "2021-07-23T08:09:52Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0x6b175474e89094c44da98b954eedeac495271d0f"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 189832125789772387003148
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0x6b175474e89094c44da98b954eedeac495271d0f"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 189832125789772387003148
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 187805130037938474576893
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56511752320029237,
+            200228933269817085,
+            200384224624448597,
+            163823115247610665,
+            34405909610186922,
+            199341619171891772,
+            51470019413367433,
+            93834426342648286
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0xb8879786908ed6591c1fdbccc6819659d207a386af7f5818537b100543506754",
+      "from": "0x1889af6eb9bd12fa90fdb7a4c857eff510d54530",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12881133,
+      "time": "2021-07-23T06:52:39Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 500000000
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 500000000
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 494330348806820688293
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56513189414096514,
+            200230065536555646,
+            200378668194396838,
+            163819250658851221,
+            34406466252282558,
+            199345353254887441,
+            51471323400017982,
+            93835683288911795
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x5de161c2ce9956cf365d534dede8b79e848cc287d4a87061c6887f7e7191fe23",
+      "from": "0x1889af6eb9bd12fa90fdb7a4c857eff510d54530",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12877060,
+      "time": "2021-07-22T15:35:49Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 500000000
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 500000000
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 494093622796175821316
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56524670100449295,
+            200258848562454565,
+            200386201162064932,
+            163838227109158571,
+            34412927068664689,
+            199270386046186601,
+            51481862119060499,
+            93826877831960843
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x832c0993345a3244996e978f7d4f2945e654b163dec62c1412a07e5e4f81e416",
+      "from": "0x1889af6eb9bd12fa90fdb7a4c857eff510d54530",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12876861,
+      "time": "2021-07-22T14:52:16Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 500000000
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 500000000
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 494371690642181316583
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56524802657362513,
+            200260440967721751,
+            200387544891906539,
+            163839529387156588,
+            34413200630843344,
+            199264582970210883,
+            51482275342281811,
+            93827623152516568
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0xc3a4951cc8d130f04c5da0b428edc3f89480785601635d600fb36b3bcd02640b",
+      "from": "0x588a07fdb3ddaff7e32b7fe20828afab7d3387e7",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12874151,
+      "time": "2021-07-22T04:45:25Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 500000000000
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 500000000000
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 494507778608532378743097
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56522885741501025,
+            200270257510114254,
+            200373084862842485,
+            163837798763964185,
+            34415181150115013,
+            199268362482990217,
+            51485752460790453,
+            93826677027682364
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x994f6478ebe15dd8ab38e6bb5ea487178384ea18e7ee9b6a9c63268f35989fa8",
+      "from": "0x833a11b69873151fba6d14f455db5392542825ca",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12873832,
+      "time": "2021-07-22T03:30:12Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 66551728464
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 66551728464
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 65820410264495197045675
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56523314672852026,
+            200271102928878724,
+            200374285879893189,
+            163835138181394475,
+            34415433703422276,
+            199268032119744956,
+            51486150666204030,
+            93826541847610320
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x93d83b789268eb86e71782d56a17d25eace998c8388abb0d69c2f092e661b4c4",
+      "from": "0xbdfa4f4492dd7b7cf211209c4791af8d52bf5c50",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12873608,
+      "time": "2021-07-22T02:42:54Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 511591862265
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 511591862265
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 505983185703345518396149
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56523823822166343,
+            200272868286854411,
+            200375696360861823,
+            163829197471987554,
+            34415729600997711,
+            199269392654628683,
+            51486580780877256,
+            93826711021626215
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x82d84e3cc66f2bae56f196308166f71e61db5ee28a8f21748db63272bfff44ea",
+      "from": "0xbdfa4f4492dd7b7cf211209c4791af8d52bf5c50",
+      "to": "0x4622aff8e521a444c9301da0efd05f6b482221b8",
+      "value": "0",
+      "blockNumber": 12873511,
+      "time": "2021-07-22T02:22:43Z",
+      "function": "zapToBMI",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_from",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 200000000000
+        },
+        {
+          "name": "_fromUnderlying",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_fromUnderlyingAmount",
+          "type": "uint256",
+          "value": 200000000000
+        },
+        {
+          "name": "_minBMIRecv",
+          "type": "uint256",
+          "value": 197807982179009876272902
+        },
+        {
+          "name": "_bmiConstituents",
+          "type": "address[]",
+          "value": [
+            "0x30fcf7c6cdfc46ec237783d94fc78553e79d4e9c",
+            "0xb4ada607b9d6b2c9ee07a275e9616b84ac560139",
+            "0x3b96d491f067912d18563d56858ba7d6ec67a6fa",
+            "0xa74d4b67b3368e83797a35382afb776baae4f5c8",
+            "0x1c6a9783f812b3af3abbf7de64c3cd7cc7d1af44",
+            "0x5fa5b62c8af877cb37031e0a3b2f34a78e3c56a6",
+            "0x5a770dbd3ee6baf2802d29a901ef11501c44797a",
+            "0xc4daf3b5e2a9e93861c3fbdd25f1e943b8d87417"
+          ]
+        },
+        {
+          "name": "_bmiConstituentsWeightings",
+          "type": "uint256[]",
+          "value": [
+            56523969630974635,
+            200273378584254871,
+            200376078993918135,
+            163827434021427724,
+            34415819187743382,
+            199269907439826133,
+            51486645878634730,
+            93826766263220386
+          ]
+        },
+        {
+          "name": "_aggregator",
+          "type": "address",
+          "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "name": "_aggregatorData",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "refundDust",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    }
+  ]
+}

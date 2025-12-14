@@ -8,162 +8,64 @@
   "constraints": [
     {
       "function": "repayForAll",
-      "signature": "repayForAll(...)",
+      "signature": "repayForAll(uint256,uint256)",
       "attack_pattern": "large_withdraw",
       "constraint": {
-        "type": "capped_iterated_threshold",
-        "expression": "uint128 > 23720167481806814195394145442723641227958582052012384346701824",
-        "semantics": "High-frequency operation: parameter affects srcBalance with estimated 170261631367884509326335746121616157173418464866314799169803386880 iterations (capped)",
+        "type": "discrete_bool",
+        "expression": "1 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
         "variables": {
-          "uint128": {
-            "source": "function_parameter",
-            "index": 0,
-            "type": "uint256",
-            "value_expr": "uint128(240_000 * 1e18)"
-          },
-          "srcBalance": {
-            "source": "storage",
-            "slot": "8",
-            "type": "uint256",
-            "semantic_name": "srcBalance",
-            "before_value": 79067224939356047679097206782029926546469607951777785701813435,
-            "after_value": 40862870595517222288779220161911303923025648555621970671527791034061
-          }
-        },
-        "danger_condition": "uint128 >= 71160502445420448295173207152010447917019623954017698571091968",
-        "safe_condition": "uint128 <= 23720167481806814195394145442723641227958582052012384346701824",
-        "threshold_value": 23720167481806814195394145442723641227958582052012384346701824
-      },
-      "analysis": {
-        "state_value": 79067224939356047679097206782029926546469607951777785701813435,
-        "threshold": 55347057457549233375368044747420948582528725566244449991269404,
-        "coefficient": 0.7,
-        "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代170261631367884509326335746121616157173418464866314799169803386880次超过上限10000，使用保守阈值23720167481806814195394145442723641227958582052012384346701824",
-        "correlation_type": "multiple",
-        "correlation_confidence": 0.75,
-        "ratio": 1.702616313678845e+65,
-        "change_direction": "increase"
-      }
-    },
-    {
-      "function": "repayForAll",
-      "signature": "repayForAll(...)",
-      "attack_pattern": "large_withdraw",
-      "constraint": {
-        "type": "capped_iterated_threshold",
-        "expression": "amount > 23720167481806814195394145442723641227958582052012384346701824",
-        "semantics": "High-frequency operation: parameter affects srcBalance with estimated 40862791528292283545435725854177140598113128415232 iterations (capped)",
-        "variables": {
-          "amount": {
+          "flag": {
             "source": "function_parameter",
             "index": 1,
-            "type": "uint256",
+            "type": "bool",
             "value_expr": "true"
-          },
-          "srcBalance": {
-            "source": "storage",
-            "slot": "8",
-            "type": "uint256",
-            "semantic_name": "srcBalance",
-            "before_value": 79067224939356047679097206782029926546469607951777785701813435,
-            "after_value": 40862870595517222288779220161911303923025648555621970671527791034061
           }
-        },
-        "danger_condition": "amount >= 71160502445420448295173207152010447917019623954017698571091968",
-        "safe_condition": "amount <= 23720167481806814195394145442723641227958582052012384346701824",
-        "threshold_value": 23720167481806814195394145442723641227958582052012384346701824
+        }
       },
       "analysis": {
-        "state_value": 79067224939356047679097206782029926546469607951777785701813435,
-        "threshold": 55347057457549233375368044747420948582528725566244449991269404,
-        "coefficient": 0.7,
-        "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代40862791528292283545435725854177140598113128415232次超过上限10000，使用保守阈值23720167481806814195394145442723641227958582052012384346701824",
-        "correlation_type": "multiple",
-        "correlation_confidence": 0.75,
-        "ratio": 4.0862791528292284e+49,
-        "change_direction": "increase"
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
       }
     },
     {
       "function": "repay",
-      "signature": "repay(...)",
+      "signature": "repay(uint256,uint256,uint256)",
       "attack_pattern": "large_withdraw",
       "constraint": {
-        "type": "capped_iterated_threshold",
-        "expression": "users > 23720167481806814195394145442723641227958582052012384346701824",
-        "semantics": "High-frequency operation: parameter affects srcBalance with estimated 40862791528292283545435725854177140598113128415232 iterations (capped)",
+        "type": "discrete_bool",
+        "expression": "1 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
         "variables": {
-          "users": {
-            "source": "function_parameter",
-            "index": 0,
-            "type": "uint256",
-            "value_expr": "users[i]"
-          },
-          "srcBalance": {
-            "source": "storage",
-            "slot": "8",
-            "type": "uint256",
-            "semantic_name": "srcBalance",
-            "before_value": 79067224939356047679097206782029926546469607951777785701813435,
-            "after_value": 40862870595517222288779220161911303923025648555621970671527791034061
-          }
-        },
-        "danger_condition": "users >= 71160502445420448295173207152010447917019623954017698571091968",
-        "safe_condition": "users <= 23720167481806814195394145442723641227958582052012384346701824",
-        "threshold_value": 23720167481806814195394145442723641227958582052012384346701824
-      },
-      "analysis": {
-        "state_value": 79067224939356047679097206782029926546469607951777785701813435,
-        "threshold": 55347057457549233375368044747420948582528725566244449991269404,
-        "coefficient": 0.7,
-        "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代40862791528292283545435725854177140598113128415232次超过上限10000，使用保守阈值23720167481806814195394145442723641227958582052012384346701824",
-        "correlation_type": "multiple",
-        "correlation_confidence": 0.75,
-        "ratio": 4.0862791528292284e+49,
-        "change_direction": "increase"
-      }
-    },
-    {
-      "function": "repay",
-      "signature": "repay(...)",
-      "attack_pattern": "large_withdraw",
-      "constraint": {
-        "type": "capped_iterated_threshold",
-        "expression": "amount > 23720167481806814195394145442723641227958582052012384346701824",
-        "semantics": "High-frequency operation: parameter affects srcBalance with estimated 40862791528292283545435725854177140598113128415232 iterations (capped)",
-        "variables": {
-          "amount": {
+          "flag": {
             "source": "function_parameter",
             "index": 1,
-            "type": "uint256",
+            "type": "bool",
             "value_expr": "true"
-          },
-          "srcBalance": {
-            "source": "storage",
-            "slot": "8",
-            "type": "uint256",
-            "semantic_name": "srcBalance",
-            "before_value": 79067224939356047679097206782029926546469607951777785701813435,
-            "after_value": 40862870595517222288779220161911303923025648555621970671527791034061
           }
-        },
-        "danger_condition": "amount >= 71160502445420448295173207152010447917019623954017698571091968",
-        "safe_condition": "amount <= 23720167481806814195394145442723641227958582052012384346701824",
-        "threshold_value": 23720167481806814195394145442723641227958582052012384346701824
+        }
       },
       "analysis": {
-        "state_value": 79067224939356047679097206782029926546469607951777785701813435,
-        "threshold": 55347057457549233375368044747420948582528725566244449991269404,
-        "coefficient": 0.7,
-        "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代40862791528292283545435725854177140598113128415232次超过上限10000，使用保守阈值23720167481806814195394145442723641227958582052012384346701824",
-        "correlation_type": "multiple",
-        "correlation_confidence": 0.75,
-        "ratio": 4.0862791528292284e+49,
-        "change_direction": "increase"
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
       }
     },
     {
@@ -238,42 +140,33 @@
     },
     {
       "function": "addCollateral",
-      "signature": "addCollateral(...)",
+      "signature": "addCollateral(address,uint256,uint256)",
       "attack_pattern": "large_withdraw",
       "constraint": {
-        "type": "capped_iterated_threshold",
-        "expression": "amount > 23720167481806814195394145442723641227958582052012384346701824",
-        "semantics": "High-frequency operation: parameter affects srcBalance with estimated 40862791528292283545435725854177140598113128415232 iterations (capped)",
+        "type": "discrete_bool",
+        "expression": "1 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
         "variables": {
-          "amount": {
+          "flag": {
             "source": "function_parameter",
             "index": 1,
-            "type": "uint256",
+            "type": "bool",
             "value_expr": "true"
-          },
-          "srcBalance": {
-            "source": "storage",
-            "slot": "8",
-            "type": "uint256",
-            "semantic_name": "srcBalance",
-            "before_value": 79067224939356047679097206782029926546469607951777785701813435,
-            "after_value": 40862870595517222288779220161911303923025648555621970671527791034061
           }
-        },
-        "danger_condition": "amount >= 71160502445420448295173207152010447917019623954017698571091968",
-        "safe_condition": "amount <= 23720167481806814195394145442723641227958582052012384346701824",
-        "threshold_value": 23720167481806814195394145442723641227958582052012384346701824
+        }
       },
       "analysis": {
-        "state_value": 79067224939356047679097206782029926546469607951777785701813435,
-        "threshold": 55347057457549233375368044747420948582528725566244449991269404,
-        "coefficient": 0.7,
-        "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代40862791528292283545435725854177140598113128415232次超过上限10000，使用保守阈值23720167481806814195394145442723641227958582052012384346701824",
-        "correlation_type": "multiple",
-        "correlation_confidence": 0.75,
-        "ratio": 4.0862791528292284e+49,
-        "change_direction": "increase"
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
       }
     },
     {
@@ -283,7 +176,7 @@
       "constraint": {
         "type": "absolute_threshold",
         "expression": "depositAmount > 30",
-        "semantics": "Direct deposit/mint: parameter directly increases address_131934097198848795419260839469887926092110100780607324505044451516066163437",
+        "semantics": "Direct deposit/mint: parameter directly increases new_mapping_entry",
         "variables": {
           "depositAmount": {
             "source": "function_parameter",
@@ -291,11 +184,11 @@
             "type": "uint256",
             "value_expr": "depositAmount - 100"
           },
-          "address_131934097198848795419260839469887926092110100780607324505044451516066163437": {
+          "new_mapping_entry": {
             "source": "storage",
             "slot": "131934097198848795419260839469887926092110100780607324505044451516066163437",
             "type": "uint256",
-            "semantic_name": "address_131934097198848795419260839469887926092110100780607324505044451516066163437",
+            "semantic_name": "new_mapping_entry",
             "before_value": 0,
             "after_value": 100
           }
@@ -309,7 +202,7 @@
         "threshold": 50,
         "coefficient": 0.5,
         "attack_intensity": 1.0,
-        "reasoning": "参数直接导致address_131934097198848795419260839469887926092110100780607324505044451516066163437增加100，阈值设为30",
+        "reasoning": "参数直接导致new_mapping_entry增加100，阈值设为30",
         "correlation_type": "direct",
         "correlation_confidence": 0.95,
         "ratio": 1.0,

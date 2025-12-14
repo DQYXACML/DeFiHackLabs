@@ -13,7 +13,7 @@
       "constraint": {
         "type": "capped_iterated_threshold",
         "expression": "amount > 5951614269374999822336",
-        "semantics": "High-frequency operation: parameter affects address_10 with estimated 30951666666666668032 iterations (capped)",
+        "semantics": "High-frequency operation: parameter affects amountInUnderlying with estimated 30951666666666668032 iterations (capped)",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -21,11 +21,11 @@
             "type": "uint256",
             "value_expr": "1"
           },
-          "address_10": {
+          "amountInUnderlying": {
             "source": "storage",
             "slot": "10",
             "type": "uint256",
-            "semantic_name": "address_10",
+            "semantic_name": "amountInUnderlying",
             "before_value": 19838714231250000000001,
             "after_value": 19807762564583333333335
           }
@@ -48,12 +48,46 @@
     },
     {
       "function": "redeem",
+      "signature": "redeem(uint256,uint256,uint256,uint256)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "1 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "redeem",
       "signature": "redeem(...)",
       "attack_pattern": "drain_attack",
       "constraint": {
         "type": "iterated_threshold",
-        "expression": "redeemAmount * 31 > address_10 * 0.5",
-        "semantics": "Loop attack: parameter applied 31 times affects address_10",
+        "expression": "redeemAmount * 31 > amountInUnderlying * 0.5",
+        "semantics": "Loop attack: parameter applied 31 times affects amountInUnderlying",
         "variables": {
           "redeemAmount": {
             "source": "function_parameter",
@@ -61,11 +95,11 @@
             "type": "uint256",
             "value_expr": "redeemAmount"
           },
-          "address_10": {
+          "amountInUnderlying": {
             "source": "storage",
             "slot": "10",
             "type": "uint256",
-            "semantic_name": "address_10",
+            "semantic_name": "amountInUnderlying",
             "before_value": 19838714231250000000001,
             "after_value": 19807762564583333333335
           }
@@ -93,7 +127,7 @@
       "constraint": {
         "type": "capped_iterated_threshold",
         "expression": "amount > 5951614269374999822336",
-        "semantics": "High-frequency operation: parameter affects address_10 with estimated 30951666666666668032 iterations (capped)",
+        "semantics": "High-frequency operation: parameter affects amountInUnderlying with estimated 30951666666666668032 iterations (capped)",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -101,11 +135,11 @@
             "type": "uint256",
             "value_expr": "1"
           },
-          "address_10": {
+          "amountInUnderlying": {
             "source": "storage",
             "slot": "10",
             "type": "uint256",
-            "semantic_name": "address_10",
+            "semantic_name": "amountInUnderlying",
             "before_value": 19838714231250000000001,
             "after_value": 19807762564583333333335
           }

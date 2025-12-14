@@ -38,42 +38,12 @@
     },
     {
       "function": "flash",
-      "signature": "flash(address,address,uint256,bytes)",
-      "attack_pattern": "inflate_attack",
-      "constraint": {
-        "type": "discrete_addresses",
-        "expression": "1 in observed_addresses",
-        "semantics": "Restrict addresses to observed attack set",
-        "attack_values": [
-          "0x3e2324342bf5b8a1dca42915f0489497203d640e"
-        ],
-        "variables": {
-          "addresses": {
-            "source": "function_parameter",
-            "index": 1,
-            "type": "address",
-            "value_expr": "address(BARL)"
-          }
-        }
-      },
-      "analysis": {
-        "state_value": null,
-        "threshold": null,
-        "coefficient": null,
-        "attack_intensity": null,
-        "reasoning": "Address whitelist derived from attack script",
-        "correlation_type": "discrete",
-        "correlation_confidence": 0.3
-      }
-    },
-    {
-      "function": "flash",
       "signature": "flash(...)",
       "attack_pattern": "inflate_attack",
       "constraint": {
-        "type": "ratio_threshold",
-        "expression": "amount > 3794716158774023815168",
-        "semantics": "Partial extraction: 79.4% of balance_mapping_increased affected per unit",
+        "type": "heuristic_threshold",
+        "expression": "amount > 2867543696806566690816",
+        "semantics": "Heuristic constraint based on inflate_attack pattern",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -87,22 +57,22 @@
             "type": "uint256",
             "semantic_name": "balance_mapping_increased",
             "before_value": 9558478989355222963846,
-            "after_value": 6847447720928903147014547
+            "after_value": 9558478989355222963846
           }
         },
-        "danger_condition": "amount >= 7589432317548047630336",
-        "safe_condition": "amount <= 3794716158774023815168",
-        "threshold_value": 3794716158774023815168
+        "danger_condition": "amount >= 8602631090419701645312",
+        "safe_condition": "amount <= 2867543696806566690816",
+        "threshold_value": 2867543696806566690816
       },
       "analysis": {
         "state_value": 9558478989355222963846,
         "threshold": 4779239494677611481923,
         "coefficient": 0.5,
-        "attack_intensity": 900.9751,
-        "reasoning": "部分提取模式，提取比例0.79，阈值设为3794716158774023815168",
-        "correlation_type": "partial",
-        "correlation_confidence": 0.7,
-        "ratio": 0.794,
+        "attack_intensity": 1.5910079088532634e+25,
+        "reasoning": "启发式约束，基于inflate_attack模式，阈值设为2867543696806566690816",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
         "change_direction": "increase"
       }
     },
@@ -145,9 +115,9 @@
       "signature": "debond(...)",
       "attack_pattern": "inflate_attack",
       "constraint": {
-        "type": "ratio_threshold",
-        "expression": "amount > 3794716158774023815168",
-        "semantics": "Partial extraction: 79.4% of balance_mapping_increased affected per unit",
+        "type": "heuristic_threshold",
+        "expression": "amount > 2867543696806566690816",
+        "semantics": "Heuristic constraint based on inflate_attack pattern",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -161,22 +131,22 @@
             "type": "uint256",
             "semantic_name": "balance_mapping_increased",
             "before_value": 9558478989355222963846,
-            "after_value": 6847447720928903147014547
+            "after_value": 9558478989355222963846
           }
         },
-        "danger_condition": "amount >= 7589432317548047630336",
-        "safe_condition": "amount <= 3794716158774023815168",
-        "threshold_value": 3794716158774023815168
+        "danger_condition": "amount >= 8602631090419701645312",
+        "safe_condition": "amount <= 2867543696806566690816",
+        "threshold_value": 2867543696806566690816
       },
       "analysis": {
         "state_value": 9558478989355222963846,
         "threshold": 4779239494677611481923,
         "coefficient": 0.5,
-        "attack_intensity": 900.9751,
-        "reasoning": "部分提取模式，提取比例0.79，阈值设为3794716158774023815168",
-        "correlation_type": "partial",
-        "correlation_confidence": 0.7,
-        "ratio": 0.794,
+        "attack_intensity": 1.5910079088532634e+25,
+        "reasoning": "启发式约束，基于inflate_attack模式，阈值设为2867543696806566690816",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
         "change_direction": "increase"
       }
     },
@@ -189,7 +159,8 @@
         "expression": "1 in observed_addresses",
         "semantics": "Restrict addresses to observed attack set",
         "attack_values": [
-          "0x3e2324342bf5b8a1dca42915f0489497203d640e"
+          "0x0000000000000000000000000000000000000000",
+          "0xffffffffffffffffffffffffffffffffffffffff"
         ],
         "variables": {
           "addresses": {
@@ -247,6 +218,46 @@
         "correlation_type": "discrete",
         "correlation_confidence": 0.3
       }
+    },
+    {
+      "function": "bond",
+      "signature": "bond(...)",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "amount > 2867543696806566690816",
+        "semantics": "Heuristic constraint based on inflate_attack pattern",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "BARL.balanceOf(address(this))"
+          },
+          "balance_mapping_increased": {
+            "source": "storage",
+            "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_increased",
+            "before_value": 9558478989355222963846,
+            "after_value": 9558478989355222963846
+          }
+        },
+        "danger_condition": "amount >= 8602631090419701645312",
+        "safe_condition": "amount <= 2867543696806566690816",
+        "threshold_value": 2867543696806566690816
+      },
+      "analysis": {
+        "state_value": 9558478989355222963846,
+        "threshold": 4779239494677611481923,
+        "coefficient": 0.5,
+        "attack_intensity": 1.5910079088532634e+25,
+        "reasoning": "启发式约束，基于inflate_attack模式，阈值设为2867543696806566690816",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
     }
   ],
   "state_analysis": {
@@ -270,7 +281,7 @@
   },
   "attack_metadata": {
     "loop_count": 20,
-    "total_calls": 3
+    "total_calls": 5
   },
   "metadata": {
     "extraction_version": "2.0.0",

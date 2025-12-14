@@ -8,6 +8,21 @@ import "../@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import {IRouter} from "../../../../../../src/Interface/IRouter.sol";
 
 interface IClearing {
+    // 防火墙读取单槽位接口
+    function extsload(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+    // 兼容接口: 与 ext/tools 读取保持一致
+    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+
     // 防火墙路由器
     IRouter public immutable firewall;
 

@@ -12,18 +12,21 @@ import './interfaces/ITokenRewards.sol';
 import './interfaces/IUniswapV2Factory.sol';
 import './interfaces/IUniswapV2Router02.sol';
 import './StakingPoolToken.sol';
-import {IRouter} from "../../../../../../src/Interface/IRouter.sol";
+import {IRouter} from "./interfaces/IRouter.sol";
 
 abstract contract DecentralizedIndex is IDecentralizedIndex, ERC20 {
-    // 防火墙路由器
-    IRouter public immutable firewall;
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
+    // 防火墙读取单槽位接口
+    function extsload(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
         }
-        _;
+    }
+
+    // 兼容接口: 与 ext/tools 读取保持一致
+    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
     }
 
 
@@ -56,6 +59,29 @@ abstract contract DecentralizedIndex is IDecentralizedIndex, ERC20 {
     address token,
     uint256 amount
   );
+    // 防火墙路由器（使用普通变量而非immutable，支持构造后设置，避免子类stack too deep）
+    IRouter public firewall;
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        if (address(firewall) != address(0)) {
+            firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+    // 设置防火墙地址（internal，供子类在构造函数中调用）
+    function _setFirewall(address _firewall) internal {
+        firewall = IRouter(_firewall);
+    }
+
+    // 公开设置防火墙地址（仅在未设置时可调用，避免恶意覆盖）
+    function setFirewall(address _firewall) external {
+        require(address(firewall) == address(0), "Firewall already set");
+        require(_firewall != address(0), "Invalid firewall address");
+        firewall = IRouter(_firewall);
+    }
+
 
   modifier noSwap() {
     _swapOn = false;

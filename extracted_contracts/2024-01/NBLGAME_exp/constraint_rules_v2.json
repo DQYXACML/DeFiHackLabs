@@ -47,6 +47,74 @@
       }
     },
     {
+      "function": "depositNft",
+      "signature": "depositNft(uint256,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "1 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "depositNbl",
+      "signature": "depositNbl(uint256,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "0 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
       "function": "depositNbl",
       "signature": "depositNbl(...)",
       "attack_pattern": "large_deposit",
@@ -78,12 +146,46 @@
         "state_value": 1,
         "threshold": 0,
         "coefficient": 0.5,
-        "attack_intensity": 4.7558800416480816e+47,
+        "attack_intensity": 1e+30,
         "reasoning": "启发式约束，基于large_deposit模式，阈值设为0",
         "correlation_type": "heuristic",
         "correlation_confidence": 0.5,
         "ratio": 1.0,
         "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdrawNft",
+      "signature": "withdrawNft(uint256)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "0 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
       }
     }
   ],

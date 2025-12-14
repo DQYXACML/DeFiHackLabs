@@ -51,11 +51,11 @@
             "type": "uint256",
             "value_expr": "Peas.balanceOf(address(ppPP))"
           },
-          "totalSupply": {
+          "_totalSupply": {
             "source": "storage",
             "slot": "2",
             "type": "uint256",
-            "semantic_name": "totalSupply",
+            "semantic_name": "_totalSupply",
             "before_value": 293877894759882629745878,
             "after_value": 293877894759882629745878
           }
@@ -125,11 +125,11 @@
             "type": "uint256",
             "value_expr": "ppPP.balanceOf(address(this))"
           },
-          "totalSupply": {
+          "_totalSupply": {
             "source": "storage",
             "slot": "2",
             "type": "uint256",
-            "semantic_name": "totalSupply",
+            "semantic_name": "_totalSupply",
             "before_value": 293877894759882629745878,
             "after_value": 293877894759882629745878
           }
@@ -218,6 +218,46 @@
         "correlation_type": "discrete",
         "correlation_confidence": 0.3
       }
+    },
+    {
+      "function": "bond",
+      "signature": "bond(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "amount > 88163368427964784967680",
+        "semantics": "Heuristic constraint based on large_deposit pattern",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "Peas.balanceOf(address(this))"
+          },
+          "_totalSupply": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "_totalSupply",
+            "before_value": 293877894759882629745878,
+            "after_value": 293877894759882629745878
+          }
+        },
+        "danger_condition": "amount >= 264490105283894354903040",
+        "safe_condition": "amount <= 88163368427964784967680",
+        "threshold_value": 88163368427964784967680
+      },
+      "analysis": {
+        "state_value": 293877894759882629745878,
+        "threshold": 146938947379941314872939,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "启发式约束，基于large_deposit模式，阈值设为88163368427964784967680",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
     }
   ],
   "state_analysis": {
@@ -241,7 +281,7 @@
   },
   "attack_metadata": {
     "loop_count": 20,
-    "total_calls": 3
+    "total_calls": 5
   },
   "metadata": {
     "extraction_version": "2.0.0",

@@ -25,6 +25,9 @@
     # 强制重新生成
     python batch_generate_invariants_v2.py --filter 2024-01 --force
 
+    # 仅处理单个协议
+    python batch_generate_invariants_v2.py --filter 2024-01 --protocol BarleyFinance_exp
+
 作者: Claude Code
 版本: 2.0.0
 """
@@ -386,6 +389,11 @@ def main():
         help="预览模式,不实际生成"
     )
     parser.add_argument(
+        "--protocol",
+        type=str,
+        help="仅处理指定协议名称(目录名), 如: BarleyFinance_exp"
+    )
+    parser.add_argument(
         "--base-dir",
         type=Path,
         default=EXTRACTED_CONTRACTS_DIR,
@@ -400,6 +408,13 @@ def main():
         filter_pattern=args.filter,
         force=args.force
     )
+
+    if args.protocol:
+        projects = [p for p in projects if p.name == args.protocol]
+        if not projects:
+            logger.error(f"未找到协议: {args.protocol}，请检查 --filter 或目录名")
+            return
+        logger.info(f"仅处理协议: {args.protocol}")
 
     if args.dry_run:
         print("\n🔍 预览模式 - 不会实际生成\n")

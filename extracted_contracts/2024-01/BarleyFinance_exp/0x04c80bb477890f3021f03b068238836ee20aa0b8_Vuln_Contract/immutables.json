@@ -1,0 +1,491 @@
+{
+  "compiler_version": "v0.7.6+commit.7338295f",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "Default",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 16518,
+  "values": {
+    "contracts/TokenRewards.sol:TokenRewards": [
+      {
+        "label": "3148",
+        "var_name": "contracts/TokenRewards.sol:DAI",
+        "offset": 642,
+        "length": 32,
+        "value_hex": "0x801561028c57600080fd5b506101df610c29565b3480156102a157600080fd5b",
+        "value_int": "57933817945113640628630211362753443106026596962518731761082936881406613192027",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3148",
+        "var_name": "contracts/TokenRewards.sol:DAI",
+        "offset": 708,
+        "length": 32,
+        "value_hex": "0x02ca610cdc565b6040516102289190613bcf565b3480156102e357600080fd5b",
+        "value_int": "1262198620370994452423384279223562355714207616113741546739518742067855555931",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3148",
+        "var_name": "contracts/TokenRewards.sol:DAI",
+        "offset": 905,
+        "length": 32,
+        "value_hex": "0x5b6040516102289190613c85565b3480156103a257600080fd5b506103ab610e",
+        "value_int": "41330530445034021108267127157089998001103701549812839602107494164870013346062",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3148",
+        "var_name": "contracts/TokenRewards.sol:DAI",
+        "offset": 958,
+        "length": 32,
+        "value_hex": "0xc457600080fd5b506102736103d3366004613774565b610e3f565b3480156103",
+        "value_int": "88807696598189421684703596404715603478645058144591128349142020251943569809667",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3148",
+        "var_name": "contracts/TokenRewards.sol:DAI",
+        "offset": 999,
+        "length": 32,
+        "value_hex": "0x01df6103f3366004613a55565b610e5e565b34801561040457600080fd5b5061",
+        "value_int": "846989319917580260537608816197842066701020540490357204080668318363304022113",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3148",
+        "var_name": "contracts/TokenRewards.sol:DAI",
+        "offset": 1571,
+        "length": 32,
+        "value_hex": "0x61062c9190613790565b6001600160a01b03168260405161064290613ac9565b",
+        "value_int": "43885254996201998273239184803091349018072554036931629292529755463449053845083",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3148",
+        "var_name": "contracts/TokenRewards.sol:DAI",
+        "offset": 1806,
+        "length": 32,
+        "value_hex": "0x1b815260040161071d9190613acc565b60206040518083038186803b15801561",
+        "value_int": "12440938714881737397756572149509313385155011621072126869428158726876317095265",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3148",
+        "var_name": "contracts/TokenRewards.sol:DAI",
+        "offset": 1886,
+        "length": 32,
+        "value_hex": "0x40525081019061076d919061394f565b92506000831161078f5760405162461b",
+        "value_int": "29093459386346446053802845296724220934496123312847768283852793263449448793627",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3148",
+        "var_name": "contracts/TokenRewards.sol:DAI",
+        "offset": 2133,
+        "length": 32,
+        "value_hex": "0x9a912a8cd736eb9f072cfee09ed74c4d16903087611fe2565b6108c160016001",
+        "value_int": "69912665176619723790989299755123347579554435976683837652772257215804099092481",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3150",
+        "var_name": "contracts/TokenRewards.sol:V3_TWAP_UTILS",
+        "offset": 1251,
+        "length": 32,
+        "value_hex": "0x0080fd5b506102516104f5366004613774565b611b92565b3480156105065760",
+        "value_int": "227905027937408461232955602845034324473876275407871980339793741033612138336",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3150",
+        "var_name": "contracts/TokenRewards.sol:V3_TWAP_UTILS",
+        "offset": 1411,
+        "length": 32,
+        "value_hex": "0x0080fd5b50610273611fba565b80610599576106b0565b60007f000000000000",
+        "value_int": "227905027937408674656978664438933952555980205412145121109210930107463499776",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/WeightedIndex.sol:WeightedIndex": [
+      {
+        "label": "1832",
+        "var_name": "contracts/DecentralizedIndex.sol:BOND_FEE",
+        "offset": 5530,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000064",
+        "value_int": "100",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1832",
+        "var_name": "contracts/DecentralizedIndex.sol:BOND_FEE",
+        "offset": 8124,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000064",
+        "value_int": "100",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1835",
+        "var_name": "contracts/DecentralizedIndex.sol:DEBOND_FEE",
+        "offset": 7024,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000000012c",
+        "value_int": "300",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1835",
+        "var_name": "contracts/DecentralizedIndex.sol:DEBOND_FEE",
+        "offset": 7527,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000000012c",
+        "value_int": "300",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1837",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_ROUTER",
+        "offset": 2204,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value_int": "697323163401596485410334513241460920685086001293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1837",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_ROUTER",
+        "offset": 2243,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value_int": "697323163401596485410334513241460920685086001293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1837",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_ROUTER",
+        "offset": 3886,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value_int": "697323163401596485410334513241460920685086001293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1837",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_ROUTER",
+        "offset": 4031,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value_int": "697323163401596485410334513241460920685086001293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1837",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_ROUTER",
+        "offset": 4078,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value_int": "697323163401596485410334513241460920685086001293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1837",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_ROUTER",
+        "offset": 11572,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value_int": "697323163401596485410334513241460920685086001293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1837",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_ROUTER",
+        "offset": 11760,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value_int": "697323163401596485410334513241460920685086001293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1839",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_POOL",
+        "offset": 1740,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000acfe34cb9a912a8cd736eb9f072cfee09ed74c4d",
+        "value_int": "987615400983770970344500898526334286268481358925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1839",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_POOL",
+        "offset": 1961,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000acfe34cb9a912a8cd736eb9f072cfee09ed74c4d",
+        "value_int": "987615400983770970344500898526334286268481358925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1839",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_POOL",
+        "offset": 2117,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000acfe34cb9a912a8cd736eb9f072cfee09ed74c4d",
+        "value_int": "987615400983770970344500898526334286268481358925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1839",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_POOL",
+        "offset": 2170,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000acfe34cb9a912a8cd736eb9f072cfee09ed74c4d",
+        "value_int": "987615400983770970344500898526334286268481358925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1839",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_POOL",
+        "offset": 2476,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000acfe34cb9a912a8cd736eb9f072cfee09ed74c4d",
+        "value_int": "987615400983770970344500898526334286268481358925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1839",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_POOL",
+        "offset": 2651,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000acfe34cb9a912a8cd736eb9f072cfee09ed74c4d",
+        "value_int": "987615400983770970344500898526334286268481358925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1839",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_POOL",
+        "offset": 2794,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000acfe34cb9a912a8cd736eb9f072cfee09ed74c4d",
+        "value_int": "987615400983770970344500898526334286268481358925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1839",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_POOL",
+        "offset": 8885,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000acfe34cb9a912a8cd736eb9f072cfee09ed74c4d",
+        "value_int": "987615400983770970344500898526334286268481358925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1839",
+        "var_name": "contracts/DecentralizedIndex.sol:V2_POOL",
+        "offset": 8963,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000acfe34cb9a912a8cd736eb9f072cfee09ed74c4d",
+        "value_int": "987615400983770970344500898526334286268481358925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 2291,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 3706,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 3944,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 3997,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 4118,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 4367,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 4542,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 4685,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 6326,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 6479,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 11490,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 11897,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 12539,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1841",
+        "var_name": "contracts/DecentralizedIndex.sol:DAI",
+        "offset": 13299,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+        "value_int": "611382286831621467233887798921843936019654057231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1843",
+        "var_name": "contracts/DecentralizedIndex.sol:WETH",
+        "offset": 9340,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "value_int": "1097077688018008265106216665536940668749033598146",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1843",
+        "var_name": "contracts/DecentralizedIndex.sol:WETH",
+        "offset": 9484,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "value_int": "1097077688018008265106216665536940668749033598146",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1843",
+        "var_name": "contracts/DecentralizedIndex.sol:WETH",
+        "offset": 10204,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "value_int": "1097077688018008265106216665536940668749033598146",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1843",
+        "var_name": "contracts/DecentralizedIndex.sol:WETH",
+        "offset": 12572,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "value_int": "1097077688018008265106216665536940668749033598146",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1845",
+        "var_name": "contracts/DecentralizedIndex.sol:V3_TWAP_UTILS",
+        "offset": 1437,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000a20803cca2c4f3c6127239bb964bdfdc93e2e05e",
+        "value_int": "925035241805868464882935963510913982880312123486",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1845",
+        "var_name": "contracts/DecentralizedIndex.sol:V3_TWAP_UTILS",
+        "offset": 7152,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000a20803cca2c4f3c6127239bb964bdfdc93e2e05e",
+        "value_int": "925035241805868464882935963510913982880312123486",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4101",
+        "var_name": "contracts/WeightedIndex.sol:V2_FACTORY",
+        "offset": 9437,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4101",
+        "var_name": "contracts/WeightedIndex.sol:V2_FACTORY",
+        "offset": 12492,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

@@ -76,7 +76,7 @@ EXPLORER_APIS = {
         "web_url": "https://etherscan.io",
         "chainid": 1,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+        "rpc_url": "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
     },
     "arbitrum": {
         "name": "Arbiscan",
@@ -84,7 +84,7 @@ EXPLORER_APIS = {
         "web_url": "https://arbiscan.io",
         "chainid": 42161,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+        "rpc_url": "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
     },
     "bsc": {
         "name": "BscScan",
@@ -92,7 +92,7 @@ EXPLORER_APIS = {
         "web_url": "https://bscscan.com",
         "chainid": 56,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+        "rpc_url": "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
     },
     "base": {
         "name": "BaseScan",
@@ -100,7 +100,7 @@ EXPLORER_APIS = {
         "web_url": "https://basescan.org",
         "chainid": 8453,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/base/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+        "rpc_url": "https://lb.drpc.live/base/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
     },
     "optimism": {
         "name": "Optimism Etherscan",
@@ -108,7 +108,7 @@ EXPLORER_APIS = {
         "web_url": "https://optimistic.etherscan.io",
         "chainid": 10,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+        "rpc_url": "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
     },
     "blast": {
         "name": "BlastScan",
@@ -116,7 +116,7 @@ EXPLORER_APIS = {
         "web_url": "https://blastscan.io",
         "chainid": 81457,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/blast/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+        "rpc_url": "https://lb.drpc.live/blast/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
     },
     "polygon": {
         "name": "PolygonScan",
@@ -124,7 +124,7 @@ EXPLORER_APIS = {
         "web_url": "https://polygonscan.com",
         "chainid": 137,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+        "rpc_url": "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
     },
     "avalanche": {
         "name": "SnowTrace",
@@ -132,7 +132,7 @@ EXPLORER_APIS = {
         "web_url": "https://snowtrace.io",
         "chainid": 43114,
         "api_key_name": "snowtrace",
-        "rpc_url": "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+        "rpc_url": "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
     },
     "fantom": {
         "name": "FTMScan",
@@ -140,7 +140,7 @@ EXPLORER_APIS = {
         "web_url": "https://ftmscan.com",
         "chainid": 250,
         "api_key_name": "ftmscan",
-        "rpc_url": "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1NUPObEnwYR76WEFhW5UfFk"
+        "rpc_url": "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
     },
 }
 
@@ -679,16 +679,48 @@ class DynamicAnalyzer:
             self.logger.debug(f"  执行命令: {' '.join(cmd)}")
             self.logger.debug(f"  工作目录: {working_dir}")
 
-            result = subprocess.run(
-                cmd,
-                cwd=working_dir,
-                capture_output=True,
-                text=True,
-                timeout=timeout
-            )
+            # 使用真实临时文件避免pipe buffer死锁 (forge -vvvv输出可能几十MB)
+            # 不能用NamedTemporaryFile,因为subprocess需要文件描述符而非file对象
+            stdout_path = tempfile.mktemp(suffix='_stdout.log', prefix='forge_')
+            stderr_path = tempfile.mktemp(suffix='_stderr.log', prefix='forge_')
 
-            # 即使测试失败,也可能有trace输出
-            output = result.stdout + result.stderr
+            self.logger.debug(f"  临时文件: stdout={stdout_path}, stderr={stderr_path}")
+
+            import time
+            _start_time = time.time()
+            self.logger.debug(f"  subprocess.run即将开始...")
+
+            try:
+                with open(stdout_path, 'w') as stdout_file, \
+                     open(stderr_path, 'w') as stderr_file:
+
+                    result = subprocess.run(
+                        cmd,
+                        cwd=working_dir,
+                        stdout=stdout_file,
+                        stderr=stderr_file,
+                        timeout=timeout
+                    )
+
+                _elapsed = time.time() - _start_time
+                self.logger.debug(f"  subprocess.run完成,耗时{_elapsed:.2f}s,返回码{result.returncode}")
+
+                # 读取输出
+                self.logger.debug(f"  开始读取输出文件...")
+                with open(stdout_path, 'r') as f:
+                    stdout_content = f.read()
+                with open(stderr_path, 'r') as f:
+                    stderr_content = f.read()
+                output = stdout_content + stderr_content
+                self.logger.debug(f"  读取完成,输出大小{len(output)}字符")
+            finally:
+                # 清理临时文件
+                for path in [stdout_path, stderr_path]:
+                    try:
+                        if os.path.exists(path):
+                            os.remove(path)
+                    except Exception:
+                        pass
 
             if result.returncode != 0:
                 self.logger.warning(f"  测试返回非零状态码: {result.returncode}")
@@ -1241,6 +1273,345 @@ def batch_check_contracts_exist(addresses: List[str], rpc_url: str,
     return valid_contracts
 
 
+class ImmutableExtractor:
+    """
+    Immutable变量提取器
+
+    基本流程:
+    1. 从已下载的源码构造标准JSON并调用本地solc，获取immutableReferences偏移
+    2. 通过RPC获取真实runtime bytecode，按偏移切片得到每个immutable的值
+    3. 将解析结果写入输出目录的immutables.json，并在metadata中记录
+
+    说明:
+    - 依赖本地已安装对应版本的solc，若缺失会自动跳过
+    - 偏移基于部署后的bytecode，切片时默认去掉末尾的metadata（若越界则回退到完整bytecode）
+    """
+
+    def __init__(self, logger: logging.Logger):
+        self.logger = logger
+        self.failed_versions: Set[str] = set()
+
+    def try_extract_and_save(self, runtime_hex: str, source_code: Dict[str, Any], output_dir: Path):
+        """综合执行提取并落盘"""
+        if not runtime_hex:
+            self.logger.info("  Immutable提取跳过: 未获取到runtime字节码")
+            return
+
+        sources = self._normalize_sources(source_code)
+        if not sources:
+            self.logger.info("  Immutable提取跳过: 源码解析失败")
+            return
+
+        compiler_version = source_code.get('CompilerVersion', '')
+        optimizer_enabled = source_code.get('OptimizationUsed') == '1'
+        runs = int(source_code.get('Runs') or 200)
+        evm_version = source_code.get('EVMVersion') or None
+
+        normalized_version = compiler_version.lstrip('v').split('+')[0] if compiler_version else ''
+        if normalized_version in self.failed_versions:
+            self.logger.info(f"  Immutable提取跳过: solc版本已标记不可用 ({compiler_version})")
+            return
+
+        solc_bin = self._resolve_solc_binary(compiler_version)
+        if not solc_bin:
+            self.logger.info(f"  Immutable提取跳过: 未找到匹配solc ({compiler_version})")
+            if normalized_version:
+                self.failed_versions.add(normalized_version)
+            return
+
+        self.logger.info(f"  尝试解析Immutable (solc={solc_bin}, 优化={optimizer_enabled}, runs={runs})")
+
+        immutable_refs, immutable_names = self._compile_for_immutable_refs(
+            sources,
+            solc_bin,
+            optimizer_enabled,
+            runs,
+            evm_version
+        )
+        if not immutable_refs:
+            self.logger.info("  Immutable提取跳过: 编译未返回immutableReferences")
+            return
+
+        values, meta_bytes, stripped_len = self._extract_from_runtime(runtime_hex, immutable_refs, immutable_names)
+        if not values:
+            self.logger.info("  Immutable提取跳过: 未解析到任何值")
+            return
+
+        output = {
+            'compiler_version': compiler_version,
+            'optimizer': optimizer_enabled,
+            'runs': runs,
+            'evm_version': evm_version,
+            'metadata_bytes': meta_bytes,
+            'runtime_bytes_without_metadata': stripped_len,
+            'values': values
+        }
+
+        imm_file = output_dir / 'immutables.json'
+        try:
+            with open(imm_file, 'w', encoding='utf-8') as f:
+                json.dump(output, f, indent=2, ensure_ascii=False)
+            self.logger.info(f"  ✓ Immutable 解析成功，写入 {imm_file.name}")
+            self._update_metadata(output_dir / 'metadata.json', imm_file.name)
+        except Exception as e:
+            self.logger.warning(f"  Immutable 结果写入失败: {e}")
+
+    def _normalize_sources(self, source_code: Dict[str, Any]) -> Dict[str, str]:
+        """从Etherscan返回的SourceCode字段解析源码映射"""
+        source = source_code.get('SourceCode', '')
+        if not source:
+            return {}
+
+        # 多文件JSON格式: 形如 {{ ... }}
+        if source.startswith('{{') and source.endswith('}}'):
+            try:
+                parsed = json.loads(source[1:-1])
+                if 'sources' in parsed and isinstance(parsed['sources'], dict):
+                    return {k: v.get('content', '') for k, v in parsed['sources'].items()}
+            except Exception as e:
+                self.logger.debug(f"  解析多文件源码失败: {e}")
+                return {}
+
+        # 其他格式按单文件处理
+        filename = f"{source_code.get('ContractName', 'Contract')}.sol"
+        return {filename: source}
+
+    def _resolve_solc_binary(self, compiler_version: str) -> Optional[str]:
+        """
+        基于编译器版本寻找solc二进制，优先 solc-<version>，其次 solc
+        不执行网络安装，未找到时返回None
+        """
+        version = ''
+        if compiler_version:
+            version = compiler_version.lstrip('v').split('+')[0]
+
+        # 允许通过环境变量强制指定
+        env_override = os.environ.get("SOLC_BIN")
+        if env_override and shutil.which(env_override):
+            return env_override
+
+        candidates = []
+        if version:
+            candidates.append(f"solc-{version}")  # 系统PATH中的命名
+            # svm 默认路径
+            svm_path = Path.home() / ".svm" / version / f"solc-{version}"
+            candidates.append(str(svm_path))
+            # foundry 下载的solc路径
+            foundry_path = Path.home() / ".foundry" / "bin" / f"solc-{version}"
+            candidates.append(str(foundry_path))
+        candidates.append("solc")  # 回退到系统默认
+
+        for cand in candidates:
+            if shutil.which(cand):
+                return cand
+        return None
+
+    def _compile_for_immutable_refs(self, sources: Dict[str, str], solc_bin: str,
+                                    optimizer: bool, runs: int,
+                                    evm_version: Optional[str]) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, str]]:
+        """调用solc获取immutableReferences，若evmVersion不被支持则回退为默认；同时提取AST中的immutable变量名称映射"""
+
+        def build_input(evm: Optional[str]) -> Dict[str, Any]:
+            settings = {
+                "optimizer": {"enabled": optimizer, "runs": runs},
+                "outputSelection": {
+                    "*": {
+                        "*": [
+                            "evm.deployedBytecode.object",
+                            "evm.deployedBytecode.immutableReferences"
+                        ],
+                        "": [
+                            "ast"
+                        ]
+                    },
+                    "": {
+                        "*": ["ast"]
+                    }
+                }
+            }
+            if evm:
+                settings["evmVersion"] = evm
+
+            return {
+                "language": "Solidity",
+                "sources": {name: {"content": content} for name, content in sources.items()},
+                "settings": settings
+            }
+
+        # 尝试原始evm_version，失败则去掉evmVersion重试
+        attempts = [evm_version] if evm_version else [None]
+        if evm_version:
+            attempts.append(None)
+
+        for evm in attempts:
+            try:
+                result = subprocess.run(
+                    [solc_bin, "--standard-json"],
+                    input=json.dumps(build_input(evm)),
+                    text=True,
+                    capture_output=True,
+                    timeout=90  # 避免长时间挂起
+                )
+            except Exception as e:
+                self.logger.info(f"  Immutable提取跳过: 调用solc失败({e})")
+                return {}
+
+            if result.returncode != 0:
+                last_err = result.stderr.strip().splitlines()
+                tail = last_err[-1] if last_err else result.stderr.strip()
+                if evm is not None and "invalid evm version" in tail.lower():
+                    self.logger.info("  Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试")
+                    continue
+                self.logger.info(f"  Immutable提取跳过: solc返回非零状态码: {tail}")
+                return {}, {}
+
+            try:
+                output = json.loads(result.stdout)
+            except Exception as e:
+                self.logger.info(f"  Immutable提取跳过: 解析solc输出失败({e})")
+                return {}, {}
+
+            # 若有错误，检查是否需要回退
+            has_error = False
+            for err in output.get('errors', []):
+                if err.get('severity') == 'error':
+                    msg = err.get('formattedMessage', err.get('message', ''))
+                    if evm is not None and "invalid evm version" in str(msg).lower():
+                        self.logger.info("  Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试")
+                        has_error = True
+                        break
+                    self.logger.info(f"  Immutable提取跳过: solc错误: {msg}")
+                    return {}, {}
+            if has_error:
+                continue
+
+            immutable_refs: Dict[str, Dict[str, Any]] = {}
+            name_map: Dict[str, str] = {}
+
+            # 提取AST中的immutable变量名称映射 (id -> name)
+            try:
+                sources_ast = output.get('sources', {})
+                for file_name, src in sources_ast.items():
+                    ast_root = src.get('ast')
+                    if not ast_root:
+                        continue
+                    for node in self._walk_ast(ast_root):
+                        if node.get('nodeType') == 'VariableDeclaration' and node.get('stateVariable') and node.get('mutability') == 'immutable':
+                            node_id = str(node.get('id'))
+                            node_name = node.get('name')
+                            if node_id and node_name:
+                                name_map[node_id] = f"{file_name}:{node_name}"
+            except Exception:
+                pass
+
+            contracts = output.get('contracts', {})
+            for file_name, file_contracts in contracts.items():
+                for contract_name, data in file_contracts.items():
+                    refs = data.get('evm', {}).get('deployedBytecode', {}).get('immutableReferences')
+                    if refs:
+                        key = f"{file_name}:{contract_name}"
+                        immutable_refs[key] = refs
+
+            return immutable_refs, name_map
+
+        return {}, {}
+
+    def _walk_ast(self, node: Dict[str, Any]):
+        """生成器遍历AST节点"""
+        yield node
+        for key in ('nodes', 'statements', 'members', 'parameters', 'returnParameters', 'baseContracts', 'expressions', 'arguments', 'components'):
+            if key in node and isinstance(node[key], list):
+                for child in node[key]:
+                    if isinstance(child, dict):
+                        yield from self._walk_ast(child)
+        # 单个子节点字段
+        for key in ('body', 'expression', 'typeName', 'initialValue'):
+            child = node.get(key)
+            if isinstance(child, dict):
+                yield from self._walk_ast(child)
+
+    def _extract_from_runtime(self, runtime_hex: str,
+                              immutable_refs: Dict[str, Dict[str, Any]],
+                              name_map: Dict[str, str]) -> Tuple[Dict[str, Any], int, int]:
+        """
+        根据immutableReferences在runtime中切片出实际值
+
+        Returns:
+            (结果字典, metadata字节数, 去掉metadata后的runtime字节数)
+        """
+        if runtime_hex.startswith('0x'):
+            runtime_hex = runtime_hex[2:]
+
+        stripped_runtime, meta_bytes = self._strip_metadata(runtime_hex)
+        results: Dict[str, Any] = {}
+
+        for contract_id, refs in immutable_refs.items():
+            if not isinstance(refs, dict):
+                continue
+
+            items = []
+            for label, slots in refs.items():
+                if not isinstance(slots, list):
+                    continue
+                for slot in slots:
+                    start = slot.get('start')
+                    length = slot.get('length')
+                    if start is None or length is None:
+                        continue
+
+                    end_pos = (start + length) * 2
+                    # 优先在去metadata的runtime上切片，越界则回退到完整runtime
+                    hex_source = stripped_runtime
+                    if end_pos > len(stripped_runtime):
+                        hex_source = runtime_hex
+                    if end_pos > len(hex_source):
+                        continue
+
+                    segment = hex_source[start * 2:end_pos]
+                    items.append({
+                        "label": label,
+                        "var_name": name_map.get(label),
+                        "offset": start,
+                        "length": length,
+                        "value_hex": f"0x{segment}",
+                        "value_int": str(int(segment, 16)),
+                        "used_stripped_runtime": hex_source is stripped_runtime
+                    })
+
+            if items:
+                results[contract_id] = items
+
+        return results, meta_bytes, len(stripped_runtime) // 2
+
+    def _strip_metadata(self, bytecode: str) -> Tuple[str, int]:
+        """移除末尾metadata并返回去除后的bytecode和metadata字节数"""
+        if len(bytecode) < 4:
+            return bytecode, 0
+        try:
+            meta_len = int(bytecode[-4:], 16)
+        except ValueError:
+            return bytecode, 0
+
+        tail_hex_len = meta_len * 2 + 4  # metadata字节数*2 + 长度字段4个hex字符
+        if tail_hex_len > len(bytecode):
+            return bytecode, 0
+
+        return bytecode[:-tail_hex_len], meta_len + 2  # 返回总字节数(含2字节长度)
+
+    def _update_metadata(self, metadata_path: Path, immutables_file: str):
+        """在metadata.json中记录immutables文件路径"""
+        try:
+            if not metadata_path.exists():
+                return
+            with open(metadata_path, 'r', encoding='utf-8') as f:
+                metadata = json.load(f)
+            metadata['immutable_values_file'] = immutables_file
+            with open(metadata_path, 'w', encoding='utf-8') as f:
+                json.dump(metadata, f, indent=2)
+        except Exception as e:
+            self.logger.debug(f"  更新metadata失败: {e}")
+
+
 class SourceDownloader:
     """源码下载器 - 从区块浏览器下载合约源码(支持多Key并发)"""
 
@@ -1251,6 +1622,7 @@ class SourceDownloader:
 
         # 初始化代理检测器
         self.proxy_detector = ProxyDetector(self.logger)
+        self.immutable_extractor = ImmutableExtractor(self.logger)
 
         # 创建带重试机制的requests session
         self.session = self._create_retry_session()
@@ -1351,6 +1723,7 @@ class SourceDownloader:
         success = False
         is_bytecode_only = False
         proxy_info = None
+        downloaded_source_code: Optional[Dict[str, Any]] = None
 
         for attempt in range(API_RETRY_TIMES):
             try:
@@ -1379,6 +1752,7 @@ class SourceDownloader:
 
                     # 保存源码
                     self._save_contract_files(source_code, contract_dir)
+                    downloaded_source_code = source_code
                     success = True
                     is_bytecode_only = False
 
@@ -1424,6 +1798,31 @@ class SourceDownloader:
                     self.logger.info(f"  ↳ 实现合约下载成功")
                 else:
                     self.logger.warning(f"  ↳ 实现合约下载失败")
+
+        # 提取Immutable变量（仅在成功获取源码且获取到runtime时尝试）
+        if success and downloaded_source_code and not is_bytecode_only:
+            runtime_hex = self._get_runtime_code(address.address, chain)
+            if runtime_hex:
+                self.immutable_extractor.try_extract_and_save(
+                    runtime_hex=runtime_hex,
+                    source_code=downloaded_source_code,
+                    output_dir=contract_dir
+                )
+
+        # 补充构造参数/创建交易信息
+        if success:
+            try:
+                self._enrich_constructor_data(
+                    address=address,
+                    chain=chain,
+                    contract_dir=contract_dir,
+                    source_code=downloaded_source_code,
+                    api_config=api_config,
+                    key_pool=key_pool,
+                    use_v1=api_config.get('use_v1', False)
+                )
+            except Exception as e:
+                self.logger.info(f"  构造参数补充失败: {e}")
 
         return success, is_bytecode_only
 
@@ -1483,7 +1882,8 @@ class SourceDownloader:
             # 保存所有源文件
             if 'sources' in sources:
                 for file_path, file_data in sources['sources'].items():
-                    file_output = output_dir / file_path.replace('/', '_')
+                    file_output = output_dir / file_path
+                    file_output.parent.mkdir(parents=True, exist_ok=True)
                     with open(file_output, 'w', encoding='utf-8') as f:
                         f.write(file_data['content'])
         else:
@@ -1636,6 +2036,137 @@ class SourceDownloader:
         except Exception as e:
             self.logger.error(f"  下载字节码失败: {e}")
             return False
+
+    def _get_runtime_code(self, address: str, chain: str) -> Optional[str]:
+        """
+        快速获取合约runtime字节码，用于immutable提取。不会写文件。
+        """
+        if chain not in EXPLORER_APIS:
+            return None
+
+        rpc_url = EXPLORER_APIS[chain].get('rpc_url')
+        if not rpc_url:
+            return None
+
+        payload = {
+            "jsonrpc": "2.0",
+            "method": "eth_getCode",
+            "params": [address, "latest"],
+            "id": 1
+        }
+
+        try:
+            response = self.session.post(rpc_url, json=payload, timeout=10)
+            response.raise_for_status()
+            data = response.json()
+            bytecode = data.get('result')
+            if not bytecode or bytecode in ('0x', '0x0', ''):
+                return None
+            return bytecode
+        except Exception as e:
+            self.logger.debug(f"  获取runtime字节码失败: {e}")
+            return None
+
+    def _enrich_constructor_data(self, address: ContractAddress, chain: str,
+                                 contract_dir: Path, source_code: Optional[Dict[str, Any]],
+                                 api_config: Dict[str, Any], key_pool: APIKeyPool,
+                                 use_v1: bool):
+        """
+        补充构造参数信息：
+        - 已验证合约：保留Etherscan返回的ConstructorArguments
+        - 未验证合约：调用 getcontractcreation 获取创建交易哈希，再用 eth_getTransactionByHash 获取tx input
+        - 将creation_tx_hash与constructor_tx_input写入metadata.json
+        """
+        metadata_file = contract_dir / 'metadata.json'
+        if not metadata_file.exists():
+            return
+
+        try:
+            with open(metadata_file, 'r', encoding='utf-8') as f:
+                metadata = json.load(f)
+        except Exception as e:
+            self.logger.debug(f"  读取metadata失败，跳过构造参数补充: {e}")
+            return
+
+        constructor_args_hex = None
+        if source_code:
+            constructor_args_hex = source_code.get('ConstructorArguments') or None
+            if constructor_args_hex is not None:
+                metadata['constructor_arguments'] = constructor_args_hex
+
+        creation_tx_hash = self._fetch_creation_tx_hash(
+            address.address,
+            api_config,
+            key_pool,
+            use_v1
+        )
+        if creation_tx_hash:
+            metadata['creation_tx_hash'] = creation_tx_hash
+            tx_input = self._fetch_tx_input(api_config.get('rpc_url'), creation_tx_hash)
+            if tx_input:
+                metadata['constructor_tx_input'] = tx_input
+
+        try:
+            with open(metadata_file, 'w', encoding='utf-8') as f:
+                json.dump(metadata, f, indent=2, ensure_ascii=False)
+        except Exception as e:
+            self.logger.debug(f"  写入metadata失败(构造参数): {e}")
+
+    def _fetch_creation_tx_hash(self, contract_address: str, api_config: Dict[str, Any],
+                                key_pool: APIKeyPool, use_v1: bool) -> Optional[str]:
+        """使用区块浏览器API获取合约创建交易哈希"""
+        api_url = api_config['api_url']
+        chainid = api_config['chainid']
+
+        params = {
+            'module': 'contract',
+            'action': 'getcontractcreation',
+            'contractaddresses': contract_address
+        }
+        if not use_v1:
+            params['chainid'] = chainid
+
+        try:
+            with key_pool.acquire_key() as api_key:
+                params['apikey'] = api_key
+                resp = self.session.get(api_url, params=params, timeout=15)
+                resp.raise_for_status()
+                data = resp.json()
+        except Exception as e:
+            self.logger.debug(f"  获取创建交易哈希失败: {e}")
+            return None
+
+        try:
+            if data.get('status') != '1':
+                return None
+            result = data.get('result')
+            if isinstance(result, list) and result:
+                tx_hash = result[0].get('txHash') or result[0].get('txhash')
+                return tx_hash
+        except Exception:
+            return None
+        return None
+
+    def _fetch_tx_input(self, rpc_url: Optional[str], tx_hash: Optional[str]) -> Optional[str]:
+        """通过RPC获取交易input"""
+        if not rpc_url or not tx_hash:
+            return None
+        payload = {
+            "jsonrpc": "2.0",
+            "method": "eth_getTransactionByHash",
+            "params": [tx_hash],
+            "id": 1
+        }
+        try:
+            resp = self.session.post(rpc_url, json=payload, timeout=10)
+            resp.raise_for_status()
+            data = resp.json()
+            tx = data.get('result')
+            if tx and isinstance(tx, dict):
+                return tx.get('input')
+        except Exception as e:
+            self.logger.debug(f"  获取交易input失败: {e}")
+        return None
 
     def get_stats(self) -> Dict[str, Any]:
         """获取所有KeyPool的统计信息"""

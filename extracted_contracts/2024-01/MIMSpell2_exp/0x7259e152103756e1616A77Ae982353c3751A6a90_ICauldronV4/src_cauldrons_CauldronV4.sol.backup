@@ -37,6 +37,21 @@ import {IRouter} from "../../../../../src/Interface/IRouter.sol";
 /// @dev This contract allows contract calls to any contract (except BentoBox)
 /// from arbitrary callers thus, don't trust calls from this contract in any circumstances.
 contract CauldronV4 is BoringOwnable, IMasterContract {
+    // 防火墙读取单槽位接口
+    function extsload(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+    // 兼容接口: 与 ext/tools 读取保持一致
+    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+
     // 防火墙路由器
     IRouter public immutable firewall;
 

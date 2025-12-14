@@ -1049,6 +1049,7 @@ class AttackScriptParser:
         'fallback': [
             'fallback',
             'receive',
+            'callback',  # 常见的通用回调函数名称
         ],
     }
 
@@ -1989,6 +1990,7 @@ class ConstraintGeneratorV2:
         self.correlator = ParamStateCorrelator(state_analyzer)
         self.threshold_inferrer = ThresholdInferrer()
         self._behavior_analysis_cache = None
+        self.last_abi_path = None
 
         # V3增强: 初始化符号执行求值器
         if V3_AVAILABLE and hasattr(state_analyzer, 'layout_inferrer') and state_analyzer.layout_inferrer:
@@ -2004,6 +2006,58 @@ class ConstraintGeneratorV2:
             self.param_evaluator = None
             if not V3_AVAILABLE:
                 logger.debug("V3不可用,跳过SymbolicParameterEvaluator初始化")
+
+    def _align_params_with_abi(self, attack_info: Dict, vuln_address: Optional[str]) -> None:
+        """
+        从提取目录中的 abi.json 对齐函数参数类型，防止数组/bytes/bool 被误判为uint256。
+        """
+        if not vuln_address:
+            return
+        abi_map = {}
+        try:
+            # 只使用 vuln_address 对应的 ABI，避免被其他合约误匹配
+            abi_path = self._find_abi_file(vuln_address)
+            if not abi_path:
+                return
+            with open(abi_path, 'r', encoding='utf-8') as f:
+                abi = json.load(f)
+            for item in abi:
+                if item.get('type') != 'function':
+                    continue
+                name = item.get('name')
+                inputs = item.get('inputs', [])
+                abi_map[name] = [inp.get('type', '') for inp in inputs]
+        except Exception as e:
+            logger.warning(f"加载ABI失败，跳过类型对齐: {e}")
+            return
+
+        for call in attack_info.get('attack_calls', []):
+            func = call.get('function')
+            params = call.get('parameters') or []
+            types = abi_map.get(func)
+            if not types or len(types) != len(params):
+                continue
+            for idx, p in enumerate(params):
+                if types[idx]:
+                    p['type'] = types[idx]
+                    p['is_dynamic'] = types[idx] in {
+                        'uint256', 'int256', 'uint8', 'address', 'bool', 'bytes', 'bytes32',
+                        'address[]', 'uint256[]', 'uint8[]', 'bytes[]'
+                    }
+        self.last_abi_path = abi_path
+
+    def _find_abi_file(self, vuln_address: str) -> Optional[Path]:
+        """
+        在提取目录下查找包含目标地址的 abi.json，兼容 *_<Name>/abi.json 等路径。
+        """
+        try:
+            addr_lower = vuln_address.lower()
+            for path in self.state_analyzer.protocol_dir.rglob("abi.json"):
+                if addr_lower in path.as_posix().lower():
+                    return path
+        except Exception as e:
+            logger.warning(f"查找ABI失败: {e}")
+        return None
 
     def _analyze_attack_behavior(self, slot_changes: List[Dict], loop_info: Optional[Dict]) -> Dict:
         """
@@ -2141,6 +2195,9 @@ class ConstraintGeneratorV2:
             vuln_address: 被攻击合约地址
             firewall_config: 防火墙配置（可选）
         """
+        # 先尝试用ABI对齐参数类型，避免数组/bytes/bool误判为uint256
+        self._align_params_with_abi(attack_info, vuln_address)
+
         constraints = []
 
         # 0. 过滤被保护的函数（如果有防火墙配置）
@@ -2158,7 +2215,7 @@ class ConstraintGeneratorV2:
             logger.warning("  没有要分析的函数调用")
             return constraints
 
-        # 1. 获取slot变化
+        # 1. 获取slot变化（固定使用 vuln_address 作为分析目标）
         slot_changes = self.state_analyzer.analyze_slot_changes(vuln_address)
 
         if not slot_changes:
@@ -2166,6 +2223,8 @@ class ConstraintGeneratorV2:
             return self._generate_heuristic_constraints(attack_info)
 
         logger.info(f"检测到 {len(slot_changes)} 个slot变化")
+        if self.last_abi_path:
+            logger.info(f"  使用ABI: {self.last_abi_path}")
 
         # 获取循环信息用于行为分析
         loop_info = attack_info.get('loop_info')
@@ -2198,7 +2257,43 @@ class ConstraintGeneratorV2:
                 # ====== 数值标量 ======
                 if p_type in ('uint256', 'int256', 'uint8'):
                     param_value = self._estimate_param_value(param['value_expr'], vuln_address)
-                    if param_value is None or param_value == 0:
+                    if param_value is None:
+                        continue
+                    if param_value == 0:
+                        # 直接记录一个离散约束，避免零值被跳过
+                        constraint = {
+                            "function": func_name,
+                            "signature": call.get("signature"),
+                            "attack_pattern": pattern,
+                            "constraint": {
+                                "type": "discrete_numeric",
+                                "expression": f"{param.get('name') or param['index']} == 0",
+                                "semantics": "Observed parameter value is zero",
+                                "attack_values": [0],
+                                "variables": {
+                                    "value": {
+                                        "source": "function_parameter",
+                                        "index": param['index'],
+                                        "type": p_type,
+                                        "value_expr": param.get('value_expr')
+                                    }
+                                },
+                                "range": {
+                                    "min": 0,
+                                    "max": 0
+                                }
+                            },
+                            "analysis": {
+                                "state_value": None,
+                                "threshold": None,
+                                "coefficient": None,
+                                "attack_intensity": None,
+                                "reasoning": "Parameter value observed as zero",
+                                "correlation_type": "discrete",
+                                "correlation_confidence": 0.2
+                            }
+                        }
+                        constraints.append(constraint)
                         continue
 
                     correlations = self.correlator.correlate(param_value, slot_changes)
@@ -3064,38 +3159,22 @@ class ConstraintExtractorV2:
         if not all_slot_changes:
             logger.warning("  所有分析目标都没有状态变化")
 
-        # 生成约束（传入防火墙配置）
+        # 生成约束（传入防火墙配置），强制使用 vuln_address 作为分析目标
         logger.timer_start(f"{protocol_name} - 生成约束")
         constraint_gen = ConstraintGeneratorV2(state_analyzer)
-
-        # 确定要使用的主要分析地址
-        primary_address = None
-
-        # 优先使用有状态变化的合约
-        if all_slot_changes:
-            # 选择变化最大的合约作为主要分析目标
-            primary_address = max(all_slot_changes.keys(), key=lambda k: len(all_slot_changes[k]))
-            logger.info(f"  使用变化最大的合约作为主要分析目标: {primary_address[:12]}... ({len(all_slot_changes[primary_address])} slots)")
-        elif vuln_address:
-            # 如果没有状态变化，使用原始被攻击合约
-            primary_address = vuln_address
-            logger.info(f"  使用原始被攻击合约: {primary_address[:12]}...")
-
-        if primary_address:
-            constraints = constraint_gen.generate(attack_info, primary_address, firewall_config)
-        else:
-            constraints = constraint_gen._generate_heuristic_constraints(attack_info)
-
+        constraints = constraint_gen.generate(attack_info, vuln_address, firewall_config)
         logger.timer_end(f"{protocol_name} - 生成约束")
         logger.success(f"  生成约束: {len(constraints)} 个")
 
         # 构建结果
         loop_info = attack_info.get('loop_info') or {}
 
-        # 获取主要分析地址的slot变化（用于构建结果）
-        primary_slot_changes = []
-        if primary_address and primary_address in all_slot_changes:
-            primary_slot_changes = all_slot_changes[primary_address]
+        # 获取主要分析地址的slot变化（用于构建结果），优先 vuln_address
+        primary_slot_changes = all_slot_changes.get(vuln_address, [])
+        if not primary_slot_changes and all_slot_changes:
+            # 回退到任意有变化的合约
+            first_addr = next(iter(all_slot_changes))
+            primary_slot_changes = all_slot_changes.get(first_addr, [])
 
         result = {
             "protocol": protocol_name,

@@ -710,7 +710,9 @@ class StateCollector:
         self.trace_cache: Dict[str, Dict] = {}
 
     def collect_state(self, chain: str, block_number: int,
-                     addresses: List[AddressInfo], attack_tx_hash: Optional[str] = None) -> Optional[Dict[str, Any]]:
+                     addresses: List[AddressInfo], attack_tx_hash: Optional[str] = None,
+                     extra_holder_addresses: Optional[List[str]] = None,
+                     mapping_seeds: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
         """
         收集指定区块的状态
 
@@ -719,6 +721,8 @@ class StateCollector:
             block_number: 区块号
             addresses: 地址列表
             attack_tx_hash: 攻击交易哈希（用于trace-based收集）
+            extra_holder_addresses: 额外强制作为ERC20持有人的地址
+            mapping_seeds: 映射槽位强制收集配置
 
         Returns:
             状态字典或None（如果失败）
@@ -755,6 +759,19 @@ class StateCollector:
                     continue
                 holder_candidate_set.add(key)
                 holder_candidates.append(checksum_addr)
+
+            # 追加外部强制持有人（如攻击者/执行器或手动指定地址）
+            if extra_holder_addresses:
+                for addr in extra_holder_addresses:
+                    try:
+                        checksum_addr = Web3.to_checksum_address(addr)
+                    except Exception:
+                        continue
+                    key = checksum_addr.lower()
+                    if key in holder_candidate_set:
+                        continue
+                    holder_candidate_set.add(key)
+                    holder_candidates.append(checksum_addr)
 
             # 收集每个地址的状态
             address_states = {}
@@ -819,7 +836,7 @@ class StateCollector:
             if not (attack_tx_hash and self.use_trace and chain.lower() not in self.unsupported_trace_chains):
                 collection_method = 'sequential'
 
-            return {
+            result = {
                 'metadata': {
                     'chain': chain,
                     'block_number': block_number,
@@ -833,6 +850,17 @@ class StateCollector:
                 },
                 'addresses': address_states
             }
+
+            # 根据mapping_seeds主动补充映射槽位（用于stakings/users等未在trace中出现的槽）
+            if mapping_seeds:
+                self._apply_mapping_seeds(
+                    w3=w3,
+                    block_number=block_number,
+                    address_states=address_states,
+                    mapping_seeds=mapping_seeds
+                )
+
+            return result
 
         except Exception as e:
             self.logger.error(f"收集状态失败: {e}")
@@ -1150,6 +1178,87 @@ class StateCollector:
 
         return balances, balance_slot
 
+    def _apply_mapping_seeds(self, w3: Web3, block_number: int,
+                             address_states: Dict[str, Dict[str, Any]],
+                             mapping_seeds: Dict[str, Any]) -> None:
+        """
+        根据 mapping_seeds 映射配置，主动抓取映射槽位（例如 stakings/users）
+
+        mapping_seeds 约定格式示例:
+        {
+          "0x5e93...": {
+            "slots": [
+              { "slot": 17, "addresses": ["0xfCf8...", "0xfCBf..."], "label": "stakings" },
+              { "slot": 18, "addresses": ["0xfCf8...", "0xfCBf..."], "label": "users" }
+            ]
+          }
+        }
+        """
+        if not mapping_seeds:
+            return
+
+        def _find_state_key(target: str) -> Optional[str]:
+            target_l = target.lower()
+            for k in address_states.keys():
+                if k.lower() == target_l:
+                    return k
+            return None
+
+        for contract_addr, cfg in mapping_seeds.items():
+            if not isinstance(cfg, dict):
+                continue
+            try:
+                checksum_contract = Web3.to_checksum_address(contract_addr)
+            except Exception:
+                continue
+
+            state_key = _find_state_key(checksum_contract)
+            if not state_key:
+                continue
+
+            slot_entries: List[Dict[str, Any]] = []
+            if 'slots' in cfg and isinstance(cfg['slots'], list):
+                slot_entries.extend(cfg['slots'])
+            else:
+                # 兼容形如 {"stakings_slot": 17, "addresses": [...]} 的老格式
+                addresses = cfg.get('addresses', [])
+                for k, v in cfg.items():
+                    if k.endswith('_slot') and isinstance(v, int):
+                        slot_entries.append({'slot': v, 'addresses': addresses, 'label': k})
+
+            if not slot_entries:
+                continue
+
+            storage_dict = address_states[state_key].setdefault('storage', {})
+
+            for item in slot_entries:
+                slot = item.get('slot')
+                addrs = item.get('addresses', [])
+                label = item.get('label', '')
+                if slot is None or not isinstance(slot, int) or not addrs:
+                    continue
+                for holder in addrs:
+                    try:
+                        holder_chk = Web3.to_checksum_address(holder)
+                    except Exception:
+                        continue
+                    key_bytes = bytes.fromhex(holder_chk[2:].rjust(64, '0')) + slot.to_bytes(32, byteorder='big')
+                    storage_key_bytes = keccak(key_bytes)
+                    storage_key_int = int.from_bytes(storage_key_bytes, byteorder='big')
+                    try:
+                        raw = self._retry_call(
+                            lambda: w3.eth.get_storage_at(checksum_contract, storage_key_int, block_number)
+                        )
+                    except Exception as exc:
+                        self.logger.debug(f"      映射槽读取失败 {checksum_contract}@{slot} [{holder_chk}] {exc}")
+                        continue
+                    if raw is None:
+                        continue
+                    storage_dict[str(storage_key_int)] = raw.hex()
+                    self.logger.debug(
+                        f"      映射槽补充 {checksum_contract}@{slot} ({label}) holder={holder_chk} => {raw.hex()}"
+                    )
+
     def _encode_multicall3_aggregate3(self, calls: List[Dict]) -> str:
         """
         编码Multicall3.aggregate3的调用参数
@@ -1465,7 +1574,8 @@ class StateCollector:
 
             if not address_data:
                 self.logger.debug(f"      Trace中未找到地址 {address}（交易可能未访问此合约）")
-                return storage
+                # 抛出异常让上层降级到Sequential扫描
+                raise Exception(f"合约 {address} 不在trace中，需要降级到Sequential扫描")
 
             # 提取storage数据
             if 'storage' in address_data:
@@ -1511,6 +1621,8 @@ class StateCollector:
 
             else:
                 self.logger.debug(f"      Trace结果中没有storage字段")
+                # 同样抛出异常降级
+                raise Exception(f"合约 {address} 的trace结果缺少storage字段")
 
             return storage
 
@@ -2076,12 +2188,32 @@ class AttackStateCollector:
             self.logger.error(f"  加载addresses.json失败: {e}")
             return False
 
+        # 4.1 加载可选的mapping_seeds配置（用于强制收集映射槽位）
+        mapping_seeds_file = event_dir / 'mapping_seeds.json'
+        mapping_seeds = None
+        if mapping_seeds_file.exists():
+            try:
+                mapping_seeds = json.load(open(mapping_seeds_file, 'r'))
+                self.logger.info(f"  加载mapping_seeds.json，启用映射槽位补充收集")
+            except Exception as e:
+                self.logger.warning(f"  解析mapping_seeds.json失败: {e}")
+                mapping_seeds = None
+
+        # 4.2 额外持有人：从环境变量注入攻击者/执行器地址
+        extra_holder_addresses: List[str] = []
+        for env_key in ['ATTACKER_ADDRESS', 'ATTACK_EXECUTOR']:
+            val = os.getenv(env_key)
+            if val:
+                extra_holder_addresses.append(val)
+
         # 5. 收集状态（传递attack_tx_hash）
         state = self.state_collector.collect_state(
             fork_info.chain,
             fork_info.block_number,
             addresses,
-            attack_tx_hash  # 新增：传递攻击交易哈希
+            attack_tx_hash,  # 新增：传递攻击交易哈希
+            extra_holder_addresses=extra_holder_addresses,
+            mapping_seeds=mapping_seeds
         )
 
         if not state:
@@ -2127,7 +2259,9 @@ class AttackStateCollector:
                     fork_info.chain,
                     attack_block_number,  # 使用攻击区块号
                     addresses,
-                    attack_tx_hash  # 修复: 使用攻击交易哈希进行trace,避免慢速sequential扫描
+                    attack_tx_hash,  # 修复: 使用攻击交易哈希进行trace,避免慢速sequential扫描
+                    extra_holder_addresses=extra_holder_addresses,
+                    mapping_seeds=mapping_seeds
                 )
 
                 if not state_after:
