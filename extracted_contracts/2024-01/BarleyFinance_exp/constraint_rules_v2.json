@@ -38,12 +38,12 @@
     },
     {
       "function": "flash",
-      "signature": "flash(...)",
+      "signature": "flash(address,address,uint256,bytes)",
       "attack_pattern": "inflate_attack",
       "constraint": {
-        "type": "heuristic_threshold",
-        "expression": "amount > 2867543696806566690816",
-        "semantics": "Heuristic constraint based on inflate_attack pattern",
+        "type": "ratio_threshold",
+        "expression": "amount > 3418944620969774259634176",
+        "semantics": "Partial extraction: 79.4% of likely_totalSupply affected per unit",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -51,28 +51,28 @@
             "type": "uint256",
             "value_expr": "BARL.balanceOf(address(wBARL))"
           },
-          "balance_mapping_increased": {
+          "likely_totalSupply": {
             "source": "storage",
-            "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
+            "slot": "2",
             "type": "uint256",
-            "semantic_name": "balance_mapping_increased",
-            "before_value": 9558478989355222963846,
-            "after_value": 9558478989355222963846
+            "semantic_name": "likely_totalSupply",
+            "before_value": 8611951186321848770844714,
+            "after_value": 15449840428261396694895415
           }
         },
-        "danger_condition": "amount >= 8602631090419701645312",
-        "safe_condition": "amount <= 2867543696806566690816",
-        "threshold_value": 2867543696806566690816
+        "danger_condition": "amount >= 6837889241939548519268352",
+        "safe_condition": "amount <= 3418944620969774259634176",
+        "threshold_value": 3418944620969774259634176
       },
       "analysis": {
-        "state_value": 9558478989355222963846,
-        "threshold": 4779239494677611481923,
+        "state_value": 8611951186321848770844714,
+        "threshold": 4305975593160924385422357,
         "coefficient": 0.5,
-        "attack_intensity": 1.5910079088532634e+25,
-        "reasoning": "启发式约束，基于inflate_attack模式，阈值设为2867543696806566690816",
-        "correlation_type": "heuristic",
-        "correlation_confidence": 0.5,
-        "ratio": 1.0,
+        "attack_intensity": 1.0,
+        "reasoning": "部分提取模式，提取比例0.79，阈值设为3418944620969774259634176",
+        "correlation_type": "partial",
+        "correlation_confidence": 0.7,
+        "ratio": 0.794,
         "change_direction": "increase"
       }
     },
@@ -112,12 +112,12 @@
     },
     {
       "function": "debond",
-      "signature": "debond(...)",
+      "signature": "debond(uint256,address[],uint8[])",
       "attack_pattern": "inflate_attack",
       "constraint": {
-        "type": "heuristic_threshold",
-        "expression": "amount > 2867543696806566690816",
-        "semantics": "Heuristic constraint based on inflate_attack pattern",
+        "type": "ratio_threshold",
+        "expression": "amount > 3418944620969774259634176",
+        "semantics": "Partial extraction: 79.4% of likely_totalSupply affected per unit",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -125,28 +125,28 @@
             "type": "uint256",
             "value_expr": "wBARL.balanceOf(address(this))"
           },
-          "balance_mapping_increased": {
+          "likely_totalSupply": {
             "source": "storage",
-            "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
+            "slot": "2",
             "type": "uint256",
-            "semantic_name": "balance_mapping_increased",
-            "before_value": 9558478989355222963846,
-            "after_value": 9558478989355222963846
+            "semantic_name": "likely_totalSupply",
+            "before_value": 8611951186321848770844714,
+            "after_value": 15449840428261396694895415
           }
         },
-        "danger_condition": "amount >= 8602631090419701645312",
-        "safe_condition": "amount <= 2867543696806566690816",
-        "threshold_value": 2867543696806566690816
+        "danger_condition": "amount >= 6837889241939548519268352",
+        "safe_condition": "amount <= 3418944620969774259634176",
+        "threshold_value": 3418944620969774259634176
       },
       "analysis": {
-        "state_value": 9558478989355222963846,
-        "threshold": 4779239494677611481923,
+        "state_value": 8611951186321848770844714,
+        "threshold": 4305975593160924385422357,
         "coefficient": 0.5,
-        "attack_intensity": 1.5910079088532634e+25,
-        "reasoning": "启发式约束，基于inflate_attack模式，阈值设为2867543696806566690816",
-        "correlation_type": "heuristic",
-        "correlation_confidence": 0.5,
-        "ratio": 1.0,
+        "attack_intensity": 1.0,
+        "reasoning": "部分提取模式，提取比例0.79，阈值设为3418944620969774259634176",
+        "correlation_type": "partial",
+        "correlation_confidence": 0.7,
+        "ratio": 0.794,
         "change_direction": "increase"
       }
     },
@@ -221,12 +221,12 @@
     },
     {
       "function": "bond",
-      "signature": "bond(...)",
+      "signature": "bond(address,uint256)",
       "attack_pattern": "inflate_attack",
       "constraint": {
-        "type": "heuristic_threshold",
-        "expression": "amount > 2867543696806566690816",
-        "semantics": "Heuristic constraint based on inflate_attack pattern",
+        "type": "ratio_threshold",
+        "expression": "amount > 3418944620969774259634176",
+        "semantics": "Partial extraction: 79.4% of likely_totalSupply affected per unit",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -234,28 +234,28 @@
             "type": "uint256",
             "value_expr": "BARL.balanceOf(address(this))"
           },
-          "balance_mapping_increased": {
+          "likely_totalSupply": {
             "source": "storage",
-            "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
+            "slot": "2",
             "type": "uint256",
-            "semantic_name": "balance_mapping_increased",
-            "before_value": 9558478989355222963846,
-            "after_value": 9558478989355222963846
+            "semantic_name": "likely_totalSupply",
+            "before_value": 8611951186321848770844714,
+            "after_value": 15449840428261396694895415
           }
         },
-        "danger_condition": "amount >= 8602631090419701645312",
-        "safe_condition": "amount <= 2867543696806566690816",
-        "threshold_value": 2867543696806566690816
+        "danger_condition": "amount >= 6837889241939548519268352",
+        "safe_condition": "amount <= 3418944620969774259634176",
+        "threshold_value": 3418944620969774259634176
       },
       "analysis": {
-        "state_value": 9558478989355222963846,
-        "threshold": 4779239494677611481923,
+        "state_value": 8611951186321848770844714,
+        "threshold": 4305975593160924385422357,
         "coefficient": 0.5,
-        "attack_intensity": 1.5910079088532634e+25,
-        "reasoning": "启发式约束，基于inflate_attack模式，阈值设为2867543696806566690816",
-        "correlation_type": "heuristic",
-        "correlation_confidence": 0.5,
-        "ratio": 1.0,
+        "attack_intensity": 1.0,
+        "reasoning": "部分提取模式，提取比例0.79，阈值设为3418944620969774259634176",
+        "correlation_type": "partial",
+        "correlation_confidence": 0.7,
+        "ratio": 0.794,
         "change_direction": "increase"
       }
     }
@@ -263,17 +263,17 @@
   "state_analysis": {
     "slot_changes": [
       {
-        "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
-        "before": 9558478989355222963846,
-        "after": 6847447720928903147014547,
-        "change_pct": 71537.42,
-        "is_new_slot": false
-      },
-      {
         "slot": "2",
         "before": 8611951186321848770844714,
         "after": 15449840428261396694895415,
         "change_pct": 79.4,
+        "is_new_slot": false
+      },
+      {
+        "slot": "27345345294061825628103022900114978450352795135033401968609844108243198926249",
+        "before": 9558478989355222963846,
+        "after": 6847447720928903147014547,
+        "change_pct": 71537.42,
         "is_new_slot": false
       }
     ],

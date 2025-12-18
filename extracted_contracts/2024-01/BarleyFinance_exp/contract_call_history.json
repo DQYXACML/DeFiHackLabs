@@ -6,8 +6,40 @@
     "debond",
     "flash"
   ],
-  "tx_count": 20,
+  "tx_count": 21,
   "txs": [
+    {
+      "hash": "0x_synthetic_flash_attack",
+      "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "to": "0x04c80bb477890f3021f03b068238836ee20aa0b8",
+      "value": "0",
+      "blockNumber": 19109509,
+      "time": "2024-01-29T03:30:23Z",
+      "function": "flash",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_recipient",
+          "type": "address",
+          "value": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+        },
+        {
+          "name": "_token",
+          "type": "address",
+          "value": "0x3e2324342bF5B8A1Dca42915f0489497203d640E"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 200000000000000000000000
+        },
+        {
+          "name": "_data",
+          "type": "bytes",
+          "value": ""
+        }
+      ]
+    },
     {
       "hash": "0xc1c8b558bc9b0a4fc9be61a2e4f66a012e6cd32b1eace00585df1ca2c1b9a687",
       "from": "0x85af6317e6934874f9f854ed9bb01c2a38a6d815",

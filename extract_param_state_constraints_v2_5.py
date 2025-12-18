@@ -2310,6 +2310,7 @@ class ConstraintGeneratorV2:
 
                         constraint = self._build_constraint(
                             func_name=func_name,
+                            func_signature=call.get("signature"),
                             param=param,
                             pattern=pattern,
                             slot=best_corr['slot'],
@@ -2330,6 +2331,7 @@ class ConstraintGeneratorV2:
 
                         constraint = self._build_constraint(
                             func_name=func_name,
+                            func_signature=call.get("signature"),
                             param=param,
                             pattern=pattern,
                             slot=top_change['slot'],
@@ -2721,6 +2723,7 @@ class ConstraintGeneratorV2:
     def _build_constraint(
         self,
         func_name: str,
+        func_signature: str,
         param: Dict,
         pattern: str,
         slot: str,
@@ -2757,7 +2760,7 @@ class ConstraintGeneratorV2:
 
         return {
             "function": func_name,
-            "signature": f"{func_name}(...)",
+            "signature": func_signature,
             "attack_pattern": pattern,
             "constraint": {
                 "type": constraint_info['constraint_type'],
@@ -3033,7 +3036,7 @@ class ConstraintGeneratorV2:
             for param in dynamic_params:
                 constraint = {
                     "function": func_name,
-                    "signature": f"{func_name}(...)",
+                    "signature": call.get("signature"),
                     "attack_pattern": pattern,
                     "constraint": {
                         "type": "inequality",

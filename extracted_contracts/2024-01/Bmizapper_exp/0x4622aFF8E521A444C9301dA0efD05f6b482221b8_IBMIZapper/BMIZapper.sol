@@ -22,33 +22,6 @@ import "./console.sol";
 import {IRouter} from "./interfaces/IRouter.sol";
 
 contract BMIZapper is Ownable {
-    // 防火墙读取单槽位接口
-    function extsload(bytes32 slot) external view returns (bytes32 value) {
-        assembly {
-            value := sload(slot)
-        }
-    }
-
-    // 兼容接口: 与 ext/tools 读取保持一致
-    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
-        assembly {
-            value := sload(slot)
-        }
-    }
-
-
-    // 防火墙路由器
-    IRouter public immutable firewall;
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
-        }
-        _;
-    }
-
-
     using SafeERC20 for IERC20;
     using SafeMath for uint256;
 
@@ -160,8 +133,7 @@ contract BMIZapper is Ownable {
 
     // **** Constructor ****
 
-    constructor(address _firewall, address _bmi) {
-        firewall = IRouter(_firewall);
+    constructor(address _bmi) {
         BMI = _bmi;
     }
 

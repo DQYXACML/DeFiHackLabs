@@ -19924,3 +19924,186 @@ API Key并发统计:
 2025-12-12 05:27:17,588 - INFO - 
 输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
 2025-12-12 05:27:17,588 - INFO - ================================================================================
+2025-12-15 07:56:14,507 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-15 07:56:14,508 - INFO - 使用硬编码的API Keys配置
+2025-12-15 07:56:14,508 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-15 07:56:14,508 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-15 07:56:14,508 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-15 07:56:14,508 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-15 07:56:14,508 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-15 07:56:14,508 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-15 07:56:14,509 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-15 07:56:14,510 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-15 07:56:14,510 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-15 07:56:14,511 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-15 07:56:14,512 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-15 07:56:14,512 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-15 07:56:14,513 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-15 07:56:14,513 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-15 07:56:14,513 - INFO - OnChainDataFetcher初始化成功
+2025-12-15 07:56:14,513 - INFO - ================================================================================
+2025-12-15 07:56:14,513 - INFO - 开始提取DeFi攻击合约
+2025-12-15 07:56:14,513 - INFO - ================================================================================
+2025-12-15 07:56:14,518 - INFO - 找到 1 个测试脚本
+2025-12-15 07:56:14,518 - INFO - 
+[1/1] 处理: 2024-01/Bmizapper_exp
+2025-12-15 07:56:14,518 - INFO - 静态分析: Bmizapper_exp
+2025-12-15 07:56:14,523 - INFO -   静态提取到 5 个地址
+2025-12-15 07:56:14,523 - INFO -   静态分析耗时: 0.01s, 地址数: 5
+2025-12-15 07:56:14,523 - INFO - 动态分析: Bmizapper_exp
+2025-12-15 08:00:08,832 - INFO -   动态提取到 20 个地址
+2025-12-15 08:00:08,833 - INFO -   动态分析耗时: 234.31s, 地址数: 20
+2025-12-15 08:00:08,833 - INFO -   地址合并耗时: 0.00s
+2025-12-15 08:00:08,833 - INFO -   共提取到 21 个唯一地址
+2025-12-15 08:00:08,833 - INFO -   开始补全链上数据 (21个地址)...
+2025-12-15 08:00:08,834 - INFO - 开始批量获取 21 个合约信息 (chain=mainnet)
+2025-12-15 08:00:19,502 - WARNING - 获取合约名称超时 0x0aC00355F80E289f53BF368C9Bdb70f5c114C44B (尝试1/3)
+2025-12-15 08:00:19,503 - WARNING - 获取合约名称超时 0x4Fabb145d64652a948d72533023f6E7A623C7C53 (尝试1/3)
+2025-12-15 08:00:19,503 - WARNING - 获取合约名称超时 0x2A3F1A37C04F82aA274f5353834B2d002Db91015 (尝试1/3)
+2025-12-15 08:00:19,504 - WARNING - 获取合约名称超时 0x4622aFF8E521A444C9301dA0efD05f6b482221b8 (尝试1/3)
+2025-12-15 08:00:19,504 - WARNING - 获取合约名称超时 0x07d7685bECB1a72a1Cf614b4067419334C9f1b4d (尝试1/3)
+2025-12-15 08:00:19,505 - WARNING - 获取合约名称超时 0x43506849D7C04F9138D1A2050bbF3A0c054402dd (尝试1/3)
+2025-12-15 08:00:19,505 - WARNING - 获取合约名称超时 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (尝试1/3)
+2025-12-15 08:00:19,506 - WARNING - 获取合约名称超时 0x7109709ECfa91a80626fF3989D68f67F5b1DD12D (尝试1/3)
+2025-12-15 08:00:20,505 - WARNING - 获取合约名称超时 0xA696a63cc78DfFa1a63E9E50587C197387FF6C7E (尝试1/3)
+2025-12-15 08:00:20,506 - WARNING - 获取合约名称超时 0x27b7b1ad7288079A66d12350c828D3C00A6F07d7 (尝试1/3)
+2025-12-15 08:00:22,777 - INFO - 批量获取完成: 21/21 成功, 耗时13.94秒
+2025-12-15 08:00:22,781 - INFO -   ✓ 链上数据补全完成: 21/21 个地址
+2025-12-15 08:00:22,781 - INFO -   链上数据补全耗时: 13.95s
+2025-12-15 08:00:22,785 - INFO -   保存地址耗时: 0.00s
+2025-12-15 08:00:22,785 - INFO -   批量预检查 21 个地址的合约存在性 (并发数: 10)...
+2025-12-15 08:00:24,786 - INFO -   ✓ 预检查完成: 18/21 个有效合约, 耗时 2.00秒
+2025-12-15 08:00:24,787 - INFO -   已过滤 3 个无效地址,剩余 18 个待下载
+2025-12-15 08:00:24,787 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2025-12-15 08:00:25,847 - INFO -   ✓ 下载成功: 0x4Fabb145...
+2025-12-15 08:00:25,866 - INFO -   ✓ 下载成功: 0x2A3F1A37...
+2025-12-15 08:00:25,876 - INFO -   ✓ 下载成功: 0xA0b86991...
+2025-12-15 08:00:25,936 - WARNING -   下载失败 (尝试 1/3): [Errno 13] Permission denied: '/Users'
+2025-12-15 08:00:25,949 - INFO -   ✓ 下载成功: 0x4622aFF8...
+2025-12-15 08:00:28,699 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x2a3f1a37...
+2025-12-15 08:00:28,701 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x43506849...
+2025-12-15 08:00:28,702 - INFO -   ↳ 开始下载实现合约...
+2025-12-15 08:00:28,703 - INFO -   ↳ 开始下载实现合约...
+2025-12-15 08:00:29,135 - WARNING -   下载失败 (尝试 2/3): [Errno 13] Permission denied: '/Users'
+2025-12-15 08:00:29,421 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-15 08:00:29,481 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-15 08:00:29,518 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-15 08:00:29,631 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-15 08:00:29,666 - INFO -   Immutable提取跳过: solc错误: BMIZapper.sol:1:1: ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/function definition.
+{"ABDKMath64x64.sol":{"content":"//  ...
+^
+
+2025-12-15 08:00:29,667 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:29,749 - INFO -   ✓ 下载成功: 0x2a3f1a37...
+2025-12-15 08:00:29,780 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:29,831 - WARNING -   下载失败 (尝试 1/3): [Errno 13] Permission denied: '/Users'
+2025-12-15 08:00:32,218 - INFO -   ✓ 下载成功: 0x0aC00355...
+2025-12-15 08:00:32,259 - WARNING -   下载失败 (尝试 3/3): [Errno 13] Permission denied: '/Users'
+2025-12-15 08:00:32,298 - INFO -   ✓ 下载成功: 0xE2792dBA...
+2025-12-15 08:00:32,716 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-15 08:00:32,723 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-15 08:00:32,917 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xe2792dba...
+2025-12-15 08:00:32,918 - INFO -   ↳ 开始下载实现合约...
+2025-12-15 08:00:32,929 - WARNING -   下载失败 (尝试 2/3): [Errno 13] Permission denied: '/Users'
+2025-12-15 08:00:33,020 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:33,404 - INFO -   ✓ 下载成功: 0x27b7b1ad...
+2025-12-15 08:00:33,595 - INFO -   ↳ 实现合约下载成功
+2025-12-15 08:00:33,885 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-15 08:00:33,890 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-15 08:00:33,956 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:34,032 - INFO -   ✓ 下载成功: 0xe2792dba...
+2025-12-15 08:00:35,223 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-15 08:00:35,240 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-15 08:00:35,271 - INFO -   Immutable提取跳过: solc错误: Logic.sol:1:1: ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/function definition.
+{"ABDKMath64x64.sol":{"content":"//  ...
+^
+
+2025-12-15 08:00:35,271 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:35,952 - INFO -   ✓ 下载成功: 0x986b4AFF...
+2025-12-15 08:00:36,054 - WARNING -   下载失败 (尝试 3/3): [Errno 13] Permission denied: '/Users'
+2025-12-15 08:00:36,054 - WARNING -   ↳ 实现合约下载失败
+2025-12-15 08:00:36,321 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=False, runs=200)
+2025-12-15 08:00:36,326 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-15 08:00:36,367 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:36,382 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:37,149 - INFO -   ✓ 下载成功: 0xB4AdA607...
+2025-12-15 08:00:37,251 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-15 08:00:37,269 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-15 08:00:37,300 - INFO -   Immutable提取跳过: solc错误: Logic.sol:1:1: ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/function definition.
+{"ABDKMath64x64.sol":{"content":"//  ...
+^
+
+2025-12-15 08:00:37,301 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:37,935 - INFO -   ↳ 实现合约下载成功
+2025-12-15 08:00:38,227 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-15 08:00:38,234 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-15 08:00:38,259 - INFO -   Immutable提取跳过: solc错误: Root.sol:1:1: ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/function definition.
+{"Address.sol":{"content":"// SPDX-L ...
+^
+
+2025-12-15 08:00:38,260 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:38,311 - INFO -   ✓ 下载成功: 0xA696a63c...
+2025-12-15 08:00:38,952 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:39,117 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:39,117 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:40,006 - INFO -   ✓ 下载成功: 0x3B96d491...
+2025-12-15 08:00:40,070 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:40,212 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:40,212 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:41,073 - INFO -   ✓ 下载成功: 0xA74d4B67...
+2025-12-15 08:00:41,276 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:41,283 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: Error: Checksum mismatch linux-amd64 - 0.8.31
+2025-12-15 08:00:41,283 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:41,418 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:41,418 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:42,115 - INFO -   ✓ 下载成功: 0x1C6a9783...
+2025-12-15 08:00:42,946 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:43,037 - INFO -   ✓ 下载成功: 0x5fA5B62c...
+2025-12-15 08:00:43,087 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:43,087 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:43,234 - INFO -   ✓ 下载成功: 0x5a770DbD...
+2025-12-15 08:00:44,010 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:44,154 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:44,154 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:44,953 - INFO -   ✓ 下载成功: 0xC4dAf3b5...
+2025-12-15 08:00:45,044 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:45,186 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:45,187 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:45,883 - INFO -   ✓ 下载成功: 0x2bF3cC8F...
+2025-12-15 08:00:45,995 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:46,137 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:46,137 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:46,559 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:46,703 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:46,703 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:47,842 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-15 08:00:47,986 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:47,986 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:48,837 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=200)
+2025-12-15 08:00:48,979 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-15 08:00:48,979 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-15 08:00:49,622 - INFO -   源码下载完成, 耗时 24.83s
+2025-12-15 08:00:49,628 - INFO -   源码下载耗时: 26.84s
+2025-12-15 08:00:49,628 - INFO -   检测到 4 个实现合约，更新addresses.json
+2025-12-15 08:00:49,632 - INFO -   Bmizapper_exp 总耗时: 275.11s
+2025-12-15 08:00:49,642 - INFO - 
+================================================================================
+2025-12-15 08:00:49,642 - INFO - 执行摘要
+2025-12-15 08:00:49,642 - INFO - ================================================================================
+2025-12-15 08:00:49,643 - INFO - 总脚本数:        1
+2025-12-15 08:00:49,643 - INFO - 成功:            1
+2025-12-15 08:00:49,643 - INFO - 失败:            0
+2025-12-15 08:00:49,643 - INFO - 总地址数:        21
+2025-12-15 08:00:49,643 - INFO - 已验证合约:      17
+2025-12-15 08:00:49,643 - INFO - 未验证合约:      1
+2025-12-15 08:00:49,643 - INFO -   └─ 仅字节码:   0
+2025-12-15 08:00:49,643 - INFO - API调用次数:     44
+2025-12-15 08:00:49,643 - INFO - 
+API Key并发统计:
+2025-12-15 08:00:49,644 - INFO -   etherscan:
+2025-12-15 08:00:49,644 - INFO -     Key数量: 5
+2025-12-15 08:00:49,644 - INFO -     总调用: 44
+2025-12-15 08:00:49,644 - INFO -     负载均衡: 最小=8, 最大=9, 平均=8.8
+2025-12-15 08:00:49,644 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-12-15 08:00:49,644 - INFO - ================================================================================
