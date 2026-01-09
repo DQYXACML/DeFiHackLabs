@@ -712,7 +712,9 @@ class StateCollector:
     def collect_state(self, chain: str, block_number: int,
                      addresses: List[AddressInfo], attack_tx_hash: Optional[str] = None,
                      extra_holder_addresses: Optional[List[str]] = None,
-                     mapping_seeds: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
+                     mapping_seeds: Optional[Dict[str, Any]] = None,
+                     protocol_hint: Optional[str] = None,
+                     use_source_supplement: bool = True) -> Optional[Dict[str, Any]]:
         """
         收集指定区块的状态
 
@@ -723,6 +725,8 @@ class StateCollector:
             attack_tx_hash: 攻击交易哈希（用于trace-based收集）
             extra_holder_addresses: 额外强制作为ERC20持有人的地址
             mapping_seeds: 映射槽位强制收集配置
+            protocol_hint: 协议名称提示（用于Phase 2源码补全）
+            use_source_supplement: 是否启用Phase 2源码补全
 
         Returns:
             状态字典或None（如果失败）
@@ -780,7 +784,9 @@ class StateCollector:
                 # 并发处理多个地址
                 self.logger.info(f"  使用并发模式处理 {len(addresses)} 个地址 (workers={MAX_CONCURRENT_ADDRESSES})")
                 address_states = self._collect_addresses_concurrent(
-                    chain, w3, addresses, block_number, attack_tx_hash, holder_candidates
+                    chain, w3, addresses, block_number, attack_tx_hash, holder_candidates,
+                    protocol_hint=protocol_hint,
+                    use_source_supplement=use_source_supplement
                 )
             else:
                 # 串行处理(小数量或禁用并发)
@@ -792,7 +798,9 @@ class StateCollector:
                         addr_info.address,
                         block_number,
                         attack_tx_hash,
-                        holder_candidates
+                        holder_candidates,
+                        protocol_hint=protocol_hint,
+                        use_source_supplement=use_source_supplement
                     )
                     if state:
                         state_dict = asdict(state)
@@ -823,7 +831,9 @@ class StateCollector:
                         checksum_addr,
                         block_number,
                         attack_tx_hash,
-                        holder_candidates
+                        holder_candidates,
+                        protocol_hint=protocol_hint,
+                        use_source_supplement=use_source_supplement
                     )
                     if state:
                         state_dict = asdict(state)
@@ -868,7 +878,9 @@ class StateCollector:
 
     def _collect_addresses_concurrent(self, chain: str, w3: Web3, addresses: List[AddressInfo],
                                      block_number: int, attack_tx_hash: Optional[str],
-                                     holder_candidates: List[str]) -> Dict[str, Dict]:
+                                     holder_candidates: List[str],
+                                     protocol_hint: Optional[str] = None,
+                                     use_source_supplement: bool = True) -> Dict[str, Dict]:
         """
         并发收集多个地址的状态
 
@@ -879,6 +891,8 @@ class StateCollector:
             block_number: 区块号
             attack_tx_hash: 攻击交易哈希
             holder_candidates: ERC20持有者候选列表
+            protocol_hint: 协议名称提示
+            use_source_supplement: 是否启用Phase 2源码补全
 
         Returns:
             地址状态字典
@@ -890,7 +904,9 @@ class StateCollector:
             try:
                 state = self._collect_address_state(
                     chain, w3, addr_info.address, block_number,
-                    attack_tx_hash, holder_candidates
+                    attack_tx_hash, holder_candidates,
+                    protocol_hint=protocol_hint,
+                    use_source_supplement=use_source_supplement
                 )
                 if state:
                     state_dict = asdict(state)
@@ -931,7 +947,9 @@ class StateCollector:
 
     def _collect_address_state(self, chain: str, w3: Web3, address: str,
                               block_number: int, attack_tx_hash: Optional[str] = None,
-                              holder_candidates: Optional[List[str]] = None) -> Optional[StateSnapshot]:
+                              holder_candidates: Optional[List[str]] = None,
+                              protocol_hint: Optional[str] = None,
+                              use_source_supplement: bool = True) -> Optional[StateSnapshot]:
         """收集单个地址的状态"""
         start_time = time.perf_counter()
         base_time = storage_time = erc20_time = 0.0
@@ -955,7 +973,11 @@ class StateCollector:
             storage = {}
             if is_contract:
                 stage_start = time.perf_counter()
-                storage = self._collect_storage(chain, w3, address, block_number, attack_tx_hash)
+                storage = self._collect_storage(
+                    chain, w3, address, block_number, attack_tx_hash,
+                    protocol_hint=protocol_hint,
+                    use_source_supplement=use_source_supplement
+                )
                 storage_time = time.perf_counter() - stage_start
 
             # ERC20余额（只对合约收集）
@@ -1428,40 +1450,49 @@ class StateCollector:
         return None
 
     def _collect_storage(self, chain: str, w3: Web3, address: str, block_number: int,
-                        attack_tx_hash: Optional[str] = None) -> Dict[str, str]:
+                        attack_tx_hash: Optional[str] = None, protocol_hint: Optional[str] = None,
+                        use_source_supplement: bool = True) -> Dict[str, str]:
         """
-        收集合约存储（支持trace和sequential两种模式）
+        收集合约存储（两阶段混合策略：trace驱动 + 源码补全）
 
         Args:
+            chain: 链名称
             w3: Web3实例
             address: 合约地址
             block_number: 区块号
             attack_tx_hash: 攻击交易哈希（可选，用于trace方法）
+            protocol_hint: 协议名称提示（如"Gamma_exp"，用于查找源码）
+            use_source_supplement: 是否启用Phase 2源码补全
 
         Returns:
             存储字典 {slot: value}
         """
-        storage = {}
-
-        # 方法1: 优先尝试trace-based收集（如果启用且有tx_hash）
+        trace_storage = {}
         chain_key = chain.lower()
 
+        # ============ Phase 1: Trace驱动收集（主要） ============
         if attack_tx_hash and self.use_trace and chain_key not in self.unsupported_trace_chains:
             try:
-                self.logger.debug(f"      → 尝试trace方法收集存储")
-                storage = self._collect_storage_from_trace(chain, w3, address, attack_tx_hash, block_number)
-                if storage:
-                    self.logger.info(f"      ✓ Trace方法成功: 获取 {len(storage)} 个slots")
-                    return storage
+                self.logger.info(f"\n      [Phase 1] 使用prestateTracer收集 {address[:10]}... 的storage")
+                trace_storage = self._collect_storage_from_trace(chain, w3, address, attack_tx_hash, block_number)
+
+                if trace_storage:
+                    self.logger.info(f"      ✓ Phase 1完成: 收集到 {len(trace_storage)} 个slots")
                 else:
-                    self.logger.warning(f"      ⚠ Trace方法返回空数据")
+                    self.logger.warning(f"      ⚠ Phase 1未找到此合约的storage（可能未被攻击直接访问）")
 
             except TraceUnsupportedError as e:
-                self.logger.warning(f"      ⚠ Trace方法不可用: {e}")
+                self.logger.error(f"      ✗ Phase 1失败: RPC不支持debug_traceTransaction")
+                self.logger.error(f"      错误详情: {e}")
                 self.unsupported_trace_chains.add(chain_key)
-                if self.trace_only:
-                    self.logger.error(f"      ✗ trace-only模式下失败，跳过sequential扫描")
-                    return {}
+
+                # 关键: 如果RPC不支持debug API，直接抛出异常（不降级到sequential）
+                raise RuntimeError(
+                    f"RPC不支持debug_traceTransaction，无法继续收集。\n"
+                    f"请使用支持Archive Node的RPC endpoint。\n"
+                    f"原始错误: {e}"
+                )
+
             except Exception as e:
                 error_msg = str(e)
                 # 检测RPC限流或服务器错误
@@ -1471,38 +1502,70 @@ class StateCollector:
                 ])
 
                 if is_rate_limit:
-                    self.logger.warning(f"      ⚠ Trace方法遇到RPC限流/服务器错误: {e}")
-                    self.logger.info(f"      等待10秒后重试...")
-                    time.sleep(10)  # 等待RPC恢复
+                    self.logger.warning(f"      ⚠ Phase 1遇到RPC限流，等待10秒后重试...")
+                    time.sleep(10)
 
                     # 重试一次trace
                     try:
-                        storage = self._collect_storage_from_trace(chain, w3, address, attack_tx_hash, block_number)
-                        if storage:
-                            self.logger.info(f"      ✓ 重试成功: 获取 {len(storage)} 个slots")
-                            return storage
+                        trace_storage = self._collect_storage_from_trace(chain, w3, address, attack_tx_hash, block_number)
+                        if trace_storage:
+                            self.logger.info(f"      ✓ 重试成功: 获取 {len(trace_storage)} 个slots")
                     except Exception as retry_e:
-                        self.logger.warning(f"      ⚠ 重试仍失败: {retry_e}")
+                        self.logger.error(f"      ✗ 重试仍失败: {retry_e}")
+                        if not use_source_supplement:
+                            raise
                 else:
-                    self.logger.warning(f"      ⚠ Trace方法失败: {e}")
+                    self.logger.warning(f"      ⚠ Phase 1失败: {e}")
+                    if not use_source_supplement:
+                        raise
 
-                if self.trace_only:
-                    self.logger.error(f"      ✗ trace-only模式下失败，跳过sequential扫描")
-                    return {}
-        elif attack_tx_hash and self.use_trace and chain_key in self.unsupported_trace_chains:
-            self.logger.debug(f"      Trace已对 {chain} 禁用，改用sequential扫描")
+        # ============ Phase 2: 源码驱动补全（补充） ============
+        final_storage = trace_storage
 
-        # 方法2: 降级到sequential扫描
-        if not self.trace_only:
-            self.logger.debug(f"      → 使用sequential扫描")
-            # 如果是从trace失败降级,添加额外延迟避免连续请求
-            if attack_tx_hash and self.use_trace:
-                self.logger.debug(f"      从trace降级,添加5秒延迟避免RPC限流...")
-                time.sleep(5)
-            storage = self._sequential_scan(w3, address, block_number)
-            self.logger.debug(f"      Sequential方法: 获取 {len(storage)} 个slots")
+        if use_source_supplement:
+            source_dir = self._find_source_dir(address, protocol_hint)
 
-        return storage
+            if source_dir:
+                try:
+                    self.logger.info(f"\n      [Phase 2] 使用forge inspect补全 {address[:10]}... 的storage")
+
+                    # 推断合约名称
+                    contract_name = self._infer_contract_name(source_dir, address)
+                    if not contract_name:
+                        self.logger.debug(f"      ⊙ 无法推断合约名称，跳过Phase 2")
+                    else:
+                        # 获取storage layout
+                        layout = self._get_storage_layout(source_dir, contract_name)
+                        if not layout:
+                            self.logger.debug(f"      ⊙ 无法获取storage layout，跳过Phase 2（使用Phase 1结果）")
+                        else:
+                            # 提取基础slots
+                            layout_slots = self._extract_base_slots_from_layout(layout)
+                            self.logger.info(f"      ✓ 从源码分析得到 {len(layout_slots)} 个基础slots")
+
+                            # 覆盖式更新
+                            final_storage = self._merge_storage_with_layout(
+                                trace_storage, layout_slots, w3, address, block_number
+                            )
+
+                            self.logger.info(f"      ✓ Phase 2完成")
+
+                except Exception as e:
+                    self.logger.debug(f"      ⊙ Phase 2失败: {e}，使用Phase 1结果")
+                    self.logger.debug(f"      详细信息: {str(e)}")
+                    # Phase 2失败不影响整体，继续使用Phase 1的结果
+            else:
+                self.logger.debug(f"      ⊙ 未找到源码目录（protocol_hint={protocol_hint}），跳过Phase 2")
+
+        # ============ 验证和返回 ============
+        if not final_storage and self.trace_only:
+            self.logger.error(
+                f"      ✗ 无法收集{address}的storage：\n"
+                f"        - Phase 1 (trace): {len(trace_storage)} slots\n"
+                f"        - Phase 2 (source): {'执行' if use_source_supplement else '已禁用'}"
+            )
+
+        return final_storage
 
     def _collect_storage_from_trace(self, chain: str, w3: Web3, address: str,
                                     tx_hash: str, block_number: int) -> Dict[str, str]:
@@ -1976,6 +2039,289 @@ class StateCollector:
                 else:
                     raise
 
+    # ========== Phase 2: 源码驱动的存储补全方法 ==========
+
+    def _find_source_dir(self, address: str, protocol_hint: Optional[str] = None) -> Optional[Path]:
+        """
+        查找合约源码目录
+
+        Args:
+            address: 合约地址
+            protocol_hint: 协议提示（如 "Gamma_exp"）
+
+        Returns:
+            源码目录路径或None
+        """
+        from pathlib import Path
+
+        protocol_base = Path('DeFiHackLabs/extracted_contracts')
+        address_lower = address.lower()
+
+        # 如果有协议提示，优先在该协议目录下查找
+        if protocol_hint:
+            protocol_dir = protocol_base / protocol_hint
+            if protocol_dir.exists():
+                for contract_dir in protocol_dir.glob('*'):
+                    if address_lower in contract_dir.name.lower():
+                        # 只在debug模式输出详细路径
+                        return contract_dir
+
+        # 遍历所有年月目录
+        for year_month_dir in protocol_base.glob('*/*_exp'):
+            for contract_dir in year_month_dir.glob('*'):
+                if address_lower in contract_dir.name.lower():
+                    # 只在debug模式输出详细路径
+                    return contract_dir
+
+        return None
+
+    def _infer_contract_name(self, source_dir: Path, address: str) -> Optional[str]:
+        """
+        从源码目录推断合约名称
+
+        策略：
+        1. 从metadata.json读取contract_name
+        2. 从目录名解析（例如：0x123_ContractName）
+        3. 扫描.sol文件查找主合约
+
+        Args:
+            source_dir: 源码目录
+            address: 合约地址
+
+        Returns:
+            合约名称或None
+        """
+        import json
+        import re
+
+        # 方法1: 读取metadata.json
+        metadata_file = source_dir / 'metadata.json'
+        if metadata_file.exists():
+            try:
+                metadata = json.loads(metadata_file.read_text())
+                if 'contract_name' in metadata:
+                    return metadata['contract_name']
+            except Exception as e:
+                self.logger.debug(f"      读取metadata.json失败: {e}")
+
+        # 方法2: 从目录名解析
+        # 格式通常是: 0x...address..._ContractName
+        dir_name = source_dir.name
+        parts = dir_name.split('_')
+        if len(parts) > 1:
+            # 取下划线后的部分作为合约名
+            candidate = '_'.join(parts[1:])
+            # 移除常见后缀
+            candidate = candidate.replace('_Vulnerable_Contract', '')
+            candidate = candidate.replace('_Vuln_Contract', '')
+            candidate = candidate.replace('_Unknown', '')
+            candidate = candidate.replace('_Implementation', '')
+            if candidate:
+                return candidate
+
+        # 方法3: 扫描主.sol文件
+        contracts_dir = source_dir / 'contracts'
+        if contracts_dir.exists():
+            for sol_file in contracts_dir.glob('*.sol'):
+                try:
+                    content = sol_file.read_text()
+                    # 查找contract定义
+                    match = re.search(r'contract\s+(\w+)', content)
+                    if match:
+                        contract_name = match.group(1)
+                        return contract_name
+                except Exception:
+                    continue
+
+        return None
+
+    def _get_storage_layout(self, source_dir: Path, contract_name: str) -> Optional[Dict]:
+        """
+        使用forge inspect获取storage layout
+
+        Args:
+            source_dir: 源码目录
+            contract_name: 合约名称
+
+        Returns:
+            Layout字典 {'storage': [...], 'types': {...}} 或None
+        """
+        import subprocess
+        import json
+        import os
+
+        # 查找合约的.sol文件
+        contracts_dir = source_dir / 'contracts'
+        if not contracts_dir.exists():
+            self.logger.warning(f"      contracts目录不存在: {contracts_dir}")
+            return None
+
+        sol_files = list(contracts_dir.glob('**/*.sol'))
+        contract_file = None
+
+        for f in sol_files:
+            try:
+                content = f.read_text()
+                # 简单检查：看文件中是否定义了目标contract或library
+                if f'contract {contract_name}' in content or f'library {contract_name}' in content:
+                    contract_file = f
+                    break
+            except Exception:
+                continue
+
+        if not contract_file:
+            self.logger.warning(f"      找不到{contract_name}的源文件")
+            return None
+
+        # 构造forge inspect命令
+        try:
+            relative_path = contract_file.relative_to(source_dir)
+            contract_identifier = f"{relative_path}:{contract_name}"
+
+            self.logger.debug(f"      执行: forge inspect {contract_identifier} storage-layout")
+
+            result = subprocess.run(
+                ['forge', 'inspect', contract_identifier, 'storage-layout'],
+                cwd=source_dir,
+                capture_output=True,
+                text=True,
+                timeout=30,
+                env={**os.environ, 'FOUNDRY_DISABLE_NIGHTLY_WARNING': '1'}
+            )
+
+            if result.returncode != 0:
+                # 区分错误类型：源文件缺失 vs 其他编译错误
+                stderr_lower = result.stderr.lower()
+                if 'could not find source file' in stderr_lower or 'no such file' in stderr_lower:
+                    # 预期内的错误：源文件不存在（extracted合约可能不完整）
+                    self.logger.debug(f"      ⊙ 源文件缺失: {contract_identifier}")
+                elif 'compilation failed' in stderr_lower or 'syntax error' in stderr_lower:
+                    # 编译错误
+                    self.logger.debug(f"      ⊙ 编译失败: {result.stderr[:150]}")
+                else:
+                    # 其他未知错误，保留warning级别
+                    self.logger.warning(f"      ⚠ forge inspect异常: {result.stderr[:200]}")
+                return None
+
+            layout = json.loads(result.stdout)
+            self.logger.debug(f"      ✓ 获取storage layout成功")
+            return layout
+
+        except subprocess.TimeoutExpired:
+            self.logger.debug(f"      ⊙ forge inspect超时")
+            return None
+        except json.JSONDecodeError as e:
+            self.logger.debug(f"      ⊙ 解析layout JSON失败: {e}")
+            return None
+        except Exception as e:
+            self.logger.debug(f"      ⊙ forge inspect异常: {e}")
+            return None
+
+    def _extract_base_slots_from_layout(self, layout: Dict) -> Set[int]:
+        """
+        从storage layout提取所有基础slot位置
+
+        Args:
+            layout: forge inspect返回的layout字典
+
+        Returns:
+            Set of slot numbers (as integers)
+        """
+        base_slots = set()
+
+        for var in layout.get('storage', []):
+            try:
+                slot = int(var['slot'])
+                base_slots.add(slot)
+
+                # 获取类型信息
+                var_type_key = var.get('type', '')
+                var_type = layout.get('types', {}).get(var_type_key, {})
+
+                # 如果是struct或大型数据，可能占用多个连续slots
+                num_bytes_str = var_type.get('numberOfBytes', '32')
+                if isinstance(num_bytes_str, str):
+                    num_bytes = int(num_bytes_str)
+                else:
+                    num_bytes = num_bytes_str
+
+                # 计算占用的slots数量
+                num_slots = (num_bytes + 31) // 32
+
+                for i in range(num_slots):
+                    base_slots.add(slot + i)
+
+            except Exception as e:
+                self.logger.debug(f"      解析storage变量失败: {e}")
+                continue
+
+        return base_slots
+
+    def _merge_storage_with_layout(
+        self,
+        trace_storage: Dict[str, str],
+        layout_slots: Set[int],
+        w3: Web3,
+        address: str,
+        block_number: int
+    ) -> Dict[str, str]:
+        """
+        合并trace收集的storage和layout分析的slots（覆盖式更新）
+
+        策略：
+        1. trace_storage中已有的值 → 保留（Phase 1优先）
+        2. layout_slots中有但trace_storage缺失的 → 从链上查询补充
+        3. 最终返回完整的storage
+
+        Args:
+            trace_storage: Phase 1 trace方法收集的storage
+            layout_slots: Phase 2 从layout分析得到的基础slots
+            w3: Web3实例
+            address: 合约地址
+            block_number: 区块号
+
+        Returns:
+            合并后的完整storage字典
+        """
+        final_storage = dict(trace_storage)  # 复制Phase 1的结果
+
+        # 转换trace_storage的keys为整数集合
+        existing_slots = set()
+        for slot_str in trace_storage.keys():
+            try:
+                existing_slots.add(int(slot_str))
+            except ValueError:
+                continue
+
+        # 找出layout中有但trace中缺失的slots
+        missing_slots = layout_slots - existing_slots
+
+        if missing_slots:
+            self.logger.info(f"      Phase 2发现{len(missing_slots)}个layout定义但trace未访问的slots，从链上补充...")
+
+            # 批量查询缺失的slots
+            supplemented = self._batch_read_storage(w3, address, sorted(missing_slots), block_number)
+
+            # 只保存非零值
+            non_zero_count = 0
+            for slot_str, value in supplemented.items():
+                # 检查是否为零值
+                if value != '0x' + '0' * 64 and value != '0x':
+                    final_storage[slot_str] = value
+                    non_zero_count += 1
+
+            if non_zero_count > 0:
+                self.logger.info(f"      ✓ Phase 2补充了 {non_zero_count} 个非零slots")
+            else:
+                self.logger.debug(f"      Phase 2补充的slots均为零值，已忽略")
+
+        self.logger.info(
+            f"      ✓ 最终storage: {len(final_storage)} slots "
+            f"(Phase1: {len(trace_storage)}, Phase2补充: {len(final_storage) - len(trace_storage)})"
+        )
+
+        return final_storage
+
 # ============================================================================
 # 主控制器
 # ============================================================================
@@ -2206,14 +2552,16 @@ class AttackStateCollector:
             if val:
                 extra_holder_addresses.append(val)
 
-        # 5. 收集状态（传递attack_tx_hash）
+        # 5. 收集状态（传递attack_tx_hash和protocol_hint）
         state = self.state_collector.collect_state(
             fork_info.chain,
             fork_info.block_number,
             addresses,
             attack_tx_hash,  # 新增：传递攻击交易哈希
             extra_holder_addresses=extra_holder_addresses,
-            mapping_seeds=mapping_seeds
+            mapping_seeds=mapping_seeds,
+            protocol_hint=event_name,  # 新增：传递协议名称用于Phase 2源码补全
+            use_source_supplement=True  # 启用Phase 2源码补全
         )
 
         if not state:
@@ -2261,7 +2609,9 @@ class AttackStateCollector:
                     addresses,
                     attack_tx_hash,  # 修复: 使用攻击交易哈希进行trace,避免慢速sequential扫描
                     extra_holder_addresses=extra_holder_addresses,
-                    mapping_seeds=mapping_seeds
+                    mapping_seeds=mapping_seeds,
+                    protocol_hint=event_name,  # 新增：传递协议名称用于Phase 2源码补全
+                    use_source_supplement=True  # 启用Phase 2源码补全
                 )
 
                 if not state_after:

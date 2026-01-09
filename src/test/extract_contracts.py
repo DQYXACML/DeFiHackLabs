@@ -1356,18 +1356,68 @@ class ImmutableExtractor:
         except Exception as e:
             self.logger.warning(f"  Immutable 结果写入失败: {e}")
 
+    def _is_multi_file_json(self, source: str) -> Tuple[bool, str]:
+        """
+        检测是否为多文件JSON格式
+
+        Returns:
+            (是否为多文件JSON, 需要解析的JSON字符串)
+        """
+        if not source:
+            return False, source
+
+        # 标准格式: {{ ... }}
+        if source.startswith('{{') and source.endswith('}}'):
+            return True, source[1:-1]
+
+        # 非标准格式: { ... } (需要验证是否为有效的多文件JSON)
+        if source.startswith('{') and source.endswith('}'):
+            try:
+                data = json.loads(source)
+                if not isinstance(data, dict):
+                    return False, source
+
+                # 检查是否包含 'sources' 字段 (标准多文件格式)
+                if 'sources' in data and isinstance(data['sources'], dict):
+                    return True, source
+
+                # 检查是否直接包含多个.sol文件 (扁平化格式)
+                # 至少要有2个.sol文件才认为是多文件格式
+                sol_files = [k for k in data.keys() if k.endswith('.sol')]
+                if len(sol_files) >= 2:
+                    self.logger.debug(f"  检测到扁平化多文件JSON格式，包含 {len(sol_files)} 个.sol文件")
+                    return True, source
+
+            except json.JSONDecodeError:
+                pass
+
+        return False, source
+
     def _normalize_sources(self, source_code: Dict[str, Any]) -> Dict[str, str]:
         """从Etherscan返回的SourceCode字段解析源码映射"""
         source = source_code.get('SourceCode', '')
         if not source:
             return {}
 
-        # 多文件JSON格式: 形如 {{ ... }}
-        if source.startswith('{{') and source.endswith('}}'):
+        # 检测并解析多文件JSON格式
+        is_multi, json_str = self._is_multi_file_json(source)
+        if is_multi:
             try:
-                parsed = json.loads(source[1:-1])
+                parsed = json.loads(json_str)
+
+                # 标准格式: {"sources": {"File.sol": {"content": "..."}}}
                 if 'sources' in parsed and isinstance(parsed['sources'], dict):
                     return {k: v.get('content', '') for k, v in parsed['sources'].items()}
+
+                # 扁平化格式: {"File.sol": {"content": "..."}, "File2.sol": {"content": "..."}}
+                if isinstance(parsed, dict):
+                    sources = {}
+                    for k, v in parsed.items():
+                        if k.endswith('.sol') and isinstance(v, dict) and 'content' in v:
+                            sources[k] = v['content']
+                    if sources:
+                        return sources
+
             except Exception as e:
                 self.logger.debug(f"  解析多文件源码失败: {e}")
                 return {}
@@ -1376,13 +1426,84 @@ class ImmutableExtractor:
         filename = f"{source_code.get('ContractName', 'Contract')}.sol"
         return {filename: source}
 
-    def _resolve_solc_binary(self, compiler_version: str) -> Optional[str]:
+    def _install_solc_version(self, version: str) -> bool:
+        """
+        使用svm自动安装缺失的solc版本
+
+        Args:
+            version: solc版本号，如 "0.8.17"
+
+        Returns:
+            bool: 安装是否成功
+        """
+        if not version:
+            return False
+
+        # 清理版本号
+        clean_version = version.lstrip('v').split('+')[0]
+
+        # 检查是否已经安装
+        svm_path = Path.home() / ".svm" / clean_version / f"solc-{clean_version}"
+        if svm_path.exists():
+            self.logger.debug(f"  solc {clean_version} 已安装")
+            return True
+
+        self.logger.info(f"  正在下载 solc {clean_version}...")
+
+        try:
+            # 使用svm安装
+            result = subprocess.run(
+                ['svm', 'install', clean_version],
+                capture_output=True,
+                text=True,
+                timeout=120  # 下载可能需要时间
+            )
+
+            if result.returncode == 0:
+                # 验证安装成功
+                if svm_path.exists():
+                    self.logger.info(f"  ✓ solc {clean_version} 安装成功")
+                    return True
+                else:
+                    self.logger.warning(f"  svm命令成功但文件不存在: {svm_path}")
+                    return False
+            else:
+                error_msg = result.stderr.strip() if result.stderr else result.stdout.strip()
+                self.logger.warning(f"  svm安装失败: {error_msg}")
+                return False
+
+        except FileNotFoundError:
+            self.logger.debug("  svm未安装，跳过自动下载")
+            return False
+        except subprocess.TimeoutExpired:
+            self.logger.warning(f"  下载solc {clean_version} 超时")
+            return False
+        except Exception as e:
+            self.logger.debug(f"  安装solc失败: {e}")
+            return False
+
+    def _resolve_solc_binary(self, compiler_version: str, auto_install: bool = True) -> Optional[str]:
         """
         基于编译器版本寻找solc二进制，优先 solc-<version>，其次 solc
-        不执行网络安装，未找到时返回None
+        如果本地没有对应版本且auto_install=True，会尝试自动下载
+
+        Args:
+            compiler_version: 编译器版本，如 "v0.8.17+commit.8df45f5f"
+            auto_install: 是否自动下载缺失的版本（默认True）
+
+        Returns:
+            Optional[str]: solc二进制路径，未找到返回None
         """
         version = ''
         if compiler_version:
+            # 检测非Solidity编译器
+            compiler_lower = compiler_version.lower()
+            if any(name in compiler_lower for name in ['vyper', 'lll', 'fe', 'yul']):
+                # 提取编译器名称
+                compiler_name = compiler_lower.split(':')[0] if ':' in compiler_lower else compiler_lower.split()[0]
+                self.logger.info(f"  检测到非Solidity合约 ({compiler_name})，跳过Immutable提取")
+                return None
+
             version = compiler_version.lstrip('v').split('+')[0]
 
         # 允许通过环境变量强制指定
@@ -1399,11 +1520,30 @@ class ImmutableExtractor:
             # foundry 下载的solc路径
             foundry_path = Path.home() / ".foundry" / "bin" / f"solc-{version}"
             candidates.append(str(foundry_path))
-        candidates.append("solc")  # 回退到系统默认
+
+        # 不再回退到系统的"solc"，因为可能是solc-select包装器导致错误
+        # 如果需要使用系统solc，请设置SOLC_BIN环境变量
+        # candidates.append("solc")  # 回退到系统默认
 
         for cand in candidates:
-            if shutil.which(cand):
-                return cand
+            found = shutil.which(cand)
+            if found:
+                # 额外检查：避免使用solc-select包装器
+                # solc-select的solc通常在pyenv或类似环境中
+                if 'solc-select' in found or 'pyenv' in found:
+                    self.logger.debug(f"  跳过solc-select包装器: {found}")
+                    continue
+                return found
+
+        # 如果没有找到且启用了自动安装，尝试下载
+        if version and auto_install:
+            self.logger.info(f"  本地未找到 solc {version}，尝试自动下载...")
+            if self._install_solc_version(version):
+                # 重新检查svm路径
+                svm_path = Path.home() / ".svm" / version / f"solc-{version}"
+                if svm_path.exists():
+                    return str(svm_path)
+
         return None
 
     def _compile_for_immutable_refs(self, sources: Dict[str, str], solc_bin: str,
@@ -1668,6 +1808,43 @@ class SourceDownloader:
 
         return session
 
+    def _is_multi_file_json(self, source: str) -> Tuple[bool, str]:
+        """
+        检测是否为多文件JSON格式
+
+        Returns:
+            (是否为多文件JSON, 需要解析的JSON字符串)
+        """
+        if not source:
+            return False, source
+
+        # 标准格式: {{ ... }}
+        if source.startswith('{{') and source.endswith('}}'):
+            return True, source[1:-1]
+
+        # 非标准格式: { ... } (需要验证是否为有效的多文件JSON)
+        if source.startswith('{') and source.endswith('}'):
+            try:
+                data = json.loads(source)
+                if not isinstance(data, dict):
+                    return False, source
+
+                # 检查是否包含 'sources' 字段 (标准多文件格式)
+                if 'sources' in data and isinstance(data['sources'], dict):
+                    return True, source
+
+                # 检查是否直接包含多个.sol文件 (扁平化格式)
+                # 至少要有2个.sol文件才认为是多文件格式
+                sol_files = [k for k in data.keys() if k.endswith('.sol')]
+                if len(sol_files) >= 2:
+                    self.logger.debug(f"  检测到扁平化多文件JSON格式，包含 {len(sol_files)} 个.sol文件")
+                    return True, source
+
+            except json.JSONDecodeError:
+                pass
+
+        return False, source
+
     def _get_key_pool(self, chain: str) -> Optional[APIKeyPool]:
         """根据链名获取对应的KeyPool"""
         if chain not in EXPLORER_APIS:
@@ -1867,25 +2044,162 @@ class SourceDownloader:
 
         return result
 
+    def _sanitize_file_path(self, file_path: str) -> str:
+        """
+        规范化文件路径，提取有意义的相对路径
+
+        处理策略：
+        1. 识别常见的项目目录（contracts/, src/, lib/等）
+        2. 从这些目录开始截取路径
+        3. 如果没有识别到，只保留文件名或最后2-3层目录
+
+        Args:
+            file_path: 原始文件路径
+
+        Returns:
+            str: 规范化后的相对路径
+        """
+        # 移除前导和尾随空白
+        file_path = file_path.strip()
+
+        if not file_path:
+            return "unknown.sol"
+
+        # 处理Windows路径分隔符
+        file_path = file_path.replace('\\', '/')
+
+        # 移除Windows驱动器号 (C:/, D:/ 等)
+        import re
+        if re.match(r'^[A-Za-z]:', file_path):
+            file_path = file_path[2:]
+            if file_path.startswith('/'):
+                file_path = file_path[1:]
+
+        # 移除绝对路径前缀
+        if file_path.startswith('/'):
+            file_path = file_path[1:]
+
+        # 常见的项目目录关键词（按优先级排序）
+        # 注意：包名（@开头）优先级最高，然后是具体目录
+        project_markers = [
+            '@openzeppelin',
+            '@uniswap',
+            '@chainlink',
+            '@aave',
+            'node_modules',
+            'contracts',
+            'src',
+            'lib',
+            'libraries',
+            'interfaces',
+            'test',
+            'hardhat',
+            'foundry',
+            'truffle',
+        ]
+
+        # 尝试从项目标志目录开始截取
+        path_lower = file_path.lower()
+        for marker in project_markers:
+            # 查找标志目录的位置
+            marker_patterns = [
+                f'{marker}/',           # 精确匹配
+                f'/{marker}/',          # 路径中间
+            ]
+
+            for pattern in marker_patterns:
+                idx = path_lower.find(pattern.lower())
+                if idx != -1:
+                    # 从标志目录开始截取
+                    start_idx = idx + 1 if pattern.startswith('/') else idx
+                    result = file_path[start_idx:]
+                    self.logger.debug(f"  从项目目录截取: {file_path} -> {result}")
+                    return self._clean_path_parts(result)
+
+        # 如果没有找到项目标志，保留最后几层目录
+        parts = [p for p in file_path.split('/') if p and p not in ('..', '.')]
+
+        if not parts:
+            return "unknown.sol"
+
+        # 对于很短的路径（1-2层），只保留文件名
+        if len(parts) <= 2:
+            result = parts[-1]  # 只保留文件名
+            self.logger.debug(f"  路径较短，只保留文件名: {file_path} -> {result}")
+        elif len(parts) > 3:
+            # 保留最后3层：可能是 dir1/dir2/file.sol
+            result = '/'.join(parts[-3:])
+            self.logger.debug(f"  保留最后3层: {file_path} -> {result}")
+        else:
+            result = '/'.join(parts)
+
+        return self._clean_path_parts(result)
+
+    def _clean_path_parts(self, file_path: str) -> str:
+        """
+        清理路径组件，移除危险字符
+
+        Args:
+            file_path: 待清理的路径
+
+        Returns:
+            str: 清理后的路径
+        """
+        if not file_path:
+            return "unknown.sol"
+
+        # 分割路径
+        parts = file_path.split('/')
+        safe_parts = []
+
+        for part in parts:
+            # 跳过空、当前目录、父目录
+            if not part or part in ('.', '..'):
+                continue
+            safe_parts.append(part)
+
+        if safe_parts:
+            return '/'.join(safe_parts)
+        else:
+            return "unknown.sol"
+
     def _save_contract_files(self, source_code: Dict, output_dir: Path):
         """保存合约文件"""
 
         # 保存主源码
         source = source_code['SourceCode']
 
-        # 处理多文件合约(JSON格式)
-        if source.startswith('{{'):
-            # 移除外层的大括号
-            source = source[1:-1]
-            sources = json.loads(source)
+        # 检测并处理多文件合约(JSON格式)
+        is_multi, json_str = self._is_multi_file_json(source)
+        if is_multi:
+            try:
+                sources = json.loads(json_str)
 
-            # 保存所有源文件
-            if 'sources' in sources:
-                for file_path, file_data in sources['sources'].items():
-                    file_output = output_dir / file_path
-                    file_output.parent.mkdir(parents=True, exist_ok=True)
-                    with open(file_output, 'w', encoding='utf-8') as f:
-                        f.write(file_data['content'])
+                # 标准格式: {"sources": {"File.sol": {"content": "..."}}}
+                if 'sources' in sources and isinstance(sources['sources'], dict):
+                    for file_path, file_data in sources['sources'].items():
+                        # 规范化文件路径，防止路径遍历攻击
+                        safe_path = self._sanitize_file_path(file_path)
+                        file_output = output_dir / safe_path
+                        file_output.parent.mkdir(parents=True, exist_ok=True)
+                        with open(file_output, 'w', encoding='utf-8') as f:
+                            f.write(file_data['content'])
+                # 扁平化格式: {"File.sol": {"content": "..."}, "File2.sol": {"content": "..."}}
+                elif isinstance(sources, dict):
+                    for file_path, file_data in sources.items():
+                        if file_path.endswith('.sol') and isinstance(file_data, dict) and 'content' in file_data:
+                            # 规范化文件路径
+                            safe_path = self._sanitize_file_path(file_path)
+                            file_output = output_dir / safe_path
+                            file_output.parent.mkdir(parents=True, exist_ok=True)
+                            with open(file_output, 'w', encoding='utf-8') as f:
+                                f.write(file_data['content'])
+            except Exception as e:
+                self.logger.warning(f"  保存多文件源码失败: {e}，回退到单文件模式")
+                # 出错时回退到单文件模式
+                contract_file = output_dir / f"{source_code['ContractName']}.sol"
+                with open(contract_file, 'w', encoding='utf-8') as f:
+                    f.write(source)
         else:
             # 单文件合约
             contract_file = output_dir / f"{source_code['ContractName']}.sol"

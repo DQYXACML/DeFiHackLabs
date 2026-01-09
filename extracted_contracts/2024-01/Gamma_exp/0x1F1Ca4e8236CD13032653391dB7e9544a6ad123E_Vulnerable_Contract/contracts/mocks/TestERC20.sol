@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity >=0.7.6 <0.9.0;
+pragma solidity =0.7.6;
 
 import {IERC20Minimal} from '../../@uniswap/v3-core/contracts/interfaces/IERC20Minimal.sol';
 

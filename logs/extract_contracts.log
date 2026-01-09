@@ -20107,3 +20107,1332 @@ API Key并发统计:
 2025-12-15 08:00:49,644 - INFO - 
 输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
 2025-12-15 08:00:49,644 - INFO - ================================================================================
+2025-12-19 18:10:21,805 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-19 18:10:21,805 - INFO - 使用硬编码的API Keys配置
+2025-12-19 18:10:21,805 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-19 18:10:21,805 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-19 18:10:21,805 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-19 18:10:21,805 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-19 18:10:21,805 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-19 18:10:21,806 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-19 18:10:21,806 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-19 18:10:21,807 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-19 18:10:21,808 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-19 18:10:21,808 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-19 18:10:21,809 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-19 18:10:21,810 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-19 18:10:21,810 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-19 18:10:21,810 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-19 18:10:21,810 - INFO - OnChainDataFetcher初始化成功
+2025-12-19 18:10:21,810 - INFO - ================================================================================
+2025-12-19 18:10:21,810 - INFO - 开始提取DeFi攻击合约
+2025-12-19 18:10:21,811 - INFO - ================================================================================
+2025-12-19 18:10:21,815 - INFO - 找到 1 个测试脚本
+2025-12-19 18:10:21,815 - INFO - 
+[1/1] 处理: 2024-01/Bmizapper_exp
+2025-12-19 18:10:21,815 - INFO - 静态分析: Bmizapper_exp
+2025-12-19 18:10:21,820 - INFO -   静态提取到 5 个地址
+2025-12-19 18:10:21,820 - INFO -   静态分析耗时: 0.01s, 地址数: 5
+2025-12-19 18:10:21,820 - INFO - 动态分析: Bmizapper_exp
+2025-12-19 18:14:11,810 - INFO -   动态提取到 20 个地址
+2025-12-19 18:14:11,811 - INFO -   动态分析耗时: 229.99s, 地址数: 20
+2025-12-19 18:14:11,811 - INFO -   地址合并耗时: 0.00s
+2025-12-19 18:14:11,811 - INFO -   共提取到 21 个唯一地址
+2025-12-19 18:14:11,812 - INFO -   开始补全链上数据 (21个地址)...
+2025-12-19 18:14:11,813 - INFO - 开始批量获取 21 个合约信息 (chain=mainnet)
+2025-12-19 18:14:22,622 - INFO - 批量获取完成: 21/21 成功, 耗时10.81秒
+2025-12-19 18:14:22,627 - INFO -   ✓ 链上数据补全完成: 21/21 个地址
+2025-12-19 18:14:22,627 - INFO -   链上数据补全耗时: 10.82s
+2025-12-19 18:14:22,632 - INFO -   保存地址耗时: 0.00s
+2025-12-19 18:14:22,632 - INFO -   批量预检查 21 个地址的合约存在性 (并发数: 10)...
+2025-12-19 18:14:23,339 - INFO -   ✓ 预检查完成: 18/21 个有效合约, 耗时 0.71秒
+2025-12-19 18:14:23,340 - INFO -   已过滤 3 个无效地址,剩余 18 个待下载
+2025-12-19 18:14:23,340 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2025-12-19 18:14:54,679 - INFO -   ✓ 下载成功: 0x2A3F1A37...
+2025-12-19 18:14:54,685 - INFO -   ✓ 下载成功: 0xA0b86991...
+2025-12-19 18:14:54,701 - INFO -   ✓ 下载成功: 0x4Fabb145...
+2025-12-19 18:14:54,885 - INFO -   ✓ 下载成功: 0x4622aFF8...
+2025-12-19 18:14:54,979 - WARNING -   下载失败 (尝试 1/3): [Errno 13] Permission denied: '/Users'
+2025-12-19 18:14:56,447 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x43506849...
+2025-12-19 18:14:56,448 - INFO -   ↳ 开始下载实现合约...
+2025-12-19 18:14:56,654 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-19 18:14:56,716 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-19 18:14:56,843 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-19 18:14:56,941 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x2a3f1a37...
+2025-12-19 18:14:56,942 - INFO -   ↳ 开始下载实现合约...
+2025-12-19 18:14:56,950 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-19 18:14:56,992 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-19 18:14:56,993 - INFO -   Immutable提取跳过: solc错误: BMIZapper.sol:1:1: ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/function definition.
+{"ABDKMath64x64.sol":{"content":"//  ...
+^
+
+2025-12-19 18:14:56,993 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-19 18:15:27,888 - WARNING -   下载失败 (尝试 1/3): [Errno 13] Permission denied: '/Users'
+2025-12-19 18:15:28,178 - INFO -   ✓ 下载成功: 0x2a3f1a37...
+2025-12-19 18:15:28,466 - WARNING -   下载失败 (尝试 2/3): [Errno 13] Permission denied: '/Users'
+2025-12-19 18:15:30,849 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-19 18:15:30,856 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-19 18:15:31,151 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-19 18:15:31,795 - INFO -   ↳ 实现合约下载成功
+2025-12-19 18:15:31,948 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-19 18:15:31,953 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-19 18:15:32,019 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-19 18:15:44,468 - INFO -   ✓ 下载成功: 0x0aC00355...
+2025-12-19 18:15:44,824 - INFO -   ✓ 下载成功: 0xE2792dBA...
+2025-12-19 18:15:44,988 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xe2792dba...
+2025-12-19 18:15:44,989 - INFO -   ↳ 开始下载实现合约...
+2025-12-19 18:15:46,741 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-19 18:15:46,758 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-19 18:15:46,791 - INFO -   Immutable提取跳过: solc错误: Logic.sol:1:1: ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/function definition.
+{"ABDKMath64x64.sol":{"content":"//  ...
+^
+
+2025-12-19 18:15:46,791 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-19 18:15:55,165 - INFO -   Bmizapper_exp 总耗时: 333.35s
+2025-12-19 18:15:55,165 - INFO - 
+
+用户中断,正在保存进度...
+2025-12-19 18:15:55,166 - INFO - 进度已保存
+2025-12-19 18:23:17,153 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-19 18:23:17,153 - INFO - 使用硬编码的API Keys配置
+2025-12-19 18:23:17,154 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-19 18:23:17,154 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-19 18:23:17,154 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-19 18:23:17,154 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-19 18:23:17,154 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-19 18:23:17,154 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-19 18:23:17,155 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-19 18:23:17,156 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-19 18:23:17,156 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-19 18:23:17,157 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-19 18:23:17,157 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-19 18:23:17,158 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-19 18:23:17,159 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-19 18:23:17,159 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-19 18:23:17,159 - INFO - OnChainDataFetcher初始化成功
+2025-12-19 18:23:17,159 - INFO - ================================================================================
+2025-12-19 18:23:17,159 - INFO - 开始提取DeFi攻击合约
+2025-12-19 18:23:17,159 - INFO - ================================================================================
+2025-12-19 18:23:17,164 - INFO - 找到 1 个测试脚本
+2025-12-19 18:23:17,164 - INFO - 
+[1/1] 处理: 2024-01/Bmizapper_exp
+2025-12-19 18:23:17,164 - INFO - 静态分析: Bmizapper_exp
+2025-12-19 18:23:17,169 - INFO -   静态提取到 5 个地址
+2025-12-19 18:23:17,169 - INFO -   静态分析耗时: 0.01s, 地址数: 5
+2025-12-19 18:23:17,169 - INFO - 动态分析: Bmizapper_exp
+2025-12-19 18:24:02,876 - INFO -   动态提取到 20 个地址
+2025-12-19 18:24:02,877 - INFO -   动态分析耗时: 45.71s, 地址数: 20
+2025-12-19 18:24:02,877 - INFO -   地址合并耗时: 0.00s
+2025-12-19 18:24:02,877 - INFO -   共提取到 21 个唯一地址
+2025-12-19 18:24:02,878 - INFO -   开始补全链上数据 (21个地址)...
+2025-12-19 18:24:02,879 - INFO - 开始批量获取 21 个合约信息 (chain=mainnet)
+2025-12-19 18:24:02,887 - INFO - 批量获取完成: 21/21 成功, 耗时0.01秒
+2025-12-19 18:24:02,887 - INFO -   ✓ 链上数据补全完成: 21/21 个地址
+2025-12-19 18:24:02,888 - INFO -   链上数据补全耗时: 0.01s
+2025-12-19 18:24:02,890 - INFO -   保存地址耗时: 0.00s
+2025-12-19 18:24:02,891 - INFO -   批量预检查 21 个地址的合约存在性 (并发数: 10)...
+2025-12-19 18:24:03,581 - INFO -   ✓ 预检查完成: 18/21 个有效合约, 耗时 0.69秒
+2025-12-19 18:24:03,582 - INFO -   已过滤 3 个无效地址,剩余 18 个待下载
+2025-12-19 18:24:03,582 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2025-12-19 18:24:34,745 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:24:34,764 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:24:34,770 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:24:34,962 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:24:35,014 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:07,889 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:08,012 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:08,017 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:08,426 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:08,495 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:41,085 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:41,140 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:41,146 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:41,868 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:25:41,903 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:12,232 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:12,501 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:12,520 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:13,219 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:13,262 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:45,484 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:45,876 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:46,587 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:46,602 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:26:46,737 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:18,617 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:19,329 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:19,972 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:20,018 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:20,106 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:49,977 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:50,700 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:51,324 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:51,368 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:27:51,461 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:23,349 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:24,063 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:24,675 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:24,725 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:24,834 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:56,809 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:57,418 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:58,052 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:58,082 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:28:58,284 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:29:28,335 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:29:28,787 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:29:29,251 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:30:01,707 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:30:02,226 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:30:02,472 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:30:35,153 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:30:35,669 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:30:35,707 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:30:35,708 - INFO -   源码下载完成, 耗时 392.13s
+2025-12-19 18:30:35,730 - INFO -   源码下载耗时: 392.84s
+2025-12-19 18:30:35,730 - INFO -   检测到 3 个实现合约，更新addresses.json
+2025-12-19 18:30:35,734 - INFO -   Bmizapper_exp 总耗时: 438.57s
+2025-12-19 18:30:35,736 - INFO - 
+================================================================================
+2025-12-19 18:30:35,736 - INFO - 执行摘要
+2025-12-19 18:30:35,736 - INFO - ================================================================================
+2025-12-19 18:30:35,736 - INFO - 总脚本数:        1
+2025-12-19 18:30:35,736 - INFO - 成功:            1
+2025-12-19 18:30:35,736 - INFO - 失败:            0
+2025-12-19 18:30:35,736 - INFO - 总地址数:        21
+2025-12-19 18:30:35,737 - INFO - 已验证合约:      0
+2025-12-19 18:30:35,737 - INFO - 未验证合约:      18
+2025-12-19 18:30:35,737 - INFO -   └─ 仅字节码:   0
+2025-12-19 18:30:35,737 - INFO - API调用次数:     54
+2025-12-19 18:30:35,737 - INFO - 
+API Key并发统计:
+2025-12-19 18:30:35,737 - INFO -   etherscan:
+2025-12-19 18:30:35,737 - INFO -     Key数量: 5
+2025-12-19 18:30:35,738 - INFO -     总调用: 54
+2025-12-19 18:30:35,738 - INFO -     负载均衡: 最小=10, 最大=11, 平均=10.8
+2025-12-19 18:30:35,738 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-12-19 18:30:35,738 - INFO - ================================================================================
+2025-12-19 18:30:47,083 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-19 18:30:47,083 - INFO - 使用硬编码的API Keys配置
+2025-12-19 18:30:47,084 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-19 18:30:47,084 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-19 18:30:47,084 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-19 18:30:47,084 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-19 18:30:47,084 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-19 18:30:47,084 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-19 18:30:47,085 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-19 18:30:47,086 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-19 18:30:47,086 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-19 18:30:47,087 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-19 18:30:47,087 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-19 18:30:47,088 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-19 18:30:47,089 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-19 18:30:47,089 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-19 18:30:47,089 - INFO - OnChainDataFetcher初始化成功
+2025-12-19 18:30:47,089 - INFO - 只执行静态分析模式
+2025-12-19 18:30:47,089 - INFO - ================================================================================
+2025-12-19 18:30:47,089 - INFO - 开始提取DeFi攻击合约
+2025-12-19 18:30:47,089 - INFO - ================================================================================
+2025-12-19 18:30:47,094 - INFO - 找到 1 个测试脚本
+2025-12-19 18:30:47,094 - INFO - 
+[1/1] 处理: 2024-01/Bmizapper_exp
+2025-12-19 18:30:47,094 - INFO - 静态分析: Bmizapper_exp
+2025-12-19 18:30:47,099 - INFO -   静态提取到 5 个地址
+2025-12-19 18:30:47,099 - INFO -   静态分析耗时: 0.00s, 地址数: 5
+2025-12-19 18:30:47,099 - INFO -   动态分析已禁用
+2025-12-19 18:30:47,099 - INFO -   地址合并耗时: 0.00s
+2025-12-19 18:30:47,099 - INFO -   共提取到 5 个唯一地址
+2025-12-19 18:30:47,099 - INFO -   开始补全链上数据 (5个地址)...
+2025-12-19 18:30:47,099 - INFO - 开始批量获取 5 个合约信息 (chain=mainnet)
+2025-12-19 18:30:47,100 - INFO - 批量获取完成: 5/5 成功, 耗时0.00秒
+2025-12-19 18:30:47,100 - INFO -   ✓ 链上数据补全完成: 5/5 个地址
+2025-12-19 18:30:47,100 - INFO -   链上数据补全耗时: 0.00s
+2025-12-19 18:30:47,101 - INFO -   保存地址耗时: 0.00s
+2025-12-19 18:30:47,101 - INFO -   批量预检查 5 个地址的合约存在性 (并发数: 10)...
+2025-12-19 18:30:48,083 - INFO -   ✓ 预检查完成: 3/5 个有效合约, 耗时 0.98秒
+2025-12-19 18:30:48,083 - INFO -   已过滤 2 个无效地址,剩余 3 个待下载
+2025-12-19 18:30:48,083 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2025-12-19 18:31:25,126 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:31:27,141 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:31:30,411 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:31:58,446 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:32:00,460 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:32:04,168 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:32:06,705 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-19 18:32:06,705 - INFO - 使用硬编码的API Keys配置
+2025-12-19 18:32:06,705 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-19 18:32:06,705 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-19 18:32:06,706 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-19 18:32:06,706 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-19 18:32:06,706 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-19 18:32:06,706 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-19 18:32:06,707 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-19 18:32:06,707 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-19 18:32:06,708 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-19 18:32:06,708 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-19 18:32:06,709 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-19 18:32:06,710 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-19 18:32:06,710 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-19 18:32:06,710 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-19 18:32:06,710 - INFO - OnChainDataFetcher初始化成功
+2025-12-19 18:32:06,711 - INFO - 只执行静态分析模式
+2025-12-19 18:32:06,711 - INFO - ================================================================================
+2025-12-19 18:32:06,711 - INFO - 开始提取DeFi攻击合约
+2025-12-19 18:32:06,711 - INFO - ================================================================================
+2025-12-19 18:32:06,715 - INFO - 找到 1 个测试脚本
+2025-12-19 18:32:06,715 - INFO - 
+[1/1] 处理: 2024-01/Bmizapper_exp
+2025-12-19 18:32:06,715 - INFO - 静态分析: Bmizapper_exp
+2025-12-19 18:32:06,720 - INFO -   静态提取到 5 个地址
+2025-12-19 18:32:06,720 - INFO -   静态分析耗时: 0.01s, 地址数: 5
+2025-12-19 18:32:06,720 - INFO -   动态分析已禁用
+2025-12-19 18:32:06,721 - INFO -   地址合并耗时: 0.00s
+2025-12-19 18:32:06,721 - INFO -   共提取到 5 个唯一地址
+2025-12-19 18:32:06,721 - INFO -   开始补全链上数据 (5个地址)...
+2025-12-19 18:32:06,721 - INFO - 开始批量获取 5 个合约信息 (chain=mainnet)
+2025-12-19 18:32:06,721 - INFO - 批量获取完成: 5/5 成功, 耗时0.00秒
+2025-12-19 18:32:06,722 - INFO -   ✓ 链上数据补全完成: 5/5 个地址
+2025-12-19 18:32:06,722 - INFO -   链上数据补全耗时: 0.00s
+2025-12-19 18:32:06,722 - INFO -   保存地址耗时: 0.00s
+2025-12-19 18:32:06,722 - INFO -   批量预检查 5 个地址的合约存在性 (并发数: 10)...
+2025-12-19 18:32:07,033 - INFO -   ✓ 预检查完成: 3/5 个有效合约, 耗时 0.31秒
+2025-12-19 18:32:07,034 - INFO -   已过滤 2 个无效地址,剩余 3 个待下载
+2025-12-19 18:32:07,034 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2025-12-19 18:32:31,842 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:32:33,783 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:32:37,775 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-19 18:32:37,776 - INFO -   源码下载完成, 耗时 109.69s
+2025-12-19 18:32:37,779 - INFO -   源码下载耗时: 110.68s
+2025-12-19 18:32:37,779 - INFO -   检测到 3 个实现合约，更新addresses.json
+2025-12-19 18:32:37,781 - INFO -   Bmizapper_exp 总耗时: 110.69s
+2025-12-19 18:32:37,782 - INFO - 
+================================================================================
+2025-12-19 18:32:37,783 - INFO - 执行摘要
+2025-12-19 18:32:37,783 - INFO - ================================================================================
+2025-12-19 18:32:37,783 - INFO - 总脚本数:        1
+2025-12-19 18:32:37,783 - INFO - 成功:            1
+2025-12-19 18:32:37,783 - INFO - 失败:            0
+2025-12-19 18:32:37,783 - INFO - 总地址数:        5
+2025-12-19 18:32:37,783 - INFO - 已验证合约:      0
+2025-12-19 18:32:37,784 - INFO - 未验证合约:      3
+2025-12-19 18:32:37,784 - INFO -   └─ 仅字节码:   0
+2025-12-19 18:32:37,784 - INFO - API调用次数:     9
+2025-12-19 18:32:37,784 - INFO - 
+API Key并发统计:
+2025-12-19 18:32:37,784 - INFO -   etherscan:
+2025-12-19 18:32:37,784 - INFO -     Key数量: 5
+2025-12-19 18:32:37,784 - INFO -     总调用: 9
+2025-12-19 18:32:37,784 - INFO -     负载均衡: 最小=1, 最大=2, 平均=1.8
+2025-12-19 18:32:37,785 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-12-19 18:32:37,785 - INFO - ================================================================================
+2025-12-20 06:00:33,840 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-20 06:00:33,840 - INFO - 使用硬编码的API Keys配置
+2025-12-20 06:00:33,840 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-20 06:00:33,840 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-20 06:00:33,840 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-20 06:00:33,840 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-20 06:00:33,840 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-20 06:00:33,840 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-20 06:00:33,841 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-20 06:00:33,842 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-20 06:00:33,843 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-20 06:00:33,843 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-20 06:00:33,844 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-20 06:00:33,845 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-20 06:00:33,845 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-20 06:00:33,845 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-20 06:00:33,845 - INFO - OnChainDataFetcher初始化成功
+2025-12-20 06:00:33,845 - INFO - ================================================================================
+2025-12-20 06:00:33,845 - INFO - 开始提取DeFi攻击合约
+2025-12-20 06:00:33,845 - INFO - ================================================================================
+2025-12-20 06:00:33,868 - INFO - 找到 1 个测试脚本
+2025-12-20 06:00:33,869 - INFO - 
+[1/1] 处理: 2024-01/Bmizapper_exp
+2025-12-20 06:00:33,869 - INFO - 静态分析: Bmizapper_exp
+2025-12-20 06:00:33,876 - INFO -   静态提取到 5 个地址
+2025-12-20 06:00:33,876 - INFO -   静态分析耗时: 0.01s, 地址数: 5
+2025-12-20 06:00:33,876 - INFO - 动态分析: Bmizapper_exp
+2025-12-20 06:01:17,731 - INFO -   动态提取到 20 个地址
+2025-12-20 06:01:17,731 - INFO -   动态分析耗时: 43.86s, 地址数: 20
+2025-12-20 06:01:17,732 - INFO -   地址合并耗时: 0.00s
+2025-12-20 06:01:17,732 - INFO -   共提取到 21 个唯一地址
+2025-12-20 06:01:17,732 - INFO -   开始补全链上数据 (21个地址)...
+2025-12-20 06:01:17,733 - INFO - 开始批量获取 21 个合约信息 (chain=mainnet)
+2025-12-20 06:01:17,741 - INFO - 批量获取完成: 21/21 成功, 耗时0.01秒
+2025-12-20 06:01:17,742 - INFO -   ✓ 链上数据补全完成: 21/21 个地址
+2025-12-20 06:01:17,742 - INFO -   链上数据补全耗时: 0.01s
+2025-12-20 06:01:17,746 - INFO -   保存地址耗时: 0.00s
+2025-12-20 06:01:17,746 - INFO -   批量预检查 21 个地址的合约存在性 (并发数: 10)...
+2025-12-20 06:01:18,453 - INFO -   ✓ 预检查完成: 18/21 个有效合约, 耗时 0.71秒
+2025-12-20 06:01:18,454 - INFO -   已过滤 3 个无效地址,剩余 18 个待下载
+2025-12-20 06:01:18,454 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2025-12-20 06:01:49,714 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:01:49,719 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:01:49,843 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:01:50,051 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:01:50,133 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:22,916 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:22,930 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:23,238 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:23,565 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:23,758 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:49,763 - INFO -   Bmizapper_exp 总耗时: 135.89s
+2025-12-20 06:02:49,764 - INFO - 
+
+用户中断,正在保存进度...
+2025-12-20 06:02:49,765 - INFO - 进度已保存
+2025-12-20 06:02:56,143 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:56,292 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:56,714 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:57,356 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:02:57,459 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:03:27,744 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:03:27,906 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:03:28,986 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:03:29,081 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:03:32,320 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:01,173 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:01,406 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:02,400 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:02,600 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:06,164 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:34,479 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:35,996 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:36,747 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:37,454 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:04:39,778 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:05,931 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:07,531 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:08,416 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:08,835 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:11,422 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:40,929 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:41,196 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:42,029 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:42,475 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:05:45,026 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:06:14,556 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:06:14,786 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:06:15,431 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:06:16,004 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:06:17,143 - WARNING -   下载失败 (尝试 3/3): HTTPSConnectionPool(host='api.etherscan.io', port=443): Max retries exceeded with url: /v2/api?chainid=1&module=contract&action=getsourcecode&address=0x5fA5B62c8AF877CB37031e0a3B2f34A78e3C56A6&apikey=KIHJWZGZ4YD8DNJBQTH5SUZA83U9YW9F21 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2025-12-20 06:06:45,550 - WARNING -   下载失败 (尝试 1/3): HTTPSConnectionPool(host='api.etherscan.io', port=443): Max retries exceeded with url: /v2/api?chainid=1&module=contract&action=getsourcecode&address=0x2bF3cC8Fa6F067cc1741c7467C8Ee9F00e837757&apikey=2DTB79CHTEJ6PEDCTEINC8GV3IHUXHGP9A (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2025-12-20 06:06:46,000 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:06:46,162 - WARNING -   下载失败 (尝试 1/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:07:19,659 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:07:19,732 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:07:19,797 - WARNING -   下载失败 (尝试 2/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:07:52,997 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:07:53,390 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:07:53,487 - WARNING -   下载失败 (尝试 3/3): 'SourceDownloader' object has no attribute '_is_multi_file_json'
+2025-12-20 06:11:50,474 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-20 06:11:50,474 - INFO - 使用硬编码的API Keys配置
+2025-12-20 06:11:50,474 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-20 06:11:50,474 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-20 06:11:50,474 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-20 06:11:50,474 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-20 06:11:50,474 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-20 06:11:50,474 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-20 06:11:50,475 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-20 06:11:50,476 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-20 06:11:50,477 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-20 06:11:50,477 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-20 06:11:50,478 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-20 06:11:50,478 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-20 06:11:50,479 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-20 06:11:50,479 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-20 06:11:50,479 - INFO - OnChainDataFetcher初始化成功
+2025-12-20 06:11:50,479 - INFO - ================================================================================
+2025-12-20 06:11:50,479 - INFO - 开始提取DeFi攻击合约
+2025-12-20 06:11:50,479 - INFO - ================================================================================
+2025-12-20 06:11:50,484 - INFO - 找到 1 个测试脚本
+2025-12-20 06:11:50,484 - INFO - 
+[1/1] 处理: 2024-01/Bmizapper_exp
+2025-12-20 06:11:50,484 - INFO - 静态分析: Bmizapper_exp
+2025-12-20 06:11:50,489 - INFO -   静态提取到 5 个地址
+2025-12-20 06:11:50,489 - INFO -   静态分析耗时: 0.01s, 地址数: 5
+2025-12-20 06:11:50,489 - INFO - 动态分析: Bmizapper_exp
+2025-12-20 06:12:33,541 - INFO -   动态提取到 20 个地址
+2025-12-20 06:12:33,542 - INFO -   动态分析耗时: 43.05s, 地址数: 20
+2025-12-20 06:12:33,542 - INFO -   地址合并耗时: 0.00s
+2025-12-20 06:12:33,542 - INFO -   共提取到 21 个唯一地址
+2025-12-20 06:12:33,543 - INFO -   开始补全链上数据 (21个地址)...
+2025-12-20 06:12:33,544 - INFO - 开始批量获取 21 个合约信息 (chain=mainnet)
+2025-12-20 06:12:33,551 - INFO - 批量获取完成: 21/21 成功, 耗时0.01秒
+2025-12-20 06:12:33,552 - INFO -   ✓ 链上数据补全完成: 21/21 个地址
+2025-12-20 06:12:33,552 - INFO -   链上数据补全耗时: 0.01s
+2025-12-20 06:12:33,556 - INFO -   保存地址耗时: 0.00s
+2025-12-20 06:12:33,556 - INFO -   批量预检查 21 个地址的合约存在性 (并发数: 10)...
+2025-12-20 06:12:34,317 - INFO -   ✓ 预检查完成: 18/21 个有效合约, 耗时 0.76秒
+2025-12-20 06:12:34,318 - INFO -   已过滤 3 个无效地址,剩余 18 个待下载
+2025-12-20 06:12:34,318 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2025-12-20 17:30:56,771 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-20 17:30:56,771 - INFO - 使用硬编码的API Keys配置
+2025-12-20 17:30:56,772 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-20 17:30:56,772 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-20 17:30:56,772 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-20 17:30:56,772 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-20 17:30:56,772 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-20 17:30:56,772 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-20 17:30:56,773 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-20 17:30:56,774 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-20 17:30:56,774 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-20 17:30:56,775 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-20 17:30:56,776 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-20 17:30:56,776 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-20 17:30:56,777 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-20 17:30:56,777 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-20 17:30:56,777 - INFO - OnChainDataFetcher初始化成功
+2025-12-20 17:30:56,777 - INFO - ================================================================================
+2025-12-20 17:30:56,777 - INFO - 开始提取DeFi攻击合约
+2025-12-20 17:30:56,777 - INFO - ================================================================================
+2025-12-20 17:30:56,782 - INFO - 找到 1 个测试脚本
+2025-12-20 17:30:56,782 - INFO - 
+[1/1] 处理: 2024-01/Bmizapper_exp
+2025-12-20 17:30:56,782 - INFO - 静态分析: Bmizapper_exp
+2025-12-20 17:30:56,787 - INFO -   静态提取到 5 个地址
+2025-12-20 17:30:56,787 - INFO -   静态分析耗时: 0.01s, 地址数: 5
+2025-12-20 17:30:56,787 - INFO - 动态分析: Bmizapper_exp
+2025-12-20 17:31:37,032 - INFO -   动态提取到 20 个地址
+2025-12-20 17:31:37,032 - INFO -   动态分析耗时: 40.25s, 地址数: 20
+2025-12-20 17:31:37,032 - INFO -   地址合并耗时: 0.00s
+2025-12-20 17:31:37,033 - INFO -   共提取到 21 个唯一地址
+2025-12-20 17:31:37,033 - INFO -   开始补全链上数据 (21个地址)...
+2025-12-20 17:31:37,034 - INFO - 开始批量获取 21 个合约信息 (chain=mainnet)
+2025-12-20 17:31:37,041 - INFO - 批量获取完成: 21/21 成功, 耗时0.01秒
+2025-12-20 17:31:37,042 - INFO -   ✓ 链上数据补全完成: 21/21 个地址
+2025-12-20 17:31:37,042 - INFO -   链上数据补全耗时: 0.01s
+2025-12-20 17:31:37,045 - INFO -   保存地址耗时: 0.00s
+2025-12-20 17:31:37,046 - INFO -   批量预检查 21 个地址的合约存在性 (并发数: 10)...
+2025-12-20 17:31:37,745 - INFO -   ✓ 预检查完成: 18/21 个有效合约, 耗时 0.70秒
+2025-12-20 17:31:37,746 - INFO -   已过滤 3 个无效地址,剩余 18 个待下载
+2025-12-20 17:31:37,746 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2025-12-20 17:32:09,195 - INFO -   ✓ 下载成功: 0x4Fabb145...
+2025-12-20 17:32:09,203 - INFO -   ✓ 下载成功: 0x2A3F1A37...
+2025-12-20 17:32:09,211 - INFO -   ✓ 下载成功: 0xA0b86991...
+2025-12-20 17:32:09,339 - WARNING -   保存多文件源码失败: [Errno 13] Permission denied: '/Users'，回退到单文件模式
+2025-12-20 17:32:09,340 - INFO -   ✓ 下载成功: 0x43506849...
+2025-12-20 17:32:10,136 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x43506849...
+2025-12-20 17:32:10,136 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x2a3f1a37...
+2025-12-20 17:32:10,138 - INFO -   ↳ 开始下载实现合约...
+2025-12-20 17:32:10,138 - INFO -   ↳ 开始下载实现合约...
+2025-12-20 17:32:10,343 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-20 17:32:10,349 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:32:10,492 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2025-12-20 17:32:10,646 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:32:10,660 - INFO -   ✓ 下载成功: 0x4622aFF8...
+2025-12-20 17:32:11,686 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-20 17:32:11,706 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:32:11,772 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:32:13,354 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:32:41,927 - WARNING -   保存多文件源码失败: [Errno 13] Permission denied: '/Users'，回退到单文件模式
+2025-12-20 17:32:41,929 - INFO -   ✓ 下载成功: 0x43506849...
+2025-12-20 17:32:42,607 - INFO -   ✓ 下载成功: 0x2a3f1a37...
+2025-12-20 17:32:43,364 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2025-12-20 17:32:43,634 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-20 17:32:43,640 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:32:43,936 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:32:44,411 - INFO -   ↳ 实现合约下载成功
+2025-12-20 17:32:44,559 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:32:44,568 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-20 17:32:44,573 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:32:44,639 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:32:45,325 - INFO -   ↳ 实现合约下载成功
+2025-12-20 17:32:45,470 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=False, runs=200)
+2025-12-20 17:32:45,475 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:32:45,530 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:32:58,385 - INFO -   ✓ 下载成功: 0x0aC00355...
+2025-12-20 17:32:58,660 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xe2792dba...
+2025-12-20 17:32:58,661 - INFO -   ↳ 开始下载实现合约...
+2025-12-20 17:33:00,799 - INFO -   ✓ 下载成功: 0xE2792dBA...
+2025-12-20 17:33:01,905 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-20 17:33:01,921 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:33:02,767 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:33:02,793 - INFO -   ✓ 下载成功: 0x27b7b1ad...
+2025-12-20 17:33:03,805 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:33:03,992 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:33:03,992 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:33:16,689 - INFO -   ✓ 下载成功: 0x986b4AFF...
+2025-12-20 17:33:17,666 - INFO -   ✓ 下载成功: 0xB4AdA607...
+2025-12-20 17:33:17,831 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:33:17,972 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:33:17,972 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:33:18,654 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:33:18,794 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:33:18,794 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:33:30,138 - INFO -   ✓ 下载成功: 0xe2792dba...
+2025-12-20 17:33:31,178 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-20 17:33:31,195 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:33:32,039 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:33:32,516 - INFO -   ↳ 实现合约下载成功
+2025-12-20 17:33:32,663 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-20 17:33:32,670 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:33:32,791 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:33:34,775 - INFO -   ✓ 下载成功: 0xA696a63c...
+2025-12-20 17:33:35,764 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:33:35,906 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:33:35,906 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:33:35,985 - INFO -   ✓ 下载成功: 0x3B96d491...
+2025-12-20 17:33:37,209 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:33:37,350 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:33:37,350 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:33:50,359 - INFO -   ✓ 下载成功: 0xA74d4B67...
+2025-12-20 17:33:50,948 - INFO -   ✓ 下载成功: 0x1C6a9783...
+2025-12-20 17:33:51,395 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:33:51,535 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:33:51,535 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:33:52,013 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:33:52,153 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:33:52,153 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:34:05,021 - INFO -   ✓ 下载成功: 0x5fA5B62c...
+2025-12-20 17:34:06,013 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:34:06,153 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:34:06,153 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:34:08,378 - INFO -   ✓ 下载成功: 0x5a770DbD...
+2025-12-20 17:34:09,348 - INFO -   ✓ 下载成功: 0xC4dAf3b5...
+2025-12-20 17:34:09,432 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:34:09,574 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:34:09,575 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:34:10,360 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=0)
+2025-12-20 17:34:10,501 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:34:10,501 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:34:23,280 - INFO -   ✓ 下载成功: 0x2bF3cC8F...
+2025-12-20 17:34:24,568 - INFO -   尝试解析Immutable (solc=solc, 优化=False, runs=200)
+2025-12-20 17:34:24,710 - INFO -   Immutable提取跳过: solc返回非零状态码: argparse.ArgumentTypeError: No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable.
+2025-12-20 17:34:24,710 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:34:25,171 - INFO -   源码下载完成, 耗时 167.43s
+2025-12-20 17:34:25,178 - INFO -   源码下载耗时: 168.13s
+2025-12-20 17:34:25,178 - INFO -   检测到 5 个实现合约，更新addresses.json
+2025-12-20 17:34:25,182 - INFO -   Bmizapper_exp 总耗时: 208.40s
+2025-12-20 17:34:25,183 - INFO - 
+================================================================================
+2025-12-20 17:34:25,183 - INFO - 执行摘要
+2025-12-20 17:34:25,183 - INFO - ================================================================================
+2025-12-20 17:34:25,183 - INFO - 总脚本数:        1
+2025-12-20 17:34:25,183 - INFO - 成功:            1
+2025-12-20 17:34:25,183 - INFO - 失败:            0
+2025-12-20 17:34:25,183 - INFO - 总地址数:        21
+2025-12-20 17:34:25,183 - INFO - 已验证合约:      18
+2025-12-20 17:34:25,184 - INFO - 未验证合约:      0
+2025-12-20 17:34:25,184 - INFO -   └─ 仅字节码:   0
+2025-12-20 17:34:25,184 - INFO - API调用次数:     42
+2025-12-20 17:34:25,184 - INFO - 
+API Key并发统计:
+2025-12-20 17:34:25,184 - INFO -   etherscan:
+2025-12-20 17:34:25,184 - INFO -     Key数量: 5
+2025-12-20 17:34:25,184 - INFO -     总调用: 42
+2025-12-20 17:34:25,184 - INFO -     负载均衡: 最小=7, 最大=10, 平均=8.4
+2025-12-20 17:34:25,184 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-12-20 17:34:25,185 - INFO - ================================================================================
+2025-12-20 17:57:49,824 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-20 17:57:49,824 - INFO - 使用硬编码的API Keys配置
+2025-12-20 17:57:49,824 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-20 17:57:49,824 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-20 17:57:49,824 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-20 17:57:49,824 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-20 17:57:49,824 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-20 17:57:49,825 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-20 17:57:49,825 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-20 17:57:49,826 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-20 17:57:49,827 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-20 17:57:49,827 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-20 17:57:49,828 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-20 17:57:49,829 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-20 17:57:49,829 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-20 17:57:49,829 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-20 17:57:49,829 - INFO - OnChainDataFetcher初始化成功
+2025-12-20 17:57:49,829 - INFO - ================================================================================
+2025-12-20 17:57:49,829 - INFO - 开始提取DeFi攻击合约
+2025-12-20 17:57:49,829 - INFO - ================================================================================
+2025-12-20 17:57:49,834 - INFO - 找到 1 个测试脚本
+2025-12-20 17:57:49,834 - INFO - 
+[1/1] 处理: 2024-01/Bmizapper_exp
+2025-12-20 17:57:49,834 - INFO - 静态分析: Bmizapper_exp
+2025-12-20 17:57:49,839 - INFO -   静态提取到 5 个地址
+2025-12-20 17:57:49,839 - INFO -   静态分析耗时: 0.01s, 地址数: 5
+2025-12-20 17:57:49,839 - INFO - 动态分析: Bmizapper_exp
+2025-12-20 17:58:32,641 - INFO -   动态提取到 20 个地址
+2025-12-20 17:58:32,642 - INFO -   动态分析耗时: 42.80s, 地址数: 20
+2025-12-20 17:58:32,642 - INFO -   地址合并耗时: 0.00s
+2025-12-20 17:58:32,642 - INFO -   共提取到 21 个唯一地址
+2025-12-20 17:58:32,642 - INFO -   开始补全链上数据 (21个地址)...
+2025-12-20 17:58:32,643 - INFO - 开始批量获取 21 个合约信息 (chain=mainnet)
+2025-12-20 17:58:32,651 - INFO - 批量获取完成: 21/21 成功, 耗时0.01秒
+2025-12-20 17:58:32,652 - INFO -   ✓ 链上数据补全完成: 21/21 个地址
+2025-12-20 17:58:32,652 - INFO -   链上数据补全耗时: 0.01s
+2025-12-20 17:58:32,655 - INFO -   保存地址耗时: 0.00s
+2025-12-20 17:58:32,655 - INFO -   批量预检查 21 个地址的合约存在性 (并发数: 10)...
+2025-12-20 17:58:33,363 - INFO -   ✓ 预检查完成: 18/21 个有效合约, 耗时 0.71秒
+2025-12-20 17:58:33,364 - INFO -   已过滤 3 个无效地址,剩余 18 个待下载
+2025-12-20 17:58:33,364 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2025-12-20 17:59:04,678 - INFO -   ✓ 下载成功: 0x2A3F1A37...
+2025-12-20 17:59:04,813 - INFO -   ✓ 下载成功: 0xA0b86991...
+2025-12-20 17:59:04,837 - INFO -   ✓ 下载成功: 0x4Fabb145...
+2025-12-20 17:59:04,953 - INFO -   ✓ 下载成功: 0x4622aFF8...
+2025-12-20 17:59:05,104 - WARNING -   保存多文件源码失败: [Errno 13] Permission denied: '/Users'，回退到单文件模式
+2025-12-20 17:59:05,106 - INFO -   ✓ 下载成功: 0x43506849...
+2025-12-20 17:59:05,712 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x43506849...
+2025-12-20 17:59:05,713 - INFO -   ↳ 开始下载实现合约...
+2025-12-20 17:59:05,726 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x2a3f1a37...
+2025-12-20 17:59:05,727 - INFO -   ↳ 开始下载实现合约...
+2025-12-20 17:59:05,808 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-20 17:59:05,815 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:59:05,934 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-20 17:59:05,954 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:59:06,116 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:59:06,133 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2025-12-20 17:59:07,349 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:59:07,595 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:59:37,095 - INFO -   ✓ 下载成功: 0x2a3f1a37...
+2025-12-20 17:59:37,350 - WARNING -   保存多文件源码失败: [Errno 13] Permission denied: '/Users'，回退到单文件模式
+2025-12-20 17:59:37,352 - INFO -   ✓ 下载成功: 0x43506849...
+2025-12-20 17:59:38,303 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-20 17:59:38,310 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:59:38,583 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2025-12-20 17:59:38,607 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:59:39,104 - INFO -   ↳ 实现合约下载成功
+2025-12-20 17:59:39,219 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2025-12-20 17:59:39,225 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:59:39,291 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:59:39,796 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:59:40,291 - INFO -   ↳ 实现合约下载成功
+2025-12-20 17:59:40,454 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.4.24/solc-0.4.24, 优化=False, runs=200)
+2025-12-20 17:59:40,459 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:59:40,517 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 17:59:54,043 - INFO -   ✓ 下载成功: 0x0aC00355...
+2025-12-20 17:59:54,275 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xe2792dba...
+2025-12-20 17:59:54,276 - INFO -   ↳ 开始下载实现合约...
+2025-12-20 17:59:55,452 - INFO -   ✓ 下载成功: 0xE2792dBA...
+2025-12-20 17:59:55,858 - INFO -   ✓ 下载成功: 0x27b7b1ad...
+2025-12-20 17:59:56,471 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-20 17:59:56,488 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 17:59:56,912 - INFO -   本地未找到 solc yper:0.2.8，尝试自动下载...
+2025-12-20 17:59:56,912 - INFO -   正在下载 solc yper:0.2.8...
+2025-12-20 17:59:57,165 - WARNING -   svm安装失败: Error: unexpected character 'y' while parsing major version number
+2025-12-20 17:59:57,166 - INFO -   Immutable提取跳过: 未找到匹配solc (vyper:0.2.8)
+2025-12-20 17:59:57,339 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:00:11,631 - INFO -   ✓ 下载成功: 0x986b4AFF...
+2025-12-20 18:00:12,647 - INFO -   Immutable提取跳过: solc版本已标记不可用 (vyper:0.2.8)
+2025-12-20 18:00:13,047 - INFO -   ✓ 下载成功: 0xB4AdA607...
+2025-12-20 18:00:14,469 - INFO -   本地未找到 solc yper:0.2.11，尝试自动下载...
+2025-12-20 18:00:14,469 - INFO -   正在下载 solc yper:0.2.11...
+2025-12-20 18:00:14,722 - WARNING -   svm安装失败: Error: unexpected character 'y' while parsing major version number
+2025-12-20 18:00:14,722 - INFO -   Immutable提取跳过: 未找到匹配solc (vyper:0.2.11)
+2025-12-20 18:00:26,107 - INFO -   ✓ 下载成功: 0xe2792dba...
+2025-12-20 18:00:27,142 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-20 18:00:27,158 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:00:28,035 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:00:28,486 - INFO -   ↳ 实现合约下载成功
+2025-12-20 18:00:28,681 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.3/solc-0.7.3, 优化=True, runs=200)
+2025-12-20 18:00:28,687 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:00:28,810 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:00:29,167 - INFO -   ✓ 下载成功: 0xA696a63c...
+2025-12-20 18:00:29,680 - INFO -   ✓ 下载成功: 0x3B96d491...
+2025-12-20 18:00:30,312 - INFO -   Immutable提取跳过: solc版本已标记不可用 (vyper:0.2.11)
+2025-12-20 18:00:30,756 - INFO -   Immutable提取跳过: solc版本已标记不可用 (vyper:0.2.11)
+2025-12-20 18:00:45,068 - INFO -   ✓ 下载成功: 0xA74d4B67...
+2025-12-20 18:00:46,173 - INFO -   Immutable提取跳过: solc版本已标记不可用 (vyper:0.2.11)
+2025-12-20 18:00:46,753 - INFO -   ✓ 下载成功: 0x1C6a9783...
+2025-12-20 18:00:47,858 - INFO -   Immutable提取跳过: solc版本已标记不可用 (vyper:0.2.11)
+2025-12-20 18:01:01,044 - INFO -   ✓ 下载成功: 0x5fA5B62c...
+2025-12-20 18:01:02,263 - INFO -   Immutable提取跳过: solc版本已标记不可用 (vyper:0.2.11)
+2025-12-20 18:01:02,794 - INFO -   ✓ 下载成功: 0x5a770DbD...
+2025-12-20 18:01:02,963 - INFO -   ✓ 下载成功: 0xC4dAf3b5...
+2025-12-20 18:01:03,841 - INFO -   Immutable提取跳过: solc版本已标记不可用 (vyper:0.2.11)
+2025-12-20 18:01:03,979 - INFO -   Immutable提取跳过: solc版本已标记不可用 (vyper:0.2.11)
+2025-12-20 18:01:33,720 - INFO -   ✓ 下载成功: 0x2bF3cC8F...
+2025-12-20 18:01:34,789 - INFO -   本地未找到 solc 0.5.14，尝试自动下载...
+2025-12-20 18:01:34,789 - INFO -   正在下载 solc 0.5.14...
+2025-12-20 18:01:37,140 - INFO -   ✓ solc 0.5.14 安装成功
+2025-12-20 18:01:37,141 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.5.14/solc-0.5.14, 优化=False, runs=200)
+2025-12-20 18:01:37,146 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:01:37,153 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:01:37,600 - INFO -   源码下载完成, 耗时 184.24s
+2025-12-20 18:01:37,606 - INFO -   源码下载耗时: 184.95s
+2025-12-20 18:01:37,606 - INFO -   检测到 5 个实现合约，更新addresses.json
+2025-12-20 18:01:37,610 - INFO -   Bmizapper_exp 总耗时: 227.78s
+2025-12-20 18:01:37,611 - INFO - 
+================================================================================
+2025-12-20 18:01:37,611 - INFO - 执行摘要
+2025-12-20 18:01:37,611 - INFO - ================================================================================
+2025-12-20 18:01:37,611 - INFO - 总脚本数:        1
+2025-12-20 18:01:37,612 - INFO - 成功:            1
+2025-12-20 18:01:37,612 - INFO - 失败:            0
+2025-12-20 18:01:37,612 - INFO - 总地址数:        21
+2025-12-20 18:01:37,612 - INFO - 已验证合约:      18
+2025-12-20 18:01:37,612 - INFO - 未验证合约:      0
+2025-12-20 18:01:37,612 - INFO -   └─ 仅字节码:   0
+2025-12-20 18:01:37,612 - INFO - API调用次数:     42
+2025-12-20 18:01:37,613 - INFO - 
+API Key并发统计:
+2025-12-20 18:01:37,613 - INFO -   etherscan:
+2025-12-20 18:01:37,613 - INFO -     Key数量: 5
+2025-12-20 18:01:37,613 - INFO -     总调用: 42
+2025-12-20 18:01:37,613 - INFO -     负载均衡: 最小=8, 最大=9, 平均=8.4
+2025-12-20 18:01:37,613 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-12-20 18:01:37,613 - INFO - ================================================================================
+2025-12-20 18:10:54,951 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-20 18:10:54,951 - INFO - 使用硬编码的API Keys配置
+2025-12-20 18:10:54,952 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-20 18:10:54,952 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-20 18:10:54,952 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-20 18:10:54,952 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-20 18:10:54,952 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-20 18:10:54,952 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-20 18:10:54,953 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-20 18:10:54,954 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-20 18:10:54,954 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-20 18:10:54,955 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-20 18:10:54,955 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-20 18:10:54,956 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-20 18:10:54,957 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-20 18:10:54,957 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-20 18:10:54,957 - INFO - OnChainDataFetcher初始化成功
+2025-12-20 18:10:54,957 - INFO - ================================================================================
+2025-12-20 18:10:54,957 - INFO - 开始提取DeFi攻击合约
+2025-12-20 18:10:54,957 - INFO - ================================================================================
+2025-12-20 18:10:54,962 - INFO - 找到 1 个测试脚本
+2025-12-20 18:10:54,962 - INFO - 
+[1/1] 处理: 2024-01/CitadelFinance_exp
+2025-12-20 18:10:54,962 - INFO - 静态分析: CitadelFinance_exp
+2025-12-20 18:10:54,969 - INFO -   静态提取到 9 个地址
+2025-12-20 18:10:54,969 - INFO -   静态分析耗时: 0.01s, 地址数: 9
+2025-12-20 18:10:54,969 - INFO - 动态分析: CitadelFinance_exp
+2025-12-20 18:11:37,930 - INFO -   动态提取到 13 个地址
+2025-12-20 18:11:37,930 - INFO -   动态分析耗时: 42.96s, 地址数: 13
+2025-12-20 18:11:37,930 - INFO -   地址合并耗时: 0.00s
+2025-12-20 18:11:37,931 - INFO -   共提取到 16 个唯一地址
+2025-12-20 18:11:37,931 - INFO -   开始补全链上数据 (16个地址)...
+2025-12-20 18:11:37,932 - INFO - 开始批量获取 16 个合约信息 (chain=arbitrum)
+2025-12-20 18:11:44,792 - INFO - 批量获取完成: 16/16 成功, 耗时6.86秒
+2025-12-20 18:11:44,798 - INFO -   ✓ 链上数据补全完成: 16/16 个地址
+2025-12-20 18:11:44,798 - INFO -   链上数据补全耗时: 6.87s
+2025-12-20 18:11:44,802 - INFO -   保存地址耗时: 0.00s
+2025-12-20 18:11:44,802 - INFO -   批量预检查 16 个地址的合约存在性 (并发数: 10)...
+2025-12-20 18:11:45,433 - INFO -   ✓ 预检查完成: 12/16 个有效合约, 耗时 0.63秒
+2025-12-20 18:11:45,434 - INFO -   已过滤 4 个无效地址,剩余 12 个待下载
+2025-12-20 18:11:45,434 - INFO -   开始下载源码 (链: arbitrum, 并发数: 5)
+2025-12-20 18:12:16,722 - INFO -   ✓ 下载成功: 0x82aF4944...
+2025-12-20 18:12:16,770 - INFO -   ✓ 下载成功: 0x5e93c07a...
+2025-12-20 18:12:16,939 - INFO -   ✓ 下载成功: 0x34b66699...
+2025-12-20 18:12:16,950 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x8b194bea...
+2025-12-20 18:12:16,951 - INFO -   ↳ 开始下载实现合约...
+2025-12-20 18:12:17,131 - INFO -   ✓ 下载成功: 0xFF970A61...
+2025-12-20 18:12:17,484 - INFO -   ✓ 下载成功: 0xC31E54c7...
+2025-12-20 18:12:17,512 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x1efb3f88...
+2025-12-20 18:12:17,513 - INFO -   ↳ 开始下载实现合约...
+2025-12-20 18:12:18,391 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-20 18:12:18,508 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-20 18:12:18,819 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:12:18,850 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:12:21,661 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2025-12-20 18:12:21,682 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:12:22,348 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-20 18:12:49,524 - INFO -   ✓ 下载成功: 0x8b194bea...
+2025-12-20 18:12:49,588 - INFO -   ✓ 下载成功: 0x1efb3f88...
+2025-12-20 18:12:50,559 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.11/solc-0.6.11, 优化=True, runs=100)
+2025-12-20 18:12:50,657 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-20 18:12:50,657 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:12:50,671 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:12:50,984 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:12:51,133 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:12:51,595 - INFO -   ↳ 实现合约下载成功
+2025-12-20 18:12:51,745 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-20 18:12:51,752 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:12:51,766 - INFO -   ↳ 实现合约下载成功
+2025-12-20 18:12:51,867 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:12:51,877 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-20 18:12:51,884 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:12:52,000 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:13:07,144 - INFO -   ✓ 下载成功: 0x43cF1856...
+2025-12-20 18:13:08,224 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-20 18:13:08,674 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:13:08,810 - INFO -   ✓ 下载成功: 0xc873fEcb...
+2025-12-20 18:13:09,729 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.6/solc-0.6.6, 优化=True, runs=99999)
+2025-12-20 18:13:09,843 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:13:10,222 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-20 18:13:13,767 - INFO -   ✓ 下载成功: 0xCaF5460b...
+2025-12-20 18:13:14,872 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-20 18:13:15,140 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:13:25,767 - INFO -   ✓ 下载成功: 0x8b194bEa...
+2025-12-20 18:13:26,781 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.11/solc-0.6.11, 优化=True, runs=100)
+2025-12-20 18:13:26,793 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:13:27,105 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:13:28,144 - INFO -   ✓ 下载成功: 0x1eFB3f88...
+2025-12-20 18:13:29,227 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-20 18:13:29,239 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:13:29,711 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:13:43,464 - INFO -   ✓ 下载成功: 0x84652bb2...
+2025-12-20 18:13:43,729 - INFO -   ✓ 下载成功: 0x5ed32847...
+2025-12-20 18:13:44,502 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.5.16/solc-0.5.16, 优化=True, runs=30000)
+2025-12-20 18:13:44,603 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-20 18:13:44,831 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-20 18:13:45,003 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:13:45,045 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-20 18:13:45,465 - INFO -   源码下载完成, 耗时 120.03s
+2025-12-20 18:13:45,469 - INFO -   源码下载耗时: 120.67s
+2025-12-20 18:13:45,469 - INFO -   检测到 2 个实现合约，更新addresses.json
+2025-12-20 18:13:45,473 - INFO -   CitadelFinance_exp 总耗时: 170.51s
+2025-12-20 18:13:45,474 - INFO - 
+================================================================================
+2025-12-20 18:13:45,474 - INFO - 执行摘要
+2025-12-20 18:13:45,474 - INFO - ================================================================================
+2025-12-20 18:13:45,474 - INFO - 总脚本数:        1
+2025-12-20 18:13:45,474 - INFO - 成功:            1
+2025-12-20 18:13:45,474 - INFO - 失败:            0
+2025-12-20 18:13:45,474 - INFO - 总地址数:        16
+2025-12-20 18:13:45,475 - INFO - 已验证合约:      12
+2025-12-20 18:13:45,475 - INFO - 未验证合约:      0
+2025-12-20 18:13:45,475 - INFO -   └─ 仅字节码:   0
+2025-12-20 18:13:45,475 - INFO - API调用次数:     28
+2025-12-20 18:13:45,475 - INFO - 
+API Key并发统计:
+2025-12-20 18:13:45,475 - INFO -   etherscan:
+2025-12-20 18:13:45,476 - INFO -     Key数量: 5
+2025-12-20 18:13:45,476 - INFO -     总调用: 28
+2025-12-20 18:13:45,476 - INFO -     负载均衡: 最小=5, 最大=6, 平均=5.6
+2025-12-20 18:13:45,476 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-12-20 18:13:45,476 - INFO - ================================================================================
+2025-12-21 03:27:16,450 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-21 03:27:16,450 - INFO - 使用硬编码的API Keys配置
+2025-12-21 03:27:16,450 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-21 03:27:16,450 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-21 03:27:16,451 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-21 03:27:16,451 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-21 03:27:16,451 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-21 03:27:16,451 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-21 03:27:16,452 - INFO - Web3连接成功: mainnet -> https://eth.llamarpc.com
+2025-12-21 03:27:16,452 - INFO - Web3连接成功: bsc -> https://bsc-dataseed.binance.org
+2025-12-21 03:27:16,453 - INFO - Web3连接成功: arbitrum -> https://arb1.arbitrum.io/rpc
+2025-12-21 03:27:16,453 - INFO - Web3连接成功: optimism -> https://mainnet.optimism.io
+2025-12-21 03:27:16,454 - INFO - Web3连接成功: polygon -> https://polygon-rpc.com
+2025-12-21 03:27:16,455 - INFO - Web3连接成功: avalanche -> https://api.avax.network/ext/bc/C/rpc
+2025-12-21 03:27:16,455 - INFO - Web3连接成功: fantom -> https://rpc.ftm.tools
+2025-12-21 03:27:16,455 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-21 03:27:16,455 - INFO - OnChainDataFetcher初始化成功
+2025-12-21 03:27:16,456 - INFO - ================================================================================
+2025-12-21 03:27:16,456 - INFO - 开始提取DeFi攻击合约
+2025-12-21 03:27:16,456 - INFO - ================================================================================
+2025-12-21 03:27:16,460 - INFO - 找到 1 个测试脚本
+2025-12-21 03:27:16,460 - INFO - 
+[1/1] 处理: 2024-01/CitadelFinance_exp
+2025-12-21 03:27:16,460 - INFO - 静态分析: CitadelFinance_exp
+2025-12-21 03:27:16,468 - INFO -   静态提取到 9 个地址
+2025-12-21 03:27:16,468 - INFO -   静态分析耗时: 0.01s, 地址数: 9
+2025-12-21 03:27:16,468 - INFO - 动态分析: CitadelFinance_exp
+2025-12-21 03:27:21,532 - INFO -   CitadelFinance_exp 总耗时: 5.07s
+2025-12-21 03:27:21,533 - INFO - 
+
+用户中断,正在保存进度...
+2025-12-21 03:27:21,534 - INFO - 进度已保存
+2025-12-21 03:29:07,713 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-21 03:29:07,713 - INFO - 使用硬编码的API Keys配置
+2025-12-21 03:29:07,713 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-21 03:29:07,713 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-21 03:29:07,714 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-21 03:29:07,714 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-21 03:29:07,714 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-21 03:29:07,714 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-21 03:29:07,715 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 03:29:07,715 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 03:29:07,716 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 03:29:07,717 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 03:29:07,717 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 03:29:07,718 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 03:29:07,718 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 03:29:07,718 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-21 03:29:07,719 - INFO - OnChainDataFetcher初始化成功
+2025-12-21 03:29:07,719 - INFO - ================================================================================
+2025-12-21 03:29:07,719 - INFO - 开始提取DeFi攻击合约
+2025-12-21 03:29:07,719 - INFO - ================================================================================
+2025-12-21 03:29:07,723 - INFO - 找到 1 个测试脚本
+2025-12-21 03:29:07,723 - INFO - 
+[1/1] 处理: 2024-01/CitadelFinance_exp
+2025-12-21 03:29:07,724 - INFO - 静态分析: CitadelFinance_exp
+2025-12-21 03:29:07,731 - INFO -   静态提取到 9 个地址
+2025-12-21 03:29:07,731 - INFO -   静态分析耗时: 0.01s, 地址数: 9
+2025-12-21 03:29:07,731 - INFO - 动态分析: CitadelFinance_exp
+2025-12-21 03:29:49,432 - INFO -   动态提取到 13 个地址
+2025-12-21 03:29:49,432 - INFO -   动态分析耗时: 41.70s, 地址数: 13
+2025-12-21 03:29:49,433 - INFO -   地址合并耗时: 0.00s
+2025-12-21 03:29:49,433 - INFO -   共提取到 16 个唯一地址
+2025-12-21 03:29:49,434 - INFO -   开始补全链上数据 (16个地址)...
+2025-12-21 03:29:49,434 - INFO - 开始批量获取 16 个合约信息 (chain=arbitrum)
+2025-12-21 03:29:50,075 - INFO - 批量获取完成: 16/16 成功, 耗时0.64秒
+2025-12-21 03:29:50,078 - INFO -   ✓ 链上数据补全完成: 16/16 个地址
+2025-12-21 03:29:50,078 - INFO -   链上数据补全耗时: 0.64s
+2025-12-21 03:29:50,081 - INFO -   保存地址耗时: 0.00s
+2025-12-21 03:29:50,081 - INFO -   批量预检查 16 个地址的合约存在性 (并发数: 10)...
+2025-12-21 03:29:50,592 - INFO -   ✓ 预检查完成: 12/16 个有效合约, 耗时 0.51秒
+2025-12-21 03:29:50,592 - INFO -   已过滤 4 个无效地址,剩余 12 个待下载
+2025-12-21 03:29:50,593 - INFO -   开始下载源码 (链: arbitrum, 并发数: 5)
+2025-12-21 03:30:21,828 - INFO -   ✓ 下载成功: 0x5e93c07a...
+2025-12-21 03:30:22,018 - INFO -   ✓ 下载成功: 0xFF970A61...
+2025-12-21 03:30:22,074 - INFO -   ✓ 下载成功: 0x34b66699...
+2025-12-21 03:30:22,085 - INFO -   ✓ 下载成功: 0x82aF4944...
+2025-12-21 03:30:22,289 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x1efb3f88...
+2025-12-21 03:30:22,290 - INFO -   ↳ 开始下载实现合约...
+2025-12-21 03:30:22,347 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x8b194bea...
+2025-12-21 03:30:22,351 - INFO -   ↳ 开始下载实现合约...
+2025-12-21 03:30:22,600 - INFO -   ✓ 下载成功: 0xC31E54c7...
+2025-12-21 03:30:23,032 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 03:30:23,270 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 03:30:23,461 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:30:23,582 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:30:23,875 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2025-12-21 03:30:23,894 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 03:30:24,492 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-21 03:30:54,033 - INFO -   ✓ 下载成功: 0x8b194bea...
+2025-12-21 03:30:54,944 - INFO -   ✓ 下载成功: 0x1efb3f88...
+2025-12-21 03:30:55,317 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.11/solc-0.6.11, 优化=True, runs=100)
+2025-12-21 03:30:55,328 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 03:30:55,637 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:30:56,026 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-21 03:30:56,038 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 03:30:56,518 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:30:57,377 - INFO -   ↳ 实现合约下载成功
+2025-12-21 03:30:57,532 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-21 03:30:57,539 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 03:30:57,565 - INFO -   ↳ 实现合约下载成功
+2025-12-21 03:30:57,654 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:30:57,713 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-21 03:30:57,719 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 03:30:57,831 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:31:11,314 - INFO -   ✓ 下载成功: 0xc873fEcb...
+2025-12-21 03:31:11,528 - INFO -   ✓ 下载成功: 0x43cF1856...
+2025-12-21 03:31:12,549 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.6/solc-0.6.6, 优化=True, runs=99999)
+2025-12-21 03:31:12,556 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 03:31:12,597 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 03:31:12,843 - INFO -   ✓ 下载成功: 0xCaF5460b...
+2025-12-21 03:31:12,914 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-21 03:31:13,031 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:31:13,955 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 03:31:14,217 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:31:29,841 - INFO -   ✓ 下载成功: 0x8b194bEa...
+2025-12-21 03:31:29,868 - INFO -   ✓ 下载成功: 0x1eFB3f88...
+2025-12-21 03:31:30,929 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-21 03:31:30,941 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 03:31:31,022 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.11/solc-0.6.11, 优化=True, runs=100)
+2025-12-21 03:31:31,033 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 03:31:31,339 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:31:31,400 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:31:44,593 - INFO -   ✓ 下载成功: 0x84652bb2...
+2025-12-21 03:31:44,691 - INFO -   ✓ 下载成功: 0x5ed32847...
+2025-12-21 03:31:45,719 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.5.16/solc-0.5.16, 优化=True, runs=30000)
+2025-12-21 03:31:45,726 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 03:31:45,820 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 03:31:45,992 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:31:46,153 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 03:31:46,583 - INFO -   源码下载完成, 耗时 115.99s
+2025-12-21 03:31:46,587 - INFO -   源码下载耗时: 116.51s
+2025-12-21 03:31:46,588 - INFO -   检测到 2 个实现合约，更新addresses.json
+2025-12-21 03:31:46,591 - INFO -   CitadelFinance_exp 总耗时: 158.87s
+2025-12-21 03:31:46,592 - INFO - 
+================================================================================
+2025-12-21 03:31:46,592 - INFO - 执行摘要
+2025-12-21 03:31:46,592 - INFO - ================================================================================
+2025-12-21 03:31:46,592 - INFO - 总脚本数:        1
+2025-12-21 03:31:46,592 - INFO - 成功:            1
+2025-12-21 03:31:46,593 - INFO - 失败:            0
+2025-12-21 03:31:46,593 - INFO - 总地址数:        16
+2025-12-21 03:31:46,593 - INFO - 已验证合约:      12
+2025-12-21 03:31:46,593 - INFO - 未验证合约:      0
+2025-12-21 03:31:46,593 - INFO -   └─ 仅字节码:   0
+2025-12-21 03:31:46,593 - INFO - API调用次数:     28
+2025-12-21 03:31:46,593 - INFO - 
+API Key并发统计:
+2025-12-21 03:31:46,594 - INFO -   etherscan:
+2025-12-21 03:31:46,594 - INFO -     Key数量: 5
+2025-12-21 03:31:46,594 - INFO -     总调用: 28
+2025-12-21 03:31:46,594 - INFO -     负载均衡: 最小=4, 最大=7, 平均=5.6
+2025-12-21 03:31:46,594 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-12-21 03:31:46,594 - INFO - ================================================================================
+2025-12-21 15:34:41,205 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-21 15:34:41,205 - INFO - 使用硬编码的API Keys配置
+2025-12-21 15:34:41,206 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-21 15:34:41,206 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-21 15:34:41,206 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-21 15:34:41,206 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-21 15:34:41,206 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-21 15:34:41,206 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-21 15:34:41,207 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 15:34:41,208 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 15:34:41,208 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 15:34:41,209 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 15:34:41,209 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 15:34:41,210 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 15:34:41,211 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-21 15:34:41,211 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-21 15:34:41,211 - INFO - OnChainDataFetcher初始化成功
+2025-12-21 15:34:41,211 - INFO - ================================================================================
+2025-12-21 15:34:41,211 - INFO - 开始提取DeFi攻击合约
+2025-12-21 15:34:41,211 - INFO - ================================================================================
+2025-12-21 15:34:41,216 - INFO - 找到 1 个测试脚本
+2025-12-21 15:34:41,216 - INFO - 
+[1/1] 处理: 2024-01/CitadelFinance_exp
+2025-12-21 15:34:41,216 - INFO - 静态分析: CitadelFinance_exp
+2025-12-21 15:34:41,223 - INFO -   静态提取到 9 个地址
+2025-12-21 15:34:41,223 - INFO -   静态分析耗时: 0.01s, 地址数: 9
+2025-12-21 15:34:41,223 - INFO - 动态分析: CitadelFinance_exp
+2025-12-21 15:38:34,572 - INFO -   动态提取到 13 个地址
+2025-12-21 15:38:34,572 - INFO -   动态分析耗时: 233.35s, 地址数: 13
+2025-12-21 15:38:34,572 - INFO -   地址合并耗时: 0.00s
+2025-12-21 15:38:34,573 - INFO -   共提取到 16 个唯一地址
+2025-12-21 15:38:34,573 - INFO -   开始补全链上数据 (16个地址)...
+2025-12-21 15:38:34,574 - INFO - 开始批量获取 16 个合约信息 (chain=arbitrum)
+2025-12-21 15:38:34,577 - INFO - 批量获取完成: 16/16 成功, 耗时0.00秒
+2025-12-21 15:38:34,578 - INFO -   ✓ 链上数据补全完成: 16/16 个地址
+2025-12-21 15:38:34,578 - INFO -   链上数据补全耗时: 0.01s
+2025-12-21 15:38:34,583 - INFO -   保存地址耗时: 0.00s
+2025-12-21 15:38:34,583 - INFO -   批量预检查 16 个地址的合约存在性 (并发数: 10)...
+2025-12-21 15:38:35,126 - INFO -   ✓ 预检查完成: 12/16 个有效合约, 耗时 0.54秒
+2025-12-21 15:38:35,127 - INFO -   已过滤 4 个无效地址,剩余 12 个待下载
+2025-12-21 15:38:35,127 - INFO -   开始下载源码 (链: arbitrum, 并发数: 5)
+2025-12-21 15:39:06,343 - INFO -   ✓ 下载成功: 0x82aF4944...
+2025-12-21 15:39:06,349 - INFO -   ✓ 下载成功: 0x34b66699...
+2025-12-21 15:39:06,402 - INFO -   ✓ 下载成功: 0x5e93c07a...
+2025-12-21 15:39:06,492 - INFO -   ✓ 下载成功: 0xFF970A61...
+2025-12-21 15:39:06,580 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x8b194bea...
+2025-12-21 15:39:06,588 - INFO -   ↳ 开始下载实现合约...
+2025-12-21 15:39:06,718 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x1efb3f88...
+2025-12-21 15:39:06,736 - INFO -   ↳ 开始下载实现合约...
+2025-12-21 15:39:07,027 - INFO -   ✓ 下载成功: 0xC31E54c7...
+2025-12-21 15:39:07,624 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 15:39:07,685 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 15:39:07,952 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:39:08,113 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:39:08,316 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2025-12-21 15:39:08,335 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 15:39:08,933 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-21 15:39:37,956 - INFO -   ✓ 下载成功: 0x8b194bea...
+2025-12-21 15:39:38,292 - INFO -   ✓ 下载成功: 0x1efb3f88...
+2025-12-21 15:39:40,053 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.11/solc-0.6.11, 优化=True, runs=100)
+2025-12-21 15:39:40,056 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-21 15:39:40,067 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 15:39:40,069 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 15:39:40,374 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:39:40,551 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:39:41,406 - INFO -   ↳ 实现合约下载成功
+2025-12-21 15:39:41,563 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-21 15:39:41,569 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 15:39:41,670 - INFO -   ↳ 实现合约下载成功
+2025-12-21 15:39:41,682 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:39:41,822 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-21 15:39:41,828 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 15:39:41,940 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:39:58,187 - INFO -   ✓ 下载成功: 0xc873fEcb...
+2025-12-21 15:39:58,443 - INFO -   ✓ 下载成功: 0x43cF1856...
+2025-12-21 15:39:59,265 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.6/solc-0.6.6, 优化=True, runs=99999)
+2025-12-21 15:39:59,272 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 15:39:59,635 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-21 15:39:59,751 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 15:40:00,183 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:40:01,678 - INFO -   ✓ 下载成功: 0xCaF5460b...
+2025-12-21 15:40:02,721 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 15:40:02,983 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:40:14,909 - INFO -   ✓ 下载成功: 0x8b194bEa...
+2025-12-21 15:40:15,932 - INFO -   ✓ 下载成功: 0x1eFB3f88...
+2025-12-21 15:40:16,054 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.11/solc-0.6.11, 优化=True, runs=100)
+2025-12-21 15:40:16,064 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 15:40:16,365 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:40:16,917 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-21 15:40:16,929 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 15:40:17,390 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:40:31,453 - INFO -   ✓ 下载成功: 0x84652bb2...
+2025-12-21 15:40:31,998 - INFO -   ✓ 下载成功: 0x5ed32847...
+2025-12-21 15:40:32,527 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.5.16/solc-0.5.16, 优化=True, runs=30000)
+2025-12-21 15:40:32,535 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-21 15:40:32,874 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.20/solc-0.8.20, 优化=True, runs=1000)
+2025-12-21 15:40:32,964 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:40:33,046 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-21 15:40:33,478 - INFO -   源码下载完成, 耗时 118.35s
+2025-12-21 15:40:33,482 - INFO -   源码下载耗时: 118.90s
+2025-12-21 15:40:33,482 - INFO -   检测到 2 个实现合约，更新addresses.json
+2025-12-21 15:40:33,485 - INFO -   CitadelFinance_exp 总耗时: 352.27s
+2025-12-21 15:40:33,486 - INFO - 
+================================================================================
+2025-12-21 15:40:33,486 - INFO - 执行摘要
+2025-12-21 15:40:33,486 - INFO - ================================================================================
+2025-12-21 15:40:33,487 - INFO - 总脚本数:        1
+2025-12-21 15:40:33,487 - INFO - 成功:            1
+2025-12-21 15:40:33,487 - INFO - 失败:            0
+2025-12-21 15:40:33,487 - INFO - 总地址数:        16
+2025-12-21 15:40:33,487 - INFO - 已验证合约:      12
+2025-12-21 15:40:33,487 - INFO - 未验证合约:      0
+2025-12-21 15:40:33,487 - INFO -   └─ 仅字节码:   0
+2025-12-21 15:40:33,488 - INFO - API调用次数:     28
+2025-12-21 15:40:33,488 - INFO - 
+API Key并发统计:
+2025-12-21 15:40:33,488 - INFO -   etherscan:
+2025-12-21 15:40:33,488 - INFO -     Key数量: 5
+2025-12-21 15:40:33,488 - INFO -     总调用: 28
+2025-12-21 15:40:33,488 - INFO -     负载均衡: 最小=4, 最大=6, 平均=5.6
+2025-12-21 15:40:33,488 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-12-21 15:40:33,488 - INFO - ================================================================================
+2025-12-24 13:06:46,325 - INFO - 日志写入: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2025-12-24 13:06:46,325 - INFO - 使用硬编码的API Keys配置
+2025-12-24 13:06:46,325 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2025-12-24 13:06:46,325 - INFO - 为 etherscan 创建Key池: 5 个key
+2025-12-24 13:06:46,326 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2025-12-24 13:06:46,326 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2025-12-24 13:06:46,326 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2025-12-24 13:06:46,326 - INFO - 文件缓存已初始化: /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2025-12-24 13:06:46,327 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-24 13:06:46,327 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-24 13:06:46,328 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-24 13:06:46,329 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-24 13:06:46,329 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-24 13:06:46,330 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-24 13:06:46,331 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M
+2025-12-24 13:06:46,331 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2025-12-24 13:06:46,331 - INFO - OnChainDataFetcher初始化成功
+2025-12-24 13:06:46,331 - INFO - ================================================================================
+2025-12-24 13:06:46,331 - INFO - 开始提取DeFi攻击合约
+2025-12-24 13:06:46,331 - INFO - ================================================================================
+2025-12-24 13:06:46,335 - INFO - 找到 1 个测试脚本
+2025-12-24 13:06:46,336 - INFO - 
+[1/1] 处理: 2024-01/Gamma_exp
+2025-12-24 13:06:46,336 - INFO - 静态分析: Gamma_exp
+2025-12-24 13:06:46,342 - INFO -   静态提取到 11 个地址
+2025-12-24 13:06:46,342 - INFO -   静态分析耗时: 0.01s, 地址数: 11
+2025-12-24 13:06:46,342 - INFO - 动态分析: Gamma_exp
+2025-12-24 13:10:36,228 - INFO -   动态提取到 20 个地址
+2025-12-24 13:10:36,229 - INFO -   动态分析耗时: 229.89s, 地址数: 20
+2025-12-24 13:10:36,229 - INFO -   地址合并耗时: 0.00s
+2025-12-24 13:10:36,229 - INFO -   共提取到 22 个唯一地址
+2025-12-24 13:10:36,229 - INFO -   开始补全链上数据 (22个地址)...
+2025-12-24 13:10:36,229 - INFO - 开始批量获取 22 个合约信息 (chain=arbitrum)
+2025-12-24 13:10:41,084 - INFO - 批量获取完成: 22/22 成功, 耗时4.85秒
+2025-12-24 13:10:41,088 - INFO -   ✓ 链上数据补全完成: 22/22 个地址
+2025-12-24 13:10:41,088 - INFO -   链上数据补全耗时: 4.86s
+2025-12-24 13:10:41,092 - INFO -   保存地址耗时: 0.00s
+2025-12-24 13:10:41,093 - INFO -   批量预检查 22 个地址的合约存在性 (并发数: 10)...
+2025-12-24 13:10:42,867 - INFO -   ✓ 预检查完成: 18/22 个有效合约, 耗时 1.77秒
+2025-12-24 13:10:42,868 - INFO -   已过滤 4 个无效地址,剩余 18 个待下载
+2025-12-24 13:10:42,868 - INFO -   开始下载源码 (链: arbitrum, 并发数: 5)
+2025-12-24 13:11:15,260 - INFO -   ✓ 下载成功: 0x1F1Ca4e8...
+2025-12-24 13:11:17,795 - INFO -   合约未验证,尝试下载字节码: 0xfd42cba8...
+2025-12-24 13:11:18,183 - INFO -   ✓ 字节码下载成功: 0xfd42cba8... (大小: 11713 bytes)
+2025-12-24 13:11:18,895 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2025-12-24 13:11:18,921 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:11:19,992 - INFO -   ✓ 下载成功: 0x3AB5DD69...
+2025-12-24 13:11:21,036 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-24 13:11:23,294 - INFO -   ✓ 下载成功: 0x641C00A8...
+2025-12-24 13:11:25,739 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2025-12-24 13:11:25,758 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:11:25,953 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=0)
+2025-12-24 13:11:25,973 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:11:26,043 - INFO -   ✓ 下载成功: 0x61A7b3da...
+2025-12-24 13:11:26,359 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-24 13:11:26,652 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-24 13:11:28,221 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2025-12-24 13:11:28,239 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:11:28,823 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-24 13:12:10,730 - INFO -   ✓ 下载成功: 0x82aF4944...
+2025-12-24 13:12:12,341 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x8b194bea...
+2025-12-24 13:12:12,343 - INFO -   ↳ 开始下载实现合约...
+2025-12-24 13:12:14,082 - INFO -   ✓ 下载成功: 0xBA122222...
+2025-12-24 13:12:17,078 - INFO -   ✓ 下载成功: 0xC31E54c7...
+2025-12-24 13:12:17,144 - INFO -   本地未找到 solc 0.7.1，尝试自动下载...
+2025-12-24 13:12:17,144 - INFO -   正在下载 solc 0.7.1...
+2025-12-24 13:12:17,335 - INFO -   ✓ 下载成功: 0xFd086bC7...
+2025-12-24 13:12:17,936 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x3263cd78...
+2025-12-24 13:12:17,937 - INFO -   ↳ 开始下载实现合约...
+2025-12-24 13:12:19,375 - INFO -   ✓ solc 0.7.1 安装成功
+2025-12-24 13:12:19,376 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.1/solc-0.7.1, 优化=True, runs=1500)
+2025-12-24 13:12:19,404 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:12:20,443 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2025-12-24 13:12:20,463 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:12:21,069 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-24 13:12:21,287 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-24 13:12:21,291 - INFO -   ✓ 下载成功: 0xFF970A61...
+2025-12-24 13:12:21,868 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x1efb3f88...
+2025-12-24 13:12:21,869 - INFO -   ↳ 开始下载实现合约...
+2025-12-24 13:12:44,245 - INFO -   ✓ 下载成功: 0x8b194bea...
+2025-12-24 13:12:46,738 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.11/solc-0.6.11, 优化=True, runs=100)
+2025-12-24 13:12:46,749 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:12:47,059 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:12:52,150 - INFO -   ↳ 实现合约下载成功
+2025-12-24 13:12:52,352 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-24 13:12:52,359 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:12:52,472 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:12:53,712 - INFO -   ✓ 下载成功: 0x3263cd78...
+2025-12-24 13:12:54,494 - INFO -   ✓ 下载成功: 0xf31e1AE2...
+2025-12-24 13:12:56,652 - INFO -   ✓ 下载成功: 0x1eFB3f88...
+2025-12-24 13:12:57,190 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.4/solc-0.8.4, 优化=True, runs=100000)
+2025-12-24 13:12:57,334 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:12:57,670 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.4/solc-0.8.4, 优化=True, runs=100000)
+2025-12-24 13:12:57,684 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:12:58,035 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:12:58,460 - INFO -   ✓ 下载成功: 0x1efb3f88...
+2025-12-24 13:12:58,602 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:12:59,479 - INFO -   ↳ 实现合约下载成功
+2025-12-24 13:12:59,535 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-24 13:12:59,547 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:12:59,689 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.8.2/solc-0.8.2, 优化=True, runs=200)
+2025-12-24 13:12:59,804 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:13:00,006 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:13:00,064 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:13:02,314 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-24 13:13:02,326 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:13:02,787 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:13:04,520 - INFO -   ↳ 实现合约下载成功
+2025-12-24 13:13:04,727 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2025-12-24 13:13:04,734 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:13:04,849 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:13:27,304 - INFO -   ✓ 下载成功: 0x8b194bEa...
+2025-12-24 13:13:29,543 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.6.11/solc-0.6.11, 优化=True, runs=100)
+2025-12-24 13:13:29,554 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:13:29,860 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:13:33,321 - INFO -   ✓ 下载成功: 0x1a3c9B1d...
+2025-12-24 13:13:35,989 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=0)
+2025-12-24 13:13:36,001 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:13:36,658 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-24 13:13:36,663 - INFO -   ✓ 下载成功: 0x0a5C5EAE...
+2025-12-24 13:13:37,366 - INFO -   ✓ 下载成功: 0xce886865...
+2025-12-24 13:13:38,328 - INFO -   ✓ 下载成功: 0x1f7792eD...
+2025-12-24 13:13:39,746 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.1/solc-0.7.1, 优化=True, runs=1500)
+2025-12-24 13:13:39,758 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:13:39,990 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-24 13:13:40,419 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=0)
+2025-12-24 13:13:40,431 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:13:40,900 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2025-12-24 13:13:41,790 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2025-12-24 13:13:41,806 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:13:42,406 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:14:03,105 - INFO -   ✓ 下载成功: 0x5C3E4eBc...
+2025-12-24 13:14:06,818 - INFO -   尝试解析Immutable (solc=/home/dqy/.svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2025-12-24 13:14:06,829 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2025-12-24 13:14:07,095 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2025-12-24 13:14:07,656 - INFO -   源码下载完成, 耗时 204.79s
+2025-12-24 13:14:07,662 - INFO -   源码下载耗时: 206.57s
+2025-12-24 13:14:07,662 - INFO -   检测到 3 个实现合约，更新addresses.json
+2025-12-24 13:14:07,667 - INFO -   Gamma_exp 总耗时: 441.33s
+2025-12-24 13:14:07,668 - INFO - 
+================================================================================
+2025-12-24 13:14:07,668 - INFO - 执行摘要
+2025-12-24 13:14:07,668 - INFO - ================================================================================
+2025-12-24 13:14:07,668 - INFO - 总脚本数:        1
+2025-12-24 13:14:07,668 - INFO - 成功:            1
+2025-12-24 13:14:07,669 - INFO - 失败:            0
+2025-12-24 13:14:07,669 - INFO - 总地址数:        22
+2025-12-24 13:14:07,669 - INFO - 已验证合约:      17
+2025-12-24 13:14:07,669 - INFO - 未验证合约:      0
+2025-12-24 13:14:07,669 - INFO -   └─ 仅字节码:   1
+2025-12-24 13:14:07,669 - INFO - API调用次数:     42
+2025-12-24 13:14:07,669 - INFO - 
+API Key并发统计:
+2025-12-24 13:14:07,670 - INFO -   etherscan:
+2025-12-24 13:14:07,670 - INFO -     Key数量: 5
+2025-12-24 13:14:07,670 - INFO -     总调用: 42
+2025-12-24 13:14:07,670 - INFO -     负载均衡: 最小=7, 最大=9, 平均=8.4
+2025-12-24 13:14:07,670 - INFO - 
+输出目录:        /home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2025-12-24 13:14:07,670 - INFO - ================================================================================

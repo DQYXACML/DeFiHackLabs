@@ -1,0 +1,39 @@
+{
+  "compiler_version": "v0.7.1+commit.f4a555be",
+  "optimizer": true,
+  "runs": 1500,
+  "evm_version": "Default",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 2827,
+  "values": {
+    "contracts/vault/ProtocolFeesCollector.sol:ProtocolFeesCollector": [
+      {
+        "label": "8",
+        "var_name": "contracts/lib/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 679,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ce88686553686da562ce7cea497ce749da109f9f",
+        "value_int": "1179094094293835215229020967184532635351614791583",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "822",
+        "var_name": "contracts/vault/ProtocolFeesCollector.sol:vault",
+        "offset": 1043,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ba12222222228d8ba445958a75a0704d566bf2c8",
+        "value_int": "1062276670219503018717391839032010498165418226376",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "822",
+        "var_name": "contracts/vault/ProtocolFeesCollector.sol:vault",
+        "offset": 1353,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ba12222222228d8ba445958a75a0704d566bf2c8",
+        "value_int": "1062276670219503018717391839032010498165418226376",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

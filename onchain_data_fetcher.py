@@ -297,15 +297,15 @@ class OnChainDataFetcher:
         logger.info(f"OnChainDataFetcher已初始化: {len(self.key_pools)}个链, {len(self.web3_instances)}个RPC节点")
 
     def _get_default_rpc_urls(self) -> Dict[str, str]:
-        """获取默认的公共RPC端点"""
+        """获取默认的公共RPC端点（使用drpc.live）"""
         return {
-            "mainnet": "https://eth.llamarpc.com",
-            "bsc": "https://bsc-dataseed.binance.org",
-            "arbitrum": "https://arb1.arbitrum.io/rpc",
-            "optimism": "https://mainnet.optimism.io",
-            "polygon": "https://polygon-rpc.com",
-            "avalanche": "https://api.avax.network/ext/bc/C/rpc",
-            "fantom": "https://rpc.ftm.tools"
+            "mainnet": "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
+            "bsc": "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
+            "arbitrum": "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
+            "optimism": "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
+            "polygon": "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
+            "avalanche": "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
+            "fantom": "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
         }
 
     @classmethod

@@ -2,19 +2,19 @@
 
 pragma solidity 0.7.6;
 
-import "../@openzeppelin/contracts/math/Math.sol";
-import "../@openzeppelin/contracts/math/SafeMath.sol";
-import "../@openzeppelin/contracts/math/SignedSafeMath.sol";
-import "../@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "../@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
-import "../@openzeppelin/contracts/drafts/ERC20Permit.sol";
-import "../@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/math/Math.sol";
+import "@openzeppelin/contracts/math/SafeMath.sol";
+import "@openzeppelin/contracts/math/SignedSafeMath.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
+import "@openzeppelin/contracts/drafts/ERC20Permit.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
 import "./algebra/interfaces/callback/IAlgebraMintCallback.sol";
 import "./algebra/interfaces/IAlgebraPool.sol";
 import "./algebra/libraries/TickMath.sol";
-import "../@uniswap/v3-core/contracts/libraries/FullMath.sol";
-import "../@uniswap/v3-periphery/contracts/libraries/LiquidityAmounts.sol";
+import "@uniswap/v3-core/contracts/libraries/FullMath.sol";
+import "@uniswap/v3-periphery/contracts/libraries/LiquidityAmounts.sol";
 
 /// @title Hypervisor 1.3.1
 /// @notice A V2-like interface with fungible liquidity to Camelot

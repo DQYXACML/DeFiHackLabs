@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity >=0.7.6 <0.9.0;
+pragma solidity =0.7.6;
 
 import {IUniswapV3Pool} from '../../@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol';
 import {IUniswapV3Factory} from '../../@uniswap/v3-core/contracts/interfaces/IUniswapV3Factory.sol';
@@ -12,7 +12,7 @@ import {TickMath} from '../../@uniswap/v3-core/contracts/libraries/TickMath.sol'
 import {LowGasSafeMath} from '../../@uniswap/v3-core/contracts/libraries/LowGasSafeMath.sol';
 import {TransferHelper} from '../../@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol';
 import {LiquidityAmounts} from '../../@uniswap/v3-periphery/contracts/libraries/LiquidityAmounts.sol';
-import {IRouter} from "../../../../../../../src/Interface/IRouter.sol";
+import {IRouter} from "./interfaces/IRouter.sol";
 
 contract MockUniswapV3Pool is IUniswapV3MintCallback, IUniswapV3SwapCallback, IERC20Minimal {
     // 防火墙读取单槽位接口
@@ -27,18 +27,6 @@ contract MockUniswapV3Pool is IUniswapV3MintCallback, IUniswapV3SwapCallback, IE
         assembly {
             value := sload(slot)
         }
-    }
-
-
-    // 防火墙路由器
-    IRouter public immutable firewall;
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
-        }
-        _;
     }
 
 
@@ -58,9 +46,69 @@ contract MockUniswapV3Pool is IUniswapV3MintCallback, IUniswapV3SwapCallback, IE
 
     mapping(address => uint256) private _balances;
     mapping(address => mapping(address => uint256)) public override allowance;
+    // 防火墙路由器（使用普通变量而非immutable，支持构造后设置，避免子类stack too deep）
+    // ========== 防火墙存储槽位（ERC1967风格） ==========
+    /**
+     * @dev 防火墙路由器存储槽位
+     * 计算方式: bytes32(uint256(keccak256('firewall.router.storage')) - 1)
+     * 槽位值: 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc
+     *
+     * 此槽位在极高的存储空间，不会与合约原有变量（slot 0-N）冲突
+     * 参考: ERC1967 Proxy Standard
+     */
+    bytes32 private constant FIREWALL_ROUTER_SLOT =
+        bytes32(uint256(keccak256('firewall.router.storage')) - 1);
 
-    constructor(address _firewall) {
-        firewall = IRouter(_firewall);
+    /**
+     * @dev 获取防火墙路由器地址
+     */
+    function firewall() public view returns (IRouter) {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        address firewallAddress;
+        assembly {
+            firewallAddress := sload(slot)
+        }
+        return IRouter(firewallAddress);
+    }
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        IRouter _firewall = firewall();
+        if (address(_firewall) != address(0)) {
+            _firewall.executeWithDetect(msg.data);
+        }
+        _;
+    }
+
+    /**
+     * @dev 设置防火墙路由器地址（internal，供子类在构造函数中调用）
+     */
+    function _setFirewall(address _firewall) internal {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    /**
+     * @dev 公开设置防火墙地址（仅在未设置时可调用）
+     */
+    function setFirewall(address _firewall) external {
+        require(address(firewall()) == address(0), "Firewall already set");
+        require(_firewall != address(0), "Invalid firewall address");
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    event FirewallUpdated(address indexed newFirewall);
+
+
+
+    constructor() {
         (address _uniswapFactory, address _token0, address _token1, uint24 _fee, int24 _tickSpacing) =
             IUniswapV3PoolDeployer(msg.sender).parameters();
         token0 = _token0;

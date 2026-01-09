@@ -1,0 +1,30 @@
+{
+  "compiler_version": "v0.7.6+commit.7338295f",
+  "optimizer": true,
+  "runs": 800,
+  "evm_version": "Default",
+  "metadata_bytes": 12,
+  "runtime_bytes_without_metadata": 2310,
+  "values": {
+    "contracts/mocks/MockUniswapV3Pool.sol:MockUniswapV3Pool": [
+      {
+        "label": "10782",
+        "var_name": "contracts/mocks/MockUniswapV3Pool.sol:token0",
+        "offset": 1108,
+        "length": 32,
+        "value_hex": "0x61046f5760405162461bcd60e51b815260040161023d90610758565b60018054",
+        "value_int": "43882182150332245856172086321376856789530944366710545108156927918754033139796",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "10792",
+        "var_name": "contracts/mocks/MockUniswapV3Pool.sol:uniswapFactory",
+        "offset": 2149,
+        "length": 32,
+        "value_hex": "0x5260600190565b90815260200190565b918252602082015260400190565b8681",
+        "value_int": "37259933511856302790217090305735443021815490122916288527381169145987618014849",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

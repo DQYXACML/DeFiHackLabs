@@ -542,7 +542,7 @@ class StateDiffAnalyzer:
         仅当addresses.json标记为ERC20且能定位到持币人对应的mapping槽位时才添加。
         """
         info = self.addresses_info.get(contract_addr.lower()) if self.addresses_info else None
-        name = (info.get('name', '') if info else '').lower()
+        name = ((info.get('name') or '') if info else '').lower()
         aliases = [a.lower() for a in info.get('aliases', [])] if info and info.get('aliases') else []
 
         # 判断是否ERC20
@@ -1070,7 +1070,36 @@ class AttackScriptParser:
         'string', 'payable',
     }
 
-    def __init__(self, script_path: Path, use_slither: bool = True):
+    # ✅ 调试和测试辅助函数 - 不应生成约束规则
+    DEBUG_TEST_FUNCTIONS = {
+        # Forge/Foundry console 调试
+        'console', 'console2',
+        # 常见日志函数
+        'log', 'logInt', 'logUint', 'logString', 'logBytes', 'logAddress', 'logBytes32',
+        # Hardhat console
+        'console',
+        # 事件（emit已在KEYWORDS中）
+        # 测试断言
+        'assertTrue', 'assertFalse', 'assertEq', 'assertNotEq', 'assertGt', 'assertGe',
+        'assertLt', 'assertLe', 'assertApproxEqAbs', 'assertApproxEqRel',
+        # VM作弊码（Forge测试辅助）
+        'vm', 'prank', 'startPrank', 'stopPrank', 'deal', 'warp', 'roll',
+        'expectRevert', 'expectEmit', 'mockCall', 'clearMockedCalls',
+        'etch', 'load', 'store', 'snapshot', 'revertTo', 'label',
+    }
+
+    # ✅ 视图/纯函数 - 通常不需要约束（只读操作）
+    VIEW_PURE_FUNCTIONS = {
+        # ERC20 视图函数
+        'balanceOf', 'allowance', 'totalSupply', 'decimals', 'name', 'symbol',
+        # ERC721 视图函数
+        'ownerOf', 'tokenURI', 'getApproved', 'isApprovedForAll',
+        # 通用查询函数
+        'getReserves', 'getPrice', 'getAmountOut', 'getAmountIn',
+        'quote', 'factory', 'token0', 'token1', 'fee',
+    }
+
+    def __init__(self, script_path: Path, use_slither: bool = True, slither_timeout: int = 120):
         self.script_path = script_path
         self.script_content = script_path.read_text()
         # 缓存解析结果
@@ -1085,8 +1114,16 @@ class AttackScriptParser:
         if self.use_slither:
             try:
                 logger.debug(f"初始化Slither分析器: {script_path}")
-                self.slither_func_analyzer = SlitherFunctionAnalyzer(str(script_path))
-                self.slither_callgraph_builder = SlitherCallGraphBuilder(str(script_path))
+                # ✅ 传递timeout和filter参数
+                self.slither_func_analyzer = SlitherFunctionAnalyzer(
+                    str(script_path),
+                    timeout=slither_timeout,
+                    filter_std_libs=True  # 启用标准库过滤
+                )
+                self.slither_callgraph_builder = SlitherCallGraphBuilder(
+                    str(script_path),
+                    timeout=slither_timeout  # ✅ 传递timeout
+                )
                 logger.info("✓ 使用Slither进行精确AST解析")
             except Exception as e:
                 logger.warning(f"Slither初始化失败,回退到正则表达式: {e}")
@@ -1280,6 +1317,54 @@ class AttackScriptParser:
                 return {"address": address, "name": name}
 
         return {"address": None, "name": None}
+
+    def _should_skip_function(self, contract_var: str, func_name: str) -> bool:
+        """
+        判断是否应该跳过某个函数调用（不生成约束规则）
+
+        Args:
+            contract_var: 合约变量名（如 console, vm, token）
+            func_name: 函数名（如 log, balanceOf, approve）
+
+        Returns:
+            True表示应该跳过，False表示需要生成约束
+        """
+        # 1. 跳过调试和测试辅助函数
+        if contract_var in self.DEBUG_TEST_FUNCTIONS:
+            logger.debug(f"  ✗ 跳过调试函数: {contract_var}.{func_name}")
+            return True
+
+        # 2. 跳过console.log等调试输出
+        if contract_var in ['console', 'console2']:
+            logger.debug(f"  ✗ 跳过console调试: {contract_var}.{func_name}")
+            return True
+
+        # 3. 跳过vm作弊码
+        if contract_var == 'vm':
+            logger.debug(f"  ✗ 跳过vm作弊码: {contract_var}.{func_name}")
+            return True
+
+        # 4. 跳过视图/纯函数（只读，无状态修改）
+        if func_name in self.VIEW_PURE_FUNCTIONS:
+            logger.debug(f"  ✗ 跳过视图函数: {contract_var}.{func_name}")
+            return True
+
+        # 5. 跳过Solidity内置关键字
+        if func_name in self.SOLIDITY_KEYWORDS:
+            logger.debug(f"  ✗ 跳过Solidity关键字: {func_name}")
+            return True
+
+        # 6. 跳过测试断言函数（函数名以assert开头）
+        if func_name.startswith('assert') or func_name.startswith('expect'):
+            logger.debug(f"  ✗ 跳过测试断言: {func_name}")
+            return True
+
+        # 7. 跳过日志函数（log开头，除非是DeFi协议的特定log函数）
+        if func_name.startswith('log') and contract_var in ['console', 'console2', '', 'this']:
+            logger.debug(f"  ✗ 跳过日志函数: {contract_var}.{func_name}")
+            return True
+
+        return False
 
     def _infer_contract_name(self, address: str) -> str:
         """从地址推断合约名称"""
@@ -1747,12 +1832,12 @@ class AttackScriptParser:
             var_name = match.group(1)
             func_name = match.group(2)
 
-            # 过滤伪外部调用
-            if var_name in ['msg', 'tx', 'block', 'abi', 'this', 'super', 'address', 'type']:
+            # ✅ 使用统一的过滤方法
+            if self._should_skip_function(var_name, func_name):
                 continue
 
-            # 过滤常见视图函数(通常不需要约束)
-            if func_name in ['balanceOf', 'allowance', 'totalSupply', 'decimals', 'name', 'symbol']:
+            # 过滤伪外部调用（保留用于兼容性）
+            if var_name in ['msg', 'tx', 'block', 'abi', 'this', 'super', 'address', 'type']:
                 continue
 
             external_calls.append({
@@ -1769,9 +1854,15 @@ class AttackScriptParser:
             address_expr = match.group(2).strip()
             func_name = match.group(3)
 
+            # ✅ 接口调用也需要过滤
+            # 使用接口名作为contract_var进行检查
+            interface_name = f'I{interface_hint}' if interface_hint else 'I'
+            if self._should_skip_function(interface_name, func_name):
+                continue
+
             external_calls.append({
                 'type': 'interface',
-                'interface': f'I{interface_hint}' if interface_hint else 'I',
+                'interface': interface_name,
                 'address_expr': address_expr,
                 'function': func_name,
                 'source_function': func.name,
@@ -2520,7 +2611,7 @@ class ConstraintGeneratorV2:
 
                     if self.state_analyzer.addresses_info:
                         for addr, info in self.state_analyzer.addresses_info.items():
-                            name = info.get('name', '')
+                            name = info.get('name') or ''
                             if name == token_name or token_name in name:
                                 token_addr = addr
                             if name == holder_name or holder_name in name:
@@ -2628,7 +2719,7 @@ class ConstraintGeneratorV2:
                     addr = entry.get('address')
                     if not addr:
                         continue
-                    name_field = entry.get('name', '')
+                    name_field = entry.get('name') or ''
                     aliases = entry.get('aliases', []) or []
                     items.append((addr, {'name': name_field, 'aliases': aliases}))
 
@@ -2701,7 +2792,7 @@ class ConstraintGeneratorV2:
         holder_addr = None
 
         for addr, data in addresses.items():
-            name = data.get('name', '')
+            name = data.get('name') or ''
             if name == token_name or token_name in name or name in token_name:
                 token_addr = addr
             if name == holder_name or holder_name in name or name in holder_name:
@@ -3020,6 +3111,21 @@ class ConstraintGeneratorV2:
         for call in attack_info.get('attack_calls', []):
             func_name = call['function']
             params = call['parameters']
+
+            # ✅ 过滤调试和测试函数
+            # 使用AttackScriptParser的类常量
+            if func_name in AttackScriptParser.DEBUG_TEST_FUNCTIONS or \
+               func_name in AttackScriptParser.VIEW_PURE_FUNCTIONS or \
+               func_name.startswith('assert') or func_name.startswith('expect'):
+                logger.debug(f"  ✗ 跳过调试/测试函数: {func_name}")
+                continue
+
+            # 额外检查：跳过console/vm等调试合约的所有调用
+            signature = call.get('signature', '')
+            if any(debug_prefix in signature for debug_prefix in ['console.', 'console2.', 'vm.']):
+                logger.debug(f"  ✗ 跳过调试调用: {signature}")
+                continue
+
             pattern = self._identify_attack_pattern(func_name)
 
             if not pattern:
@@ -3081,12 +3187,13 @@ class ConstraintGeneratorV2:
 class ConstraintExtractorV2:
     """改进版约束提取器"""
 
-    def __init__(self, repo_root: Path, use_firewall_config: bool = False, use_slither: bool = True):
+    def __init__(self, repo_root: Path, use_firewall_config: bool = False, use_slither: bool = True, slither_timeout: int = 120):
         self.repo_root = repo_root
         self.extracted_dir = repo_root / "extracted_contracts"
         self.scripts_dir = repo_root / "src" / "test"
         self.use_firewall_config = use_firewall_config
         self.use_slither = use_slither
+        self.slither_timeout = slither_timeout  # ✅ 新增timeout参数
 
         # 初始化防火墙配置读取器
         if self.use_firewall_config:
@@ -3128,7 +3235,12 @@ class ConstraintExtractorV2:
 
         # 解析攻击脚本
         logger.timer_start(f"{protocol_name} - 解析攻击脚本")
-        parser = AttackScriptParser(script_path, use_slither=self.use_slither)
+        # ✅ 传递timeout参数
+        parser = AttackScriptParser(
+            script_path,
+            use_slither=self.use_slither,
+            slither_timeout=self.slither_timeout
+        )
         attack_info = parser.parse()
         logger.timer_end(f"{protocol_name} - 解析攻击脚本")
 
@@ -3324,6 +3436,9 @@ def main():
                        help='使用Slither进行精确AST分析 (默认启用)')
     parser.add_argument('--no-slither', dest='use_slither', action='store_false',
                        help='禁用Slither,使用正则表达式分析')
+    # ✅ 新增timeout参数
+    parser.add_argument('--slither-timeout', type=int, default=120,
+                       help='Slither分析超时时间（秒），默认120秒。增大此值可处理更复杂的合约')
     parser.add_argument('--log-file', help='日志文件路径 (默认: logs/extract_constraints_YYYYMMDD_HHMMSS.log)')
 
     args = parser.parse_args()
@@ -3348,12 +3463,13 @@ def main():
     extractor = ConstraintExtractorV2(
         repo_root,
         use_firewall_config=args.use_firewall_config,
-        use_slither=args.use_slither
+        use_slither=args.use_slither,
+        slither_timeout=args.slither_timeout  # ✅ 传递timeout参数
     )
 
     # 显示使用的分析方法
     if args.use_slither and SLITHER_AVAILABLE:
-        logger.info("✓ 分析模式: Slither精确AST解析")
+        logger.info(f"✓ 分析模式: Slither精确AST解析 (超时: {args.slither_timeout}秒)")
     else:
         logger.info("分析模式: 正则表达式(fallback)")
 

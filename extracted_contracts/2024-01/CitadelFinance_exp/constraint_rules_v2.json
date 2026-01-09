@@ -8,12 +8,12 @@
   "constraints": [
     {
       "function": "redeem",
-      "signature": "redeem(...)",
+      "signature": "redeem(uint256,uint256,uint256,uint256)",
       "attack_pattern": "drain_attack",
       "constraint": {
         "type": "capped_iterated_threshold",
         "expression": "amount > 5951614269374999822336",
-        "semantics": "High-frequency operation: parameter affects amountInUnderlying with estimated 30951666666666668032 iterations (capped)",
+        "semantics": "High-frequency operation: parameter affects address_10 with estimated 30951666666666668032 iterations (capped)",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -21,11 +21,11 @@
             "type": "uint256",
             "value_expr": "1"
           },
-          "amountInUnderlying": {
+          "address_10": {
             "source": "storage",
             "slot": "10",
             "type": "uint256",
-            "semantic_name": "amountInUnderlying",
+            "semantic_name": "address_10",
             "before_value": 19838714231250000000001,
             "after_value": 19807762564583333333335
           }
@@ -82,12 +82,12 @@
     },
     {
       "function": "redeem",
-      "signature": "redeem(...)",
+      "signature": "redeem(uint256,uint256,uint256,uint256)",
       "attack_pattern": "drain_attack",
       "constraint": {
         "type": "iterated_threshold",
-        "expression": "redeemAmount * 31 > amountInUnderlying * 0.5",
-        "semantics": "Loop attack: parameter applied 31 times affects amountInUnderlying",
+        "expression": "redeemAmount * 31 > address_10 * 0.5",
+        "semantics": "Loop attack: parameter applied 31 times affects address_10",
         "variables": {
           "redeemAmount": {
             "source": "function_parameter",
@@ -95,11 +95,11 @@
             "type": "uint256",
             "value_expr": "redeemAmount"
           },
-          "amountInUnderlying": {
+          "address_10": {
             "source": "storage",
             "slot": "10",
             "type": "uint256",
-            "semantic_name": "amountInUnderlying",
+            "semantic_name": "address_10",
             "before_value": 19838714231250000000001,
             "after_value": 19807762564583333333335
           }
@@ -122,12 +122,12 @@
     },
     {
       "function": "redeem",
-      "signature": "redeem(...)",
+      "signature": "redeem(uint256,uint256,uint256,uint256)",
       "attack_pattern": "drain_attack",
       "constraint": {
         "type": "capped_iterated_threshold",
         "expression": "amount > 5951614269374999822336",
-        "semantics": "High-frequency operation: parameter affects amountInUnderlying with estimated 30951666666666668032 iterations (capped)",
+        "semantics": "High-frequency operation: parameter affects address_10 with estimated 30951666666666668032 iterations (capped)",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -135,11 +135,11 @@
             "type": "uint256",
             "value_expr": "1"
           },
-          "amountInUnderlying": {
+          "address_10": {
             "source": "storage",
             "slot": "10",
             "type": "uint256",
-            "semantic_name": "amountInUnderlying",
+            "semantic_name": "address_10",
             "before_value": 19838714231250000000001,
             "after_value": 19807762564583333333335
           }
@@ -175,7 +175,7 @@
   },
   "attack_metadata": {
     "loop_count": 1,
-    "total_calls": 13
+    "total_calls": 11
   },
   "metadata": {
     "extraction_version": "2.0.0",

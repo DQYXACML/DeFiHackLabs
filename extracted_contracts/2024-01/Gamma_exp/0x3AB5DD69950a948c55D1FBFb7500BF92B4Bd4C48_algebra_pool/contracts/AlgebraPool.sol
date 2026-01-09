@@ -28,24 +28,11 @@ import './interfaces/IERC20Minimal.sol';
 import './interfaces/callback/IAlgebraMintCallback.sol';
 import './interfaces/callback/IAlgebraSwapCallback.sol';
 import './interfaces/callback/IAlgebraFlashCallback.sol';
-import {IRouter} from "../../../../../../src/Interface/IRouter.sol";
 
 /// @title Algebra concentrated liquidity pool
 /// @notice This contract is responsible for liquidity positions, swaps and flashloans
 /// @dev Version: Algebra V1.9-directional-fee
 contract AlgebraPool is PoolState, PoolImmutables, IAlgebraPool {
-    // 防火墙路由器
-    IRouter public firewall;
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
-        }
-        _;
-    }
-
-
   using LowGasSafeMath for uint256;
   using LowGasSafeMath for int256;
   using LowGasSafeMath for uint128;
@@ -208,8 +195,7 @@ contract AlgebraPool is PoolState, PoolImmutables, IAlgebraPool {
   }
 
   /// @inheritdoc IAlgebraPoolActions
-  function initialize(address _firewall, uint160 initialPrice) external override {
-        firewall = IRouter(_firewall);
+  function initialize(uint160 initialPrice) external override {
     require(globalState.price == 0, 'AI');
     // getTickAtSqrtRatio checks validity of initialPrice inside
     int24 tick = TickMath.getTickAtSqrtRatio(initialPrice);

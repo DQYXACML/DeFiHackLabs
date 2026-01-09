@@ -1,0 +1,66 @@
+{
+  "compiler_version": "v0.7.6+commit.7338295f",
+  "optimizer": true,
+  "runs": 800,
+  "evm_version": "Default",
+  "metadata_bytes": 12,
+  "runtime_bytes_without_metadata": 18498,
+  "values": {
+    "contracts/Hypervisor.sol:Hypervisor": [
+      {
+        "label": "120",
+        "var_name": "@openzeppelin/contracts/drafts/EIP712.sol:_CACHED_DOMAIN_SEPARATOR",
+        "offset": 11185,
+        "length": 32,
+        "value_hex": "0x9ac8ffe0ecb781dc13eb90774c7b71a58dac6fcfe47d804071255c21ee161c32",
+        "value_int": "70011314104054377054653163693377608290063621822558048231462149706971711151154",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "122",
+        "var_name": "@openzeppelin/contracts/drafts/EIP712.sol:_CACHED_CHAIN_ID",
+        "offset": 11137,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000000a4b1",
+        "value_int": "42161",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "124",
+        "var_name": "@openzeppelin/contracts/drafts/EIP712.sol:_HASHED_NAME",
+        "offset": 11259,
+        "length": 32,
+        "value_hex": "0xd5d5bef896d9d3c88f2822810d21965d375ea316ae3a5880429e177ca1b85574",
+        "value_int": "96720293206792652941573703271832826919590619105558244443621407820295697880436",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "126",
+        "var_name": "@openzeppelin/contracts/drafts/EIP712.sol:_HASHED_VERSION",
+        "offset": 11292,
+        "length": 32,
+        "value_hex": "0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+        "value_int": "90743482286830539503240959006302832933333810038750515972785732718729991261126",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "128",
+        "var_name": "@openzeppelin/contracts/drafts/EIP712.sol:_TYPE_HASH",
+        "offset": 11226,
+        "length": 32,
+        "value_hex": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+        "value_int": "63076024560530113402979550242307453568063438748328787417531900361828837441551",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "290",
+        "var_name": "@openzeppelin/contracts/drafts/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 9677,
+        "length": 32,
+        "value_hex": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "value_int": "49955707469362902507454157297736832118868343942642399513960811609542965143241",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

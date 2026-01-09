@@ -1,0 +1,18 @@
+[profile.default]
+src = "contracts"
+out = "out"
+test = "nonexistent"
+script = "nonexistent"
+libs = ["/home/dqy/Firewall/FirewallOnchain/lib"]
+remappings = [
+    "@openzeppelin/=/home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/Gamma_exp/0x1F1Ca4e8236CD13032653391dB7e9544a6ad123E_Vulnerable_Contract/@openzeppelin/",
+    "@uniswap/=/home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/Gamma_exp/0x1F1Ca4e8236CD13032653391dB7e9544a6ad123E_Vulnerable_Contract/@uniswap/",
+    "@uniswap/v3-periphery/=/home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/Gamma_exp/0x1F1Ca4e8236CD13032653391dB7e9544a6ad123E_Vulnerable_Contract/@uniswap/v3-periphery/",
+    "@uniswap/v3-core/=/home/dqy/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/Gamma_exp/0x1F1Ca4e8236CD13032653391dB7e9544a6ad123E_Vulnerable_Contract/@uniswap/v3-core/",
+    "forge-std/=/home/dqy/Firewall/FirewallOnchain/lib/forge-std/src/",
+    "src/=/home/dqy/Firewall/FirewallOnchain/src/"
+]
+via_ir = false
+evm_version = "shanghai"
+ignored_error_codes = [5159, 2072]
+solc_version = "0.7.6"

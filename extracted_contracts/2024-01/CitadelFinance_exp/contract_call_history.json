@@ -1,0 +1,701 @@
+{
+  "protocol": "CitadelFinance_exp",
+  "contract_address": "0x34b666992fcce34669940ab6b017fe11e5750799",
+  "target_functions": [
+    "redeem"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "constraint_rules_v2",
+  "safe_thresholds": {
+    "0": {
+      "type": "threshold",
+      "max": 5951614269374999822336,
+      "condition": "amount <= 5951614269374999822336"
+    },
+    "1": {
+      "type": "discrete",
+      "values": [
+        0,
+        1
+      ],
+      "attack_values": [
+        0
+      ]
+    },
+    "2": {
+      "type": "threshold",
+      "max": 191987557076612907008,
+      "condition": "redeemAmount <= 191987557076612907008"
+    },
+    "3": {
+      "type": "threshold",
+      "max": 5951614269374999822336,
+      "condition": "amount <= 5951614269374999822336"
+    }
+  },
+  "attack_block": 174659183,
+  "generated_at": "2026-01-08T06:58:47.026765Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0xaaa4fd4a17cbf693e835c22da30719104548cb94",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174581183,
+      "time": "2024-01-14T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 3272901415388212736
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0x2b8d626b9e2e2dc69407b3fe3005c3a14a9a76e1",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174527183,
+      "time": "2024-01-05T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 99082055240188444672
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0xfacf46b9b1829a30eb724d9cd36fa0ddffe5b20f",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174563183,
+      "time": "2024-01-11T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 118591744305220976640
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0xcf24b5b4bd47ca4d108235141bd85130bb5a8b35",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174647183,
+      "time": "2024-01-25T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 1705786350883158784
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0xca632a98bbbb0cd1f40207e61de77aa9b1f9446d",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174527183,
+      "time": "2024-01-05T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 80989835816499249152
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x2bf9898734ebcb9f40459e1bda055c29683994bc",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174509183,
+      "time": "2024-01-02T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 133157601714522505216
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0xea1b589dc4a7265d5fb13d78c9048ecae442f5ba",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174521183,
+      "time": "2024-01-04T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 2250465266624201216
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0xda24183c714552347608c4936304708b5d5a8f9c",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174527183,
+      "time": "2024-01-05T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 91614555939156279296
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0x049692638fe6f216ed16be10e6a0f0cc0b87d701",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174593183,
+      "time": "2024-01-16T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 100471339619052503040
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0x6d03b893c53f1b1b8733d6fa64bbfc5fe294af87",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174533183,
+      "time": "2024-01-06T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 2197163014374710016
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0x799648b40943f91718fc5bee4ccbcf3c26f3a557",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174551183,
+      "time": "2024-01-09T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 54326148172215820288
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0x55d4e15369106aa0bc4f826c9bb8e23e6c3588fa",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174557183,
+      "time": "2024-01-10T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 121397319104370655232
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0x56b2bee8c8b07e74d2d0fa6f3787ea79d869e84d",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174497183,
+      "time": "2023-12-31T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 5996124468368382976
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x43a7ca03532beca45038a8026fb4dec5620b132a",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174623183,
+      "time": "2024-01-21T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 24099822773246984192
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0x3eb520e3982f5174490e3fcbc472088a90abec6d",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174587183,
+      "time": "2024-01-15T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 100525538314607083520
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0x3dbd826779424a14e3dc3aa77235efa3232b8f91",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174629183,
+      "time": "2024-01-22T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 9838426949494917120
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0x4fb0c4488af6bb6ded1e61ba4daf5c95eb0e1aae",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174479183,
+      "time": "2023-12-28T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 12603107127352305664
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0x3042cff99c9716c92c9dd9948e261c6be21a5199",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174653183,
+      "time": "2024-01-26T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 152236461508326031360
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x81f50bb07bfb9f5a7aa65c3485b954a29a3d3eea",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174587183,
+      "time": "2024-01-15T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 2931679425222664192
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x755ea3c3cc10fa4ce9d6571605f904a2458e4fb2",
+      "to": "0x34b666992fcce34669940ab6b017fe11e5750799",
+      "value": "0",
+      "blockNumber": 174509183,
+      "time": "2024-01-02T09:10:23Z",
+      "function": "redeem",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "underlying",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "token",
+          "type": "uint256",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 66052874741627985920
+        },
+        {
+          "name": "rate",
+          "type": "uint8",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

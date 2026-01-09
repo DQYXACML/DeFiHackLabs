@@ -30,6 +30,22 @@
     ]
   },
   {
+    "address": "0x34b666992fcce34669940ab6b017fe11e5750799",
+    "name": "Vuln_Contract",
+    "chain": "arbitrum",
+    "source": "comment",
+    "context": "// Vuln Contract : https://arbiscan.io/address/0x34b666992fcce34669940ab6b017fe11e5750799",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Vuln_Contract",
+      "CitadelRedeem"
+    ]
+  },
+  {
     "address": "0x5e93c07a22111b327EE0EaEC64028064448ae848",
     "name": "ICitadelStaking",
     "chain": "arbitrum",
@@ -42,21 +58,6 @@
     "semantic_type": "unknown",
     "aliases": [
       "ICitadelStaking"
-    ]
-  },
-  {
-    "address": "0x34b666992fcCe34669940ab6B017fE11e5750799",
-    "name": "ICitadelRedeem",
-    "chain": "arbitrum",
-    "source": "static",
-    "context": "ICitadelRedeem private constant CitadelRedeem = ICitadelRedeem(0x34b666992fcCe34669940ab6B017fE11e5750799)",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": [
-      "ICitadelRedeem"
     ]
   },
   {
@@ -235,32 +236,6 @@
   },
   {
     "address": "0x5ff10565516c110180bb9cc111cdbc2b0a68e09f",
-    "name": null,
-    "chain": "arbitrum",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x0000000000000000000000000000000000000000",
-    "name": null,
-    "chain": "arbitrum",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0xffffffffffffffffffffffffffffffffffffffff",
     "name": null,
     "chain": "arbitrum",
     "source": "dynamic",
