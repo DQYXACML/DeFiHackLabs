@@ -1102,6 +1102,7 @@ class AttackScriptParser:
     def __init__(self, script_path: Path, use_slither: bool = True, slither_timeout: int = 120):
         self.script_path = script_path
         self.script_content = script_path.read_text()
+        self._interface_signatures = self._collect_interface_signatures()
         # 缓存解析结果
         self._functions_cache: List[FunctionInfo] = None
         self._call_graph_cache: Dict[str, List[str]] = None
@@ -1451,6 +1452,41 @@ class AttackScriptParser:
                 result += char
         return result.strip()
 
+    def _collect_interface_signatures(self) -> Dict[str, List[List[str]]]:
+        """从脚本中的interface定义提取函数参数类型映射"""
+        signatures: Dict[str, List[List[str]]] = {}
+        pattern = r'interface\s+\w+\s*\{([\s\S]*?)\}'
+        for body in re.findall(pattern, self.script_content, re.DOTALL):
+            for match in re.finditer(r'function\s+(\w+)\s*\(([^)]*)\)', body):
+                func_name = match.group(1)
+                params_raw = match.group(2).strip()
+                if not params_raw:
+                    params = []
+                else:
+                    params = []
+                    for param in params_raw.split(','):
+                        cleaned = param.strip()
+                        if not cleaned:
+                            continue
+                        cleaned = re.sub(r'\b(calldata|memory|storage)\b', '', cleaned)
+                        tokens = [t for t in cleaned.split() if t]
+                        if tokens:
+                            params.append(tokens[0])
+                signatures.setdefault(func_name, []).append(params)
+        return signatures
+
+    def _get_interface_param_types(self, func_name: str, param_count: int) -> Optional[List[str]]:
+        """从interface签名中匹配参数类型（按参数个数）"""
+        if not self._interface_signatures:
+            return None
+        candidates = self._interface_signatures.get(func_name)
+        if not candidates:
+            return None
+        for sig in candidates:
+            if len(sig) == param_count:
+                return sig
+        return None
+
     def _parse_parameters(self, func_name: str, params_str: str) -> List[Dict]:
         """解析函数参数"""
         if not params_str.strip():
@@ -1475,8 +1511,12 @@ class AttackScriptParser:
             params.append(current.strip())
 
         result = []
+        override_types = self._get_interface_param_types(func_name, len(params))
         for idx, param in enumerate(params):
-            param_type = self._infer_param_type(param)
+            if override_types and idx < len(override_types):
+                param_type = override_types[idx]
+            else:
+                param_type = self._infer_param_type(param)
             # 将常见类型和数组类型都视为需要分析的动态参数
             dynamic_types = {'uint256', 'int256', 'uint8', 'address', 'bool', 'bytes', 'bytes32', 'address[]', 'uint256[]', 'uint8[]', 'bytes[]'}
             is_dynamic = param_type in dynamic_types
