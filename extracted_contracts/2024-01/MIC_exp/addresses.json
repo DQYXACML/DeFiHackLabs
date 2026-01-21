@@ -210,7 +210,7 @@
     "onchain_name": null,
     "symbol": "Cake-LP",
     "decimals": 18,
-    "is_erc20": false,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
       "Cake-LP",
@@ -389,19 +389,6 @@
     "aliases": []
   },
   {
-    "address": "0x0000000000000000000000000000000000000000",
-    "name": null,
-    "chain": "bsc",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
     "address": "0x5ff10565516c110180bb9cc111cdbc2b0a68e09f",
     "name": null,
     "chain": "bsc",
@@ -465,5 +452,18 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": []
+  },
+  {
+    "address": "0xd5cad1821392d83eb1557be48221b6592c0d1d6f",
+    "name": "Unknown_Implementation",
+    "chain": "bsc",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]
