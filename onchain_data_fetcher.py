@@ -299,13 +299,13 @@ class OnChainDataFetcher:
     def _get_default_rpc_urls(self) -> Dict[str, str]:
         """获取默认的公共RPC端点（使用drpc.live）"""
         return {
-            "mainnet": "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
-            "bsc": "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
-            "arbitrum": "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
-            "optimism": "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
-            "polygon": "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
-            "avalanche": "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M",
-            "fantom": "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+            "mainnet": "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9",
+            "bsc": "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9",
+            "arbitrum": "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9",
+            "optimism": "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9",
+            "polygon": "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9",
+            "avalanche": "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9",
+            "fantom": "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
         }
 
     @classmethod

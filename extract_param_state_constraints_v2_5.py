@@ -442,20 +442,34 @@ class StateDiffAnalyzer:
                         return addr
 
         # 第二轮: 部分匹配(包含关系)
-        for addr, info in self.addresses_info.items():
-            # 4. 部分匹配 name
-            name = info.get('name', '')
-            if name and (search_lower in name.lower() or name.lower() in search_lower):
-                logger.debug(f"部分匹配name: {search_name} ~ {name} → {addr}")
-                return addr
+        allow_partial = len(search_lower) >= 4 and not search_lower.isdigit()
+        if allow_partial:
+            for addr, info in self.addresses_info.items():
+                # 4. 部分匹配 name
+                name = info.get('name', '')
+                if name and (search_lower in name.lower() or name.lower() in search_lower):
+                    logger.debug(f"部分匹配name: {search_name} ~ {name} → {addr}")
+                    return addr
 
-            # 5. 部分匹配 aliases
-            aliases = info.get('aliases', [])
-            if aliases:
-                for alias in aliases:
-                    if alias and (search_lower in alias.lower() or alias.lower() in search_lower):
-                        logger.debug(f"部分匹配alias: {search_name} ~ {alias} → {addr}")
-                        return addr
+                # 5. 部分匹配 aliases
+                aliases = info.get('aliases', [])
+                if aliases:
+                    for alias in aliases:
+                        if alias and (search_lower in alias.lower() or alias.lower() in search_lower):
+                            logger.debug(f"部分匹配alias: {search_name} ~ {alias} → {addr}")
+                            return addr
+
+        # 第三轮: 防火墙配置回退（用于vulnerable_contract等名称缺失的情况）
+        if self.firewall_config:
+            for contract in self.firewall_config.protected_contracts:
+                name = (contract.name or '').strip()
+                if not name:
+                    continue
+                name_lower = name.lower()
+                if name_lower == search_lower or search_lower in name_lower or name_lower in search_lower:
+                    addr = contract.address.lower()
+                    logger.debug(f"防火墙配置匹配: {search_name} → {name} → {addr}")
+                    return addr
 
         logger.debug(f"未找到匹配: {search_name}")
         return None
@@ -2110,6 +2124,295 @@ class AttackScriptParser:
 
 
 # =============================================================================
+# Trace参数解析器
+# =============================================================================
+
+class TraceCallParser:
+    """从forge trace日志中提取外部调用及参数值"""
+
+    CALL_PATTERN = re.compile(
+        r'(?P<contract>0x[a-fA-F0-9]{40}|[A-Za-z0-9_]+)::(?P<function>[A-Za-z0-9_]+)\('
+    )
+
+    def __init__(self, trace_path: Path):
+        self.trace_path = trace_path
+        self._cached_calls: Optional[List[Dict]] = None
+
+    def parse_calls(self) -> List[Dict]:
+        """解析trace文件，返回调用列表"""
+        if self._cached_calls is not None:
+            return self._cached_calls
+
+        calls: List[Dict] = []
+        try:
+            lines = self.trace_path.read_text(errors='ignore').splitlines()
+        except Exception as e:
+            logger.warning(f"读取trace失败: {self.trace_path} ({e})")
+            self._cached_calls = calls
+            return calls
+
+        for line in lines:
+            parsed = self._parse_trace_line(line)
+            if parsed:
+                calls.append(parsed)
+
+        self._cached_calls = calls
+        return calls
+
+    def attach_observed_values(self, attack_calls: List[Dict]) -> int:
+        """将trace中的实际参数值附加到attack_calls"""
+        if not attack_calls:
+            return 0
+
+        trace_calls = self.parse_calls()
+        if not trace_calls:
+            return 0
+
+        indexed_calls: Dict[Tuple[str, int], List[Dict]] = defaultdict(list)
+        for call in trace_calls:
+            key = (call['function'], len(call['args']))
+            indexed_calls[key].append(call)
+
+        matched_calls = 0
+        for attack_call in attack_calls:
+            params = attack_call.get('parameters') or []
+            key = (attack_call.get('function'), len(params))
+            candidates = indexed_calls.get(key, [])
+            if not candidates:
+                continue
+
+            # 优先按合约名称/地址匹配
+            contract_name = attack_call.get('contract_name')
+            if contract_name:
+                named = [
+                    c for c in candidates
+                    if (c.get('contract') or '').lower() == contract_name.lower()
+                ]
+                if named:
+                    candidates = named
+
+            contract_address = attack_call.get('contract_address')
+            if contract_address:
+                addr_named = [
+                    c for c in candidates
+                    if (c.get('contract') or '').lower() == contract_address.lower()
+                ]
+                if addr_named:
+                    candidates = addr_named
+
+            if not candidates:
+                continue
+
+            observed_by_index: Dict[int, List[Any]] = defaultdict(list)
+            for candidate in candidates:
+                for idx, value in enumerate(candidate['args']):
+                    observed_by_index[idx].append(value)
+
+            has_observed = False
+            for param in params:
+                idx = param.get('index')
+                values = observed_by_index.get(idx, [])
+                normalized = self._normalize_values_for_type(param.get('type', ''), values)
+                if normalized:
+                    param['observed_values'] = normalized
+                    has_observed = True
+
+            if has_observed:
+                matched_calls += 1
+
+        return matched_calls
+
+    def _parse_trace_line(self, line: str) -> Optional[Dict]:
+        """解析单行trace，提取调用与参数"""
+        if '::' not in line or '(' not in line:
+            return None
+
+        match = self.CALL_PATTERN.search(line)
+        if not match:
+            return None
+
+        contract = match.group('contract')
+        function = match.group('function')
+        start_idx = line.find('(', match.end() - 1)
+        if start_idx == -1:
+            return None
+
+        args_str = self._extract_balanced_args(line, start_idx)
+        if args_str is None:
+            return None
+
+        raw_args = self._split_args(args_str)
+        parsed_args = [self._parse_arg_value(arg) for arg in raw_args] if raw_args else []
+
+        return {
+            "contract": contract,
+            "function": function,
+            "args_raw": raw_args,
+            "args": parsed_args,
+        }
+
+    def _extract_balanced_args(self, line: str, start_idx: int) -> Optional[str]:
+        """提取与start_idx位置'('匹配的参数内容"""
+        depth = 0
+        collected: List[str] = []
+        for pos in range(start_idx, len(line)):
+            ch = line[pos]
+            if ch == '(':
+                depth += 1
+                if depth == 1:
+                    continue
+            elif ch == ')':
+                depth -= 1
+                if depth == 0:
+                    return ''.join(collected).strip()
+            if depth >= 1:
+                collected.append(ch)
+        return None
+
+    def _split_args(self, args_str: str) -> List[str]:
+        """按顶层逗号拆分参数"""
+        if not args_str.strip():
+            return []
+
+        args = []
+        current: List[str] = []
+        depth_paren = 0
+        depth_brack = 0
+        depth_brace = 0
+
+        for ch in args_str:
+            if ch == '(':
+                depth_paren += 1
+            elif ch == ')':
+                depth_paren -= 1
+            elif ch == '[':
+                depth_brack += 1
+            elif ch == ']':
+                depth_brack -= 1
+            elif ch == '{':
+                depth_brace += 1
+            elif ch == '}':
+                depth_brace -= 1
+
+            if ch == ',' and depth_paren == 0 and depth_brack == 0 and depth_brace == 0:
+                args.append(''.join(current).strip())
+                current = []
+                continue
+            current.append(ch)
+
+        if current:
+            args.append(''.join(current).strip())
+
+        return args
+
+    def _parse_arg_value(self, arg_str: str) -> Any:
+        """将trace参数转换为可用的值"""
+        if arg_str is None:
+            return None
+
+        cleaned = arg_str.strip()
+        if not cleaned:
+            return None
+
+        # 数组/列表
+        if cleaned.startswith('[') and cleaned.endswith(']'):
+            inner = cleaned[1:-1].strip()
+            if not inner:
+                return []
+            items = self._split_args(inner)
+            return [self._parse_arg_value(item) for item in items]
+
+        # 布尔值
+        if cleaned.lower() == 'true':
+            return True
+        if cleaned.lower() == 'false':
+            return False
+
+        # 地址 (优先使用40字节地址)
+        addr_match = re.search(r'0x[a-fA-F0-9]{40}', cleaned)
+        if addr_match:
+            return addr_match.group(0).lower()
+
+        # 十六进制bytes
+        hex_match = re.search(r'0x[a-fA-F0-9]+', cleaned)
+        if hex_match:
+            return hex_match.group(0).lower()
+
+        # 十进制数字
+        num_match = re.search(r'-?\d+', cleaned)
+        if num_match:
+            try:
+                return int(num_match.group(0))
+            except Exception:
+                return None
+
+        return cleaned
+
+    @staticmethod
+    def _normalize_values_for_type(param_type: str, values: List[Any]) -> List[Any]:
+        """将观测值按参数类型归一化"""
+        if not values:
+            return []
+
+        items: List[Any] = []
+        if param_type.endswith('[]'):
+            for val in values:
+                if isinstance(val, list):
+                    items.extend(val)
+                else:
+                    items.append(val)
+        else:
+            items = values
+
+        if param_type in ('uint256', 'int256', 'uint8'):
+            nums = [v for v in items if isinstance(v, int)]
+            if param_type == 'uint8':
+                nums = [v for v in nums if 0 <= v <= 255]
+            return TraceCallParser._unique(nums)
+
+        if param_type in ('uint256[]', 'uint8[]'):
+            nums = [v for v in items if isinstance(v, int)]
+            if param_type == 'uint8[]':
+                nums = [v for v in nums if 0 <= v <= 255]
+            return TraceCallParser._unique(nums)
+
+        if param_type in ('address', 'address[]'):
+            addrs = [
+                v for v in items
+                if isinstance(v, str) and v.startswith('0x') and len(v) == 42
+            ]
+            return TraceCallParser._unique(addrs)
+
+        if param_type in ('bytes', 'bytes32', 'bytes[]'):
+            bytes_vals = [
+                v for v in items
+                if isinstance(v, str) and v.startswith('0x')
+            ]
+            return TraceCallParser._unique(bytes_vals)
+
+        if param_type == 'bool':
+            bools = [v for v in items if isinstance(v, bool)]
+            return TraceCallParser._unique(bools)
+
+        return TraceCallParser._unique([v for v in items if v is not None])
+
+    @staticmethod
+    def _unique(values: List[Any]) -> List[Any]:
+        """保持顺序的去重"""
+        seen = set()
+        result = []
+        for val in values:
+            key = val
+            if isinstance(val, list):
+                key = tuple(val)
+            if key in seen:
+                continue
+            seen.add(key)
+            result.append(val)
+        return result
+
+
+# =============================================================================
 # 改进的约束生成器
 # =============================================================================
 
@@ -2387,7 +2690,13 @@ class ConstraintGeneratorV2:
 
                 # ====== 数值标量 ======
                 if p_type in ('uint256', 'int256', 'uint8'):
-                    param_value = self._estimate_param_value(param['value_expr'], vuln_address)
+                    param_value = None
+                    observed_values = param.get('observed_values') or []
+                    numeric_observed = [v for v in observed_values if isinstance(v, int)]
+                    if numeric_observed:
+                        param_value = self._select_param_value_from_observed(numeric_observed, slot_changes)
+                    if param_value is None:
+                        param_value = self._estimate_param_value(param['value_expr'], vuln_address)
                     if param_value is None:
                         continue
                     if param_value == 0:
@@ -2698,16 +3007,56 @@ class ConstraintGeneratorV2:
         # 4. 变量名 - 使用默认值
         return 10**18
 
+    def _select_param_value_from_observed(self, observed_values: List[int], slot_changes: List[Dict]) -> Optional[int]:
+        """根据slot变化选择更匹配的trace参数值"""
+        if not observed_values:
+            return None
+
+        # 优先选择能够产生高置信度关联的值
+        best_value = None
+        best_confidence = -1.0
+        for value in observed_values:
+            if value == 0:
+                continue
+            correlations = self.correlator.correlate(value, slot_changes)
+            if correlations:
+                confidence = correlations[0].get('confidence', 0)
+                if confidence > best_confidence:
+                    best_confidence = confidence
+                    best_value = value
+
+        if best_value is not None:
+            return best_value
+
+        # 回退：使用最大值（更保守）
+        try:
+            return max(observed_values)
+        except Exception:
+            return None
+
     def _normalize_address_values(self, param: Dict, vuln_address: Optional[str] = None) -> List[str]:
         """解析地址或地址数组参数，返回小写十六进制字符串列表"""
         value_expr = param.get('value_expr', '') or ''
         addrs = set()
+        zero_address = '0x0000000000000000000000000000000000000000'
+        observed_values = param.get('observed_values') or []
+        for val in observed_values:
+            if isinstance(val, str) and val.startswith('0x') and len(val) == 42:
+                addrs.add(val.lower())
+        clean_value_expr = value_expr.strip().lower()
+        if clean_value_expr in {'0', '0x0', '0x00'}:
+            addrs.add(zero_address)
         for match in re.findall(r'0x[a-fA-F0-9]{40}', value_expr):
             addrs.add(match.lower())
         # 解析 value_expr 中的 address(NAME) 模式
         for inner in re.findall(r'address\(([^)]+)\)', value_expr):
-            if inner.startswith('0x') and len(inner) == 42:
+            clean_inner = inner.strip().lower()
+            if clean_inner in {'0', '0x0'}:
+                addrs.add(zero_address)
+            elif inner.startswith('0x') and len(inner) == 42:
                 addrs.add(inner.lower())
+            elif vuln_address and clean_inner == 'this':
+                addrs.add(vuln_address.lower())
             else:
                 resolved = self._resolve_var_address(inner)
                 if resolved:
@@ -2719,14 +3068,23 @@ class ConstraintGeneratorV2:
             if 'address(' in seed:
                 inner = re.findall(r'address\(([^)]+)\)', seed)
                 for item in inner:
-                    if item.startswith('0x') and len(item) == 42:
+                    clean_item = item.strip().lower()
+                    if clean_item in {'0', '0x0'}:
+                        addrs.add(zero_address)
+                    elif item.startswith('0x') and len(item) == 42:
                         addrs.add(item.lower())
+                    elif vuln_address and clean_item == 'this':
+                        addrs.add(vuln_address.lower())
                     else:
                         resolved = self._resolve_var_address(item)
                         if resolved:
                             addrs.add(resolved.lower())
             else:
                 # 变量名直接解析
+                clean_seed = seed.strip().lower()
+                if clean_seed in {'0', '0x0', '0x00'}:
+                    addrs.add(zero_address)
+                    continue
                 resolved = self._resolve_var_address(seed)
                 if resolved:
                     addrs.add(resolved.lower())
@@ -2745,33 +3103,44 @@ class ConstraintGeneratorV2:
 
     def _resolve_var_address(self, name: str) -> Optional[str]:
         """根据变量名从addresses_info解析出地址"""
-        if not name or not self.state_analyzer or not self.state_analyzer.addresses_info:
+        if not name or not self.state_analyzer:
             return None
         clean = name.strip()
+        if re.match(r'^0x[a-fA-F0-9]{40}$', clean):
+            return clean.lower()
         info_obj = self.state_analyzer.addresses_info
-        try:
-            items = info_obj.items()
-        except Exception:
-            # addresses_info 可能是列表
-            items = []
-            if isinstance(info_obj, list):
-                for entry in info_obj:
-                    addr = entry.get('address')
-                    if not addr:
-                        continue
-                    name_field = entry.get('name') or ''
-                    aliases = entry.get('aliases', []) or []
-                    items.append((addr, {'name': name_field, 'aliases': aliases}))
+        if info_obj:
+            try:
+                items = info_obj.items()
+            except Exception:
+                # addresses_info 可能是列表
+                items = []
+                if isinstance(info_obj, list):
+                    for entry in info_obj:
+                        addr = entry.get('address')
+                        if not addr:
+                            continue
+                        name_field = entry.get('name') or ''
+                        aliases = entry.get('aliases', []) or []
+                        items.append((addr, {'name': name_field, 'aliases': aliases}))
 
-        for addr, info in items:
-            if info.get('name') == clean or clean in (info.get('aliases') or []):
-                return addr
+            for addr, info in items:
+                if info.get('name') == clean or clean in (info.get('aliases') or []):
+                    return addr
+        # 回退到StateDiffAnalyzer的名称解析（包含防火墙配置）
+        fallback = self.state_analyzer._find_address_by_name(clean)
+        if fallback:
+            return fallback
         return None
 
     def _normalize_numeric_array(self, param: Dict) -> Optional[Dict]:
         """解析数值数组，返回元素列表及范围"""
         value_expr = param.get('value_expr', '') or ''
         nums = []
+        observed_values = param.get('observed_values') or []
+        for val in observed_values:
+            if isinstance(val, int):
+                nums.append(val)
         for match in re.findall(r'\d+', value_expr):
             try:
                 nums.append(int(match))
@@ -2802,6 +3171,15 @@ class ConstraintGeneratorV2:
         value_expr = param.get('value_expr', '') or ''
         samples = []
         lengths = []
+        observed_values = param.get('observed_values') or []
+        for val in observed_values:
+            if isinstance(val, str):
+                if val.startswith('0x'):
+                    samples.append(val)
+                    lengths.append((len(val) - 2) // 2)
+                else:
+                    samples.append(val[:100])
+                    lengths.append(len(val))
         hex_matches = re.findall(r'0x[a-fA-F0-9]+', value_expr)
         if hex_matches:
             for m in hex_matches[:5]:
@@ -3227,13 +3605,21 @@ class ConstraintGeneratorV2:
 class ConstraintExtractorV2:
     """改进版约束提取器"""
 
-    def __init__(self, repo_root: Path, use_firewall_config: bool = False, use_slither: bool = True, slither_timeout: int = 120):
+    def __init__(
+        self,
+        repo_root: Path,
+        use_firewall_config: bool = False,
+        use_slither: bool = True,
+        slither_timeout: int = 120,
+        use_trace: bool = True
+    ):
         self.repo_root = repo_root
         self.extracted_dir = repo_root / "extracted_contracts"
         self.scripts_dir = repo_root / "src" / "test"
         self.use_firewall_config = use_firewall_config
         self.use_slither = use_slither
         self.slither_timeout = slither_timeout  # ✅ 新增timeout参数
+        self.use_trace = use_trace
 
         # 初始化防火墙配置读取器
         if self.use_firewall_config:
@@ -3289,6 +3675,18 @@ class ConstraintExtractorV2:
 
         logger.info(f"  被攻击合约: {vulnerable_contract.get('name')} ({vuln_address})")
         logger.info(f"  识别到 {len(attack_info.get('attack_calls', []))} 个函数调用")
+
+        # 解析trace，获取真实参数值
+        if self.use_trace:
+            trace_path = self.repo_root / f"{protocol_name}.txt"
+            if trace_path.exists():
+                logger.timer_start(f"{protocol_name} - 解析trace")
+                trace_parser = TraceCallParser(trace_path)
+                matched = trace_parser.attach_observed_values(attack_info.get('attack_calls', []))
+                logger.timer_end(f"{protocol_name} - 解析trace")
+                logger.info(f"  Trace参数匹配: {matched} 个函数调用")
+            else:
+                logger.info(f"  未找到trace文件，跳过: {trace_path}")
 
         # 状态差异分析（传入防火墙配置）
         logger.timer_start(f"{protocol_name} - 状态差异分析")
@@ -3476,6 +3874,10 @@ def main():
                        help='使用Slither进行精确AST分析 (默认启用)')
     parser.add_argument('--no-slither', dest='use_slither', action='store_false',
                        help='禁用Slither,使用正则表达式分析')
+    parser.add_argument('--use-trace', dest='use_trace', action='store_true', default=True,
+                       help='使用本地trace提取真实参数值 (默认启用, 文件名为 <protocol>.txt)')
+    parser.add_argument('--no-trace', dest='use_trace', action='store_false',
+                       help='禁用trace参数提取')
     # ✅ 新增timeout参数
     parser.add_argument('--slither-timeout', type=int, default=120,
                        help='Slither分析超时时间（秒），默认120秒。增大此值可处理更复杂的合约')
@@ -3504,7 +3906,8 @@ def main():
         repo_root,
         use_firewall_config=args.use_firewall_config,
         use_slither=args.use_slither,
-        slither_timeout=args.slither_timeout  # ✅ 传递timeout参数
+        slither_timeout=args.slither_timeout,  # ✅ 传递timeout参数
+        use_trace=args.use_trace
     )
 
     # 显示使用的分析方法

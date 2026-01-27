@@ -1,15 +1,15 @@
 {
   "protocol": "MIMSpell2_exp",
   "year_month": "2024-01",
-  "injection_timestamp": "2025-12-21T06:29:25.391811Z",
+  "injection_timestamp": "2026-01-27T11:19:13.521108Z",
   "main_contract": {
-    "name": "ICauldronV4",
+    "name": "Vuln_Contract",
     "actual_contract_name": "CauldronV4",
-    "address": "0x7259e152103756e1616A77Ae982353c3751A6a90"
+    "address": "0x7259e152103756e1616a77ae982353c3751a6a90"
   },
   "injected_contracts": [
     {
-      "file": "src_cauldrons_CauldronV4.sol",
+      "file": "CauldronV4.sol",
       "functions": [
         "addCollateral",
         "borrow",

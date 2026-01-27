@@ -76,7 +76,7 @@ EXPLORER_APIS = {
         "web_url": "https://etherscan.io",
         "chainid": 1,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+        "rpc_url": "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
     },
     "arbitrum": {
         "name": "Arbiscan",
@@ -84,7 +84,7 @@ EXPLORER_APIS = {
         "web_url": "https://arbiscan.io",
         "chainid": 42161,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+        "rpc_url": "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
     },
     "bsc": {
         "name": "BscScan",
@@ -92,7 +92,7 @@ EXPLORER_APIS = {
         "web_url": "https://bscscan.com",
         "chainid": 56,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+        "rpc_url": "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
     },
     "base": {
         "name": "BaseScan",
@@ -100,7 +100,7 @@ EXPLORER_APIS = {
         "web_url": "https://basescan.org",
         "chainid": 8453,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/base/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+        "rpc_url": "https://lb.drpc.live/base/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
     },
     "optimism": {
         "name": "Optimism Etherscan",
@@ -108,7 +108,7 @@ EXPLORER_APIS = {
         "web_url": "https://optimistic.etherscan.io",
         "chainid": 10,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+        "rpc_url": "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
     },
     "blast": {
         "name": "BlastScan",
@@ -116,7 +116,7 @@ EXPLORER_APIS = {
         "web_url": "https://blastscan.io",
         "chainid": 81457,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/blast/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+        "rpc_url": "https://lb.drpc.live/blast/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
     },
     "polygon": {
         "name": "PolygonScan",
@@ -124,7 +124,7 @@ EXPLORER_APIS = {
         "web_url": "https://polygonscan.com",
         "chainid": 137,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+        "rpc_url": "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
     },
     "avalanche": {
         "name": "SnowTrace",
@@ -132,7 +132,7 @@ EXPLORER_APIS = {
         "web_url": "https://snowtrace.io",
         "chainid": 43114,
         "api_key_name": "snowtrace",
-        "rpc_url": "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+        "rpc_url": "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
     },
     "fantom": {
         "name": "FTMScan",
@@ -140,7 +140,7 @@ EXPLORER_APIS = {
         "web_url": "https://ftmscan.com",
         "chainid": 250,
         "api_key_name": "ftmscan",
-        "rpc_url": "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1MnkkLa0x0R8KhSCqfUNZ5M"
+        "rpc_url": "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
     },
 }
 
@@ -242,6 +242,7 @@ class StaticAnalyzer:
 
     # 以太坊地址正则
     ETH_ADDRESS_PATTERN = re.compile(r'0x[a-fA-F0-9]{40}')
+    LABEL_PATTERN = re.compile(r'vm\.label\s*\(\s*([^,]+?)\s*,\s*["\']([^"\']+)["\']\s*\)', re.DOTALL)
 
     # 常见的地址定义模式
     ADDRESS_PATTERNS = [
@@ -390,15 +391,44 @@ class StaticAnalyzer:
                     # 2. 如果有多个候选，优先选择类型名（大写开头）而非变量名
                     # 3. 如果都在黑名单中，从context中提取
                     name = self._select_best_name(potential_names, match.group(0))
+                    aliases = self._build_aliases(potential_names, name)
 
                     addresses.append(ContractAddress(
                         address=addr,
                         name=name,
                         source='static',
-                        context=match.group(0)
+                        context=match.group(0),
+                        aliases=aliases or None
                     ))
 
         return addresses
+
+    def apply_labels(self, content: str, addresses: List[ContractAddress]) -> int:
+        """将vm.label的名称补充到对应地址的aliases中"""
+        if not addresses:
+            return 0
+
+        addr_index = {addr.address.lower(): addr for addr in addresses if addr.address}
+        applied = 0
+
+        for match in self.LABEL_PATTERN.finditer(content):
+            expr = match.group(1).strip()
+            label = match.group(2).strip()
+            if not label:
+                continue
+
+            resolved = self._resolve_label_expr(expr, content)
+            if not resolved:
+                continue
+
+            target = addr_index.get(resolved.lower())
+            if not target:
+                continue
+
+            if self._add_alias(target, label):
+                applied += 1
+
+        return applied
 
     def _select_best_name(self, candidates: List[str], context: str) -> Optional[str]:
         """
@@ -432,6 +462,69 @@ class StaticAnalyzer:
 
         # 否则返回第一个
         return valid_names[0]
+
+    def _build_aliases(self, candidates: List[str], primary_name: Optional[str]) -> List[str]:
+        """构建aliases，保留变量名等额外标识"""
+        aliases = []
+        for name in candidates:
+            if not name:
+                continue
+            if name.lower() in self.NAME_BLACKLIST:
+                continue
+            if primary_name and name == primary_name:
+                continue
+            if name not in aliases:
+                aliases.append(name)
+        return aliases
+
+    def _add_alias(self, addr: ContractAddress, alias: str) -> bool:
+        """向地址追加alias，返回是否实际新增"""
+        if not alias:
+            return False
+        alias_list = addr.aliases or []
+        if alias in alias_list:
+            return False
+        alias_list.append(alias)
+        addr.aliases = alias_list
+        return True
+
+    def _resolve_label_expr(self, expr: str, content: str) -> Optional[str]:
+        """解析vm.label中的地址表达式"""
+        clean = self._unwrap_address_expr(expr)
+        if not clean:
+            return None
+
+        if re.fullmatch(r'0x[a-fA-F0-9]{40}', clean):
+            return clean.lower()
+
+        if clean in {'this', 'msg.sender', 'tx.origin'}:
+            return None
+
+        return self._resolve_address_from_var(content, clean)
+
+    def _unwrap_address_expr(self, expr: str) -> str:
+        """去掉address()/payable()等包装"""
+        clean = expr.strip()
+        while True:
+            match = re.match(r'^(address|payable)\s*\((.+)\)$', clean)
+            if not match:
+                break
+            clean = match.group(2).strip()
+        return clean
+
+    def _resolve_address_from_var(self, content: str, var_name: str) -> Optional[str]:
+        """从脚本内容中解析变量名对应的地址"""
+        escaped = re.escape(var_name)
+        patterns = [
+            rf'address\s+(?:payable\s+)?(?:constant|immutable)?\s*{escaped}\s*=\s*(?:payable\s*\()?\s*(0x[a-fA-F0-9]{{40}})',
+            rf'\w+\s+{escaped}\s*=\s*\w+\s*\(\s*(?:payable\s*\()?\s*(0x[a-fA-F0-9]{{40}})\s*\)?',
+            rf'{escaped}\s*=\s*address\(\s*(0x[a-fA-F0-9]{{40}})\s*\)'
+        ]
+        for pattern in patterns:
+            match = re.search(pattern, content, re.IGNORECASE)
+            if match:
+                return match.group(1).lower()
+        return None
 
     def _extract_name_from_context(self, context: str) -> Optional[str]:
         """
@@ -1290,6 +1383,9 @@ class ImmutableExtractor:
     def __init__(self, logger: logging.Logger):
         self.logger = logger
         self.failed_versions: Set[str] = set()
+        self._search_roots = self._discover_search_roots()
+        self._remapping_entries = self._load_remappings()
+        self._source_path_map: Dict[str, Path] = {}
 
     def try_extract_and_save(self, runtime_hex: str, source_code: Dict[str, Any], output_dir: Path):
         """综合执行提取并落盘"""
@@ -1326,7 +1422,8 @@ class ImmutableExtractor:
             solc_bin,
             optimizer_enabled,
             runs,
-            evm_version
+            evm_version,
+            compiler_version
         )
         if not immutable_refs:
             self.logger.info("  Immutable提取跳过: 编译未返回immutableReferences")
@@ -1426,6 +1523,288 @@ class ImmutableExtractor:
         filename = f"{source_code.get('ContractName', 'Contract')}.sol"
         return {filename: source}
 
+    IMPORT_PATTERN = re.compile(r'import\s+(?:\{[^}]*\}\s+from\s+)?["\']([^"\']+)["\'];?')
+    PRAGMA_PATTERN = re.compile(r'pragma\s+solidity\s+([^;]+);')
+
+    def _discover_search_roots(self) -> List[Path]:
+        roots: List[Path] = []
+        candidates = [
+            Path.cwd().resolve(),
+            SCRIPT_DIR.resolve(),
+            PROJECT_ROOT.resolve()
+        ]
+        for base in candidates:
+            for root in (base, *base.parents):
+                if root in roots:
+                    continue
+                if (root / "remappings.txt").exists() or (root / "foundry.toml").exists():
+                    roots.append(root)
+        if not roots:
+            roots.append(PROJECT_ROOT.resolve())
+        return roots
+
+    def _load_remappings(self) -> List[Tuple[str, Path]]:
+        remappings: List[Tuple[str, Path]] = []
+        seen: Set[Tuple[str, Path]] = set()
+        for root in self._search_roots:
+            remappings_path = root / "remappings.txt"
+            if not remappings_path.exists():
+                continue
+            try:
+                lines = remappings_path.read_text(encoding='utf-8').splitlines()
+            except Exception:
+                continue
+            for line in lines:
+                stripped = line.strip()
+                if not stripped or stripped.startswith('#') or '=' not in stripped:
+                    continue
+                prefix, target = stripped.split('=', 1)
+                base_path = (root / target).resolve()
+                entry = (prefix, base_path)
+                if entry in seen:
+                    continue
+                seen.add(entry)
+                remappings.append(entry)
+        remappings.sort(key=lambda item: len(item[0]), reverse=True)
+        return remappings
+
+    def _is_within_root(self, path: Path, root: Path) -> bool:
+        try:
+            path.relative_to(root)
+        except ValueError:
+            return False
+        return True
+
+    def _seed_source_paths(self, sources: Dict[str, str]) -> None:
+        for source_key in sources.keys():
+            if source_key in self._source_path_map:
+                continue
+
+            for prefix, base_path in self._remapping_entries:
+                if source_key.startswith(prefix):
+                    candidate = (base_path / source_key[len(prefix):]).resolve()
+                    if candidate.exists() and candidate.is_file():
+                        self._source_path_map[source_key] = candidate
+                        break
+
+            if source_key in self._source_path_map:
+                continue
+
+            for root in self._search_roots:
+                candidate = (root / source_key).resolve()
+                if self._is_within_root(candidate, root) and candidate.exists() and candidate.is_file():
+                    self._source_path_map[source_key] = candidate
+                    break
+
+    def _maybe_alias_source(self, import_path: str, sources: Dict[str, str]) -> Optional[Tuple[str, str]]:
+        if import_path in sources:
+            return None
+
+        normalized = import_path.lstrip("./")
+        if normalized in sources:
+            return import_path, sources[normalized]
+
+        candidates = [key for key in sources.keys() if key.endswith(f"/{normalized}")]
+        if candidates:
+            best = min(candidates, key=len)
+            return import_path, sources[best]
+
+        return None
+
+    def _parse_version_tuple(self, version_str: str) -> Optional[Tuple[int, int, int]]:
+        match = re.search(r'(\d+)\.(\d+)(?:\.(\d+))?', version_str)
+        if not match:
+            return None
+        major = int(match.group(1))
+        minor = int(match.group(2))
+        patch = int(match.group(3) or 0)
+        return major, minor, patch
+
+    def _compare_versions(self, left: Tuple[int, int, int], right: Tuple[int, int, int]) -> int:
+        if left == right:
+            return 0
+        return -1 if left < right else 1
+
+    def _version_satisfies(self, target: Tuple[int, int, int], op: str, required: Tuple[int, int, int]) -> bool:
+        cmp = self._compare_versions(target, required)
+        if op == ">":
+            return cmp > 0
+        if op == ">=":
+            return cmp >= 0
+        if op == "<":
+            return cmp < 0
+        if op == "<=":
+            return cmp <= 0
+        if op == "==":
+            return cmp == 0
+        return False
+
+    def _pragma_allows_version(self, pragma: str, target: Tuple[int, int, int]) -> bool:
+        if not pragma:
+            return True
+        for segment in pragma.split("||"):
+            tokens = segment.strip().split()
+            if not tokens:
+                continue
+            ok = True
+            for token in tokens:
+                if token.startswith("^"):
+                    base = self._parse_version_tuple(token[1:])
+                    if not base:
+                        continue
+                    lower = base
+                    major, minor, patch = base
+                    if major == 0:
+                        if minor == 0:
+                            upper = (0, 0, patch + 1)
+                        else:
+                            upper = (0, minor + 1, 0)
+                    else:
+                        upper = (major + 1, 0, 0)
+                    ok = ok and self._version_satisfies(target, ">=", lower) and self._version_satisfies(target, "<", upper)
+                    continue
+
+                if token.startswith("~"):
+                    base = self._parse_version_tuple(token[1:])
+                    if not base:
+                        continue
+                    major, minor, _ = base
+                    upper = (major, minor + 1, 0)
+                    ok = ok and self._version_satisfies(target, ">=", base) and self._version_satisfies(target, "<", upper)
+                    continue
+
+                for op in (">=", "<=", ">", "<"):
+                    if token.startswith(op):
+                        required = self._parse_version_tuple(token[len(op):])
+                        if required:
+                            ok = ok and self._version_satisfies(target, op, required)
+                        break
+                else:
+                    required = self._parse_version_tuple(token)
+                    if required:
+                        ok = ok and self._version_satisfies(target, "==", required)
+            if ok:
+                return True
+        return False
+
+    def _content_compatible(self, content: str, target: Optional[Tuple[int, int, int]]) -> bool:
+        if not target:
+            return True
+        match = self.PRAGMA_PATTERN.search(content)
+        if not match:
+            return True
+        pragma = match.group(1).strip()
+        return self._pragma_allows_version(pragma, target)
+
+    def _resolve_import_target(self, file_name: str, import_path: str) -> Optional[Tuple[str, Path]]:
+        if import_path.startswith(('http://', 'https://', 'ipfs://')):
+            return None
+
+        if import_path.startswith(('.', '..')):
+            resolved_key = (Path(file_name).parent / import_path).as_posix()
+            local_origin = self._source_path_map.get(file_name)
+            if local_origin:
+                local_path = (local_origin.parent / import_path).resolve()
+                if local_path.exists() and local_path.is_file():
+                    return resolved_key, local_path
+
+            for prefix, base_path in self._remapping_entries:
+                if file_name.startswith(prefix):
+                    remainder = file_name[len(prefix):]
+                    origin_path = (base_path / remainder).resolve()
+                    local_path = (origin_path.parent / import_path).resolve()
+                    if local_path.exists() and local_path.is_file():
+                        return resolved_key, local_path
+
+            for root in self._search_roots:
+                local_path = (root / resolved_key).resolve()
+                if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
+                    return resolved_key, local_path
+
+        if import_path.startswith(('src/', 'test/', 'script/', 'lib/')):
+            for root in self._search_roots:
+                local_path = (root / import_path).resolve()
+                if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
+                    return import_path, local_path
+
+        for prefix, base_path in self._remapping_entries:
+            if import_path.startswith(prefix):
+                remainder = import_path[len(prefix):]
+                local_path = (base_path / remainder).resolve()
+                if self._is_within_root(local_path, base_path) and local_path.exists() and local_path.is_file():
+                    return import_path, local_path
+
+        return None
+
+    def _augment_sources_with_local_deps(
+        self,
+        sources: Dict[str, str],
+        target_version: Optional[Tuple[int, int, int]]
+    ) -> Tuple[Dict[str, str], Set[str]]:
+        added = 0
+        unresolved: Set[str] = set()
+        self._seed_source_paths(sources)
+        while True:
+            new_sources: Dict[str, str] = {}
+            unresolved = set()
+            for file_name, content in sources.items():
+                for match in self.IMPORT_PATTERN.finditer(content):
+                    import_path = match.group(1)
+                    if not import_path.startswith(('.', '..')):
+                        alias = self._maybe_alias_source(import_path, sources)
+                        if alias:
+                            alias_key, alias_content = alias
+                            if alias_key in sources or alias_key in new_sources:
+                                continue
+                            if self._content_compatible(alias_content, target_version):
+                                new_sources[alias_key] = alias_content
+                                continue
+                    resolved = self._resolve_import_target(file_name, import_path)
+                    if not resolved:
+                        unresolved.add(f"{file_name} -> {import_path}")
+                        continue
+                    source_key, local_path = resolved
+                    if source_key in sources or source_key in new_sources:
+                        continue
+                    if local_path.exists() and local_path.is_file():
+                        try:
+                            content_text = local_path.read_text(encoding='utf-8')
+                            if self._content_compatible(content_text, target_version):
+                                new_sources[source_key] = content_text
+                                self._source_path_map[source_key] = local_path
+                            else:
+                                unresolved.add(f"{file_name} -> {import_path} (pragma mismatch)")
+                        except Exception:
+                            unresolved.add(f"{file_name} -> {import_path}")
+
+            if not new_sources:
+                break
+
+            sources.update(new_sources)
+            added += len(new_sources)
+
+        if added:
+            self.logger.info(f"  本地依赖补全: {added} 个文件")
+
+        return sources, unresolved
+
+    def _svm_data_dir(self) -> Path:
+        """返回svm数据目录，兼容旧的~/.svm与XDG_DATA_HOME/svm。"""
+        home_dir = Path.home()
+        legacy_dir = home_dir / ".svm"
+        if legacy_dir.exists():
+            return legacy_dir
+
+        xdg_data_home = os.environ.get("XDG_DATA_HOME")
+        data_dir = Path(xdg_data_home) if xdg_data_home else home_dir / ".local" / "share"
+        if data_dir.exists():
+            return data_dir / "svm"
+
+        return legacy_dir
+
+    def _svm_binary_path(self, version: str) -> Path:
+        return self._svm_data_dir() / version / f"solc-{version}"
+
     def _install_solc_version(self, version: str) -> bool:
         """
         使用svm自动安装缺失的solc版本
@@ -1443,7 +1822,7 @@ class ImmutableExtractor:
         clean_version = version.lstrip('v').split('+')[0]
 
         # 检查是否已经安装
-        svm_path = Path.home() / ".svm" / clean_version / f"solc-{clean_version}"
+        svm_path = self._svm_binary_path(clean_version)
         if svm_path.exists():
             self.logger.debug(f"  solc {clean_version} 已安装")
             return True
@@ -1461,6 +1840,7 @@ class ImmutableExtractor:
 
             if result.returncode == 0:
                 # 验证安装成功
+                svm_path = self._svm_binary_path(clean_version)
                 if svm_path.exists():
                     self.logger.info(f"  ✓ solc {clean_version} 安装成功")
                     return True
@@ -1515,7 +1895,7 @@ class ImmutableExtractor:
         if version:
             candidates.append(f"solc-{version}")  # 系统PATH中的命名
             # svm 默认路径
-            svm_path = Path.home() / ".svm" / version / f"solc-{version}"
+            svm_path = self._svm_binary_path(version)
             candidates.append(str(svm_path))
             # foundry 下载的solc路径
             foundry_path = Path.home() / ".foundry" / "bin" / f"solc-{version}"
@@ -1540,7 +1920,7 @@ class ImmutableExtractor:
             self.logger.info(f"  本地未找到 solc {version}，尝试自动下载...")
             if self._install_solc_version(version):
                 # 重新检查svm路径
-                svm_path = Path.home() / ".svm" / version / f"solc-{version}"
+                svm_path = self._svm_binary_path(version)
                 if svm_path.exists():
                     return str(svm_path)
 
@@ -1548,8 +1928,30 @@ class ImmutableExtractor:
 
     def _compile_for_immutable_refs(self, sources: Dict[str, str], solc_bin: str,
                                     optimizer: bool, runs: int,
-                                    evm_version: Optional[str]) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, str]]:
+                                    evm_version: Optional[str],
+                                    compiler_version: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, str]]:
         """调用solc获取immutableReferences，若evmVersion不被支持则回退为默认；同时提取AST中的immutable变量名称映射"""
+        target_version = self._parse_version_tuple(compiler_version or "")
+        sources, unresolved = self._augment_sources_with_local_deps(dict(sources), target_version)
+        if unresolved:
+            sample = list(unresolved)[:3]
+            sample_text = "; ".join(sample)
+            self.logger.info(
+                f"  Immutable提取跳过: 依赖缺失或版本不兼容 ({len(unresolved)} 项) - {sample_text}"
+            )
+            return {}, {}
+        if target_version:
+            incompatible_sources = [
+                name for name, content in sources.items()
+                if not self._content_compatible(content, target_version)
+            ]
+            if incompatible_sources:
+                sample = incompatible_sources[:3]
+                sample_text = "; ".join(sample)
+                self.logger.info(
+                    f"  Immutable提取跳过: 源码pragma与solc版本不兼容 ({len(incompatible_sources)} 项) - {sample_text}"
+                )
+                return {}, {}
 
         def build_input(evm: Optional[str]) -> Dict[str, Any]:
             settings = {
@@ -2680,6 +3082,16 @@ class ContractExtractor:
         self.logger.info(f"  共提取到 {len(all_addresses)} 个唯一地址")
         self.summary.total_addresses += len(all_addresses)
 
+        # 3.1 补充vm.label别名
+        try:
+            with open(script.file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            label_count = self.static_analyzer.apply_labels(content, all_addresses)
+            if label_count:
+                self.logger.info(f"  应用vm.label别名: {label_count} 个")
+        except Exception as e:
+            self.logger.debug(f"  vm.label解析失败: {e}")
+
         # 4. 创建输出目录
         script_output_dir = self.output_dir / script.date_dir / script.name
         script_output_dir.mkdir(parents=True, exist_ok=True)
@@ -2746,6 +3158,13 @@ class ContractExtractor:
                     existing.name = addr.name
                 if not existing.chain and addr.chain:
                     existing.chain = addr.chain
+                if addr.aliases:
+                    if not existing.aliases:
+                        existing.aliases = list(addr.aliases)
+                    else:
+                        for alias in addr.aliases:
+                            if alias not in existing.aliases:
+                                existing.aliases.append(alias)
             else:
                 if not addr.chain and chain:
                     addr.chain = chain
@@ -2808,24 +3227,27 @@ class ContractExtractor:
                     addr.semantic_type = info.get('semantic_type')
 
                     # 构建别名列表
-                    aliases = []
-                    if addr.symbol:
-                        aliases.append(addr.symbol)
-                    if addr.name and addr.name not in aliases:
-                        aliases.append(addr.name)
-                    if addr.onchain_name and addr.onchain_name not in aliases:
-                        aliases.append(addr.onchain_name)
+                    aliases = list(addr.aliases or [])
+
+                    def _append_alias(value: Optional[str]):
+                        if value and value not in aliases:
+                            aliases.append(value)
+
+                    _append_alias(addr.symbol)
+                    _append_alias(addr.name)
+                    _append_alias(addr.onchain_name)
 
                     # 添加常见变体
                     if addr.symbol:
                         # 添加小写和大写变体
-                        aliases.extend([addr.symbol.lower(), addr.symbol.upper()])
+                        _append_alias(addr.symbol.lower())
+                        _append_alias(addr.symbol.upper())
                         # 添加I前缀变体(接口命名约定)
                         if not addr.symbol.startswith('I'):
-                            aliases.append(f'I{addr.symbol}')
+                            _append_alias(f'I{addr.symbol}')
 
                     # 去重
-                    addr.aliases = list(dict.fromkeys(aliases))  # 保持顺序的去重
+                    addr.aliases = list(dict.fromkeys(aliases)) or None  # 保持顺序的去重
 
                     enriched_count += 1
 

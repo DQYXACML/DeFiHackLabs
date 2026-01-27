@@ -1,0 +1,50 @@
+{
+  "compiler_version": "v0.6.12+commit.27d51765",
+  "optimizer": true,
+  "runs": 999999,
+  "evm_version": "Default",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 6651,
+  "values": {
+    "MagicInternetMoneyV1.sol:ERC20WithSupply": [
+      {
+        "label": "368",
+        "var_name": "MagicInternetMoneyV1.sol:_DOMAIN_SEPARATOR",
+        "offset": 2149,
+        "length": 32,
+        "value_hex": "0xfffffffeae8042016fffffffffffffffffffffffffffffffff909116106108b3",
+        "value_int": "115792089201773403052367189336117112877543255570606256280316953209653912733875",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "370",
+        "var_name": "MagicInternetMoneyV1.sol:DOMAIN_SEPARATOR_CHAIN_ID",
+        "offset": 2096,
+        "length": 32,
+        "value_hex": "0x815260040161036e90611853565b6006546000906108ce9083907fffffffffff",
+        "value_int": "58493901602187491469929889659186999985121554093004328837824245804161675821055",
+        "used_stripped_runtime": true
+      }
+    ],
+    "MagicInternetMoneyV1.sol:MagicInternetMoneyV1": [
+      {
+        "label": "368",
+        "var_name": "MagicInternetMoneyV1.sol:_DOMAIN_SEPARATOR",
+        "offset": 4430,
+        "length": 32,
+        "value_hex": "0xe74a8076e040bfbe129b49167f9dbd846fc96d9178ae69b1d72a42ae33339acb",
+        "value_int": "104615901333950821595513296857812156706237227450920926257771101967711732996811",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "370",
+        "var_name": "MagicInternetMoneyV1.sol:DOMAIN_SEPARATOR_CHAIN_ID",
+        "offset": 4377,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}
