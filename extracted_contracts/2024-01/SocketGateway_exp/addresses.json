@@ -66,12 +66,15 @@
     "source": "static",
     "context": "address _usdc = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "_usdc"
+      "USDC",
+      "_usdc",
+      "usdc",
+      "IUSDC"
     ]
   },
   {
@@ -96,11 +99,11 @@
     "source": "dynamic",
     "context": "called with gas 3081",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
@@ -113,46 +116,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x7899f9ed000000000000000000000000a0b86991",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x0000000000000000000000000000000000000000",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x23b872dd0000000000000000000000007d03149a",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x77726170706564546f6b656e5377617070657249",
@@ -165,6 +129,32 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
+  },
+  {
+    "address": "0x800c32eaa2a6c93cf4cb51794450ed77fbfbb172",
+    "name": "Unknown_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0x47b7cbccf4149fe371a605dc64f14695c3f5ccd3",
+    "name": "Vulnerable_Contract_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

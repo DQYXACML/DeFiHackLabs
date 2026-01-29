@@ -34,6 +34,75 @@ from eth_hash.auto import keccak
 getcontext().prec = 78
 
 # =============================================================================
+# 类型辅助函数
+# =============================================================================
+_INT_TYPE_RE = re.compile(r'^(u?int)(\d+)?$')
+_BYTES_TYPE_RE = re.compile(r'^bytes(\d+)?$')
+
+
+def _normalize_type(param_type: str) -> str:
+    return (param_type or '').strip()
+
+
+def _is_int_type(param_type: str) -> bool:
+    param_type = _normalize_type(param_type)
+    match = _INT_TYPE_RE.match(param_type)
+    if not match:
+        return False
+    if match.group(2) is None:
+        return True
+    try:
+        bits = int(match.group(2))
+    except Exception:
+        return False
+    return bits % 8 == 0 and 8 <= bits <= 256
+
+
+def _is_int_array_type(param_type: str) -> bool:
+    param_type = _normalize_type(param_type)
+    return param_type.endswith('[]') and _is_int_type(param_type[:-2])
+
+
+def _is_bytes_type(param_type: str) -> bool:
+    param_type = _normalize_type(param_type)
+    match = _BYTES_TYPE_RE.match(param_type)
+    if not match:
+        return False
+    if match.group(1) is None:
+        return True
+    try:
+        size = int(match.group(1))
+    except Exception:
+        return False
+    return 1 <= size <= 32
+
+
+def _is_bytes_array_type(param_type: str) -> bool:
+    param_type = _normalize_type(param_type)
+    return param_type.endswith('[]') and _is_bytes_type(param_type[:-2])
+
+
+def _strip_array(param_type: str) -> str:
+    param_type = _normalize_type(param_type)
+    return param_type[:-2] if param_type.endswith('[]') else param_type
+
+
+def _int_type_bounds(param_type: str) -> Optional[Tuple[int, int]]:
+    param_type = _normalize_type(param_type)
+    match = _INT_TYPE_RE.match(param_type)
+    if not match:
+        return None
+    signed = match.group(1) == 'int'
+    bits = int(match.group(2) or 256)
+    if signed:
+        min_val = -(2 ** (bits - 1))
+        max_val = 2 ** (bits - 1) - 1
+    else:
+        min_val = 0
+        max_val = 2 ** bits - 1
+    return min_val, max_val
+
+# =============================================================================
 # V3组件条件导入
 # =============================================================================
 try:
@@ -1532,8 +1601,13 @@ class AttackScriptParser:
             else:
                 param_type = self._infer_param_type(param)
             # 将常见类型和数组类型都视为需要分析的动态参数
-            dynamic_types = {'uint256', 'int256', 'uint8', 'address', 'bool', 'bytes', 'bytes32', 'address[]', 'uint256[]', 'uint8[]', 'bytes[]'}
-            is_dynamic = param_type in dynamic_types
+            is_dynamic = (
+                _is_int_type(param_type)
+                or _is_int_array_type(param_type)
+                or param_type in {'address', 'address[]', 'bool'}
+                or _is_bytes_type(param_type)
+                or _is_bytes_array_type(param_type)
+            )
 
             seeds = []
             if param_type.endswith('[]'):
@@ -2328,15 +2402,14 @@ class TraceCallParser:
         if cleaned.lower() == 'false':
             return False
 
-        # 地址 (优先使用40字节地址)
-        addr_match = re.search(r'0x[a-fA-F0-9]{40}', cleaned)
-        if addr_match:
-            return addr_match.group(0).lower()
-
-        # 十六进制bytes
-        hex_match = re.search(r'0x[a-fA-F0-9]+', cleaned)
-        if hex_match:
-            return hex_match.group(0).lower()
+        # 完整的十六进制字符串
+        hex_full = re.fullmatch(r'0x[a-fA-F0-9]+', cleaned)
+        if hex_full:
+            hex_val = hex_full.group(0).lower()
+            # 精确匹配40字节地址，避免截断bytes
+            if len(hex_val) == 42:
+                return hex_val
+            return hex_val
 
         # 十进制数字
         num_match = re.search(r'-?\d+', cleaned)
@@ -2364,16 +2437,20 @@ class TraceCallParser:
         else:
             items = values
 
-        if param_type in ('uint256', 'int256', 'uint8'):
+        if _is_int_type(param_type):
             nums = [v for v in items if isinstance(v, int)]
-            if param_type == 'uint8':
-                nums = [v for v in nums if 0 <= v <= 255]
+            bounds = _int_type_bounds(param_type)
+            if bounds:
+                min_val, max_val = bounds
+                nums = [v for v in nums if min_val <= v <= max_val]
             return TraceCallParser._unique(nums)
 
-        if param_type in ('uint256[]', 'uint8[]'):
+        if _is_int_array_type(param_type):
             nums = [v for v in items if isinstance(v, int)]
-            if param_type == 'uint8[]':
-                nums = [v for v in nums if 0 <= v <= 255]
+            bounds = _int_type_bounds(_strip_array(param_type))
+            if bounds:
+                min_val, max_val = bounds
+                nums = [v for v in nums if min_val <= v <= max_val]
             return TraceCallParser._unique(nums)
 
         if param_type in ('address', 'address[]'):
@@ -2383,7 +2460,7 @@ class TraceCallParser:
             ]
             return TraceCallParser._unique(addrs)
 
-        if param_type in ('bytes', 'bytes32', 'bytes[]'):
+        if _is_bytes_type(param_type) or _is_bytes_array_type(param_type):
             bytes_vals = [
                 v for v in items
                 if isinstance(v, str) and v.startswith('0x')
@@ -2474,10 +2551,13 @@ class ConstraintGeneratorV2:
             for idx, p in enumerate(params):
                 if types[idx]:
                     p['type'] = types[idx]
-                    p['is_dynamic'] = types[idx] in {
-                        'uint256', 'int256', 'uint8', 'address', 'bool', 'bytes', 'bytes32',
-                        'address[]', 'uint256[]', 'uint8[]', 'bytes[]'
-                    }
+                    p['is_dynamic'] = (
+                        _is_int_type(types[idx])
+                        or _is_int_array_type(types[idx])
+                        or types[idx] in {'address', 'address[]', 'bool'}
+                        or _is_bytes_type(types[idx])
+                        or _is_bytes_array_type(types[idx])
+                    )
         self.last_abi_path = abi_path
 
     def _find_abi_file(self, vuln_address: str) -> Optional[Path]:
@@ -2679,9 +2759,12 @@ class ConstraintGeneratorV2:
             # 找到动态参数（扩展支持数组/地址/字节等）
             dynamic_params = [
                 p for p in params
-                if p['is_dynamic'] and p['type'] in (
-                    'uint256', 'int256', 'uint8', 'address', 'bool', 'bytes', 'bytes32',
-                    'address[]', 'uint256[]', 'uint8[]', 'bytes[]'
+                if p.get('is_dynamic') and (
+                    _is_int_type(p.get('type'))
+                    or _is_int_array_type(p.get('type'))
+                    or p.get('type') in {'address', 'address[]', 'bool'}
+                    or _is_bytes_type(p.get('type'))
+                    or _is_bytes_array_type(p.get('type'))
                 )
             ]
 
@@ -2689,10 +2772,14 @@ class ConstraintGeneratorV2:
                 p_type = param['type']
 
                 # ====== 数值标量 ======
-                if p_type in ('uint256', 'int256', 'uint8'):
+                if _is_int_type(p_type):
                     param_value = None
                     observed_values = param.get('observed_values') or []
                     numeric_observed = [v for v in observed_values if isinstance(v, int)]
+                    bounds = _int_type_bounds(p_type)
+                    if bounds:
+                        min_val, max_val = bounds
+                        numeric_observed = [v for v in numeric_observed if min_val <= v <= max_val]
                     if numeric_observed:
                         param_value = self._select_param_value_from_observed(numeric_observed, slot_changes)
                     if param_value is None:
@@ -2889,7 +2976,7 @@ class ConstraintGeneratorV2:
                     constraints.append(constraint)
 
                 # ====== 数组数值 ======
-                elif p_type in ('uint256[]', 'uint8[]'):
+                elif _is_int_array_type(p_type):
                     numeric_info = self._normalize_numeric_array(param)
                     if not numeric_info:
                         continue
@@ -3137,6 +3224,8 @@ class ConstraintGeneratorV2:
         """解析数值数组，返回元素列表及范围"""
         value_expr = param.get('value_expr', '') or ''
         nums = []
+        base_type = _strip_array(param.get('type', ''))
+        bounds = _int_type_bounds(base_type)
         observed_values = param.get('observed_values') or []
         for val in observed_values:
             if isinstance(val, int):
@@ -3153,9 +3242,12 @@ class ConstraintGeneratorV2:
                     nums.append(int(match))
                 except Exception:
                     continue
+        if bounds:
+            min_val, max_val = bounds
+            nums = [v for v in nums if min_val <= v <= max_val]
         if not nums:
             # 如果表达式中没有数字，提供保守回退，避免空集合
-            if param['type'] == 'uint8[]':
+            if bounds and bounds[0] == 0 and bounds[1] <= 255:
                 nums = [0, 1]
             else:
                 return None
@@ -3185,7 +3277,8 @@ class ConstraintGeneratorV2:
             for m in hex_matches[:5]:
                 samples.append(m)
                 lengths.append((len(m) - 2) // 2)
-        elif value_expr:
+        elif value_expr and not samples:
+            # 仅在没有观测样本时，回退到表达式字符串长度
             samples.append(value_expr[:100])
             lengths.append(len(value_expr))
 
@@ -3279,7 +3372,7 @@ class ConstraintGeneratorV2:
                     param_name: {
                         "source": "function_parameter",
                         "index": param['index'],
-                        "type": "uint256",
+                        "type": param.get('type', 'uint256'),
                         "value_expr": param['value_expr']
                     },
                     state_var: {
@@ -3551,49 +3644,234 @@ class ConstraintGeneratorV2:
 
             dynamic_params = [
                 p for p in params
-                if p['is_dynamic'] and p['type'] in (
-                    'uint256', 'int256', 'uint8', 'address', 'bool', 'bytes', 'bytes32',
-                    'address[]', 'uint256[]', 'uint8[]', 'bytes[]'
+                if p.get('is_dynamic') and (
+                    _is_int_type(p.get('type'))
+                    or _is_int_array_type(p.get('type'))
+                    or p.get('type') in {'address', 'address[]', 'bool'}
+                    or _is_bytes_type(p.get('type'))
+                    or _is_bytes_array_type(p.get('type'))
                 )
             ]
 
             for param in dynamic_params:
-                constraint = {
-                    "function": func_name,
-                    "signature": call.get("signature"),
-                    "attack_pattern": pattern,
-                    "constraint": {
-                        "type": "inequality",
-                        "expression": f"amount > state * 0.5",
-                        "semantics": self._get_pattern_description(pattern),
-                        "variables": {
-                            "amount": {
-                                "source": "function_parameter",
-                                "index": param['index'],
-                                "type": "uint256",
-                                "value_expr": param['value_expr']
+                p_type = param.get('type')
+
+                # 数值型参数：保持启发式表达式，但补充观测值/范围
+                if _is_int_type(p_type):
+                    observed = [v for v in (param.get('observed_values') or []) if isinstance(v, int)]
+                    bounds = _int_type_bounds(p_type)
+                    if bounds:
+                        min_val, max_val = bounds
+                        observed = [v for v in observed if min_val <= v <= max_val]
+
+                    attack_values = observed
+                    if not attack_values:
+                        # 从表达式和seeds提取可能的数字常量
+                        extracted = []
+                        for match in re.findall(r'-?\d+', param.get('value_expr', '') or ''):
+                            try:
+                                extracted.append(int(match))
+                            except Exception:
+                                continue
+                        for seed in param.get('seeds', []):
+                            for match in re.findall(r'-?\d+', seed):
+                                try:
+                                    extracted.append(int(match))
+                                except Exception:
+                                    continue
+                        if bounds:
+                            min_val, max_val = bounds
+                            extracted = [v for v in extracted if min_val <= v <= max_val]
+                        attack_values = extracted
+
+                    constraint = {
+                        "function": func_name,
+                        "signature": call.get("signature"),
+                        "attack_pattern": pattern,
+                        "constraint": {
+                            "type": "inequality",
+                            "expression": f"amount > state * 0.5",
+                            "semantics": self._get_pattern_description(pattern),
+                            "attack_values": attack_values,
+                            "variables": {
+                                "amount": {
+                                    "source": "function_parameter",
+                                    "index": param['index'],
+                                    "type": p_type,
+                                    "value_expr": param['value_expr']
+                                },
+                                "state": {
+                                    "source": "storage",
+                                    "slot": "0x2",
+                                    "type": "uint256",
+                                    "semantic_name": "estimated_state"
+                                }
                             },
-                            "state": {
-                                "source": "storage",
-                                "slot": "0x2",
-                                "type": "uint256",
-                                "semantic_name": "estimated_state"
+                            "danger_condition": "amount > state * 0.5",
+                            "safe_condition": "amount <= state * 0.1"
+                        },
+                        "analysis": {
+                            "state_value": None,
+                            "threshold": None,
+                            "coefficient": 0.5,
+                            "attack_intensity": None,
+                            "reasoning": "Heuristic constraint (no state diff available)",
+                            "correlation_type": "heuristic",
+                            "correlation_confidence": 0.3
+                        }
+                    }
+                    if attack_values:
+                        constraint["constraint"]["range"] = {
+                            "min": min(attack_values),
+                            "max": max(attack_values)
+                        }
+                    constraints.append(constraint)
+                    continue
+
+                # 地址（标量/数组）
+                if p_type in ('address', 'address[]'):
+                    addr_values = self._normalize_address_values(param, None)
+                    if not addr_values:
+                        continue
+                    constraints.append({
+                        "function": func_name,
+                        "signature": call.get("signature"),
+                        "attack_pattern": pattern,
+                        "constraint": {
+                            "type": "discrete_addresses",
+                            "expression": f"{param.get('name') or param['index']} in observed_addresses",
+                            "semantics": "Restrict addresses to observed attack set",
+                            "attack_values": addr_values,
+                            "variables": {
+                                "addresses": {
+                                    "source": "function_parameter",
+                                    "index": param['index'],
+                                    "type": p_type,
+                                    "value_expr": param.get('value_expr')
+                                }
                             }
                         },
-                        "danger_condition": "amount > state * 0.5",
-                        "safe_condition": "amount <= state * 0.1"
-                    },
-                    "analysis": {
-                        "state_value": None,
-                        "threshold": None,
-                        "coefficient": 0.5,
-                        "attack_intensity": None,
-                        "reasoning": "Heuristic constraint (no state diff available)",
-                        "correlation_type": "heuristic",
-                        "correlation_confidence": 0.3
-                    }
-                }
-                constraints.append(constraint)
+                        "analysis": {
+                            "state_value": None,
+                            "threshold": None,
+                            "coefficient": None,
+                            "attack_intensity": None,
+                            "reasoning": "Address whitelist derived from attack script",
+                            "correlation_type": "discrete",
+                            "correlation_confidence": 0.3
+                        }
+                    })
+                    continue
+
+                # 布尔
+                if p_type == 'bool':
+                    constraints.append({
+                        "function": func_name,
+                        "signature": call.get("signature"),
+                        "attack_pattern": pattern,
+                        "constraint": {
+                            "type": "discrete_bool",
+                            "expression": f"{param.get('name') or param['index']} in [true,false]",
+                            "semantics": "Boolean flag must be explicit",
+                            "attack_values": [True, False],
+                            "variables": {
+                                "flag": {
+                                    "source": "function_parameter",
+                                    "index": param['index'],
+                                    "type": "bool",
+                                    "value_expr": param.get('value_expr')
+                                }
+                            }
+                        },
+                        "analysis": {
+                            "state_value": None,
+                            "threshold": None,
+                            "coefficient": None,
+                            "attack_intensity": None,
+                            "reasoning": "Boolean parameter limited to true/false",
+                            "correlation_type": "discrete",
+                            "correlation_confidence": 0.2
+                        }
+                    })
+                    continue
+
+                # 字节（含 bytes[]）
+                if _is_bytes_type(p_type) or _is_bytes_array_type(p_type):
+                    byte_info = self._normalize_bytes_values(param)
+                    if not byte_info:
+                        continue
+                    constraints.append({
+                        "function": func_name,
+                        "signature": call.get("signature"),
+                        "attack_pattern": pattern,
+                        "constraint": {
+                            "type": "bytes_pattern",
+                            "expression": f"{param.get('name') or param['index']} length in [{byte_info['min_len']},{byte_info['max_len']}]",
+                            "semantics": "Restrict bytes payload length",
+                            "attack_values": byte_info['samples'],
+                            "variables": {
+                                "bytes": {
+                                    "source": "function_parameter",
+                                    "index": param['index'],
+                                    "type": p_type,
+                                    "value_expr": param.get('value_expr')
+                                }
+                            },
+                            "range": {
+                                "min_len": byte_info['min_len'],
+                                "max_len": byte_info['max_len']
+                            }
+                        },
+                        "analysis": {
+                            "state_value": None,
+                            "threshold": None,
+                            "coefficient": None,
+                            "attack_intensity": None,
+                            "reasoning": "Bytes payload constrained by observed length",
+                            "correlation_type": "discrete",
+                            "correlation_confidence": 0.2
+                        }
+                    })
+                    continue
+
+                # 数值数组
+                if _is_int_array_type(p_type):
+                    numeric_info = self._normalize_numeric_array(param)
+                    if not numeric_info:
+                        continue
+                    constraints.append({
+                        "function": func_name,
+                        "signature": call.get("signature"),
+                        "attack_pattern": pattern,
+                        "constraint": {
+                            "type": "capped_array",
+                            "expression": f"{param.get('name') or param['index']} elements in [{numeric_info['min']},{numeric_info['max']}]",
+                            "semantics": "Restrict numeric array elements to observed range",
+                            "attack_values": numeric_info['values'],
+                            "range": {
+                                "min": numeric_info['min'],
+                                "max": numeric_info['max']
+                            },
+                            "variables": {
+                                "values": {
+                                    "source": "function_parameter",
+                                    "index": param['index'],
+                                    "type": p_type,
+                                    "value_expr": param.get('value_expr')
+                                }
+                            },
+                            "len_range": numeric_info.get('len_range')
+                        },
+                        "analysis": {
+                            "state_value": None,
+                            "threshold": None,
+                            "coefficient": None,
+                            "attack_intensity": None,
+                            "reasoning": "Numeric array bounded by observed values",
+                            "correlation_type": "discrete",
+                            "correlation_confidence": 0.3
+                        }
+                    })
 
         return constraints
 

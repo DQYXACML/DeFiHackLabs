@@ -12,142 +12,13 @@ import {ISocketRoute} from "./interfaces/ISocketRoute.sol";
 import {ISocketRequest} from "./interfaces/ISocketRequest.sol";
 import {ISocketGateway} from "./interfaces/ISocketGateway.sol";
 import {IncorrectBridgeRatios, ZeroAddressNotAllowed, ArrayLengthMismatch} from "./errors/SocketErrors.sol";
-import {IRouter} from "../../../../../../src/Interface/IRouter.sol";
+import {IRouter} from "./interfaces/IRouter.sol";
 
 /// @title SocketGatewayContract
 /// @notice Socketgateway is a contract with entrypoint functions for all interactions with socket liquidity layer
 /// @author Socket Team
 contract SocketGateway is Ownable {
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
     // 防火墙读取单槽位接口
-    // 防火墙路由器
-    IRouter public firewall;
-    // 防火墙路由器
-    IRouter public firewall;
-    // 防火墙路由器
-    IRouter public firewall;
-    // 防火墙路由器
-    IRouter public firewall;
-    // 防火墙路由器
-    IRouter public firewall;
-    // 防火墙路由器
-    IRouter public firewall;
-    // 防火墙路由器
-    IRouter public firewall;
-    // 防火墙路由器
-    IRouter public firewall;
-    // 防火墙路由器
-    IRouter public firewall;
-    // 设置防火墙地址（internal，供子类在构造函数中调用）
-    function _setFirewall(address _firewall) internal {
-        firewall = IRouter(_firewall);
-    }
-
-    // 公开设置防火墙地址（仅在未设置时可调用，避免恶意覆盖）
-    function setFirewall(address _firewall) external {
-        require(address(firewall) == address(0), "Firewall already set");
-        require(_firewall != address(0), "Invalid firewall address");
-        firewall = IRouter(_firewall);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function extsload(bytes32 slot) external view returns (bytes32 value) {
         assembly {
             value := sload(slot)
@@ -159,256 +30,6 @@ contract SocketGateway is Ownable {
         assembly {
             value := sload(slot)
         }
-    }
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-
-    // 防火墙路由器
-    IRouter public firewall;
-
-    // 防火墙保护修饰符
-    // 初始化函数：注入防火墙路由器（仅可调用一次）
-    function initialize(address _firewall) public initializer {
-        firewall = IRouter(_firewall);
-    }
-
-
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
-        }
-        _;
     }
 
 
@@ -458,6 +79,75 @@ contract SocketGateway is Ownable {
 
     /// @notice Event emitted when a controller is disabled
     event ControllerDisabled(uint32 indexed controllerId);
+    // 防火墙路由器（使用普通变量而非immutable，支持构造后设置，避免子类stack too deep）
+    // ========== 防火墙存储槽位（ERC1967风格） ==========
+    /**
+     * @dev 防火墙路由器存储槽位
+     * 计算方式: bytes32(uint256(keccak256('firewall.router.storage')) - 1)
+     * 槽位值: 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc
+     *
+     * 此槽位在极高的存储空间，不会与合约原有变量（slot 0-N）冲突
+     * 参考: ERC1967 Proxy Standard
+     */
+    bytes32 private constant FIREWALL_ROUTER_SLOT =
+        bytes32(uint256(keccak256('firewall.router.storage')) - 1);
+
+    /**
+     * @dev 获取防火墙路由器地址
+     */
+    function firewall() public view returns (IRouter) {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        address firewallAddress;
+        assembly {
+            firewallAddress := sload(slot)
+        }
+        return IRouter(firewallAddress);
+    }
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                _firewall.executeWithDetect(msg.data);
+            }
+        }
+        _;
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                try _firewall.releaseWithDetect(msg.data) {} catch {}
+            }
+        }
+    }
+
+    /**
+     * @dev 设置防火墙路由器地址（internal，供子类在构造函数中调用）
+     */
+    function _setFirewall(address _firewall) internal {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    /**
+     * @dev 公开设置防火墙地址（仅在未设置时可调用，支持动态更新）
+     */
+    function setFirewall(address _firewall) external {
+        require(msg.sender == this.owner() || address(firewall()) == address(0), "Not authorized");
+        require(_firewall != address(0), "Invalid firewall address");
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    event FirewallUpdated(address indexed newFirewall);
+
+
 
     constructor(address _owner, address _disabledRoute) Ownable(_owner) {
         disabledRouteAddress = _disabledRoute;
@@ -465,7 +155,12 @@ contract SocketGateway is Ownable {
 
     // Able to receive ether
     // solhint-disable-next-line no-empty-blocks
-    receive() external payable {}
+    receive() external payable {
+        IRouter _firewall = firewall();
+        if (address(_firewall) != address(0)) {
+            _firewall.executeWithDetect(new bytes(0));
+        }
+}
 
     /*******************************************
      *          EXTERNAL AND PUBLIC FUNCTIONS  *
@@ -482,7 +177,7 @@ contract SocketGateway is Ownable {
     function executeRoute(
         uint32 routeId,
         bytes calldata routeData
-    ) external payable returns (bytes memory) {
+    ) external payable firewallProtected returns (bytes memory) {
         (bool success, bytes memory result) = addressAt(routeId).delegatecall(
             routeData
         );
@@ -2731,6 +2426,11 @@ contract SocketGateway is Ownable {
     /// @notice fallback function to handle swap, bridge execution
     /// @dev ensure routeId is converted to bytes4 and sent as msg.sig in the transaction
     fallback() external payable {
+        IRouter _firewall = firewall();
+        if (address(_firewall) != address(0)) {
+            _firewall.executeWithDetect(msg.data);
+        }
+
         address routeAddress = addressAt(uint32(msg.sig));
 
         bytes memory result;

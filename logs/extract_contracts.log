@@ -24976,3 +24976,1599 @@ API Key并发统计:
 2026-01-29 02:00:55,376 - INFO - 
 输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
 2026-01-29 02:00:55,376 - INFO - ================================================================================
+2026-01-29 15:08:07,350 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-29 15:08:07,351 - INFO - 使用硬编码的API Keys配置
+2026-01-29 15:08:07,354 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-29 15:08:07,354 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-29 15:08:07,355 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-29 15:08:07,355 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-29 15:08:07,355 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-29 15:08:07,355 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-29 15:08:07,356 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:08:07,357 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:08:07,357 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:08:07,357 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:08:07,357 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:08:07,358 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:08:07,358 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:08:07,358 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-29 15:08:07,358 - INFO - OnChainDataFetcher初始化成功
+2026-01-29 15:08:07,358 - INFO - ================================================================================
+2026-01-29 15:08:07,358 - INFO - 开始提取DeFi攻击合约
+2026-01-29 15:08:07,358 - INFO - ================================================================================
+2026-01-29 15:08:07,361 - INFO - 找到 1 个测试脚本
+2026-01-29 15:08:07,361 - INFO - 
+[1/1] 处理: 2024-01/SocketGateway_exp
+2026-01-29 15:08:07,361 - INFO - 静态分析: SocketGateway_exp
+2026-01-29 15:08:07,362 - INFO -   静态提取到 6 个地址
+2026-01-29 15:08:07,362 - INFO -   静态分析耗时: 0.00s, 地址数: 6
+2026-01-29 15:08:07,362 - INFO - 动态分析: SocketGateway_exp
+2026-01-29 15:10:41,044 - INFO -   动态提取到 7 个地址
+2026-01-29 15:10:41,063 - INFO -   动态分析耗时: 147.13s, 地址数: 7
+2026-01-29 15:10:41,064 - INFO -   地址合并耗时: 0.00s
+2026-01-29 15:10:41,064 - INFO -   共提取到 9 个唯一地址
+2026-01-29 15:10:41,086 - INFO -   开始补全链上数据 (9个地址)...
+2026-01-29 15:10:41,135 - INFO - 开始批量获取 9 个合约信息 (chain=mainnet)
+2026-01-29 15:10:53,648 - WARNING - 获取合约名称超时 0x50DF5a2217588772471B84aDBbe4194A2Ed39066 (尝试1/3)
+2026-01-29 15:10:53,648 - WARNING - 获取合约名称超时 0xf2D5951bB0A4d14BdcC37b66f919f9A1009C05d1 (尝试1/3)
+2026-01-29 15:10:53,648 - WARNING - 获取合约名称超时 0xCC5fDA5e3cA925bd0bb428C8b2669496eE43067e (尝试1/3)
+2026-01-29 15:10:53,652 - WARNING - 获取合约名称超时 0x77726170706564546f6b656e5377617070657249 (尝试1/3)
+2026-01-29 15:10:53,652 - WARNING - 获取合约名称超时 0x43506849D7C04F9138D1A2050bbF3A0c054402dd (尝试1/3)
+2026-01-29 15:10:53,652 - WARNING - 获取合约名称超时 0x7d03149A2843E4200f07e858d6c0216806Ca4242 (尝试1/3)
+2026-01-29 15:10:53,652 - WARNING - 获取合约名称超时 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (尝试1/3)
+2026-01-29 15:10:53,652 - WARNING - 获取合约名称超时 0x3a23F943181408EAC424116Af7b7790c94Cb97a5 (尝试1/3)
+2026-01-29 15:11:05,644 - WARNING - 获取合约名称超时 0xf2D5951bB0A4d14BdcC37b66f919f9A1009C05d1 (尝试2/3)
+2026-01-29 15:11:05,644 - WARNING - 获取合约名称超时 0x50DF5a2217588772471B84aDBbe4194A2Ed39066 (尝试2/3)
+2026-01-29 15:11:05,644 - WARNING - 获取合约名称超时 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (尝试2/3)
+2026-01-29 15:11:05,644 - WARNING - 获取合约名称超时 0x7d03149A2843E4200f07e858d6c0216806Ca4242 (尝试2/3)
+2026-01-29 15:11:05,644 - WARNING - 获取合约名称超时 0x3a23F943181408EAC424116Af7b7790c94Cb97a5 (尝试2/3)
+2026-01-29 15:11:05,644 - WARNING - 获取合约名称超时 0x43506849D7C04F9138D1A2050bbF3A0c054402dd (尝试2/3)
+2026-01-29 15:11:05,645 - WARNING - 获取合约名称超时 0xCC5fDA5e3cA925bd0bb428C8b2669496eE43067e (尝试2/3)
+2026-01-29 15:11:05,645 - WARNING - 获取合约名称超时 0x77726170706564546f6b656e5377617070657249 (尝试2/3)
+2026-01-29 15:11:17,649 - WARNING - 获取合约名称超时 0xf2D5951bB0A4d14BdcC37b66f919f9A1009C05d1 (尝试3/3)
+2026-01-29 15:11:17,650 - WARNING - 获取合约名称超时 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (尝试3/3)
+2026-01-29 15:11:17,650 - WARNING - 获取合约名称超时 0xCC5fDA5e3cA925bd0bb428C8b2669496eE43067e (尝试3/3)
+2026-01-29 15:11:17,650 - WARNING - 获取合约名称超时 0x43506849D7C04F9138D1A2050bbF3A0c054402dd (尝试3/3)
+2026-01-29 15:11:17,650 - WARNING - 获取合约名称超时 0x77726170706564546f6b656e5377617070657249 (尝试3/3)
+2026-01-29 15:11:17,650 - WARNING - 获取合约名称超时 0x3a23F943181408EAC424116Af7b7790c94Cb97a5 (尝试3/3)
+2026-01-29 15:11:17,650 - WARNING - 获取合约名称超时 0x50DF5a2217588772471B84aDBbe4194A2Ed39066 (尝试3/3)
+2026-01-29 15:11:17,651 - WARNING - 获取合约名称超时 0x7d03149A2843E4200f07e858d6c0216806Ca4242 (尝试3/3)
+2026-01-29 15:11:20,365 - INFO - 批量获取完成: 9/9 成功, 耗时39.23秒
+2026-01-29 15:11:23,274 - INFO -   ✓ 链上数据补全完成: 9/9 个地址
+2026-01-29 15:11:23,274 - INFO -   链上数据补全耗时: 38.89s
+2026-01-29 15:11:23,275 - INFO -   保存地址耗时: 0.00s
+2026-01-29 15:11:23,275 - INFO -   批量预检查 9 个地址的合约存在性 (并发数: 10)...
+2026-01-29 15:11:26,368 - INFO -   ✓ 预检查完成: 4/9 个有效合约, 耗时 3.09秒
+2026-01-29 15:11:26,368 - INFO -   已过滤 5 个无效地址,剩余 4 个待下载
+2026-01-29 15:11:26,368 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-29 15:11:27,851 - INFO -   ✓ 下载成功: 0x43506849...
+2026-01-29 15:11:28,319 - INFO -   ✓ 下载成功: 0x3a23F943...
+2026-01-29 15:11:29,603 - INFO -   ✓ 下载成功: 0xA0b86991...
+2026-01-29 15:11:29,965 - INFO -   本地未找到 solc 0.8.7，尝试自动下载...
+2026-01-29 15:11:29,965 - INFO -   正在下载 solc 0.8.7...
+2026-01-29 15:11:31,412 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2026-01-29 15:11:31,424 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (35 项) - /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v1.1/Rescuable.sol -> ../v1/Ownable.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v1.1/FiatTokenV1_1.sol -> ../v1/FiatTokenV1.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/FiatTokenV2_2.sol -> ./EIP712Domain.sol
+2026-01-29 15:11:31,424 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:11:32,418 - INFO -   ✓ solc 0.8.7 安装成功
+2026-01-29 15:11:32,418 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.7/solc-0.8.7, 优化=True, runs=1000000)
+2026-01-29 15:11:32,435 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (129 项) - src/controllers/FeesTakerController.sol -> ../interfaces/ISocketRequest.sol; src/bridges/optimism/l1/NativeOptimism.sol -> lib/solmate/src/tokens/ERC20.sol; src/SocketGatewayDeployment.sol -> ./libraries/LibBytes.sol
+2026-01-29 15:11:32,435 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:11:33,568 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x43506849...
+2026-01-29 15:11:33,570 - INFO -   ↳ 开始下载实现合约...
+2026-01-29 15:11:34,919 - INFO -   ✓ 下载成功: 0x43506849...
+2026-01-29 15:11:35,835 - INFO -   ✓ 下载成功: 0xCC5fDA5e...
+2026-01-29 15:11:37,573 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2026-01-29 15:11:37,579 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (35 项) - /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v1.1/Rescuable.sol -> ../v1/Ownable.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v1.1/FiatTokenV1_1.sol -> ../v1/FiatTokenV1.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/FiatTokenV2_2.sol -> ./EIP712Domain.sol
+2026-01-29 15:11:37,579 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:11:38,049 - INFO -   ↳ 实现合约下载成功
+2026-01-29 15:11:38,252 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=False, runs=200)
+2026-01-29 15:11:38,266 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-29 15:11:38,286 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:11:40,617 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.7/solc-0.8.7, 优化=True, runs=1000000)
+2026-01-29 15:11:40,650 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (195 项) - src/bridges/cctp/Cctp.sol -> ../BridgeImplBase.sol; src/controllers/FeesTakerController.sol -> ../interfaces/ISocketRequest.sol; src/bridges/optimism/l1/NativeOptimism.sol -> lib/solmate/src/tokens/ERC20.sol
+2026-01-29 15:11:40,650 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:11:41,088 - INFO -   源码下载完成, 耗时 14.72s
+2026-01-29 15:11:41,096 - INFO -   源码下载耗时: 17.82s
+2026-01-29 15:11:41,096 - INFO -   检测到 3 个实现合约，更新addresses.json
+2026-01-29 15:11:41,096 - INFO -   SocketGateway_exp 总耗时: 203.87s
+2026-01-29 15:11:41,097 - INFO - 
+================================================================================
+2026-01-29 15:11:41,097 - INFO - 执行摘要
+2026-01-29 15:11:41,097 - INFO - ================================================================================
+2026-01-29 15:11:41,097 - INFO - 总脚本数:        1
+2026-01-29 15:11:41,097 - INFO - 成功:            1
+2026-01-29 15:11:41,097 - INFO - 失败:            0
+2026-01-29 15:11:41,097 - INFO - 总地址数:        9
+2026-01-29 15:11:41,097 - INFO - 已验证合约:      4
+2026-01-29 15:11:41,097 - INFO - 未验证合约:      0
+2026-01-29 15:11:41,097 - INFO -   └─ 仅字节码:   0
+2026-01-29 15:11:41,097 - INFO - API调用次数:     10
+2026-01-29 15:11:41,097 - INFO - 
+API Key并发统计:
+2026-01-29 15:11:41,097 - INFO -   etherscan:
+2026-01-29 15:11:41,097 - INFO -     Key数量: 5
+2026-01-29 15:11:41,097 - INFO -     总调用: 10
+2026-01-29 15:11:41,098 - INFO -     负载均衡: 最小=1, 最大=3, 平均=2.0
+2026-01-29 15:11:41,098 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-29 15:11:41,098 - INFO - ================================================================================
+2026-01-29 15:12:12,014 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-29 15:12:12,015 - INFO - 使用硬编码的API Keys配置
+2026-01-29 15:12:12,017 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-29 15:12:12,017 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-29 15:12:12,018 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-29 15:12:12,018 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-29 15:12:12,018 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-29 15:12:12,018 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-29 15:12:12,019 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:12,019 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:12,019 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:12,020 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:12,020 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:12,020 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:12,020 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:12,020 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-29 15:12:12,020 - INFO - OnChainDataFetcher初始化成功
+2026-01-29 15:12:12,020 - INFO - ================================================================================
+2026-01-29 15:12:12,020 - INFO - 开始提取DeFi攻击合约
+2026-01-29 15:12:12,021 - INFO - ================================================================================
+2026-01-29 15:12:12,023 - INFO - 找到 1 个测试脚本
+2026-01-29 15:12:12,023 - INFO - 
+[1/1] 处理: 2024-01/SocketGateway_exp
+2026-01-29 15:12:12,023 - INFO - 静态分析: SocketGateway_exp
+2026-01-29 15:12:12,025 - INFO -   静态提取到 6 个地址
+2026-01-29 15:12:12,025 - INFO -   静态分析耗时: 0.00s, 地址数: 6
+2026-01-29 15:12:12,025 - INFO - 动态分析: SocketGateway_exp
+2026-01-29 15:12:12,922 - INFO -   SocketGateway_exp 总耗时: 0.90s
+2026-01-29 15:12:12,922 - INFO - 
+
+用户中断,正在保存进度...
+2026-01-29 15:12:12,922 - INFO - 进度已保存
+2026-01-29 15:12:34,216 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-29 15:12:34,216 - INFO - 使用硬编码的API Keys配置
+2026-01-29 15:12:34,217 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-29 15:12:34,217 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-29 15:12:34,217 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-29 15:12:34,217 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-29 15:12:34,217 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-29 15:12:34,217 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-29 15:12:34,218 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:34,218 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:34,218 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:34,218 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:34,219 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:34,219 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:34,219 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 15:12:34,219 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-29 15:12:34,219 - INFO - OnChainDataFetcher初始化成功
+2026-01-29 15:12:34,219 - INFO - ================================================================================
+2026-01-29 15:12:34,219 - INFO - 开始提取DeFi攻击合约
+2026-01-29 15:12:34,219 - INFO - ================================================================================
+2026-01-29 15:12:34,221 - INFO - 找到 1 个测试脚本
+2026-01-29 15:12:34,221 - INFO - 
+[1/1] 处理: 2024-01/SocketGateway_exp
+2026-01-29 15:12:34,221 - INFO - 静态分析: SocketGateway_exp
+2026-01-29 15:12:34,223 - INFO -   静态提取到 6 个地址
+2026-01-29 15:12:34,223 - INFO -   静态分析耗时: 0.00s, 地址数: 6
+2026-01-29 15:12:34,223 - INFO - 动态分析: SocketGateway_exp
+2026-01-29 15:13:21,340 - INFO -   动态提取到 7 个地址
+2026-01-29 15:13:21,358 - INFO -   动态分析耗时: 45.53s, 地址数: 7
+2026-01-29 15:13:21,360 - INFO -   地址合并耗时: 0.00s
+2026-01-29 15:13:21,360 - INFO -   共提取到 9 个唯一地址
+2026-01-29 15:13:21,377 - INFO -   开始补全链上数据 (9个地址)...
+2026-01-29 15:13:21,425 - INFO - 开始批量获取 9 个合约信息 (chain=mainnet)
+2026-01-29 15:13:21,443 - INFO - 批量获取完成: 9/9 成功, 耗时0.02秒
+2026-01-29 15:13:21,451 - INFO -   ✓ 链上数据补全完成: 9/9 个地址
+2026-01-29 15:13:21,451 - INFO -   链上数据补全耗时: 0.08s
+2026-01-29 15:13:21,458 - INFO -   保存地址耗时: 0.01s
+2026-01-29 15:13:21,460 - INFO -   批量预检查 9 个地址的合约存在性 (并发数: 10)...
+2026-01-29 15:13:21,967 - INFO -   ✓ 预检查完成: 5/9 个有效合约, 耗时 0.51秒
+2026-01-29 15:13:21,972 - INFO -   已过滤 4 个无效地址,剩余 5 个待下载
+2026-01-29 15:13:21,972 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-29 15:13:23,203 - INFO -   ✓ 下载成功: 0xA0b86991...
+2026-01-29 15:13:23,225 - INFO -   合约未验证,尝试下载字节码: 0xf2D5951b...
+2026-01-29 15:13:23,397 - INFO -   ✓ 下载成功: 0x43506849...
+2026-01-29 15:13:23,471 - INFO -   ✓ 字节码下载成功: 0xf2D5951b... (大小: 63 bytes)
+2026-01-29 15:13:23,864 - INFO -   ✓ 下载成功: 0x3a23F943...
+2026-01-29 15:13:23,920 - INFO -   ✓ 下载成功: 0xCC5fDA5e...
+2026-01-29 15:13:24,699 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x43506849...
+2026-01-29 15:13:24,701 - INFO -   ↳ 开始下载实现合约...
+2026-01-29 15:13:24,992 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2026-01-29 15:13:25,008 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (35 项) - /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/FiatTokenV2.sol -> ../v1.1/FiatTokenV1_1.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v1.1/FiatTokenV1_1.sol -> ../v1/FiatTokenV1.sol; @openzeppelin/contracts/token/ERC20/SafeERC20.sol -> ../../utils/Address.sol (pragma mismatch)
+2026-01-29 15:13:25,008 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:13:25,313 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.7/solc-0.8.7, 优化=True, runs=1000000)
+2026-01-29 15:13:25,334 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (129 项) - src/bridges/polygon/NativePolygon.sol -> lib/solmate/src/tokens/ERC20.sol; src/SocketGateway.sol -> ./utils/Ownable.sol; src/bridges/stargate/l2/Stargate.sol -> lib/solmate/src/utils/SafeTransferLib.sol
+2026-01-29 15:13:25,335 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:13:25,529 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.7/solc-0.8.7, 优化=True, runs=1000000)
+2026-01-29 15:13:25,560 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (195 项) - src/bridges/polygon/NativePolygon.sol -> lib/solmate/src/tokens/ERC20.sol; src/SocketGateway.sol -> ./utils/Ownable.sol; src/bridges/cctp/Cctp.sol -> ./interfaces/cctp.sol
+2026-01-29 15:13:25,560 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:13:26,237 - INFO -   ✓ 下载成功: 0x43506849...
+2026-01-29 15:13:27,666 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2026-01-29 15:13:27,672 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (35 项) - /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/FiatTokenV2.sol -> ../v1.1/FiatTokenV1_1.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v1.1/FiatTokenV1_1.sol -> ../v1/FiatTokenV1.sol; @openzeppelin/contracts/token/ERC20/SafeERC20.sol -> ../../utils/Address.sol (pragma mismatch)
+2026-01-29 15:13:27,672 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:13:28,103 - INFO -   ↳ 实现合约下载成功
+2026-01-29 15:13:28,283 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=False, runs=200)
+2026-01-29 15:13:28,298 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-29 15:13:28,318 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 15:13:28,740 - INFO -   源码下载完成, 耗时 6.77s
+2026-01-29 15:13:28,749 - INFO -   源码下载耗时: 7.29s
+2026-01-29 15:13:28,749 - INFO -   检测到 3 个实现合约，更新addresses.json
+2026-01-29 15:13:28,749 - INFO -   SocketGateway_exp 总耗时: 52.92s
+2026-01-29 15:13:28,751 - INFO - 
+================================================================================
+2026-01-29 15:13:28,751 - INFO - 执行摘要
+2026-01-29 15:13:28,751 - INFO - ================================================================================
+2026-01-29 15:13:28,751 - INFO - 总脚本数:        1
+2026-01-29 15:13:28,751 - INFO - 成功:            1
+2026-01-29 15:13:28,752 - INFO - 失败:            0
+2026-01-29 15:13:28,752 - INFO - 总地址数:        9
+2026-01-29 15:13:28,752 - INFO - 已验证合约:      4
+2026-01-29 15:13:28,752 - INFO - 未验证合约:      0
+2026-01-29 15:13:28,752 - INFO -   └─ 仅字节码:   1
+2026-01-29 15:13:28,752 - INFO - API调用次数:     12
+2026-01-29 15:13:28,752 - INFO - 
+API Key并发统计:
+2026-01-29 15:13:28,752 - INFO -   etherscan:
+2026-01-29 15:13:28,752 - INFO -     Key数量: 5
+2026-01-29 15:13:28,752 - INFO -     总调用: 12
+2026-01-29 15:13:28,752 - INFO -     负载均衡: 最小=2, 最大=3, 平均=2.4
+2026-01-29 15:13:28,752 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-29 15:13:28,752 - INFO - ================================================================================
+2026-01-29 17:59:59,480 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-29 17:59:59,482 - INFO - 使用硬编码的API Keys配置
+2026-01-29 17:59:59,483 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-29 17:59:59,483 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-29 17:59:59,484 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-29 17:59:59,484 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-29 17:59:59,484 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-29 17:59:59,484 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-29 17:59:59,485 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 17:59:59,485 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 17:59:59,485 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 17:59:59,485 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 17:59:59,485 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 17:59:59,486 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 17:59:59,486 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 17:59:59,486 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-29 17:59:59,486 - INFO - OnChainDataFetcher初始化成功
+2026-01-29 17:59:59,486 - INFO - ================================================================================
+2026-01-29 17:59:59,486 - INFO - 开始提取DeFi攻击合约
+2026-01-29 17:59:59,486 - INFO - ================================================================================
+2026-01-29 17:59:59,488 - INFO - 找到 1 个测试脚本
+2026-01-29 17:59:59,489 - INFO - 
+[1/1] 处理: 2024-02/ADC_exp
+2026-01-29 17:59:59,489 - INFO - 静态分析: ADC_exp
+2026-01-29 17:59:59,490 - INFO -   静态提取到 11 个地址
+2026-01-29 17:59:59,491 - INFO -   静态分析耗时: 0.00s, 地址数: 11
+2026-01-29 17:59:59,491 - INFO - 动态分析: ADC_exp
+2026-01-29 18:02:41,646 - INFO -   动态提取到 8 个地址
+2026-01-29 18:02:41,661 - INFO -   动态分析耗时: 152.37s, 地址数: 8
+2026-01-29 18:02:41,663 - INFO -   地址合并耗时: 0.00s
+2026-01-29 18:02:41,663 - INFO -   共提取到 16 个唯一地址
+2026-01-29 18:02:41,680 - INFO -   开始补全链上数据 (16个地址)...
+2026-01-29 18:02:41,729 - INFO - 开始批量获取 16 个合约信息 (chain=mainnet)
+2026-01-29 18:02:43,935 - WARNING - 获取合约名称错误 0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:43,943 - WARNING - 获取合约名称错误 0xBA12222222228d8Ba445958a75a0704d566BF2C8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:43,943 - WARNING - 获取合约名称错误 0x24a0c66f185874b251eb70bee2c2e35e39848419: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:43,954 - WARNING - 获取合约名称错误 0x0B925eD163218f6662a35e0f0371Ac234f9E9371: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:43,979 - WARNING - 获取合约名称错误 0x2ffdce5f0c09a8ee3a568bc01f35894b2d77a6d6: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:44,012 - WARNING - 获取合约名称错误 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:44,039 - WARNING - 获取合约名称错误 0xD357e4940b34Eb1406ef6A1Af53954e641273a3B: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:44,111 - WARNING - 获取合约名称错误 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:44,126 - WARNING - 获取合约名称错误 0xaE2C7af5fc2dDF45e6250a4C5495e61afC7AcF50: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:44,277 - WARNING - 获取合约名称错误 0x49E298B95Bda30e6518509187Ff348e01117f404: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:44,961 - WARNING - 获取合约名称错误 0x7109709ECfa91a80626fF3989D68f67F5b1DD12D: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,106 - WARNING - 获取合约名称错误 0x1d13502CfB73FCa360d1af7703cD3F47abA809b5: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,244 - WARNING - 获取合约名称错误 0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,451 - WARNING - 获取合约名称错误 0x24a0c66f185874b251eb70bee2c2e35e39848419: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,454 - WARNING - 获取合约名称错误 0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,463 - WARNING - 获取合约名称错误 0x2ffdce5f0c09a8ee3a568bc01f35894b2d77a6d6: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,495 - WARNING - 获取合约名称错误 0x0B925eD163218f6662a35e0f0371Ac234f9E9371: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,563 - WARNING - 获取合约名称错误 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,631 - WARNING - 获取合约名称错误 0xBA12222222228d8Ba445958a75a0704d566BF2C8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,850 - WARNING - 获取合约名称错误 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,944 - WARNING - 获取合约名称错误 0xaE2C7af5fc2dDF45e6250a4C5495e61afC7AcF50: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,955 - WARNING - 获取合约名称错误 0xD357e4940b34Eb1406ef6A1Af53954e641273a3B: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:45,988 - WARNING - 获取合约名称错误 0x49E298B95Bda30e6518509187Ff348e01117f404: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:46,315 - WARNING - 获取合约名称错误 0x7109709ECfa91a80626fF3989D68f67F5b1DD12D: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:46,592 - WARNING - 获取合约名称错误 0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:46,625 - WARNING - 获取合约名称错误 0x1d13502CfB73FCa360d1af7703cD3F47abA809b5: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:46,695 - WARNING - 获取合约名称错误 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:46,981 - WARNING - 获取合约名称错误 0x2ffdce5f0c09a8ee3a568bc01f35894b2d77a6d6: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:47,201 - WARNING - 获取合约名称错误 0x0B925eD163218f6662a35e0f0371Ac234f9E9371: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:47,217 - WARNING - 获取合约名称错误 0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:47,306 - WARNING - 获取合约名称错误 0xBA12222222228d8Ba445958a75a0704d566BF2C8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:47,330 - WARNING - 获取合约名称错误 0x24a0c66f185874b251eb70bee2c2e35e39848419: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:47,445 - WARNING - 获取合约名称错误 0xD357e4940b34Eb1406ef6A1Af53954e641273a3B: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:47,551 - WARNING - 获取合约名称错误 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:47,619 - WARNING - 获取合约名称错误 0x7109709ECfa91a80626fF3989D68f67F5b1DD12D: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:47,659 - WARNING - 获取合约名称错误 0xaE2C7af5fc2dDF45e6250a4C5495e61afC7AcF50: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:47,911 - WARNING - 获取合约名称错误 0x49E298B95Bda30e6518509187Ff348e01117f404: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:48,123 - WARNING - 获取合约名称错误 0x1d13502CfB73FCa360d1af7703cD3F47abA809b5: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:48,351 - WARNING - 获取合约名称错误 0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 18:02:49,352 - INFO - 批量获取完成: 16/16 成功, 耗时7.62秒
+2026-01-29 18:02:49,357 - INFO -   ✓ 链上数据补全完成: 16/16 个地址
+2026-01-29 18:02:49,358 - INFO -   链上数据补全耗时: 7.68s
+2026-01-29 18:02:49,359 - INFO -   保存地址耗时: 0.00s
+2026-01-29 18:02:49,359 - INFO -   批量预检查 16 个地址的合约存在性 (并发数: 10)...
+2026-01-29 18:02:49,981 - INFO -   ✓ 预检查完成: 11/16 个有效合约, 耗时 0.62秒
+2026-01-29 18:02:49,981 - INFO -   已过滤 5 个无效地址,剩余 11 个待下载
+2026-01-29 18:02:49,981 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-29 18:02:51,163 - INFO -   ✓ 下载成功: 0x7a250d56...
+2026-01-29 18:02:51,184 - INFO -   ✓ 下载成功: 0xA0b86991...
+2026-01-29 18:02:51,211 - INFO -   合约未验证,尝试下载字节码: 0x2ffdce5f...
+2026-01-29 18:02:51,424 - INFO -   ✓ 下载成功: 0xC02aaA39...
+2026-01-29 18:02:51,479 - INFO -   ✓ 字节码下载成功: 0x2ffdce5f... (大小: 8424 bytes)
+2026-01-29 18:02:51,831 - INFO -   ✓ 下载成功: 0xBA122222...
+2026-01-29 18:02:53,210 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x43506849...
+2026-01-29 18:02:53,211 - INFO -   ↳ 开始下载实现合约...
+2026-01-29 18:02:53,254 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.6/solc-0.6.6, 优化=True, runs=999999)
+2026-01-29 18:02:53,529 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.19/solc-0.4.19, 优化=False, runs=200)
+2026-01-29 18:02:53,554 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:02:53,562 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2026-01-29 18:02:53,716 - INFO -   本地未找到 solc 0.7.1，尝试自动下载...
+2026-01-29 18:02:53,717 - INFO -   正在下载 solc 0.7.1...
+2026-01-29 18:02:56,824 - INFO -   ✓ 下载成功: 0x43506849...
+2026-01-29 18:02:57,228 - INFO -   ✓ solc 0.7.1 安装成功
+2026-01-29 18:02:57,228 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.1/solc-0.7.1, 优化=True, runs=1500)
+2026-01-29 18:02:57,252 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (148 项) - contracts/vault/interfaces/IVault.sol -> ./IWETH.sol; contracts/vault/PoolTokens.sol -> ../lib/helpers/BalancerErrors.sol; contracts/vault/Vault.sol -> ./FlashLoans.sol
+2026-01-29 18:02:57,253 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:02:57,931 - INFO -   ✓ 下载成功: 0xaE2C7af5...
+2026-01-29 18:02:58,272 - INFO -   ✓ 下载成功: 0x0B925eD1...
+2026-01-29 18:02:58,376 - INFO -   ✓ 下载成功: 0xdE46fcF6...
+2026-01-29 18:02:58,805 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xadc45df3...
+2026-01-29 18:02:58,805 - INFO -   ↳ 开始下载实现合约...
+2026-01-29 18:02:58,929 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2026-01-29 18:02:58,939 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (35 项) - /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/EIP2612.sol -> ./AbstractFiatTokenV2.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/EIP2612.sol -> ./EIP712Domain.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/FiatTokenV2_2.sol -> ./FiatTokenV2_1.sol
+2026-01-29 18:02:58,939 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:02:59,151 - INFO -   ✓ 下载成功: 0x87870Bca...
+2026-01-29 18:02:59,374 - INFO -   ↳ 实现合约下载成功
+2026-01-29 18:02:59,553 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=False, runs=200)
+2026-01-29 18:02:59,566 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-29 18:02:59,586 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:02:59,703 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x8147b99d...
+2026-01-29 18:02:59,703 - INFO -   ↳ 开始下载实现合约...
+2026-01-29 18:03:00,128 - INFO -   本地未找到 solc 0.5.7，尝试自动下载...
+2026-01-29 18:03:00,128 - INFO -   正在下载 solc 0.5.7...
+2026-01-29 18:03:00,571 - INFO -   ✓ 下载成功: 0xadc45df3...
+2026-01-29 18:03:00,887 - INFO -   本地未找到 solc 0.5.7，尝试自动下载...
+2026-01-29 18:03:00,887 - INFO -   正在下载 solc 0.5.7...
+2026-01-29 18:03:01,261 - INFO -   合约未验证,尝试下载字节码: 0xD357e494...
+2026-01-29 18:03:01,415 - INFO -   ✓ 字节码下载成功: 0xD357e494... (大小: 5562 bytes)
+2026-01-29 18:03:01,472 - INFO -   ✓ solc 0.5.7 安装成功
+2026-01-29 18:03:01,472 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.7/solc-0.5.7, 优化=False, runs=200)
+2026-01-29 18:03:01,473 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-29 18:03:01,499 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:03:01,641 - INFO -   ✓ 下载成功: 0x8147b99d...
+2026-01-29 18:03:01,967 - INFO -   ✓ solc 0.5.7 安装成功
+2026-01-29 18:03:01,967 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.7/solc-0.5.7, 优化=False, runs=200)
+2026-01-29 18:03:01,967 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (2 项) - MainPool.sol -> ./AddrMInterface.sol; MainPool.sol -> ./SafeMath.sol
+2026-01-29 18:03:01,967 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:03:02,817 - INFO -   本地未找到 solc 0.8.27，尝试自动下载...
+2026-01-29 18:03:02,818 - INFO -   正在下载 solc 0.8.27...
+2026-01-29 18:03:03,102 - INFO -   合约未验证,尝试下载字节码: 0x49E298B9...
+2026-01-29 18:03:03,240 - INFO -   ✓ 字节码下载成功: 0x49E298B9... (大小: 3172 bytes)
+2026-01-29 18:03:03,755 - INFO -   本地未找到 solc 0.8.27，尝试自动下载...
+2026-01-29 18:03:03,755 - INFO -   正在下载 solc 0.8.27...
+2026-01-29 18:03:04,279 - INFO -   ✓ solc 0.8.27 安装成功
+2026-01-29 18:03:04,279 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.27/solc-0.8.27, 优化=True, runs=200)
+2026-01-29 18:03:04,296 - INFO -   本地依赖补全: 2 个文件
+2026-01-29 18:03:04,296 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (50 项) - lib/aave-v3-origin/src/contracts/protocol/tokenization/base/IncentivizedERC20.sol -> ../../../interfaces/IAaveIncentivesController.sol; lib/aave-v3-origin/src/contracts/protocol/tokenization/AToken.sol -> ../../interfaces/IInitializableAToken.sol; lib/aave-v3-origin/src/contracts/protocol/tokenization/AToken.sol -> ./base/ScaledBalanceTokenBase.sol
+2026-01-29 18:03:04,296 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:03:04,730 - INFO -   ↳ 实现合约下载成功
+2026-01-29 18:03:04,907 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.10/solc-0.8.10, 优化=True, runs=100000)
+2026-01-29 18:03:04,909 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (7 项) - @aave/core-v3/contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol -> ../../../dependencies/openzeppelin/upgradeability/InitializableUpgradeabilityProxy.sol; @aave/core-v3/contracts/dependencies/openzeppelin/upgradeability/InitializableUpgradeabilityProxy.sol -> ./BaseUpgradeabilityProxy.sol; @aave/core-v3/contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol -> ../../../dependencies/openzeppelin/upgradeability/Proxy.sol
+2026-01-29 18:03:04,910 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:03:05,313 - INFO -   ✓ solc 0.8.27 安装成功
+2026-01-29 18:03:05,313 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.27/solc-0.8.27, 优化=True, runs=200)
+2026-01-29 18:03:05,372 - INFO -   本地依赖补全: 2 个文件
+2026-01-29 18:03:05,372 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (197 项) - lib/aave-v3-origin/src/contracts/protocol/libraries/logic/BorrowLogic.sol -> ../configuration/ReserveConfiguration.sol; lib/aave-v3-origin/src/contracts/protocol/libraries/logic/LiquidationLogic.sol -> ./ReserveLogic.sol; lib/aave-v3-origin/src/contracts/interfaces/IInitializableDebtToken.sol -> ./IPool.sol
+2026-01-29 18:03:05,372 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:03:06,030 - INFO -   ↳ 实现合约下载成功
+2026-01-29 18:03:06,208 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.10/solc-0.8.10, 优化=True, runs=100000)
+2026-01-29 18:03:06,210 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (7 项) - @aave/core-v3/contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol -> ../../../dependencies/openzeppelin/upgradeability/InitializableUpgradeabilityProxy.sol; @aave/core-v3/contracts/dependencies/openzeppelin/upgradeability/InitializableUpgradeabilityProxy.sol -> ./BaseUpgradeabilityProxy.sol; @aave/core-v3/contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol -> ../../../dependencies/openzeppelin/upgradeability/Proxy.sol
+2026-01-29 18:03:06,211 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 18:03:06,646 - INFO -   源码下载完成, 耗时 14.47s
+2026-01-29 18:03:06,654 - INFO -   源码下载耗时: 15.10s
+2026-01-29 18:03:06,654 - INFO -   检测到 6 个实现合约，更新addresses.json
+2026-01-29 18:03:06,655 - INFO -   ADC_exp 总耗时: 175.17s
+2026-01-29 18:03:06,655 - INFO - 
+================================================================================
+2026-01-29 18:03:06,655 - INFO - 执行摘要
+2026-01-29 18:03:06,655 - INFO - ================================================================================
+2026-01-29 18:03:06,655 - INFO - 总脚本数:        1
+2026-01-29 18:03:06,655 - INFO - 成功:            1
+2026-01-29 18:03:06,655 - INFO - 失败:            0
+2026-01-29 18:03:06,656 - INFO - 总地址数:        16
+2026-01-29 18:03:06,656 - INFO - 已验证合约:      8
+2026-01-29 18:03:06,656 - INFO - 未验证合约:      0
+2026-01-29 18:03:06,656 - INFO -   └─ 仅字节码:   3
+2026-01-29 18:03:06,656 - INFO - API调用次数:     28
+2026-01-29 18:03:06,656 - INFO - 
+API Key并发统计:
+2026-01-29 18:03:06,656 - INFO -   etherscan:
+2026-01-29 18:03:06,656 - INFO -     Key数量: 5
+2026-01-29 18:03:06,656 - INFO -     总调用: 28
+2026-01-29 18:03:06,656 - INFO -     负载均衡: 最小=5, 最大=6, 平均=5.6
+2026-01-29 18:03:06,656 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-29 18:03:06,656 - INFO - ================================================================================
+2026-01-30 01:07:39,064 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-30 01:07:39,064 - INFO - 使用硬编码的API Keys配置
+2026-01-30 01:07:39,067 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-30 01:07:39,067 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-30 01:07:39,067 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-30 01:07:39,067 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-30 01:07:39,067 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-30 01:07:39,067 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-30 01:07:39,068 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:07:39,068 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:07:39,068 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:07:39,068 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:07:39,069 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:07:39,069 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:07:39,069 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:07:39,069 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-30 01:07:39,069 - INFO - OnChainDataFetcher初始化成功
+2026-01-30 01:07:39,069 - INFO - ================================================================================
+2026-01-30 01:07:39,069 - INFO - 开始提取DeFi攻击合约
+2026-01-30 01:07:39,069 - INFO - ================================================================================
+2026-01-30 01:07:39,072 - INFO - 找到 1 个测试脚本
+2026-01-30 01:07:39,072 - INFO - 
+[1/1] 处理: 2024-01/WiseLending02_exp
+2026-01-30 01:07:39,072 - INFO - 静态分析: WiseLending02_exp
+2026-01-30 01:07:39,075 - INFO -   静态提取到 9 个地址
+2026-01-30 01:07:39,075 - INFO -   静态分析耗时: 0.00s, 地址数: 9
+2026-01-30 01:07:39,075 - INFO - 动态分析: WiseLending02_exp
+2026-01-30 01:08:35,556 - INFO -   动态提取到 35 个地址
+2026-01-30 01:08:35,580 - INFO -   动态分析耗时: 56.50s, 地址数: 35
+2026-01-30 01:08:35,583 - INFO -   地址合并耗时: 0.00s
+2026-01-30 01:08:35,583 - INFO -   共提取到 39 个唯一地址
+2026-01-30 01:08:35,611 - INFO -   应用vm.label别名: 6 个
+2026-01-30 01:08:35,629 - INFO -   开始补全链上数据 (39个地址)...
+2026-01-30 01:08:35,696 - INFO - 开始批量获取 39 个合约信息 (chain=mainnet)
+2026-01-30 01:08:46,339 - WARNING - 获取合约名称超时 0xb90cf1d740b206b6d80854bc525e609dc42b45dc (尝试1/3)
+2026-01-30 01:08:46,340 - WARNING - 获取合约名称超时 0x91c49cc7fbfe8f70aceeb075952cd64817f9d82c (尝试1/3)
+2026-01-30 01:08:46,340 - WARNING - 获取合约名称超时 0xB40b073d7E47986D3A45Ca7Fd30772C25A2AD57f (尝试1/3)
+2026-01-30 01:08:46,340 - WARNING - 获取合约名称超时 0x37e49bf3749513a02fa535f0cbc383796e8107e4 (尝试1/3)
+2026-01-30 01:08:46,340 - WARNING - 获取合约名称超时 0xC374f7eC85F8C7DE3207a10bB1978bA104bdA3B2 (尝试1/3)
+2026-01-30 01:08:47,334 - WARNING - 获取合约名称超时 0x9aB8A49677a20fc0cC694479DF4462a82B4Cc1C4 (尝试1/3)
+2026-01-30 01:08:47,334 - WARNING - 获取合约名称超时 0x47D74516B33eD5D70ddE7119A40839f6Fcc24e57 (尝试1/3)
+2026-01-30 01:08:47,334 - WARNING - 获取合约名称超时 0xcbC72d92b2dc8187414F6734718563898740C0BC (尝试1/3)
+2026-01-30 01:08:47,334 - WARNING - 获取合约名称超时 0x829c3AE2e82760eCEaD0F384918a650F8a31Ba18 (尝试1/3)
+2026-01-30 01:08:47,334 - WARNING - 获取合约名称超时 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0 (尝试1/3)
+2026-01-30 01:08:47,334 - WARNING - 获取合约名称超时 0xf9f3C5CF66E23ED4ab82afD2cd04079e1a56A574 (尝试1/3)
+2026-01-30 01:08:47,334 - WARNING - 获取合约名称超时 0x32E0A7F7C4b1A19594d25bD9b63EBA912b1a5f61 (尝试1/3)
+2026-01-30 01:08:47,571 - WARNING - 获取合约名称错误 0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,579 - WARNING - 获取合约名称错误 0x27b1dAcd74688aF24a64BD3C9C1B143118740784: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,764 - WARNING - 获取合约名称错误 0x4f30A9D41B80ecC5B94306AB4364951AE3170210: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,767 - WARNING - 获取合约名称错误 0x7DBA84a0454289f8aB534d4c083D72e0C14a0F66: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,768 - WARNING - 获取合约名称错误 0xb8FFC3Cd6e7Cf5a098A1c92F48009765B24088Dc: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,769 - WARNING - 获取合约名称错误 0xCd87EDBb1eCF759162f4F0462CfdD2A913A96C7d: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,770 - WARNING - 获取合约名称错误 0x8cB1a0fD4b278d665cD22317b37f2FF4086b6A79: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,798 - WARNING - 获取合约名称错误 0xbbd487268A295531d299c125F3e5f749884A3e30: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,799 - WARNING - 获取合约名称错误 0x2b33CF282f867A7FF693A66e11B0FcC5552e4425: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,857 - WARNING - 获取合约名称错误 0xf8A8EAe0206D36B9ac87Eaa9A229047085aF0178: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,858 - WARNING - 获取合约名称错误 0xB40b073d7E47986D3A45Ca7Fd30772C25A2AD57f: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,942 - WARNING - 获取合约名称错误 0x808507121B80c02388fAd14726482e061B8da827: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,950 - WARNING - 获取合约名称错误 0xf3aBC972A0f537c1119C990d422463b93227Cd83: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,996 - WARNING - 获取合约名称错误 0x11A72DC6D320F1De830d17634ae6524403fD5f47: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,997 - WARNING - 获取合约名称错误 0x17144556fd3424EDC8Fc8A4C940B2D04936d17eb: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:47,999 - WARNING - 获取合约名称错误 0x02176d640657740539F70EEa98501EBBf1C10ecC: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,022 - WARNING - 获取合约名称错误 0x9229fe30c954F27AC5E7511ca00838A246ac25ed: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,071 - WARNING - 获取合约名称错误 0xC374f7eC85F8C7DE3207a10bB1978bA104bdA3B2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,102 - WARNING - 获取合约名称错误 0x37e49bf3749513a02fa535f0cbc383796e8107e4: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,106 - WARNING - 获取合约名称错误 0xb90cf1d740b206b6d80854bc525e609dc42b45dc: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,299 - WARNING - 获取合约名称错误 0x91c49cc7fbfe8f70aceeb075952cd64817f9d82c: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,663 - WARNING - 获取合约名称错误 0x32E0A7F7C4b1A19594d25bD9b63EBA912b1a5f61: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,878 - WARNING - 获取合约名称错误 0x47D74516B33eD5D70ddE7119A40839f6Fcc24e57: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,894 - WARNING - 获取合约名称错误 0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,906 - WARNING - 获取合约名称错误 0x27b1dAcd74688aF24a64BD3C9C1B143118740784: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:48,954 - WARNING - 获取合约名称错误 0xbbd487268A295531d299c125F3e5f749884A3e30: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,043 - WARNING - 获取合约名称错误 0xf9f3C5CF66E23ED4ab82afD2cd04079e1a56A574: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,044 - WARNING - 获取合约名称错误 0xcbC72d92b2dc8187414F6734718563898740C0BC: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,097 - WARNING - 获取合约名称错误 0x7DBA84a0454289f8aB534d4c083D72e0C14a0F66: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,099 - WARNING - 获取合约名称错误 0x9aB8A49677a20fc0cC694479DF4462a82B4Cc1C4: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,103 - WARNING - 获取合约名称错误 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,107 - WARNING - 获取合约名称错误 0x8cB1a0fD4b278d665cD22317b37f2FF4086b6A79: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,118 - WARNING - 获取合约名称错误 0xCd87EDBb1eCF759162f4F0462CfdD2A913A96C7d: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,258 - WARNING - 获取合约名称错误 0x37e49bf3749513a02fa535f0cbc383796e8107e4: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,290 - WARNING - 获取合约名称错误 0x829c3AE2e82760eCEaD0F384918a650F8a31Ba18: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,300 - WARNING - 获取合约名称错误 0xb8FFC3Cd6e7Cf5a098A1c92F48009765B24088Dc: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,304 - WARNING - 获取合约名称错误 0x4f30A9D41B80ecC5B94306AB4364951AE3170210: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,382 - WARNING - 获取合约名称错误 0xf8A8EAe0206D36B9ac87Eaa9A229047085aF0178: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,396 - WARNING - 获取合约名称错误 0xC374f7eC85F8C7DE3207a10bB1978bA104bdA3B2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,425 - WARNING - 获取合约名称错误 0x91c49cc7fbfe8f70aceeb075952cd64817f9d82c: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,430 - WARNING - 获取合约名称错误 0xB40b073d7E47986D3A45Ca7Fd30772C25A2AD57f: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,486 - WARNING - 获取合约名称错误 0x808507121B80c02388fAd14726482e061B8da827: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,506 - WARNING - 获取合约名称错误 0x11A72DC6D320F1De830d17634ae6524403fD5f47: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,519 - WARNING - 获取合约名称错误 0x02176d640657740539F70EEa98501EBBf1C10ecC: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,531 - WARNING - 获取合约名称错误 0x17144556fd3424EDC8Fc8A4C940B2D04936d17eb: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,545 - WARNING - 获取合约名称错误 0x2b33CF282f867A7FF693A66e11B0FcC5552e4425: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,671 - WARNING - 获取合约名称错误 0xf3aBC972A0f537c1119C990d422463b93227Cd83: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:49,821 - WARNING - 获取合约名称错误 0x9229fe30c954F27AC5E7511ca00838A246ac25ed: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,017 - WARNING - 获取合约名称错误 0x32E0A7F7C4b1A19594d25bD9b63EBA912b1a5f61: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,066 - WARNING - 获取合约名称错误 0xb90cf1d740b206b6d80854bc525e609dc42b45dc: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,207 - WARNING - 获取合约名称错误 0x9aB8A49677a20fc0cC694479DF4462a82B4Cc1C4: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,230 - WARNING - 获取合约名称错误 0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,332 - WARNING - 获取合约名称超时 0xc66aaaac03ae801ceea0787537ef653b38da54f2 (尝试1/3)
+2026-01-30 01:08:50,333 - WARNING - 获取合约名称超时 0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa (尝试1/3)
+2026-01-30 01:08:50,333 - WARNING - 获取合约名称超时 0x1e97b612c4a205592622401b7af208efaf898f72 (尝试1/3)
+2026-01-30 01:08:50,333 - WARNING - 获取合约名称超时 0x86392dC19c0b719886221c78AB11eb8Cf5c52812 (尝试1/3)
+2026-01-30 01:08:50,333 - WARNING - 获取合约名称超时 0x716BB759A5f6faCdfF91F0AfB613133d510e1573 (尝试1/3)
+2026-01-30 01:08:50,366 - WARNING - 获取合约名称错误 0xf9f3C5CF66E23ED4ab82afD2cd04079e1a56A574: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,460 - WARNING - 获取合约名称错误 0x8cB1a0fD4b278d665cD22317b37f2FF4086b6A79: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,591 - WARNING - 获取合约名称错误 0xcbC72d92b2dc8187414F6734718563898740C0BC: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,635 - WARNING - 获取合约名称错误 0xb8FFC3Cd6e7Cf5a098A1c92F48009765B24088Dc: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,640 - WARNING - 获取合约名称错误 0x7DBA84a0454289f8aB534d4c083D72e0C14a0F66: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,641 - WARNING - 获取合约名称错误 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,662 - WARNING - 获取合约名称错误 0x02176d640657740539F70EEa98501EBBf1C10ecC: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,664 - WARNING - 获取合约名称错误 0x829c3AE2e82760eCEaD0F384918a650F8a31Ba18: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,716 - WARNING - 获取合约名称错误 0xbbd487268A295531d299c125F3e5f749884A3e30: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,809 - WARNING - 获取合约名称错误 0x47D74516B33eD5D70ddE7119A40839f6Fcc24e57: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,825 - WARNING - 获取合约名称错误 0x11A72DC6D320F1De830d17634ae6524403fD5f47: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,867 - WARNING - 获取合约名称错误 0x17144556fd3424EDC8Fc8A4C940B2D04936d17eb: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:50,996 - WARNING - 获取合约名称错误 0x808507121B80c02388fAd14726482e061B8da827: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:51,001 - WARNING - 获取合约名称错误 0xf3aBC972A0f537c1119C990d422463b93227Cd83: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:51,053 - WARNING - 获取合约名称错误 0x2b33CF282f867A7FF693A66e11B0FcC5552e4425: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:51,053 - WARNING - 获取合约名称错误 0xCd87EDBb1eCF759162f4F0462CfdD2A913A96C7d: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:51,059 - WARNING - 获取合约名称错误 0x27b1dAcd74688aF24a64BD3C9C1B143118740784: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:51,062 - WARNING - 获取合约名称错误 0x4f30A9D41B80ecC5B94306AB4364951AE3170210: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:51,155 - WARNING - 获取合约名称错误 0xf8A8EAe0206D36B9ac87Eaa9A229047085aF0178: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:51,179 - WARNING - 获取合约名称错误 0x9229fe30c954F27AC5E7511ca00838A246ac25ed: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:51,333 - WARNING - 获取合约名称超时 0x3ca7c3e38968823ccb4c78ea688df41356f182ae (尝试1/3)
+2026-01-30 01:08:51,333 - WARNING - 获取合约名称超时 0x79f28dd1050dd16be59fc6358a6c5b7608afce58 (尝试1/3)
+2026-01-30 01:08:51,333 - WARNING - 获取合约名称超时 0xc7c0aDa69917a0f3652C45bA2D11206E42C4A430 (尝试1/3)
+2026-01-30 01:08:51,334 - WARNING - 获取合约名称超时 0xf1f3eb40f5bc1ad1344716ced8b8a0431d840b57 (尝试1/3)
+2026-01-30 01:08:52,864 - WARNING - 获取合约名称错误 0xf1f3eb40f5bc1ad1344716ced8b8a0431d840b57: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:54,415 - WARNING - 获取合约名称错误 0xf1f3eb40f5bc1ad1344716ced8b8a0431d840b57: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:57,349 - WARNING - 获取合约名称错误 0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:57,361 - WARNING - 获取合约名称错误 0x716BB759A5f6faCdfF91F0AfB613133d510e1573: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:58,124 - WARNING - 获取合约名称错误 0xc66aaaac03ae801ceea0787537ef653b38da54f2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:58,130 - WARNING - 获取合约名称错误 0xc7c0aDa69917a0f3652C45bA2D11206E42C4A430: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:58,279 - WARNING - 获取合约名称错误 0x79f28dd1050dd16be59fc6358a6c5b7608afce58: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:58,350 - WARNING - 获取合约名称错误 0x86392dC19c0b719886221c78AB11eb8Cf5c52812: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:58,510 - WARNING - 获取合约名称错误 0x716BB759A5f6faCdfF91F0AfB613133d510e1573: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:58,511 - WARNING - 获取合约名称错误 0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:58,547 - WARNING - 获取合约名称错误 0x1e97b612c4a205592622401b7af208efaf898f72: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:58,665 - WARNING - 获取合约名称错误 0x3ca7c3e38968823ccb4c78ea688df41356f182ae: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:59,292 - WARNING - 获取合约名称错误 0xc66aaaac03ae801ceea0787537ef653b38da54f2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:59,693 - WARNING - 获取合约名称错误 0xc7c0aDa69917a0f3652C45bA2D11206E42C4A430: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:59,780 - WARNING - 获取合约名称错误 0x86392dC19c0b719886221c78AB11eb8Cf5c52812: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:59,785 - WARNING - 获取合约名称错误 0x1e97b612c4a205592622401b7af208efaf898f72: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:59,791 - WARNING - 获取合约名称错误 0x79f28dd1050dd16be59fc6358a6c5b7608afce58: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:08:59,984 - WARNING - 获取合约名称错误 0x3ca7c3e38968823ccb4c78ea688df41356f182ae: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:09:00,986 - INFO - 批量获取完成: 39/39 成功, 耗时25.29秒
+2026-01-30 01:09:01,002 - INFO -   ✓ 链上数据补全完成: 39/39 个地址
+2026-01-30 01:09:01,002 - INFO -   链上数据补全耗时: 25.37s
+2026-01-30 01:09:01,003 - INFO -   保存地址耗时: 0.00s
+2026-01-30 01:09:01,004 - INFO -   批量预检查 39 个地址的合约存在性 (并发数: 10)...
+2026-01-30 01:09:02,284 - INFO -   ✓ 预检查完成: 30/39 个有效合约, 耗时 1.28秒
+2026-01-30 01:09:02,284 - INFO -   已过滤 9 个无效地址,剩余 30 个待下载
+2026-01-30 01:09:02,284 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-30 01:09:03,893 - INFO -   合约未验证,尝试下载字节码: 0x91c49cc7...
+2026-01-30 01:09:03,921 - INFO -   ✓ 下载成功: 0xB40b073d...
+2026-01-30 01:09:04,091 - INFO -   ✓ 下载成功: 0x37e49bf3...
+2026-01-30 01:09:04,095 - INFO -   ✓ 下载成功: 0x7f39C581...
+2026-01-30 01:09:04,198 - INFO -   ✓ 字节码下载成功: 0x91c49cc7... (大小: 24212 bytes)
+2026-01-30 01:09:04,502 - INFO -   ✓ 下载成功: 0xC374f7eC...
+2026-01-30 01:09:05,229 - INFO -   本地未找到 solc 0.8.23，尝试自动下载...
+2026-01-30 01:09:05,229 - INFO -   正在下载 solc 0.8.23...
+2026-01-30 01:09:05,477 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2026-01-30 01:09:05,498 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:09:05,605 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2026-01-30 01:09:05,672 - INFO -   本地未找到 solc 0.8.23，尝试自动下载...
+2026-01-30 01:09:05,672 - INFO -   正在下载 solc 0.8.23...
+2026-01-30 01:09:05,825 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=800)
+2026-01-30 01:09:05,843 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - contracts/pendle/contracts/core/RewardManager/RewardManagerAbstract.sol -> ../libraries/math/Math.sol; contracts/pendle/contracts/core/Market/PendleGauge.sol -> ../../interfaces/IPGauge.sol; contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../libraries/math/LogExpMath.sol
+2026-01-30 01:09:05,844 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:07,089 - INFO -   ✓ solc 0.8.23 安装成功
+2026-01-30 01:09:07,089 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:09:07,091 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (6 项) - contracts/TransferHub/CallOptionalReturn.sol -> ../InterfaceHub/IERC20.sol; contracts/TransferHub/TransferHelper.sol -> ./CallOptionalReturn.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmToken.sol -> ./SimpleERC20.sol
+2026-01-30 01:09:07,091 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:08,198 - WARNING -   svm安装失败: Error: IO error: not a terminal
+
+Caused by:
+    not a terminal
+2026-01-30 01:09:08,198 - INFO -   Immutable提取跳过: 未找到匹配solc (v0.8.23+commit.f704f362)
+2026-01-30 01:09:08,336 - INFO -   ✓ 下载成功: 0x9aB8A496...
+2026-01-30 01:09:08,691 - INFO -   ✓ 下载成功: 0x829c3AE2...
+2026-01-30 01:09:08,878 - INFO -   ✓ 下载成功: 0xf9f3C5CF...
+2026-01-30 01:09:08,993 - INFO -   ✓ 下载成功: 0x32E0A7F7...
+2026-01-30 01:09:09,627 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:10,365 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:10,368 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:10,519 - INFO -   ✓ 下载成功: 0xcbC72d92...
+2026-01-30 01:09:10,680 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:11,524 - INFO -   ✓ 下载成功: 0x47D74516...
+2026-01-30 01:09:11,815 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xef5579f4...
+2026-01-30 01:09:11,816 - INFO -   ↳ 开始下载实现合约...
+2026-01-30 01:09:11,921 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:09:11,929 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (29 项) - @openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol -> ../../../utils/cryptography/draft-EIP712.sol; @openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol -> ../IERC20.sol (pragma mismatch); contracts/pendle/contracts/core/StandardizedYield/implementations/PendleWstEthSY.sol -> ../../../interfaces/IStETH.sol
+2026-01-30 01:09:11,929 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:12,606 - INFO -   ✓ 下载成功: 0x80850712...
+2026-01-30 01:09:12,768 - INFO -   ✓ 下载成功: 0x27b1dAcd...
+2026-01-30 01:09:12,784 - INFO -   ✓ 下载成功: 0x11A72DC6...
+2026-01-30 01:09:13,777 - INFO -   ✓ 下载成功: 0xef5579f4...
+2026-01-30 01:09:13,974 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-30 01:09:13,976 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (12 项) - PENDLE.sol -> ./SafeMath.sol; Withdrawable.sol -> ./SafeERC20.sol; Permissions.sol -> ./IERC20.sol
+2026-01-30 01:09:13,976 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:14,055 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:14,106 - INFO -   ✓ 下载成功: 0x4f30A9D4...
+2026-01-30 01:09:14,131 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:09:14,140 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (25 项) - contracts/pendle/contracts/core/Market/PendleMarketFactory.sol -> ../../interfaces/IPMarket.sol; contracts/pendle/contracts/core/Market/PendleMarketFactory.sol -> ../libraries/BoringOwnableUpgradeable.sol; contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../libraries/math/LogExpMath.sol
+2026-01-30 01:09:14,140 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:15,173 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.33/solc-0.8.33, 优化=True, runs=1000000)
+2026-01-30 01:09:15,206 - INFO -   本地依赖补全: 10 个文件
+2026-01-30 01:09:15,206 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (36 项) - node_modules/@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol -> ../../utils/StorageSlot.sol; lib/pendle-core-v2/contracts/interfaces/IPMarket.sol -> ./IStandardizedYield.sol; lib/pendle-core-v2/contracts/LiquidityMining/GaugeController/PendleGaugeControllerUpg.sol -> ../../core/libraries/math/PMath.sol
+2026-01-30 01:09:15,206 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:15,523 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:09:15,529 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (26 项) - contracts/pendle/contracts/LiquidityMining/VotingEscrow/VotingEscrowPendleMainchain.sol -> ../../core/libraries/Errors.sol; contracts/pendle/contracts/LiquidityMining/VotingEscrow/VotingEscrowPendleMainchain.sol -> ../../core/libraries/MiniHelpers.sol; contracts/pendle/contracts/LiquidityMining/VotingEscrow/VotingEscrowPendleMainchain.sol -> ../libraries/VeHistoryLib.sol
+2026-01-30 01:09:15,529 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:15,715 - INFO -   ↳ 实现合约下载成功
+2026-01-30 01:09:15,828 - INFO -   ✓ 下载成功: 0xCd87EDBb...
+2026-01-30 01:09:15,842 - INFO -   ✓ 下载成功: 0x7DBA84a0...
+2026-01-30 01:09:15,899 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:09:15,903 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (6 项) - @openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol -> ../Proxy.sol (pragma mismatch); @openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol -> ../../utils/StorageSlot.sol (pragma mismatch); @openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol -> ./ERC1967Upgrade.sol
+2026-01-30 01:09:15,903 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:16,148 - INFO -   ✓ 下载成功: 0xf8A8EAe0...
+2026-01-30 01:09:17,095 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:17,112 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:17,431 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:17,984 - INFO -   ✓ 下载成功: 0x9229fe30...
+2026-01-30 01:09:17,985 - INFO -   ✓ 下载成功: 0x8cB1a0fD...
+2026-01-30 01:09:19,242 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:19,271 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:19,329 - INFO -   ✓ 下载成功: 0xae7ab965...
+2026-01-30 01:09:19,647 - INFO -   ✓ 下载成功: 0xbbd48726...
+2026-01-30 01:09:19,738 - INFO -   ✓ 下载成功: 0xb8FFC3Cd...
+2026-01-30 01:09:20,706 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:09:20,718 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:09:20,751 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:20,974 - INFO -   Immutable提取跳过: solc版本已标记不可用 (v0.8.23+commit.f704f362)
+2026-01-30 01:09:21,148 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:09:21,151 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:09:21,179 - INFO -   ✓ 下载成功: 0x2b33CF28...
+2026-01-30 01:09:21,471 - INFO -   ✓ 下载成功: 0x17144556...
+2026-01-30 01:09:21,660 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:22,489 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:09:22,491 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:09:22,660 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:22,749 - INFO -   ✓ 下载成功: 0xf3aBC972...
+2026-01-30 01:09:22,768 - INFO -   ✓ 下载成功: 0x02176d64...
+2026-01-30 01:09:22,837 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2026-01-30 01:09:22,846 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - contracts/0.4.24/Lido.sol -> ../common/interfaces/IBurner.sol; contracts/0.4.24/StETH.sol -> openzeppelin-solidity/contracts/token/ERC20/IERC20.sol; @aragon/os/contracts/apps/AppStorage.sol -> ../kernel/IKernel.sol
+2026-01-30 01:09:22,846 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:23,481 - INFO -   ✓ 下载成功: 0x86392dC1...
+2026-01-30 01:09:24,075 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=24500)
+2026-01-30 01:09:24,087 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (41 项) - contracts/pendle/contracts/core/YieldContracts/PendleYieldToken.sol -> ../../interfaces/IPYieldToken.sol; contracts/pendle/contracts/core/YieldContracts/InterestManagerYT.sol -> ../libraries/TokenHelper.sol; contracts/pendle/contracts/core/RewardManager/RewardManagerAbstract.sol -> ../libraries/math/Math.sol
+2026-01-30 01:09:24,087 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:24,158 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:09:24,159 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (1 项) - contracts/pendle/contracts/core/Market/OracleLib.sol -> ../libraries/Errors.sol
+2026-01-30 01:09:24,159 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:24,601 - INFO -   ✓ 下载成功: 0x716BB759...
+2026-01-30 01:09:24,861 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.6/solc-0.6.6, 优化=True, runs=1000000)
+2026-01-30 01:09:24,880 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:09:24,982 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:25,599 - INFO -   ✓ 下载成功: 0x109830a1...
+2026-01-30 01:09:25,972 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=20000)
+2026-01-30 01:09:25,976 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (22 项) - contract/src/AccessControlledOffchainAggregator.sol -> ./SimpleReadAccessController.sol; contract/src/OffchainAggregator.sol -> ./AggregatorValidatorInterface.sol; contract/src/AggregatorV2V3Interface.sol -> ./AggregatorInterface.sol
+2026-01-30 01:09:25,976 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:26,998 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2026-01-30 01:09:27,005 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (43 项) - contracts/libraries/Tick.sol -> ./LiquidityMath.sol; contracts/UniswapV3Pool.sol -> ./libraries/LiquidityMath.sol; contracts/UniswapV3Pool.sol -> ./interfaces/callback/IUniswapV3FlashCallback.sol
+2026-01-30 01:09:27,005 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:09:27,749 - INFO -   源码下载完成, 耗时 25.46s
+2026-01-30 01:09:27,751 - INFO -   源码下载耗时: 26.75s
+2026-01-30 01:09:27,751 - INFO -   检测到 3 个实现合约，更新addresses.json
+2026-01-30 01:09:27,752 - INFO -   WiseLending02_exp 总耗时: 108.68s
+2026-01-30 01:09:27,753 - INFO - 
+================================================================================
+2026-01-30 01:09:27,753 - INFO - 执行摘要
+2026-01-30 01:09:27,753 - INFO - ================================================================================
+2026-01-30 01:09:27,753 - INFO - 总脚本数:        1
+2026-01-30 01:09:27,753 - INFO - 成功:            1
+2026-01-30 01:09:27,753 - INFO - 失败:            0
+2026-01-30 01:09:27,753 - INFO - 总地址数:        39
+2026-01-30 01:09:27,753 - INFO - 已验证合约:      29
+2026-01-30 01:09:27,753 - INFO - 未验证合约:      0
+2026-01-30 01:09:27,753 - INFO -   └─ 仅字节码:   1
+2026-01-30 01:09:27,753 - INFO - API调用次数:     62
+2026-01-30 01:09:27,753 - INFO - 
+API Key并发统计:
+2026-01-30 01:09:27,753 - INFO -   etherscan:
+2026-01-30 01:09:27,753 - INFO -     Key数量: 5
+2026-01-30 01:09:27,753 - INFO -     总调用: 62
+2026-01-30 01:09:27,753 - INFO -     负载均衡: 最小=11, 最大=14, 平均=12.4
+2026-01-30 01:09:27,753 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-30 01:09:27,753 - INFO - ================================================================================
+2026-01-30 01:14:02,937 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-30 01:14:02,937 - INFO - 使用硬编码的API Keys配置
+2026-01-30 01:14:02,940 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-30 01:14:02,940 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-30 01:14:02,941 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-30 01:14:02,941 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-30 01:14:02,941 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-30 01:14:02,941 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-30 01:14:02,941 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:14:02,941 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:14:02,942 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:14:02,942 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:14:02,942 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:14:02,942 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:14:02,943 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:14:02,943 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-30 01:14:02,943 - INFO - OnChainDataFetcher初始化成功
+2026-01-30 01:14:02,943 - INFO - ================================================================================
+2026-01-30 01:14:02,943 - INFO - 开始提取DeFi攻击合约
+2026-01-30 01:14:02,943 - INFO - ================================================================================
+2026-01-30 01:14:02,945 - INFO - 找到 1 个测试脚本
+2026-01-30 01:14:02,945 - INFO - 
+[1/1] 处理: 2024-01/WiseLending02_exp
+2026-01-30 01:14:02,945 - INFO - 静态分析: WiseLending02_exp
+2026-01-30 01:14:02,948 - INFO -   静态提取到 9 个地址
+2026-01-30 01:14:02,949 - INFO -   静态分析耗时: 0.00s, 地址数: 9
+2026-01-30 01:14:02,949 - INFO - 动态分析: WiseLending02_exp
+2026-01-30 01:14:51,706 - INFO -   动态提取到 35 个地址
+2026-01-30 01:14:51,722 - INFO -   动态分析耗时: 48.35s, 地址数: 35
+2026-01-30 01:14:51,723 - INFO -   地址合并耗时: 0.00s
+2026-01-30 01:14:51,723 - INFO -   共提取到 39 个唯一地址
+2026-01-30 01:14:51,741 - INFO -   应用vm.label别名: 6 个
+2026-01-30 01:14:51,754 - INFO -   开始补全链上数据 (39个地址)...
+2026-01-30 01:14:51,793 - INFO - 开始批量获取 39 个合约信息 (chain=mainnet)
+2026-01-30 01:14:51,818 - INFO - 批量获取完成: 39/39 成功, 耗时0.02秒
+2026-01-30 01:14:51,825 - INFO -   ✓ 链上数据补全完成: 39/39 个地址
+2026-01-30 01:14:51,826 - INFO -   链上数据补全耗时: 0.07s
+2026-01-30 01:14:51,830 - INFO -   保存地址耗时: 0.00s
+2026-01-30 01:14:51,832 - INFO -   批量预检查 39 个地址的合约存在性 (并发数: 10)...
+2026-01-30 01:14:53,408 - INFO -   ✓ 预检查完成: 29/39 个有效合约, 耗时 1.58秒
+2026-01-30 01:14:53,409 - INFO -   已过滤 10 个无效地址,剩余 29 个待下载
+2026-01-30 01:14:53,409 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-30 01:14:54,700 - INFO -   合约未验证,尝试下载字节码: 0x91c49cc7...
+2026-01-30 01:14:54,727 - INFO -   ✓ 下载成功: 0xB40b073d...
+2026-01-30 01:14:54,880 - INFO -   ✓ 下载成功: 0x37e49bf3...
+2026-01-30 01:14:54,885 - INFO -   ✓ 下载成功: 0x7f39C581...
+2026-01-30 01:14:54,984 - INFO -   ✓ 字节码下载成功: 0x91c49cc7... (大小: 24212 bytes)
+2026-01-30 01:14:55,120 - INFO -   ✓ 下载成功: 0xC374f7eC...
+2026-01-30 01:14:56,042 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:14:56,047 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (6 项) - contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmToken.sol -> ../../TransferHub/TransferHelper.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmToken.sol -> ../../InterfaceHub/IPendle.sol; contracts/TransferHub/CallOptionalReturn.sol -> ../InterfaceHub/IERC20.sol
+2026-01-30 01:14:56,047 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:14:56,246 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=280)
+2026-01-30 01:14:56,249 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (17 项) - contracts/WiseLendingDeclaration.sol -> ./InterfaceHub/IWiseSecurity.sol; contracts/InterfaceHub/IWETH.sol -> ./IERC20.sol; contracts/WiseLending.sol -> ./PoolManager.sol
+2026-01-30 01:14:56,249 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:14:56,458 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=800)
+2026-01-30 01:14:56,459 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2026-01-30 01:14:56,482 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPPrincipalToken.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPYieldToken.sol; contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../StandardizedYield/PYIndex.sol
+2026-01-30 01:14:56,482 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:14:56,486 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:14:56,610 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2026-01-30 01:14:58,679 - INFO -   ✓ 下载成功: 0x9aB8A496...
+2026-01-30 01:14:59,246 - INFO -   ✓ 下载成功: 0xf9f3C5CF...
+2026-01-30 01:14:59,273 - INFO -   ✓ 下载成功: 0x829c3AE2...
+2026-01-30 01:14:59,385 - INFO -   ✓ 下载成功: 0x32E0A7F7...
+2026-01-30 01:14:59,505 - INFO -   ✓ 下载成功: 0xcbC72d92...
+2026-01-30 01:15:00,048 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=999999)
+2026-01-30 01:15:00,049 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (2 项) - contracts/DerivativeOracles/WstETHOracle.sol -> ../InterfaceHub/IPriceFeed.sol; contracts/DerivativeOracles/WstETHOracle.sol -> ../InterfaceHub/IWstETH.sol
+2026-01-30 01:15:00,049 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:00,551 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200)
+2026-01-30 01:15:00,554 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (12 项) - contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmControllerBase.sol -> ../../TransferHub/TransferHelper.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmControllerHelper.sol -> ./PendlePowerFarmControllerBase.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmControllerBase.sol -> ../../InterfaceHub/IPendlePowerFarmToken.sol
+2026-01-30 01:15:00,554 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:00,695 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:15:00,721 - INFO -   本地依赖补全: 19 个文件
+2026-01-30 01:15:00,721 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (16 项) - node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol -> ../ERC721.sol; node_modules/@openzeppelin/contracts/utils/Strings.sol -> ./math/Math.sol; contracts/PositionNFTs.sol -> ./OwnableMaster.sol
+2026-01-30 01:15:00,721 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:00,813 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=3456)
+2026-01-30 01:15:00,819 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (28 项) - contracts/FeeManager/DeclarationsFeeManager.sol -> ../InterfaceHub/IERC20.sol; contracts/TransferHub/CallOptionalReturn.sol -> ../InterfaceHub/IERC20.sol; contracts/FeeManager/FeeManagerHelper.sol -> ./DeclarationsFeeManager.sol
+2026-01-30 01:15:00,819 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:00,887 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:15:00,895 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (29 项) - contracts/pendle/contracts/core/StandardizedYield/implementations/PendleWstEthSY.sol -> ../../../interfaces/IWETH.sol; contracts/pendle/contracts/core/StandardizedYield/SYBase.sol -> ../libraries/math/Math.sol; @openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol -> ../extensions/draft-IERC20Permit.sol
+2026-01-30 01:15:00,895 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:01,687 - INFO -   ✓ 下载成功: 0x47D74516...
+2026-01-30 01:15:01,960 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xef5579f4...
+2026-01-30 01:15:01,962 - INFO -   ↳ 开始下载实现合约...
+2026-01-30 01:15:02,732 - INFO -   ✓ 下载成功: 0x27b1dAcd...
+2026-01-30 01:15:02,775 - INFO -   ✓ 下载成功: 0x80850712...
+2026-01-30 01:15:02,926 - INFO -   ✓ 下载成功: 0x11A72DC6...
+2026-01-30 01:15:03,056 - INFO -   ✓ 下载成功: 0x4f30A9D4...
+2026-01-30 01:15:03,699 - INFO -   ✓ 下载成功: 0xef5579f4...
+2026-01-30 01:15:04,091 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-30 01:15:04,093 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (12 项) - PENDLE.sol -> ./IPENDLE.sol; SafeERC20.sol -> ./SafeMath.sol; Permissions.sol -> ./IERC20.sol
+2026-01-30 01:15:04,093 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:04,124 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:15:04,133 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (25 项) - contracts/pendle/contracts/core/Market/PendleMarketFactory.sol -> ../../interfaces/IPMarketFactory.sol; contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPPrincipalToken.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPYieldToken.sol
+2026-01-30 01:15:04,133 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:04,312 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=1000000)
+2026-01-30 01:15:04,338 - INFO -   本地依赖补全: 12 个文件
+2026-01-30 01:15:04,338 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (29 项) - contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPPrincipalToken.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPYieldToken.sol; contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../StandardizedYield/PYIndex.sol
+2026-01-30 01:15:04,338 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:04,436 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:15:04,441 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (26 项) - contracts/pendle/contracts/LiquidityMining/CrossChainMsg/PendleMsgSenderAppUpg.sol -> ../../core/libraries/Errors.sol; contracts/pendle/contracts/LiquidityMining/libraries/VeBalanceLib.sol -> ../../core/libraries/math/Math.sol; contracts/pendle/contracts/LiquidityMining/VotingEscrow/VotingEscrowPendleMainchain.sol -> ./VotingEscrowTokenBase.sol
+2026-01-30 01:15:04,441 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:05,057 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.33/solc-0.8.33, 优化=True, runs=1000000)
+2026-01-30 01:15:05,079 - INFO -   本地依赖补全: 10 个文件
+2026-01-30 01:15:05,079 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (36 项) - lib/pendle-core-v2/contracts/core/Market/MarketMathCore.sol -> ../libraries/math/LogExpMath.sol; node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol -> ../../../utils/Address.sol; node_modules/@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol -> ../beacon/IBeacon.sol
+2026-01-30 01:15:05,079 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:05,516 - INFO -   ↳ 实现合约下载成功
+2026-01-30 01:15:05,715 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:15:05,717 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (6 项) - @openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol -> ./ERC1967Upgrade.sol; @openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol -> ../Proxy.sol (pragma mismatch); @openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol -> ../../interfaces/draft-IERC1822.sol (pragma mismatch)
+2026-01-30 01:15:05,717 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:05,762 - INFO -   ✓ 下载成功: 0xCd87EDBb...
+2026-01-30 01:15:06,058 - INFO -   ✓ 下载成功: 0x7DBA84a0...
+2026-01-30 01:15:06,059 - INFO -   ✓ 下载成功: 0xf8A8EAe0...
+2026-01-30 01:15:06,078 - INFO -   ✓ 下载成功: 0x9229fe30...
+2026-01-30 01:15:07,140 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=23456)
+2026-01-30 01:15:07,143 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (15 项) - contracts/InterfaceHub/IWETH.sol -> ./IERC20.sol; contracts/WrapperHub/Declarations.sol -> ../InterfaceHub/IPositionNFTs.sol; contracts/WrapperHub/Declarations.sol -> ./AaveEvents.sol
+2026-01-30 01:15:07,143 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:07,498 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:15:07,500 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:15:07,505 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (11 项) - contracts/WiseOracleHub/Declarations.sol -> ./Libraries/IUniswapV3Factory.sol; contracts/WiseOracleHub/Declarations.sol -> ../InterfaceHub/IPriceFeed.sol; contracts/WiseOracleHub/Libraries/OracleLibrary.sol -> ./TickMath.sol
+2026-01-30 01:15:07,505 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (3 项) - contracts/DerivativeOracles/PendleChildLpOracle.sol -> ../InterfaceHub/IPendle.sol; contracts/DerivativeOracles/PendleChildLpOracle.sol -> ./CustomOracleSetup.sol; contracts/DerivativeOracles/PendleChildLpOracle.sol -> ../InterfaceHub/IPriceFeed.sol
+2026-01-30 01:15:07,505 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:07,505 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:07,515 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:15:07,594 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:07,622 - INFO -   ✓ 下载成功: 0xbbd48726...
+2026-01-30 01:15:08,838 - INFO -   ✓ 下载成功: 0xae7ab965...
+2026-01-30 01:15:09,033 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=1000000)
+2026-01-30 01:15:09,042 - INFO -   本地依赖补全: 1 个文件
+2026-01-30 01:15:09,042 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (23 项) - contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPPrincipalToken.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPYieldToken.sol; contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../StandardizedYield/PYIndex.sol
+2026-01-30 01:15:09,042 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:09,422 - INFO -   ✓ 下载成功: 0xb8FFC3Cd...
+2026-01-30 01:15:09,444 - INFO -   ✓ 下载成功: 0x2b33CF28...
+2026-01-30 01:15:09,798 - INFO -   ✓ 下载成功: 0x17144556...
+2026-01-30 01:15:10,155 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:15:10,169 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:15:10,203 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:10,798 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:15:10,800 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:15:10,829 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:15:10,832 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:15:10,961 - INFO -   ✓ 下载成功: 0xf3aBC972...
+2026-01-30 01:15:10,986 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:11,154 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2026-01-30 01:15:11,164 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - @aragon/os/contracts/evmscript/EVMScriptRunner.sol -> ./IEVMScriptExecutor.sol; @aragon/os/contracts/common/VaultRecoverable.sol -> ./EtherTokenConstant.sol; @aragon/os/contracts/evmscript/IEVMScriptRegistry.sol -> ./IEVMScriptExecutor.sol
+2026-01-30 01:15:11,164 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:11,357 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:11,931 - INFO -   ✓ 下载成功: 0x02176d64...
+2026-01-30 01:15:12,260 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=24500)
+2026-01-30 01:15:12,269 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (41 项) - contracts/pendle/contracts/core/YieldContracts/PendleYieldToken.sol -> ../StandardizedYield/SYUtils.sol; contracts/pendle/contracts/core/YieldContracts/PendleYieldToken.sol -> ../erc20/PendleERC20Permit.sol; contracts/pendle/contracts/core/YieldContracts/InterestManagerYT.sol -> ../../interfaces/IPYieldContractFactory.sol
+2026-01-30 01:15:12,269 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:12,666 - INFO -   ✓ 下载成功: 0x86392dC1...
+2026-01-30 01:15:13,288 - INFO -   ✓ 下载成功: 0x716BB759...
+2026-01-30 01:15:13,331 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:15:13,332 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (1 项) - contracts/pendle/contracts/core/Market/OracleLib.sol -> ../libraries/Errors.sol
+2026-01-30 01:15:13,332 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:13,646 - INFO -   ✓ 下载成功: 0x109830a1...
+2026-01-30 01:15:14,082 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.6/solc-0.6.6, 优化=True, runs=1000000)
+2026-01-30 01:15:14,105 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:15:14,202 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:14,709 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=20000)
+2026-01-30 01:15:14,713 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (22 项) - contract/src/OffchainAggregatorBilling.sol -> ./Owned.sol; contract/src/TestOffchainAggregator.sol -> ./AccessControlTestHelper.sol; contract/src/TestValidator.sol -> ./AggregatorValidatorInterface.sol
+2026-01-30 01:15:14,713 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:15,000 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2026-01-30 01:15:15,008 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (43 项) - contracts/UniswapV3Pool.sol -> ./libraries/FixedPoint128.sol; contracts/libraries/SqrtPriceMath.sol -> ./UnsafeMath.sol; contracts/libraries/Position.sol -> ./LiquidityMath.sol
+2026-01-30 01:15:15,008 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:15:15,708 - INFO -   源码下载完成, 耗时 22.30s
+2026-01-30 01:15:15,711 - INFO -   源码下载耗时: 23.88s
+2026-01-30 01:15:15,711 - INFO -   检测到 3 个实现合约，更新addresses.json
+2026-01-30 01:15:15,712 - INFO -   WiseLending02_exp 总耗时: 72.34s
+2026-01-30 01:15:15,712 - INFO - 
+================================================================================
+2026-01-30 01:15:15,712 - INFO - 执行摘要
+2026-01-30 01:15:15,712 - INFO - ================================================================================
+2026-01-30 01:15:15,712 - INFO - 总脚本数:        1
+2026-01-30 01:15:15,712 - INFO - 成功:            1
+2026-01-30 01:15:15,712 - INFO - 失败:            0
+2026-01-30 01:15:15,712 - INFO - 总地址数:        39
+2026-01-30 01:15:15,712 - INFO - 已验证合约:      28
+2026-01-30 01:15:15,712 - INFO - 未验证合约:      0
+2026-01-30 01:15:15,712 - INFO -   └─ 仅字节码:   1
+2026-01-30 01:15:15,713 - INFO - API调用次数:     60
+2026-01-30 01:15:15,713 - INFO - 
+API Key并发统计:
+2026-01-30 01:15:15,713 - INFO -   etherscan:
+2026-01-30 01:15:15,713 - INFO -     Key数量: 5
+2026-01-30 01:15:15,713 - INFO -     总调用: 60
+2026-01-30 01:15:15,713 - INFO -     负载均衡: 最小=10, 最大=14, 平均=12.0
+2026-01-30 01:15:15,713 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-30 01:15:15,713 - INFO - ================================================================================
+2026-01-30 01:15:50,242 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-30 01:15:50,242 - INFO - 使用硬编码的API Keys配置
+2026-01-30 01:15:50,246 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-30 01:15:50,246 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-30 01:15:50,247 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-30 01:15:50,247 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-30 01:15:50,247 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-30 01:15:50,247 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-30 01:15:50,248 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:15:50,248 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:15:50,248 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:15:50,248 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:15:50,249 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:15:50,249 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:15:50,249 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:15:50,249 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-30 01:15:50,249 - INFO - OnChainDataFetcher初始化成功
+2026-01-30 01:15:50,249 - INFO - ================================================================================
+2026-01-30 01:15:50,249 - INFO - 开始提取DeFi攻击合约
+2026-01-30 01:15:50,249 - INFO - ================================================================================
+2026-01-30 01:15:50,252 - INFO - 找到 1 个测试脚本
+2026-01-30 01:15:50,252 - INFO - 
+[1/1] 处理: 2024-01/WiseLending03_exp
+2026-01-30 01:15:50,252 - INFO - 静态分析: WiseLending03_exp
+2026-01-30 01:15:50,257 - INFO -   静态提取到 8 个地址
+2026-01-30 01:15:50,257 - INFO -   静态分析耗时: 0.01s, 地址数: 8
+2026-01-30 01:15:50,257 - INFO - 动态分析: WiseLending03_exp
+2026-01-30 01:17:04,511 - WARNING -   测试返回非零状态码: 1
+2026-01-30 01:17:04,531 - WARNING -   forge 输出:
+No files changed, compilation skipped
+[2m2026-01-29T17:16:45.912361Z[0m [31mERROR[0m [2msharedbackend[0m[2m:[0m Failed to send/recv `storage` [3merr[0m[2m=[0mfailed to get storage for 0x37e49bf3749513A02FA535F0CbC383796E8107E4 at 31484946736075607831835083184584286636382100050220918860102298202899478708090: HTTP error 500 with body: {"id":288,"jsonrpc":"2.0","error":{"message":"Temporary internal error. Please retry, trace-id: 0486df4443ded0dd697b28030f285292","code":19}} [3maddress[0m[2m=[0m0x37e49bf3749513A02FA535F0CbC383796E8107E4 [3mindex[0m[2m=[0m31484946736075607831835083184584286636382100050220918860102298202899478708090
+
+Ran 1 test for src/test/2024-01/WiseLending03_exp.sol:WiseLending
+[FAIL: EVM error; database error: failed to get storage for 0x37e49bf3749513A02FA535F0CbC383796E8107E4 at 31484946736075607831835083184584286636382100050220918860102298202899478708090: HTTP error 500 with body: {"id":288,"jsonrpc":"2.0","error":{"message":"Temporary internal error. Please retry, trace-id: 0486df4443ded0dd697b28030f285292","code":19}}] testExploit() (gas: 0)
+Traces:
+  [20521] WiseLending::setUp()
+    ├─ [0] VM::label(PendleLPT: [0xC374f7eC85F8C7DE3207a10bB1978bA104bdA3B2], "PendleLPT")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(LPTPoolToken: [0xB40b073d7E47986D3A45Ca7Fd30772C25A2AD57f], "LPTPoolToken")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(wiseLending: [0x37e49bf3749513A02FA535F0CbC383796E8107E4], "wiseLending")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(wstETH: [0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0], "wstETH")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(WETH: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], "WETH")
+    │   └─ ← [Return]
+    ├─ [0] VM::label(PositionNFTs: [0x32E0A7F7C4b1A19594d25bD9b63EBA912b1a5f61], "PositionNFTs")
+    │   └─ ← [Return]
+    ├─ [0] VM::createSelectFork("mainnet", 18992907 [1.899e7])
+    │   └─ ← [Return] 0
+    └─ ← [Stop]
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 23.86s (23.40s CPU time)
+
+Ran 1 test suite in 23.87s (23.86s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/test/2024-01/WiseLending03_exp.sol:WiseLending
+[FAIL: EVM error; database error: failed to get storage for 0x37e49bf3749513A02FA535F0CbC383796E8107E4 at 31484946736075607831835083184584286636382100050220918860102298202899478708090: HTTP error 500 with body: {"id":288,"jsonrpc":"2.0","error":{"message":"Temporary internal error. Please retry, trace-id: 0486df4443ded0dd697b28030f285292","code":19}}] testExploit() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+2026-01-30 01:17:04,542 - INFO -   动态提取到 6 个地址
+2026-01-30 01:17:04,544 - INFO -   动态分析耗时: 73.89s, 地址数: 6
+2026-01-30 01:17:04,546 - INFO -   地址合并耗时: 0.00s
+2026-01-30 01:17:04,546 - INFO -   共提取到 8 个唯一地址
+2026-01-30 01:17:04,573 - INFO -   应用vm.label别名: 1 个
+2026-01-30 01:17:04,590 - INFO -   开始补全链上数据 (8个地址)...
+2026-01-30 01:17:04,648 - INFO - 开始批量获取 8 个合约信息 (chain=mainnet)
+2026-01-30 01:17:04,666 - INFO - 批量获取完成: 8/8 成功, 耗时0.02秒
+2026-01-30 01:17:04,678 - INFO -   ✓ 链上数据补全完成: 8/8 个地址
+2026-01-30 01:17:04,678 - INFO -   链上数据补全耗时: 0.09s
+2026-01-30 01:17:04,684 - INFO -   保存地址耗时: 0.01s
+2026-01-30 01:17:04,686 - INFO -   批量预检查 8 个地址的合约存在性 (并发数: 10)...
+2026-01-30 01:17:05,237 - INFO -   ✓ 预检查完成: 7/8 个有效合约, 耗时 0.55秒
+2026-01-30 01:17:05,237 - INFO -   已过滤 1 个无效地址,剩余 7 个待下载
+2026-01-30 01:17:05,238 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-30 01:17:06,504 - INFO -   ✓ 下载成功: 0xB40b073d...
+2026-01-30 01:17:06,564 - INFO -   合约未验证,尝试下载字节码: 0x91c49cc7...
+2026-01-30 01:17:06,727 - INFO -   ✓ 下载成功: 0x7f39C581...
+2026-01-30 01:17:06,777 - INFO -   ✓ 下载成功: 0x37e49bf3...
+2026-01-30 01:17:06,849 - INFO -   ✓ 字节码下载成功: 0x91c49cc7... (大小: 24212 bytes)
+2026-01-30 01:17:07,048 - INFO -   ✓ 下载成功: 0xC374f7eC...
+2026-01-30 01:17:07,874 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:17:07,879 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (6 项) - contracts/TransferHub/TransferHelper.sol -> ./CallOptionalReturn.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmToken.sol -> ./SimpleERC20.sol; contracts/TransferHub/CallOptionalReturn.sol -> ../InterfaceHub/IERC20.sol
+2026-01-30 01:17:07,880 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:17:08,169 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2026-01-30 01:17:08,181 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=280)
+2026-01-30 01:17:08,185 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (17 项) - contracts/WiseLendingDeclaration.sol -> ./InterfaceHub/IFeeManagerLight.sol; contracts/WiseLendingDeclaration.sol -> ./OwnableMaster.sol; contracts/PoolManager.sol -> ./WiseCore.sol
+2026-01-30 01:17:08,185 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:17:08,194 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:17:08,296 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2026-01-30 01:17:08,446 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=800)
+2026-01-30 01:17:08,464 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../StandardizedYield/PYIndex.sol; contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../libraries/MiniHelpers.sol; @openzeppelin/contracts/token/ERC20/ERC20.sol -> ../../utils/Context.sol (pragma mismatch)
+2026-01-30 01:17:08,464 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:17:09,388 - WARNING -   下载失败 (尝试 1/3): HTTPSConnectionPool(host='api.etherscan.io', port=443): Max retries exceeded with url: /v2/api?chainid=1&module=contract&action=getsourcecode&address=0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2&apikey=SMZQJGY9IVWYKUMK2SIME6F15HGD8F8I6C (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+2026-01-30 01:17:11,773 - INFO -   ✓ 下载成功: 0x32E0A7F7...
+2026-01-30 01:17:13,171 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:17:13,198 - INFO -   本地依赖补全: 19 个文件
+2026-01-30 01:17:13,199 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (16 项) - node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol -> ./IERC721Receiver.sol; node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol -> ../../utils/Address.sol; node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol -> ./IERC721.sol
+2026-01-30 01:17:13,199 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:17:13,387 - INFO -   ✓ 下载成功: 0xC02aaA39...
+2026-01-30 01:17:14,784 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.19/solc-0.4.19, 优化=False, runs=200)
+2026-01-30 01:17:14,811 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:17:16,619 - INFO -   源码下载完成, 耗时 10.82s
+2026-01-30 01:17:16,622 - INFO -   源码下载耗时: 11.37s
+2026-01-30 01:17:16,622 - INFO -   WiseLending03_exp 总耗时: 85.40s
+2026-01-30 01:17:16,623 - INFO - 
+================================================================================
+2026-01-30 01:17:16,623 - INFO - 执行摘要
+2026-01-30 01:17:16,623 - INFO - ================================================================================
+2026-01-30 01:17:16,623 - INFO - 总脚本数:        1
+2026-01-30 01:17:16,623 - INFO - 成功:            1
+2026-01-30 01:17:16,623 - INFO - 失败:            0
+2026-01-30 01:17:16,623 - INFO - 总地址数:        8
+2026-01-30 01:17:16,623 - INFO - 已验证合约:      6
+2026-01-30 01:17:16,623 - INFO - 未验证合约:      0
+2026-01-30 01:17:16,623 - INFO -   └─ 仅字节码:   1
+2026-01-30 01:17:16,623 - INFO - API调用次数:     15
+2026-01-30 01:17:16,623 - INFO - 
+API Key并发统计:
+2026-01-30 01:17:16,623 - INFO -   etherscan:
+2026-01-30 01:17:16,623 - INFO -     Key数量: 5
+2026-01-30 01:17:16,624 - INFO -     总调用: 15
+2026-01-30 01:17:16,624 - INFO -     负载均衡: 最小=2, 最大=4, 平均=3.0
+2026-01-30 01:17:16,624 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-30 01:17:16,624 - INFO - ================================================================================
+2026-01-30 01:17:55,214 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-30 01:17:55,214 - INFO - 使用硬编码的API Keys配置
+2026-01-30 01:17:55,218 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-30 01:17:55,218 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-30 01:17:55,218 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-30 01:17:55,219 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-30 01:17:55,219 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-30 01:17:55,219 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-30 01:17:55,219 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:17:55,219 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:17:55,220 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:17:55,220 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:17:55,220 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:17:55,220 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:17:55,220 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:17:55,220 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-30 01:17:55,221 - INFO - OnChainDataFetcher初始化成功
+2026-01-30 01:17:55,221 - INFO - ================================================================================
+2026-01-30 01:17:55,221 - INFO - 开始提取DeFi攻击合约
+2026-01-30 01:17:55,221 - INFO - ================================================================================
+2026-01-30 01:17:55,233 - INFO - 找到 1 个测试脚本
+2026-01-30 01:17:55,233 - INFO - 
+[1/1] 处理: 2024-01/WiseLending03_exp
+2026-01-30 01:17:55,233 - INFO - 静态分析: WiseLending03_exp
+2026-01-30 01:17:55,238 - INFO -   静态提取到 8 个地址
+2026-01-30 01:17:55,238 - INFO -   静态分析耗时: 0.00s, 地址数: 8
+2026-01-30 01:17:55,238 - INFO - 动态分析: WiseLending03_exp
+2026-01-30 01:17:57,065 - INFO -   WiseLending03_exp 总耗时: 1.83s
+2026-01-30 01:17:57,065 - INFO - 
+
+用户中断,正在保存进度...
+2026-01-30 01:17:57,066 - INFO - 进度已保存
+2026-01-30 01:18:04,547 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-30 01:18:04,547 - INFO - 使用硬编码的API Keys配置
+2026-01-30 01:18:04,548 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-30 01:18:04,548 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-30 01:18:04,548 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-30 01:18:04,548 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-30 01:18:04,548 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-30 01:18:04,548 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-30 01:18:04,548 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:18:04,549 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:18:04,549 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:18:04,549 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:18:04,550 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:18:04,550 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:18:04,550 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:18:04,550 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-30 01:18:04,550 - INFO - OnChainDataFetcher初始化成功
+2026-01-30 01:18:04,550 - INFO - ================================================================================
+2026-01-30 01:18:04,550 - INFO - 开始提取DeFi攻击合约
+2026-01-30 01:18:04,550 - INFO - ================================================================================
+2026-01-30 01:18:04,553 - INFO - 找到 1 个测试脚本
+2026-01-30 01:18:04,553 - INFO - 
+[1/1] 处理: 2024-01/WiseLending03_exp
+2026-01-30 01:18:04,553 - INFO - 静态分析: WiseLending03_exp
+2026-01-30 01:18:04,558 - INFO -   静态提取到 8 个地址
+2026-01-30 01:18:04,558 - INFO -   静态分析耗时: 0.01s, 地址数: 8
+2026-01-30 01:18:04,558 - INFO - 动态分析: WiseLending03_exp
+2026-01-30 01:19:08,809 - INFO -   动态提取到 43 个地址
+2026-01-30 01:19:08,828 - INFO -   动态分析耗时: 64.27s, 地址数: 43
+2026-01-30 01:19:08,831 - INFO -   地址合并耗时: 0.00s
+2026-01-30 01:19:08,831 - INFO -   共提取到 45 个唯一地址
+2026-01-30 01:19:08,853 - INFO -   应用vm.label别名: 1 个
+2026-01-30 01:19:08,865 - INFO -   开始补全链上数据 (45个地址)...
+2026-01-30 01:19:08,925 - INFO - 开始批量获取 45 个合约信息 (chain=mainnet)
+2026-01-30 01:19:19,769 - WARNING - 获取合约名称超时 0x2e234DAe75C793f67A35089C9d99245E1C58470b (尝试1/3)
+2026-01-30 01:19:19,770 - WARNING - 获取合约名称超时 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a (尝试1/3)
+2026-01-30 01:19:19,770 - WARNING - 获取合约名称超时 0xc7183455a4C133Ae270771860664b6B7ec320bB1 (尝试1/3)
+2026-01-30 01:19:19,770 - WARNING - 获取合约名称超时 0xa0Cb889707d426A7A386870A03bc70d1b0697598 (尝试1/3)
+2026-01-30 01:19:19,770 - WARNING - 获取合约名称超时 0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9 (尝试1/3)
+2026-01-30 01:19:21,841 - WARNING - 获取合约名称错误 0xc7183455a4C133Ae270771860664b6B7ec320bB1: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:22,017 - WARNING - 获取合约名称错误 0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:22,024 - WARNING - 获取合约名称错误 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:22,030 - WARNING - 获取合约名称错误 0xa0Cb889707d426A7A386870A03bc70d1b0697598: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:22,030 - WARNING - 获取合约名称错误 0x2e234DAe75C793f67A35089C9d99245E1C58470b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:23,749 - WARNING - 获取合约名称错误 0x2e234DAe75C793f67A35089C9d99245E1C58470b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:23,771 - WARNING - 获取合约名称错误 0xa0Cb889707d426A7A386870A03bc70d1b0697598: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:23,812 - WARNING - 获取合约名称错误 0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:23,836 - WARNING - 获取合约名称错误 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:23,977 - WARNING - 获取合约名称错误 0xc7183455a4C133Ae270771860664b6B7ec320bB1: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-30 01:19:25,093 - INFO - 批量获取完成: 45/45 成功, 耗时16.17秒
+2026-01-30 01:19:25,100 - INFO -   ✓ 链上数据补全完成: 45/45 个地址
+2026-01-30 01:19:25,100 - INFO -   链上数据补全耗时: 16.24s
+2026-01-30 01:19:25,101 - INFO -   保存地址耗时: 0.00s
+2026-01-30 01:19:25,101 - INFO -   批量预检查 45 个地址的合约存在性 (并发数: 10)...
+2026-01-30 01:19:26,685 - INFO -   ✓ 预检查完成: 31/45 个有效合约, 耗时 1.58秒
+2026-01-30 01:19:26,685 - INFO -   已过滤 14 个无效地址,剩余 31 个待下载
+2026-01-30 01:19:26,685 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-30 01:19:30,542 - INFO -   合约未验证,尝试下载字节码: 0x91c49cc7...
+2026-01-30 01:19:30,555 - INFO -   ✓ 下载成功: 0x7f39C581...
+2026-01-30 01:19:30,566 - INFO -   ✓ 下载成功: 0xB40b073d...
+2026-01-30 01:19:30,574 - INFO -   ✓ 下载成功: 0x37e49bf3...
+2026-01-30 01:19:30,581 - INFO -   ✓ 下载成功: 0xC374f7eC...
+2026-01-30 01:19:30,880 - INFO -   ✓ 字节码下载成功: 0x91c49cc7... (大小: 24212 bytes)
+2026-01-30 01:19:31,977 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=280)
+2026-01-30 01:19:31,988 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (17 项) - contracts/WiseLendingDeclaration.sol -> ./InterfaceHub/IWiseSecurity.sol; contracts/WiseCore.sol -> ./TransferHub/TransferHelper.sol; contracts/WiseLendingDeclaration.sol -> ./InterfaceHub/IWETH.sol
+2026-01-30 01:19:31,988 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:32,133 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2026-01-30 01:19:32,158 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=800)
+2026-01-30 01:19:32,173 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:19:32,181 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPGauge.sol; contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../libraries/math/Math.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPPrincipalToken.sol
+2026-01-30 01:19:32,181 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:32,183 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:19:32,185 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (6 项) - contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmToken.sol -> ../../InterfaceHub/IPendleController.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmToken.sol -> ./SimpleERC20.sol; contracts/TransferHub/TransferHelper.sol -> ./CallOptionalReturn.sol
+2026-01-30 01:19:32,185 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:32,276 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2026-01-30 01:19:34,864 - INFO -   ✓ 下载成功: 0xf9f3C5CF...
+2026-01-30 01:19:35,060 - INFO -   ✓ 下载成功: 0x47D74516...
+2026-01-30 01:19:35,109 - INFO -   ✓ 下载成功: 0x32E0A7F7...
+2026-01-30 01:19:35,118 - INFO -   ✓ 下载成功: 0xC02aaA39...
+2026-01-30 01:19:35,147 - INFO -   ✓ 下载成功: 0xcbC72d92...
+2026-01-30 01:19:35,360 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xef5579f4...
+2026-01-30 01:19:35,361 - INFO -   ↳ 开始下载实现合约...
+2026-01-30 01:19:36,258 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200)
+2026-01-30 01:19:36,261 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (12 项) - contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmControllerBase.sol -> ../../InterfaceHub/IWiseOracleHub.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmControllerBase.sol -> ../../TransferHub/ApprovalHelper.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmController.sol -> ./PendlePowerFarmControllerHelper.sol
+2026-01-30 01:19:36,261 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:36,515 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.19/solc-0.4.19, 优化=False, runs=200)
+2026-01-30 01:19:36,534 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:19:36,547 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:36,554 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:19:36,588 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (29 项) - @openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol -> ../../utils/AddressUpgradeable.sol; @openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol -> ../../../utils/cryptography/draft-EIP712.sol; @openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol -> ../extensions/draft-IERC20Permit.sol
+2026-01-30 01:19:36,589 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:36,592 - INFO -   本地依赖补全: 19 个文件
+2026-01-30 01:19:36,592 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (16 项) - node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol -> ./extensions/IERC721Metadata.sol; node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol -> ./IERC721Receiver.sol; node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol -> ../IERC721.sol
+2026-01-30 01:19:36,592 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:37,130 - INFO -   ✓ 下载成功: 0xef5579f4...
+2026-01-30 01:19:38,504 - INFO -   ✓ 下载成功: 0x11A72DC6...
+2026-01-30 01:19:38,525 - INFO -   ✓ 下载成功: 0x27b1dAcd...
+2026-01-30 01:19:38,582 - INFO -   ✓ 下载成功: 0x80850712...
+2026-01-30 01:19:38,584 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.33/solc-0.8.33, 优化=True, runs=1000000)
+2026-01-30 01:19:38,587 - INFO -   ✓ 下载成功: 0x4f30A9D4...
+2026-01-30 01:19:38,619 - INFO -   本地依赖补全: 10 个文件
+2026-01-30 01:19:38,619 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (36 项) - node_modules/@openzeppelin/contracts/proxy/utils/UUPSUpgradeable.sol -> ../ERC1967/ERC1967Upgrade.sol; node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol -> ../../utils/AddressUpgradeable.sol; node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol -> ../IERC20.sol
+2026-01-30 01:19:38,619 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:39,088 - INFO -   ↳ 实现合约下载成功
+2026-01-30 01:19:39,291 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:19:39,294 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (6 项) - @openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol -> ../Proxy.sol (pragma mismatch); @openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol -> ../../utils/StorageSlot.sol (pragma mismatch); @openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol -> ./ERC1967Upgrade.sol
+2026-01-30 01:19:39,294 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:39,883 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=1000000)
+2026-01-30 01:19:39,905 - INFO -   本地依赖补全: 12 个文件
+2026-01-30 01:19:39,905 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (29 项) - contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPGauge.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPPrincipalToken.sol; contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPYieldToken.sol
+2026-01-30 01:19:39,905 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:39,936 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:19:39,943 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (25 项) - contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPGauge.sol; contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../libraries/math/Math.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPPrincipalToken.sol
+2026-01-30 01:19:39,943 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:39,993 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:19:40,000 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (26 项) - contracts/pendle/contracts/LiquidityMining/libraries/VeBalanceLib.sol -> ../../core/libraries/Errors.sol; contracts/pendle/contracts/LiquidityMining/libraries/VeHistoryLib.sol -> ./WeekMath.sol; contracts/pendle/contracts/LiquidityMining/libraries/VeBalanceLib.sol -> ../../core/libraries/math/Math.sol
+2026-01-30 01:19:40,000 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:40,040 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-30 01:19:40,042 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (12 项) - IPENDLE.sol -> ./IERC20.sol; Withdrawable.sol -> ./IERC20.sol; Withdrawable.sol -> ./SafeERC20.sol
+2026-01-30 01:19:40,042 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:41,048 - INFO -   ✓ 下载成功: 0xCd87EDBb...
+2026-01-30 01:19:41,819 - INFO -   ✓ 下载成功: 0x7DBA84a0...
+2026-01-30 01:19:41,820 - INFO -   ✓ 下载成功: 0x9aB8A496...
+2026-01-30 01:19:41,893 - INFO -   ✓ 下载成功: 0x829c3AE2...
+2026-01-30 01:19:41,899 - INFO -   ✓ 下载成功: 0xf8A8EAe0...
+2026-01-30 01:19:42,463 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=23456)
+2026-01-30 01:19:42,467 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (15 项) - contracts/WrapperHub/Declarations.sol -> ../InterfaceHub/IWiseSecurity.sol; contracts/WrapperHub/AaveHub.sol -> ../TransferHub/ApprovalHelper.sol; contracts/WrapperHub/Declarations.sol -> ./AaveEvents.sol
+2026-01-30 01:19:42,467 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:43,194 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=999999)
+2026-01-30 01:19:43,195 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (2 项) - contracts/DerivativeOracles/WstETHOracle.sol -> ../InterfaceHub/IPriceFeed.sol; contracts/DerivativeOracles/WstETHOracle.sol -> ../InterfaceHub/IWstETH.sol
+2026-01-30 01:19:43,195 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:43,204 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:19:43,305 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:19:43,308 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (11 项) - contracts/WiseOracleHub/Declarations.sol -> ./Libraries/OracleLibrary.sol; contracts/WiseOracleHub/Declarations.sol -> ../OwnableMaster.sol; contracts/WiseOracleHub/WiseOracleHub.sol -> ./OracleHelper.sol
+2026-01-30 01:19:43,308 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:43,312 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:43,332 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=3456)
+2026-01-30 01:19:43,337 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (28 项) - contracts/FeeManager/DeclarationsFeeManager.sol -> ../InterfaceHub/IWiseOracleHub.sol; contracts/WiseSecurity/WiseSecurityHelper.sol -> ./WiseSecurityDeclarations.sol; contracts/WiseSecurity/WiseSecurityDeclarations.sol -> ../InterfaceHub/IAaveHub.sol
+2026-01-30 01:19:43,337 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:44,175 - INFO -   ✓ 下载成功: 0xae7ab965...
+2026-01-30 01:19:45,193 - INFO -   ✓ 下载成功: 0xb8FFC3Cd...
+2026-01-30 01:19:45,294 - INFO -   ✓ 下载成功: 0x2b33CF28...
+2026-01-30 01:19:45,304 - INFO -   ✓ 下载成功: 0x86392dC1...
+2026-01-30 01:19:45,537 - INFO -   ✓ 下载成功: 0x17144556...
+2026-01-30 01:19:45,546 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:19:45,566 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:19:45,597 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:46,586 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:19:46,588 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:19:46,675 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:19:46,677 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:19:46,693 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.6/solc-0.6.6, 优化=True, runs=1000000)
+2026-01-30 01:19:46,714 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:19:46,829 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:46,863 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:46,920 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2026-01-30 01:19:46,929 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - @aragon/os/contracts/common/VaultRecoverable.sol -> ../lib/token/ERC20.sol; contracts/0.4.24/StETH.sol -> @aragon/os/contracts/common/UnstructuredStorage.sol; @aragon/os/contracts/common/ReentrancyGuard.sol -> ../common/UnstructuredStorage.sol
+2026-01-30 01:19:46,929 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:47,134 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:47,506 - INFO -   ✓ 下载成功: 0x716BB759...
+2026-01-30 01:19:48,832 - INFO -   ✓ 下载成功: 0x8cB1a0fD...
+2026-01-30 01:19:48,906 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=20000)
+2026-01-30 01:19:48,910 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (22 项) - contract/src/SimpleWriteAccessController.sol -> ./AccessControllerInterface.sol; contract/src/OffchainAggregator.sol -> ./OffchainAggregatorBilling.sol; contract/src/SimpleWriteAccessController.sol -> ./Owned.sol
+2026-01-30 01:19:48,910 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:49,019 - INFO -   ✓ 下载成功: 0x109830a1...
+2026-01-30 01:19:49,039 - INFO -   ✓ 下载成功: 0xbbd48726...
+2026-01-30 01:19:49,581 - INFO -   ✓ 下载成功: 0x9229fe30...
+2026-01-30 01:19:50,257 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:19:50,258 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (3 项) - contracts/DerivativeOracles/PendleLpOracle.sol -> ../InterfaceHub/IPendle.sol; contracts/DerivativeOracles/PendleLpOracle.sol -> ../InterfaceHub/IOraclePendle.sol; contracts/DerivativeOracles/PendleLpOracle.sol -> ../InterfaceHub/IPriceFeed.sol
+2026-01-30 01:19:50,258 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:50,390 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2026-01-30 01:19:50,399 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (43 项) - contracts/UniswapV3Pool.sol -> ./libraries/SwapMath.sol; contracts/libraries/SqrtPriceMath.sol -> ./UnsafeMath.sol; contracts/interfaces/IUniswapV3Pool.sol -> ./pool/IUniswapV3PoolState.sol
+2026-01-30 01:19:50,399 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:50,406 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=1000000)
+2026-01-30 01:19:50,416 - INFO -   本地依赖补全: 1 个文件
+2026-01-30 01:19:50,416 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (23 项) - contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPGauge.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPPrincipalToken.sol; contracts/pendle/contracts/interfaces/IPMarket.sol -> ./IPYieldToken.sol
+2026-01-30 01:19:50,416 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:50,948 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:19:50,949 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (3 项) - contracts/DerivativeOracles/PendleChildLpOracle.sol -> ../InterfaceHub/IPendle.sol; contracts/DerivativeOracles/PendleChildLpOracle.sol -> ./CustomOracleSetup.sol; contracts/DerivativeOracles/PendleChildLpOracle.sol -> ../InterfaceHub/IPriceFeed.sol
+2026-01-30 01:19:50,949 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:51,164 - INFO -   ✓ 下载成功: 0xf3aBC972...
+2026-01-30 01:19:52,149 - INFO -   ✓ 下载成功: 0x02176d64...
+2026-01-30 01:19:52,557 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=24500)
+2026-01-30 01:19:52,566 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (41 项) - contracts/pendle/contracts/core/RewardManager/RewardManagerAbstract.sol -> ../libraries/ArrayLib.sol; contracts/pendle/contracts/core/YieldContracts/PendleYieldToken.sol -> ../libraries/Errors.sol; @openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol -> ../../../utils/cryptography/draft-EIP712.sol
+2026-01-30 01:19:52,566 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:53,520 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:19:53,521 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (1 项) - contracts/pendle/contracts/core/Market/OracleLib.sol -> ../libraries/Errors.sol
+2026-01-30 01:19:53,521 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:19:53,974 - INFO -   源码下载完成, 耗时 27.29s
+2026-01-30 01:19:53,983 - INFO -   源码下载耗时: 28.88s
+2026-01-30 01:19:53,983 - INFO -   检测到 3 个实现合约，更新addresses.json
+2026-01-30 01:19:53,985 - INFO -   WiseLending03_exp 总耗时: 109.43s
+2026-01-30 01:19:53,985 - INFO - 
+================================================================================
+2026-01-30 01:19:53,985 - INFO - 执行摘要
+2026-01-30 01:19:53,985 - INFO - ================================================================================
+2026-01-30 01:19:53,985 - INFO - 总脚本数:        1
+2026-01-30 01:19:53,985 - INFO - 成功:            1
+2026-01-30 01:19:53,985 - INFO - 失败:            0
+2026-01-30 01:19:53,985 - INFO - 总地址数:        45
+2026-01-30 01:19:53,985 - INFO - 已验证合约:      30
+2026-01-30 01:19:53,985 - INFO - 未验证合约:      0
+2026-01-30 01:19:53,985 - INFO -   └─ 仅字节码:   1
+2026-01-30 01:19:53,985 - INFO - API调用次数:     64
+2026-01-30 01:19:53,985 - INFO - 
+API Key并发统计:
+2026-01-30 01:19:53,985 - INFO -   etherscan:
+2026-01-30 01:19:53,986 - INFO -     Key数量: 5
+2026-01-30 01:19:53,986 - INFO -     总调用: 64
+2026-01-30 01:19:53,987 - INFO -     负载均衡: 最小=12, 最大=14, 平均=12.8
+2026-01-30 01:19:53,987 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-30 01:19:53,987 - INFO - ================================================================================
+2026-01-30 01:23:12,836 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-30 01:23:12,836 - INFO - 使用硬编码的API Keys配置
+2026-01-30 01:23:12,839 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-30 01:23:12,839 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-30 01:23:12,840 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-30 01:23:12,840 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-30 01:23:12,840 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-30 01:23:12,840 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-30 01:23:12,840 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:23:12,840 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:23:12,841 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:23:12,841 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:23:12,841 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:23:12,841 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:23:12,842 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:23:12,842 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-30 01:23:12,842 - INFO - OnChainDataFetcher初始化成功
+2026-01-30 01:23:12,842 - INFO - ================================================================================
+2026-01-30 01:23:12,842 - INFO - 开始提取DeFi攻击合约
+2026-01-30 01:23:12,842 - INFO - ================================================================================
+2026-01-30 01:23:12,844 - INFO - 找到 1 个测试脚本
+2026-01-30 01:23:12,844 - INFO - 
+[1/1] 处理: 2024-01/WiseLending03_exp
+2026-01-30 01:23:12,845 - INFO - 静态分析: WiseLending03_exp
+2026-01-30 01:23:12,849 - INFO -   静态提取到 8 个地址
+2026-01-30 01:23:12,849 - INFO -   静态分析耗时: 0.00s, 地址数: 8
+2026-01-30 01:23:12,849 - INFO - 动态分析: WiseLending03_exp
+2026-01-30 01:24:04,901 - INFO -   动态提取到 43 个地址
+2026-01-30 01:24:04,922 - INFO -   动态分析耗时: 51.60s, 地址数: 43
+2026-01-30 01:24:04,924 - INFO -   地址合并耗时: 0.00s
+2026-01-30 01:24:04,925 - INFO -   共提取到 45 个唯一地址
+2026-01-30 01:24:04,950 - INFO -   应用vm.label别名: 1 个
+2026-01-30 01:24:04,963 - INFO -   开始补全链上数据 (45个地址)...
+2026-01-30 01:24:05,016 - INFO - 开始批量获取 45 个合约信息 (chain=mainnet)
+2026-01-30 01:24:05,058 - INFO - 批量获取完成: 45/45 成功, 耗时0.04秒
+2026-01-30 01:24:05,067 - INFO -   ✓ 链上数据补全完成: 45/45 个地址
+2026-01-30 01:24:05,067 - INFO -   链上数据补全耗时: 0.10s
+2026-01-30 01:24:05,075 - INFO -   保存地址耗时: 0.01s
+2026-01-30 01:24:05,078 - INFO -   批量预检查 45 个地址的合约存在性 (并发数: 10)...
+2026-01-30 01:24:06,865 - INFO -   ✓ 预检查完成: 31/45 个有效合约, 耗时 1.79秒
+2026-01-30 01:24:06,865 - INFO -   已过滤 14 个无效地址,剩余 31 个待下载
+2026-01-30 01:24:06,865 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-30 01:24:08,067 - INFO -   合约未验证,尝试下载字节码: 0x91c49cc7...
+2026-01-30 01:24:08,314 - INFO -   ✓ 下载成功: 0x37e49bf3...
+2026-01-30 01:24:08,325 - INFO -   ✓ 下载成功: 0x7f39C581...
+2026-01-30 01:24:08,381 - INFO -   ✓ 字节码下载成功: 0x91c49cc7... (大小: 24212 bytes)
+2026-01-30 01:24:08,678 - INFO -   ✓ 下载成功: 0xC374f7eC...
+2026-01-30 01:24:08,835 - INFO -   ✓ 下载成功: 0xB40b073d...
+2026-01-30 01:24:09,676 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=200)
+2026-01-30 01:24:09,701 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:24:09,804 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2026-01-30 01:24:09,839 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=280)
+2026-01-30 01:24:09,845 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (17 项) - contracts/TransferHub/CallOptionalReturn.sol -> ../InterfaceHub/IERC20.sol; contracts/WiseLendingDeclaration.sol -> ./InterfaceHub/IAaveHubLite.sol; contracts/WiseLendingDeclaration.sol -> ./InterfaceHub/IWiseSecurity.sol
+2026-01-30 01:24:09,845 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:09,969 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=800)
+2026-01-30 01:24:09,987 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - @openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol -> ../IERC20.sol (pragma mismatch); contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../libraries/MiniHelpers.sol; contracts/pendle/contracts/core/Market/PendleGauge.sol -> ../../interfaces/IPVeToken.sol
+2026-01-30 01:24:09,987 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:10,185 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:24:10,187 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (6 项) - contracts/TransferHub/CallOptionalReturn.sol -> ../InterfaceHub/IERC20.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmToken.sol -> ../../TransferHub/TransferHelper.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmToken.sol -> ../../InterfaceHub/IPendle.sol
+2026-01-30 01:24:10,187 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:12,557 - INFO -   ✓ 下载成功: 0xC02aaA39...
+2026-01-30 01:24:12,613 - INFO -   ✓ 下载成功: 0x32E0A7F7...
+2026-01-30 01:24:12,669 - INFO -   ✓ 下载成功: 0xf9f3C5CF...
+2026-01-30 01:24:12,807 - INFO -   ✓ 下载成功: 0x47D74516...
+2026-01-30 01:24:13,064 - INFO -   ✓ 下载成功: 0xcbC72d92...
+2026-01-30 01:24:13,065 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xef5579f4...
+2026-01-30 01:24:13,066 - INFO -   ↳ 开始下载实现合约...
+2026-01-30 01:24:13,892 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.19/solc-0.4.19, 优化=False, runs=200)
+2026-01-30 01:24:13,919 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:13,934 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:24:13,957 - INFO -   本地依赖补全: 19 个文件
+2026-01-30 01:24:13,957 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (16 项) - node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol -> ./IERC721.sol; node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol -> ./IERC721Enumerable.sol; node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol -> ../IERC721.sol
+2026-01-30 01:24:13,957 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:14,035 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200)
+2026-01-30 01:24:14,038 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (12 项) - contracts/TransferHub/CallOptionalReturn.sol -> ../InterfaceHub/IERC20.sol; contracts/TransferHub/ApprovalHelper.sol -> ./CallOptionalReturn.sol; contracts/PowerFarms/PendlePowerFarmController/PendlePowerFarmControllerBase.sol -> ../../TransferHub/ApprovalHelper.sol
+2026-01-30 01:24:14,038 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:14,430 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:24:14,437 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (29 项) - @openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol -> ../IERC20.sol (pragma mismatch); contracts/pendle/contracts/core/StandardizedYield/implementations/PendleWstEthSY.sol -> ../../../interfaces/IWETH.sol; @openzeppelin/contracts/utils/cryptography/ECDSA.sol -> ../Strings.sol (pragma mismatch)
+2026-01-30 01:24:14,437 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:14,787 - INFO -   ✓ 下载成功: 0xef5579f4...
+2026-01-30 01:24:16,011 - INFO -   ✓ 下载成功: 0x27b1dAcd...
+2026-01-30 01:24:16,043 - INFO -   ✓ 下载成功: 0x80850712...
+2026-01-30 01:24:16,097 - INFO -   ✓ 下载成功: 0x11A72DC6...
+2026-01-30 01:24:16,122 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.33/solc-0.8.33, 优化=True, runs=1000000)
+2026-01-30 01:24:16,150 - INFO -   本地依赖补全: 10 个文件
+2026-01-30 01:24:16,150 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (36 项) - lib/pendle-core-v2/contracts/core/StandardizedYield/PYIndex.sol -> ./SYUtils.sol; lib/pendle-core-v2/contracts/LiquidityMining/GaugeController/PendleGaugeControllerUpg.sol -> ../../core/libraries/math/PMath.sol; lib/pendle-core-v2/contracts/core/libraries/BoringOwnableUpgradeableV2.sol -> @openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol
+2026-01-30 01:24:16,150 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:16,349 - INFO -   ✓ 下载成功: 0x4f30A9D4...
+2026-01-30 01:24:16,582 - INFO -   ↳ 实现合约下载成功
+2026-01-30 01:24:16,764 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:24:16,768 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (6 项) - @openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol -> ./ERC1967Upgrade.sol; @openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol -> ../Proxy.sol (pragma mismatch); @openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol -> ../../utils/StorageSlot.sol (pragma mismatch)
+2026-01-30 01:24:16,768 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:17,363 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:24:17,370 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (25 项) - contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../libraries/MiniHelpers.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPPrincipalToken.sol; contracts/pendle/contracts/core/libraries/BoringOwnableUpgradeable.sol -> @openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol
+2026-01-30 01:24:17,370 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:17,451 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-30 01:24:17,453 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (12 项) - Withdrawable.sol -> ./SafeERC20.sol; PENDLE.sol -> ./IPENDLE.sol; IPENDLE.sol -> ./IERC20.sol
+2026-01-30 01:24:17,453 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:17,466 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=1000000)
+2026-01-30 01:24:17,485 - INFO -   本地依赖补全: 12 个文件
+2026-01-30 01:24:17,485 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (29 项) - contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../libraries/MiniHelpers.sol; contracts/pendle/contracts/LiquidityMining/GaugeController/PendleGaugeControllerMainchainUpg.sol -> ./PendleGaugeControllerBaseUpg.sol; contracts/pendle/contracts/core/StandardizedYield/PYIndex.sol -> ../../interfaces/IPPrincipalToken.sol
+2026-01-30 01:24:17,485 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:17,732 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:24:17,740 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (26 项) - contracts/pendle/contracts/LiquidityMining/libraries/VeHistoryLib.sol -> ./WeekMath.sol; @openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol -> ../IERC20.sol (pragma mismatch); contracts/pendle/contracts/LiquidityMining/CrossChainMsg/PendleMsgSenderAppUpg.sol -> ../../core/libraries/Errors.sol
+2026-01-30 01:24:17,740 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:18,471 - INFO -   ✓ 下载成功: 0xCd87EDBb...
+2026-01-30 01:24:19,123 - INFO -   ✓ 下载成功: 0x7DBA84a0...
+2026-01-30 01:24:19,328 - INFO -   ✓ 下载成功: 0x829c3AE2...
+2026-01-30 01:24:19,384 - INFO -   ✓ 下载成功: 0xf8A8EAe0...
+2026-01-30 01:24:19,401 - INFO -   ✓ 下载成功: 0x9aB8A496...
+2026-01-30 01:24:19,815 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=23456)
+2026-01-30 01:24:19,818 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (15 项) - contracts/WrapperHub/Declarations.sol -> ../OwnableMaster.sol; contracts/TransferHub/CallOptionalReturn.sol -> ../InterfaceHub/IERC20.sol; contracts/TransferHub/ApprovalHelper.sol -> ./CallOptionalReturn.sol
+2026-01-30 01:24:19,818 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:20,430 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:24:20,522 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:20,535 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=3456)
+2026-01-30 01:24:20,541 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (28 项) - contracts/TransferHub/ApprovalHelper.sol -> ./CallOptionalReturn.sol; contracts/FeeManager/FeeManagerHelper.sol -> ./DeclarationsFeeManager.sol; contracts/FeeManager/DeclarationsFeeManager.sol -> ../InterfaceHub/IAave.sol
+2026-01-30 01:24:20,541 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:20,584 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=999999)
+2026-01-30 01:24:20,585 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (2 项) - contracts/DerivativeOracles/WstETHOracle.sol -> ../InterfaceHub/IPriceFeed.sol; contracts/DerivativeOracles/WstETHOracle.sol -> ../InterfaceHub/IWstETH.sol
+2026-01-30 01:24:20,585 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:20,713 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:24:20,716 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (11 项) - contracts/WiseOracleHub/Libraries/OracleLibrary.sol -> ./TickMath.sol; contracts/WiseOracleHub/Libraries/IUniswapV3Pool.sol -> ./IUniswapV3PoolDerivedState.sol; contracts/WiseOracleHub/Declarations.sol -> ./Libraries/IUniswapV3Factory.sol
+2026-01-30 01:24:20,716 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:21,969 - INFO -   ✓ 下载成功: 0xae7ab965...
+2026-01-30 01:24:22,619 - INFO -   ✓ 下载成功: 0x86392dC1...
+2026-01-30 01:24:22,839 - INFO -   ✓ 下载成功: 0x2b33CF28...
+2026-01-30 01:24:22,875 - INFO -   ✓ 下载成功: 0xb8FFC3Cd...
+2026-01-30 01:24:23,063 - INFO -   ✓ 下载成功: 0x17144556...
+2026-01-30 01:24:23,348 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:24:23,364 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:24:23,400 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:23,904 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.6/solc-0.6.6, 优化=True, runs=1000000)
+2026-01-30 01:24:23,929 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:24:24,027 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:24,196 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:24:24,198 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:24:24,212 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=10000)
+2026-01-30 01:24:24,215 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:24:24,384 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:24,415 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2026-01-30 01:24:24,432 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - @aragon/os/contracts/apps/AragonApp.sol -> ./AppStorage.sol; @aragon/os/contracts/evmscript/EVMScriptRunner.sol -> ./IEVMScriptRegistry.sol; @aragon/os/contracts/common/Petrifiable.sol -> ./Initializable.sol
+2026-01-30 01:24:24,432 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:24,743 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:24,980 - WARNING -   下载失败 (尝试 1/3): HTTPSConnectionPool(host='api.etherscan.io', port=443): Max retries exceeded with url: /v2/api?chainid=1&module=contract&action=getsourcecode&address=0x9229fe30c954F27AC5E7511ca00838A246ac25ed&apikey=K6RUIHP3NJ72D4F3MNVG8XMI6R8EE1JSJD (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+2026-01-30 01:24:25,306 - INFO -   ✓ 下载成功: 0x716BB759...
+2026-01-30 01:24:26,202 - INFO -   ✓ 下载成功: 0x109830a1...
+2026-01-30 01:24:26,285 - INFO -   ✓ 下载成功: 0x8cB1a0fD...
+2026-01-30 01:24:26,600 - INFO -   ✓ 下载成功: 0xbbd48726...
+2026-01-30 01:24:26,657 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=20000)
+2026-01-30 01:24:26,661 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (22 项) - contract/src/AggregatorV2V3Interface.sol -> ./AggregatorInterface.sol; contract/src/OffchainAggregator.sol -> ./LinkTokenInterface.sol; contract/src/OffchainAggregator.sol -> ./Owned.sol
+2026-01-30 01:24:26,661 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:27,537 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2026-01-30 01:24:27,547 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (43 项) - contracts/UniswapV3Pool.sol -> ./libraries/SafeCast.sol; contracts/UniswapV3Pool.sol -> ./interfaces/IUniswapV3PoolDeployer.sol; contracts/UniswapV3Pool.sol -> ./libraries/TransferHelper.sol
+2026-01-30 01:24:27,548 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:27,636 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:24:27,637 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (3 项) - contracts/DerivativeOracles/PendleLpOracle.sol -> ../InterfaceHub/IPendle.sol; contracts/DerivativeOracles/PendleLpOracle.sol -> ../InterfaceHub/IOraclePendle.sol; contracts/DerivativeOracles/PendleLpOracle.sol -> ../InterfaceHub/IPriceFeed.sol
+2026-01-30 01:24:27,637 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:27,946 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=1000000)
+2026-01-30 01:24:27,957 - INFO -   本地依赖补全: 1 个文件
+2026-01-30 01:24:27,957 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (23 项) - contracts/pendle/contracts/core/Market/MarketMathCore.sol -> ../libraries/MiniHelpers.sol; contracts/pendle/contracts/oracles/PendlePtOracle.sol -> ./PendlePtOracleLib.sol; contracts/pendle/contracts/oracles/PendlePtOracle.sol -> ../interfaces/IPPtOracle.sol
+2026-01-30 01:24:27,957 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:28,239 - INFO -   ✓ 下载成功: 0x9229fe30...
+2026-01-30 01:24:28,806 - INFO -   ✓ 下载成功: 0xf3aBC972...
+2026-01-30 01:24:29,316 - INFO -   ✓ 下载成功: 0x02176d64...
+2026-01-30 01:24:29,543 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.23/solc-0.8.23, 优化=True, runs=200000)
+2026-01-30 01:24:29,544 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (3 项) - contracts/DerivativeOracles/PendleChildLpOracle.sol -> ../InterfaceHub/IPendle.sol; contracts/DerivativeOracles/PendleChildLpOracle.sol -> ../InterfaceHub/IPriceFeed.sol; contracts/DerivativeOracles/PendleChildLpOracle.sol -> ./CustomOracleSetup.sol
+2026-01-30 01:24:29,544 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:30,184 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=24500)
+2026-01-30 01:24:30,193 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (41 项) - @openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol -> ../IERC20.sol (pragma mismatch); @openzeppelin/contracts/utils/cryptography/ECDSA.sol -> ../Strings.sol (pragma mismatch); contracts/pendle/contracts/core/YieldContracts/PendleYieldToken.sol -> ../../interfaces/IPPrincipalToken.sol
+2026-01-30 01:24:30,193 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:30,705 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.17/solc-0.8.17, 优化=True, runs=90000)
+2026-01-30 01:24:30,705 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (1 项) - contracts/pendle/contracts/core/Market/OracleLib.sol -> ../libraries/Errors.sol
+2026-01-30 01:24:30,706 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:24:31,645 - INFO -   源码下载完成, 耗时 24.78s
+2026-01-30 01:24:31,648 - INFO -   源码下载耗时: 26.57s
+2026-01-30 01:24:31,648 - INFO -   检测到 3 个实现合约，更新addresses.json
+2026-01-30 01:24:31,649 - INFO -   WiseLending03_exp 总耗时: 78.33s
+2026-01-30 01:24:31,650 - INFO - 
+================================================================================
+2026-01-30 01:24:31,650 - INFO - 执行摘要
+2026-01-30 01:24:31,650 - INFO - ================================================================================
+2026-01-30 01:24:31,650 - INFO - 总脚本数:        1
+2026-01-30 01:24:31,650 - INFO - 成功:            1
+2026-01-30 01:24:31,650 - INFO - 失败:            0
+2026-01-30 01:24:31,650 - INFO - 总地址数:        45
+2026-01-30 01:24:31,650 - INFO - 已验证合约:      30
+2026-01-30 01:24:31,650 - INFO - 未验证合约:      0
+2026-01-30 01:24:31,650 - INFO -   └─ 仅字节码:   1
+2026-01-30 01:24:31,650 - INFO - API调用次数:     65
+2026-01-30 01:24:31,650 - INFO - 
+API Key并发统计:
+2026-01-30 01:24:31,650 - INFO -   etherscan:
+2026-01-30 01:24:31,650 - INFO -     Key数量: 5
+2026-01-30 01:24:31,651 - INFO -     总调用: 65
+2026-01-30 01:24:31,651 - INFO -     负载均衡: 最小=11, 最大=15, 平均=13.0
+2026-01-30 01:24:31,651 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-30 01:24:31,651 - INFO - ================================================================================
+2026-01-30 01:40:22,856 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-30 01:40:22,857 - INFO - 使用硬编码的API Keys配置
+2026-01-30 01:40:22,860 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-30 01:40:22,860 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-30 01:40:22,861 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-30 01:40:22,861 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-30 01:40:22,861 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-30 01:40:22,861 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-30 01:40:22,861 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:40:22,862 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:40:22,862 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:40:22,862 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:40:22,862 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:40:22,863 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:40:22,863 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-30 01:40:22,863 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-30 01:40:22,863 - INFO - OnChainDataFetcher初始化成功
+2026-01-30 01:40:22,863 - INFO - ================================================================================
+2026-01-30 01:40:22,863 - INFO - 开始提取DeFi攻击合约
+2026-01-30 01:40:22,863 - INFO - ================================================================================
+2026-01-30 01:40:22,865 - INFO - 找到 1 个测试脚本
+2026-01-30 01:40:22,865 - INFO - 
+[1/1] 处理: 2024-02/ADC_exp
+2026-01-30 01:40:22,865 - INFO - 静态分析: ADC_exp
+2026-01-30 01:40:22,868 - INFO -   静态提取到 11 个地址
+2026-01-30 01:40:22,868 - INFO -   静态分析耗时: 0.00s, 地址数: 11
+2026-01-30 01:40:22,868 - INFO - 动态分析: ADC_exp
+2026-01-30 01:41:04,511 - INFO -   动态提取到 8 个地址
+2026-01-30 01:41:04,537 - INFO -   动态分析耗时: 41.03s, 地址数: 8
+2026-01-30 01:41:04,539 - INFO -   地址合并耗时: 0.00s
+2026-01-30 01:41:04,539 - INFO -   共提取到 16 个唯一地址
+2026-01-30 01:41:04,563 - INFO -   开始补全链上数据 (16个地址)...
+2026-01-30 01:41:04,626 - INFO - 开始批量获取 16 个合约信息 (chain=mainnet)
+2026-01-30 01:41:04,650 - INFO - 批量获取完成: 16/16 成功, 耗时0.02秒
+2026-01-30 01:41:04,663 - INFO -   ✓ 链上数据补全完成: 16/16 个地址
+2026-01-30 01:41:04,663 - INFO -   链上数据补全耗时: 0.10s
+2026-01-30 01:41:04,670 - INFO -   保存地址耗时: 0.01s
+2026-01-30 01:41:04,673 - INFO -   批量预检查 16 个地址的合约存在性 (并发数: 10)...
+2026-01-30 01:41:05,534 - INFO -   ✓ 预检查完成: 11/16 个有效合约, 耗时 0.86秒
+2026-01-30 01:41:05,535 - INFO -   已过滤 5 个无效地址,剩余 11 个待下载
+2026-01-30 01:41:05,536 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-30 01:41:06,738 - INFO -   合约未验证,尝试下载字节码: 0x2ffdce5f...
+2026-01-30 01:41:06,803 - INFO -   ✓ 下载成功: 0x7a250d56...
+2026-01-30 01:41:06,806 - INFO -   ✓ 下载成功: 0xA0b86991...
+2026-01-30 01:41:06,989 - INFO -   ✓ 下载成功: 0xC02aaA39...
+2026-01-30 01:41:07,023 - INFO -   ✓ 字节码下载成功: 0x2ffdce5f... (大小: 8424 bytes)
+2026-01-30 01:41:07,490 - INFO -   ✓ 下载成功: 0xBA122222...
+2026-01-30 01:41:07,963 - INFO -   🔗 检测到OpenZeppelin代理,实现合约: 0x43506849...
+2026-01-30 01:41:07,964 - INFO -   ↳ 开始下载实现合约...
+2026-01-30 01:41:08,169 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.6/solc-0.6.6, 优化=True, runs=999999)
+2026-01-30 01:41:08,413 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.19/solc-0.4.19, 优化=False, runs=200)
+2026-01-30 01:41:08,439 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:08,566 - INFO -   ✓ Immutable 解析成功，写入 immutables.json
+2026-01-30 01:41:08,808 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.1/solc-0.7.1, 优化=True, runs=1500)
+2026-01-30 01:41:08,831 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (148 项) - contracts/vault/Vault.sol -> ./Swaps.sol; contracts/vault/Swaps.sol -> ./PoolBalances.sol; contracts/lib/helpers/SignaturesValidator.sol -> ./ISignaturesValidator.sol
+2026-01-30 01:41:08,831 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:09,440 - INFO -   ✓ 下载成功: 0x43506849...
+2026-01-30 01:41:10,758 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.6.12/solc-0.6.12, 优化=True, runs=10000000)
+2026-01-30 01:41:10,762 - INFO -   ✓ 下载成功: 0xaE2C7af5...
+2026-01-30 01:41:10,775 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (35 项) - /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/EIP2612.sol -> ./EIP712Domain.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/EIP2612.sol -> ../util/MessageHashUtils.sol; /Users/aloysius.chan/Repositories/circlefin/stablecoin-evm-private-eurc-mainnet-eth/contracts/v2/FiatTokenV2.sol -> ./EIP2612.sol
+2026-01-30 01:41:10,775 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:11,024 - INFO -   ✓ 下载成功: 0xdE46fcF6...
+2026-01-30 01:41:11,223 - INFO -   ↳ 实现合约下载成功
+2026-01-30 01:41:11,319 - INFO -   ✓ 下载成功: 0x0B925eD1...
+2026-01-30 01:41:11,413 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=False, runs=200)
+2026-01-30 01:41:11,429 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:41:11,449 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:11,580 - INFO -   🔗 检测到EIP1967代理,实现合约: 0xadc45df3...
+2026-01-30 01:41:11,580 - INFO -   ↳ 开始下载实现合约...
+2026-01-30 01:41:11,667 - INFO -   ✓ 下载成功: 0x87870Bca...
+2026-01-30 01:41:11,943 - INFO -   🔗 检测到EIP1967代理,实现合约: 0x8147b99d...
+2026-01-30 01:41:11,944 - INFO -   ↳ 开始下载实现合约...
+2026-01-30 01:41:12,106 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.7/solc-0.5.7, 优化=False, runs=200)
+2026-01-30 01:41:12,118 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-30 01:41:12,146 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:12,393 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.7/solc-0.5.7, 优化=False, runs=200)
+2026-01-30 01:41:12,396 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (2 项) - MainPool.sol -> ./AddrMInterface.sol; MainPool.sol -> ./SafeMath.sol
+2026-01-30 01:41:12,396 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:13,127 - INFO -   合约未验证,尝试下载字节码: 0xD357e494...
+2026-01-30 01:41:13,257 - INFO -   ✓ 字节码下载成功: 0xD357e494... (大小: 5562 bytes)
+2026-01-30 01:41:13,285 - INFO -   ✓ 下载成功: 0xadc45df3...
+2026-01-30 01:41:13,820 - INFO -   合约未验证,尝试下载字节码: 0x49E298B9...
+2026-01-30 01:41:13,876 - INFO -   ✓ 下载成功: 0x8147b99d...
+2026-01-30 01:41:13,952 - INFO -   ✓ 字节码下载成功: 0x49E298B9... (大小: 3172 bytes)
+2026-01-30 01:41:14,629 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.27/solc-0.8.27, 优化=True, runs=200)
+2026-01-30 01:41:14,653 - INFO -   本地依赖补全: 2 个文件
+2026-01-30 01:41:14,653 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (50 项) - lib/aave-v3-origin/src/contracts/protocol/tokenization/base/IncentivizedERC20.sol -> ../../../dependencies/openzeppelin/contracts/Context.sol; lib/aave-v3-origin/src/contracts/protocol/tokenization/base/MintableIncentivizedERC20.sol -> ../../../interfaces/IAaveIncentivesController.sol; lib/aave-v3-origin/src/contracts/protocol/tokenization/AToken.sol -> ../../interfaces/IAToken.sol
+2026-01-30 01:41:14,653 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:15,090 - INFO -   ↳ 实现合约下载成功
+2026-01-30 01:41:15,252 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.27/solc-0.8.27, 优化=True, runs=200)
+2026-01-30 01:41:15,298 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.10/solc-0.8.10, 优化=True, runs=100000)
+2026-01-30 01:41:15,306 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (7 项) - @aave/core-v3/contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol -> ./BaseImmutableAdminUpgradeabilityProxy.sol; @aave/core-v3/contracts/dependencies/openzeppelin/upgradeability/BaseUpgradeabilityProxy.sol -> ../contracts/Address.sol; @aave/core-v3/contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol -> ../../../dependencies/openzeppelin/upgradeability/Proxy.sol
+2026-01-30 01:41:15,307 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:15,319 - INFO -   本地依赖补全: 2 个文件
+2026-01-30 01:41:15,319 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (197 项) - lib/aave-v3-origin/src/contracts/protocol/libraries/logic/ValidationLogic.sol -> ../../../interfaces/IAToken.sol; lib/aave-v3-origin/src/contracts/protocol/libraries/logic/ReserveLogic.sol -> ../types/DataTypes.sol; lib/aave-v3-origin/src/contracts/instances/PoolInstance.sol -> ../interfaces/IPoolAddressesProvider.sol
+2026-01-30 01:41:15,319 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:15,992 - INFO -   ↳ 实现合约下载成功
+2026-01-30 01:41:16,187 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.10/solc-0.8.10, 优化=True, runs=100000)
+2026-01-30 01:41:16,191 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (7 项) - @aave/core-v3/contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol -> ./BaseImmutableAdminUpgradeabilityProxy.sol; @aave/core-v3/contracts/dependencies/openzeppelin/upgradeability/BaseUpgradeabilityProxy.sol -> ../contracts/Address.sol; @aave/core-v3/contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol -> ../../../dependencies/openzeppelin/upgradeability/Proxy.sol
+2026-01-30 01:41:16,191 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-30 01:41:16,629 - INFO -   源码下载完成, 耗时 11.09s
+2026-01-30 01:41:16,633 - INFO -   源码下载耗时: 11.96s
+2026-01-30 01:41:16,633 - INFO -   检测到 4 个实现合约，更新addresses.json
+2026-01-30 01:41:16,634 - INFO -   ADC_exp 总耗时: 53.13s
+2026-01-30 01:41:16,635 - INFO - 
+================================================================================
+2026-01-30 01:41:16,635 - INFO - 执行摘要
+2026-01-30 01:41:16,636 - INFO - ================================================================================
+2026-01-30 01:41:16,636 - INFO - 总脚本数:        1
+2026-01-30 01:41:16,636 - INFO - 成功:            1
+2026-01-30 01:41:16,636 - INFO - 失败:            0
+2026-01-30 01:41:16,636 - INFO - 总地址数:        16
+2026-01-30 01:41:16,636 - INFO - 已验证合约:      8
+2026-01-30 01:41:16,636 - INFO - 未验证合约:      0
+2026-01-30 01:41:16,636 - INFO -   └─ 仅字节码:   3
+2026-01-30 01:41:16,636 - INFO - API调用次数:     28
+2026-01-30 01:41:16,636 - INFO - 
+API Key并发统计:
+2026-01-30 01:41:16,636 - INFO -   etherscan:
+2026-01-30 01:41:16,636 - INFO -     Key数量: 5
+2026-01-30 01:41:16,636 - INFO -     总调用: 28
+2026-01-30 01:41:16,637 - INFO -     负载均衡: 最小=5, 最大=7, 平均=5.6
+2026-01-30 01:41:16,637 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-30 01:41:16,637 - INFO - ================================================================================

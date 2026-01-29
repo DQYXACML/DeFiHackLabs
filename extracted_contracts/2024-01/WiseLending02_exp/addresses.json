@@ -41,6 +41,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "wiseLending",
       "Vulnerable_Contract"
     ]
   },
@@ -51,12 +52,16 @@
     "source": "static",
     "context": "address poolToken = 0xB40b073d7E47986D3A45Ca7Fd30772C25A2AD57f",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "PLP-stETH-Dec2025",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "poolToken"
+      "poolToken",
+      "PLP-stETH-Dec2025",
+      "plp-steth-dec2025",
+      "PLP-STETH-DEC2025",
+      "IPLP-stETH-Dec2025"
     ]
   },
   {
@@ -66,12 +71,15 @@
     "source": "static",
     "context": "address pendleLPT = 0xC374f7eC85F8C7DE3207a10bB1978bA104bdA3B2",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "PENDLE-LPT",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "pendleLPT"
+      "pendleLPT",
+      "PENDLE-LPT",
+      "pendle-lpt",
+      "IPENDLE-LPT"
     ]
   },
   {
@@ -81,12 +89,15 @@
     "source": "static",
     "context": "address wsteth = 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "wstETH",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "wsteth"
+      "wsteth",
+      "wstETH",
+      "WSTETH",
+      "IwstETH"
     ]
   },
   {
@@ -131,6 +142,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "nft",
       "NFTManager"
     ]
   },
@@ -145,7 +157,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xcbC72d92b2dc8187414F6734718563898740C0BC",
@@ -154,11 +166,16 @@
     "source": "dynamic",
     "context": "called with gas 424",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "SY-stETH",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "SY-stETH",
+      "sy-steth",
+      "SY-STETH",
+      "ISY-stETH"
+    ]
   },
   {
     "address": "0x47D74516B33eD5D70ddE7119A40839f6Fcc24e57",
@@ -171,7 +188,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x11A72DC6D320F1De830d17634ae6524403fD5f47",
@@ -184,7 +201,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x27b1dAcd74688aF24a64BD3C9C1B143118740784",
@@ -197,7 +214,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x808507121B80c02388fAd14726482e061B8da827",
@@ -208,7 +225,7 @@
     "onchain_name": null,
     "symbol": "PENDLE",
     "decimals": 18,
-    "is_erc20": false,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
       "PENDLE",
@@ -227,7 +244,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xCd87EDBb1eCF759162f4F0462CfdD2A913A96C7d",
@@ -240,7 +257,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xf8A8EAe0206D36B9ac87Eaa9A229047085aF0178",
@@ -253,7 +270,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x7DBA84a0454289f8aB534d4c083D72e0C14a0F66",
@@ -266,7 +283,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x9229fe30c954F27AC5E7511ca00838A246ac25ed",
@@ -279,7 +296,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x8cB1a0fD4b278d665cD22317b37f2FF4086b6A79",
@@ -292,7 +309,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xbbd487268A295531d299c125F3e5f749884A3e30",
@@ -305,7 +322,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
@@ -314,11 +331,16 @@
     "source": "dynamic",
     "context": "called with gas 31663",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stETH",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stETH",
+      "steth",
+      "STETH",
+      "IstETH"
+    ]
   },
   {
     "address": "0xb8FFC3Cd6e7Cf5a098A1c92F48009765B24088Dc",
@@ -331,7 +353,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x2b33CF282f867A7FF693A66e11B0FcC5552e4425",
@@ -344,7 +366,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x17144556fd3424EDC8Fc8A4C940B2D04936d17eb",
@@ -353,11 +375,16 @@
     "source": "dynamic",
     "context": "called with gas 12783",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stETH",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stETH",
+      "steth",
+      "STETH",
+      "IstETH"
+    ]
   },
   {
     "address": "0xf3aBC972A0f537c1119C990d422463b93227Cd83",
@@ -366,11 +393,16 @@
     "source": "dynamic",
     "context": "called with gas 2376",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "YT-stETH-25DEC2025",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "YT-stETH-25DEC2025",
+      "yt-steth-25dec2025",
+      "YT-STETH-25DEC2025",
+      "IYT-stETH-25DEC2025"
+    ]
   },
   {
     "address": "0x02176d640657740539F70EEa98501EBBf1C10ecC",
@@ -383,7 +415,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
@@ -396,7 +428,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x716BB759A5f6faCdfF91F0AfB613133d510e1573",
@@ -409,7 +441,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa",
@@ -422,7 +454,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
@@ -435,7 +467,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x5ff10565516c110180bb9cc111cdbc2b0a68e09f",
@@ -448,33 +480,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x0000000000000000000000000000000000000000",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0xffffffffffffffffffffffffffffffffffffffff",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x1e97b612c4a205592622401b7af208efaf898f72",
@@ -487,33 +493,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x0000000000000000000000007fa9385be102ac3e",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x000000000000000000000000b40b073d7e47986d",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xc66aaaac03ae801ceea0787537ef653b38da54f2",
@@ -526,7 +506,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xc7c0aDa69917a0f3652C45bA2D11206E42C4A430",
@@ -539,33 +519,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x000000000000000000000000c7c0ada69917a0f3",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x000000000000000000000000cbc72d92b2dc8187",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xf1f3eb40f5bc1ad1344716ced8b8a0431d840b57",
@@ -578,7 +532,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x3ca7c3e38968823ccb4c78ea688df41356f182ae",
@@ -591,33 +545,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x00000000000000000000000017144556fd3424ed",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x0000000000000000000000008270400d528c34e1",
-    "name": null,
-    "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x79f28dd1050dd16be59fc6358a6c5b7608afce58",
@@ -630,19 +558,32 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
-    "address": "0x0000000000000000000000007f39c581f595b53c",
-    "name": null,
+    "address": "0x6ca84080381e43938476814be61b779a8bb6a600",
+    "name": "Unknown_Implementation",
     "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
+    "source": "proxy_implementation",
+    "context": null,
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0xef5579f4e7b0063a414a42a65dfd86a1562466e1",
+    "name": "Unknown_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

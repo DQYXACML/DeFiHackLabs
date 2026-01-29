@@ -22,7 +22,7 @@
  */
 
 pragma solidity 0.8.17;
-import "../../../../@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
 
 interface IStandardizedYield is IERC20Metadata {
     /// @dev Emitted when any base tokens is deposited to mint shares

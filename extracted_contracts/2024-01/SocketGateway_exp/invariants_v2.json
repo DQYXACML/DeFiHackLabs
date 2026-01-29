@@ -1,14 +1,14 @@
 {
   "project": "SocketGateway_exp",
-  "protocol_type": "bridge",
+  "protocol_type": "erc20",
   "invariants": [
     {
       "id": "PATTERN_flash_change_001",
       "type": "flash_change_prevention",
       "category": "bounded_value",
       "description": "Prevent extreme value changes (flash loan attack)",
-      "formula": "abs(value_after - value_before) / value_before <= 0.03",
-      "threshold": 0.03,
+      "formula": "abs(value_after - value_before) / value_before <= 0.25",
+      "threshold": 0.25,
       "severity": "critical",
       "contracts": [
         "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
@@ -16,7 +16,7 @@
       "slots": {
         "slot_0": {
           "index": "90598234900054307995722345735337251336628784422463505215821707809724155282288",
-          "threshold": 0.03,
+          "threshold": 0.25,
           "severity": "critical"
         }
       },
@@ -31,8 +31,8 @@
       "type": "balance_change_limit",
       "category": "bounded_value",
       "description": "Limit balance changes to prevent reentrancy attacks",
-      "formula": "abs(balance_after - balance_before) / balance_before <= 0.03",
-      "threshold": 0.03,
+      "formula": "abs(balance_after - balance_before) / balance_before <= 0.25",
+      "threshold": 0.25,
       "severity": "high",
       "contracts": [
         "0x50DF5a2217588772471B84aDBbe4194A2Ed39066"
@@ -57,10 +57,10 @@
   },
   "errors": [],
   "protocol_confidence": 1.0,
-  "semantic_mapping_coverage": 0.43776824034334766,
+  "semantic_mapping_coverage": 0.7518796992481203,
   "state_changes": {
-    "contracts_changed": 3,
-    "slots_changed": 355,
+    "contracts_changed": 2,
+    "slots_changed": 255,
     "extreme_changes": 157
   },
   "attack_patterns": [

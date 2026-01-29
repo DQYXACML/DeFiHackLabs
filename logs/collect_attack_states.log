@@ -42619,3 +42619,202 @@
 2026-01-29 02:09:07,498 - INFO - 失败:            0
 2026-01-29 02:09:07,498 - INFO - 跳过:            0
 2026-01-29 02:09:07,498 - INFO - ================================================================================
+2026-01-29 15:14:58,716 - INFO - 模式: Trace优先 + Sequential降级
+2026-01-29 15:14:58,717 - INFO - 收集策略: 收集攻击前和攻击后状态
+2026-01-29 15:14:58,717 - INFO - 覆盖策略: 启用 --force，所有事件将重新收集
+2026-01-29 15:14:58,717 - INFO - 并发模式: 启用 (地址并发数=10, 存储槽并发数=20)
+2026-01-29 15:14:58,717 - INFO - 加载RPC配置...
+2026-01-29 15:14:58,718 - INFO - 加载了 15 个RPC端点
+2026-01-29 15:14:58,718 - INFO - HTTP连接池初始化: pool_size=50, max_retries=3
+2026-01-29 15:14:58,719 - INFO - ================================================================================
+2026-01-29 15:14:58,719 - INFO - 开始收集攻击状态
+2026-01-29 15:14:58,719 - INFO - ================================================================================
+2026-01-29 15:14:58,720 - INFO - 找到 1 个攻击事件
+2026-01-29 15:14:58,720 - INFO - 
+[1/1] 处理: 2024-01/SocketGateway_exp
+2026-01-29 15:14:58,720 - INFO -   Fork: mainnet @ 19021453
+2026-01-29 15:14:58,721 - INFO -   攻击交易: 0xc6c3331fa8c2d3...
+2026-01-29 15:14:58,721 - INFO -   加载了 11 个地址
+2026-01-29 15:14:59,206 - INFO - ✓ 已连接到 mainnet: https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4w...
+2026-01-29 15:14:59,206 - INFO -   收集区块 19021453 的状态（11 个地址）
+2026-01-29 15:14:59,206 - INFO -   使用攻击交易: 0xc6c3331fa8c2d3...
+2026-01-29 15:14:59,471 - INFO -   使用并发模式处理 11 个地址 (workers=10)
+2026-01-29 15:15:00,089 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x3a23F943... 的storage
+2026-01-29 15:15:00,096 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x800C32Ea... 的storage
+2026-01-29 15:15:00,124 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xA0b86991... 的storage
+2026-01-29 15:15:00,136 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xCC5fDA5e... 的storage
+2026-01-29 15:15:00,180 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x43506849... 的storage
+2026-01-29 15:15:00,315 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x47b7cBcC... 的storage
+2026-01-29 15:15:00,765 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x800C32EaA2a6c93cF4CB51794450ED77fBfbB172 不在trace中，需要降级到Sequential扫描
+2026-01-29 15:15:00,775 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x43506849D7C04F9138D1A2050bbF3A0c054402dd 的trace结果缺少storage字段
+2026-01-29 15:15:00,996 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x47b7cBcCf4149Fe371a605dC64F14695c3F5Ccd3 不在trace中，需要降级到Sequential扫描
+2026-01-29 15:15:03,028 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0xCC5fDA5e3cA925bd0bb428C8b2669496eE43067e 的trace结果缺少storage字段
+2026-01-29 15:15:03,141 - INFO -       ✓ Phase 1完成: 收集到 1 个slots
+2026-01-29 15:15:03,326 - INFO -       ✓ Phase 1完成: 收集到 265 个slots
+2026-01-29 15:15:08,497 - INFO -   扫描存储槽中的合约地址...
+2026-01-29 15:15:09,169 - INFO -   开始收集攻击后状态...
+2026-01-29 15:15:11,333 - INFO -   攻击区块号: 19021454
+2026-01-29 15:15:11,334 - INFO -   收集区块 19021454 的状态（11 个地址）
+2026-01-29 15:15:11,334 - INFO -   使用攻击交易: 0xc6c3331fa8c2d3...
+2026-01-29 15:15:11,613 - INFO -   使用并发模式处理 11 个地址 (workers=10)
+2026-01-29 15:15:11,985 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xCC5fDA5e... 的storage
+2026-01-29 15:15:11,985 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0xCC5fDA5e3cA925bd0bb428C8b2669496eE43067e 的trace结果缺少storage字段
+2026-01-29 15:15:11,991 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x3a23F943... 的storage
+2026-01-29 15:15:11,992 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xf2D5951b... 的storage
+2026-01-29 15:15:11,992 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0xf2D5951bB0A4d14BdcC37b66f919f9A1009C05d1 的trace结果缺少storage字段
+2026-01-29 15:15:12,003 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xA0b86991... 的storage
+2026-01-29 15:15:12,005 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x800C32Ea... 的storage
+2026-01-29 15:15:12,005 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x800C32EaA2a6c93cF4CB51794450ED77fBfbB172 不在trace中，需要降级到Sequential扫描
+2026-01-29 15:15:12,015 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x43506849... 的storage
+2026-01-29 15:15:12,015 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x43506849D7C04F9138D1A2050bbF3A0c054402dd 的trace结果缺少storage字段
+2026-01-29 15:15:12,263 - INFO -       ✓ Phase 1完成: 收集到 1 个slots
+2026-01-29 15:15:12,384 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x47b7cBcC... 的storage
+2026-01-29 15:15:12,384 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x47b7cBcCf4149Fe371a605dC64F14695c3F5Ccd3 不在trace中，需要降级到Sequential扫描
+2026-01-29 15:15:13,811 - INFO -       ✓ Phase 1完成: 收集到 265 个slots
+2026-01-29 15:15:19,378 - INFO -   扫描存储槽中的合约地址...
+2026-01-29 15:15:19,664 - INFO -   ✓ 攻击后状态保存到: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-01/SocketGateway_exp/attack_state_after.json
+2026-01-29 15:15:19,664 - INFO -   事件耗时: 19.30s
+2026-01-29 15:15:19,664 - INFO -   ✓ 成功
+2026-01-29 15:15:19,664 - INFO - 
+================================================================================
+2026-01-29 15:15:19,664 - INFO - 执行摘要
+2026-01-29 15:15:19,664 - INFO - ================================================================================
+2026-01-29 15:15:19,664 - INFO - 总事件数:        1
+2026-01-29 15:15:19,664 - INFO - 成功:            1
+2026-01-29 15:15:19,665 - INFO - 失败:            0
+2026-01-29 15:15:19,665 - INFO - 跳过:            0
+2026-01-29 15:15:19,665 - INFO - ================================================================================
+2026-01-30 01:42:10,294 - INFO - 模式: Trace优先 + Sequential降级
+2026-01-30 01:42:10,295 - INFO - 收集策略: 收集攻击前和攻击后状态
+2026-01-30 01:42:10,295 - INFO - 覆盖策略: 启用 --force，所有事件将重新收集
+2026-01-30 01:42:10,295 - INFO - 并发模式: 启用 (地址并发数=10, 存储槽并发数=20)
+2026-01-30 01:42:10,295 - INFO - 加载RPC配置...
+2026-01-30 01:42:10,296 - INFO - 加载了 15 个RPC端点
+2026-01-30 01:42:10,296 - INFO - HTTP连接池初始化: pool_size=50, max_retries=3
+2026-01-30 01:42:10,296 - INFO - ================================================================================
+2026-01-30 01:42:10,296 - INFO - 开始收集攻击状态
+2026-01-30 01:42:10,296 - INFO - ================================================================================
+2026-01-30 01:42:10,298 - INFO - 找到 1 个攻击事件
+2026-01-30 01:42:10,298 - INFO - 
+[1/1] 处理: 2024-02/ADC_exp
+2026-01-30 01:42:10,298 - INFO -   Fork: mainnet @ 19138640
+2026-01-30 01:42:10,299 - INFO -   攻击交易: 0xcf834aff4de999...
+2026-01-30 01:42:10,299 - INFO -   加载了 20 个地址
+2026-01-30 01:42:10,718 - INFO - ✓ 已连接到 mainnet: https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4w...
+2026-01-30 01:42:10,718 - INFO -   收集区块 19138640 的状态（20 个地址）
+2026-01-30 01:42:10,718 - INFO -   使用攻击交易: 0xcf834aff4de999...
+2026-01-30 01:42:10,928 - INFO -   使用并发模式处理 20 个地址 (workers=10)
+2026-01-30 01:42:11,534 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x2ffdCe5F... 的storage
+2026-01-30 01:42:11,544 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xaE2C7af5... 的storage
+2026-01-30 01:42:11,563 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x0B925eD1... 的storage
+2026-01-30 01:42:11,566 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xdE46fcF6... 的storage
+2026-01-30 01:42:11,570 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xC02aaA39... 的storage
+2026-01-30 01:42:11,575 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xBA122222... 的storage
+2026-01-30 01:42:11,659 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x87870Bca... 的storage
+2026-01-30 01:42:11,695 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xA0b86991... 的storage
+2026-01-30 01:42:11,714 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x7a250d56... 的storage
+2026-01-30 01:42:12,022 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xD357e494... 的storage
+2026-01-30 01:42:12,154 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:12,338 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:12,343 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x0B925eD163218f6662a35e0f0371Ac234f9E9371 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:12,862 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:12,975 - INFO -       ✓ Phase 1完成: 收集到 5 个slots
+2026-01-30 01:42:13,392 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x49E298B9... 的storage
+2026-01-30 01:42:13,662 - INFO -       ✓ Phase 1完成: 收集到 2 个slots
+2026-01-30 01:42:13,804 - INFO -       ✓ Phase 1完成: 收集到 4 个slots
+2026-01-30 01:42:14,191 - INFO -       ✓ Phase 1完成: 收集到 6 个slots
+2026-01-30 01:42:14,595 - INFO -       ✓ Phase 1完成: 收集到 2 个slots
+2026-01-30 01:42:15,286 - INFO -       ✓ Phase 1完成: 收集到 1 个slots
+2026-01-30 01:42:15,331 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x800C32Ea... 的storage
+2026-01-30 01:42:15,331 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x800C32EaA2a6c93cF4CB51794450ED77fBfbB172 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:15,808 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x43506849... 的storage
+2026-01-30 01:42:15,809 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x43506849D7C04F9138D1A2050bbF3A0c054402dd 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:18,272 - INFO -       ✓ Phase 1完成: 收集到 46 个slots
+2026-01-30 01:42:23,591 - INFO -   扫描存储槽中的合约地址...
+2026-01-30 01:42:23,725 - INFO -   开始收集攻击后状态...
+2026-01-30 01:42:25,857 - INFO -   攻击区块号: 19138641
+2026-01-30 01:42:25,857 - INFO -   收集区块 19138641 的状态（20 个地址）
+2026-01-30 01:42:25,857 - INFO -   使用攻击交易: 0xcf834aff4de999...
+2026-01-30 01:42:26,058 - INFO -   使用并发模式处理 20 个地址 (workers=10)
+2026-01-30 01:42:26,435 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xC02aaA39... 的storage
+2026-01-30 01:42:26,474 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xA0b86991... 的storage
+2026-01-30 01:42:26,475 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:26,477 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xdE46fcF6... 的storage
+2026-01-30 01:42:26,482 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x2ffdCe5F... 的storage
+2026-01-30 01:42:26,485 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xBA122222... 的storage
+2026-01-30 01:42:26,486 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x7a250d56... 的storage
+2026-01-30 01:42:26,486 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:26,625 - INFO -       ✓ Phase 1完成: 收集到 1 个slots
+2026-01-30 01:42:26,626 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x0B925eD1... 的storage
+2026-01-30 01:42:26,627 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x0B925eD163218f6662a35e0f0371Ac234f9E9371 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:26,628 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xaE2C7af5... 的storage
+2026-01-30 01:42:27,367 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x87870Bca... 的storage
+2026-01-30 01:42:27,367 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:27,410 - INFO -       ✓ Phase 1完成: 收集到 2 个slots
+2026-01-30 01:42:27,435 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0xD357e494... 的storage
+2026-01-30 01:42:27,733 - INFO -       ✓ Phase 1完成: 收集到 5 个slots
+2026-01-30 01:42:28,135 - INFO -       ✓ Phase 1完成: 收集到 4 个slots
+2026-01-30 01:42:28,152 - INFO -       ✓ Phase 1完成: 收集到 6 个slots
+2026-01-30 01:42:28,229 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x49E298B9... 的storage
+2026-01-30 01:42:28,503 - INFO -       ✓ Phase 1完成: 收集到 2 个slots
+2026-01-30 01:42:29,376 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x800C32Ea... 的storage
+2026-01-30 01:42:29,376 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x800C32EaA2a6c93cF4CB51794450ED77fBfbB172 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:29,654 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x43506849... 的storage
+2026-01-30 01:42:29,654 - WARNING -       ⚠ Phase 1失败: debug_traceTransaction失败: 合约 0x43506849D7C04F9138D1A2050bbF3A0c054402dd 不在trace中，需要降级到Sequential扫描
+2026-01-30 01:42:33,780 - INFO -       ✓ Phase 1完成: 收集到 46 个slots
+2026-01-30 01:42:39,227 - INFO -   扫描存储槽中的合约地址...
+2026-01-30 01:42:39,325 - INFO -   发现 1 个额外的合约地址
+2026-01-30 01:42:39,738 - INFO - 
+      [Phase 1] 使用prestateTracer收集 0x72052F12... 的storage
+2026-01-30 01:42:40,013 - INFO -       ✓ Phase 1完成: 收集到 2 个slots
+2026-01-30 01:42:45,559 - INFO -   ✓ 攻击后状态保存到: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/2024-02/ADC_exp/attack_state_after.json
+2026-01-30 01:42:45,559 - INFO -   事件耗时: 34.71s
+2026-01-30 01:42:45,559 - INFO -   ✓ 成功
+2026-01-30 01:42:45,559 - INFO - 
+================================================================================
+2026-01-30 01:42:45,559 - INFO - 执行摘要
+2026-01-30 01:42:45,559 - INFO - ================================================================================
+2026-01-30 01:42:45,559 - INFO - 总事件数:        1
+2026-01-30 01:42:45,559 - INFO - 成功:            1
+2026-01-30 01:42:45,559 - INFO - 失败:            0
+2026-01-30 01:42:45,559 - INFO - 跳过:            0
+2026-01-30 01:42:45,560 - INFO - ================================================================================
