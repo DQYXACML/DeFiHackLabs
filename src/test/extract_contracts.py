@@ -660,10 +660,11 @@ class DynamicAnalyzer:
         '0x0000000000000000000000000000000000002222',  # 测试地址
     }
 
-    def __init__(self, skip_tests: Optional[List[str]] = None):
+    def __init__(self, skip_tests: Optional[List[str]] = None, test_timeout: int = 300):
         self.logger = logging.getLogger(__name__ + '.DynamicAnalyzer')
         self.project_root = PROJECT_ROOT
         self.skip_tests = skip_tests or DEFAULT_SKIP_TESTS
+        self.test_timeout = test_timeout
 
     @classmethod
     def is_valid_address(cls, address: str) -> bool:
@@ -736,19 +737,21 @@ class DynamicAnalyzer:
             self.logger.error(f"动态分析失败: {e}")
             return []
 
-    def _run_forge_test(self, test_file: Path, timeout: int = 300,
+    def _run_forge_test(self, test_file: Path, timeout: Optional[int] = None,
                         extra_flags: Optional[List[str]] = None) -> Optional[str]:
         """
         运行forge test
 
         Args:
             test_file: 测试文件路径
-            timeout: 超时时间(秒)
+            timeout: 超时时间(秒), None 时使用默认配置
 
         Returns:
             测试输出或None(如果失败)
         """
         try:
+            if timeout is None:
+                timeout = self.test_timeout
             try:
                 match_path = test_file.relative_to(self.project_root)
             except ValueError:
@@ -2902,7 +2905,8 @@ class ContractExtractor:
     def __init__(self, test_dir: Path, output_dir: Path,
                  api_keys: Optional[Dict[str, str]] = None,
                  diff_enabled: bool = False,
-                 force_overwrite: bool = False):
+                 force_overwrite: bool = False,
+                 dynamic_timeout: int = 300):
         self.test_dir = test_dir
         self.output_dir = output_dir
 
@@ -2922,7 +2926,7 @@ class ContractExtractor:
 
         # 初始化各模块
         self.static_analyzer = StaticAnalyzer()
-        self.dynamic_analyzer = DynamicAnalyzer()
+        self.dynamic_analyzer = DynamicAnalyzer(test_timeout=dynamic_timeout)
         self.source_downloader = SourceDownloader(self.api_keys)
 
         # 初始化OnChainDataFetcher
@@ -3686,6 +3690,13 @@ def main():
     )
 
     parser.add_argument(
+        '--dynamic-timeout',
+        type=int,
+        default=300,
+        help='动态分析超时时间(秒, 默认: 300)'
+    )
+
+    parser.add_argument(
         '--diff',
         action='store_true',
         help='比较新旧结果，输出差异（默认不覆盖已有文件）'
@@ -3740,13 +3751,17 @@ def main():
     else:
         logger.info("使用硬编码的API Keys配置")
 
+    if args.dynamic_timeout <= 0:
+        parser.error("--dynamic-timeout 必须为正整数")
+
     # 创建提取器
     extractor = ContractExtractor(
         test_dir=args.test_dir,
         output_dir=args.output_dir,
         api_keys=api_keys,
         diff_enabled=args.diff,
-        force_overwrite=args.force
+        force_overwrite=args.force,
+        dynamic_timeout=args.dynamic_timeout
     )
 
     # 如果只做静态分析,禁用动态分析器

@@ -24464,3 +24464,515 @@ API Key并发统计:
 2026-01-26 19:28:31,439 - INFO - 
 输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
 2026-01-26 19:28:31,439 - INFO - ================================================================================
+2026-01-28 20:10:01,348 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-28 20:10:01,349 - INFO - 使用硬编码的API Keys配置
+2026-01-28 20:10:01,350 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-28 20:10:01,350 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-28 20:10:01,350 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-28 20:10:01,350 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-28 20:10:01,350 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-28 20:10:01,350 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-28 20:10:01,351 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:10:01,351 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:10:01,351 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:10:01,351 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:10:01,352 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:10:01,352 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:10:01,352 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:10:01,352 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-28 20:10:01,352 - INFO - OnChainDataFetcher初始化成功
+2026-01-28 20:10:01,352 - INFO - ================================================================================
+2026-01-28 20:10:01,352 - INFO - 开始提取DeFi攻击合约
+2026-01-28 20:10:01,352 - INFO - ================================================================================
+2026-01-28 20:10:01,354 - INFO - 找到 1 个测试脚本
+2026-01-28 20:10:01,354 - INFO - 
+[1/1] 处理: 2024-01/OrbitChain_exp
+2026-01-28 20:10:01,354 - INFO - 静态分析: OrbitChain_exp
+2026-01-28 20:10:01,357 - INFO -   静态提取到 3 个地址
+2026-01-28 20:10:01,357 - INFO -   静态分析耗时: 0.00s, 地址数: 3
+2026-01-28 20:10:01,357 - INFO - 动态分析: OrbitChain_exp
+2026-01-28 20:12:36,807 - INFO -   动态提取到 32 个地址
+2026-01-28 20:12:36,828 - INFO -   动态分析耗时: 147.03s, 地址数: 32
+2026-01-28 20:12:36,830 - INFO -   地址合并耗时: 0.00s
+2026-01-28 20:12:36,830 - INFO -   共提取到 32 个唯一地址
+2026-01-28 20:12:36,858 - INFO -   应用vm.label别名: 1 个
+2026-01-28 20:12:36,877 - INFO -   开始补全链上数据 (32个地址)...
+2026-01-28 20:12:36,931 - INFO - 开始批量获取 32 个合约信息 (chain=mainnet)
+2026-01-28 20:12:41,841 - WARNING - 获取合约名称错误 0xff7c705149017ce467d05717eadb0a2718aedc7a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,098 - WARNING - 获取合约名称错误 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,109 - WARNING - 获取合约名称错误 0x6b6ddbaaafc5f0580b670ad9d0913ca4c60df275: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,253 - WARNING - 获取合约名称错误 0x7F4b332611818aE13c76f9222e2229f274Ded9BD: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,268 - WARNING - 获取合约名称错误 0x3b7169e2ee2b73dcfbabae1400b811b95616cb5d: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,270 - WARNING - 获取合约名称错误 0xd4b7fd0617b28e1eeb018e1dbf924e662d1a0520: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,281 - WARNING - 获取合约名称错误 0x3b6590Ff12Ba188e465395E1610D8368613054B0: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,281 - WARNING - 获取合约名称错误 0xa6dc28CbcB2f8060a00b4FA67F9b67775AC5a3a1: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,284 - WARNING - 获取合约名称错误 0x1c0Cd56F1c3E2cF13B9B44dBE5529104bade543E: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,286 - WARNING - 获取合约名称错误 0x9263e7873613ddc598a701709875634819176aff: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,298 - WARNING - 获取合约名称错误 0x5443cf63033ab211f205076622b2426b994ce370: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,298 - WARNING - 获取合约名称错误 0xe06c17f1a6630bfa47f0fe0cfba02f40f0901e24: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,303 - WARNING - 获取合约名称错误 0x67C3c784C49d9ab8757ADb71491df1A1B38FbFA8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,318 - WARNING - 获取合约名称错误 0x8df324c6d9450793ff2e0e75391e0b3117f55bfd: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,318 - WARNING - 获取合约名称错误 0xC3430BC8C2C05FC6b42114BF7F82a3e2f3Ee9454: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,322 - WARNING - 获取合约名称错误 0x9ca536d01B9E78dD30de9d7457867F8898634049: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,327 - WARNING - 获取合约名称错误 0x50f408f4b0fb17bf4f5143de4bd95802410d0042: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,342 - WARNING - 获取合约名称错误 0x18303ee09818b0575ea4a5c2ed25b1e78523aa2b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,348 - WARNING - 获取合约名称错误 0x38df0fcd2c0a0df108cfe8a6ae4850ca1cdfd082: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,450 - WARNING - 获取合约名称错误 0x3ef06a27b3565a82b6d72af184ca3d787e3dd8fc: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,454 - WARNING - 获取合约名称错误 0xb18557931ff79edd3f4f9f4679b4538562f57b62: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,481 - WARNING - 获取合约名称错误 0xb5680a55d627c52de992e3ea52a86f19da475399: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,488 - WARNING - 获取合约名称错误 0x0cc266abfa2ba924ffa7dab0cd8f7bb1a14891ec: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,498 - WARNING - 获取合约名称错误 0x739fe72bab59a2eead1e36fdf71441e0407332c5: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,508 - WARNING - 获取合约名称错误 0xf1d81597f32c9376e90d22b9a1f121f1a99a1c19: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,520 - WARNING - 获取合约名称错误 0xdecb2622da70fee1c343b93dc946eb855fd32c59: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,532 - WARNING - 获取合约名称错误 0x37da521031f0a65dd8466d4def41c44a69796f69: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,715 - WARNING - 获取合约名称错误 0x725fa18d06acb4f6f8a5b143bca088d76f77d953: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,731 - WARNING - 获取合约名称错误 0x1bf68a9d1eaee7826b3593c20a0ca93293cb489a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:42,742 - WARNING - 获取合约名称错误 0x8a3F117Ef3b40f1661Dedf7f28fC33E7b6fae4F8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,272 - WARNING - 获取合约名称错误 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,487 - WARNING - 获取合约名称错误 0x50f408f4b0fb17bf4f5143de4bd95802410d0042: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,513 - WARNING - 获取合约名称错误 0x38df0fcd2c0a0df108cfe8a6ae4850ca1cdfd082: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,579 - WARNING - 获取合约名称错误 0x3924Ac70075078A7713f543b72e3F8817ecEc646: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,644 - WARNING - 获取合约名称错误 0x67C3c784C49d9ab8757ADb71491df1A1B38FbFA8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,649 - WARNING - 获取合约名称错误 0xa6dc28CbcB2f8060a00b4FA67F9b67775AC5a3a1: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,662 - WARNING - 获取合约名称错误 0x5443cf63033ab211f205076622b2426b994ce370: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,835 - WARNING - 获取合约名称错误 0x9ca536d01B9E78dD30de9d7457867F8898634049: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,850 - WARNING - 获取合约名称错误 0xdecb2622da70fee1c343b93dc946eb855fd32c59: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,861 - WARNING - 获取合约名称错误 0x725fa18d06acb4f6f8a5b143bca088d76f77d953: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,865 - WARNING - 获取合约名称错误 0xe06c17f1a6630bfa47f0fe0cfba02f40f0901e24: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,965 - WARNING - 获取合约名称错误 0xd4b7fd0617b28e1eeb018e1dbf924e662d1a0520: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,980 - WARNING - 获取合约名称错误 0xb18557931ff79edd3f4f9f4679b4538562f57b62: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:43,999 - WARNING - 获取合约名称错误 0x1c0Cd56F1c3E2cF13B9B44dBE5529104bade543E: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,013 - WARNING - 获取合约名称错误 0x0cc266abfa2ba924ffa7dab0cd8f7bb1a14891ec: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,014 - WARNING - 获取合约名称错误 0xC3430BC8C2C05FC6b42114BF7F82a3e2f3Ee9454: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,024 - WARNING - 获取合约名称错误 0x8df324c6d9450793ff2e0e75391e0b3117f55bfd: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,042 - WARNING - 获取合约名称错误 0x7F4b332611818aE13c76f9222e2229f274Ded9BD: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,067 - WARNING - 获取合约名称错误 0x6b6ddbaaafc5f0580b670ad9d0913ca4c60df275: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,070 - WARNING - 获取合约名称错误 0x18303ee09818b0575ea4a5c2ed25b1e78523aa2b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,088 - WARNING - 获取合约名称错误 0x37da521031f0a65dd8466d4def41c44a69796f69: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,130 - WARNING - 获取合约名称错误 0x739fe72bab59a2eead1e36fdf71441e0407332c5: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,197 - WARNING - 获取合约名称错误 0x3b6590Ff12Ba188e465395E1610D8368613054B0: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,205 - WARNING - 获取合约名称错误 0xff7c705149017ce467d05717eadb0a2718aedc7a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,218 - WARNING - 获取合约名称错误 0xf1d81597f32c9376e90d22b9a1f121f1a99a1c19: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,245 - WARNING - 获取合约名称错误 0x3ef06a27b3565a82b6d72af184ca3d787e3dd8fc: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,252 - WARNING - 获取合约名称错误 0x3b7169e2ee2b73dcfbabae1400b811b95616cb5d: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,269 - WARNING - 获取合约名称错误 0x1bf68a9d1eaee7826b3593c20a0ca93293cb489a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,280 - WARNING - 获取合约名称错误 0xb5680a55d627c52de992e3ea52a86f19da475399: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,304 - WARNING - 获取合约名称错误 0x8a3F117Ef3b40f1661Dedf7f28fC33E7b6fae4F8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,640 - WARNING - 获取合约名称错误 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,846 - WARNING - 获取合约名称错误 0x50f408f4b0fb17bf4f5143de4bd95802410d0042: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,869 - WARNING - 获取合约名称错误 0x38df0fcd2c0a0df108cfe8a6ae4850ca1cdfd082: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,949 - WARNING - 获取合约名称错误 0x3924Ac70075078A7713f543b72e3F8817ecEc646: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:44,968 - WARNING - 获取合约名称错误 0x9263e7873613ddc598a701709875634819176aff: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,024 - WARNING - 获取合约名称错误 0x5443cf63033ab211f205076622b2426b994ce370: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,025 - WARNING - 获取合约名称错误 0x67C3c784C49d9ab8757ADb71491df1A1B38FbFA8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,141 - WARNING - 获取合约名称错误 0xb18557931ff79edd3f4f9f4679b4538562f57b62: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,192 - WARNING - 获取合约名称错误 0x8df324c6d9450793ff2e0e75391e0b3117f55bfd: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,199 - WARNING - 获取合约名称错误 0x9ca536d01B9E78dD30de9d7457867F8898634049: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,204 - WARNING - 获取合约名称错误 0x7F4b332611818aE13c76f9222e2229f274Ded9BD: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,229 - WARNING - 获取合约名称错误 0xa6dc28CbcB2f8060a00b4FA67F9b67775AC5a3a1: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,243 - WARNING - 获取合约名称错误 0x18303ee09818b0575ea4a5c2ed25b1e78523aa2b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,368 - WARNING - 获取合约名称错误 0xf1d81597f32c9376e90d22b9a1f121f1a99a1c19: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,373 - WARNING - 获取合约名称错误 0xe06c17f1a6630bfa47f0fe0cfba02f40f0901e24: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,389 - WARNING - 获取合约名称错误 0xC3430BC8C2C05FC6b42114BF7F82a3e2f3Ee9454: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,431 - WARNING - 获取合约名称错误 0xdecb2622da70fee1c343b93dc946eb855fd32c59: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,448 - WARNING - 获取合约名称错误 0xb5680a55d627c52de992e3ea52a86f19da475399: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,505 - WARNING - 获取合约名称错误 0xd4b7fd0617b28e1eeb018e1dbf924e662d1a0520: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,556 - WARNING - 获取合约名称错误 0x3b6590Ff12Ba188e465395E1610D8368613054B0: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,570 - WARNING - 获取合约名称错误 0x0cc266abfa2ba924ffa7dab0cd8f7bb1a14891ec: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,602 - WARNING - 获取合约名称错误 0x6b6ddbaaafc5f0580b670ad9d0913ca4c60df275: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,614 - WARNING - 获取合约名称错误 0x37da521031f0a65dd8466d4def41c44a69796f69: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,668 - WARNING - 获取合约名称错误 0x739fe72bab59a2eead1e36fdf71441e0407332c5: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,720 - WARNING - 获取合约名称错误 0x1c0Cd56F1c3E2cF13B9B44dBE5529104bade543E: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,781 - WARNING - 获取合约名称错误 0x3b7169e2ee2b73dcfbabae1400b811b95616cb5d: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,807 - WARNING - 获取合约名称错误 0xff7c705149017ce467d05717eadb0a2718aedc7a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,809 - WARNING - 获取合约名称错误 0x1bf68a9d1eaee7826b3593c20a0ca93293cb489a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:45,838 - WARNING - 获取合约名称错误 0x725fa18d06acb4f6f8a5b143bca088d76f77d953: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:46,031 - WARNING - 获取合约名称错误 0x8a3F117Ef3b40f1661Dedf7f28fC33E7b6fae4F8: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:46,516 - WARNING - 获取合约名称错误 0x3924Ac70075078A7713f543b72e3F8817ecEc646: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:46,778 - WARNING - 获取合约名称错误 0x3ef06a27b3565a82b6d72af184ca3d787e3dd8fc: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:47,313 - WARNING - 获取合约名称错误 0x9263e7873613ddc598a701709875634819176aff: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:48,960 - WARNING - 获取合约名称超时 0xf7f60c98b04d45c371bcccf6aa12ebcd844fca6b (尝试1/3)
+2026-01-28 20:12:50,802 - WARNING - 获取合约名称错误 0xf7f60c98b04d45c371bcccf6aa12ebcd844fca6b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:52,823 - WARNING - 获取合约名称错误 0xf7f60c98b04d45c371bcccf6aa12ebcd844fca6b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-28 20:12:56,660 - INFO - 批量获取完成: 32/32 成功, 耗时19.73秒
+2026-01-28 20:12:56,668 - INFO -   ✓ 链上数据补全完成: 32/32 个地址
+2026-01-28 20:12:56,668 - INFO -   链上数据补全耗时: 16.97s
+2026-01-28 20:12:56,669 - INFO -   保存地址耗时: 0.00s
+2026-01-28 20:12:56,669 - INFO -   批量预检查 32 个地址的合约存在性 (并发数: 10)...
+2026-01-28 20:12:58,032 - INFO -   ✓ 预检查完成: 3/32 个有效合约, 耗时 1.36秒
+2026-01-28 20:12:58,034 - INFO -   已过滤 29 个无效地址,剩余 3 个待下载
+2026-01-28 20:12:58,034 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-28 20:12:59,471 - INFO -   ✓ 下载成功: 0xC3430BC8...
+2026-01-28 20:12:59,475 - INFO -   ✓ 下载成功: 0x2260FAC5...
+2026-01-28 20:12:59,475 - INFO -   ✓ 下载成功: 0x1bf68a9d...
+2026-01-28 20:13:01,516 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.0/solc-0.5.0, 优化=True, runs=200)
+2026-01-28 20:13:01,520 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (3 项) - EthVault.sol -> ./MultiSigWallet.sol; EthVault.impl.sol -> ./SafeMath.sol; EthVault.impl.sol -> ./EthVault.sol
+2026-01-28 20:13:01,520 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-28 20:13:01,773 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.0/solc-0.5.0, 优化=True, runs=1)
+2026-01-28 20:13:01,798 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-28 20:13:02,028 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2026-01-28 20:13:02,042 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-28 20:13:02,103 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-28 20:13:02,158 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-28 20:13:03,718 - INFO -   源码下载完成, 耗时 5.68s
+2026-01-28 20:13:03,721 - INFO -   源码下载耗时: 7.05s
+2026-01-28 20:13:03,721 - INFO -   检测到 1 个实现合约，更新addresses.json
+2026-01-28 20:13:03,721 - INFO -   OrbitChain_exp 总耗时: 171.11s
+2026-01-28 20:13:03,722 - INFO - 
+================================================================================
+2026-01-28 20:13:03,722 - INFO - 执行摘要
+2026-01-28 20:13:03,722 - INFO - ================================================================================
+2026-01-28 20:13:03,722 - INFO - 总脚本数:        1
+2026-01-28 20:13:03,722 - INFO - 成功:            1
+2026-01-28 20:13:03,722 - INFO - 失败:            0
+2026-01-28 20:13:03,722 - INFO - 总地址数:        32
+2026-01-28 20:13:03,722 - INFO - 已验证合约:      3
+2026-01-28 20:13:03,722 - INFO - 未验证合约:      0
+2026-01-28 20:13:03,722 - INFO -   └─ 仅字节码:   0
+2026-01-28 20:13:03,722 - INFO - API调用次数:     6
+2026-01-28 20:13:03,722 - INFO - 
+API Key并发统计:
+2026-01-28 20:13:03,722 - INFO -   etherscan:
+2026-01-28 20:13:03,722 - INFO -     Key数量: 5
+2026-01-28 20:13:03,722 - INFO -     总调用: 6
+2026-01-28 20:13:03,722 - INFO -     负载均衡: 最小=1, 最大=2, 平均=1.2
+2026-01-28 20:13:03,722 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-28 20:13:03,722 - INFO - ================================================================================
+2026-01-28 20:30:56,854 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-28 20:30:56,856 - INFO - 使用硬编码的API Keys配置
+2026-01-28 20:30:56,857 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-28 20:30:56,857 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-28 20:30:56,858 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-28 20:30:56,858 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-28 20:30:56,858 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-28 20:30:56,858 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-28 20:30:56,859 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:30:56,859 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:30:56,859 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:30:56,859 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:30:56,860 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:30:56,860 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:30:56,860 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-28 20:30:56,860 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-28 20:30:56,860 - INFO - OnChainDataFetcher初始化成功
+2026-01-28 20:30:56,860 - INFO - ================================================================================
+2026-01-28 20:30:56,860 - INFO - 开始提取DeFi攻击合约
+2026-01-28 20:30:56,860 - INFO - ================================================================================
+2026-01-28 20:30:56,862 - INFO - 找到 1 个测试脚本
+2026-01-28 20:30:56,863 - INFO - 
+[1/1] 处理: 2024-01/OrbitChain_exp
+2026-01-28 20:30:56,863 - INFO - 静态分析: OrbitChain_exp
+2026-01-28 20:30:56,866 - INFO -   静态提取到 3 个地址
+2026-01-28 20:30:56,866 - INFO -   静态分析耗时: 0.00s, 地址数: 3
+2026-01-28 20:30:56,866 - INFO - 动态分析: OrbitChain_exp
+2026-01-28 20:31:36,883 - INFO -   动态提取到 32 个地址
+2026-01-28 20:31:36,901 - INFO -   动态分析耗时: 36.78s, 地址数: 32
+2026-01-28 20:31:36,903 - INFO -   地址合并耗时: 0.00s
+2026-01-28 20:31:36,903 - INFO -   共提取到 32 个唯一地址
+2026-01-28 20:31:36,927 - INFO -   应用vm.label别名: 1 个
+2026-01-28 20:31:36,941 - INFO -   开始补全链上数据 (32个地址)...
+2026-01-28 20:31:36,992 - INFO - 开始批量获取 32 个合约信息 (chain=mainnet)
+2026-01-28 20:31:37,025 - INFO - 批量获取完成: 32/32 成功, 耗时0.03秒
+2026-01-28 20:31:37,034 - INFO -   ✓ 链上数据补全完成: 32/32 个地址
+2026-01-28 20:31:37,034 - INFO -   链上数据补全耗时: 0.09s
+2026-01-28 20:31:37,040 - INFO -   保存地址耗时: 0.01s
+2026-01-28 20:31:37,043 - INFO -   批量预检查 32 个地址的合约存在性 (并发数: 10)...
+2026-01-28 20:31:38,414 - INFO -   ✓ 预检查完成: 3/32 个有效合约, 耗时 1.37秒
+2026-01-28 20:31:38,415 - INFO -   已过滤 29 个无效地址,剩余 3 个待下载
+2026-01-28 20:31:38,415 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-28 20:31:39,539 - INFO -   ✓ 下载成功: 0x2260FAC5...
+2026-01-28 20:31:39,681 - INFO -   ✓ 下载成功: 0xC3430BC8...
+2026-01-28 20:31:39,707 - INFO -   ✓ 下载成功: 0x1bf68a9d...
+2026-01-28 20:31:41,095 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.0/solc-0.5.0, 优化=True, runs=1)
+2026-01-28 20:31:41,115 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-28 20:31:41,170 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.24/solc-0.4.24, 优化=True, runs=200)
+2026-01-28 20:31:41,183 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-28 20:31:41,305 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-28 20:31:41,335 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.0/solc-0.5.0, 优化=True, runs=200)
+2026-01-28 20:31:41,337 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (3 项) - EthVault.impl.sol -> ./EthVault.sol; EthVault.sol -> ./MultiSigWallet.sol; EthVault.impl.sol -> ./SafeMath.sol
+2026-01-28 20:31:41,337 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-28 20:31:41,408 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-28 20:31:42,874 - INFO -   源码下载完成, 耗时 4.46s
+2026-01-28 20:31:42,876 - INFO -   源码下载耗时: 5.84s
+2026-01-28 20:31:42,876 - INFO -   检测到 1 个实现合约，更新addresses.json
+2026-01-28 20:31:42,877 - INFO -   OrbitChain_exp 总耗时: 42.76s
+2026-01-28 20:31:42,880 - INFO - 
+================================================================================
+2026-01-28 20:31:42,880 - INFO - 执行摘要
+2026-01-28 20:31:42,880 - INFO - ================================================================================
+2026-01-28 20:31:42,880 - INFO - 总脚本数:        1
+2026-01-28 20:31:42,880 - INFO - 成功:            1
+2026-01-28 20:31:42,880 - INFO - 失败:            0
+2026-01-28 20:31:42,880 - INFO - 总地址数:        32
+2026-01-28 20:31:42,880 - INFO - 已验证合约:      3
+2026-01-28 20:31:42,880 - INFO - 未验证合约:      0
+2026-01-28 20:31:42,880 - INFO -   └─ 仅字节码:   0
+2026-01-28 20:31:42,880 - INFO - API调用次数:     6
+2026-01-28 20:31:42,880 - INFO - 
+API Key并发统计:
+2026-01-28 20:31:42,880 - INFO -   etherscan:
+2026-01-28 20:31:42,880 - INFO -     Key数量: 5
+2026-01-28 20:31:42,880 - INFO -     总调用: 6
+2026-01-28 20:31:42,880 - INFO -     负载均衡: 最小=1, 最大=2, 平均=1.2
+2026-01-28 20:31:42,880 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-28 20:31:42,880 - INFO - ================================================================================
+2026-01-29 01:56:49,169 - INFO - 日志写入: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/logs/extract_contracts.log
+2026-01-29 01:56:49,177 - INFO - 使用硬编码的API Keys配置
+2026-01-29 01:56:49,178 - INFO - 初始化API Key池: 5 个key, 限速 5 次/秒
+2026-01-29 01:56:49,178 - INFO - 为 etherscan 创建Key池: 5 个key
+2026-01-29 01:56:49,179 - INFO - API密钥池已初始化: 5个密钥, 限流3次/秒
+2026-01-29 01:56:49,179 - INFO - API密钥池已初始化: 5个密钥, 限流5次/秒
+2026-01-29 01:56:49,179 - INFO - API密钥池已初始化: 7个密钥, 限流5次/秒
+2026-01-29 01:56:49,179 - INFO - 文件缓存已初始化: /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts/.cache/onchain_data
+2026-01-29 01:56:49,179 - INFO - Web3连接成功: mainnet -> https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 01:56:49,180 - INFO - Web3连接成功: bsc -> https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 01:56:49,180 - INFO - Web3连接成功: arbitrum -> https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 01:56:49,180 - INFO - Web3连接成功: optimism -> https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 01:56:49,180 - INFO - Web3连接成功: polygon -> https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 01:56:49,181 - INFO - Web3连接成功: avalanche -> https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 01:56:49,181 - INFO - Web3连接成功: fantom -> https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9
+2026-01-29 01:56:49,181 - INFO - OnChainDataFetcher已初始化: 3个链, 7个RPC节点
+2026-01-29 01:56:49,181 - INFO - OnChainDataFetcher初始化成功
+2026-01-29 01:56:49,181 - INFO - ================================================================================
+2026-01-29 01:56:49,181 - INFO - 开始提取DeFi攻击合约
+2026-01-29 01:56:49,181 - INFO - ================================================================================
+2026-01-29 01:56:49,183 - INFO - 找到 2 个测试脚本
+2026-01-29 01:56:49,183 - INFO - 
+[1/2] 处理: 2024-01/PeapodsFinance_exp
+2026-01-29 01:56:49,184 - INFO - 静态分析: PeapodsFinance_exp
+2026-01-29 01:56:49,185 - INFO -   静态提取到 6 个地址
+2026-01-29 01:56:49,185 - INFO -   静态分析耗时: 0.00s, 地址数: 6
+2026-01-29 01:56:49,185 - INFO - 动态分析: PeapodsFinance_exp
+2026-01-29 01:59:16,189 - INFO -   动态提取到 12 个地址
+2026-01-29 01:59:16,207 - INFO -   动态分析耗时: 145.06s, 地址数: 12
+2026-01-29 01:59:16,209 - INFO -   地址合并耗时: 0.00s
+2026-01-29 01:59:16,209 - INFO -   共提取到 14 个唯一地址
+2026-01-29 01:59:16,235 - INFO -   应用vm.label别名: 1 个
+2026-01-29 01:59:16,252 - INFO -   开始补全链上数据 (14个地址)...
+2026-01-29 01:59:16,306 - INFO - 开始批量获取 14 个合约信息 (chain=mainnet)
+2026-01-29 01:59:24,342 - WARNING - 获取合约名称错误 0xAe750560b09aD1F5246f3b279b3767AfD1D79160: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:24,435 - WARNING - 获取合约名称错误 0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:24,475 - WARNING - 获取合约名称错误 0x50Fbbb6aa935396075F8200B9D1476BBA7b2A4C6: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:24,483 - WARNING - 获取合约名称错误 0xE592427A0AEce92De3Edee1F18E0157C05861564: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:24,493 - WARNING - 获取合约名称错误 0x02f92800F57BCD74066F5709F1Daa1A4302Df875: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:24,614 - WARNING - 获取合约名称错误 0x60594a405d53811d3BC4766596EFD80fd545A270: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:24,810 - WARNING - 获取合约名称错误 0x5ff10565516c110180bb9cc111cdbc2b0a68e09f: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:24,991 - WARNING - 获取合约名称错误 0x6e10ff27cae71a13525bd61167857e5c982b4674: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:25,190 - WARNING - 获取合约名称错误 0x37B87BA4C3edB420ed4552F1982c983B55D8B9d1: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:25,480 - WARNING - 获取合约名称错误 0x5a9eeaf8949838813289046091e8ea8a9196a226: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:25,973 - WARNING - 获取合约名称错误 0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:26,214 - WARNING - 获取合约名称错误 0x50Fbbb6aa935396075F8200B9D1476BBA7b2A4C6: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:26,216 - WARNING - 获取合约名称错误 0xE592427A0AEce92De3Edee1F18E0157C05861564: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:26,281 - WARNING - 获取合约名称错误 0xAe750560b09aD1F5246f3b279b3767AfD1D79160: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:26,336 - WARNING - 获取合约名称错误 0x60594a405d53811d3BC4766596EFD80fd545A270: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:26,341 - WARNING - 获取合约名称错误 0x5ff10565516c110180bb9cc111cdbc2b0a68e09f: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:26,506 - WARNING - 获取合约名称错误 0x6e10ff27cae71a13525bd61167857e5c982b4674: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:26,886 - WARNING - 获取合约名称错误 0x37B87BA4C3edB420ed4552F1982c983B55D8B9d1: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:27,181 - WARNING - 获取合约名称错误 0x5a9eeaf8949838813289046091e8ea8a9196a226: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:27,206 - WARNING - 获取合约名称错误 0x02f92800F57BCD74066F5709F1Daa1A4302Df875: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:27,493 - WARNING - 获取合约名称超时 0xbed4fbf7c3e36727ccdab4c6706c3c0e17b10397 (尝试1/3)
+2026-01-29 01:59:27,519 - WARNING - 获取合约名称错误 0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:27,721 - WARNING - 获取合约名称错误 0xE592427A0AEce92De3Edee1F18E0157C05861564: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:27,837 - WARNING - 获取合约名称错误 0xAe750560b09aD1F5246f3b279b3767AfD1D79160: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:27,900 - WARNING - 获取合约名称错误 0x60594a405d53811d3BC4766596EFD80fd545A270: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:27,949 - WARNING - 获取合约名称错误 0x50Fbbb6aa935396075F8200B9D1476BBA7b2A4C6: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:28,005 - WARNING - 获取合约名称错误 0x6B175474E89094C44Da98b954EedeAC495271d0F: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:28,200 - WARNING - 获取合约名称错误 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:28,212 - WARNING - 获取合约名称错误 0x6e10ff27cae71a13525bd61167857e5c982b4674: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:28,254 - WARNING - 获取合约名称错误 0x5ff10565516c110180bb9cc111cdbc2b0a68e09f: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:28,281 - WARNING - 获取合约名称错误 0xdbb20a979a92cccce15229e41c9b082d5b5d7e31: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:28,411 - WARNING - 获取合约名称错误 0x37B87BA4C3edB420ed4552F1982c983B55D8B9d1: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:28,701 - WARNING - 获取合约名称错误 0x5a9eeaf8949838813289046091e8ea8a9196a226: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:28,719 - WARNING - 获取合约名称错误 0x02f92800F57BCD74066F5709F1Daa1A4302Df875: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:28,824 - WARNING - 获取合约名称错误 0xbed4fbf7c3e36727ccdab4c6706c3c0e17b10397: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:29,537 - WARNING - 获取合约名称错误 0x6B175474E89094C44Da98b954EedeAC495271d0F: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:29,793 - WARNING - 获取合约名称错误 0xdbb20a979a92cccce15229e41c9b082d5b5d7e31: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:30,136 - WARNING - 获取合约名称错误 0xbed4fbf7c3e36727ccdab4c6706c3c0e17b10397: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:30,339 - WARNING - 获取合约名称错误 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:31,238 - WARNING - 获取合约名称错误 0x6B175474E89094C44Da98b954EedeAC495271d0F: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:31,338 - WARNING - 获取合约名称错误 0xdbb20a979a92cccce15229e41c9b082d5b5d7e31: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:31,885 - WARNING - 获取合约名称错误 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 01:59:32,886 - INFO - 批量获取完成: 14/14 成功, 耗时16.58秒
+2026-01-29 01:59:32,958 - INFO -   ✓ 链上数据补全完成: 14/14 个地址
+2026-01-29 01:59:32,959 - INFO -   链上数据补全耗时: 16.02s
+2026-01-29 01:59:32,959 - INFO -   保存地址耗时: 0.00s
+2026-01-29 01:59:32,960 - INFO -   批量预检查 14 个地址的合约存在性 (并发数: 10)...
+2026-01-29 01:59:33,589 - INFO -   ✓ 预检查完成: 10/14 个有效合约, 耗时 0.63秒
+2026-01-29 01:59:33,590 - INFO -   已过滤 4 个无效地址,剩余 10 个待下载
+2026-01-29 01:59:33,590 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-29 01:59:34,828 - INFO -   ✓ 下载成功: 0x02f92800...
+2026-01-29 01:59:34,846 - INFO -   ✓ 下载成功: 0x6B175474...
+2026-01-29 01:59:34,857 - INFO -   合约未验证,尝试下载字节码: 0xbed4fbf7...
+2026-01-29 01:59:35,027 - INFO -   ✓ 下载成功: 0xC02aaA39...
+2026-01-29 01:59:35,061 - INFO -   ✓ 下载成功: 0xdbb20a97...
+2026-01-29 01:59:35,146 - INFO -   ✓ 字节码下载成功: 0xbed4fbf7... (大小: 5915 bytes)
+2026-01-29 01:59:36,284 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.12/solc-0.5.12, 优化=False, runs=200)
+2026-01-29 01:59:36,287 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (1 项) - Dai.sol -> ./lib.sol
+2026-01-29 01:59:36,287 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 01:59:36,508 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.4.19/solc-0.4.19, 优化=False, runs=200)
+2026-01-29 01:59:36,535 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 01:59:36,538 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-29 01:59:36,542 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (3 项) - @openzeppelin/contracts/token/ERC20/ERC20.sol -> ../../utils/Context.sol (pragma mismatch); @openzeppelin/contracts/token/ERC20/ERC20.sol -> ../../math/SafeMath.sol; contracts/PEAS.sol -> ./interfaces/IPEAS.sol
+2026-01-29 01:59:36,542 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 01:59:36,648 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-29 01:59:36,656 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (31 项) - contracts/DecentralizedIndex.sol -> ./interfaces/ITokenRewards.sol; contracts/WeightedIndex.sol -> ./interfaces/IUniswapV2Pair.sol; contracts/TokenRewards.sol -> ./interfaces/IV3TwapUtilities.sol
+2026-01-29 01:59:36,656 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 01:59:39,140 - INFO -   ✓ 下载成功: 0xE592427A...
+2026-01-29 01:59:39,319 - INFO -   ✓ 下载成功: 0x50Fbbb6a...
+2026-01-29 01:59:39,555 - INFO -   ✓ 下载成功: 0x37B87BA4...
+2026-01-29 01:59:39,620 - INFO -   ✓ 下载成功: 0xAe750560...
+2026-01-29 01:59:39,805 - INFO -   ✓ 下载成功: 0x60594a40...
+2026-01-29 01:59:40,485 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=1000000)
+2026-01-29 01:59:40,498 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (39 项) - contracts/interfaces/ISwapRouter.sol -> @uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol; contracts/base/PeripheryPaymentsWithFee.sol -> ./PeripheryPayments.sol; @uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol -> ./pool/IUniswapV3PoolActions.sol
+2026-01-29 01:59:40,498 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 01:59:40,910 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-29 01:59:40,915 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (17 项) - contracts/TokenRewards.sol -> @uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol; @openzeppelin/contracts/token/ERC20/SafeERC20.sol -> ../../utils/Address.sol (pragma mismatch); @openzeppelin/contracts/token/ERC20/ERC20.sol -> ../../utils/Context.sol (pragma mismatch)
+2026-01-29 01:59:40,915 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 01:59:41,210 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2026-01-29 01:59:41,210 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2026-01-29 01:59:41,250 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (43 项) - contracts/interfaces/IUniswapV3Pool.sol -> ./pool/IUniswapV3PoolEvents.sol; contracts/UniswapV3Pool.sol -> ./interfaces/callback/IUniswapV3MintCallback.sol; contracts/UniswapV3Pool.sol -> ./libraries/LiquidityMath.sol
+2026-01-29 01:59:41,250 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 01:59:41,255 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (43 项) - contracts/interfaces/IUniswapV3Pool.sol -> ./pool/IUniswapV3PoolEvents.sol; contracts/UniswapV3Pool.sol -> ./interfaces/callback/IUniswapV3MintCallback.sol; contracts/UniswapV3Pool.sol -> ./libraries/LiquidityMath.sol
+2026-01-29 01:59:41,255 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 01:59:41,627 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-29 01:59:41,630 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (12 项) - contracts/TokenRewards.sol -> @uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol; @openzeppelin/contracts/token/ERC20/SafeERC20.sol -> ../../utils/Address.sol (pragma mismatch); contracts/TokenRewards.sol -> ./interfaces/IV3TwapUtilities.sol
+2026-01-29 01:59:41,630 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 01:59:42,089 - INFO -   源码下载完成, 耗时 8.50s
+2026-01-29 01:59:42,090 - INFO -   源码下载耗时: 9.13s
+2026-01-29 01:59:42,090 - INFO -   检测到 1 个实现合约，更新addresses.json
+2026-01-29 01:59:42,091 - INFO -   PeapodsFinance_exp 总耗时: 170.26s
+2026-01-29 01:59:42,092 - INFO - 
+[2/2] 处理: 2025-02/PeapodsFinance_exp
+2026-01-29 01:59:42,092 - INFO - 静态分析: PeapodsFinance_exp
+2026-01-29 01:59:42,094 - INFO -   静态提取到 6 个地址
+2026-01-29 01:59:42,094 - INFO -   静态分析耗时: 0.00s, 地址数: 6
+2026-01-29 01:59:42,094 - INFO - 动态分析: PeapodsFinance_exp
+2026-01-29 02:00:35,460 - INFO -   动态提取到 14 个地址
+2026-01-29 02:00:35,482 - INFO -   动态分析耗时: 52.45s, 地址数: 14
+2026-01-29 02:00:35,484 - INFO -   地址合并耗时: 0.00s
+2026-01-29 02:00:35,484 - INFO -   共提取到 15 个唯一地址
+2026-01-29 02:00:35,526 - INFO -   应用vm.label别名: 5 个
+2026-01-29 02:00:35,548 - INFO -   开始补全链上数据 (15个地址)...
+2026-01-29 02:00:35,597 - INFO - 开始批量获取 15 个合约信息 (chain=mainnet)
+2026-01-29 02:00:38,159 - WARNING - 获取合约名称错误 0x959951c51b3e4B4eaa55a13D1d761e14Ad0A1d6a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,339 - WARNING - 获取合约名称错误 0x027CE48B9b346728557e8D420Fe936A72BF9b1C7: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,341 - WARNING - 获取合约名称错误 0x5207BC61c2717EE9C385B93d3B8BeeA159ddF02E: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,347 - WARNING - 获取合约名称错误 0x9dF0C6b0066D5317aA5b38B36850548DaCCa6B4e: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,355 - WARNING - 获取合约名称错误 0xedee6379fe90bd9b85d8d0b767d4a6deb0dc9dcf: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,365 - WARNING - 获取合约名称错误 0x024ff47D552cB222b265D68C7aeB26E586D5229D: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,444 - WARNING - 获取合约名称错误 0x7d48D6D775FaDA207291B37E3eaA68Cc865bf9Eb: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,490 - WARNING - 获取合约名称错误 0xc2B0A3f6F6e58eE10f22be44eb15c6D4F6E62374: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,499 - WARNING - 获取合约名称错误 0x7d544DD34ABbE24C8832db27820Ff53C151e949b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,508 - WARNING - 获取合约名称错误 0x80e9C48ec41AF7a0Ed6Cf4f3ac979f3538021608: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,530 - WARNING - 获取合约名称错误 0xC64bc02594bA7F777f26B7a1EeC6E6DC4a56362B: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,543 - WARNING - 获取合约名称错误 0x88E08adB69f2618adF1A3FF6CC43c671612D1ca4: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:38,707 - WARNING - 获取合约名称错误 0x1F98431c8aD98523631AE4a59f267346ea31F984: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:39,635 - WARNING - 获取合约名称错误 0xc2B0A3f6F6e58eE10f22be44eb15c6D4F6E62374: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:39,712 - WARNING - 获取合约名称错误 0x959951c51b3e4B4eaa55a13D1d761e14Ad0A1d6a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:39,811 - WARNING - 获取合约名称错误 0x80e9C48ec41AF7a0Ed6Cf4f3ac979f3538021608: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:39,836 - WARNING - 获取合约名称错误 0x027CE48B9b346728557e8D420Fe936A72BF9b1C7: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:39,858 - WARNING - 获取合约名称错误 0xC64bc02594bA7F777f26B7a1EeC6E6DC4a56362B: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:39,866 - WARNING - 获取合约名称错误 0x88E08adB69f2618adF1A3FF6CC43c671612D1ca4: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:39,871 - WARNING - 获取合约名称错误 0xedee6379fe90bd9b85d8d0b767d4a6deb0dc9dcf: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:39,900 - WARNING - 获取合约名称错误 0x024ff47D552cB222b265D68C7aeB26E586D5229D: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:39,954 - WARNING - 获取合约名称错误 0x7d48D6D775FaDA207291B37E3eaA68Cc865bf9Eb: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:40,031 - WARNING - 获取合约名称错误 0x7d544DD34ABbE24C8832db27820Ff53C151e949b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:40,037 - WARNING - 获取合约名称错误 0x9dF0C6b0066D5317aA5b38B36850548DaCCa6B4e: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:40,048 - WARNING - 获取合约名称错误 0x5207BC61c2717EE9C385B93d3B8BeeA159ddF02E: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:40,215 - WARNING - 获取合约名称错误 0x1F98431c8aD98523631AE4a59f267346ea31F984: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:40,974 - WARNING - 获取合约名称错误 0xc2B0A3f6F6e58eE10f22be44eb15c6D4F6E62374: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,019 - WARNING - 获取合约名称错误 0x88E08adB69f2618adF1A3FF6CC43c671612D1ca4: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,167 - WARNING - 获取合约名称错误 0xC64bc02594bA7F777f26B7a1EeC6E6DC4a56362B: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,272 - WARNING - 获取合约名称错误 0x959951c51b3e4B4eaa55a13D1d761e14Ad0A1d6a: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,371 - WARNING - 获取合约名称错误 0x5207BC61c2717EE9C385B93d3B8BeeA159ddF02E: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,385 - WARNING - 获取合约名称错误 0x027CE48B9b346728557e8D420Fe936A72BF9b1C7: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,423 - WARNING - 获取合约名称错误 0xedee6379fe90bd9b85d8d0b767d4a6deb0dc9dcf: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,577 - WARNING - 获取合约名称错误 0x7d544DD34ABbE24C8832db27820Ff53C151e949b: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,587 - WARNING - 获取合约名称错误 0x80e9C48ec41AF7a0Ed6Cf4f3ac979f3538021608: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,594 - WARNING - 获取合约名称错误 0x024ff47D552cB222b265D68C7aeB26E586D5229D: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,667 - WARNING - 获取合约名称错误 0x7d48D6D775FaDA207291B37E3eaA68Cc865bf9Eb: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,817 - WARNING - 获取合约名称错误 0x9dF0C6b0066D5317aA5b38B36850548DaCCa6B4e: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:41,953 - WARNING - 获取合约名称错误 0x1F98431c8aD98523631AE4a59f267346ea31F984: Cannot connect to host api.etherscan.io:443 ssl:default [Connection reset by peer]
+2026-01-29 02:00:42,954 - INFO - 批量获取完成: 15/15 成功, 耗时7.36秒
+2026-01-29 02:00:42,960 - INFO -   ✓ 链上数据补全完成: 15/15 个地址
+2026-01-29 02:00:42,960 - INFO -   链上数据补全耗时: 7.41s
+2026-01-29 02:00:42,961 - INFO -   保存地址耗时: 0.00s
+2026-01-29 02:00:42,962 - INFO -   批量预检查 15 个地址的合约存在性 (并发数: 10)...
+2026-01-29 02:00:43,611 - INFO -   ✓ 预检查完成: 12/15 个有效合约, 耗时 0.65秒
+2026-01-29 02:00:43,613 - INFO -   已过滤 3 个无效地址,剩余 12 个待下载
+2026-01-29 02:00:43,613 - INFO -   开始下载源码 (链: mainnet, 并发数: 5)
+2026-01-29 02:00:44,874 - INFO -   ✓ 下载成功: 0x02f92800...
+2026-01-29 02:00:44,888 - INFO -   ✓ 下载成功: 0x80e9C48e...
+2026-01-29 02:00:45,123 - INFO -   ✓ 下载成功: 0x7d48D6D7...
+2026-01-29 02:00:45,146 - INFO -   ✓ 下载成功: 0xE592427A...
+2026-01-29 02:00:45,318 - INFO -   ✓ 下载成功: 0x88E08adB...
+2026-01-29 02:00:46,208 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-29 02:00:46,216 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (3 项) - @openzeppelin/contracts/token/ERC20/ERC20.sol -> ../../utils/Context.sol (pragma mismatch); @openzeppelin/contracts/token/ERC20/ERC20.sol -> ../../math/SafeMath.sol; contracts/PEAS.sol -> ./interfaces/IPEAS.sol
+2026-01-29 02:00:46,216 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:46,399 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.5.16/solc-0.5.16, 优化=True, runs=999999)
+2026-01-29 02:00:46,420 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-29 02:00:46,522 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=1000000)
+2026-01-29 02:00:46,531 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (39 项) - contracts/interfaces/ISwapRouter.sol -> @uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol; contracts/base/PeripheryPaymentsWithFee.sol -> ./PeripheryPayments.sol; @uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol -> ./pool/IUniswapV3PoolActions.sol
+2026-01-29 02:00:46,531 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:46,578 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:46,758 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.19/solc-0.8.19, 优化=True, runs=200)
+2026-01-29 02:00:46,763 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (18 项) - contracts/TokenRewards.sol -> @uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol; contracts/TokenRewards.sol -> ./interfaces/IDecentralizedIndex.sol; contracts/TokenRewards.sol -> ./interfaces/IV3TwapUtilities.sol
+2026-01-29 02:00:46,763 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:47,031 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.19/solc-0.8.19, 优化=True, runs=200)
+2026-01-29 02:00:47,044 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (41 项) - contracts/DecentralizedIndex.sol -> ./interfaces/ITokenRewards.sol; contracts/WeightedIndex.sol -> ./interfaces/IUniswapV2Pair.sol; contracts/TokenRewards.sol -> ./interfaces/IV3TwapUtilities.sol
+2026-01-29 02:00:47,044 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:49,112 - INFO -   ✓ 下载成功: 0x7d544DD3...
+2026-01-29 02:00:49,175 - INFO -   ✓ 下载成功: 0xc2B0A3f6...
+2026-01-29 02:00:49,211 - INFO -   ✓ 下载成功: 0x5207BC61...
+2026-01-29 02:00:49,572 - INFO -   ✓ 下载成功: 0x024ff47D...
+2026-01-29 02:00:50,327 - INFO -   ✓ 下载成功: 0x027CE48B...
+2026-01-29 02:00:50,542 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-29 02:00:50,543 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (2 项) - @openzeppelin/contracts/access/Ownable.sol -> ../utils/Context.sol (pragma mismatch); contracts/ProtocolFees.sol -> ./interfaces/IProtocolFees.sol
+2026-01-29 02:00:50,543 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:50,559 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2026-01-29 02:00:50,567 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (43 项) - contracts/interfaces/IUniswapV3Pool.sol -> ./pool/IUniswapV3PoolEvents.sol; contracts/UniswapV3Pool.sol -> ./interfaces/callback/IUniswapV3MintCallback.sol; contracts/UniswapV3Pool.sol -> ./libraries/LiquidityMath.sol
+2026-01-29 02:00:50,568 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:50,777 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-29 02:00:50,779 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (4 项) - contracts/ProtocolFeeRouter.sol -> ./interfaces/IProtocolFees.sol; contracts/ProtocolFeeRouter.sol -> ./interfaces/IProtocolFeeRouter.sol; @openzeppelin/contracts/access/Ownable.sol -> ../utils/Context.sol (pragma mismatch)
+2026-01-29 02:00:50,779 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:51,023 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=200)
+2026-01-29 02:00:51,027 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (14 项) - contracts/V3TwapUtilities.sol -> @uniswap/v3-periphery/contracts/libraries/PoolAddress.sol; contracts/V3TwapUtilities.sol -> @uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol; @uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol -> ./pool/IUniswapV3PoolActions.sol
+2026-01-29 02:00:51,027 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:51,713 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.8.19/solc-0.8.19, 优化=True, runs=200)
+2026-01-29 02:00:51,721 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (41 项) - contracts/DecentralizedIndex.sol -> ./interfaces/ITokenRewards.sol; contracts/WeightedIndex.sol -> ./interfaces/IUniswapV2Pair.sol; contracts/TokenRewards.sol -> ./interfaces/IV3TwapUtilities.sol
+2026-01-29 02:00:51,721 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:52,501 - INFO -   ✓ 下载成功: 0xC64bc025...
+2026-01-29 02:00:52,749 - INFO -   ✓ 下载成功: 0x1F98431c...
+2026-01-29 02:00:53,929 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=False, runs=200)
+2026-01-29 02:00:54,426 - INFO -   尝试解析Immutable (solc=/home/articuno/.local/share/svm/0.7.6/solc-0.7.6, 优化=True, runs=800)
+2026-01-29 02:00:54,435 - INFO -   Immutable提取跳过: 依赖缺失或版本不兼容 (49 项) - contracts/UniswapV3Factory.sol -> ./NoDelegateCall.sol; contracts/interfaces/IUniswapV3Pool.sol -> ./pool/IUniswapV3PoolEvents.sol; contracts/UniswapV3Pool.sol -> ./interfaces/callback/IUniswapV3MintCallback.sol
+2026-01-29 02:00:54,435 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:54,902 - INFO -   Immutable提取: evmVersion不被该solc支持，改用默认EVMVersion重试
+2026-01-29 02:00:54,921 - INFO -   Immutable提取跳过: 编译未返回immutableReferences
+2026-01-29 02:00:55,369 - INFO -   源码下载完成, 耗时 11.76s
+2026-01-29 02:00:55,371 - INFO -   源码下载耗时: 12.41s
+2026-01-29 02:00:55,371 - INFO -   检测到 2 个实现合约，更新addresses.json
+2026-01-29 02:00:55,371 - INFO -   PeapodsFinance_exp 总耗时: 72.34s
+2026-01-29 02:00:55,374 - INFO - 
+================================================================================
+2026-01-29 02:00:55,375 - INFO - 执行摘要
+2026-01-29 02:00:55,375 - INFO - ================================================================================
+2026-01-29 02:00:55,375 - INFO - 总脚本数:        2
+2026-01-29 02:00:55,375 - INFO - 成功:            2
+2026-01-29 02:00:55,375 - INFO - 失败:            0
+2026-01-29 02:00:55,375 - INFO - 总地址数:        29
+2026-01-29 02:00:55,375 - INFO - 已验证合约:      21
+2026-01-29 02:00:55,375 - INFO - 未验证合约:      0
+2026-01-29 02:00:55,375 - INFO -   └─ 仅字节码:   1
+2026-01-29 02:00:55,375 - INFO - API调用次数:     44
+2026-01-29 02:00:55,375 - INFO - 
+API Key并发统计:
+2026-01-29 02:00:55,375 - INFO -   etherscan:
+2026-01-29 02:00:55,375 - INFO -     Key数量: 5
+2026-01-29 02:00:55,375 - INFO -     总调用: 44
+2026-01-29 02:00:55,375 - INFO -     负载均衡: 最小=8, 最大=9, 平均=8.8
+2026-01-29 02:00:55,376 - INFO - 
+输出目录:        /home/articuno/Firewall/FirewallOnchain/DeFiHackLabs/extracted_contracts
+2026-01-29 02:00:55,376 - INFO - ================================================================================

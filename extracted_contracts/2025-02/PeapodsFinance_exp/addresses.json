@@ -4,48 +4,234 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0xedee6379fe90bd9b85d8d0b767d4a6deb0dc9dcf"
+    "context": "// Attacker : https://etherscan.io/address/0xedee6379fe90bd9b85d8d0b767d4a6deb0dc9dcf",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x88E08adB69f2618adF1A3FF6CC43c671612D1ca4",
     "name": "pOHM",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant pOHM = 0x88E08adB69f2618adF1A3FF6CC43c671612D1ca4"
+    "context": "address constant pOHM = 0x88E08adB69f2618adF1A3FF6CC43c671612D1ca4",
+    "onchain_name": null,
+    "symbol": "pOHM",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "pOHM",
+      "pohm",
+      "POHM",
+      "IpOHM"
+    ]
   },
   {
     "address": "0x02f92800F57BCD74066F5709F1Daa1A4302Df875",
     "name": "PEAS",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant PEAS = 0x02f92800F57BCD74066F5709F1Daa1A4302Df875"
+    "context": "address constant PEAS = 0x02f92800F57BCD74066F5709F1Daa1A4302Df875",
+    "onchain_name": null,
+    "symbol": "PEAS",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "PEAS",
+      "peas",
+      "IPEAS"
+    ]
   },
   {
     "address": "0x7d48D6D775FaDA207291B37E3eaA68Cc865bf9Eb",
     "name": "TokenRewards",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant TokenRewards = 0x7d48D6D775FaDA207291B37E3eaA68Cc865bf9Eb"
+    "context": "address constant TokenRewards = 0x7d48D6D775FaDA207291B37E3eaA68Cc865bf9Eb",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "TokenRewards"
+    ]
   },
   {
     "address": "0x80e9C48ec41AF7a0Ed6Cf4f3ac979f3538021608",
     "name": "UniswapV2Pair",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant UniswapV2Pair = 0x80e9C48ec41AF7a0Ed6Cf4f3ac979f3538021608"
+    "context": "address constant UniswapV2Pair = 0x80e9C48ec41AF7a0Ed6Cf4f3ac979f3538021608",
+    "onchain_name": null,
+    "symbol": "UNI-V2",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Uniswap V2: Pair",
+      "UNI-V2",
+      "UniswapV2Pair",
+      "uni-v2",
+      "IUNI-V2"
+    ]
   },
   {
     "address": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
     "name": "UniswapV3Router",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant UniswapV3Router = 0xE592427A0AEce92De3Edee1F18E0157C05861564"
+    "context": "address constant UniswapV3Router = 0xE592427A0AEce92De3Edee1F18E0157C05861564",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Uniswap V3: Router",
+      "UniswapV3Router"
+    ]
+  },
+  {
+    "address": "0x5207BC61c2717EE9C385B93d3B8BeeA159ddF02E",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 344825",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x7d544DD34ABbE24C8832db27820Ff53C151e949b",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2348",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xc2B0A3f6F6e58eE10f22be44eb15c6D4F6E62374",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2395",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x024ff47D552cB222b265D68C7aeB26E586D5229D",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 41765",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x027CE48B9b346728557e8D420Fe936A72BF9b1C7",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2601",
+    "onchain_name": null,
+    "symbol": "pPEAS",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "pPEAS",
+      "ppeas",
+      "PPEAS",
+      "IpPEAS"
+    ]
   },
   {
     "address": "0x959951c51b3e4B4eaa55a13D1d761e14Ad0A1d6a",
     "name": null,
     "chain": "mainnet",
     "source": "dynamic",
-    "context": "contract created"
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x9dF0C6b0066D5317aA5b38B36850548DaCCa6B4e",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xC64bc02594bA7F777f26B7a1EeC6E6DC4a56362B",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xd9db270c1b5e3bd161e8c8503c55ceabee709552",
+    "name": "Unknown_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

@@ -15,6 +15,7 @@
         "expression": "0 in observed_addresses",
         "semantics": "Restrict addresses to observed attack set",
         "attack_values": [
+          "0x7fa9385be102ac3eac297483dd6233d62b3e1496",
           "0xdbb20a979a92cccce15229e41c9b082d5b5d7e31"
         ],
         "variables": {
@@ -38,12 +39,42 @@
     },
     {
       "function": "flash",
-      "signature": "flash(...)",
+      "signature": "flash(address,address,uint256,bytes)",
       "attack_pattern": "flashloan_attack",
       "constraint": {
-        "type": "heuristic_threshold",
-        "expression": "amount > 88163368427964784967680",
-        "semantics": "Heuristic constraint based on flashloan_attack pattern",
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x02f92800f57bcd74066f5709f1daa1a4302df875"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(Peas)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "amplified_threshold",
+        "expression": "amount > 1423661343265398980608",
+        "semantics": "Amplified effect: parameter has 21x amplification on totalSupply",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -51,29 +82,29 @@
             "type": "uint256",
             "value_expr": "Peas.balanceOf(address(ppPP))"
           },
-          "_totalSupply": {
+          "totalSupply": {
             "source": "storage",
             "slot": "2",
             "type": "uint256",
-            "semantic_name": "_totalSupply",
+            "semantic_name": "totalSupply",
             "before_value": 293877894759882629745878,
-            "after_value": 293877894759882629745878
+            "after_value": 280453998054889070563849
           }
         },
-        "danger_condition": "amount >= 264490105283894354903040",
-        "safe_condition": "amount <= 88163368427964784967680",
-        "threshold_value": 88163368427964784967680
+        "danger_condition": "amount * 20 >= totalSupply",
+        "safe_condition": "amount <= 1423661343265398980608",
+        "threshold_value": 1423661343265398980608
       },
       "analysis": {
         "state_value": 293877894759882629745878,
         "threshold": 88163368427964788923763,
         "coefficient": 0.3,
-        "attack_intensity": 1.0,
-        "reasoning": "启发式约束，基于flashloan_attack模式，阈值设为88163368427964784967680",
-        "correlation_type": "heuristic",
-        "correlation_confidence": 0.5,
-        "ratio": 1.0,
-        "change_direction": "increase"
+        "attack_intensity": 0.0022,
+        "reasoning": "放大效应21倍，小参数可导致大变化，阈值设为1423661343265398980608",
+        "correlation_type": "amplified",
+        "correlation_confidence": 0.6,
+        "ratio": 20.64240180082616,
+        "change_direction": "decrease"
       }
     },
     {
@@ -112,12 +143,12 @@
     },
     {
       "function": "debond",
-      "signature": "debond(...)",
+      "signature": "debond(uint256,address[],uint8[])",
       "attack_pattern": "drain_attack",
       "constraint": {
-        "type": "heuristic_threshold",
-        "expression": "amount > 88163368427964784967680",
-        "semantics": "Heuristic constraint based on drain_attack pattern",
+        "type": "ratio_threshold",
+        "expression": "amount > 1036117090629850628096",
+        "semantics": "Partial extraction: 10.9% of address_43338921159469841899711384791100799473247905780846710754558330455962694164420 affected per unit",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -125,28 +156,28 @@
             "type": "uint256",
             "value_expr": "ppPP.balanceOf(address(this))"
           },
-          "_totalSupply": {
+          "address_43338921159469841899711384791100799473247905780846710754558330455962694164420": {
             "source": "storage",
-            "slot": "2",
+            "slot": "43338921159469841899711384791100799473247905780846710754558330455962694164420",
             "type": "uint256",
-            "semantic_name": "_totalSupply",
-            "before_value": 293877894759882629745878,
-            "after_value": 293877894759882629745878
+            "semantic_name": "address_43338921159469841899711384791100799473247905780846710754558330455962694164420",
+            "before_value": 18962873888275452765844,
+            "after_value": 20369952108996267717656
           }
         },
-        "danger_condition": "amount >= 264490105283894354903040",
-        "safe_condition": "amount <= 88163368427964784967680",
-        "threshold_value": 88163368427964784967680
+        "danger_condition": "amount >= 2072234181259701256192",
+        "safe_condition": "amount <= 1036117090629850628096",
+        "threshold_value": 1036117090629850628096
       },
       "analysis": {
-        "state_value": 293877894759882629745878,
-        "threshold": 88163368427964788923763,
+        "state_value": 18962873888275452765844,
+        "threshold": 5688862166482635829753,
         "coefficient": 0.3,
-        "attack_intensity": 1.0,
-        "reasoning": "启发式约束，基于drain_attack模式，阈值设为88163368427964784967680",
-        "correlation_type": "heuristic",
-        "correlation_confidence": 0.5,
-        "ratio": 1.0,
+        "attack_intensity": 0.679,
+        "reasoning": "部分提取模式，提取比例0.11，阈值设为1036117090629850628096",
+        "correlation_type": "partial",
+        "correlation_confidence": 0.7,
+        "ratio": 0.10927848771598603,
         "change_direction": "increase"
       }
     },
@@ -159,8 +190,7 @@
         "expression": "1 in observed_addresses",
         "semantics": "Restrict addresses to observed attack set",
         "attack_values": [
-          "0x0000000000000000000000000000000000000000",
-          "0xffffffffffffffffffffffffffffffffffffffff"
+          "0x02f92800f57bcd74066f5709f1daa1a4302df875"
         ],
         "variables": {
           "addresses": {
@@ -190,6 +220,7 @@
         "expression": "2 elements in [100,100]",
         "semantics": "Restrict numeric array elements to observed range",
         "attack_values": [
+          100,
           100
         ],
         "range": {
@@ -205,8 +236,8 @@
           }
         },
         "len_range": {
-          "min": 1,
-          "max": 1
+          "min": 2,
+          "max": 2
         }
       },
       "analysis": {
@@ -221,12 +252,42 @@
     },
     {
       "function": "bond",
-      "signature": "bond(...)",
+      "signature": "bond(address,uint256)",
       "attack_pattern": "large_deposit",
       "constraint": {
-        "type": "heuristic_threshold",
-        "expression": "amount > 88163368427964784967680",
-        "semantics": "Heuristic constraint based on large_deposit pattern",
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x02f92800f57bcd74066f5709f1daa1a4302df875"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(Peas)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "bond",
+      "signature": "bond(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "amplified_threshold",
+        "expression": "amount > 1423661343265398980608",
+        "semantics": "Amplified effect: parameter has 21x amplification on totalSupply",
         "variables": {
           "amount": {
             "source": "function_parameter",
@@ -234,50 +295,57 @@
             "type": "uint256",
             "value_expr": "Peas.balanceOf(address(this))"
           },
-          "_totalSupply": {
+          "totalSupply": {
             "source": "storage",
             "slot": "2",
             "type": "uint256",
-            "semantic_name": "_totalSupply",
+            "semantic_name": "totalSupply",
             "before_value": 293877894759882629745878,
-            "after_value": 293877894759882629745878
+            "after_value": 280453998054889070563849
           }
         },
-        "danger_condition": "amount >= 264490105283894354903040",
-        "safe_condition": "amount <= 88163368427964784967680",
-        "threshold_value": 88163368427964784967680
+        "danger_condition": "amount * 20 >= totalSupply",
+        "safe_condition": "amount <= 1423661343265398980608",
+        "threshold_value": 1423661343265398980608
       },
       "analysis": {
         "state_value": 293877894759882629745878,
         "threshold": 146938947379941314872939,
         "coefficient": 0.5,
-        "attack_intensity": 1.0,
-        "reasoning": "启发式约束，基于large_deposit模式，阈值设为88163368427964784967680",
-        "correlation_type": "heuristic",
-        "correlation_confidence": 0.5,
-        "ratio": 1.0,
-        "change_direction": "increase"
+        "attack_intensity": 0.0022,
+        "reasoning": "放大效应21倍，小参数可导致大变化，阈值设为1423661343265398980608",
+        "correlation_type": "amplified",
+        "correlation_confidence": 0.6,
+        "ratio": 20.64240180082616,
+        "change_direction": "decrease"
       }
     }
   ],
   "state_analysis": {
     "slot_changes": [
       {
-        "slot": "2",
-        "before": 293877894759882629745878,
-        "after": 280453998054889070563849,
-        "change_pct": 4.57,
+        "slot": "4590665794493802043545142454864117046241749028500534892959660010079290266271",
+        "before": 2714433641526402881172487,
+        "after": 2713912875836888176541973,
+        "change_pct": 0.02,
         "is_new_slot": false
       },
       {
-        "slot": "43338921159469841899711384791100799473247905780846710754558330455962694164420",
-        "before": 18962873888275452765844,
-        "after": 20369952108996267717656,
-        "change_pct": 7.42,
-        "is_new_slot": false
+        "slot": "1311428694430413507064611963368844046692563004276897792095973957181437681423",
+        "before": 0,
+        "after": 400000000000000000000,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "30645486631603752361223653315915313192754344272179238389287990517191522147541",
+        "before": 0,
+        "after": 259552543223355301726,
+        "change_pct": 100.0,
+        "is_new_slot": true
       }
     ],
-    "total_changed_slots": 2
+    "total_changed_slots": 3
   },
   "attack_metadata": {
     "loop_count": 20,

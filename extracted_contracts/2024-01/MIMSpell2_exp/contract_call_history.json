@@ -7,6 +7,577 @@
     "repay",
     "repayForAll"
   ],
-  "tx_count": 0,
-  "txs": []
+  "tx_count": 20,
+  "txs": [
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repayForAll",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint128",
+          "value": 240000000000000000000000
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        }
+      ],
+      "trace_id": "1.5.1.3"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repayForAll",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint128",
+          "value": 240000000000000000000000
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        }
+      ],
+      "trace_id": "1.5.1.3.0"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x941ec857134b13c255d6ebeed1623b1904378de9"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 25559977556992883762
+        }
+      ],
+      "trace_id": "1.5.1.5"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x941ec857134b13c255d6ebeed1623b1904378de9"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 25559977556992883762
+        }
+      ],
+      "trace_id": "1.5.1.5.0"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x2f2a75279a2ac0c6b64087ce1915b1435b1d3ce2"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 3495566834215112290941
+        }
+      ],
+      "trace_id": "1.5.1.7"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x2f2a75279a2ac0c6b64087ce1915b1435b1d3ce2"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 3495566834215112290941
+        }
+      ],
+      "trace_id": "1.5.1.7.0"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x577be3ed9a71e1c355f519bbdf5f09ba2018b1cc"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 60499947187085039624650
+        }
+      ],
+      "trace_id": "1.5.1.9"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x577be3ed9a71e1c355f519bbdf5f09ba2018b1cc"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 60499947187085039624650
+        }
+      ],
+      "trace_id": "1.5.1.9.0"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xc3be098f9594e57a3e71f485a53d990fe3961fe5"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 2321638525825015026842
+        }
+      ],
+      "trace_id": "1.5.1.11"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xc3be098f9594e57a3e71f485a53d990fe3961fe5"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 2321638525825015026842
+        }
+      ],
+      "trace_id": "1.5.1.11.0"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xee64495bf9894f6c0a2df4ac983581aadb87f62d"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 288217827649915
+        }
+      ],
+      "trace_id": "1.5.1.13"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xee64495bf9894f6c0a2df4ac983581aadb87f62d"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 288217827649915
+        }
+      ],
+      "trace_id": "1.5.1.13.0"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xe435beba6dee3d6f99392ab9568777eb8165719d"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 3320520077507148262526
+        }
+      ],
+      "trace_id": "1.5.1.15"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xe435beba6dee3d6f99392ab9568777eb8165719d"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 3320520077507148262526
+        }
+      ],
+      "trace_id": "1.5.1.15.0"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xc0433e26e3d2ae7d1d80e39a6d58062d1eaa54f5"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 4142026262919950156137
+        }
+      ],
+      "trace_id": "1.5.1.17"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xc0433e26e3d2ae7d1d80e39a6d58062d1eaa54f5"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 4142026262919950156137
+        }
+      ],
+      "trace_id": "1.5.1.17.0"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x2c561ab0ed33e40c70ea380baa0dbc1ae75ccd34"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 1582841608162859245251
+        }
+      ],
+      "trace_id": "1.5.1.19"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x2c561ab0ed33e40c70ea380baa0dbc1ae75ccd34"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 1582841608162859245251
+        }
+      ],
+      "trace_id": "1.5.1.19.0"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x193e045bee45c7573ff89b12601c745af739ce67",
+      "to": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x33d778ed712c8c4add5a07bab012d1ce7bb0b4c7"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 3421428375625215896017
+        }
+      ],
+      "trace_id": "1.5.1.21"
+    },
+    {
+      "hash": "0x26a83db7e28838dd9fee6fb7314ae58dcc6aee9a20bf224c386ff5e80f7e4cf2",
+      "from": "0x7259e152103756e1616a77ae982353c3751a6a90",
+      "to": "0xc4113ae18e0d3213c6a06947a2ffc70ad3517c77",
+      "value": "0x0",
+      "blockNumber": 19118659,
+      "time": "2024-01-30T10:14:23Z",
+      "function": "repay",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x33d778ed712c8c4add5a07bab012d1ce7bb0b4c7"
+        },
+        {
+          "name": "skim",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "part",
+          "type": "uint256",
+          "value": 3421428375625215896017
+        }
+      ],
+      "trace_id": "1.5.1.21.0"
+    }
+  ]
 }

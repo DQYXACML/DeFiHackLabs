@@ -5,33 +5,6 @@ import "./EthVault.sol";
 import {IRouter} from "./interfaces/IRouter.sol";
 
 interface IERC20 {
-    // 防火墙读取单槽位接口
-    function extsload(bytes32 slot) external view returns (bytes32 value) {
-        assembly {
-            value := sload(slot)
-        }
-    }
-
-    // 兼容接口: 与 ext/tools 读取保持一致
-    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
-        assembly {
-            value := sload(slot)
-        }
-    }
-
-
-    // 防火墙路由器
-    IRouter public immutable firewall;
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
-        }
-        _;
-    }
-
-
     function transfer(address to, uint256 value) external returns (bool);
 
     function approve(address spender, uint256 value) external returns (bool);
@@ -65,16 +38,93 @@ contract TIERC20 {
 }
 
 contract EthVaultImpl is EthVault, SafeMath{
+    // 防火墙读取单槽位接口
+    function extsload(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+    // 兼容接口: 与 ext/tools 读取保持一致
+    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+
     event Deposit(string fromChain, string toChain, address fromAddr, bytes toAddr, address token, uint8 decimal, uint amount, uint depositId, uint block);
     event Withdraw(address hubContract, string fromChain, string toChain, bytes fromAddr, bytes toAddr, bytes token, bytes32[] bytes32s, uint[] uints);
+    // 防火墙路由器（使用普通变量而非immutable，支持构造后设置，避免子类stack too deep）
+    // ========== 防火墙存储槽位（ERC1967风格） ==========
+    /**
+     * @dev 防火墙路由器存储槽位
+     * 计算方式: bytes32(uint256(keccak256('firewall.router.storage')) - 1)
+     * 槽位值: 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc
+     *
+     * 此槽位在极高的存储空间，不会与合约原有变量（slot 0-N）冲突
+     * 参考: ERC1967 Proxy Standard
+     */
+    bytes32 private constant FIREWALL_ROUTER_SLOT =
+        bytes32(uint256(keccak256('firewall.router.storage')) - 1);
+
+    /**
+     * @dev 获取防火墙路由器地址
+     */
+    function firewall() public view returns (IRouter) {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        address firewallAddress;
+        assembly {
+            firewallAddress := sload(slot)
+        }
+        return IRouter(firewallAddress);
+    }
+
+    // 防火墙保护修饰符
+    modifier firewallProtected() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                _firewall.executeWithDetect(msg.data);
+            }
+        }
+        _;
+    }
+
+    /**
+     * @dev 设置防火墙路由器地址（internal，供子类在构造函数中调用）
+     */
+    function _setFirewall(address _firewall) internal {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    /**
+     * @dev 公开设置防火墙地址（仅在未设置时可调用，支持动态更新）
+     */
+    function setFirewall(address _firewall) external {
+        require(address(firewall()) == address(0), "Firewall already set");
+        require(_firewall != address(0), "Invalid firewall address");
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    event FirewallUpdated(address indexed newFirewall);
+
+
 
     modifier onlyActivated {
         require(isActivated);
         _;
     }
 
-    constructor(address _firewall, address[] memory _owner) public EthVault(_owner, _owner.length, address(0), address(0)){
-        firewall = IRouter(_firewall);
+    constructor(address[] memory _owner) public EthVault(_owner, _owner.length, address(0), address(0)) {
     }
 
     function getVersion() public pure returns(string memory){

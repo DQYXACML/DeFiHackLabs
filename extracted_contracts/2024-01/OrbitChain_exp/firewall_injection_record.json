@@ -1,15 +1,15 @@
 {
   "protocol": "OrbitChain_exp",
   "year_month": "2024-01",
-  "injection_timestamp": "2025-12-21T06:29:26.148266Z",
+  "injection_timestamp": "2026-01-29T03:16:16.944953Z",
   "main_contract": {
-    "name": "Vulnerable_Contract",
-    "actual_contract_name": "TIERC20",
+    "name": "EthVaultImpl",
+    "actual_contract_name": "EthVaultImpl",
     "address": "0x1bf68a9d1eaee7826b3593c20a0ca93293cb489a"
   },
   "injected_contracts": [
     {
-      "file": "EthVault.impl.sol",
+      "file": "EthVaultImpl.sol",
       "functions": [
         "withdraw"
       ]
