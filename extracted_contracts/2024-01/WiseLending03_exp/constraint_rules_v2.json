@@ -1,0 +1,893 @@
+{
+  "protocol": "WiseLending03_exp",
+  "year_month": "2024-01",
+  "vulnerable_contract": {
+    "address": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+    "name": "wiseLending"
+  },
+  "constraints": [
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xb40b073d7e47986d3a45ca7fd30772c25a2ad57f"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(LPTPoolToken)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "type > 374662543803889222744219534159420193573479383040",
+        "semantics": "Heuristic constraint based on large_deposit pattern",
+        "variables": {
+          "type": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "type(uint256).max"
+          },
+          "address_49546380140786141483245470050918807646384343424284533912713975767340287586978": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "address_49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "before_value": 1248875146012964071876423320777688075155124985543,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "type >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "type <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 624437573006482035938211660388844037577562492771,
+        "coefficient": 0.5,
+        "attack_intensity": 9.27171059548928e+28,
+        "reasoning": "启发式约束，基于large_deposit模式，阈值设为374662543803889222744219534159420193573479383040",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "depositExactAmount",
+      "signature": "depositExactAmount(uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 374662543803889222744219534159420193573479383040",
+        "semantics": "High-frequency operation: parameter affects address_49546380140786141483245470050918807646384343424284533912713975767340287586978 with estimated 2399192510166068148096204800 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "PendleLPT.balanceOf(address(this))"
+          },
+          "address_49546380140786141483245470050918807646384343424284533912713975767340287586978": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "address_49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "before_value": 0,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "amount >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "amount <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 624437573006482035938211660388844037577562492771,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代2399192510166068148096204800次超过上限10000，使用保守阈值374662543803889222744219534159420193573479383040",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 2.3991925101660681e+27,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x37e49bf3749513a02fa535f0cbc383796e8107e4"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(wiseLending)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "type > 374662543803889222744219534159420193573479383040",
+        "semantics": "Heuristic constraint based on large_deposit pattern",
+        "variables": {
+          "type": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "type(uint256).max"
+          },
+          "address_49546380140786141483245470050918807646384343424284533912713975767340287586978": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "address_49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "before_value": 1248875146012964071876423320777688075155124985543,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "type >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "type <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 624437573006482035938211660388844037577562492771,
+        "coefficient": 0.5,
+        "attack_intensity": 9.27171059548928e+28,
+        "reasoning": "启发式约束，基于large_deposit模式，阈值设为374662543803889222744219534159420193573479383040",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "transferFrom",
+      "signature": "transferFrom(uint256,address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "attackerContract > 0",
+        "semantics": "Direct deposit/mint: parameter directly increases address_47973853837189583099238493196452929126201407156858901215741044657651923987690",
+        "variables": {
+          "attackerContract": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "attackerContract"
+          },
+          "address_47973853837189583099238493196452929126201407156858901215741044657651923987690": {
+            "source": "storage",
+            "slot": "47973853837189583099238493196452929126201407156858901215741044657651923987690",
+            "type": "uint256",
+            "semantic_name": "address_47973853837189583099238493196452929126201407156858901215741044657651923987690",
+            "before_value": 1,
+            "after_value": 1000000000000000000
+          }
+        },
+        "danger_condition": "attackerContract >= 1",
+        "safe_condition": "attackerContract <= 0",
+        "threshold_value": 0
+      },
+      "analysis": {
+        "state_value": 1,
+        "threshold": 0,
+        "coefficient": 0.5,
+        "attack_intensity": 1e+18,
+        "reasoning": "参数直接导致address_47973853837189583099238493196452929126201407156858901215741044657651923987690增加999999999999999999，阈值设为0",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "transferFrom",
+      "signature": "transferFrom(uint256,address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x37e49bf3749513a02fa535f0cbc383796e8107e4"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transferFrom",
+      "signature": "transferFrom(uint256,address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 374662543803889222744219534159420193573479383040",
+        "semantics": "High-frequency operation: parameter affects address_49546380140786141483245470050918807646384343424284533912713975767340287586978 with estimated 156109393251620516237561340450315221971366838272 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "8"
+          },
+          "address_49546380140786141483245470050918807646384343424284533912713975767340287586978": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "address_49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "before_value": 0,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "amount >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "amount <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 624437573006482035938211660388844037577562492771,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代156109393251620516237561340450315221971366838272次超过上限10000，使用保守阈值374662543803889222744219534159420193573479383040",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.5610939325162052e+47,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdrawExactShares",
+      "signature": "withdrawExactShares(uint256,address,uint256)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 374662543803889222744219534159420193573479383040",
+        "semantics": "High-frequency operation: parameter affects address_49546380140786141483245470050918807646384343424284533912713975767340287586978 with estimated 156109393251620516237561340450315221971366838272 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "8"
+          },
+          "address_49546380140786141483245470050918807646384343424284533912713975767340287586978": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "address_49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "before_value": 0,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "amount >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "amount <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 374662543803889221562926996233306422546537495662,
+        "coefficient": 0.3,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代156109393251620516237561340450315221971366838272次超过上限10000，使用保守阈值374662543803889222744219534159420193573479383040",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.5610939325162052e+47,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdrawExactShares",
+      "signature": "withdrawExactShares(uint256,address,uint256)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xb40b073d7e47986d3a45ca7fd30772c25a2ad57f"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(LPTPoolToken)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "withdrawExactShares",
+      "signature": "withdrawExactShares(uint256,address,uint256)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "wiseLending > 3000000000",
+        "semantics": "Direct withdraw/burn: parameter directly decreases address_89525321482722663811405249180259329009316399041030169005511926257132808634583",
+        "variables": {
+          "wiseLending": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "wiseLending.getPositionLendingShares(8, address(LPTPoolToken))"
+          },
+          "address_89525321482722663811405249180259329009316399041030169005511926257132808634583": {
+            "source": "storage",
+            "slot": "89525321482722663811405249180259329009316399041030169005511926257132808634583",
+            "type": "uint256",
+            "semantic_name": "address_89525321482722663811405249180259329009316399041030169005511926257132808634583",
+            "before_value": 10000000001,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "wiseLending >= 10000000001",
+        "safe_condition": "wiseLending <= 3000000000",
+        "threshold_value": 3000000000
+      },
+      "analysis": {
+        "state_value": 10000000001,
+        "threshold": 3000000000,
+        "coefficient": 0.3,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致address_89525321482722663811405249180259329009316399041030169005511926257132808634583减少10000000000，阈值设为3000000000",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "decrease"
+      }
+    },
+    {
+      "function": "getPositionLendingShares",
+      "signature": "getPositionLendingShares(uint256,address)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 374662543803889222744219534159420193573479383040",
+        "semantics": "High-frequency operation: parameter affects address_49546380140786141483245470050918807646384343424284533912713975767340287586978 with estimated 156109393251620516237561340450315221971366838272 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "8"
+          },
+          "address_49546380140786141483245470050918807646384343424284533912713975767340287586978": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "address_49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "before_value": 0,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "amount >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "amount <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 624437573006482035938211660388844037577562492771,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代156109393251620516237561340450315221971366838272次超过上限10000，使用保守阈值374662543803889222744219534159420193573479383040",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.5610939325162052e+47,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "getPositionLendingShares",
+      "signature": "getPositionLendingShares(uint256,address)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xb40b073d7e47986d3a45ca7fd30772c25a2ad57f"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(LPTPoolToken)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "lendingPoolData",
+      "signature": "lendingPoolData(address)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xb40b073d7e47986d3a45ca7fd30772c25a2ad57f"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(LPTPoolToken)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "depositExactAmount",
+      "signature": "depositExactAmount(uint256,address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 374662543803889222744219534159420193573479383040",
+        "semantics": "High-frequency operation: parameter affects address_49546380140786141483245470050918807646384343424284533912713975767340287586978 with estimated 156109393251620516237561340450315221971366838272 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "8"
+          },
+          "address_49546380140786141483245470050918807646384343424284533912713975767340287586978": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "address_49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "before_value": 0,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "amount >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "amount <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 624437573006482035938211660388844037577562492771,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代156109393251620516237561340450315221971366838272次超过上限10000，使用保守阈值374662543803889222744219534159420193573479383040",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.5610939325162052e+47,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "depositExactAmount",
+      "signature": "depositExactAmount(uint256,address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xb40b073d7e47986d3a45ca7fd30772c25a2ad57f"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(LPTPoolToken)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "depositExactAmount",
+      "signature": "depositExactAmount(uint256,address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "underlyingAmount > 50004455045894152",
+        "semantics": "Direct deposit/mint: parameter directly increases address_106282638142652151495301191305977150321128410627972306502641623327124674032650",
+        "variables": {
+          "underlyingAmount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "underlyingAmount * 2 - 1"
+          },
+          "address_106282638142652151495301191305977150321128410627972306502641623327124674032650": {
+            "source": "storage",
+            "slot": "106282638142652151495301191305977150321128410627972306502641623327124674032650",
+            "type": "uint256",
+            "semantic_name": "address_106282638142652151495301191305977150321128410627972306502641623327124674032650",
+            "before_value": 100008910091788310,
+            "after_value": 1000000000000000000
+          }
+        },
+        "danger_condition": "underlyingAmount >= 100008910091788310",
+        "safe_condition": "underlyingAmount <= 50004455045894152",
+        "threshold_value": 50004455045894152
+      },
+      "analysis": {
+        "state_value": 100008910091788310,
+        "threshold": 50004455045894155,
+        "coefficient": 0.5,
+        "attack_intensity": 9.0049,
+        "reasoning": "参数直接导致address_106282638142652151495301191305977150321128410627972306502641623327124674032650增加899991089908211690，阈值设为50004455045894152",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 0.9993596019464188,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdrawExactAmount",
+      "signature": "withdrawExactAmount(uint256,address,uint256)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 374662543803889222744219534159420193573479383040",
+        "semantics": "High-frequency operation: parameter affects address_49546380140786141483245470050918807646384343424284533912713975767340287586978 with estimated 156109393251620516237561340450315221971366838272 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "8"
+          },
+          "address_49546380140786141483245470050918807646384343424284533912713975767340287586978": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "address_49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "before_value": 0,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "amount >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "amount <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 374662543803889221562926996233306422546537495662,
+        "coefficient": 0.3,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代156109393251620516237561340450315221971366838272次超过上限10000，使用保守阈值374662543803889222744219534159420193573479383040",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.5610939325162052e+47,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdrawExactAmount",
+      "signature": "withdrawExactAmount(uint256,address,uint256)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xb40b073d7e47986d3a45ca7fd30772c25a2ad57f"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(LPTPoolToken)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "withdrawExactAmount",
+      "signature": "withdrawExactAmount(uint256,address,uint256)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "amount > 0",
+        "semantics": "Direct deposit/mint: parameter directly increases flag_9480824339740718028973876408568413203850139571234341100048584681359614334959",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "1"
+          },
+          "flag_9480824339740718028973876408568413203850139571234341100048584681359614334959": {
+            "source": "storage",
+            "slot": "9480824339740718028973876408568413203850139571234341100048584681359614334959",
+            "type": "uint256",
+            "semantic_name": "flag_9480824339740718028973876408568413203850139571234341100048584681359614334959",
+            "before_value": 0,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "amount >= 1",
+        "safe_condition": "amount <= 0",
+        "threshold_value": 0
+      },
+      "analysis": {
+        "state_value": 1,
+        "threshold": 0,
+        "coefficient": 0.3,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致flag_9480824339740718028973876408568413203850139571234341100048584681359614334959增加1，阈值设为0",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "underlyingAmount > 3000000000",
+        "semantics": "Direct withdraw/burn: parameter directly decreases address_89525321482722663811405249180259329009316399041030169005511926257132808634583",
+        "variables": {
+          "underlyingAmount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "underlyingAmount / shareAmount + 10"
+          },
+          "address_89525321482722663811405249180259329009316399041030169005511926257132808634583": {
+            "source": "storage",
+            "slot": "89525321482722663811405249180259329009316399041030169005511926257132808634583",
+            "type": "uint256",
+            "semantic_name": "address_89525321482722663811405249180259329009316399041030169005511926257132808634583",
+            "before_value": 10000000001,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "underlyingAmount >= 10000000001",
+        "safe_condition": "underlyingAmount <= 3000000000",
+        "threshold_value": 3000000000
+      },
+      "analysis": {
+        "state_value": 10000000001,
+        "threshold": 5000000000,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致address_89525321482722663811405249180259329009316399041030169005511926257132808634583减少10000000000，阈值设为3000000000",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 0.9999988555013098,
+        "change_direction": "decrease"
+      }
+    },
+    {
+      "function": "getTotalPool",
+      "signature": "getTotalPool(address)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xb40b073d7e47986d3a45ca7fd30772c25a2ad57f"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(LPTPoolToken)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "withdrawExactShares",
+      "signature": "withdrawExactShares(uint256)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 374662543803889222744219534159420193573479383040",
+        "semantics": "High-frequency operation: parameter affects address_49546380140786141483245470050918807646384343424284533912713975767340287586978 with estimated 2406411745355906598035259392 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "LPTPoolToken.balanceOf(address(this))"
+          },
+          "address_49546380140786141483245470050918807646384343424284533912713975767340287586978": {
+            "source": "storage",
+            "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "type": "uint256",
+            "semantic_name": "address_49546380140786141483245470050918807646384343424284533912713975767340287586978",
+            "before_value": 0,
+            "after_value": 1248875146012964071876423320777688075155124985543
+          }
+        },
+        "danger_condition": "amount >= 1123987631411667668232658602478260580720438149120",
+        "safe_condition": "amount <= 374662543803889222744219534159420193573479383040",
+        "threshold_value": 374662543803889222744219534159420193573479383040
+      },
+      "analysis": {
+        "state_value": 1248875146012964071876423320777688075155124985543,
+        "threshold": 374662543803889221562926996233306422546537495662,
+        "coefficient": 0.3,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代2406411745355906598035259392次超过上限10000，使用保守阈值374662543803889222744219534159420193573479383040",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 2.4064117453559066e+27,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586978",
+        "before": 0,
+        "after": 1248875146012964071876423320777688075155124985543,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "26229284803039920070979881253684308854400898147531690847306433246849072001882",
+        "before": 0,
+        "after": 1097077688018008265106216665536940668749033598146,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "49546380140786141483245470050918807646384343424284533912713975767340287586976",
+        "before": 0,
+        "after": 1097077688018008265106216665536940668749033598146,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "41058372907560789284422245502666031336367695314013334173588923913166619207221",
+        "before": 1027864277656555327841514933121169503026263283071,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "20589035976198582462489069058766118863671417604343559061056087031774860024024",
+        "before": 0,
+        "after": 1027864277656555327841514933121169503026263283071,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 108
+  },
+  "attack_metadata": {
+    "loop_count": 6,
+    "total_calls": 12
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

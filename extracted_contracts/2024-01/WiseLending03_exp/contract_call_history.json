@@ -1,0 +1,310 @@
+{
+  "protocol": "WiseLending03_exp",
+  "contract_address": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+  "target_functions": [
+    "depositExactAmount",
+    "withdrawExactAmount",
+    "withdrawExactShares",
+    "borrowExactAmount"
+  ],
+  "tx_count": 11,
+  "txs": [
+    {
+      "hash": "0x73f7d924e722481b3c70829b30a1b729971b4cf5d18e110c1a303c37ced79682",
+      "from": "0x641ad78baca220c5bd28b51ce8e0f495e85fe689",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18891992,
+      "time": "2023-12-29T14:59:59Z",
+      "function": "depositExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 1000000
+        }
+      ]
+    },
+    {
+      "hash": "0x38dea087bac0583a4fd87b744599930548db609558d0ccbe2836a0618f982d5c",
+      "from": "0xa803c226c8281550454523191375695928dcfe92",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18890167,
+      "time": "2023-12-29T08:52:11Z",
+      "function": "borrowExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 2
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0x83f20f44975d03b1b09e64809b757c47f942beea"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 40000000000000000000
+        }
+      ]
+    },
+    {
+      "hash": "0x5600b723a8d48b1c84e33a2c4ad37e7efa7819a8e3cee24614a102f1e0cd130b",
+      "from": "0x641ad78baca220c5bd28b51ce8e0f495e85fe689",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18890163,
+      "time": "2023-12-29T08:51:23Z",
+      "function": "depositExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0x83f20f44975d03b1b09e64809b757c47f942beea"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 50000000000000000000
+        }
+      ]
+    },
+    {
+      "hash": "0xec423cc80e53c20b64b754ed057c858ff2752b9d10186e819a6b3193968ddd08",
+      "from": "0x641ad78baca220c5bd28b51ce8e0f495e85fe689",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18870949,
+      "time": "2023-12-26T16:05:47Z",
+      "function": "withdrawExactShares",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"
+        },
+        {
+          "name": "_shares",
+          "type": "uint256",
+          "value": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "hash": "0x98ef97837c832044518c0328a63211f2b4b871ca1ca35ba9d65e6918dccb3c9c",
+      "from": "0xa803c226c8281550454523191375695928dcfe92",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18757104,
+      "time": "2023-12-10T16:48:59Z",
+      "function": "borrowExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 2
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 3000000000
+        }
+      ]
+    },
+    {
+      "hash": "0x09e308f14004517cbd16309ffff69741cc0af47b725eae0d187459b6d98ee763",
+      "from": "0x641ad78baca220c5bd28b51ce8e0f495e85fe689",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18728166,
+      "time": "2023-12-06T15:26:47Z",
+      "function": "borrowExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 700000000000000000
+        }
+      ]
+    },
+    {
+      "hash": "0xd33355d9e27c49e3833301d11700842e9045ec4222adfa9b3e15e7ae2e3f52e3",
+      "from": "0x641ad78baca220c5bd28b51ce8e0f495e85fe689",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18728158,
+      "time": "2023-12-06T15:25:11Z",
+      "function": "depositExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "hash": "0xa40a1b3b3013eec50691a08553b0e57bdb3025effdb101e5e65288a617a39f4d",
+      "from": "0x641ad78baca220c5bd28b51ce8e0f495e85fe689",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18713593,
+      "time": "2023-12-04T14:27:47Z",
+      "function": "borrowExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0x6b175474e89094c44da98b954eedeac495271d0f"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 3000000000000000000000
+        }
+      ]
+    },
+    {
+      "hash": "0xdac3a9758195f671e0f7a3ac83ab2281158b970e1f6d4c77da7d530fcd549024",
+      "from": "0x641ad78baca220c5bd28b51ce8e0f495e85fe689",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18713590,
+      "time": "2023-12-04T14:27:11Z",
+      "function": "borrowExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0x6b175474e89094c44da98b954eedeac495271d0f"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 2000000000000000000000
+        }
+      ]
+    },
+    {
+      "hash": "0x16f270d0b304818590d0d02d0f220b5588a77f45f7c54f18e56da9d0e77fb961",
+      "from": "0x641ad78baca220c5bd28b51ce8e0f495e85fe689",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18713585,
+      "time": "2023-12-04T14:26:11Z",
+      "function": "depositExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0x6b175474e89094c44da98b954eedeac495271d0f"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 10000000000000000000000
+        }
+      ]
+    },
+    {
+      "hash": "0x666385b2710d20d4e5fc02a58091aaf39e1fdc39e116c9cec2ae2df83e359884",
+      "from": "0x641ad78baca220c5bd28b51ce8e0f495e85fe689",
+      "to": "0x37e49bf3749513a02fa535f0cbc383796e8107e4",
+      "value": "0",
+      "blockNumber": 18713543,
+      "time": "2023-12-04T14:17:47Z",
+      "function": "borrowExactAmount",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "_nftId",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "_poolToken",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "value": 1000000000
+        }
+      ]
+    }
+  ]
+}
