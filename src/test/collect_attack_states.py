@@ -113,6 +113,36 @@ LOG_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
 logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
 logger = logging.getLogger(__name__)
 
+# ============================================================================
+# 环境变量加载
+# ============================================================================
+
+def load_env_file(env_path: Path) -> None:
+    """从.env文件加载环境变量(不覆盖已有环境变量)."""
+    if not env_path.exists():
+        return
+    try:
+        with env_path.open('r', encoding='utf-8') as f:
+            for raw_line in f:
+                line = raw_line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                if line.startswith('export '):
+                    line = line[len('export '):].lstrip()
+                if '=' not in line:
+                    continue
+                key, value = line.split('=', 1)
+                key = key.strip()
+                if not key:
+                    continue
+                value = value.strip()
+                if value and ((value[0] == value[-1]) and value[0] in ('"', "'")):
+                    value = value[1:-1]
+                if key not in os.environ:
+                    os.environ[key] = value
+    except Exception as e:
+        logger.warning(f"读取.env失败: {e}")
+
 # 路径配置
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parents[1]
@@ -125,6 +155,10 @@ LOG_FILE = LOG_DIR / 'collect_attack_states.log'
 file_handler = logging.FileHandler(LOG_FILE, encoding='utf-8')
 file_handler.setFormatter(logging.Formatter(LOG_FORMAT))
 logging.getLogger().addHandler(file_handler)
+
+# 读取项目根目录的.env (如需覆盖路径,设置 COLLECT_ATTACK_STATES_ENV_FILE)
+env_override_path = os.environ.get('COLLECT_ATTACK_STATES_ENV_FILE')
+load_env_file(Path(env_override_path) if env_override_path else PROJECT_ROOT / '.env')
 
 # 收集配置
 DEFAULT_STORAGE_DEPTH = 100  # 扫描storage的深度
@@ -310,8 +344,14 @@ class RPCManager:
                 config = toml.load(f)
 
             endpoints = config.get('rpc_endpoints', {})
+            resolved_endpoints: Dict[str, str] = {}
+            for chain, rpc_url in endpoints.items():
+                if isinstance(rpc_url, str):
+                    resolved_endpoints[chain] = os.path.expandvars(rpc_url)
+                else:
+                    resolved_endpoints[chain] = rpc_url
             self.logger.info(f"加载了 {len(endpoints)} 个RPC端点")
-            return endpoints
+            return resolved_endpoints
 
         except Exception as e:
             self.logger.error(f"加载foundry.toml失败: {e}")

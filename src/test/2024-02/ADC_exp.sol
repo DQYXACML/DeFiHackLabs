@@ -67,7 +67,7 @@ contract Exploit is Test {
         cheats.createSelectFork("mainnet", 19_138_640);
     }
 
-    function testexploit() public payable {
+    function testExploit() public payable {
         Helper = new Help{value: 18 ether}();
 
         WETH.approve(address(mainpool), 18 ether);

@@ -5,14 +5,16 @@ set -uo pipefail
 
 usage() {
   cat <<'EOF'
-Usage: scripts/batch_forge_tests.sh (--filter YYYY-MM | --protocol ProtocolName)
+Usage: scripts/batch_forge_tests.sh (--filter YYYY-MM | --protocol ProtocolName[_exp][.sol])
 
 Examples:
   scripts/batch_forge_tests.sh --filter 2024-01
   scripts/batch_forge_tests.sh --protocol BarleyFinance
+  scripts/batch_forge_tests.sh --protocol BarleyFinance_exp
+  scripts/batch_forge_tests.sh --protocol BarleyFinance_exp.sol
 
 The script always runs:
-  forge test --mp <file> --mt testExploit -vvvv --skip Corkprotocol_exp.sol --skip proxy_b7e1_exp.sol
+  forge test --mp <file> --mt '^test[Ee]xploit' -vvvv --skip Corkprotocol_exp.sol --skip proxy_b7e1_exp.sol
   Logs are written to <Protocol>_exp.txt in the repo root.
 EOF
 }
@@ -60,9 +62,15 @@ fi
 mapfile -t MATCHES < <(find "$SEARCH_ROOT" -type f -name "*_exp.sol" | sort)
 
 if [[ -n "$PROTOCOL" ]]; then
+  PROTOCOL_BASE="${PROTOCOL%.sol}"
+  PROTOCOL_BASE="${PROTOCOL_BASE%_exp}"
+  if [[ -z "$PROTOCOL_BASE" ]]; then
+    echo "Invalid --protocol value: ${PROTOCOL}" >&2
+    exit 1
+  fi
   FILTERED=()
   for FILE in "${MATCHES[@]}"; do
-    if [[ "$(basename "$FILE")" == "${PROTOCOL}_exp.sol" ]]; then
+    if [[ "$(basename "$FILE")" == "${PROTOCOL_BASE}_exp.sol" ]]; then
       FILTERED+=("$FILE")
     fi
   done
@@ -83,7 +91,7 @@ for FILE in "${MATCHES[@]}"; do
   LOG_FILE="${PROTOCOL_NAME}_exp.txt"
 
   echo "Running forge test for ${FILE} (log: ${LOG_FILE})"
-  if forge test --mp "$FILE" --mt testExploit -vvvv "${SKIP_ARGS[@]}" | tee "$LOG_FILE"; then
+  if forge test --mp "$FILE" --mt '^test[Ee]xploit' -vvvv "${SKIP_ARGS[@]}" | tee "$LOG_FILE"; then
     echo "Completed ${PROTOCOL_NAME}"
   else
     echo "forge test failed for ${FILE}, see ${LOG_FILE}"

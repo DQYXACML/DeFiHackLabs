@@ -32,6 +32,10 @@ from queue import Queue, Empty
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import asyncio
 
+# 初始化一个基础logger，避免早期导入失败时logger未定义
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
 # 导入OnChainDataFetcher
 try:
     import sys
@@ -76,7 +80,7 @@ EXPLORER_APIS = {
         "web_url": "https://etherscan.io",
         "chainid": 1,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/ethereum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
+        "rpc_env": "MAINNET_RPC_URL"
     },
     "arbitrum": {
         "name": "Arbiscan",
@@ -84,7 +88,7 @@ EXPLORER_APIS = {
         "web_url": "https://arbiscan.io",
         "chainid": 42161,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/arbitrum/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
+        "rpc_env": "ARBITRUM_RPC_URL"
     },
     "bsc": {
         "name": "BscScan",
@@ -92,7 +96,7 @@ EXPLORER_APIS = {
         "web_url": "https://bscscan.com",
         "chainid": 56,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/bsc/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
+        "rpc_env": "BSC_RPC_URL"
     },
     "base": {
         "name": "BaseScan",
@@ -100,7 +104,7 @@ EXPLORER_APIS = {
         "web_url": "https://basescan.org",
         "chainid": 8453,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/base/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
+        "rpc_env": "BASE_RPC_URL"
     },
     "optimism": {
         "name": "Optimism Etherscan",
@@ -108,7 +112,7 @@ EXPLORER_APIS = {
         "web_url": "https://optimistic.etherscan.io",
         "chainid": 10,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/optimism/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
+        "rpc_env": "OPTIMISM_RPC_URL"
     },
     "blast": {
         "name": "BlastScan",
@@ -116,7 +120,7 @@ EXPLORER_APIS = {
         "web_url": "https://blastscan.io",
         "chainid": 81457,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/blast/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
+        "rpc_env": "BLAST_RPC_URL"
     },
     "polygon": {
         "name": "PolygonScan",
@@ -124,7 +128,7 @@ EXPLORER_APIS = {
         "web_url": "https://polygonscan.com",
         "chainid": 137,
         "api_key_name": "etherscan",
-        "rpc_url": "https://lb.drpc.live/polygon/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
+        "rpc_env": "POLYGON_RPC_URL"
     },
     "avalanche": {
         "name": "SnowTrace",
@@ -132,7 +136,7 @@ EXPLORER_APIS = {
         "web_url": "https://snowtrace.io",
         "chainid": 43114,
         "api_key_name": "snowtrace",
-        "rpc_url": "https://lb.drpc.live/avalanche/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
+        "rpc_env": "AVALANCHE_RPC_URL"
     },
     "fantom": {
         "name": "FTMScan",
@@ -140,7 +144,7 @@ EXPLORER_APIS = {
         "web_url": "https://ftmscan.com",
         "chainid": 250,
         "api_key_name": "ftmscan",
-        "rpc_url": "https://lb.drpc.live/fantom/Avduh2iIjEAksBUYtd4wP1O6PmXG-oAR8JaRgtEkfQq9"
+        "rpc_env": "FANTOM_RPC_URL"
     },
 }
 
@@ -161,6 +165,49 @@ logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
 logger = logging.getLogger(__name__)
 
 # ============================================================================
+# 环境变量加载
+# ============================================================================
+
+def load_env_file(env_path: Path) -> None:
+    """从.env文件加载环境变量(不覆盖已有环境变量)."""
+    if not env_path.exists():
+        return
+    try:
+        with env_path.open('r', encoding='utf-8') as f:
+            for raw_line in f:
+                line = raw_line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                if line.startswith('export '):
+                    line = line[len('export '):].lstrip()
+                if '=' not in line:
+                    continue
+                key, value = line.split('=', 1)
+                key = key.strip()
+                if not key:
+                    continue
+                value = value.strip()
+                if value and ((value[0] == value[-1]) and value[0] in ('"', "'")):
+                    value = value[1:-1]
+                if key not in os.environ:
+                    os.environ[key] = value
+    except Exception as e:
+        logger.warning(f"读取.env失败: {e}")
+
+def resolve_rpc_url(chain: str, api_config: Optional[Dict[str, Any]] = None) -> Optional[str]:
+    """解析链对应的RPC URL (优先环境变量,可选回退到配置)."""
+    if api_config is None:
+        api_config = EXPLORER_APIS.get(chain)
+    if not api_config:
+        return None
+    env_key = api_config.get('rpc_env')
+    if env_key:
+        env_value = os.environ.get(env_key)
+        if env_value:
+            return env_value
+    return api_config.get('rpc_url')
+
+# ============================================================================
 # 路径配置
 # ============================================================================
 
@@ -172,6 +219,10 @@ except IndexError:
 DEFAULT_TEST_DIR = PROJECT_ROOT / 'src/test'
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / 'extracted_contracts'
 DEFAULT_LOG_FILE = PROJECT_ROOT / 'logs' / 'extract_contracts.log'
+
+# 读取项目根目录的.env (如需覆盖路径,设置 EXTRACT_CONTRACTS_ENV_FILE)
+env_override_path = os.environ.get('EXTRACT_CONTRACTS_ENV_FILE')
+load_env_file(Path(env_override_path) if env_override_path else PROJECT_ROOT / '.env')
 
 # ============================================================================
 # 数据结构
@@ -1163,10 +1214,11 @@ class ProxyDetector:
             return None
 
         api_config = EXPLORER_APIS[chain]
-        rpc_url = api_config.get('rpc_url')
+        rpc_url = resolve_rpc_url(chain, api_config)
 
         if not rpc_url:
-            self.logger.debug(f"  未配置RPC URL用于链: {chain}, 跳过代理检测")
+            rpc_env = api_config.get('rpc_env')
+            self.logger.debug(f"  未配置RPC URL用于链: {chain} (env: {rpc_env}), 跳过代理检测")
             return None
 
         try:
@@ -2685,10 +2737,11 @@ class SourceDownloader:
             return False
 
         api_config = EXPLORER_APIS[chain]
-        rpc_url = api_config.get('rpc_url')
+        rpc_url = resolve_rpc_url(chain, api_config)
 
         if not rpc_url:
-            self.logger.warning(f"  未配置RPC URL用于链: {chain}")
+            rpc_env = api_config.get('rpc_env')
+            self.logger.warning(f"  未配置RPC URL用于链: {chain} (env: {rpc_env})")
             return False
 
         try:
@@ -2763,7 +2816,7 @@ class SourceDownloader:
         if chain not in EXPLORER_APIS:
             return None
 
-        rpc_url = EXPLORER_APIS[chain].get('rpc_url')
+        rpc_url = resolve_rpc_url(chain)
         if not rpc_url:
             return None
 
@@ -2821,7 +2874,8 @@ class SourceDownloader:
         )
         if creation_tx_hash:
             metadata['creation_tx_hash'] = creation_tx_hash
-            tx_input = self._fetch_tx_input(api_config.get('rpc_url'), creation_tx_hash)
+            rpc_url = resolve_rpc_url(chain, api_config)
+            tx_input = self._fetch_tx_input(rpc_url, creation_tx_hash)
             if tx_input:
                 metadata['constructor_tx_input'] = tx_input
 
@@ -3284,7 +3338,7 @@ class ContractExtractor:
             return
 
         # 获取RPC URL用于批量预检查
-        rpc_url = EXPLORER_APIS[chain].get('rpc_url') if chain in EXPLORER_APIS else None
+        rpc_url = resolve_rpc_url(chain)
 
         # 批量预检查: 先快速检查哪些地址是真实合约 (避免浪费时间下载无效地址)
         valid_contract_addrs = set()

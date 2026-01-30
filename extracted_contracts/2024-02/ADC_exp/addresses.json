@@ -8,11 +8,9 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": [
-      "Attacker"
-    ]
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   },
   {
     "address": "0x2ffdce5f0c09a8ee3a568bc01f35894b2d77a6d6",
@@ -23,11 +21,9 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": [
-      "Attack_Contract"
-    ]
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
@@ -36,15 +32,11 @@
     "source": "static",
     "context": "constant WETH = IWETH(payable(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2))",
     "onchain_name": null,
-    "symbol": "WETH",
-    "decimals": 18,
-    "is_erc20": true,
-    "semantic_type": "unknown",
-    "aliases": [
-      "WETH",
-      "weth",
-      "IWETH"
-    ]
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   },
   {
     "address": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
@@ -55,11 +47,10 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": [
-      "UniRouter",
-      "IUniswapV2Router"
+      "UniRouter"
     ]
   },
   {
@@ -69,14 +60,12 @@
     "source": "static",
     "context": "IUSDC private constant USDC = IUSDC(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)",
     "onchain_name": null,
-    "symbol": "USDC",
-    "decimals": 6,
-    "is_erc20": true,
-    "semantic_type": "unknown",
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": [
-      "USDC",
-      "IUSDC",
-      "usdc"
+      "USDC"
     ]
   },
   {
@@ -88,11 +77,10 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": [
-      "Balancer",
-      "IBalancerVault"
+      "Balancer"
     ]
   },
   {
@@ -104,11 +92,10 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": [
-      "tick",
-      "Ticket"
+      "tick"
     ]
   },
   {
@@ -120,11 +107,10 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": [
-      "mainpool",
-      "MainPool"
+      "mainpool"
     ]
   },
   {
@@ -136,11 +122,9 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": [
-      "CheatCodes"
-    ]
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   },
   {
     "address": "0x0B925eD163218f6662a35e0f0371Ac234f9E9371",
@@ -149,17 +133,12 @@
     "source": "static",
     "context": "IERC20 AAVEETH = IERC20(0x0B925eD163218f6662a35e0f0371Ac234f9E9371)",
     "onchain_name": null,
-    "symbol": "aEthwstETH",
-    "decimals": 18,
-    "is_erc20": true,
-    "semantic_type": "unknown",
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": [
-      "AAVEETH",
-      "aEthwstETH",
-      "IERC20",
-      "aethwsteth",
-      "AETHWSTETH",
-      "IaEthwstETH"
+      "AAVEETH"
     ]
   },
   {
@@ -171,11 +150,10 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": [
-      "AAVE",
-      "IAaveFlashloan"
+      "AAVE"
     ]
   },
   {
@@ -185,15 +163,11 @@
     "source": "dynamic",
     "context": "called with gas 2519",
     "onchain_name": null,
-    "symbol": "ADC",
-    "decimals": 18,
-    "is_erc20": true,
-    "semantic_type": "unknown",
-    "aliases": [
-      "ADC",
-      "adc",
-      "IADC"
-    ]
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   },
   {
     "address": "0x1d13502CfB73FCa360d1af7703cD3F47abA809b5",
@@ -204,8 +178,8 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": null
   },
   {
@@ -217,8 +191,8 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": null
   },
   {
@@ -230,8 +204,8 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": null
   },
   {
@@ -243,8 +217,8 @@
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
+    "is_erc20": null,
+    "semantic_type": null,
     "aliases": null
   },
   {
