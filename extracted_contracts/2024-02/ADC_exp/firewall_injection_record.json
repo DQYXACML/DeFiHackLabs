@@ -1,0 +1,22 @@
+{
+  "protocol": "ADC_exp",
+  "year_month": "2024-02",
+  "injection_timestamp": "2026-02-01T12:03:18.728317Z",
+  "main_contract": {
+    "name": "MainPool",
+    "actual_contract_name": "MainPool",
+    "address": "0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8"
+  },
+  "injected_contracts": [
+    {
+      "file": "MainPool.sol",
+      "functions": [
+        "joinGame",
+        "withdraw",
+        "calcStepIncome"
+      ]
+    }
+  ],
+  "total_functions": 3,
+  "status": "success"
+}

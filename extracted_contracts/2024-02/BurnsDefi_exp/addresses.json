@@ -30,6 +30,26 @@
     ]
   },
   {
+    "address": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+    "name": "Vuln_Contract",
+    "chain": "bsc",
+    "source": "comment",
+    "context": "// Vuln Contract : https://bscscan.com/address/0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+    "onchain_name": null,
+    "symbol": "Burns Build",
+    "decimals": 9,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "BurnsBuild",
+      "Burns Build",
+      "Vuln_Contract",
+      "burns build",
+      "BURNS BUILD",
+      "IBurns Build"
+    ]
+  },
+  {
     "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
     "name": "WBNB",
     "chain": "bsc",
@@ -58,6 +78,7 @@
     "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
+      "BUSDT",
       "USDT",
       "IERC20",
       "usdt",
@@ -95,6 +116,7 @@
     "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
+      "DSP",
       "DLP",
       "DVM",
       "dlp",
@@ -110,9 +132,10 @@
     "onchain_name": null,
     "symbol": "Cake-LP",
     "decimals": 18,
-    "is_erc20": false,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
+      "BUSDT_WBNB",
       "Cake-LP",
       "Uni_Pair_V2",
       "cake-lp",
@@ -132,6 +155,7 @@
     "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
+      "Burns_WBNB",
       "Cake-LP",
       "Uni_Pair_V2",
       "cake-lp",
@@ -151,26 +175,8 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "PancakeRouter",
       "Uni_Router_V2"
-    ]
-  },
-  {
-    "address": "0x4fb9657Ac5d311dD54B37A75cFB873b127Eb21FD",
-    "name": "IBurnsBuild",
-    "chain": "bsc",
-    "source": "static",
-    "context": "IBurnsBuild private constant BurnsBuild = IBurnsBuild(0x4fb9657Ac5d311dD54B37A75cFB873b127Eb21FD)",
-    "onchain_name": null,
-    "symbol": "Burns Build",
-    "decimals": 9,
-    "is_erc20": true,
-    "semantic_type": "unknown",
-    "aliases": [
-      "Burns Build",
-      "IBurnsBuild",
-      "burns build",
-      "BURNS BUILD",
-      "IBurns Build"
     ]
   },
   {
@@ -184,7 +190,7 @@
     "decimals": 0,
     "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
@@ -231,7 +237,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xb38645331535d8a24250bd866c230d0d85c11b90",
@@ -244,20 +250,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x0000000000000000000000000000000000000000",
-    "name": null,
-    "chain": "bsc",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x5ff10565516c110180bb9cc111cdbc2b0a68e09f",
@@ -270,19 +263,6 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x000000000000000000000000000000000000dEaD",
-    "name": null,
-    "chain": "bsc",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   }
 ]

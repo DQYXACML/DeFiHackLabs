@@ -19,6 +19,7 @@ import "./SafeMath.sol";
 import "./Ownable.sol";
 
 import "./console.sol";
+import {IRouter} from "./interfaces/IRouter.sol";
 
 contract BMIZapper is Ownable {
     using SafeERC20 for IERC20;

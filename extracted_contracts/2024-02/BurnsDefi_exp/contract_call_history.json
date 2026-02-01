@@ -1,0 +1,187 @@
+{
+  "protocol": "BurnsDefi_exp",
+  "contract_address": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+  "target_functions": [
+    "receiveRewards",
+    "burnToHolder"
+  ],
+  "tx_count": 8,
+  "txs": [
+    {
+      "hash": "0xa073d9008a550e735da87b674f90634412f14f7daefc7321950a4e90d3f6ed3c",
+      "from": "0xcbf3da9a9fc7d27fcc1926d8ecb4b894aa2f89ea",
+      "to": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+      "value": "0",
+      "blockNumber": 35858189,
+      "time": "2024-02-05T03:02:05Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 1200000000000000000000
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd"
+        }
+      ]
+    },
+    {
+      "hash": "0x9a017786ca5aef976537ebad6bd10d8fb2a8852b639272339c28a554b36b99f3",
+      "from": "0xdfb34e693efed7977164ffd9ec5c437b17f4e761",
+      "to": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+      "value": "0",
+      "blockNumber": 35858189,
+      "time": "2024-02-05T03:02:05Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 100000000000000000000
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0x000000000000000000000000000000000000dead"
+        }
+      ]
+    },
+    {
+      "hash": "0x87c5da9d707cad65a69cb8e35daf458ff284234553dee84f25f187305f13d4c1",
+      "from": "0xd1b8720ce3054c46dc9f9598380843918e0e9335",
+      "to": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+      "value": "0",
+      "blockNumber": 35858189,
+      "time": "2024-02-05T03:02:05Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 8600000000000000000000
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0x000000000000000000000000000000000000dead"
+        }
+      ]
+    },
+    {
+      "hash": "0x31d406a52babb6f4d32770f1a776cb2fe54a4341e43bd24825619641fe0bce04",
+      "from": "0xba5970da3c0b0dd56561af743b68361f7ccfa6dd",
+      "to": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+      "value": "0",
+      "blockNumber": 35858189,
+      "time": "2024-02-05T03:02:05Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 3800000000000000000000
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0x000000000000000000000000000000000000dead"
+        }
+      ]
+    },
+    {
+      "hash": "0xda06ef4ada65538dba6661598a0b71536139d2efac76c69ee0c9617eb9a8fdab",
+      "from": "0x7da7adc7dde9210d1d3caa9c05c406861ed1cedc",
+      "to": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+      "value": "0",
+      "blockNumber": 35858188,
+      "time": "2024-02-05T03:02:02Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 10000000000000000000000
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xec2a1e9f5cf9add418b9218d6c1cc883e7e7c0f8"
+        }
+      ]
+    },
+    {
+      "hash": "0xc724bf8f47395c94920dc29a8f93e9f132f11e7eb4e899d3cb5408b5a42b6ade",
+      "from": "0x9e12cf63270e264517379de51a247dc5cc8991ea",
+      "to": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+      "value": "0",
+      "blockNumber": 35858188,
+      "time": "2024-02-05T03:02:02Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 3100000000000000000000
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0x000000000000000000000000000000000000dead"
+        }
+      ]
+    },
+    {
+      "hash": "0x915a17a627aeeb2b8fe81e18e29ac5c38313fb76e5cd4200924306c72ca113a8",
+      "from": "0xc2ca53c139fc8a670c04c6e9af2db2878e794bd4",
+      "to": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+      "value": "0",
+      "blockNumber": 35858188,
+      "time": "2024-02-05T03:02:02Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 10000000000000000000000
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xec2a1e9f5cf9add418b9218d6c1cc883e7e7c0f8"
+        }
+      ]
+    },
+    {
+      "hash": "0x8e2a50e8e8b3c33676a34b6fdd5a02cf65b8b2e631a0dd9011ae0ff95df02860",
+      "from": "0xcc044a7e2bb8adc37cc1ddf7735f8b20687f42fc",
+      "to": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd",
+      "value": "0",
+      "blockNumber": 35858188,
+      "time": "2024-02-05T03:02:02Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 10000000000000000000000
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xec2a1e9f5cf9add418b9218d6c1cc883e7e7c0f8"
+        }
+      ]
+    }
+  ]
+}

@@ -21,9 +21,15 @@ interface IMarketFacet {
 }
 
 interface bBep20Interface {
-    function transfer(address dst, uint256 amount) external returns (bool);
+    function transfer(
+        address dst,
+        uint256 amount
+    ) external returns (bool);
 
-    function approve(address spender, uint256 amount) external returns (bool);
+    function approve(
+        address spender,
+        uint256 amount
+    ) external returns (bool);
 
     function balanceOf(
         address owner
@@ -81,9 +87,9 @@ contract ContractTest is Test {
         OHM.approve(address(pool), type(uint256).max);
     }
 
-    function testAttack() public {
-        vm.deal(address(this), 0.000000000000009997 ether);
-        WETH.deposit{value: 0.000000000000009997 ether}();
+    function testExploit() public {
+        vm.deal(address(this), 0.000_000_000_000_009_997 ether);
+        WETH.deposit{value: 0.000_000_000_000_009_997 ether}();
         approveAll();
         address[] memory tokens = new address[](1);
         tokens[0] = address(WETH);

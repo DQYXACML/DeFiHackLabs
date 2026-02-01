@@ -4,9 +4,10 @@ import "forge-std/Test.sol";
 import "./../interface.sol";
 
 // @KeyInfo -- Total Lost : ~20 ETH
-// TX : https://app.blocksec.com/explorer/tx/eth/0xcf834aff4de9992f5da9c443600dad9c6277a8a00de5007842fece51564992db
+// Attack TX : https://app.blocksec.com/explorer/tx/eth/0xcf834aff4de9992f5da9c443600dad9c6277a8a00de5007842fece51564992db
 // Attacker : https://etherscan.io/address/0x24a0c66f185874b251eb70bee2c2e35e39848419
 // Attack Contract : https://etherscan.io/address/0x2ffdce5f0c09a8ee3a568bc01f35894b2d77a6d6
+// Vulnerable Contract : https://etherscan.io/address/0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8
 // GUY : https://x.com/EXVULSEC/status/1753294675971313790
 
 interface Ticket is IERC20 {
@@ -33,7 +34,11 @@ interface MainPool {
     function joinGame(
         address parentAddr
     ) external payable;
-    function calcStepIncome(uint256 pid_, uint256 value_, uint8 dividendAccount_) external;
+    function calcStepIncome(
+        uint256 pid_,
+        uint256 value_,
+        uint8 dividendAccount_
+    ) external;
     function withdraw() external;
     function getMainPoolWithdrawBalance(
         uint256 index
@@ -42,7 +47,10 @@ interface MainPool {
     function mainPoolWithdrawBalance(
         uint256 index
     ) external view returns (uint256);
-    function plyr(uint256 rid, uint256 pid) external view returns (Player memory);
+    function plyr(
+        uint256 rid,
+        uint256 pid
+    ) external view returns (Player memory);
     function plyrID(
         address _add
     ) external view returns (uint256);

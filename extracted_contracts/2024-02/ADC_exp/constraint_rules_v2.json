@@ -1,0 +1,120 @@
+{
+  "protocol": "ADC_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0xdE46fcF6aB7559E4355b8eE3D7fBa0f2730CDdd8",
+    "name": "Unknown"
+  },
+  "constraints": [
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xde46fcf6ab7559e4355b8ee3d7fba0f2730cddd8",
+          "0xae2c7af5fc2ddf45e6250a4c5495e61afc7acf50"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(mainpool)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "multiplied_threshold",
+        "expression": "ether * 2 > new_mapping_entry * 0.5",
+        "semantics": "Double impact: parameter has 2x effect on new_mapping_entry",
+        "variables": {
+          "ether": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "18 ether"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "27094579918358459489960715080212268642685476910108080499097854603893363484358",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 36099999999999999900
+          }
+        },
+        "danger_condition": "ether >= 18049999999999999950",
+        "safe_condition": "ether <= 9025000000000000000",
+        "threshold_value": 9025000000000000000
+      },
+      "analysis": {
+        "state_value": 36099999999999999900,
+        "threshold": 18049999999999999950,
+        "coefficient": 0.5,
+        "attack_intensity": 0.4986,
+        "reasoning": "参数有2倍放大效应，实际影响72199999999999999800，阈值设为9025000000000000000",
+        "correlation_type": "double",
+        "correlation_confidence": 0.85,
+        "ratio": 2.0055555555555555,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "3452422059017724246076445741733127993912238233724974384869709020078565716922",
+        "before": 148551434380952380952375000,
+        "after": 148533434380952380952375000,
+        "change_pct": 0.01,
+        "is_new_slot": false
+      },
+      {
+        "slot": "19084101745770278580626457020231632310913381870396952174538528766998842731046",
+        "before": 3945520204005952380954000,
+        "after": 3958295204005952380929000,
+        "change_pct": 0.32,
+        "is_new_slot": false
+      },
+      {
+        "slot": "93934324899430929034124935047885232404489621846905877838513434743388812775929",
+        "before": 0,
+        "after": 5225000000000000025000,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 3
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 2
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

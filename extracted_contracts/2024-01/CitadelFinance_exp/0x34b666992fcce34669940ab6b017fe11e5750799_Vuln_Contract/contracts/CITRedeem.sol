@@ -232,7 +232,7 @@ contract CitadelRedeem is Ownable, ReentrancyGuard {
      * @dev 公开设置防火墙地址（仅owner可调用，支持动态更新）
      */
     function setFirewall(address _firewall) external {
-        require(msg.sender == owner() || address(firewall()) == address(0), "Not authorized");
+        require(msg.sender == this.owner() || address(firewall()) == address(0), "Not authorized");
         require(_firewall != address(0), "Invalid firewall address");
         bytes32 slot = FIREWALL_ROUTER_SLOT;
         assembly {

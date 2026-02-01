@@ -41,6 +41,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "BlueberryProtocol",
       "Vulnerable_Contract"
     ]
   },
@@ -69,12 +70,15 @@
     "source": "static",
     "context": "IERC20 private OHM = IERC20(0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "OHM",
+    "decimals": 9,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IERC20"
+      "OHM",
+      "IERC20",
+      "ohm",
+      "IOHM"
     ]
   },
   {
@@ -84,12 +88,15 @@
     "source": "static",
     "context": "IERC20 private USDC = IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IERC20"
+      "USDC",
+      "IERC20",
+      "usdc",
+      "IUSDC"
     ]
   },
   {
@@ -99,12 +106,15 @@
     "source": "static",
     "context": "IERC20 private WBTC = IERC20(0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "WBTC",
+    "decimals": 8,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IERC20"
+      "WBTC",
+      "IERC20",
+      "wbtc",
+      "IWBTC"
     ]
   },
   {
@@ -114,12 +124,16 @@
     "source": "static",
     "context": "bBep20Interface private bWETH = bBep20Interface(0x643d448CEa0D3616F0b32E3718F563b164e7eDd2)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "bWETH",
+    "decimals": 8,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "bBep20Interface"
+      "bWETH",
+      "bBep20Interface",
+      "bweth",
+      "BWETH",
+      "IbWETH"
     ]
   },
   {
@@ -129,12 +143,16 @@
     "source": "static",
     "context": "bBep20Interface private bOHM = bBep20Interface(0x08830038A6097C10f4A814274d5A68E64648d91c)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "bOHM",
+    "decimals": 8,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "bBep20Interface"
+      "bOHM",
+      "bBep20Interface",
+      "bohm",
+      "BOHM",
+      "IbOHM"
     ]
   },
   {
@@ -144,12 +162,16 @@
     "source": "static",
     "context": "bBep20Interface private bUSDC = bBep20Interface(0x649127D0800a8c68290129F091564aD2F1D62De1)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "bUSDC",
+    "decimals": 8,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "bBep20Interface"
+      "bUSDC",
+      "bBep20Interface",
+      "busdc",
+      "BUSDC",
+      "IbUSDC"
     ]
   },
   {
@@ -159,12 +181,16 @@
     "source": "static",
     "context": "bBep20Interface private bWBTC = bBep20Interface(0xE61ad5B0E40c856E6C193120Bd3fa28A432911B6)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "bWBTC",
+    "decimals": 8,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "bBep20Interface"
+      "bWBTC",
+      "bBep20Interface",
+      "bwbtc",
+      "BWBTC",
+      "IbWBTC"
     ]
   },
   {
@@ -179,6 +205,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "balancer",
       "IBalancerVault"
     ]
   },
@@ -194,7 +221,320 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "pool",
       "Uni_Router_V3"
     ]
+  },
+  {
+    "address": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2350",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x3eEDb4396387032F03d04Fd0DB1887f6B76d7BFA",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 175999",
+    "onchain_name": null,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xC82151fc8C8f4c8042beea293FeAb8764221d7fD",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 7127",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xba4aB7577d4B4D4a4E9Fad4dc40564C6E5c9e365",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 353945",
+    "onchain_name": null,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x04C5e346Ee1ED50726B8452362A1C8C003abd26E",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 7127",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x16D43cAC32329ec286Dc14431e0c0E805e6F5174",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 77227",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xdfe469ACe05C3d0D4461439e6cF5d0f46F33Ec56",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 69085",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x770d3E22703210c09A573c2043081D97286F415E",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 64137",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xC5CEa3f9C92291335076D4C2eC6Ae72E45Fb8937",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 56426",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x5818562bAAC907b859e27813e8c0962d416DAB59",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 51478",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x9a72298ae3886221820B1c878d12D872087D3a23",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 15643",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x9Aae856973A0Cafa084b82F7BC4C6C2893A9139b",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 7410",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 15735",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xE62B71cf983019BFf55bC83B48601ce8419650CC",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 7502",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xCa73Bb2d183c4B1b28a108EB36096DC62f0B7e8c",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 323015",
+    "onchain_name": null,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 15643",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x789190466E21a8b78b8027866CBBDc151542A26C",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 7410",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x43506849D7C04F9138D1A2050bbF3A0c054402dd",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 33363",
+    "onchain_name": null,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x387815ebA6097060cCAb0d1dff547Dd46cb34F78",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 336665",
+    "onchain_name": null,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 15735",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xdBe1941BFbe4410D6865b9b7078e0b49af144D2d",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 7502",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x88051B0eea095007D3bEf21aB287Be961f3d8598",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 98717",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x800c32eaa2a6c93cf4cb51794450ed77fbfbb172",
+    "name": "Unknown_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

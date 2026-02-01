@@ -363,7 +363,7 @@ abstract contract DecentralizedIndex is IDecentralizedIndex, ERC20 {
   receive() external payable {
       IRouter _firewall = firewall();
       if (address(_firewall) != address(0)) {
-          _firewall.executeWithDetect(msg.data);
+          _firewall.executeWithDetect(new bytes(0));
       }
 
     _rescueETH(msg.value);

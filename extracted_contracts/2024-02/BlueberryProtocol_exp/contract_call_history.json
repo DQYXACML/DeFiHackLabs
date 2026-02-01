@@ -1,0 +1,31 @@
+{
+  "protocol": "BlueberryProtocol_exp",
+  "contract_address": "0xffadb0bba4379dfabfb20ca6823f6ec439429ec2",
+  "target_functions": [
+    "enterMarkets"
+  ],
+  "tx_count": 1,
+  "txs": [
+    {
+      "hash": "0xf0464b01d962f714eee9d4392b2494524d0e10ce3eb3723873afd1346b8b06e4",
+      "from": "0x3aa228a80f50763045bdfc45012da124bd0a6809",
+      "to": "0xffadb0bba4379dfabfb20ca6823f6ec439429ec2",
+      "value": "0x0",
+      "blockNumber": 19287288,
+      "time": "2024-02-23T02:21:59Z",
+      "function": "enterMarkets",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "bTokens",
+          "type": "address[]",
+          "value": [
+            "0x643d448cea0d3616f0b32e3718f563b164e7edd2"
+          ]
+        }
+      ],
+      "trace_id": "0.3.1"
+    }
+  ]
+}

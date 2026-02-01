@@ -1,15 +1,15 @@
 {
   "protocol": "BurnsDefi_exp",
   "year_month": "2024-02",
-  "injection_timestamp": "2025-11-23T03:18:46.183190Z",
+  "injection_timestamp": "2026-02-01T14:38:16.590497Z",
   "main_contract": {
-    "name": "IBurnsBuild",
-    "actual_contract_name": "SafemoonCore",
-    "address": "0x4fb9657Ac5d311dD54B37A75cFB873b127Eb21FD"
+    "name": "Vuln_Contract",
+    "actual_contract_name": "BurnsBuild",
+    "address": "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd"
   },
   "injected_contracts": [
     {
-      "file": "contracts_burnsBuild.sol",
+      "file": "burnsBuild.sol",
       "functions": [
         "receiveRewards",
         "burnToHolder"
