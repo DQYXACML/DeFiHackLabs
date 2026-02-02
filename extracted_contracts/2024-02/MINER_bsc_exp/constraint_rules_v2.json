@@ -1,0 +1,654 @@
+{
+  "protocol": "MINER_bsc_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+    "name": "Pair"
+  },
+  "constraints": [
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x10ed43c718714eb63d5aa57b78b54704e256024e"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(Router)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "type > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "Heuristic constraint based on price_manipulation pattern",
+        "variables": {
+          "type": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "type(uint256).max"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494
+          }
+        },
+        "danger_condition": "type >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "type <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 23020343971492477776436199617599584778128631614759516117834469383737236252247,
+        "coefficient": 0.5,
+        "attack_intensity": 2.515,
+        "reasoning": "启发式约束，基于price_manipulation模式，阈值设为13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x10ed43c718714eb63d5aa57b78b54704e256024e"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(Router)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "type > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "Heuristic constraint based on price_manipulation pattern",
+        "variables": {
+          "type": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "type(uint256).max"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494
+          }
+        },
+        "danger_condition": "type >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "type <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 23020343971492477776436199617599584778128631614759516117834469383737236252247,
+        "coefficient": 0.5,
+        "attack_intensity": 2.515,
+        "reasoning": "启发式约束，基于price_manipulation模式，阈值设为13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "swapTokensForExactTokens",
+      "signature": "swapTokensForExactTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "High-frequency operation: parameter affects slot_8 with estimated 319283952384398315299622131908825732683771158093197341622272 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "10 * 1e12"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46043880782508799535992623678186061440923953691464661636767295907635878767790
+          }
+        },
+        "danger_condition": "amount >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "amount <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 32228481560089468887010679464639418689380084260663322564968257137232130753145,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代319283952384398315299622131908825732683771158093197341622272次超过上限10000，使用保守阈值13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 3.192839523843983e+59,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "swapTokensForExactTokens",
+      "signature": "swapTokensForExactTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "baseAmount > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "High-frequency operation: parameter affects slot_8 with estimated 319283952384398312471195098061985224376201421120339968 iterations (capped)",
+        "variables": {
+          "baseAmount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "baseAmount"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46043880782508799535992623678186061440923953691464661636767295907635878767790
+          }
+        },
+        "danger_condition": "baseAmount >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "baseAmount <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 32228481560089468887010679464639418689380084260663322564968257137232130753145,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代319283952384398312471195098061985224376201421120339968次超过上限10000，使用保守阈值13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 3.192839523843983e+53,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "swapTokensForExactTokens",
+      "signature": "swapTokensForExactTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "2 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+          "0x7c0bfb9ff0af660d76fb2bd8865e9b49ff033045"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "address[]",
+            "value_expr": "path"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swapTokensForExactTokens",
+      "signature": "swapTokensForExactTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "3 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swapTokensForExactTokens",
+      "signature": "swapTokensForExactTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "block > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "High-frequency operation: parameter affects slot_8 with estimated 1869494533647314699028140388773692035333742340421191900413820928 iterations (capped)",
+        "variables": {
+          "block": {
+            "source": "function_parameter",
+            "index": 4,
+            "type": "uint256",
+            "value_expr": "block.timestamp"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46043880782508799535992623678186061440923953691464661636767295907635878767790
+          }
+        },
+        "danger_condition": "block >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "block <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 32228481560089468887010679464639418689380084260663322564968257137232130753145,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代1869494533647314699028140388773692035333742340421191900413820928次超过上限10000，使用保守阈值13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.8694945336473147e+63,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(Pair)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "balance > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "High-frequency operation: parameter affects slot_8 with estimated 319283952384398315299622131908825732683771158093197341622272 iterations (capped)",
+        "variables": {
+          "balance": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "balance"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46043880782508799535992623678186061440923953691464661636767295907635878767790
+          }
+        },
+        "danger_condition": "balance >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "balance <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 32228481560089468887010679464639418689380084260663322564968257137232130753145,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代319283952384398315299622131908825732683771158093197341622272次超过上限10000，使用保守阈值13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 3.192839523843983e+59,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "skim",
+      "signature": "skim(address)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(Pair)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(uint256,uint256,address,bytes)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "High-frequency operation: parameter affects slot_8 with estimated 319283952384398315299622131908825732683771158093197341622272 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "0"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46043880782508799535992623678186061440923953691464661636767295907635878767790
+          }
+        },
+        "danger_condition": "amount >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "amount <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 32228481560089468887010679464639418689380084260663322564968257137232130753145,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代319283952384398315299622131908825732683771158093197341622272次超过上限10000，使用保守阈值13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 3.192839523843983e+59,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(uint256,uint256,address,bytes)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "High-frequency operation: parameter affects slot_8 with estimated 912043943007826842337535431950532619473106332047900672 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "3_500_751_853_374_879_579"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46043880782508799535992623678186061440923953691464661636767295907635878767790
+          }
+        },
+        "danger_condition": "amount >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "amount <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 32228481560089468887010679464639418689380084260663322564968257137232130753145,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代912043943007826842337535431950532619473106332047900672次超过上限10000，使用保守阈值13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 9.120439430078268e+53,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(uint256,uint256,address,bytes)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "2 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(uint256,uint256,address,bytes)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "3 length in [2,2]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "\"\""
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bytes",
+            "value_expr": "\"\""
+          }
+        },
+        "range": {
+          "min_len": 2,
+          "max_len": 2
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(uint256,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "semantics": "High-frequency operation: parameter affects slot_8 with estimated 319283952384398312471195098061985224376201421120339968 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "10 * 1e18"
+          },
+          "slot_8": {
+            "source": "storage",
+            "slot": "8",
+            "type": "uint256",
+            "semantic_name": "slot_8",
+            "before_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+            "after_value": 46043880782508799535992623678186061440923953691464661636767295907635878767790
+          }
+        },
+        "danger_condition": "amount >= 41436619148686463854236449173876282020529194608974130151648950238800448061440",
+        "safe_condition": "amount <= 13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "threshold_value": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "analysis": {
+        "state_value": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "threshold": 32228481560089468887010679464639418689380084260663322564968257137232130753145,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代319283952384398312471195098061985224376201421120339968次超过上限10000，使用保守阈值13812206382895486344474105465635151798214305861828774195013322963473980719104",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 3.192839523843983e+53,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "8",
+        "before": 46040687942984955552872399235199169556257263229519032235668938767474472504494,
+        "after": 46043880782508799535992623678186061440923953691464661636767295907635878767790,
+        "change_pct": 0.01,
+        "is_new_slot": false
+      },
+      {
+        "slot": "10",
+        "before": 935812941563653843112326088295331845473996,
+        "after": 16740967913091564154637131730877455003360312,
+        "change_pct": 1688.92,
+        "is_new_slot": false
+      },
+      {
+        "slot": "9",
+        "before": 1415279128518805712163031220923451,
+        "after": 25339422400159572911048428051919601,
+        "change_pct": 1690.42,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 3
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 7
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

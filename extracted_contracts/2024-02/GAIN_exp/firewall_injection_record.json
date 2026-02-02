@@ -1,0 +1,22 @@
+{
+  "protocol": "GAIN_exp",
+  "year_month": "2024-02",
+  "injection_timestamp": "2026-02-02T14:07:21.148038Z",
+  "main_contract": {
+    "name": "Uni_Pair_V2",
+    "actual_contract_name": "UniswapV2Pair",
+    "address": "0x31d80EA33271891986D873B397d849A92EF49255"
+  },
+  "injected_contracts": [
+    {
+      "file": "UniswapV2Pair.sol",
+      "functions": [
+        "swap",
+        "skim",
+        "sync"
+      ]
+    }
+  ],
+  "total_functions": 3,
+  "status": "success"
+}

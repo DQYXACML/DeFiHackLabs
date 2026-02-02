@@ -1,0 +1,21 @@
+{
+  "protocol": "Game_exp",
+  "year_month": "2024-02",
+  "injection_timestamp": "2026-02-02T15:57:18.549562Z",
+  "main_contract": {
+    "name": "Vuln_Contract",
+    "actual_contract_name": "Auction",
+    "address": "0x52d69c67536f55efefe02941868e5e762538dbd6"
+  },
+  "injected_contracts": [
+    {
+      "file": "Game.sol",
+      "functions": [
+        "newBidEtherMin",
+        "makeBid"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

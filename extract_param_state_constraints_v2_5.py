@@ -367,9 +367,10 @@ def filter_v3_layout_by_confidence(layout, threshold=0.7):
 class StateDiffAnalyzer:
     """分析攻击前后的状态差异"""
 
-    def __init__(self, protocol_dir: Path, firewall_config=None):
+    def __init__(self, protocol_dir: Path, firewall_config=None, address_book: Optional[Dict[str, str]] = None):
         self.protocol_dir = protocol_dir
         self.firewall_config = firewall_config  # 新增：防火墙配置
+        self.address_book = address_book or {}
         self.state_before = self._load_json("attack_state.json")
         self.state_after = self._load_json("attack_state_after.json")
         self.addresses_info = self._load_json("addresses.json")
@@ -481,15 +482,30 @@ class StateDiffAnalyzer:
             匹配的地址(小写),如果未找到返回None
         """
         # 添加空值检查 - 防御性编程
-        if not search_name or not self.addresses_info:
-            logger.debug(f"search_name为空或addresses_info不可用: search_name={search_name}")
+        if not search_name:
+            logger.debug(f"search_name为空: search_name={search_name}")
+            return None
+        if not self.addresses_info and not self.address_book and not self.firewall_config:
+            logger.debug(f"addresses_info/地址映射不可用: search_name={search_name}")
             return None
 
         # 标准化搜索名称(去除大小写影响)
         search_lower = search_name.lower()
 
+        # 0. 优先从脚本变量地址映射中查找
+        if self.address_book:
+            if search_name in self.address_book:
+                addr = self.address_book[search_name]
+                if addr:
+                    logger.debug(f"脚本地址映射匹配: {search_name} → {addr}")
+                    return addr.lower()
+            for var_name, addr in self.address_book.items():
+                if var_name and var_name.lower() == search_lower and addr:
+                    logger.debug(f"脚本地址映射匹配(忽略大小写): {search_name} → {var_name} → {addr}")
+                    return addr.lower()
+
         # 第一轮: 精确匹配
-        for addr, info in self.addresses_info.items():
+        for addr, info in (self.addresses_info or {}).items():
             # 1. 精确匹配 name
             name = info.get('name', '')
             if name and name.lower() == search_lower:
@@ -513,7 +529,7 @@ class StateDiffAnalyzer:
         # 第二轮: 部分匹配(包含关系)
         allow_partial = len(search_lower) >= 4 and not search_lower.isdigit()
         if allow_partial:
-            for addr, info in self.addresses_info.items():
+            for addr, info in (self.addresses_info or {}).items():
                 # 4. 部分匹配 name
                 name = info.get('name', '')
                 if name and (search_lower in name.lower() or name.lower() in search_lower):
@@ -1235,6 +1251,9 @@ class AttackScriptParser:
         # 获取被攻击合约信息
         vuln_contract = self._extract_vulnerable_contract()
 
+        # 提取脚本中的变量地址映射
+        address_book = self._extract_address_book()
+
         # 将外部调用转换为attack_calls格式
         attack_calls = self._convert_external_calls_to_attack_calls(
             all_external_calls, vuln_contract
@@ -1247,6 +1266,7 @@ class AttackScriptParser:
             "vulnerable_contract": vuln_contract,
             "attack_calls": attack_calls,
             "loop_info": self._extract_loop_info(),
+            "address_book": address_book,
             # 新增: 元数据
             "metadata": {
                 "total_functions": len(self._functions_cache or []),
@@ -1257,6 +1277,38 @@ class AttackScriptParser:
 
         logger.timer_end(f"脚本解析: {self.script_path.name}")
         return result
+
+    def _extract_address_book(self) -> Dict[str, str]:
+        """
+        从脚本中提取变量名->地址映射
+
+        支持模式:
+        - address constant varName = 0x...;
+        - address varName = address(0x...);
+        - IContract varName = IContract(0x...);
+        - IContract varName = IContract(payable(0x...));
+        """
+        address_book: Dict[str, str] = {}
+
+        patterns = [
+            # address constant/immutable varName = 0x...
+            r'address\s+(?:public\s+|private\s+|internal\s+)?(?:constant\s+|immutable\s+)?(\w+)\s*=\s*(0x[a-fA-F0-9]{40})',
+            # address varName = address(0x...)
+            r'address\s+(?:public\s+|private\s+|internal\s+)?(?:constant\s+|immutable\s+)?(\w+)\s*=\s*address\(\s*(0x[a-fA-F0-9]{40})\s*\)',
+            # Interface varName = Interface(0x...) / Interface(payable(0x...))
+            r'\b\w+\s+(\w+)\s*=\s*\w+\s*\(\s*(?:payable\s*\()?\s*(0x[a-fA-F0-9]{40})\s*\)?\s*\)',
+        ]
+
+        for pattern in patterns:
+            for match in re.finditer(pattern, self.script_content, re.IGNORECASE):
+                var_name = match.group(1)
+                addr = match.group(2).lower()
+                if not var_name:
+                    continue
+                if var_name not in address_book:
+                    address_book[var_name] = addr
+
+        return address_book
 
     def _convert_external_calls_to_attack_calls(
         self,
@@ -1967,8 +2019,8 @@ class AttackScriptParser:
         """
         external_calls = []
 
-        # 模式1: contractVar.functionName(...)
-        pattern1 = r'(\w+)\.(\w+)\s*\('
+        # 模式1: contractVar.functionName(...) 或 contractVar.functionName{value: ...}(...)
+        pattern1 = r'(\w+)\.(\w+)\s*(?:\{[^}]*\})?\s*\('
         for match in re.finditer(pattern1, func.body):
             var_name = match.group(1)
             func_name = match.group(2)
@@ -1988,8 +2040,8 @@ class AttackScriptParser:
                 'source_function': func.name,
             })
 
-        # 模式2: I(address).functionName(...) 或 IInterface(address).functionName(...)
-        pattern2 = r'I(\w*)\(([^)]+)\)\.(\w+)\s*\('
+        # 模式2: I(address).functionName(...) 或 IInterface(address).functionName(...), 支持{value: ...}
+        pattern2 = r'I(\w*)\(([^)]+)\)\.(\w+)\s*(?:\{[^}]*\})?\s*\('
         for match in re.finditer(pattern2, func.body):
             interface_hint = match.group(1) or ''
             address_expr = match.group(2).strip()
@@ -2515,6 +2567,7 @@ class ConstraintGeneratorV2:
         self.threshold_inferrer = ThresholdInferrer()
         self._behavior_analysis_cache = None
         self.last_abi_path = None
+        self.address_book: Dict[str, str] = {}
 
         # V3增强: 初始化符号执行求值器
         if V3_AVAILABLE and hasattr(state_analyzer, 'layout_inferrer') and state_analyzer.layout_inferrer:
@@ -2722,6 +2775,9 @@ class ConstraintGeneratorV2:
             vuln_address: 被攻击合约地址
             firewall_config: 防火墙配置（可选）
         """
+        # 缓存脚本变量地址映射
+        self.address_book = attack_info.get('address_book') or {}
+
         # 先尝试用ABI对齐参数类型，避免数组/bytes/bool误判为uint256
         self._align_params_with_abi(attack_info, vuln_address)
 
@@ -3208,6 +3264,15 @@ class ConstraintGeneratorV2:
         clean = name.strip()
         if re.match(r'^0x[a-fA-F0-9]{40}$', clean):
             return clean.lower()
+        # 优先使用脚本内的变量地址映射
+        if self.address_book:
+            if clean in self.address_book:
+                return self.address_book[clean]
+            # 兼容大小写不一致的变量名
+            clean_lower = clean.lower()
+            for var_name, addr in self.address_book.items():
+                if var_name.lower() == clean_lower:
+                    return addr
         info_obj = self.state_analyzer.addresses_info
         if info_obj:
             try:
@@ -3629,6 +3694,10 @@ class ConstraintGeneratorV2:
 
     def _generate_heuristic_constraints(self, attack_info: Dict) -> List[Dict]:
         """启发式约束生成（当没有状态差异时的后备方案）"""
+        # 确保地址映射可用
+        if not self.address_book:
+            self.address_book = attack_info.get('address_book') or {}
+
         # 复用v1的逻辑
         constraints = []
 
@@ -3981,7 +4050,7 @@ class ConstraintExtractorV2:
 
         # 状态差异分析（传入防火墙配置）
         logger.timer_start(f"{protocol_name} - 状态差异分析")
-        state_analyzer = StateDiffAnalyzer(protocol_dir, firewall_config)
+        state_analyzer = StateDiffAnalyzer(protocol_dir, firewall_config, attack_info.get('address_book'))
         logger.timer_end(f"{protocol_name} - 状态差异分析初始化")
 
         # 获取分析目标（如果有防火墙配置，会使用其中的合约地址）
