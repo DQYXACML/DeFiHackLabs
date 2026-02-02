@@ -545,6 +545,9 @@ class StateDiffAnalyzer:
 
     def get_contract_storage(self, address: str, before: bool = True) -> Dict:
         """获取指定合约的storage"""
+        if not address:
+            logger.warning("get_contract_storage: empty address")
+            return {}
         state = self.state_before if before else self.state_after
         if not state:
             return {}
@@ -1397,6 +1400,16 @@ class AttackScriptParser:
             match = re.search(pattern, self.script_content, re.IGNORECASE)
             if match:
                 address = match.group(1)
+                name = self._infer_contract_name(address)
+                return {"address": address, "name": name}
+
+        # 回退: 在包含关键词的注释行中捕获任意地址
+        for line in self.script_content.splitlines():
+            if not re.search(r'Vuln(?:erable)?\s+Contract|Victim\s+Contract', line, re.IGNORECASE):
+                continue
+            addr_match = re.search(r'0x[a-fA-F0-9]{40}', line)
+            if addr_match:
+                address = addr_match.group(0)
                 name = self._infer_contract_name(address)
                 return {"address": address, "name": name}
 
@@ -3975,6 +3988,20 @@ class ConstraintExtractorV2:
         logger.timer_start(f"{protocol_name} - 获取分析目标")
         analysis_targets = state_analyzer.get_analysis_targets()
         logger.timer_end(f"{protocol_name} - 获取分析目标")
+
+        # 如果脚本未识别到 vulnerable_contract，回退到分析目标
+        if not vuln_address:
+            if analysis_targets:
+                vuln_address = analysis_targets[0]
+                vulnerable_contract['address'] = vuln_address
+                if not vulnerable_contract.get('name'):
+                    try:
+                        vulnerable_contract['name'] = parser._infer_contract_name(vuln_address)
+                    except Exception:
+                        vulnerable_contract['name'] = vulnerable_contract.get('name') or "Unknown"
+                logger.warning(f"  未识别到Vulnerable Contract地址，回退使用分析目标: {vuln_address}")
+            else:
+                logger.warning("  未识别到Vulnerable Contract地址，且没有可用分析目标")
 
         # 分析所有目标合约的状态变化
         logger.timer_start(f"{protocol_name} - 分析状态变化")

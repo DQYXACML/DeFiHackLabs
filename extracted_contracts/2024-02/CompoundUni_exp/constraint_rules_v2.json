@@ -1,0 +1,814 @@
+{
+  "protocol": "CompoundUni_exp",
+  "year_month": "2024-02",
+  "vulnerable_contract": {
+    "address": "0x50ce56A3239671Ab62f185704Caedf626352741e",
+    "name": "UniswapAnchoredView"
+  },
+  "constraints": [
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(address,address[],uint256[],uint256)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address[]",
+            "value_expr": "tokens"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(address,address[],uint256[],uint256)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "capped_array",
+        "expression": "2 elements in [193020254960,193020254960]",
+        "semantics": "Restrict numeric array elements to observed range",
+        "attack_values": [
+          193020254960
+        ],
+        "range": {
+          "min": 193020254960,
+          "max": 193020254960
+        },
+        "variables": {
+          "values": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256[]",
+            "value_expr": "amounts"
+          }
+        },
+        "len_range": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Numeric array bounded by observed values",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(address,address[],uint256[],uint256)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large flashloan exceeding safe threshold",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "bytes(\"\")"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          19788000000000000000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "uint256(amount0Delta)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 19788000000000000000000,
+          "max": 19788000000000000000000
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          65855246851492826558
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "uint256(amount1Delta)"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 65855246851492826558,
+          "max": 65855246851492826558
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x39aa39c021dfbae8fac545936693ac917d5e7563"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(cUSDC)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          193020254960
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "AMOUNT"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 193020254960,
+          "max": 193020254960
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "mint",
+      "signature": "mint(uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large deposit potentially manipulating pool",
+        "attack_values": [
+          193020254960
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "AMOUNT"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 193020254960,
+          "max": 193020254960
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "enterMarkets",
+      "signature": "enterMarkets(address[])",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x39aa39c021dfbae8fac545936693ac917d5e7563"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address[]",
+            "value_expr": "cTokens"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "getUnderlyingPrice",
+      "signature": "getUnderlyingPrice(address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x35a18000230da775cac24873d00ff85bccded550"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(cUniToken)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "borrow",
+      "signature": "borrow(uint256)",
+      "attack_pattern": "borrow_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Excessive borrowing depleting liquidity",
+        "attack_values": [
+          19788000000000000000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "max_UNI_borrow"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 19788000000000000000000,
+          "max": 19788000000000000000000
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,bool,int256,uint160,bytes)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_bool",
+        "expression": "1 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
+        "variables": {
+          "flag": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "bool",
+            "value_expr": "true"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,bool,int256,uint160,bytes)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large swap causing price manipulation",
+        "attack_values": [
+          19788000000000000000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "int256",
+            "value_expr": "int256(uni.balanceOf(address(this)))"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 19788000000000000000000,
+          "max": 19788000000000000000000
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,bool,int256,uint160,bytes)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large swap causing price manipulation",
+        "attack_values": [
+          42095128740
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint160",
+            "value_expr": "42_095_128_740"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 42095128740,
+          "max": 42095128740
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,bool,int256,uint160,bytes)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "4 length in [9,9]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "bytes(\"\")"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 4,
+            "type": "bytes",
+            "value_expr": "bytes(\"\")"
+          }
+        },
+        "range": {
+          "min_len": 9,
+          "max_len": 9
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,bool,int256,uint160,bytes)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_bool",
+        "expression": "1 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
+        "variables": {
+          "flag": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "bool",
+            "value_expr": "false"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,bool,int256,uint160,bytes)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large swap causing price manipulation",
+        "attack_values": [
+          65855246851492826558
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "int256",
+            "value_expr": "int256(WETH.balanceOf(address(this)))"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 65855246851492826558,
+          "max": 65855246851492826558
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,bool,int256,uint160,bytes)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large swap causing price manipulation",
+        "attack_values": [
+          1461446703485210103287273052203988822378723970341
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint160",
+            "value_expr": "1_461_446_703_485_210_103_287_273_052_203_988_822_378_723_970_341"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 1461446703485210103287273052203988822378723970341,
+          "max": 1461446703485210103287273052203988822378723970341
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,bool,int256,uint160,bytes)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "4 length in [9,9]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "bytes(\"\")"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 4,
+            "type": "bytes",
+            "value_expr": "bytes(\"\")"
+          }
+        },
+        "range": {
+          "min_len": 9,
+          "max_len": 9
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          193020254960,
+          194293561859
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "AMOUNT"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 193020254960,
+          "max": 194293561859
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "11",
+        "before": 250771651710776367598090,
+        "after": 270593079550691164053666,
+        "change_pct": 7.9,
+        "is_new_slot": false
+      },
+      {
+        "slot": "26255029659577561060979300208245038356745475154506987326704947016395741159189",
+        "before": 0,
+        "after": 19748550630884311045840,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "12",
+        "before": 69602941625199523629372,
+        "after": 69621160927457144981806,
+        "change_pct": 0.03,
+        "is_new_slot": false
+      },
+      {
+        "slot": "26255029659577561060979300208245038356745475154506987326704947016395741159190",
+        "before": 0,
+        "after": 1214348834787335101,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "10",
+        "before": 1213996033176513383,
+        "after": 1214348834787335101,
+        "change_pct": 0.03,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 6
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 12
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}
