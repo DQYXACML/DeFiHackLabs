@@ -14,7 +14,7 @@ Examples:
   scripts/batch_forge_tests.sh --protocol BarleyFinance_exp.sol
 
 The script always runs:
-  forge test --mp <file> --mt '^test[Ee]xploit' -vvvv --skip Corkprotocol_exp.sol --skip proxy_b7e1_exp.sol
+  forge test --mp <file> --mt '^test' -vvvv --skip Corkprotocol_exp.sol --skip proxy_b7e1_exp.sol
   Logs are written to <Protocol>_exp.txt in the repo root.
 EOF
 }
@@ -91,7 +91,7 @@ for FILE in "${MATCHES[@]}"; do
   LOG_FILE="${PROTOCOL_NAME}_exp.txt"
 
   echo "Running forge test for ${FILE} (log: ${LOG_FILE})"
-  if forge test --mp "$FILE" --mt '^test[Ee]xploit' -vvvv "${SKIP_ARGS[@]}" | tee "$LOG_FILE"; then
+  if forge test --mp "$FILE" --mt '^test' -vvvv "${SKIP_ARGS[@]}" | tee "$LOG_FILE"; then
     echo "Completed ${PROTOCOL_NAME}"
   else
     echo "forge test failed for ${FILE}, see ${LOG_FILE}"
