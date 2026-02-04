@@ -7,42 +7,362 @@
   },
   "constraints": [
     {
-      "function": "stake",
-      "signature": "stake(...)",
+      "function": "approve",
+      "signature": "approve(address,uint256)",
       "attack_pattern": "large_deposit",
       "constraint": {
-        "type": "iterated_threshold",
-        "expression": "amount * 1240 > likely_totalSupply * 0.5",
-        "semantics": "Loop attack: parameter applied 1240 times affects likely_totalSupply",
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+          "0x8584ddbd1e28bca4bc6fb96bafe39f850301940e"
+        ],
         "variables": {
-          "amount": {
+          "addresses": {
             "source": "function_parameter",
             "index": 0,
+            "type": "address",
+            "value_expr": "address(JuiceStaking)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "type > 244103400000000001835008",
+        "semantics": "Heuristic constraint based on large_deposit pattern",
+        "variables": {
+          "type": {
+            "source": "function_parameter",
+            "index": 1,
             "type": "uint256",
-            "value_expr": "JUICE.balanceOf(address(this"
+            "value_expr": "type(uint256).max"
           },
-          "likely_totalSupply": {
+          "address_2": {
             "source": "storage",
             "slot": "2",
             "type": "uint256",
-            "semantic_name": "likely_totalSupply",
+            "semantic_name": "address_2",
             "before_value": 813678000000000000000000,
-            "after_value": 814918000000000000000000
+            "after_value": 813678000000000000000000
           }
         },
-        "danger_condition": "amount >= 656191935483870967741",
-        "safe_condition": "amount <= 196857580645161271296",
-        "threshold_value": 196857580645161271296
+        "danger_condition": "type >= 732310200000000005505024",
+        "safe_condition": "type <= 244103400000000001835008",
+        "threshold_value": 244103400000000001835008
       },
       "analysis": {
         "state_value": 813678000000000000000000,
         "threshold": 406839000000000000000000,
         "coefficient": 0.5,
+        "attack_intensity": 1.4230701731804988e+53,
+        "reasoning": "启发式约束，基于large_deposit模式，阈值设为244103400000000001835008",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "stake",
+      "signature": "stake(uint256,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "ratio_threshold",
+        "expression": "amount > 193768492024015911649280",
+        "semantics": "Partial extraction: 47.6% of address_2 affected per unit",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "JUICE.balanceOf(address(this))"
+          },
+          "address_2": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "address_2",
+            "before_value": 813678000000000000000000,
+            "after_value": 814918000000000000000000
+          }
+        },
+        "danger_condition": "amount >= 387536984048031823298560",
+        "safe_condition": "amount <= 193768492024015911649280",
+        "threshold_value": 193768492024015911649280
+      },
+      "analysis": {
+        "state_value": 813678000000000000000000,
+        "threshold": 406839000000000000000000,
+        "coefficient": 0.5,
+        "attack_intensity": 0.0032,
+        "reasoning": "部分提取模式，提取比例0.48，阈值设为193768492024015911649280",
+        "correlation_type": "partial",
+        "correlation_confidence": 0.7,
+        "ratio": 0.47627806582951954,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "stake",
+      "signature": "stake(uint256,uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "amount > 900000000",
+        "semantics": "Direct deposit/mint: parameter directly increases address_33532592336999166752823169347762347003309681758295725776888119397367230235042",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "3_000_000_000"
+          },
+          "address_33532592336999166752823169347762347003309681758295725776888119397367230235042": {
+            "source": "storage",
+            "slot": "33532592336999166752823169347762347003309681758295725776888119397367230235042",
+            "type": "uint256",
+            "semantic_name": "address_33532592336999166752823169347762347003309681758295725776888119397367230235042",
+            "before_value": 0,
+            "after_value": 3000000000
+          }
+        },
+        "danger_condition": "amount >= 3000000000",
+        "safe_condition": "amount <= 900000000",
+        "threshold_value": 900000000
+      },
+      "analysis": {
+        "state_value": 3000000000,
+        "threshold": 1500000000,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致address_33532592336999166752823169347762347003309681758295725776888119397367230235042增加3000000000，阈值设为900000000",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "harvest",
+      "signature": "harvest(uint256)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "0 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "swapExactTokensForETHSupportingFeeOnTransferTokens",
+      "signature": "swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "amount > 244103400000000001835008",
+        "semantics": "Heuristic constraint based on swap_manipulation pattern",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "JUICE.balanceOf(address(this))"
+          },
+          "address_2": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "address_2",
+            "before_value": 813678000000000000000000,
+            "after_value": 813678000000000000000000
+          }
+        },
+        "danger_condition": "amount >= 732310200000000005505024",
+        "safe_condition": "amount <= 244103400000000001835008",
+        "threshold_value": 244103400000000001835008
+      },
+      "analysis": {
+        "state_value": 813678000000000000000000,
+        "threshold": 488206800000000000000000,
+        "coefficient": 0.6,
+        "attack_intensity": 0.4083,
+        "reasoning": "启发式约束，基于swap_manipulation模式，阈值设为244103400000000001835008",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "swapExactTokensForETHSupportingFeeOnTransferTokens",
+      "signature": "swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "1 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "swapExactTokensForETHSupportingFeeOnTransferTokens",
+      "signature": "swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "2 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "0xde5d2530a877871f6f0fc240b9fce117246dadae"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "address[]",
+            "value_expr": "path"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swapExactTokensForETHSupportingFeeOnTransferTokens",
+      "signature": "swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "3 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x8584ddbd1e28bca4bc6fb96bafe39f850301940e"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swapExactTokensForETHSupportingFeeOnTransferTokens",
+      "signature": "swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "block > 244103400000000001835008",
+        "semantics": "High-frequency operation: parameter affects address_2 with estimated 725161297876 iterations (capped)",
+        "variables": {
+          "block": {
+            "source": "function_parameter",
+            "index": 4,
+            "type": "uint256",
+            "value_expr": "block.timestamp + 60"
+          },
+          "address_2": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "address_2",
+            "before_value": 813678000000000000000000,
+            "after_value": 814918000000000000000000
+          }
+        },
+        "danger_condition": "block >= 732310200000000005505024",
+        "safe_condition": "block <= 244103400000000001835008",
+        "threshold_value": 244103400000000001835008
+      },
+      "analysis": {
+        "state_value": 813678000000000000000000,
+        "threshold": 569574600000000000000000,
+        "coefficient": 0.7,
         "attack_intensity": 0.0,
-        "reasoning": "循环攻击1240次，单次参数1000000000000000000，阈值设为196857580645161271296",
+        "reasoning": "高频操作，原始迭代725161297876次超过上限10000，使用保守阈值244103400000000001835008",
         "correlation_type": "multiple",
         "correlation_confidence": 0.75,
-        "ratio": 1240.0,
+        "ratio": 725161297876.0298,
         "change_direction": "increase"
       }
     }

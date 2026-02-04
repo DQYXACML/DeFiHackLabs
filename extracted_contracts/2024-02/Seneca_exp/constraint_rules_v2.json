@@ -8,113 +8,135 @@
   "constraints": [
     {
       "function": "performOperations",
-      "signature": "performOperations(...)",
+      "signature": "performOperations(uint8[],uint256[],bytes[])",
       "attack_pattern": "unknown",
       "constraint": {
-        "type": "inequality",
-        "expression": "amount > state * 0.5",
-        "semantics": "Suspicious operation detected",
+        "type": "capped_array",
+        "expression": "0 elements in [30,30]",
+        "semantics": "Restrict numeric array elements to observed range",
+        "attack_values": [
+          30
+        ],
+        "range": {
+          "min": 30,
+          "max": 30
+        },
         "variables": {
-          "amount": {
+          "values": {
             "source": "function_parameter",
             "index": 0,
-            "type": "uint256",
+            "type": "uint8[]",
             "value_expr": "actions"
-          },
-          "state": {
-            "source": "storage",
-            "slot": "0x2",
-            "type": "uint256",
-            "semantic_name": "estimated_state"
           }
         },
-        "danger_condition": "amount > state * 0.5",
-        "safe_condition": "amount <= state * 0.1"
+        "len_range": {
+          "min": 1,
+          "max": 1
+        }
       },
       "analysis": {
         "state_value": null,
         "threshold": null,
-        "coefficient": 0.5,
+        "coefficient": null,
         "attack_intensity": null,
-        "reasoning": "Heuristic constraint (no state diff available)",
-        "correlation_type": "heuristic",
+        "reasoning": "Numeric array bounded by observed values",
+        "correlation_type": "discrete",
         "correlation_confidence": 0.3
       }
     },
     {
       "function": "performOperations",
-      "signature": "performOperations(...)",
+      "signature": "performOperations(uint8[],uint256[],bytes[])",
       "attack_pattern": "unknown",
       "constraint": {
-        "type": "inequality",
-        "expression": "amount > state * 0.5",
-        "semantics": "Suspicious operation detected",
+        "type": "capped_array",
+        "expression": "1 elements in [0,256]",
+        "semantics": "Restrict numeric array elements to observed range",
+        "attack_values": [
+          0,
+          256,
+          0
+        ],
+        "range": {
+          "min": 0,
+          "max": 256
+        },
         "variables": {
-          "amount": {
+          "values": {
             "source": "function_parameter",
             "index": 1,
-            "type": "uint256",
+            "type": "uint256[]",
             "value_expr": "values"
-          },
-          "state": {
-            "source": "storage",
-            "slot": "0x2",
-            "type": "uint256",
-            "semantic_name": "estimated_state"
           }
         },
-        "danger_condition": "amount > state * 0.5",
-        "safe_condition": "amount <= state * 0.1"
+        "len_range": {
+          "min": 3,
+          "max": 3
+        }
       },
       "analysis": {
         "state_value": null,
         "threshold": null,
-        "coefficient": 0.5,
+        "coefficient": null,
         "attack_intensity": null,
-        "reasoning": "Heuristic constraint (no state diff available)",
-        "correlation_type": "heuristic",
+        "reasoning": "Numeric array bounded by observed values",
+        "correlation_type": "discrete",
         "correlation_confidence": 0.3
       }
     },
     {
       "function": "performOperations",
-      "signature": "performOperations(...)",
+      "signature": "performOperations(uint8[],uint256[],bytes[])",
       "attack_pattern": "unknown",
       "constraint": {
-        "type": "inequality",
-        "expression": "amount > state * 0.5",
-        "semantics": "Suspicious operation detected",
+        "type": "bytes_pattern",
+        "expression": "2 length in [320,320]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x000000000000000000000000b05cabcd99cf9a73b19805edefc5f67ca5d1895e00000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006423b872dd0000000000000000000000009cbf099ff424979439dfba03f00b5961784c06ce0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e149600000000000000000000000000000000000000000000004b180b86618eddc3ab00000000000000000000000000000000000000000000000000000000"
+        ],
         "variables": {
-          "amount": {
+          "bytes": {
             "source": "function_parameter",
             "index": 2,
-            "type": "uint256",
+            "type": "bytes[]",
             "value_expr": "datas"
-          },
-          "state": {
-            "source": "storage",
-            "slot": "0x2",
-            "type": "uint256",
-            "semantic_name": "estimated_state"
           }
         },
-        "danger_condition": "amount > state * 0.5",
-        "safe_condition": "amount <= state * 0.1"
+        "range": {
+          "min_len": 320,
+          "max_len": 320
+        }
       },
       "analysis": {
         "state_value": null,
         "threshold": null,
-        "coefficient": 0.5,
+        "coefficient": null,
         "attack_intensity": null,
-        "reasoning": "Heuristic constraint (no state diff available)",
-        "correlation_type": "heuristic",
-        "correlation_confidence": 0.3
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
       }
     }
   ],
   "state_analysis": {
-    "slot_changes": [],
-    "total_changed_slots": 0
+    "slot_changes": [
+      {
+        "slot": "25108231684412959124000861474386647313475255746635687007534495431006644478104",
+        "before": 1385238431763437306795,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "6438069266196061073519335294361459564582782368664000812694958618433187907617",
+        "before": 0,
+        "after": 1385238431763437306795,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 2
   },
   "attack_metadata": {
     "loop_count": 1,

@@ -5,14 +5,784 @@
     "address": "0xcc7218100da61441905e0c327749972e3cbee9ee",
     "name": "Unknown"
   },
-  "constraints": [],
+  "constraints": [
+    {
+      "function": "fetchPrice",
+      "signature": "fetchPrice(address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xae78736cd615f374d3085123a210448e74fc6393",
+          "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+          "0xac3e018457b222d93114458476f3e3416abbe38f",
+          "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "wstETH"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(IERC3156FlashBorrower,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x4591dbff62656e7859afe5e45f6f47d3669fbb28"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "tokens"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(IERC3156FlashBorrower,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large flashloan exceeding safe threshold",
+        "attack_values": [
+          1442100643475620087665721,
+          2000000000000000000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "amounts"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 2000000000000000000000,
+          "max": 1442100643475620087665721
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(IERC3156FlashBorrower,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "3 length in [64,224]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x00000000000000000000000056a201b872b50bbdee0021ed4d1bb36359d291ed0000000000000000000000001cc79f3f47bfc060b6f761fcd1afc6d399a968b60000000000000000000000001cc79f3f47bfc060b6f761fcd1afc6d399a968b60000000000000000000000000000000000000000000000000011c3794b4c52ff0000000000000000000000000000000000000000000000191bf9b8cefc50317e000000000000000000000000e87c6f39881d5bf51cf46d3dc7e1c1731c2f790a00000000000000000000000089ee26fcdff6b109f81abc6876600ec427f7907f",
+          "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e14960000000000000000000000001cc79f3f47bfc060b6f761fcd1afc6d399a968b60000000000000000000000001cc79f3f47bfc060b6f761fcd1afc6d399a968b60000000000000000000000000000000000000000000000000011c3794b4c52ff0000000000000000000000000000000000000000000000458a6330674daf1a93000000000000000000000000e87c6f39881d5bf51cf46d3dc7e1c1731c2f790a00000000000000000000000089ee26fcdff6b109f81abc6876600ec427f7907f"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bytes",
+            "value_expr": "abi.encode(\"\")"
+          }
+        },
+        "range": {
+          "min_len": 64,
+          "max_len": 224
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(IERC3156FlashBorrower,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x4591dbff62656e7859afe5e45f6f47d3669fbb28"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(mkUSD)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(IERC3156FlashBorrower,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large flashloan exceeding safe threshold",
+        "attack_values": [
+          1442100643475620087665721,
+          2000000000000000000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "amount"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 2000000000000000000000,
+          "max": 1442100643475620087665721
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(IERC3156FlashBorrower,address,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "3 length in [224,224]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x00000000000000000000000056a201b872b50bbdee0021ed4d1bb36359d291ed0000000000000000000000001cc79f3f47bfc060b6f761fcd1afc6d399a968b60000000000000000000000001cc79f3f47bfc060b6f761fcd1afc6d399a968b60000000000000000000000000000000000000000000000000011c3794b4c52ff0000000000000000000000000000000000000000000000191bf9b8cefc50317e000000000000000000000000e87c6f39881d5bf51cf46d3dc7e1c1731c2f790a00000000000000000000000089ee26fcdff6b109f81abc6876600ec427f7907f",
+          "0x0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e14960000000000000000000000001cc79f3f47bfc060b6f761fcd1afc6d399a968b60000000000000000000000001cc79f3f47bfc060b6f761fcd1afc6d399a968b60000000000000000000000000000000000000000000000000011c3794b4c52ff0000000000000000000000000000000000000000000000458a6330674daf1a93000000000000000000000000e87c6f39881d5bf51cf46d3dc7e1c1731c2f790a00000000000000000000000089ee26fcdff6b109f81abc6876600ec427f7907f"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bytes",
+            "value_expr": "data"
+          }
+        },
+        "range": {
+          "min_len": 224,
+          "max_len": 224
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x72c590349535ad52e6953744cb2a36b409542719"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(BorrowerOperations)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          115792089237316195423570985008687907853269984665640564039457584007913129639935
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "type(uint256).max"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 115792089237316195423570985008687907853269984665640564039457584007913129639935,
+          "max": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "setDelegateApproval",
+      "signature": "setDelegateApproval(address,bool)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xcc7218100da61441905e0c327749972e3cbee9ee"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(MigrateTroveZap)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "setDelegateApproval",
+      "signature": "setDelegateApproval(address,bool)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_bool",
+        "expression": "1 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
+        "variables": {
+          "flag": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "bool",
+            "value_expr": "true"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "openTrove",
+      "signature": "openTrove(address,address,uint256,uint256,uint256,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x1cc79f3f47bfc060b6f761fcd1afc6d399a968b6"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(TroveManager)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "openTrove",
+      "signature": "openTrove(address,address,uint256,uint256,uint256,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x56a201b872b50bbdee0021ed4d1bb36359d291ed"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "openTrove",
+      "signature": "openTrove(address,address,uint256,uint256,uint256,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          5000000325833471
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "5_000_000_325_833_471"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 5000000325833471,
+          "max": 5000000325833471
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "openTrove",
+      "signature": "openTrove(address,address,uint256,uint256,uint256,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          463184447350099685758,
+          1000000000000000000,
+          1282797208306130557587
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "1_000_000_000_000_000_000"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 1000000000000000000,
+          "max": 1282797208306130557587
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "openTrove",
+      "signature": "openTrove(address,address,uint256,uint256,uint256,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          1443398534054748145744620,
+          2000000000000000000000,
+          2001800000000000000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 4,
+            "type": "uint256",
+            "value_expr": "2_000_000_000_000_000_000_000"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 2000000000000000000000,
+          "max": 1443398534054748145744620
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "openTrove",
+      "signature": "openTrove(address,address,uint256,uint256,uint256,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "5 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xe87c6f39881d5bf51cf46d3dc7e1c1731c2f790a"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 5,
+            "type": "address",
+            "value_expr": "address(upperHint)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "openTrove",
+      "signature": "openTrove(address,address,uint256,uint256,uint256,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "6 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x89ee26fcdff6b109f81abc6876600ec427f7907f"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 6,
+            "type": "address",
+            "value_expr": "address(lowerHint)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "closeTrove",
+      "signature": "closeTrove(address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x1cc79f3f47bfc060b6f761fcd1afc6d399a968b6"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(TroveManager)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "closeTrove",
+      "signature": "closeTrove(address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x56a201b872b50bbdee0021ed4d1bb36359d291ed"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xba12222222228d8ba445958a75a0704d566bf2c8",
+          "0xcc7218100da61441905e0c327749972e3cbee9ee",
+          "0xc105ceacaed23cad3e9607666fef0b773bc86aac"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(vault)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          1745081655656230243345,
+          1000000000000000000,
+          1282797208306130557587
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "returnAmount"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 1000000000000000000,
+          "max": 1745081655656230243345
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
   "state_analysis": {
     "slot_changes": [],
     "total_changed_slots": 0
   },
   "attack_metadata": {
     "loop_count": 1,
-    "total_calls": 11
+    "total_calls": 8
   },
   "metadata": {
     "extraction_version": "2.0.0",

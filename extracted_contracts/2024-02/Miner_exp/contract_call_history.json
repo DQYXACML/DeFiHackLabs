@@ -1,0 +1,49 @@
+{
+  "protocol": "Miner_exp",
+  "contract_address": "0x732276168b421d4792e743711e1a48172ea574a2",
+  "target_functions": [
+    "swap"
+  ],
+  "tx_count": 1,
+  "txs": [
+    {
+      "hash": "0x75e3aeb00df69882a1b15d424e5e642650326ca3b923d7fd1922d57c51bc2c78",
+      "from": "0xbff51c9c3d50d6168dfef72133f5dbda453ebf29",
+      "to": "0x732276168b421d4792e743711e1a48172ea574a2",
+      "value": "0x0",
+      "blockNumber": 19226507,
+      "time": "2024-02-14T13:28:23Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "recipient",
+          "type": "address",
+          "value": "0xbff51c9c3d50d6168dfef72133f5dbda453ebf29"
+        },
+        {
+          "name": "zeroForOne",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "amountSpecified",
+          "type": "int256",
+          "value": 999999999999999998000
+        },
+        {
+          "name": "sqrtPriceLimitX96",
+          "type": "uint160",
+          "value": 1461446703485210103287273052203988822378723970340
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x61"
+        }
+      ],
+      "trace_id": "0"
+    }
+  ]
+}

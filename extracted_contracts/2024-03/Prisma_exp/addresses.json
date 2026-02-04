@@ -61,17 +61,17 @@
   },
   {
     "address": "0xC105CeAcAeD23cad3E9607666FEF0b773BC86aac",
-    "name": "vault",
+    "name": "priceFeed",
     "chain": "mainnet",
     "source": "static",
-    "context": "vault\n        priceFeed = IPriceFeed(0xC105CeAcAeD23cad3E9607666FEF0b773BC86aac)",
+    "context": "priceFeed = IPriceFeed(0xC105CeAcAeD23cad3E9607666FEF0b773BC86aac)",
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
-      "vault"
+      "priceFeed"
     ]
   },
   {
@@ -86,7 +86,8 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
-      "IBalancerVault"
+      "IBalancerVault",
+      "vault"
     ]
   },
   {
@@ -100,6 +101,6 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   }
 ]

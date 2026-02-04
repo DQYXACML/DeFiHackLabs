@@ -14,6 +14,7 @@ DeFi攻击合约源码提取工具
 import re
 import json
 import os
+import posixpath
 import subprocess
 import time
 import requests
@@ -299,6 +300,8 @@ class StaticAnalyzer:
     ADDRESS_PATTERNS = [
         # Type VAR = Type(payable(0x...)) - 优先匹配嵌套模式，提取外层Type
         re.compile(r'(\w+)\s+(?:private|public|internal)?\s*(\w+)\s*=\s*\w+\(payable\((0x[a-fA-F0-9]{40})\)\)'),
+        # address private/public/internal/external constant NAME = 0x...
+        re.compile(r'address\s+(?:public|private|internal|external)\s+constant\s+(\w+)\s*=\s*(0x[a-fA-F0-9]{40})'),
         # address constant NAME = 0x...
         re.compile(r'address\s+(?:constant\s+)?(?:public\s+)?(\w+)\s*=\s*(0x[a-fA-F0-9]{40})'),
         # Type [visibility] constant VAR = Type(0x...) - 支持 private/public/internal constant
@@ -337,6 +340,96 @@ class StaticAnalyzer:
     def __init__(self):
         self.logger = logging.getLogger(__name__ + '.StaticAnalyzer')
 
+    def _strip_comments(self, content: str) -> str:
+        """移除 // 与 /* */ 注释，保留换行以避免跨行误匹配。"""
+        if not content:
+            return content
+        out = []
+        i = 0
+        n = len(content)
+        state = "normal"  # normal | line_comment | block_comment | string_single | string_double
+        escape = False
+
+        while i < n:
+            ch = content[i]
+            nxt = content[i + 1] if i + 1 < n else ''
+
+            if state == "normal":
+                if ch == '/' and nxt == '/':
+                    out.append(' ')
+                    out.append(' ')
+                    i += 2
+                    state = "line_comment"
+                    continue
+                if ch == '/' and nxt == '*':
+                    out.append(' ')
+                    out.append(' ')
+                    i += 2
+                    state = "block_comment"
+                    continue
+                if ch == '"':
+                    out.append(ch)
+                    state = "string_double"
+                    i += 1
+                    continue
+                if ch == "'":
+                    out.append(ch)
+                    state = "string_single"
+                    i += 1
+                    continue
+                out.append(ch)
+                i += 1
+                continue
+
+            if state == "line_comment":
+                if ch == '\n':
+                    out.append('\n')
+                    state = "normal"
+                else:
+                    out.append(' ')
+                i += 1
+                continue
+
+            if state == "block_comment":
+                if ch == '*' and nxt == '/':
+                    out.append(' ')
+                    out.append(' ')
+                    i += 2
+                    state = "normal"
+                    continue
+                if ch == '\n':
+                    out.append('\n')
+                else:
+                    out.append(' ')
+                i += 1
+                continue
+
+            if state == "string_double":
+                out.append(ch)
+                if escape:
+                    escape = False
+                else:
+                    if ch == '\\':
+                        escape = True
+                    elif ch == '"':
+                        state = "normal"
+                i += 1
+                continue
+
+            if state == "string_single":
+                out.append(ch)
+                if escape:
+                    escape = False
+                else:
+                    if ch == '\\':
+                        escape = True
+                    elif ch == "'":
+                        state = "normal"
+                i += 1
+                continue
+
+        return ''.join(out)
+
     def analyze_script(self, script: ExploitScript) -> Tuple[List[ContractAddress], str]:
         """
         分析单个脚本
@@ -369,8 +462,32 @@ class StaticAnalyzer:
         script.block_number = block_number
         script.chain = chain
 
-        # 去重
-        unique_addresses = list(dict.fromkeys(addresses))
+        # 去重并合并别名/名称
+        merged = {}
+        for addr in addresses:
+            if not addr.address:
+                continue
+            key = addr.address.lower()
+            if key in merged:
+                existing = merged[key]
+                if not existing.name and addr.name:
+                    existing.name = addr.name
+                elif addr.name and existing.name and addr.name != existing.name:
+                    aliases = list(existing.aliases or [])
+                    if addr.name not in aliases:
+                        aliases.append(addr.name)
+                    existing.aliases = aliases
+                if addr.aliases:
+                    aliases = list(existing.aliases or [])
+                    for alias in addr.aliases:
+                        if alias and alias not in aliases:
+                            aliases.append(alias)
+                    existing.aliases = aliases
+                if not existing.chain and addr.chain:
+                    existing.chain = addr.chain
+            else:
+                merged[key] = addr
+        unique_addresses = list(merged.values())
 
         self.logger.info(f"  静态提取到 {len(unique_addresses)} 个地址")
         return unique_addresses, chain
@@ -420,6 +537,7 @@ class StaticAnalyzer:
     def _extract_from_code(self, content: str) -> List[ContractAddress]:
         """从代码中提取地址 - 增强版，支持智能名称过滤"""
         addresses = []
+        content = self._strip_comments(content)
 
         # 提取address constant定义
         for pattern in self.ADDRESS_PATTERNS:
@@ -451,6 +569,33 @@ class StaticAnalyzer:
                         context=match.group(0),
                         aliases=aliases or None
                     ))
+
+        # 处理通过变量别名引用常量地址的情况
+        # 示例: Uni_Pair_V2 private sssPool = Uni_Pair_V2(POOL);
+        alias_pattern = re.compile(
+            r'(\w+)\s+(?:private|public|internal)?\s*(\w+)\s*=\s*\w+\s*\(\s*(\w+)\s*\)'
+        )
+        for match in alias_pattern.finditer(content):
+            type_name, var_name, arg_name = match.groups()
+            if not arg_name or arg_name.startswith('0x'):
+                continue
+            if arg_name in {'this', 'msg.sender', 'tx.origin'}:
+                continue
+            resolved = self._resolve_address_from_var(content, arg_name)
+            if not resolved:
+                continue
+
+            potential_names = [type_name, var_name]
+            name = self._select_best_name(potential_names, match.group(0))
+            aliases = self._build_aliases(potential_names, name)
+
+            addresses.append(ContractAddress(
+                address=resolved,
+                name=name,
+                source='static',
+                context=match.group(0),
+                aliases=aliases or None
+            ))
 
         return addresses
 
@@ -567,7 +712,7 @@ class StaticAnalyzer:
         """从脚本内容中解析变量名对应的地址"""
         escaped = re.escape(var_name)
         patterns = [
-            rf'address\s+(?:payable\s+)?(?:constant|immutable)?\s*{escaped}\s*=\s*(?:payable\s*\()?\s*(0x[a-fA-F0-9]{{40}})',
+            rf'address\s+(?:payable\s+)?(?:public|private|internal|external)?\s*(?:constant|immutable)?\s*{escaped}\s*=\s*(?:payable\s*\()?\s*(0x[a-fA-F0-9]{{40}})',
             rf'\w+\s+{escaped}\s*=\s*\w+\s*\(\s*(?:payable\s*\()?\s*(0x[a-fA-F0-9]{{40}})\s*\)?',
             rf'{escaped}\s*=\s*address\(\s*(0x[a-fA-F0-9]{{40}})\s*\)'
         ]
@@ -1448,6 +1593,18 @@ class ImmutableExtractor:
             self.logger.info("  Immutable提取跳过: 未获取到runtime字节码")
             return
 
+        # 允许从当前合约输出目录解析相对依赖
+        if output_dir:
+            try:
+                candidate_roots = [output_dir.resolve()]
+                if output_dir.parent:
+                    candidate_roots.append(output_dir.parent.resolve())
+                for root in candidate_roots:
+                    if root not in self._search_roots:
+                        self._search_roots.insert(0, root)
+            except Exception:
+                pass
+
         sources = self._normalize_sources(source_code)
         if not sources:
             self.logger.info("  Immutable提取跳过: 源码解析失败")
@@ -1799,6 +1956,49 @@ class ImmutableExtractor:
         added = 0
         unresolved: Set[str] = set()
         self._seed_source_paths(sources)
+
+        def _add_source(
+            bucket: Dict[str, str],
+            key: str,
+            content: str,
+            local_path: Optional[Path] = None
+        ) -> None:
+            if not key:
+                return
+
+            variants: List[str] = []
+
+            def _add_variant(path_key: str) -> None:
+                if path_key and path_key not in variants:
+                    variants.append(path_key)
+
+            _add_variant(key)
+
+            # 逐步消解最后一个 "/seg/.."，保留中间态，匹配solc的半规范化路径
+            current = key
+            while True:
+                parts = current.split('/')
+                idx = None
+                for i in range(len(parts) - 1, 0, -1):
+                    if parts[i] == '..' and parts[i - 1] not in ('', '.', '..'):
+                        idx = i
+                        break
+                if idx is None:
+                    break
+                parts = parts[:idx - 1] + parts[idx + 1:]
+                current = '/'.join(parts)
+                _add_variant(current)
+
+            normalized = posixpath.normpath(key)
+            _add_variant(normalized)
+
+            for variant in variants:
+                if variant in sources or variant in bucket:
+                    continue
+                bucket[variant] = content
+                if local_path:
+                    self._source_path_map[variant] = local_path
+
         while True:
             new_sources: Dict[str, str] = {}
             unresolved = set()
@@ -1809,24 +2009,19 @@ class ImmutableExtractor:
                         alias = self._maybe_alias_source(import_path, sources)
                         if alias:
                             alias_key, alias_content = alias
-                            if alias_key in sources or alias_key in new_sources:
-                                continue
                             if self._content_compatible(alias_content, target_version):
-                                new_sources[alias_key] = alias_content
+                                _add_source(new_sources, alias_key, alias_content)
                                 continue
                     resolved = self._resolve_import_target(file_name, import_path)
                     if not resolved:
                         unresolved.add(f"{file_name} -> {import_path}")
                         continue
                     source_key, local_path = resolved
-                    if source_key in sources or source_key in new_sources:
-                        continue
                     if local_path.exists() and local_path.is_file():
                         try:
                             content_text = local_path.read_text(encoding='utf-8')
                             if self._content_compatible(content_text, target_version):
-                                new_sources[source_key] = content_text
-                                self._source_path_map[source_key] = local_path
+                                _add_source(new_sources, source_key, content_text, local_path)
                             else:
                                 unresolved.add(f"{file_name} -> {import_path} (pragma mismatch)")
                         except Exception:
@@ -3783,6 +3978,13 @@ def main():
 
     args = parser.parse_args()
 
+    def _mask_secret(value: Optional[str]) -> str:
+        if not value:
+            return ""
+        if len(value) <= 12:
+            return "***"
+        return f"{value[:8]}...{value[-6:]}"
+
     # 设置日志级别
     if args.debug:
         logging.getLogger().setLevel(logging.DEBUG)
@@ -3807,6 +4009,22 @@ def main():
 
     if args.dynamic_timeout <= 0:
         parser.error("--dynamic-timeout 必须为正整数")
+
+    # 环境与依赖检查日志（便于排查immutable提取失败）
+    blast_env = EXPLORER_APIS.get('blast', {}).get('rpc_env')
+    if blast_env:
+        blast_value = os.environ.get(blast_env)
+        if blast_value:
+            logger.info(f"RPC环境检查: {blast_env}={_mask_secret(blast_value)}")
+        else:
+            logger.info(f"RPC环境检查: {blast_env} 未设置")
+
+    solc_env = os.environ.get("SOLC_BIN")
+    if solc_env:
+        logger.info(f"SOLC_BIN: {solc_env} (exists={bool(shutil.which(solc_env))})")
+    else:
+        svm_path = shutil.which("svm")
+        logger.info(f"SOLC_BIN 未设置, svm={svm_path or '未找到'}")
 
     # 创建提取器
     extractor = ContractExtractor(

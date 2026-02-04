@@ -1,0 +1,554 @@
+{
+  "protocol": "MINER_bsc_exp",
+  "contract_address": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+  "target_functions": [
+    "swap",
+    "skim"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "swap": {
+      "0": {
+        "avoid": [],
+        "max": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "1": {
+        "avoid": [],
+        "max": 13812206382895486344474105465635151798214305861828774195013322963473980719104
+      },
+      "2": {
+        "avoid": [
+          "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e"
+        ]
+      },
+      "3": {
+        "avoid": [
+          "\"\""
+        ]
+      }
+    },
+    "skim": {
+      "0": {
+        "avoid": [
+          "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e"
+        ]
+      }
+    }
+  },
+  "attack_block": 36111182,
+  "generated_at": "2026-02-03T09:55:01.861955Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0xe11c3b0d7c80dcdecad9aaa53ee151a50e2d8151",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36027182,
+      "time": "2024-01-31T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 468923
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 59116
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xfba555ced4a4d5e4b7263afee6cea1ccae59df91"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x5785"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0xd9582c88e5c73a0b4342a3824722711c50b89568",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36033182,
+      "time": "2024-02-01T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x0dca3dcf8ddea4603301e561dc05339f3ac56b03"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0x45be29bdde6cd36e063959f6eb460077479725e8",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 35937182,
+      "time": "2024-01-16T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 308218
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 855675
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x02dbdaa2af191ec1991cc089b34665b0b8cad1a4"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x27a0"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0x2a75774ad1c9087ba9b1d005ef5e7eae449d9eb5",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 35955182,
+      "time": "2024-01-19T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x2e5d7224862ab8cfcf13dfbc2bc894f8e60a6c91"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0xb98dc52363ba16e109c675a1868b7975479636c2",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36063182,
+      "time": "2024-02-06T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 31082
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 606014
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x378eb2ce4e60fd0628157d9875e444dc15551254"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x28c2ab42fb3d9b6943b0599654cfdbea1de505d9",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36003182,
+      "time": "2024-01-27T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xaeffcc7eefb9f6508661ee2fce3427a3c30491c6"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0x5505cbea64e261ff50ece0c788cef01b9dbea2f3",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36051182,
+      "time": "2024-02-04T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 121306
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 443119
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x2ad66ed89da46c07464967891be96c047833660f"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x212c"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0xde8d681ae5295667dbda15a88606a5d08a201c1e",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36009182,
+      "time": "2024-01-28T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x394261a91dec0354561df928beaaeabddde07113"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0xc62ee31fd42145707e68f683045a33289fcfb9f0",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36093182,
+      "time": "2024-02-11T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 101848
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 152535
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xbb2539da39bb61b8b066c767fe7143a508b8aa0e"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0xf4d2b22f97b7c71606276ddca5ceb83d6404f213",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 35979182,
+      "time": "2024-01-23T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x960c1d110da1dc4e5b0ec5e90ae1ff9ab918f58d"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0x527217eb2302f03ef3046129dd9ede44b05d498c",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36009182,
+      "time": "2024-01-28T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 602922
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 504772
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x808c11955290df9b85555b4f89b4271a03ab99f5"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0xa12d71f47bb4bb0cc96f649e59834d4c3caa0626",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 35949182,
+      "time": "2024-01-18T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x5a3026e0f3142e43b1f12bcd3c42dd1ff2f844b5"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0x0f5a767c0b46784d33405f31bf2b6ec2f8663cf6",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 35997182,
+      "time": "2024-01-26T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 634723
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 619143
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x2800c8d9458cfdecc6f1fa310fa73e714635e1bf"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0xc11acac5"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x95758602157f007fa2f7e474c4c018439523b38c",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36027182,
+      "time": "2024-01-31T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x478eee85c0c8f1004bdff768908cda67f9515eb1"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0x75ea4efca287d964847a01b84f387489642a8cf2",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36027182,
+      "time": "2024-01-31T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 215672
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 962204
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xd71c6dd3586cfcf475b835a3f4fc29ab9eb04dde"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0x08dc2cca46b4f63d54c90d4458a7030bebf317c3",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 35937182,
+      "time": "2024-01-16T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x0fb667d9afd47e04afe5d4c18fa69b4e85e618a8"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0x8d8dafaa82edcef93707958173567b94c41f00ec",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36009182,
+      "time": "2024-01-28T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 317765
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 580368
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x1e85e4910332b338da8405775fee4819497bc636"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x1e27"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0x40f27620603ec0242006698099e7d669be6f4dd8",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36027182,
+      "time": "2024-01-31T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x62284d98ff822669fe743377adae0583bdfe5877"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x3d63c9172448dc5041d0a077746568b47b8adc5e",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 36063182,
+      "time": "2024-02-06T06:14:15Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount0Out",
+          "type": "uint256",
+          "value": 551383
+        },
+        {
+          "name": "amount1Out",
+          "type": "uint256",
+          "value": 101191
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x00a953a765d60dea49a081c72ed7e4ae084957a8"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0xf5f015c4"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x1e70e133eae17e95fbff19a44a19aa03a9296f3e",
+      "to": "0x2ba9d4a8c41c60b71ff7df2c3f54b008644b954e",
+      "value": "0",
+      "blockNumber": 35955182,
+      "time": "2024-01-19T06:14:15Z",
+      "function": "skim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xa49110fdc82e37f8255a332b39903e7d686631d3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "project": "Seneca_exp",
+  "protocol_type": "lending",
+  "invariants": [
+    {
+      "id": "PATTERN_flash_change_001",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.05",
+      "threshold": 0.05,
+      "severity": "critical",
+      "contracts": [
+        "0xB05cABCd99cf9a73b19805edefC5f67CA5d1895E"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "6438069266196061073519335294361459564582782368664000812694958618433187907617",
+          "threshold": 0.05,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    },
+    {
+      "id": "PATTERN_reentrancy_balance_001",
+      "type": "balance_change_limit",
+      "category": "bounded_value",
+      "description": "Limit balance changes to prevent reentrancy attacks",
+      "formula": "abs(balance_after - balance_before) / balance_before <= 0.05",
+      "threshold": 0.05,
+      "severity": "high",
+      "contracts": [
+        "0x94641c01a4937f2c8ef930580cf396142a2942dc"
+      ],
+      "slots": {},
+      "detection_confidence": {
+        "pattern_match": 0.75
+      },
+      "protocol_type": null,
+      "attack_pattern": "reentrancy_balance"
+    }
+  ],
+  "statistics": {
+    "total_invariants": 2,
+    "by_category": {
+      "bounded_value": 2
+    },
+    "by_severity": {
+      "critical": 1,
+      "high": 1
+    }
+  },
+  "errors": [],
+  "protocol_confidence": 1.0,
+  "semantic_mapping_coverage": 0.0,
+  "state_changes": {
+    "contracts_changed": 2,
+    "slots_changed": 2,
+    "extreme_changes": 2
+  },
+  "attack_patterns": [
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    },
+    {
+      "type": "reentrancy_balance",
+      "severity": "high",
+      "confidence": 0.75,
+      "description": "Large balance decrease: 4.68 ETH"
+    },
+    {
+      "type": "zero_value_change",
+      "severity": "medium",
+      "confidence": 0.6,
+      "description": "Value changed from 0 to 1385238431763437306795"
+    }
+  ]
+}
