@@ -1600,10 +1600,14 @@ class ImmutableExtractor:
                 if output_dir.parent:
                     candidate_roots.append(output_dir.parent.resolve())
                 for root in candidate_roots:
-                    if root not in self._search_roots:
-                        self._search_roots.insert(0, root)
+                    if root in self._search_roots:
+                        self._search_roots.remove(root)
+                    self._search_roots.insert(0, root)
             except Exception:
                 pass
+
+        # 每个合约单独维护映射，避免不同合约间的依赖路径串扰
+        self._source_path_map = {}
 
         sources = self._normalize_sources(source_code)
         if not sources:
@@ -1792,20 +1796,28 @@ class ImmutableExtractor:
             if source_key in self._source_path_map:
                 continue
 
-            for prefix, base_path in self._remapping_entries:
-                if source_key.startswith(prefix):
-                    candidate = (base_path / source_key[len(prefix):]).resolve()
-                    if candidate.exists() and candidate.is_file():
+            variants = self._alias_import_variants(source_key)
+            # 优先从搜索根目录匹配，避免落到全局remapping（比如输出目录里的依赖快照）
+            for variant in variants:
+                for root in self._search_roots:
+                    candidate = (root / variant).resolve()
+                    if self._is_within_root(candidate, root) and candidate.exists() and candidate.is_file():
                         self._source_path_map[source_key] = candidate
                         break
+                if source_key in self._source_path_map:
+                    break
 
             if source_key in self._source_path_map:
                 continue
 
-            for root in self._search_roots:
-                candidate = (root / source_key).resolve()
-                if self._is_within_root(candidate, root) and candidate.exists() and candidate.is_file():
-                    self._source_path_map[source_key] = candidate
+            for variant in variants:
+                for prefix, base_path in self._remapping_entries:
+                    if variant.startswith(prefix):
+                        candidate = (base_path / variant[len(prefix):]).resolve()
+                        if candidate.exists() and candidate.is_file():
+                            self._source_path_map[source_key] = candidate
+                            break
+                if source_key in self._source_path_map:
                     break
 
     def _maybe_alias_source(self, import_path: str, sources: Dict[str, str]) -> Optional[Tuple[str, str]]:
@@ -1822,6 +1834,55 @@ class ImmutableExtractor:
             return import_path, sources[best]
 
         return None
+
+    def _alias_import_variants(self, path_key: str) -> List[str]:
+        variants: List[str] = []
+
+        def _add(value: str) -> None:
+            if value and value not in variants:
+                variants.append(value)
+
+        def _add_openzeppelin_variants(rest: str) -> None:
+            _add(f"contracts/contracts/{rest}")
+            _add(f"contracts/{rest}")
+            _add(f"@openzeppelin/contracts/{rest}")
+            _add(f"openzeppelin/{rest}")
+
+        if path_key.startswith("lib/openzeppelin-contracts/contracts/"):
+            remainder = path_key[len("lib/openzeppelin-contracts/contracts/"):]
+            _add_openzeppelin_variants(remainder)
+        elif path_key.startswith("openzeppelin/"):
+            remainder = path_key[len("openzeppelin/"):]
+            _add_openzeppelin_variants(remainder)
+        elif path_key.startswith("@openzeppelin/contracts/"):
+            remainder = path_key[len("@openzeppelin/contracts/"):]
+            _add_openzeppelin_variants(remainder)
+        elif path_key.startswith("arb-bridge-eth/"):
+            remainder = path_key[len("arb-bridge-eth/"):]
+            _add(remainder)
+
+        stripped = path_key
+        while stripped.startswith("./"):
+            stripped = stripped[2:]
+        if stripped != path_key:
+            _add(stripped)
+
+        if stripped and not stripped.startswith((
+            "contracts/",
+            "src/",
+            "lib/",
+            "test/",
+            "script/",
+            "@",
+            "openzeppelin/",
+            "hardhat/",
+            "node_modules/"
+        )):
+            _add(f"contracts/{stripped}")
+            _add(f"src/{stripped}")
+
+        _add(path_key)
+        return variants
 
     def _parse_version_tuple(self, version_str: str) -> Optional[Tuple[int, int, int]]:
         match = re.search(r'(\d+)\.(\d+)(?:\.(\d+))?', version_str)
@@ -1914,11 +1975,12 @@ class ImmutableExtractor:
 
         if import_path.startswith(('.', '..')):
             resolved_key = (Path(file_name).parent / import_path).as_posix()
+            normalized_key = posixpath.normpath(resolved_key)
             local_origin = self._source_path_map.get(file_name)
             if local_origin:
                 local_path = (local_origin.parent / import_path).resolve()
                 if local_path.exists() and local_path.is_file():
-                    return resolved_key, local_path
+                    return normalized_key, local_path
 
             for prefix, base_path in self._remapping_entries:
                 if file_name.startswith(prefix):
@@ -1926,12 +1988,29 @@ class ImmutableExtractor:
                     origin_path = (base_path / remainder).resolve()
                     local_path = (origin_path.parent / import_path).resolve()
                     if local_path.exists() and local_path.is_file():
-                        return resolved_key, local_path
+                        return normalized_key, local_path
 
             for root in self._search_roots:
                 local_path = (root / resolved_key).resolve()
                 if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
-                    return resolved_key, local_path
+                    return normalized_key, local_path
+
+            # 尝试对相对路径做别名匹配（例如lib/openzeppelin-contracts -> contracts/contracts）
+            for alias_key in self._alias_import_variants(resolved_key):
+                if alias_key == resolved_key:
+                    continue
+                normalized_alias = posixpath.normpath(alias_key)
+                for root in self._search_roots:
+                    local_path = (root / normalized_alias).resolve()
+                    if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
+                        return normalized_alias, local_path
+
+        # 优先从本地搜索根目录解析包路径（例如输出目录下的@openzeppelin快照）
+        for candidate_key in self._alias_import_variants(import_path):
+            for root in self._search_roots:
+                local_path = (root / candidate_key).resolve()
+                if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
+                    return candidate_key, local_path
 
         if import_path.startswith(('src/', 'test/', 'script/', 'lib/')):
             for root in self._search_roots:
@@ -1939,14 +2018,69 @@ class ImmutableExtractor:
                 if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
                     return import_path, local_path
 
-        for prefix, base_path in self._remapping_entries:
-            if import_path.startswith(prefix):
-                remainder = import_path[len(prefix):]
-                local_path = (base_path / remainder).resolve()
-                if self._is_within_root(local_path, base_path) and local_path.exists() and local_path.is_file():
-                    return import_path, local_path
+        for candidate_key in self._alias_import_variants(import_path):
+            for prefix, base_path in self._remapping_entries:
+                if candidate_key.startswith(prefix):
+                    remainder = candidate_key[len(prefix):]
+                    local_path = (base_path / remainder).resolve()
+                    if self._is_within_root(local_path, base_path) and local_path.exists() and local_path.is_file():
+                        return candidate_key, local_path
 
         return None
+
+    def _add_source_variants(
+        self,
+        bucket: Dict[str, str],
+        key: str,
+        content: str,
+        local_path: Optional[Path] = None,
+        existing: Optional[Dict[str, str]] = None
+    ) -> None:
+        if not key:
+            return
+
+        variants: List[str] = []
+
+        def _add_variant(path_key: str) -> None:
+            if path_key and path_key not in variants:
+                variants.append(path_key)
+
+        _add_variant(key)
+
+        # 处理前导 "./" 的路径
+        if key.startswith("./"):
+            _add_variant(key[2:])
+        else:
+            _add_variant(f"./{key}")
+
+        # 逐步消解最后一个 "/seg/.."，保留中间态，匹配solc的半规范化路径
+        current = key
+        while True:
+            parts = current.split('/')
+            idx = None
+            for i in range(len(parts) - 1, 0, -1):
+                if parts[i] == '..' and parts[i - 1] not in ('', '.', '..'):
+                    idx = i
+                    break
+            if idx is None:
+                break
+            parts = parts[:idx - 1] + parts[idx + 1:]
+            current = '/'.join(parts)
+            _add_variant(current)
+
+        normalized = posixpath.normpath(key)
+        _add_variant(normalized)
+        if normalized and not normalized.startswith("./"):
+            _add_variant(f"./{normalized}")
+
+        for variant in variants:
+            if existing is not None and variant in existing:
+                continue
+            if variant in bucket:
+                continue
+            bucket[variant] = content
+            if local_path:
+                self._source_path_map[variant] = local_path
 
     def _augment_sources_with_local_deps(
         self,
@@ -1957,60 +2091,43 @@ class ImmutableExtractor:
         unresolved: Set[str] = set()
         self._seed_source_paths(sources)
 
-        def _add_source(
-            bucket: Dict[str, str],
-            key: str,
-            content: str,
-            local_path: Optional[Path] = None
-        ) -> None:
-            if not key:
-                return
-
-            variants: List[str] = []
-
-            def _add_variant(path_key: str) -> None:
-                if path_key and path_key not in variants:
-                    variants.append(path_key)
-
-            _add_variant(key)
-
-            # 逐步消解最后一个 "/seg/.."，保留中间态，匹配solc的半规范化路径
-            current = key
-            while True:
-                parts = current.split('/')
-                idx = None
-                for i in range(len(parts) - 1, 0, -1):
-                    if parts[i] == '..' and parts[i - 1] not in ('', '.', '..'):
-                        idx = i
-                        break
-                if idx is None:
-                    break
-                parts = parts[:idx - 1] + parts[idx + 1:]
-                current = '/'.join(parts)
-                _add_variant(current)
-
-            normalized = posixpath.normpath(key)
-            _add_variant(normalized)
-
-            for variant in variants:
-                if variant in sources or variant in bucket:
-                    continue
-                bucket[variant] = content
-                if local_path:
-                    self._source_path_map[variant] = local_path
-
         while True:
             new_sources: Dict[str, str] = {}
             unresolved = set()
             for file_name, content in sources.items():
                 for match in self.IMPORT_PATTERN.finditer(content):
                     import_path = match.group(1)
+                    if import_path == "hardhat/console.sol":
+                        console_stub = (
+                            "// SPDX-License-Identifier: MIT\n"
+                            "pragma solidity >=0.4.22 <0.9.0;\n"
+                            "library console {\n"
+                            "    function log(uint256) internal pure {}\n"
+                            "    function log(int256) internal pure {}\n"
+                            "    function log(address) internal pure {}\n"
+                            "    function log(bool) internal pure {}\n"
+                            "    function log(bytes32) internal pure {}\n"
+                            "    function log(bytes memory) internal pure {}\n"
+                            "    function log(string memory) internal pure {}\n"
+                            "    function log(uint256,uint256) internal pure {}\n"
+                            "    function log(int256,int256) internal pure {}\n"
+                            "    function log(address,address) internal pure {}\n"
+                            "    function log(string memory,uint256) internal pure {}\n"
+                            "    function log(string memory,int256) internal pure {}\n"
+                            "    function log(string memory,address) internal pure {}\n"
+                            "    function log(string memory,bool) internal pure {}\n"
+                            "    function log(string memory,bytes32) internal pure {}\n"
+                            "    function log(string memory,string memory) internal pure {}\n"
+                            "}\n"
+                        )
+                        self._add_source_variants(new_sources, import_path, console_stub, existing=sources)
+                        continue
                     if not import_path.startswith(('.', '..')):
                         alias = self._maybe_alias_source(import_path, sources)
                         if alias:
                             alias_key, alias_content = alias
                             if self._content_compatible(alias_content, target_version):
-                                _add_source(new_sources, alias_key, alias_content)
+                                self._add_source_variants(new_sources, alias_key, alias_content, existing=sources)
                                 continue
                     resolved = self._resolve_import_target(file_name, import_path)
                     if not resolved:
@@ -2021,8 +2138,23 @@ class ImmutableExtractor:
                         try:
                             content_text = local_path.read_text(encoding='utf-8')
                             if self._content_compatible(content_text, target_version):
-                                _add_source(new_sources, source_key, content_text, local_path)
+                                self._add_source_variants(new_sources, source_key, content_text, local_path, sources)
+                                if source_key != import_path and not import_path.startswith("."):
+                                    self._add_source_variants(new_sources, import_path, content_text, local_path, sources)
                             else:
+                                pragma_match = self.PRAGMA_PATTERN.search(content_text)
+                                pragma_text = pragma_match.group(1).strip() if pragma_match else "unknown"
+                                target_text = (
+                                    ".".join(str(part) for part in target_version) if target_version else "unknown"
+                                )
+                                self.logger.info(
+                                    "  依赖版本不兼容: %s -> %s resolved %s (pragma %s, target %s)",
+                                    file_name,
+                                    import_path,
+                                    local_path,
+                                    pragma_text,
+                                    target_text
+                                )
                                 unresolved.add(f"{file_name} -> {import_path} (pragma mismatch)")
                         except Exception:
                             unresolved.add(f"{file_name} -> {import_path}")
