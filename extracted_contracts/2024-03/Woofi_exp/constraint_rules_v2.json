@@ -1,0 +1,557 @@
+{
+  "protocol": "Woofi_exp",
+  "year_month": "2024-03",
+  "vulnerable_contract": {
+    "address": "0xeff23b4be1091b53205e35f3afcd9c7182bf3062",
+    "name": "Unknown"
+  },
+  "constraints": [
+    {
+      "function": "flash",
+      "signature": "flash(address,uint256,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xeff23b4be1091b53205e35f3afcd9c7182bf3062"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,uint256,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "1 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,uint256,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "capped_amplified_threshold",
+        "expression": "uni_flash_amount > 47078263015400105728768420674057498120767665833480258846720",
+        "semantics": "Extreme amplification: parameter has 241075664913x effect on balance_mapping_decreased (capped)",
+        "variables": {
+          "uni_flash_amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "uni_flash_amount"
+          },
+          "balance_mapping_decreased": {
+            "source": "storage",
+            "slot": "109993908671577530316287924463628841959978742404246336820612249610343396013809",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_decreased",
+            "before_value": 156927543384667019095894735580191662954846579880260422154174,
+            "after_value": 156927543384667019095894735580191660405122689146087507002658
+          }
+        },
+        "danger_condition": "uni_flash_amount >= 141234789046200317186305262022172494362302997500440776540160",
+        "safe_condition": "uni_flash_amount <= 47078263015400105728768420674057498120767665833480258846720",
+        "threshold_value": 47078263015400105728768420674057498120767665833480258846720
+      },
+      "analysis": {
+        "state_value": 156927543384667019095894735580191662954846579880260422154174,
+        "threshold": 47078263015400105728768420674057498886453973964078126646252,
+        "coefficient": 0.3,
+        "attack_intensity": 0.0,
+        "reasoning": "极端放大效应241075664913倍超过上限，使用保守阈值47078263015400105728768420674057498120767665833480258846720",
+        "correlation_type": "amplified",
+        "correlation_confidence": 0.6,
+        "ratio": 241075664913.49713,
+        "change_direction": "decrease"
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,uint256,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "3 length in [1,1]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x00"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bytes",
+            "value_expr": "new bytes(1)"
+          }
+        },
+        "range": {
+          "min_len": 1,
+          "max_len": 1
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(ILBFlashLoanCallback,bytes32,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "1 length in [32,32]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x000000000000000000000000000000000000000000023cb6623e110c5808cb69"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "bytes32",
+            "value_expr": "bytes32(woo_lbt_amount)"
+          }
+        },
+        "range": {
+          "min_len": 32,
+          "max_len": 32
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(ILBFlashLoanCallback,bytes32,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "2 length in [64,64]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x000000000000000000000000000000000000000000023cb6623e110c5808cb690000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "bytes",
+            "value_expr": "abi.encodePacked(bytes32(woo_lbt_amount), bytes32(0))"
+          }
+        },
+        "range": {
+          "min_len": 64,
+          "max_len": 64
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,address,uint256,uint256,address,address)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(USDCe)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,address,uint256,uint256,address,address)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x82af49447d8a07e3bd95bd0d56f35241523fbab1"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(WETH)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,address,uint256,uint256,address,address)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 47078263015400105728768420674057498120767665833480258846720",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 1274861945367 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "2_000_000_000_000"
+          },
+          "balance_mapping_decreased": {
+            "source": "storage",
+            "slot": "109993908671577530316287924463628841959978742404246336820612249610343396013809",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_decreased",
+            "before_value": 156927543384667019095894735580191662954846579880260422154174,
+            "after_value": 156927543384667019095894735580191660405122689146087507002658
+          }
+        },
+        "danger_condition": "amount >= 141234789046200317186305262022172494362302997500440776540160",
+        "safe_condition": "amount <= 47078263015400105728768420674057498120767665833480258846720",
+        "threshold_value": 47078263015400105728768420674057498120767665833480258846720
+      },
+      "analysis": {
+        "state_value": 156927543384667019095894735580191662954846579880260422154174,
+        "threshold": 109849280369266913367126314906134164068392605916182295507921,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代1274861945367次超过上限10000，使用保守阈值47078263015400105728768420674057498120767665833480258846720",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1274861945367.0864,
+        "change_direction": "decrease"
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,address,uint256,uint256,address,address)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "3 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,address,uint256,uint256,address,address)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "4 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xeff23b4be1091b53205e35f3afcd9c7182bf3062"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 4,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "swap",
+      "signature": "swap(address,address,uint256,uint256,address,address)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "5 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xeff23b4be1091b53205e35f3afcd9c7182bf3062"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 5,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(address,uint256,bool)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(USDCe)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(address,uint256,bool)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "heuristic_threshold",
+        "expression": "type > 47078263015400105728768420674057498120767665833480258846720",
+        "semantics": "Heuristic constraint based on drain_attack pattern",
+        "variables": {
+          "type": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "type(uint256).max"
+          },
+          "balance_mapping_decreased": {
+            "source": "storage",
+            "slot": "109993908671577530316287924463628841959978742404246336820612249610343396013809",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_decreased",
+            "before_value": 156927543384667019095894735580191662954846579880260422154174,
+            "after_value": 156927543384667019095894735580191662954846579880260422154174
+          }
+        },
+        "danger_condition": "type >= 141234789046200317186305262022172494362302997500440776540160",
+        "safe_condition": "type <= 47078263015400105728768420674057498120767665833480258846720",
+        "threshold_value": 47078263015400105728768420674057498120767665833480258846720
+      },
+      "analysis": {
+        "state_value": 156927543384667019095894735580191662954846579880260422154174,
+        "threshold": 47078263015400105728768420674057498886453973964078126646252,
+        "coefficient": 0.3,
+        "attack_intensity": 7.378697629483821e+17,
+        "reasoning": "启发式约束，基于drain_attack模式，阈值设为47078263015400105728768420674057498120767665833480258846720",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.5,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdraw",
+      "signature": "withdraw(address,uint256,bool)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_bool",
+        "expression": "2 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
+        "variables": {
+          "flag": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "bool",
+            "value_expr": "true"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "109993908671577530316287924463628841959978742404246336820612249610343396013809",
+        "before": 156927543384667019095894735580191662954846579880260422154174,
+        "after": 156927543384667019095894735580191660405122689146087507002658,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "19386302955548374253438956546586068293061884638547301654929600459042139315610",
+        "before": 156927543384667019095894735580191660403946357205042716418856,
+        "after": 156927543384667019095894735580191660403424061943798556949836,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "44902585782132518172097828656418906324445951726753536359623677642600521174684",
+        "before": 1939203712076,
+        "after": 1791225088543,
+        "change_pct": 7.63,
+        "is_new_slot": false
+      },
+      {
+        "slot": "3",
+        "before": 9964496456,
+        "after": 11051360324,
+        "change_pct": 10.91,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 4
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 9
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

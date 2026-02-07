@@ -1,0 +1,429 @@
+{
+  "protocol": "ZongZi_exp",
+  "contract_address": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+  "target_functions": [
+    "receiveRewards",
+    "burnToHolder"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "burnToHolder": {},
+    "receiveRewards": {}
+  },
+  "attack_block": 37272888,
+  "generated_at": "2026-02-06T19:18:16.884373Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0xedb0ae869ce030ded10cdde6199dc5f48a5a2461",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37134888,
+      "time": "2024-03-02T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xf1218d9f72dbe488bc06e02be4045897bf56aba4"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0xf5f139102f3d4d91f1e69dc5b97cc5529e89305f",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37206888,
+      "time": "2024-03-14T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 46003
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xb696e7ca2de2c69c596db61186e4c69e024bc07e"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0xf31cddbd6b729f770ab71e9f450debdf0ffb7f72",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37218888,
+      "time": "2024-03-16T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x9dce5e76ea0f1405f57bf9588a48c1cb6322e85b"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0xe5c9f5fc4530b25c41f2ae090006d71692e73bff",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37122888,
+      "time": "2024-02-29T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 237971
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0x2336610eb5efe00b83319a2c9e45d37dc983e60c"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0xb9e8855e085c3aefafd4c50147b8394f8891cff9",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37110888,
+      "time": "2024-02-27T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x454b4fe8aa1246b74c4b1a64336459e4a12a1bef"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x4fc6c2fd355e28f7e8eafe2fb82bd00f058c61bb",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37134888,
+      "time": "2024-03-02T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 336912
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xda7c0169c29546cd6aa88e81fd852289bb87c193"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0x9d2f57ecf3e34dc5551d93b62a90d077d8267b35",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37146888,
+      "time": "2024-03-04T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xb1680b3d1623f75b3e830856324311f92b02b06c"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0x73b8ea42b549e34a7e511a39dc4e4c581c7b0d17",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37098888,
+      "time": "2024-02-25T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 886042
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0x1d83557751becdf62e80b2f4c145b1fc0cb72d8b"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0xa6e9d9a2668c0ec00306451ff7d2f47c58bb211b",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37218888,
+      "time": "2024-03-16T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xfc42887df6d61fd2030c564c6b02fe5f7a8aef99"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0x9c366a21d51ce9ca035371398597597573d33752",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37200888,
+      "time": "2024-03-13T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 705347
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xed20cabb5a0362ccd5a5c03b3a5b70bb3245b067"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0x52313d3ed29015fa739102338cc19916d4842d6f",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37110888,
+      "time": "2024-02-27T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x519a3874653022c5abbc477bb51cb4ea66a42507"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0x5ea9dbaa8d8f24ffc9eefa641e41b8db5b952ee5",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37242888,
+      "time": "2024-03-20T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 983027
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xeab6f9681db3738d94180ee4b8f689799d1d6a03"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0xab60c2fd3588718655d74dad51db14243601fecd",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37164888,
+      "time": "2024-03-07T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x56b84f8f908b53812d7be7d776502b3db1256c46"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x86017b81ca03dfdf13da222ac1c2e2625f0f6c41",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37248888,
+      "time": "2024-03-21T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 515829
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xd667398916fcde1acea5fb29f79ac1d6165ab141"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0x8d44ceef443d59b5549fc2da53408a1a68881196",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37134888,
+      "time": "2024-03-02T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x3fdcbc2b210bf8977fcd4355a4ec932942d299fc"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0xe278b3e6cce176848a2a39d9443237933f8450e0",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37176888,
+      "time": "2024-03-09T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 886522
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xca28ce5de2c9e462ac842045becc5ab89cff931d"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0xedfaa64cc0eeb9270d846b3b91c4ffdec3ff60a7",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37236888,
+      "time": "2024-03-19T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x1ea32d6e6c522d083091c5baef493713db53a7c9"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0xc55d605d5156602c43ffc64a6dc8d1ac08ce9090",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37098888,
+      "time": "2024-02-25T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 35430
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xf3b711d6bb251e9967e28acbefa2fec50bbd10e7"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0xdc68f74f81169ceadac242a64edc6dc3b6db46ff",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37152888,
+      "time": "2024-03-05T16:25:45Z",
+      "function": "receiveRewards",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x7800b02af7bcecc23ad0a16950440983f731a70b"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x427f355b3758fe76512c70181631f006f5d5a999",
+      "to": "0xb7a254237e05ccca0a756f75fb78ab2df222911b",
+      "value": "0",
+      "blockNumber": 37224888,
+      "time": "2024-03-17T16:25:45Z",
+      "function": "burnToHolder",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 579410
+        },
+        {
+          "name": "_invitation",
+          "type": "address",
+          "value": "0xe1cfc2d6cd69525392d26b810acc9931ec8f1140"
+        }
+      ]
+    }
+  ]
+}

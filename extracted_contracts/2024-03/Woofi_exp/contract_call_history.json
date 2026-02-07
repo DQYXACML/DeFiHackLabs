@@ -1,0 +1,95 @@
+{
+  "protocol": "Woofi_exp",
+  "contract_address": "0xeff23b4be1091b53205e35f3afcd9c7182bf3062",
+  "target_functions": [
+    "swap",
+    "poolSize"
+  ],
+  "tx_count": 2,
+  "txs": [
+    {
+      "hash": "0x5d12489c61ff3b198bd7e8d5b591769605165994dbce3c129fe8e60bff444ea0",
+      "from": "0xbadfd950f3bbccf9218fd4671828c2a4b02ef0f7",
+      "to": "0xeff23b4be1091b53205e35f3afcd9c7182bf3062",
+      "value": "0",
+      "blockNumber": 117078309,
+      "time": "2023-08-01T11:59:50Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "fromToken",
+          "type": "address",
+          "value": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1"
+        },
+        {
+          "name": "toToken",
+          "type": "address",
+          "value": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8"
+        },
+        {
+          "name": "fromAmount",
+          "type": "uint256",
+          "value": 1000000000000
+        },
+        {
+          "name": "minToAmount",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xbadfd950f3bbccf9218fd4671828c2a4b02ef0f7"
+        },
+        {
+          "name": "rebateTo",
+          "type": "address",
+          "value": "0xbadfd950f3bbccf9218fd4671828c2a4b02ef0f7"
+        }
+      ]
+    },
+    {
+      "hash": "0xa05d2888649972a5eadd0cdc4f55e1c9186d7c1d2f3143a382e0353962fdac39",
+      "from": "0xbadfd950f3bbccf9218fd4671828c2a4b02ef0f7",
+      "to": "0xeff23b4be1091b53205e35f3afcd9c7182bf3062",
+      "value": "0",
+      "blockNumber": 117076584,
+      "time": "2023-08-01T11:52:33Z",
+      "function": "swap",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "fromToken",
+          "type": "address",
+          "value": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1"
+        },
+        {
+          "name": "toToken",
+          "type": "address",
+          "value": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8"
+        },
+        {
+          "name": "fromAmount",
+          "type": "uint256",
+          "value": 100000000000
+        },
+        {
+          "name": "minToAmount",
+          "type": "uint256",
+          "value": 1
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xbadfd950f3bbccf9218fd4671828c2a4b02ef0f7"
+        },
+        {
+          "name": "rebateTo",
+          "type": "address",
+          "value": "0xbadfd950f3bbccf9218fd4671828c2a4b02ef0f7"
+        }
+      ]
+    }
+  ]
+}

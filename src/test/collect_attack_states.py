@@ -749,12 +749,131 @@ class StateCollector:
         # 格式: {tx_hash: prestate_dict}
         self.trace_cache: Dict[str, Dict] = {}
 
+    def _get_trace_prestate(self, w3: Web3, tx_hash: str) -> Dict[str, Any]:
+        """获取并缓存 debug_traceTransaction(prestateTracer) 结果。"""
+        if tx_hash in self.trace_cache:
+            return self.trace_cache[tx_hash]
+
+        trace_result = w3.provider.make_request(
+            'debug_traceTransaction',
+            [tx_hash, {'tracer': 'prestateTracer'}]
+        )
+
+        if not isinstance(trace_result, dict):
+            raise TraceUnsupportedError(f"返回格式异常: {type(trace_result)}")
+
+        if 'error' in trace_result:
+            raise TraceUnsupportedError(f"RPC错误: {trace_result['error']}")
+
+        prestate = trace_result.get('result')
+        if prestate is None:
+            for key in ('prestate', 'state', 'states'):
+                if key in trace_result:
+                    prestate = trace_result[key]
+                    break
+
+        if prestate is None:
+            keys_preview = list(trace_result.keys())
+            raise TraceUnsupportedError(f"未返回prestate数据(keys={keys_preview})")
+
+        if not isinstance(prestate, dict):
+            raise TraceUnsupportedError(f"prestate类型异常: {type(prestate)}")
+
+        self.trace_cache[tx_hash] = prestate
+        return prestate
+
+    @staticmethod
+    def _find_prestate_account(prestate: Dict[str, Any], address: str) -> Optional[Dict[str, Any]]:
+        """按地址查找 prestate account（兼容大小写地址）。"""
+        address_lower = address.lower()
+        for addr, account in prestate.items():
+            try:
+                if str(addr).lower() == address_lower:
+                    if isinstance(account, dict):
+                        return account
+                    return None
+            except Exception:
+                continue
+        return None
+
+    @staticmethod
+    def _parse_int_like(value: Any) -> Optional[int]:
+        """解析 int / hex-string / decimal-string。"""
+        if value is None:
+            return None
+        if isinstance(value, int):
+            return value
+        if isinstance(value, str):
+            text = value.strip()
+            if not text:
+                return None
+            try:
+                if text.startswith(('0x', '0X')):
+                    return int(text, 16)
+                return int(text)
+            except Exception:
+                return None
+        return None
+
+    @staticmethod
+    def _normalize_hex(value: Any) -> str:
+        """标准化 hex 字符串为 0x 前缀。"""
+        if isinstance(value, bytes):
+            return '0x' + value.hex()
+        if isinstance(value, str):
+            text = value.strip()
+            if not text:
+                return '0x'
+            if text.startswith(('0x', '0X')):
+                return '0x' + text[2:]
+            return '0x' + text
+        return '0x'
+
+    @staticmethod
+    def _hex_to_bytes(hex_value: str) -> bytes:
+        """将 hex 字符串转换为 bytes（容错奇数长度）。"""
+        if not hex_value:
+            return b''
+        if hex_value.startswith(('0x', '0X')):
+            hex_value = hex_value[2:]
+        if len(hex_value) % 2 == 1:
+            hex_value = '0' + hex_value
+        try:
+            return bytes.fromhex(hex_value)
+        except Exception:
+            return b''
+
+    @staticmethod
+    def _normalize_storage_word(value: Any) -> Optional[str]:
+        """标准化 storage word 为 64 位十六进制（无0x）。"""
+        if value is None:
+            return None
+
+        if isinstance(value, int):
+            return f"{value:064x}"
+
+        if isinstance(value, bytes):
+            return value.hex().rjust(64, '0')[-64:]
+
+        if isinstance(value, str):
+            text = value.strip().lower()
+            if text.startswith('0x'):
+                text = text[2:]
+            if not text:
+                return '0' * 64
+            if not re.fullmatch(r'[0-9a-f]+', text):
+                return None
+            return text.rjust(64, '0')[-64:]
+
+        return None
+
     def collect_state(self, chain: str, block_number: int,
                      addresses: List[AddressInfo], attack_tx_hash: Optional[str] = None,
                      extra_holder_addresses: Optional[List[str]] = None,
                      mapping_seeds: Optional[Dict[str, Any]] = None,
                      protocol_hint: Optional[str] = None,
-                     use_source_supplement: bool = True) -> Optional[Dict[str, Any]]:
+                     use_source_supplement: bool = True,
+                     state_mode: str = 'block') -> Optional[Dict[str, Any]]:
         """
         收集指定区块的状态
 
@@ -767,6 +886,10 @@ class StateCollector:
             mapping_seeds: 映射槽位强制收集配置
             protocol_hint: 协议名称提示（用于Phase 2源码补全）
             use_source_supplement: 是否启用Phase 2源码补全
+            state_mode: 状态收集模式
+                       - block: 区块最终状态
+                       - pre_tx: 交易前状态（优先prestateTracer）
+                       - post_tx: 交易后状态（读取攻击区块最终状态）
 
         Returns:
             状态字典或None（如果失败）
@@ -775,7 +898,14 @@ class StateCollector:
         if not w3:
             return None
 
-        self.logger.info(f"  收集区块 {block_number} 的状态（{len(addresses)} 个地址）")
+        valid_modes = {'block', 'pre_tx', 'post_tx'}
+        if state_mode not in valid_modes:
+            self.logger.warning(f"  未知 state_mode={state_mode}，回退为 block")
+            state_mode = 'block'
+
+        self.logger.info(
+            f"  收集区块 {block_number} 的状态（{len(addresses)} 个地址, mode={state_mode}）"
+        )
         if attack_tx_hash:
             self.logger.info(f"  使用攻击交易: {attack_tx_hash[:16]}...")
             # 清除旧的trace缓存,避免内存泄漏
@@ -826,7 +956,8 @@ class StateCollector:
                 address_states = self._collect_addresses_concurrent(
                     chain, w3, addresses, block_number, attack_tx_hash, holder_candidates,
                     protocol_hint=protocol_hint,
-                    use_source_supplement=use_source_supplement
+                    use_source_supplement=use_source_supplement,
+                    state_mode=state_mode
                 )
             else:
                 # 串行处理(小数量或禁用并发)
@@ -840,7 +971,8 @@ class StateCollector:
                         attack_tx_hash,
                         holder_candidates,
                         protocol_hint=protocol_hint,
-                        use_source_supplement=use_source_supplement
+                        use_source_supplement=use_source_supplement,
+                        state_mode=state_mode
                     )
                     if state:
                         state_dict = asdict(state)
@@ -873,7 +1005,8 @@ class StateCollector:
                         attack_tx_hash,
                         holder_candidates,
                         protocol_hint=protocol_hint,
-                        use_source_supplement=use_source_supplement
+                        use_source_supplement=use_source_supplement,
+                        state_mode=state_mode
                     )
                     if state:
                         state_dict = asdict(state)
@@ -896,6 +1029,7 @@ class StateCollector:
                     'total_addresses': len(addresses),
                     'collected_addresses': len(address_states),
                     'collection_method': collection_method,
+                    'state_mode': state_mode,
                     'attack_tx_hash': attack_tx_hash if attack_tx_hash else None
                 },
                 'addresses': address_states
@@ -920,7 +1054,8 @@ class StateCollector:
                                      block_number: int, attack_tx_hash: Optional[str],
                                      holder_candidates: List[str],
                                      protocol_hint: Optional[str] = None,
-                                     use_source_supplement: bool = True) -> Dict[str, Dict]:
+                                     use_source_supplement: bool = True,
+                                     state_mode: str = 'block') -> Dict[str, Dict]:
         """
         并发收集多个地址的状态
 
@@ -933,6 +1068,7 @@ class StateCollector:
             holder_candidates: ERC20持有者候选列表
             protocol_hint: 协议名称提示
             use_source_supplement: 是否启用Phase 2源码补全
+            state_mode: 状态收集模式
 
         Returns:
             地址状态字典
@@ -946,7 +1082,8 @@ class StateCollector:
                     chain, w3, addr_info.address, block_number,
                     attack_tx_hash, holder_candidates,
                     protocol_hint=protocol_hint,
-                    use_source_supplement=use_source_supplement
+                    use_source_supplement=use_source_supplement,
+                    state_mode=state_mode
                 )
                 if state:
                     state_dict = asdict(state)
@@ -989,7 +1126,8 @@ class StateCollector:
                               block_number: int, attack_tx_hash: Optional[str] = None,
                               holder_candidates: Optional[List[str]] = None,
                               protocol_hint: Optional[str] = None,
-                              use_source_supplement: bool = True) -> Optional[StateSnapshot]:
+                              use_source_supplement: bool = True,
+                              state_mode: str = 'block') -> Optional[StateSnapshot]:
         """收集单个地址的状态"""
         start_time = time.perf_counter()
         base_time = storage_time = erc20_time = 0.0
@@ -997,11 +1135,39 @@ class StateCollector:
             # 标准化地址
             address = Web3.to_checksum_address(address)
 
-            # 基础数据
             stage_start = time.perf_counter()
-            balance = self._retry_call(lambda: w3.eth.get_balance(address, block_number))
-            nonce = self._retry_call(lambda: w3.eth.get_transaction_count(address, block_number))
-            code = self._retry_call(lambda: w3.eth.get_code(address, block_number))
+            effective_block_number = block_number
+            prestate_account = None
+
+            if state_mode == 'pre_tx':
+                effective_block_number = max(block_number - 1, 0)
+                if attack_tx_hash and self.use_trace and chain.lower() not in self.unsupported_trace_chains:
+                    try:
+                        prestate = self._get_trace_prestate(w3, attack_tx_hash)
+                        prestate_account = self._find_prestate_account(prestate, address)
+                    except TraceUnsupportedError as e:
+                        self.logger.debug(f"      prestateTracer不可用，回退到区块读取: {e}")
+                        self.unsupported_trace_chains.add(chain.lower())
+                    except Exception as e:
+                        self.logger.debug(f"      获取prestate失败，回退到区块读取: {e}")
+
+            balance = None
+            nonce = None
+            code = None
+
+            if prestate_account is not None:
+                balance = self._parse_int_like(prestate_account.get('balance'))
+                nonce = self._parse_int_like(prestate_account.get('nonce'))
+                code_hex = self._normalize_hex(prestate_account.get('code', '0x'))
+                code = self._hex_to_bytes(code_hex)
+
+            if balance is None:
+                balance = self._retry_call(lambda: w3.eth.get_balance(address, effective_block_number))
+            if nonce is None:
+                nonce = self._retry_call(lambda: w3.eth.get_transaction_count(address, effective_block_number))
+            if code is None:
+                code = self._retry_call(lambda: w3.eth.get_code(address, effective_block_number))
+
             base_time = time.perf_counter() - stage_start
 
             if balance is None or nonce is None or code is None:
@@ -1014,9 +1180,10 @@ class StateCollector:
             if is_contract:
                 stage_start = time.perf_counter()
                 storage = self._collect_storage(
-                    chain, w3, address, block_number, attack_tx_hash,
+                    chain, w3, address, effective_block_number, attack_tx_hash,
                     protocol_hint=protocol_hint,
-                    use_source_supplement=use_source_supplement
+                    use_source_supplement=use_source_supplement,
+                    state_mode=state_mode
                 )
                 storage_time = time.perf_counter() - stage_start
 
@@ -1025,12 +1192,22 @@ class StateCollector:
             erc20_balance_slot = None
             if is_contract and holder_candidates:
                 stage_start = time.perf_counter()
-                erc20_balances, erc20_balance_slot = self._collect_erc20_balances(
-                    w3=w3,
-                    token_address=address,
-                    block_number=block_number,
-                    holder_candidates=holder_candidates
-                )
+                # pre_tx模式优先使用prestate还原mapping，避免block-1与交易前状态不一致。
+                if state_mode == 'pre_tx' and prestate_account is not None and attack_tx_hash:
+                    erc20_balances, erc20_balance_slot = self._collect_erc20_balances_from_prestate(
+                        w3=w3,
+                        token_address=address,
+                        block_number=effective_block_number,
+                        holder_candidates=holder_candidates,
+                        prestate_account=prestate_account
+                    )
+                else:
+                    erc20_balances, erc20_balance_slot = self._collect_erc20_balances(
+                        w3=w3,
+                        token_address=address,
+                        block_number=effective_block_number,
+                        holder_candidates=holder_candidates
+                    )
                 erc20_time = time.perf_counter() - stage_start
 
             return StateSnapshot(
@@ -1054,6 +1231,136 @@ class StateCollector:
                 f"      地址 {address} 耗时: total={total_time:.2f}s base={base_time:.2f}s "
                 f"storage={storage_time:.2f}s erc20={erc20_time:.2f}s"
             )
+
+    def _collect_erc20_balances_from_prestate(self, w3: Web3, token_address: str,
+                                             block_number: int,
+                                             holder_candidates: List[str],
+                                             prestate_account: Dict[str, Any]) -> Tuple[Dict[str, str], Optional[int]]:
+        """
+        使用 prestateTracer 的 storage 直接还原 ERC20 _balances 映射。
+
+        目标是避免 pre_tx 模式下通过 eth_call(block-1) 读取余额造成的时点偏差。
+        """
+        balances: Dict[str, str] = {}
+
+        try:
+            checksum_token = Web3.to_checksum_address(token_address)
+        except Exception:
+            return balances, None
+
+        normalized_token = checksum_token.lower()
+        unique_holders: List[str] = []
+        seen: Set[str] = set()
+        for holder in holder_candidates:
+            try:
+                checksum_holder = Web3.to_checksum_address(holder)
+            except Exception:
+                continue
+            holder_key = checksum_holder.lower()
+            if holder_key == normalized_token or holder_key in seen:
+                continue
+            seen.add(holder_key)
+            unique_holders.append(checksum_holder)
+
+        if not unique_holders:
+            return balances, None
+
+        # 轻量探测 balanceOf 是否可调用，降低非ERC20误判风险。
+        probe_call_data = self._encode_balance_of_call(unique_holders[0])
+
+        def _probe_call(data=probe_call_data):
+            return w3.eth.call(
+                {
+                    'to': checksum_token,
+                    'data': data
+                },
+                block_identifier=block_number
+            )
+
+        try:
+            probe_raw = self._retry_call(_probe_call)
+            if probe_raw is None or len(probe_raw) < 32:
+                return {}, None
+        except Exception:
+            return {}, None
+
+        raw_storage = prestate_account.get('storage') if isinstance(prestate_account, dict) else None
+        if not isinstance(raw_storage, dict) or not raw_storage:
+            return {}, None
+
+        prestate_storage: Dict[int, int] = {}
+        for slot_key, slot_value in raw_storage.items():
+            try:
+                if isinstance(slot_key, int):
+                    slot_int = slot_key
+                elif isinstance(slot_key, str):
+                    key_text = slot_key.strip()
+                    if key_text.startswith(('0x', '0X')):
+                        slot_int = int(key_text, 16)
+                    else:
+                        slot_int = int(key_text)
+                else:
+                    continue
+            except Exception:
+                continue
+
+            normalized_word = self._normalize_storage_word(slot_value)
+            if normalized_word is None:
+                continue
+
+            try:
+                prestate_storage[slot_int] = int(normalized_word, 16)
+            except Exception:
+                continue
+
+        if not prestate_storage:
+            return {}, None
+
+        holder_bytes_map: Dict[str, bytes] = {
+            holder: bytes.fromhex(holder[2:].rjust(64, '0'))
+            for holder in unique_holders
+        }
+
+        # 扫描常见ERC20 balance slot范围，按命中数量/非零数量打分。
+        slot_candidates: List[Tuple[int, Dict[str, int], int, int]] = []
+        for slot in range(64):
+            slot_bytes = slot.to_bytes(32, byteorder='big')
+            matched: Dict[str, int] = {}
+
+            for holder, holder_bytes in holder_bytes_map.items():
+                mapping_key = int.from_bytes(keccak(holder_bytes + slot_bytes), byteorder='big')
+                value = prestate_storage.get(mapping_key)
+                if value is None:
+                    continue
+                matched[holder] = value
+
+            if matched:
+                non_zero_count = sum(1 for v in matched.values() if v > 0)
+                slot_candidates.append((slot, matched, len(matched), non_zero_count))
+
+        if not slot_candidates:
+            return {}, None
+
+        selected_slot, selected_matches, match_count, non_zero_count = max(
+            slot_candidates,
+            key=lambda item: (item[3], item[2], -item[0])
+        )
+
+        # 低置信度结果不返回，避免污染非ERC20合约状态。
+        if non_zero_count == 0 and match_count < 2:
+            return {}, None
+        if match_count == 1 and selected_slot >= 32:
+            return {}, None
+
+        for holder, amount in selected_matches.items():
+            balances[holder] = str(amount)
+
+        self.logger.debug(
+            f"      prestate还原ERC20余额 {checksum_token}: slot={selected_slot}, "
+            f"holders={len(balances)}, nonzero={sum(1 for v in balances.values() if int(v) > 0)}"
+        )
+
+        return balances, selected_slot
 
     def _collect_erc20_balances(self, w3: Web3, token_address: str, block_number: int,
                                 holder_candidates: List[str]) -> Tuple[Dict[str, str], Optional[int]]:
@@ -1491,7 +1798,8 @@ class StateCollector:
 
     def _collect_storage(self, chain: str, w3: Web3, address: str, block_number: int,
                         attack_tx_hash: Optional[str] = None, protocol_hint: Optional[str] = None,
-                        use_source_supplement: bool = True) -> Dict[str, str]:
+                        use_source_supplement: bool = True,
+                        state_mode: str = 'block') -> Dict[str, str]:
         """
         收集合约存储（两阶段混合策略：trace驱动 + 源码补全）
 
@@ -1503,6 +1811,7 @@ class StateCollector:
             attack_tx_hash: 攻击交易哈希（可选，用于trace方法）
             protocol_hint: 协议名称提示（如"Gamma_exp"，用于查找源码）
             use_source_supplement: 是否启用Phase 2源码补全
+            state_mode: 状态模式（pre_tx / post_tx / block）
 
         Returns:
             存储字典 {slot: value}
@@ -1514,7 +1823,14 @@ class StateCollector:
         if attack_tx_hash and self.use_trace and chain_key not in self.unsupported_trace_chains:
             try:
                 self.logger.info(f"\n      [Phase 1] 使用prestateTracer收集 {address[:10]}... 的storage")
-                trace_storage = self._collect_storage_from_trace(chain, w3, address, attack_tx_hash, block_number)
+                trace_storage = self._collect_storage_from_trace(
+                    chain,
+                    w3,
+                    address,
+                    attack_tx_hash,
+                    block_number,
+                    use_prestate_values=(state_mode == 'pre_tx')
+                )
 
                 if trace_storage:
                     self.logger.info(f"      ✓ Phase 1完成: 收集到 {len(trace_storage)} 个slots")
@@ -1547,7 +1863,14 @@ class StateCollector:
 
                     # 重试一次trace
                     try:
-                        trace_storage = self._collect_storage_from_trace(chain, w3, address, attack_tx_hash, block_number)
+                        trace_storage = self._collect_storage_from_trace(
+                            chain,
+                            w3,
+                            address,
+                            attack_tx_hash,
+                            block_number,
+                            use_prestate_values=(state_mode == 'pre_tx')
+                        )
                         if trace_storage:
                             self.logger.info(f"      ✓ 重试成功: 获取 {len(trace_storage)} 个slots")
                     except Exception as retry_e:
@@ -1608,7 +1931,8 @@ class StateCollector:
         return final_storage
 
     def _collect_storage_from_trace(self, chain: str, w3: Web3, address: str,
-                                    tx_hash: str, block_number: int) -> Dict[str, str]:
+                                    tx_hash: str, block_number: int,
+                                    use_prestate_values: bool = False) -> Dict[str, str]:
         """
         使用交易trace收集完整存储（包括mappings和动态数组）
 
@@ -1619,6 +1943,7 @@ class StateCollector:
             address: 合约地址
             tx_hash: 交易哈希
             block_number: 区块号
+            use_prestate_values: 是否直接使用prestate返回值（用于before状态）
 
         Returns:
             存储字典 {slot: value}
@@ -1629,51 +1954,11 @@ class StateCollector:
             # 标准化地址（小写，用于匹配trace结果）
             address_lower = address.lower()
 
-            # 检查缓存
-            if tx_hash in self.trace_cache:
-                self.logger.debug(f"      → 使用缓存的trace结果")
-                prestate = self.trace_cache[tx_hash]
-            else:
-                # 调用debug_traceTransaction with prestateTracer
-                # prestateTracer返回交易执行前所有被访问地址的状态
-                self.logger.debug(f"      → 调用debug_traceTransaction (首次)")
-                trace_result = w3.provider.make_request(
-                    'debug_traceTransaction',
-                    [tx_hash, {'tracer': 'prestateTracer'}]
-                )
-
-                if not isinstance(trace_result, dict):
-                    raise TraceUnsupportedError(f"返回格式异常: {type(trace_result)}")
-
-                if 'error' in trace_result:
-                    raise TraceUnsupportedError(f"RPC错误: {trace_result['error']}")
-
-                prestate = trace_result.get('result')
-                if prestate is None:
-                    # 某些实现可能直接返回prestate字段
-                    for key in ('prestate', 'state', 'states'):
-                        if key in trace_result:
-                            prestate = trace_result[key]
-                            break
-
-                if prestate is None:
-                    keys_preview = list(trace_result.keys())
-                    raise TraceUnsupportedError(f"未返回prestate数据(keys={keys_preview})")
-
-                if not isinstance(prestate, dict):
-                    raise TraceUnsupportedError(f"prestate类型异常: {type(prestate)}")
-
-                # 缓存prestate结果,供后续地址使用
-                self.trace_cache[tx_hash] = prestate
-                self.logger.debug(f"      ✓ Trace结果已缓存 (包含{len(prestate)}个地址)")
+            # 获取prestate（带缓存）
+            prestate = self._get_trace_prestate(w3, tx_hash)
 
             # 查找目标地址的prestate
-            # prestateTracer返回的地址可能是小写或校验和格式
-            address_data = None
-            for addr in prestate:
-                if addr.lower() == address_lower:
-                    address_data = prestate[addr]
-                    break
+            address_data = self._find_prestate_account(prestate, address_lower)
 
             if not address_data:
                 self.logger.debug(f"      Trace中未找到地址 {address}（交易可能未访问此合约）")
@@ -1685,17 +1970,27 @@ class StateCollector:
                 touched_storage = address_data['storage']
                 self.logger.debug(f"      Trace发现 {len(touched_storage)} 个被访问的slots")
 
-                # prestateTracer返回的是交易前的状态
-                # 我们需要读取这些slots在指定区块的值
+                # before模式：直接使用prestateTracer提供的交易前值
+                if use_prestate_values:
+                    for slot_hex, value_hex in touched_storage.items():
+                        try:
+                            slot_int = int(slot_hex, 16)
+                        except Exception:
+                            self.logger.debug(f"      解析slot {slot_hex} 失败")
+                            continue
 
-                # 解析所有slot
+                        normalized_word = self._normalize_storage_word(value_hex)
+                        if normalized_word is None:
+                            continue
+                        storage[str(slot_int)] = normalized_word
+
+                    return storage
+
+                # 非before模式：读取这些slot在指定区块的状态值
                 slot_list = []
                 for slot_hex, _ in touched_storage.items():
                     try:
-                        if slot_hex.startswith('0x'):
-                            slot_int = int(slot_hex, 16)
-                        else:
-                            slot_int = int(slot_hex, 16)
+                        slot_int = int(slot_hex, 16)
                         slot_list.append(slot_int)
                     except Exception as e:
                         self.logger.debug(f"      解析slot {slot_hex} 失败: {e}")
@@ -2525,6 +2820,27 @@ class AttackStateCollector:
                 else:
                     raise
 
+    @staticmethod
+    def _count_address_state_differences(before_state: Dict[str, Any], after_state: Dict[str, Any]) -> int:
+        """统计 before/after 在地址级别的差异数量。"""
+        before_addrs = before_state.get('addresses') or {}
+        after_addrs = after_state.get('addresses') or {}
+
+        def normalize(addr_map: Dict[str, Any]) -> Dict[str, Any]:
+            normalized = {}
+            for key, value in addr_map.items():
+                normalized[str(key).lower()] = value
+            return normalized
+
+        before_norm = normalize(before_addrs)
+        after_norm = normalize(after_addrs)
+
+        changed = 0
+        for key in (set(before_norm.keys()) | set(after_norm.keys())):
+            if before_norm.get(key) != after_norm.get(key):
+                changed += 1
+        return changed
+
     def _process_event(self, month: str, event_name: str, event_dir: Path) -> bool:
         """
         处理单个事件
@@ -2593,6 +2909,7 @@ class AttackStateCollector:
                 extra_holder_addresses.append(val)
 
         # 5. 收集状态（传递attack_tx_hash和protocol_hint）
+        before_state_mode = 'pre_tx' if attack_tx_hash else 'block'
         state = self.state_collector.collect_state(
             fork_info.chain,
             fork_info.block_number,
@@ -2601,7 +2918,8 @@ class AttackStateCollector:
             extra_holder_addresses=extra_holder_addresses,
             mapping_seeds=mapping_seeds,
             protocol_hint=event_name,  # 新增：传递协议名称用于Phase 2源码补全
-            use_source_supplement=True  # 启用Phase 2源码补全
+            use_source_supplement=True,  # 启用Phase 2源码补全
+            state_mode=before_state_mode
         )
 
         if not state:
@@ -2651,7 +2969,8 @@ class AttackStateCollector:
                     extra_holder_addresses=extra_holder_addresses,
                     mapping_seeds=mapping_seeds,
                     protocol_hint=event_name,  # 新增：传递协议名称用于Phase 2源码补全
-                    use_source_supplement=True  # 启用Phase 2源码补全
+                    use_source_supplement=True,  # 启用Phase 2源码补全
+                    state_mode='post_tx'
                 )
 
                 if not state_after:
@@ -2659,6 +2978,16 @@ class AttackStateCollector:
                 elif not state_after.get('addresses'):
                     self.logger.warning("  收集到的攻击后地址列表为空")
                 else:
+                    diff_count = self._count_address_state_differences(state, state_after)
+                    if diff_count == 0:
+                        self.logger.error(
+                            "  攻击前后状态无差异（0个地址变化），疑似状态采集链路异常；请检查trace/RPC/fork语义"
+                        )
+                        return False
+
+                    if diff_count < 3:
+                        self.logger.warning(f"  攻击前后差异较少（{diff_count}个地址变化），建议人工复核")
+
                     # 7c. 保存攻击后状态
                     state_after_file = event_dir / 'attack_state_after.json'
                     try:

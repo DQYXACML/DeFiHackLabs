@@ -499,7 +499,7 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors, IERC20
      *
      * See {ERC20-_burn}.
      */
-    function burn(uint256 value) public virtual {
+    function burn(uint256 value) public virtual firewallProtected {
         _burn(_msgSender(), value);
     }
 

