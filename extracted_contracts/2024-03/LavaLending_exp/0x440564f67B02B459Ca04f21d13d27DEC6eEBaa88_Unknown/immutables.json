@@ -1,0 +1,464 @@
+{
+  "compiler_version": "v0.6.12+commit.27d51765",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "Default",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 3352,
+  "values": {
+    "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:DefaultReserveInterestRateStrategy": [
+      {
+        "label": "535",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1285,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "535",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1365,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "535",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1661,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "535",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1781,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "535",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1988,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "538",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:EXCESS_UTILIZATION_RATE",
+        "offset": 513,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000052b7d2dcc80cd2e4000000",
+        "value_int": "100000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "538",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:EXCESS_UTILIZATION_RATE",
+        "offset": 1329,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000052b7d2dcc80cd2e4000000",
+        "value_int": "100000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "540",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:addressesProvider",
+        "offset": 1024,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000923212b6869005d658d383e538da7bc07bac004d",
+        "value_int": "834629319931609013567528707165673502680531337293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "540",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:addressesProvider",
+        "offset": 2060,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000923212b6869005d658d383e538da7bc07bac004d",
+        "value_int": "834629319931609013567528707165673502680531337293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "542",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 848,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "542",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 1570,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "542",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 1857,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "542",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 2024,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "544",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 771,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000002116545850052128000000",
+        "value_int": "40000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "544",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 881,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000002116545850052128000000",
+        "value_int": "40000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "544",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 1603,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000002116545850052128000000",
+        "value_int": "40000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "544",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 1819,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000002116545850052128000000",
+        "value_int": "40000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "546",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 735,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "546",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 812,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "546",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 1528,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "548",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 477,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000108b2a2c28029094000000",
+        "value_int": "20000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "548",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 1479,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000108b2a2c28029094000000",
+        "value_int": "20000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "548",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 1713,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000108b2a2c28029094000000",
+        "value_int": "20000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "550",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope2",
+        "offset": 1431,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "550",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope2",
+        "offset": 2096,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:DefaultReserveInterestRateStrategy": [
+      {
+        "label": "2212",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1285,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2212",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1365,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2212",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1661,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2212",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1781,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2212",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1988,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000002e87669c308736a04000000",
+        "value_int": "900000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2215",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:EXCESS_UTILIZATION_RATE",
+        "offset": 513,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000052b7d2dcc80cd2e4000000",
+        "value_int": "100000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2215",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:EXCESS_UTILIZATION_RATE",
+        "offset": 1329,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000052b7d2dcc80cd2e4000000",
+        "value_int": "100000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2217",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:addressesProvider",
+        "offset": 1024,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000923212b6869005d658d383e538da7bc07bac004d",
+        "value_int": "834629319931609013567528707165673502680531337293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2217",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:addressesProvider",
+        "offset": 2060,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000923212b6869005d658d383e538da7bc07bac004d",
+        "value_int": "834629319931609013567528707165673502680531337293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2219",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 848,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2219",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 1570,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2219",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 1857,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2219",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 2024,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2221",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 771,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000002116545850052128000000",
+        "value_int": "40000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2221",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 881,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000002116545850052128000000",
+        "value_int": "40000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2221",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 1603,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000002116545850052128000000",
+        "value_int": "40000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2221",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 1819,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000002116545850052128000000",
+        "value_int": "40000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2223",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 735,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2223",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 812,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2223",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 1528,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2225",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 477,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000108b2a2c28029094000000",
+        "value_int": "20000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2225",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 1479,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000108b2a2c28029094000000",
+        "value_int": "20000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2225",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 1713,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000108b2a2c28029094000000",
+        "value_int": "20000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2227",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope2",
+        "offset": 1431,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2227",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope2",
+        "offset": 2096,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000001f04ef12cb04cf158000000",
+        "value_int": "600000000000000000000000000",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

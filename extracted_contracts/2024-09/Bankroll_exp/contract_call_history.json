@@ -1,0 +1,389 @@
+{
+  "protocol": "Bankroll_exp",
+  "contract_address": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+  "target_functions": [
+    "buyFor",
+    "withdraw",
+    "sell"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "buyFor": {
+      "0": {
+        "avoid": [
+          "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54"
+        ]
+      },
+      "1": {
+        "avoid": [],
+        "max": 4800000000000000000000
+      }
+    },
+    "withdraw": {},
+    "sell": {
+      "0": {
+        "avoid": [],
+        "max": 34737626771194857341520860095414151922411321526762087194074880176139670650880
+      }
+    }
+  },
+  "attack_block": 42481610,
+  "generated_at": "2026-02-09T11:33:22.168860Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0x597c5e87dcd29a3f86a4da0f70c40e7ab68fcf63",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42337610,
+      "time": "2024-08-30T00:50:55Z",
+      "function": "buyFor",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_customerAddress",
+          "type": "address",
+          "value": "0x7536874b43efc9821b7da38630b35e489319921f"
+        },
+        {
+          "name": "buy_amount",
+          "type": "uint256",
+          "value": 332538
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0x07e90f09618a83948b90c2927ccb258254f16808",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42445610,
+      "time": "2024-09-17T00:50:55Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0x995a97fd3273f4448824656d80c9e2fbb9715fbf",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42301610,
+      "time": "2024-08-24T00:50:55Z",
+      "function": "sell",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_amountOfTokens",
+          "type": "uint256",
+          "value": 380456
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0xd51fe03b0548db154ac7e6ab6eb3f6bd786424d6",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42367610,
+      "time": "2024-09-04T00:50:55Z",
+      "function": "buyFor",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_customerAddress",
+          "type": "address",
+          "value": "0x0b51d67a26d124dc37726149915b3ba1114994c7"
+        },
+        {
+          "name": "buy_amount",
+          "type": "uint256",
+          "value": 49874
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0x86f761c0ae47bb5a2c4eb36731ee4fadc1fb6fb1",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42463610,
+      "time": "2024-09-20T00:50:55Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x93c1fe9095a68b627feb9fd2fd8d999a155e3c32",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42313610,
+      "time": "2024-08-26T00:50:55Z",
+      "function": "sell",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_amountOfTokens",
+          "type": "uint256",
+          "value": 917718
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0x4c5e4b6df944ee06405f3c66a4ad8e209aa0787e",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42433610,
+      "time": "2024-09-15T00:50:55Z",
+      "function": "buyFor",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_customerAddress",
+          "type": "address",
+          "value": "0x46c2c4b4f714a59e3c5c7d7214d70f5b67d8e82c"
+        },
+        {
+          "name": "buy_amount",
+          "type": "uint256",
+          "value": 403073
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0xdd3c809efce4a536f173bed04e830ee3c2ceefda",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42385610,
+      "time": "2024-09-07T00:50:55Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0x3f79a77d491900a694ce6d7529d94511082647b3",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42415610,
+      "time": "2024-09-12T00:50:55Z",
+      "function": "sell",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_amountOfTokens",
+          "type": "uint256",
+          "value": 145343
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0xb8233e0596272969e6066d47a4c3464bfe2d57a7",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42331610,
+      "time": "2024-08-29T00:50:55Z",
+      "function": "buyFor",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_customerAddress",
+          "type": "address",
+          "value": "0x52b06f72adb4f6e416286278a8fcb2a9383714d2"
+        },
+        {
+          "name": "buy_amount",
+          "type": "uint256",
+          "value": 822569
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0x216e979ff2231462f3cc94478ef0db3d7a0ea43b",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42409610,
+      "time": "2024-09-11T00:50:55Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0x1095b7b43dc3a748a578d00c28cfa220bbdb2413",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42361610,
+      "time": "2024-09-03T00:50:55Z",
+      "function": "sell",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_amountOfTokens",
+          "type": "uint256",
+          "value": 192698
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0x9264b6f8a70438b7552ee17fb64435370e685ac4",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42469610,
+      "time": "2024-09-21T00:50:55Z",
+      "function": "buyFor",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_customerAddress",
+          "type": "address",
+          "value": "0xde3b17c941b10e5595313433dc573b28d454b646"
+        },
+        {
+          "name": "buy_amount",
+          "type": "uint256",
+          "value": 767602
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0xef91efcc56121cb4952308126faae8ba0a84fd7e",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42319610,
+      "time": "2024-08-27T00:50:55Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0x8ade6b0354c05b351726b6df0aeef08301bfc72e",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42421610,
+      "time": "2024-09-13T00:50:55Z",
+      "function": "sell",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_amountOfTokens",
+          "type": "uint256",
+          "value": 666428
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0x7480a96a75df39f32e4ebecb249c2e52ec30b6b2",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42433610,
+      "time": "2024-09-15T00:50:55Z",
+      "function": "buyFor",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_customerAddress",
+          "type": "address",
+          "value": "0xb2348bd7bce5447ea997b4570ed7cff74a70a413"
+        },
+        {
+          "name": "buy_amount",
+          "type": "uint256",
+          "value": 121296
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0x35c07a7bd85dd5ccecce093f39bb655b4d8a627c",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42337610,
+      "time": "2024-08-30T00:50:55Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0xeee51f7af8dfb35dcfeea07cfeeafd5d99e35b17",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42427610,
+      "time": "2024-09-14T00:50:55Z",
+      "function": "sell",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_amountOfTokens",
+          "type": "uint256",
+          "value": 356304
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x0d286d3d2dd0fb89eacb723bbb17141d793abd72",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42415610,
+      "time": "2024-09-12T00:50:55Z",
+      "function": "buyFor",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_customerAddress",
+          "type": "address",
+          "value": "0x4ff9a1c80480e5e38908ce90f2a432f97f8ca18e"
+        },
+        {
+          "name": "buy_amount",
+          "type": "uint256",
+          "value": 961822
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0xd0f2e1af0428179f981c37d3004165bc36448752",
+      "to": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54",
+      "value": "0",
+      "blockNumber": 42397610,
+      "time": "2024-09-09T00:50:55Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    }
+  ]
+}

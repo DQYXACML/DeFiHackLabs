@@ -140,12 +140,28 @@ contract Comptroller is
         return IRouter(firewallAddress);
     }
 
-    // 防火墙保护修饰符
+    // 防火墙保护修饰符（可写函数）
     modifier firewallProtected() {
         {
             IRouter _firewall = firewall();
             if (address(_firewall) != address(0)) {
                 _firewall.executeWithDetect(msg.data);
+            }
+        }
+        _;
+    }
+
+    // 防火墙保护修饰符（view/pure函数）
+    modifier firewallProtectedView() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                bytes memory fwData = abi.encodeWithSignature("executeWithDetect(bytes)", msg.data);
+                bool fwOk;
+                assembly {
+                    fwOk := staticcall(gas(), _firewall, add(fwData, 0x20), mload(fwData), 0, 0)
+                }
+                fwOk;
             }
         }
         _;

@@ -1,0 +1,26 @@
+{
+  "protocol": "Ak1111_exp",
+  "year_month": "2024-11",
+  "injection_timestamp": "2026-02-09T07:24:55.147345Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "NonblockingLzApp",
+    "address": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963"
+  },
+  "injected_contracts": [
+    {
+      "file": "NonblockingLzApp.sol",
+      "functions": [
+        "nonblockingLzReceive1"
+      ]
+    },
+    {
+      "file": "OFT.sol",
+      "functions": [
+        "nonblockingLzReceive1"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

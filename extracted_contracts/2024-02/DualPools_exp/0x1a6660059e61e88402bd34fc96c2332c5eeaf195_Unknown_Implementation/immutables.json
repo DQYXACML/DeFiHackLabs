@@ -1,0 +1,338 @@
+{
+  "compiler_version": "v0.8.25+commit.b61c2a91",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "cancun",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 23050,
+  "values": {
+    "./contracts/Tokens/Prime/Prime.sol:Prime": [
+      {
+        "label": "18620",
+        "var_name": "@venusprotocol/solidity-utilities/contracts/TimeManagerV8.sol:blocksOrSecondsPerYear",
+        "offset": 1463,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000042d5600",
+        "value_int": "70080000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18620",
+        "var_name": "@venusprotocol/solidity-utilities/contracts/TimeManagerV8.sol:blocksOrSecondsPerYear",
+        "offset": 4967,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000042d5600",
+        "value_int": "70080000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18623",
+        "var_name": "@venusprotocol/solidity-utilities/contracts/TimeManagerV8.sol:isTimeBased",
+        "offset": 2272,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18630",
+        "var_name": "@venusprotocol/solidity-utilities/contracts/TimeManagerV8.sol:_getCurrentSlot",
+        "offset": 8383,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000010600002574",
+        "value_int": "1125281441140",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4278",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:WRAPPED_NATIVE_TOKEN",
+        "offset": 1069,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000bb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "value_int": "1069295261705322660692659746119710186699350608220",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4278",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:WRAPPED_NATIVE_TOKEN",
+        "offset": 11849,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000bb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "value_int": "1069295261705322660692659746119710186699350608220",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4281",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:NATIVE_MARKET",
+        "offset": 2331,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000a07c5b74c9b40447a954e1466938b865b6bbea36",
+        "value_int": "916211782695316001552707946846012539069980731958",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4281",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:NATIVE_MARKET",
+        "offset": 11791,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000a07c5b74c9b40447a954e1466938b865b6bbea36",
+        "value_int": "916211782695316001552707946846012539069980731958",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4284",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:MINIMUM_STAKED_XVS",
+        "offset": 1424,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000003635c9adc5dea00000",
+        "value_int": "1000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4284",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:MINIMUM_STAKED_XVS",
+        "offset": 10625,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000003635c9adc5dea00000",
+        "value_int": "1000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4287",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:MAXIMUM_XVS_CAP",
+        "offset": 2728,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000152d02c7e14af6800000",
+        "value_int": "100000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4287",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:MAXIMUM_XVS_CAP",
+        "offset": 13139,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000152d02c7e14af6800000",
+        "value_int": "100000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4287",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:MAXIMUM_XVS_CAP",
+        "offset": 13180,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000152d02c7e14af6800000",
+        "value_int": "100000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4290",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 990,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4290",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 4161,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4290",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 8462,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4290",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 8505,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4290",
+        "var_name": "./contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 8545,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/Tokens/Prime/Prime.sol:Prime": [
+      {
+        "label": "18620",
+        "var_name": "@venusprotocol/solidity-utilities/contracts/TimeManagerV8.sol:blocksOrSecondsPerYear",
+        "offset": 1463,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000042d5600",
+        "value_int": "70080000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18620",
+        "var_name": "@venusprotocol/solidity-utilities/contracts/TimeManagerV8.sol:blocksOrSecondsPerYear",
+        "offset": 4967,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000042d5600",
+        "value_int": "70080000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18623",
+        "var_name": "@venusprotocol/solidity-utilities/contracts/TimeManagerV8.sol:isTimeBased",
+        "offset": 2272,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18630",
+        "var_name": "@venusprotocol/solidity-utilities/contracts/TimeManagerV8.sol:_getCurrentSlot",
+        "offset": 8383,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000010600002574",
+        "value_int": "1125281441140",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19598",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:WRAPPED_NATIVE_TOKEN",
+        "offset": 1069,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000bb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "value_int": "1069295261705322660692659746119710186699350608220",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19598",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:WRAPPED_NATIVE_TOKEN",
+        "offset": 11849,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000bb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "value_int": "1069295261705322660692659746119710186699350608220",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19601",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:NATIVE_MARKET",
+        "offset": 2331,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000a07c5b74c9b40447a954e1466938b865b6bbea36",
+        "value_int": "916211782695316001552707946846012539069980731958",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19601",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:NATIVE_MARKET",
+        "offset": 11791,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000a07c5b74c9b40447a954e1466938b865b6bbea36",
+        "value_int": "916211782695316001552707946846012539069980731958",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19604",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:MINIMUM_STAKED_XVS",
+        "offset": 1424,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000003635c9adc5dea00000",
+        "value_int": "1000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19604",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:MINIMUM_STAKED_XVS",
+        "offset": 10625,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000003635c9adc5dea00000",
+        "value_int": "1000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19607",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:MAXIMUM_XVS_CAP",
+        "offset": 2728,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000152d02c7e14af6800000",
+        "value_int": "100000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19607",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:MAXIMUM_XVS_CAP",
+        "offset": 13139,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000152d02c7e14af6800000",
+        "value_int": "100000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19607",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:MAXIMUM_XVS_CAP",
+        "offset": 13180,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000152d02c7e14af6800000",
+        "value_int": "100000000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19610",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 990,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19610",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 4161,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19610",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 8462,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19610",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 8505,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19610",
+        "var_name": "contracts/Tokens/Prime/Prime.sol:STAKING_PERIOD",
+        "offset": 8545,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000076a700",
+        "value_int": "7776000",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

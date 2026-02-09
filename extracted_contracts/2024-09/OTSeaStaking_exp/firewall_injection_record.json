@@ -1,0 +1,21 @@
+{
+  "protocol": "OTSeaStaking_exp",
+  "year_month": "2024-09",
+  "injection_timestamp": "2026-02-09T05:25:24.025272Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "OTSeaStaking",
+    "address": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916"
+  },
+  "injected_contracts": [
+    {
+      "file": "OTSeaStaking.sol",
+      "functions": [
+        "withdraw",
+        "claim"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

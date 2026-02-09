@@ -1349,6 +1349,18 @@ class AttackScriptParser:
                 elif addr_expr.startswith('0x'):
                     contract_address = addr_expr.lower()
                     contract_name = call.get('interface', 'Unknown')
+                else:
+                    # 兼容 payable(ROUTER)/address(ROUTER) 和包装后的直接地址
+                    wrapped_var = re.match(r'^(?:payable|address)\(\s*([a-zA-Z_]\w*)\s*\)$', addr_expr)
+                    if wrapped_var:
+                        var_name = wrapped_var.group(1)
+                        contract_address = self._resolve_address_from_var(var_name)
+                        contract_name = var_name
+                    else:
+                        wrapped_addr = re.match(r'^(?:payable|address)\(\s*(0x[a-fA-F0-9]{40})\s*\)$', addr_expr)
+                        if wrapped_addr:
+                            contract_address = wrapped_addr.group(1).lower()
+                            contract_name = call.get('interface', 'Unknown')
 
             # 提取参数(从函数调用位置重新解析)
             params = self._extract_params_for_call(call)
@@ -1930,13 +1942,26 @@ class AttackScriptParser:
         slither_funcs = self.slither_func_analyzer.discover_functions()
 
         functions = []
+        script_lines = self.script_content.split('\n')
+        target_script = str(self.script_path.resolve())
+
         for sf in slither_funcs:
+            # 只保留当前攻击脚本中的函数，避免将依赖库line号误映射到当前文件
+            source_path = getattr(sf, 'source_path', '')
+            if source_path:
+                try:
+                    if str(Path(source_path).resolve()) != target_script:
+                        continue
+                except Exception:
+                    continue
+
             # 转换Slither的FunctionInfo到本地格式
             # 注意: Slither没有body文本,我们从源码提取
             func_body = ""
-            if sf.start_line > 0 and sf.end_line > 0:
-                lines = self.script_content.split('\n')
-                func_body = '\n'.join(lines[sf.start_line-1:sf.end_line])
+            if sf.start_line > 0 and sf.end_line >= sf.start_line:
+                if sf.start_line <= len(script_lines):
+                    end_line = min(sf.end_line, len(script_lines))
+                    func_body = '\n'.join(script_lines[sf.start_line - 1:end_line])
 
             func_info = FunctionInfo(
                 name=sf.name,
@@ -1963,7 +1988,8 @@ class AttackScriptParser:
 
         # 正则匹配函数头: function name(...) visibility modifiers {
         # 注意: 需要处理 returns(...) 等修饰符
-        func_pattern = r'function\s+(\w+)\s*\([^)]*\)\s*(public|external|internal|private)?[^{]*\{'
+        # 关键修复: [^;{]* 避免跨过接口函数声明里的分号,把后续整个合约误当成函数体
+        func_pattern = r'function\s+(\w+)\s*\([^)]*\)\s*(public|external|internal|private)?[^;{]*\{'
 
         for match in re.finditer(func_pattern, content):
             func_name = match.group(1)
@@ -2046,6 +2072,120 @@ class AttackScriptParser:
 
         return list(set(internal_calls))  # 去重
 
+    def _find_matching_paren_in_text(self, text: str, start: int) -> int:
+        """在任意文本中查找与start位置'('匹配的')'"""
+        if start < 0 or start >= len(text) or text[start] != '(':
+            return -1
+
+        depth = 0
+        state = 'code'
+        pos = start
+
+        while pos < len(text):
+            ch = text[pos]
+            prev = text[pos - 1] if pos > 0 else ''
+            nxt = text[pos + 1] if pos < len(text) - 1 else ''
+
+            if state == 'code':
+                if ch == '"' and prev != '\\':
+                    state = 'string_double'
+                elif ch == "'" and prev != '\\':
+                    state = 'string_single'
+                elif ch == '/' and nxt == '/':
+                    state = 'comment_single'
+                    pos += 1
+                elif ch == '/' and nxt == '*':
+                    state = 'comment_multi'
+                    pos += 1
+                elif ch == '(':
+                    depth += 1
+                elif ch == ')':
+                    depth -= 1
+                    if depth == 0:
+                        return pos
+
+            elif state == 'string_double':
+                if ch == '"' and prev != '\\':
+                    state = 'code'
+
+            elif state == 'string_single':
+                if ch == "'" and prev != '\\':
+                    state = 'code'
+
+            elif state == 'comment_single':
+                if ch == '\n':
+                    state = 'code'
+
+            elif state == 'comment_multi':
+                if ch == '*' and nxt == '/':
+                    state = 'code'
+                    pos += 1
+
+            pos += 1
+
+        return -1
+
+    def _iter_interface_cast_calls(self, body: str) -> List[Tuple[str, str, str]]:
+        """线性扫描 Type(expr).func(...) 调用，避免复杂正则回溯卡死"""
+        calls: List[Tuple[str, str, str]] = []
+        cast_start_pattern = re.compile(r'([A-Z]\w*)\s*\(')
+
+        pos = 0
+        while pos < len(body):
+            match = cast_start_pattern.search(body, pos)
+            if not match:
+                break
+
+            cast_type = match.group(1)
+            open_paren = body.find('(', match.start(1) + len(cast_type), match.end() + 2)
+            if open_paren == -1:
+                pos = match.end()
+                continue
+
+            close_paren = self._find_matching_paren_in_text(body, open_paren)
+            if close_paren == -1:
+                pos = match.end()
+                continue
+
+            cursor = close_paren + 1
+            while cursor < len(body) and body[cursor].isspace():
+                cursor += 1
+
+            if cursor >= len(body) or body[cursor] != '.':
+                pos = match.end()
+                continue
+
+            cursor += 1
+            func_match = re.match(r'([A-Za-z_]\w*)', body[cursor:])
+            if not func_match:
+                pos = match.end()
+                continue
+
+            func_name = func_match.group(1)
+            cursor += len(func_name)
+
+            while cursor < len(body) and body[cursor].isspace():
+                cursor += 1
+
+            if cursor < len(body) and body[cursor] == '{':
+                brace_end = body.find('}', cursor + 1)
+                if brace_end == -1:
+                    pos = match.end()
+                    continue
+                cursor = brace_end + 1
+                while cursor < len(body) and body[cursor].isspace():
+                    cursor += 1
+
+            if cursor >= len(body) or body[cursor] != '(':
+                pos = match.end()
+                continue
+
+            address_expr = body[open_paren + 1:close_paren].strip()
+            calls.append((cast_type, address_expr, func_name))
+            pos = cursor + 1
+
+        return calls
+
     def _extract_external_calls_from_func(self, func: FunctionInfo) -> List[Dict]:
         """
         从函数体提取外部合约调用
@@ -2081,22 +2221,16 @@ class AttackScriptParser:
                 'source_function': func.name,
             })
 
-        # 模式2: I(address).functionName(...) 或 IInterface(address).functionName(...), 支持{value: ...}
-        pattern2 = r'I(\w*)\(([^)]+)\)\.(\w+)\s*(?:\{[^}]*\})?\s*\('
-        for match in re.finditer(pattern2, func.body):
-            interface_hint = match.group(1) or ''
-            address_expr = match.group(2).strip()
-            func_name = match.group(3)
-
+        # 模式2: Type(addressExpr).functionName(...), 支持{value: ...}
+        # 说明: 这里不能假设类型名一定以'I'开头，很多PoC会直接用OTSeaStaking(...)这类命名。
+        for cast_type, address_expr, func_name in self._iter_interface_cast_calls(func.body):
             # ✅ 接口调用也需要过滤
-            # 使用接口名作为contract_var进行检查
-            interface_name = f'I{interface_hint}' if interface_hint else 'I'
-            if self._should_skip_function(interface_name, func_name):
+            if self._should_skip_function(cast_type, func_name):
                 continue
 
             external_calls.append({
                 'type': 'interface',
-                'interface': interface_name,
+                'interface': cast_type,
                 'address_expr': address_expr,
                 'function': func_name,
                 'source_function': func.name,
@@ -2801,6 +2935,117 @@ class ConstraintGeneratorV2:
 
         return 'unknown'
 
+    @staticmethod
+    def _normalize_function_identifier(identifier: Optional[str]) -> str:
+        """标准化函数标识（支持 foo / foo(uint256) / Contract.foo）"""
+        if not identifier:
+            return ""
+        normalized = identifier.strip()
+        if not normalized:
+            return ""
+
+        # 兼容 Contract.function(...) 风格
+        if '.' in normalized:
+            normalized = normalized.split('.')[-1]
+
+        return normalized
+
+    @staticmethod
+    def _extract_function_name(identifier: Optional[str]) -> str:
+        """从函数名或签名中提取纯函数名"""
+        normalized = ConstraintGeneratorV2._normalize_function_identifier(identifier)
+        if not normalized:
+            return ""
+        if '(' in normalized:
+            return normalized.split('(', 1)[0].strip()
+        return normalized
+
+    def _filter_attack_calls_with_firewall(self, attack_calls: List[Dict], firewall_config) -> List[Dict]:
+        """
+        按防火墙配置过滤攻击调用。
+
+        匹配顺序：
+        1) 函数名/签名匹配
+        2) 若无交集，回退到被保护合约地址匹配
+        3) 若仍无交集，回退到全部攻击调用（避免直接生成0条约束）
+        """
+        if not attack_calls or not firewall_config:
+            return attack_calls
+
+        protected_names = set()
+        protected_signatures = set()
+        protected_addresses = {
+            c.address.lower()
+            for c in getattr(firewall_config, 'protected_contracts', [])
+            if getattr(c, 'address', None)
+        }
+
+        for protected_func in getattr(firewall_config, 'protected_functions', []):
+            for candidate in [
+                getattr(protected_func, 'function', None),
+                getattr(protected_func, 'signature', None),
+            ]:
+                normalized = self._normalize_function_identifier(candidate)
+                if not normalized:
+                    continue
+
+                if '(' in normalized:
+                    protected_signatures.add(normalized)
+
+                name_only = self._extract_function_name(normalized)
+                if name_only:
+                    protected_names.add(name_only)
+
+        # 第一轮：函数名/签名匹配
+        function_filtered = []
+        for call in attack_calls:
+            call_func = self._extract_function_name(call.get('function'))
+            call_sig = self._normalize_function_identifier(call.get('signature'))
+            call_sig_name = self._extract_function_name(call_sig)
+
+            if (
+                (call_func and call_func in protected_names)
+                or (call_sig and call_sig in protected_signatures)
+                or (call_sig_name and call_sig_name in protected_names)
+            ):
+                function_filtered.append(call)
+
+        if function_filtered:
+            logger.info(
+                f"  根据防火墙配置，分析 {len(function_filtered)}/{len(attack_calls)} 个攻击调用（函数匹配）"
+            )
+            return function_filtered
+
+        # 第二轮：被保护合约地址匹配
+        if protected_addresses:
+            address_filtered = [
+                call
+                for call in attack_calls
+                if call.get('contract_address')
+                and call.get('contract_address').lower() in protected_addresses
+            ]
+            if address_filtered:
+                logger.warning(
+                    f"  防火墙函数与攻击调用无交集，回退为合约地址匹配: "
+                    f"{len(address_filtered)}/{len(attack_calls)}"
+                )
+                return address_filtered
+
+        # 第三轮：保持可用性，回退到全部攻击调用
+        if protected_names or protected_signatures:
+            sample_calls = [self._extract_function_name(c.get('function')) for c in attack_calls[:6]]
+            sample_calls = [name for name in sample_calls if name]
+            logger.warning(
+                "  防火墙配置函数与攻击调用无交集，"
+                f"回退分析全部 {len(attack_calls)} 个攻击调用；"
+                f"保护函数示例: {sorted(list(protected_names))[:6]}；"
+                f"攻击调用示例: {sample_calls}"
+            )
+        else:
+            logger.warning("  防火墙配置缺少函数级信息，回退分析全部攻击调用")
+
+        return attack_calls
+
     def generate(self, attack_info: Dict, vuln_address: str, firewall_config=None) -> List[Dict]:
         """
         生成约束规则
@@ -2827,13 +3072,7 @@ class ConstraintGeneratorV2:
         # 0. 过滤被保护的函数（如果有防火墙配置）
         attack_calls = attack_info.get('attack_calls', [])
         if firewall_config:
-            protected_functions = firewall_config.get_function_names()
-            if protected_functions:
-                attack_calls = [
-                    call for call in attack_calls
-                    if call.get('function') in protected_functions
-                ]
-                logger.info(f"  根据防火墙配置，分析 {len(attack_calls)}/{len(attack_info.get('attack_calls', []))} 个被保护函数")
+            attack_calls = self._filter_attack_calls_with_firewall(attack_calls, firewall_config)
 
         if not attack_calls:
             logger.warning("  没有要分析的函数调用")
@@ -2844,7 +3083,9 @@ class ConstraintGeneratorV2:
 
         if not slot_changes:
             logger.warning("未检测到状态变化，使用启发式约束生成")
-            return self._generate_heuristic_constraints(attack_info)
+            heuristic_attack_info = dict(attack_info)
+            heuristic_attack_info['attack_calls'] = attack_calls
+            return self._generate_heuristic_constraints(heuristic_attack_info)
 
         logger.info(f"检测到 {len(slot_changes)} 个slot变化")
         if self.last_abi_path:
@@ -2863,8 +3104,11 @@ class ConstraintGeneratorV2:
 
             # 识别攻击模式 - 使用行为分析
             pattern = self._identify_attack_pattern(func_name, slot_changes, loop_info)
-            if not pattern or pattern == 'unknown':
+            if not pattern:
                 continue
+            if pattern == 'unknown':
+                # 非标准命名函数（如 nonblockingLzReceive1）也允许进入约束生成
+                pattern = 'generic_attack'
 
             # 找到动态参数（扩展支持数组/地址/字节等）
             dynamic_params = [

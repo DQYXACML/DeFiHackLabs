@@ -4,48 +4,129 @@
     "name": "Attacker",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attacker : https://bscscan.com/address/0xCe21C6e4fa557A9041FA98DFf59A4401Ef0a18aC"
+    "context": "// Attacker : https://bscscan.com/address/0xCe21C6e4fa557A9041FA98DFf59A4401Ef0a18aC",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xbFD7280B11466bc717EB0053A78675aed2C2E388",
     "name": "Attack_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Attack Contract : https://bscscan.com/address/0xbFD7280B11466bc717EB0053A78675aed2C2E388"
+    "context": "// Attack Contract : https://bscscan.com/address/0xbFD7280B11466bc717EB0053A78675aed2C2E388",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
     "name": "Vulnerable_Contract",
     "chain": "bsc",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://bscscan.com/address/0xc3B1b45e5784A8efececfC0BE2E28247d3f49963"
+    "context": "// Vulnerable Contract : https://bscscan.com/address/0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+    "onchain_name": null,
+    "symbol": "AK1111",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "AK1111_ADDR",
+      "IAk1111",
+      "ak1111",
+      "AK1111",
+      "Vulnerable_Contract",
+      "IAK1111"
+    ]
   },
   {
     "address": "0x55d398326f99059fF775485246999027B3197955",
     "name": "BSC_USD",
     "chain": "bsc",
     "source": "static",
-    "context": "address constant BSC_USD = 0x55d398326f99059fF775485246999027B3197955"
+    "context": "address constant BSC_USD = 0x55d398326f99059fF775485246999027B3197955",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "BSC_USD",
+      "usdt",
+      "IUSDT"
+    ]
   },
   {
     "address": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
     "name": "PANCAKE_FACTORY",
     "chain": "bsc",
     "source": "static",
-    "context": "address constant PANCAKE_FACTORY = 0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73"
+    "context": "address constant PANCAKE_FACTORY = 0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "PANCAKE_FACTORY"
+    ]
   },
   {
     "address": "0x794ed5E8251C4A8D321CA263D9c0bC8Ecf5fA1FF",
     "name": "CAKE_LP",
     "chain": "bsc",
     "source": "static",
-    "context": "address constant CAKE_LP = 0x794ed5E8251C4A8D321CA263D9c0bC8Ecf5fA1FF"
+    "context": "address constant CAKE_LP = 0x794ed5E8251C4A8D321CA263D9c0bC8Ecf5fA1FF",
+    "onchain_name": null,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Cake-LP",
+      "CAKE_LP",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
+    ]
   },
   {
     "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
     "name": "PANCAKE_ROUTER",
     "chain": "bsc",
     "source": "static",
-    "context": "address constant PANCAKE_ROUTER = 0x10ED43C718714eb63d5aA57B78B54704E256024E"
+    "context": "address constant PANCAKE_ROUTER = 0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "PANCAKE_ROUTER"
+    ]
+  },
+  {
+    "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
+    "name": null,
+    "chain": "bsc",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
   }
 ]

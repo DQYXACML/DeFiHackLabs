@@ -526,7 +526,7 @@ contract BurnsBuild is SafemoonCore {
         return IRouter(firewallAddress);
     }
 
-    // 防火墙保护修饰符
+    // 防火墙保护修饰符（可写函数）
     modifier firewallProtected() {
         {
             IRouter _firewall = firewall();
@@ -539,6 +539,33 @@ contract BurnsBuild is SafemoonCore {
             IRouter _firewall = firewall();
             if (address(_firewall) != address(0)) {
                 try _firewall.releaseWithDetect(msg.data) {} catch {}
+            }
+        }
+    }
+
+    // 防火墙保护修饰符（view/pure函数）
+    modifier firewallProtectedView() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                bytes memory data = abi.encodeWithSignature("executeWithDetect(bytes)", msg.data);
+                bool ok;
+                assembly {
+                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
+                }
+                ok;
+            }
+        }
+        _;
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                bytes memory data = abi.encodeWithSignature("releaseWithDetect(bytes)", msg.data);
+                bool ok;
+                assembly {
+                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
+                }
+                ok;
             }
         }
     }
@@ -570,12 +597,7 @@ contract BurnsBuild is SafemoonCore {
     event FirewallUpdated(address indexed newFirewall);
 
 
-    receive() external payable {
-        IRouter _firewall = firewall();
-        if (address(_firewall) != address(0)) {
-            /* firewall skipped for receive */
-        }
-    }
+    receive() external payable {}
 
     constructor() {
         _rOwned[address(this)] = _rTotal;

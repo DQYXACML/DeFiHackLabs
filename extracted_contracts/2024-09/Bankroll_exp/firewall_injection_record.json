@@ -1,0 +1,22 @@
+{
+  "protocol": "Bankroll_exp",
+  "year_month": "2024-09",
+  "injection_timestamp": "2026-02-09T02:48:52.514202Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "BankrollNetworkStack",
+    "address": "0x564d4126af2b195ffaa7fb470ed658b1d9d07a54"
+  },
+  "injected_contracts": [
+    {
+      "file": "BankrollNetworkStack.sol",
+      "functions": [
+        "buyFor",
+        "withdraw",
+        "sell"
+      ]
+    }
+  ],
+  "total_functions": 3,
+  "status": "success"
+}

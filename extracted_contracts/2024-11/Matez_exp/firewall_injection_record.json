@@ -1,0 +1,22 @@
+{
+  "protocol": "Matez_exp",
+  "year_month": "2024-11",
+  "injection_timestamp": "2026-02-09T16:06:58.048205Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "MatezStakingProgram",
+    "address": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa"
+  },
+  "injected_contracts": [
+    {
+      "file": "MatezStakingProgram.sol",
+      "functions": [
+        "register",
+        "stake",
+        "claim"
+      ]
+    }
+  ],
+  "total_functions": 3,
+  "status": "success"
+}

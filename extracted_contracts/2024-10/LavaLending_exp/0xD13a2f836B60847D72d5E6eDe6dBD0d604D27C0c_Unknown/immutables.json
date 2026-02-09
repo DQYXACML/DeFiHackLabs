@@ -1,0 +1,320 @@
+{
+  "compiler_version": "v0.8.20+commit.a1b79de6",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "paris",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 3495,
+  "values": {
+    "./src/UniV3/oracle/WrapperOracle.sol:WrapperOracle": [
+      {
+        "label": "114",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:UNIT_0",
+        "offset": 939,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "116",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:UNIT_1",
+        "offset": 984,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "118",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:TO_WAD_0",
+        "offset": 1668,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "120",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:TO_WAD_1",
+        "offset": 1719,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000e8d4a51000",
+        "value_int": "1000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "122",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:TO_WAD_ORACLE_0",
+        "offset": 2146,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000002540be400",
+        "value_int": "10000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "124",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:TO_WAD_ORACLE_1",
+        "offset": 2108,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000002540be400",
+        "value_int": "10000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "126",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 168,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "126",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 233,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "126",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 537,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "126",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 718,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "126",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 1109,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "126",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 1308,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "126",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 1442,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "128",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:priceFeed0",
+        "offset": 310,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000639fe6ab55c921f74e7fac1ee960c0b6293ba612",
+        "value_int": "568755998926204250539241987082278224535517636114",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "128",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:priceFeed0",
+        "offset": 1901,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000639fe6ab55c921f74e7fac1ee960c0b6293ba612",
+        "value_int": "568755998926204250539241987082278224535517636114",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "130",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:priceFeed1",
+        "offset": 386,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000050834f3163758fcc1df9973b6e91f0f0f0434ad3",
+        "value_int": "459647557963543248627213005647349581271106013907",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "130",
+        "var_name": "./src/UniV3/oracle/WrapperOracle.sol:priceFeed1",
+        "offset": 1863,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000050834f3163758fcc1df9973b6e91f0f0f0434ad3",
+        "value_int": "459647557963543248627213005647349581271106013907",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/UniV3/oracle/WrapperOracle.sol:WrapperOracle": [
+      {
+        "label": "958",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:UNIT_0",
+        "offset": 939,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "960",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:UNIT_1",
+        "offset": 984,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "962",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:TO_WAD_0",
+        "offset": 1668,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "964",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:TO_WAD_1",
+        "offset": 1719,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000e8d4a51000",
+        "value_int": "1000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "966",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:TO_WAD_ORACLE_0",
+        "offset": 2146,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000002540be400",
+        "value_int": "10000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "968",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:TO_WAD_ORACLE_1",
+        "offset": 2108,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000002540be400",
+        "value_int": "10000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "970",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 168,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "970",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 233,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "970",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 537,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "970",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 718,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "970",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 1109,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "970",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 1308,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "970",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:pool",
+        "offset": 1442,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000006700b021a8bcfae25a2493d16d7078c928c13151",
+        "value_int": "588041392610789112827526845158771701408879161681",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "972",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:priceFeed0",
+        "offset": 310,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000639fe6ab55c921f74e7fac1ee960c0b6293ba612",
+        "value_int": "568755998926204250539241987082278224535517636114",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "972",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:priceFeed0",
+        "offset": 1901,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000639fe6ab55c921f74e7fac1ee960c0b6293ba612",
+        "value_int": "568755998926204250539241987082278224535517636114",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "974",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:priceFeed1",
+        "offset": 386,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000050834f3163758fcc1df9973b6e91f0f0f0434ad3",
+        "value_int": "459647557963543248627213005647349581271106013907",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "974",
+        "var_name": "src/UniV3/oracle/WrapperOracle.sol:priceFeed1",
+        "offset": 1863,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000050834f3163758fcc1df9973b6e91f0f0f0434ad3",
+        "value_int": "459647557963543248627213005647349581271106013907",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

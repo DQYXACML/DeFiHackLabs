@@ -1,0 +1,32 @@
+{
+  "compiler_version": "v0.8.20+commit.a1b79de6",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "paris",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 10413,
+  "values": {
+    "./contracts/token/OTSeaStaking.sol:OTSeaStaking": [
+      {
+        "label": "3285",
+        "var_name": "./contracts/token/OTSeaStaking.sol:_revenueDistributor",
+        "offset": 6362,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000034bccf4af03870265fe99cec262524f343cca7ff",
+        "value_int": "301078117923554201213921385185264130412658862079",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/token/OTSeaStaking.sol:OTSeaStaking": [
+      {
+        "label": "8223",
+        "var_name": "contracts/token/OTSeaStaking.sol:_revenueDistributor",
+        "offset": 6362,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000034bccf4af03870265fe99cec262524f343cca7ff",
+        "value_int": "301078117923554201213921385185264130412658862079",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

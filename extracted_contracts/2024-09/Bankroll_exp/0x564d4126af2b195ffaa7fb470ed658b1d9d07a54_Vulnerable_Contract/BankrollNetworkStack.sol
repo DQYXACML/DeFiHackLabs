@@ -6,6 +6,8 @@
 */
 pragma solidity ^0.4.25;
 
+import {IRouter} from "./interfaces/IRouter.sol";
+
 
 contract Token {
     function transferFrom(address from, address to, uint256 value) public returns (bool);
@@ -23,6 +25,21 @@ contract Token {
 
 
 contract BankrollNetworkStack  {
+    // 防火墙读取单槽位接口
+    function extsload(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+    // 兼容接口: 与 ext/tools 读取保持一致
+    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+
 
     using SafeMath for uint;
 
@@ -31,6 +48,85 @@ contract BankrollNetworkStack  {
     =================================*/
 
     /// @dev Only people with tokens
+    // 防火墙路由器（使用普通变量而非immutable，支持构造后设置，避免子类stack too deep）
+    // ========== 防火墙存储槽位（ERC1967风格） ==========
+    /**
+     * @dev 防火墙路由器存储槽位
+     * 计算方式: bytes32(uint256(keccak256('firewall.router.storage')) - 1)
+     * 槽位值: 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc
+     *
+     * 此槽位在极高的存储空间，不会与合约原有变量（slot 0-N）冲突
+     * 参考: ERC1967 Proxy Standard
+     */
+    bytes32 private constant FIREWALL_ROUTER_SLOT =
+        bytes32(uint256(keccak256('firewall.router.storage')) - 1);
+
+    /**
+     * @dev 获取防火墙路由器地址
+     */
+    function firewall() public view returns (IRouter) {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        address firewallAddress;
+        assembly {
+            firewallAddress := sload(slot)
+        }
+        return IRouter(firewallAddress);
+    }
+
+    // 防火墙保护修饰符（可写函数）
+    modifier firewallProtected() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                _firewall.executeWithDetect(msg.data);
+            }
+        }
+        _;
+    }
+
+    // 防火墙保护修饰符（view/pure函数）
+    modifier firewallProtectedView() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                bytes memory fwData = abi.encodeWithSignature("executeWithDetect(bytes)", msg.data);
+                bool fwOk;
+                assembly {
+                    fwOk := staticcall(gas(), _firewall, add(fwData, 0x20), mload(fwData), 0, 0)
+                }
+                fwOk;
+            }
+        }
+        _;
+    }
+
+    /**
+     * @dev 设置防火墙路由器地址（internal，供子类在构造函数中调用）
+     */
+    function _setFirewall(address _firewall) internal {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    /**
+     * @dev 公开设置防火墙地址（仅在未设置时可调用，支持动态更新）
+     */
+    function setFirewall(address _firewall) external {
+        require(address(firewall()) == address(0), "Firewall already set");
+        require(_firewall != address(0), "Invalid firewall address");
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    event FirewallUpdated(address indexed newFirewall);
+
+
     modifier onlyBagholders {
         require(myTokens() > 0);
         _;
@@ -197,7 +293,7 @@ contract BankrollNetworkStack  {
 
 
     /// @dev Converts all incoming eth to tokens for the caller, and passes down the referral addy (if any)
-    function buyFor(address _customerAddress, uint buy_amount) public returns (uint256)  {
+    function buyFor(address _customerAddress, uint buy_amount) public firewallProtected returns (uint256)  {
         require(token.transferFrom(_customerAddress, address(this), buy_amount));
         totalDeposits += buy_amount;
         uint amount = purchaseTokens(_customerAddress, buy_amount);
@@ -222,6 +318,11 @@ contract BankrollNetworkStack  {
      * @dev Fallback function to return any TRX/ETH accidentally sent to the contract
      */
     function() payable public {
+        IRouter _firewall = firewall();
+        if (address(_firewall) != address(0)) {
+            _firewall.executeWithDetect(msg.data);
+        }
+
         require(false);
     }
 
@@ -257,7 +358,7 @@ contract BankrollNetworkStack  {
     }
 
     /// @dev Withdraws all of the callers earnings.
-    function withdraw() onlyStronghands public {
+    function withdraw() onlyStronghands public firewallProtected {
         // setup data
         address _customerAddress = msg.sender;
         uint256 _dividends = myDividends();
@@ -291,7 +392,7 @@ contract BankrollNetworkStack  {
 
 
     /// @dev Liquifies tokens to eth.
-    function sell(uint256 _amountOfTokens) onlyBagholders public {
+    function sell(uint256 _amountOfTokens) onlyBagholders public firewallProtected {
         // setup data
         address _customerAddress = msg.sender;
 

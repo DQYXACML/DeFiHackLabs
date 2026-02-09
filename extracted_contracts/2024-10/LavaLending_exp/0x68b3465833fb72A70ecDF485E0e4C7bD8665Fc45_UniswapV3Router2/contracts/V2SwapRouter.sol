@@ -2,8 +2,8 @@
 pragma solidity =0.7.6;
 pragma abicoder v2;
 
-import '../@uniswap/v3-core/contracts/libraries/LowGasSafeMath.sol';
-import '../@openzeppelin/contracts/token/ERC20/IERC20.sol';
+import '@uniswap/v3-core/contracts/libraries/LowGasSafeMath.sol';
+import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 
 import './interfaces/IV2SwapRouter.sol';
 import './base/ImmutableState.sol';

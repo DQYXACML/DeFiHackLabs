@@ -2,9 +2,9 @@
 pragma solidity ^0.8.0;
 pragma abicoder v2;
 
-import { Ownable } from "../@openzeppelin/contracts/access/Ownable.sol";
+import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 import { OFT } from "./token/oft/v1/OFT.sol";
-import { AccessControl } from "../@openzeppelin/contracts/access/AccessControl.sol";
+import { AccessControl } from "@openzeppelin/contracts/access/AccessControl.sol";
 
 contract AkashaOFT is OFT {
     bytes32 public constant OPERATOR_ROLE = keccak256("OPERATOR_ROLE");

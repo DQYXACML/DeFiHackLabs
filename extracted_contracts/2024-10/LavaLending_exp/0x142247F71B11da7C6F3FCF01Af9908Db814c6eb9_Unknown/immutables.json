@@ -1,0 +1,158 @@
+{
+  "compiler_version": "v0.8.20+commit.a1b79de6",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "paris",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 1353,
+  "values": {
+    "./src/UniV3/oracle/ChangeDenominator.sol:ChangeDenominator": [
+      {
+        "label": "36",
+        "var_name": "./src/UniV3/oracle/ChangeDenominator.sol:oracle",
+        "offset": 241,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000d13a2f836b60847d72d5e6ede6dbd0d604d27c0c",
+        "value_int": "1194476653320854639346000468153541953510490405900",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "36",
+        "var_name": "./src/UniV3/oracle/ChangeDenominator.sol:oracle",
+        "offset": 471,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000d13a2f836b60847d72d5e6ede6dbd0d604d27c0c",
+        "value_int": "1194476653320854639346000468153541953510490405900",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "39",
+        "var_name": "./src/UniV3/oracle/ChangeDenominator.sol:denominatorUSD",
+        "offset": 343,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000639fe6ab55c921f74e7fac1ee960c0b6293ba612",
+        "value_int": "568755998926204250539241987082278224535517636114",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "39",
+        "var_name": "./src/UniV3/oracle/ChangeDenominator.sol:denominatorUSD",
+        "offset": 605,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000639fe6ab55c921f74e7fac1ee960c0b6293ba612",
+        "value_int": "568755998926204250539241987082278224535517636114",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41",
+        "var_name": "./src/UniV3/oracle/ChangeDenominator.sol:oracle0Decimals",
+        "offset": 304,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41",
+        "var_name": "./src/UniV3/oracle/ChangeDenominator.sol:oracle0Decimals",
+        "offset": 789,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43",
+        "var_name": "./src/UniV3/oracle/ChangeDenominator.sol:oracle1Decimals",
+        "offset": 172,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43",
+        "var_name": "./src/UniV3/oracle/ChangeDenominator.sol:oracle1Decimals",
+        "offset": 860,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/UniV3/oracle/ChangeDenominator.sol:ChangeDenominator": [
+      {
+        "label": "220",
+        "var_name": "src/UniV3/oracle/ChangeDenominator.sol:oracle",
+        "offset": 241,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000d13a2f836b60847d72d5e6ede6dbd0d604d27c0c",
+        "value_int": "1194476653320854639346000468153541953510490405900",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "220",
+        "var_name": "src/UniV3/oracle/ChangeDenominator.sol:oracle",
+        "offset": 471,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000d13a2f836b60847d72d5e6ede6dbd0d604d27c0c",
+        "value_int": "1194476653320854639346000468153541953510490405900",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "223",
+        "var_name": "src/UniV3/oracle/ChangeDenominator.sol:denominatorUSD",
+        "offset": 343,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000639fe6ab55c921f74e7fac1ee960c0b6293ba612",
+        "value_int": "568755998926204250539241987082278224535517636114",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "223",
+        "var_name": "src/UniV3/oracle/ChangeDenominator.sol:denominatorUSD",
+        "offset": 605,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000639fe6ab55c921f74e7fac1ee960c0b6293ba612",
+        "value_int": "568755998926204250539241987082278224535517636114",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "225",
+        "var_name": "src/UniV3/oracle/ChangeDenominator.sol:oracle0Decimals",
+        "offset": 304,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "225",
+        "var_name": "src/UniV3/oracle/ChangeDenominator.sol:oracle0Decimals",
+        "offset": 789,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "227",
+        "var_name": "src/UniV3/oracle/ChangeDenominator.sol:oracle1Decimals",
+        "offset": 172,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "227",
+        "var_name": "src/UniV3/oracle/ChangeDenominator.sol:oracle1Decimals",
+        "offset": 860,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

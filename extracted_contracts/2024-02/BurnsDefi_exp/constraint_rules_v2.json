@@ -7,228 +7,13 @@
   },
   "constraints": [
     {
-      "function": "flashLoan",
-      "signature": "flashLoan(uint256,uint256,address,uint256)",
-      "attack_pattern": "flashloan_attack",
-      "constraint": {
-        "type": "capped_iterated_threshold",
-        "expression": "amount > 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 317793769928036077741240394471075972399497216 iterations (capped)",
-        "variables": {
-          "amount": {
-            "source": "function_parameter",
-            "index": 0,
-            "type": "uint256",
-            "value_expr": "250_000 * 1e18"
-          },
-          "balance_mapping_decreased": {
-            "source": "storage",
-            "slot": "84698862266991854904005734286741600295973971312225846189512318546084701436236",
-            "type": "uint256",
-            "semantic_name": "balance_mapping_decreased",
-            "before_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
-            "after_value": 115792089151263877708212007105076049899476168743876059489568517392279208352122
-          }
-        },
-        "danger_condition": "amount >= 104212880307641093124296685529473035261865616296743950790111826767231271829504",
-        "safe_condition": "amount <= 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "threshold_value": 34737626769213695565514836164503977698005748977364513567099950545353310208000
-      },
-      "analysis": {
-        "state_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
-        "threshold": 34737626769213696057066308958677210601967537462352961162819771231134026831409,
-        "coefficient": 0.3,
-        "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代317793769928036077741240394471075972399497216次超过上限10000，使用保守阈值34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "correlation_type": "multiple",
-        "correlation_confidence": 0.75,
-        "ratio": 3.1779376992803608e+44,
-        "change_direction": "decrease"
-      }
-    },
-    {
-      "function": "flashLoan",
-      "signature": "flashLoan(uint256,uint256,address,uint256)",
-      "attack_pattern": "flashloan_attack",
-      "constraint": {
-        "type": "discrete_numeric",
-        "expression": "1 == 0",
-        "semantics": "Observed parameter value is zero",
-        "attack_values": [
-          0
-        ],
-        "variables": {
-          "value": {
-            "source": "function_parameter",
-            "index": 1,
-            "type": "uint256",
-            "value_expr": "0"
-          }
-        },
-        "range": {
-          "min": 0,
-          "max": 0
-        }
-      },
-      "analysis": {
-        "state_value": null,
-        "threshold": null,
-        "coefficient": null,
-        "attack_intensity": null,
-        "reasoning": "Parameter value observed as zero",
-        "correlation_type": "discrete",
-        "correlation_confidence": 0.2
-      }
-    },
-    {
-      "function": "flashLoan",
-      "signature": "flashLoan(uint256,uint256,address,uint256)",
-      "attack_pattern": "flashloan_attack",
-      "constraint": {
-        "type": "discrete_addresses",
-        "expression": "2 in observed_addresses",
-        "semantics": "Restrict addresses to observed attack set",
-        "attack_values": [
-          "0x4fb9657ac5d311dd54b37a75cfb873b127eb21fd"
-        ],
-        "variables": {
-          "addresses": {
-            "source": "function_parameter",
-            "index": 2,
-            "type": "address",
-            "value_expr": "address(this)"
-          }
-        }
-      },
-      "analysis": {
-        "state_value": null,
-        "threshold": null,
-        "coefficient": null,
-        "attack_intensity": null,
-        "reasoning": "Address whitelist derived from attack script",
-        "correlation_type": "discrete",
-        "correlation_confidence": 0.3
-      }
-    },
-    {
-      "function": "flashLoan",
-      "signature": "flashLoan(uint256,uint256,address,uint256)",
-      "attack_pattern": "flashloan_attack",
-      "constraint": {
-        "type": "capped_iterated_threshold",
-        "expression": "data > 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 79448442482009020885502385278863428412102770950144 iterations (capped)",
-        "variables": {
-          "data": {
-            "source": "function_parameter",
-            "index": 3,
-            "type": "uint256",
-            "value_expr": "data"
-          },
-          "balance_mapping_decreased": {
-            "source": "storage",
-            "slot": "84698862266991854904005734286741600295973971312225846189512318546084701436236",
-            "type": "uint256",
-            "semantic_name": "balance_mapping_decreased",
-            "before_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
-            "after_value": 115792089151263877708212007105076049899476168743876059489568517392279208352122
-          }
-        },
-        "danger_condition": "data >= 104212880307641093124296685529473035261865616296743950790111826767231271829504",
-        "safe_condition": "data <= 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "threshold_value": 34737626769213695565514836164503977698005748977364513567099950545353310208000
-      },
-      "analysis": {
-        "state_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
-        "threshold": 34737626769213696057066308958677210601967537462352961162819771231134026831409,
-        "coefficient": 0.3,
-        "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代79448442482009020885502385278863428412102770950144次超过上限10000，使用保守阈值34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "correlation_type": "multiple",
-        "correlation_confidence": 0.75,
-        "ratio": 7.944844248200902e+49,
-        "change_direction": "decrease"
-      }
-    },
-    {
-      "function": "getAmountsIn",
-      "signature": "getAmountsIn(uint256,address[])",
-      "attack_pattern": "large_deposit",
-      "constraint": {
-        "type": "capped_iterated_threshold",
-        "expression": "amountOut1 > 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 1588968849640180586459695607959166495483186118656 iterations (capped)",
-        "variables": {
-          "amountOut1": {
-            "source": "function_parameter",
-            "index": 0,
-            "type": "uint256",
-            "value_expr": "amountOut1"
-          },
-          "balance_mapping_decreased": {
-            "source": "storage",
-            "slot": "84698862266991854904005734286741600295973971312225846189512318546084701436236",
-            "type": "uint256",
-            "semantic_name": "balance_mapping_decreased",
-            "before_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
-            "after_value": 115792089151263877708212007105076049899476168743876059489568517392279208352122
-          }
-        },
-        "danger_condition": "amountOut1 >= 104212880307641093124296685529473035261865616296743950790111826767231271829504",
-        "safe_condition": "amountOut1 <= 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "threshold_value": 34737626769213695565514836164503977698005748977364513567099950545353310208000
-      },
-      "analysis": {
-        "state_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
-        "threshold": 57896044615356160095110514931128684336612562437254935271366285385223378052349,
-        "coefficient": 0.5,
-        "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代1588968849640180586459695607959166495483186118656次超过上限10000，使用保守阈值34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "correlation_type": "multiple",
-        "correlation_confidence": 0.75,
-        "ratio": 1.5889688496401806e+48,
-        "change_direction": "decrease"
-      }
-    },
-    {
-      "function": "getAmountsIn",
-      "signature": "getAmountsIn(uint256,address[])",
-      "attack_pattern": "large_deposit",
-      "constraint": {
-        "type": "discrete_addresses",
-        "expression": "1 in observed_addresses",
-        "semantics": "Restrict addresses to observed attack set",
-        "attack_values": [
-          "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
-          "0x91f1d3c7ddb8d5e290e71f893bad45f16e8bd7ba"
-        ],
-        "variables": {
-          "addresses": {
-            "source": "function_parameter",
-            "index": 1,
-            "type": "address[]",
-            "value_expr": "path"
-          }
-        }
-      },
-      "analysis": {
-        "state_value": null,
-        "threshold": null,
-        "coefficient": null,
-        "attack_intensity": null,
-        "reasoning": "Address whitelist derived from attack script",
-        "correlation_type": "discrete",
-        "correlation_confidence": 0.3
-      }
-    },
-    {
       "function": "burnToHolder",
       "signature": "burnToHolder(uint256,address)",
       "attack_pattern": "drain_attack",
       "constraint": {
         "type": "capped_iterated_threshold",
-        "expression": "amounts > 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 2310077140964092307800653109973368028195192832 iterations (capped)",
+        "expression": "amounts > 34737626769208842612621174013871840972486878666304896514058726510990700052480",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 2309607066475455609562212192130824639386484736 iterations (capped)",
         "variables": {
           "amounts": {
             "source": "function_parameter",
@@ -241,23 +26,23 @@
             "slot": "84698862266991854904005734286741600295973971312225846189512318546084701436236",
             "type": "uint256",
             "semantic_name": "balance_mapping_decreased",
-            "before_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
+            "before_value": 115792089230696153333577828096040715661150435455649085805403800950502724535243,
             "after_value": 115792089151263877708212007105076049899476168743876059489568517392279208352122
           }
         },
-        "danger_condition": "amounts >= 104212880307641093124296685529473035261865616296743950790111826767231271829504",
-        "safe_condition": "amounts <= 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "threshold_value": 34737626769213695565514836164503977698005748977364513567099950545353310208000
+        "danger_condition": "amounts >= 104212880307626540693367876113537727253157374728215509719800129795314782568448",
+        "safe_condition": "amounts <= 34737626769208842612621174013871840972486878666304896514058726510990700052480",
+        "threshold_value": 34737626769208842612621174013871840972486878666304896514058726510990700052480
       },
       "analysis": {
-        "state_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
-        "threshold": 34737626769213696057066308958677210601967537462352961162819771231134026831409,
+        "state_value": 115792089230696153333577828096040715661150435455649085805403800950502724535243,
+        "threshold": 34737626769208846000073348428812214698345130636694725741621140285150817360572,
         "coefficient": 0.3,
         "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代2310077140964092307800653109973368028195192832次超过上限10000，使用保守阈值34737626769213695565514836164503977698005748977364513567099950545353310208000",
+        "reasoning": "高频操作，原始迭代2309607066475455609562212192130824639386484736次超过上限10000，使用保守阈值34737626769208842612621174013871840972486878666304896514058726510990700052480",
         "correlation_type": "multiple",
         "correlation_confidence": 0.75,
-        "ratio": 2.3100771409640923e+45,
+        "ratio": 2.3096070664754556e+45,
         "change_direction": "decrease"
       }
     },
@@ -290,99 +75,29 @@
         "correlation_type": "discrete",
         "correlation_confidence": 0.3
       }
-    },
-    {
-      "function": "transfer",
-      "signature": "transfer(address,uint256)",
-      "attack_pattern": "large_deposit",
-      "constraint": {
-        "type": "discrete_addresses",
-        "expression": "0 in observed_addresses",
-        "semantics": "Restrict addresses to observed attack set",
-        "attack_values": [
-          "0xd5f05644ef5d0a36ca8c8b5177ffbd09ec63f92f"
-        ],
-        "variables": {
-          "addresses": {
-            "source": "function_parameter",
-            "index": 0,
-            "type": "address",
-            "value_expr": "address(DSP)"
-          }
-        }
-      },
-      "analysis": {
-        "state_value": null,
-        "threshold": null,
-        "coefficient": null,
-        "attack_intensity": null,
-        "reasoning": "Address whitelist derived from attack script",
-        "correlation_type": "discrete",
-        "correlation_confidence": 0.3
-      }
-    },
-    {
-      "function": "transfer",
-      "signature": "transfer(address,uint256)",
-      "attack_pattern": "large_deposit",
-      "constraint": {
-        "type": "capped_iterated_threshold",
-        "expression": "baseAmount > 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "semantics": "High-frequency operation: parameter affects balance_mapping_decreased with estimated 317793769928036077741240394471075972399497216 iterations (capped)",
-        "variables": {
-          "baseAmount": {
-            "source": "function_parameter",
-            "index": 1,
-            "type": "uint256",
-            "value_expr": "baseAmount"
-          },
-          "balance_mapping_decreased": {
-            "source": "storage",
-            "slot": "84698862266991854904005734286741600295973971312225846189512318546084701436236",
-            "type": "uint256",
-            "semantic_name": "balance_mapping_decreased",
-            "before_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
-            "after_value": 115792089151263877708212007105076049899476168743876059489568517392279208352122
-          }
-        },
-        "danger_condition": "baseAmount >= 104212880307641093124296685529473035261865616296743950790111826767231271829504",
-        "safe_condition": "baseAmount <= 34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "threshold_value": 34737626769213695565514836164503977698005748977364513567099950545353310208000
-      },
-      "analysis": {
-        "state_value": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
-        "threshold": 57896044615356160095110514931128684336612562437254935271366285385223378052349,
-        "coefficient": 0.5,
-        "attack_intensity": 0.0,
-        "reasoning": "高频操作，原始迭代317793769928036077741240394471075972399497216次超过上限10000，使用保守阈值34737626769213695565514836164503977698005748977364513567099950545353310208000",
-        "correlation_type": "multiple",
-        "correlation_confidence": 0.75,
-        "ratio": 3.1779376992803608e+44,
-        "change_direction": "decrease"
-      }
     }
   ],
   "state_analysis": {
     "slot_changes": [
       {
         "slot": "84698862266991854904005734286741600295973971312225846189512318546084701436236",
-        "before": 115792089230712320190221029862257368673225124874509870542732570770446756104699,
+        "before": 115792089230696153333577828096040715661150435455649085805403800950502724535243,
         "after": 115792089151263877708212007105076049899476168743876059489568517392279208352122,
         "change_pct": 0.0,
         "is_new_slot": false
       },
       {
         "slot": "8",
-        "before": 115792089234435451691210408734372287152517739725046579312049480992491922601307,
+        "before": 115792089234427379509460309825070004997197167572364998285047544527014623995251,
         "after": 115792089178748581544977283843866212842292857053854107239022392453920056253496,
         "change_pct": 0.0,
         "is_new_slot": false
       },
       {
         "slot": "98521912898304110675870976153671229506380941016514884467413255631823579132687",
-        "before": 842387768628802597799297778540369909942724041966391214537089097915,
+        "before": 842410261771806545411386479973915023440346725291288103526523455259,
         "after": 24595887922627494642916807203614156224445131570941558234007091058324,
-        "change_pct": 2819.78,
+        "change_pct": 2819.7,
         "is_new_slot": false
       },
       {
@@ -404,7 +119,7 @@
   },
   "attack_metadata": {
     "loop_count": 1,
-    "total_calls": 5
+    "total_calls": 10
   },
   "metadata": {
     "extraction_version": "2.0.0",

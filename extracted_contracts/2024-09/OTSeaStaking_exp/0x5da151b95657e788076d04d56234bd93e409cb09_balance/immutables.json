@@ -1,0 +1,274 @@
+{
+  "compiler_version": "v0.8.20+commit.a1b79de6",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "paris",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 7624,
+  "values": {
+    "./contracts/token/OTSeaERC20.sol:OTSeaERC20": [
+      {
+        "label": "5101",
+        "var_name": "./contracts/token/OTSeaERC20.sol:migrationContract",
+        "offset": 510,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000e4eacc41aa1a8208d57c1b4766b6b69e1cfe50e9",
+        "value_int": "1306886063375081902706493920066439971942388617449",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5101",
+        "var_name": "./contracts/token/OTSeaERC20.sol:migrationContract",
+        "offset": 4484,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000e4eacc41aa1a8208d57c1b4766b6b69e1cfe50e9",
+        "value_int": "1306886063375081902706493920066439971942388617449",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5104",
+        "var_name": "./contracts/token/OTSeaERC20.sol:stakingContract",
+        "offset": 1319,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f2c8e860ca12cde3f3195423ecf54427a4f30916",
+        "value_int": "1386056158565120374726046221738184432937432451350",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5104",
+        "var_name": "./contracts/token/OTSeaERC20.sol:stakingContract",
+        "offset": 4567,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f2c8e860ca12cde3f3195423ecf54427a4f30916",
+        "value_int": "1386056158565120374726046221738184432937432451350",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5104",
+        "var_name": "./contracts/token/OTSeaERC20.sol:stakingContract",
+        "offset": 5519,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f2c8e860ca12cde3f3195423ecf54427a4f30916",
+        "value_int": "1386056158565120374726046221738184432937432451350",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5107",
+        "var_name": "./contracts/token/OTSeaERC20.sol:revenueDistributor",
+        "offset": 1267,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000034bccf4af03870265fe99cec262524f343cca7ff",
+        "value_int": "301078117923554201213921385185264130412658862079",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5107",
+        "var_name": "./contracts/token/OTSeaERC20.sol:revenueDistributor",
+        "offset": 5366,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000034bccf4af03870265fe99cec262524f343cca7ff",
+        "value_int": "301078117923554201213921385185264130412658862079",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/token/OTSeaMigration.sol:OTSeaMigration": [
+      {
+        "label": "6182",
+        "var_name": "./contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 787,
+        "length": 32,
+        "value_hex": "0x0080fd5b50610249610325366004611a54565b6001600160a01b031660009081",
+        "value_int": "227905027937408411015968116741099489904601046587702911826194340261125984385",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6182",
+        "var_name": "./contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 2651,
+        "length": 32,
+        "value_hex": "0x9586166004820152602481019490945260448401929092526064830152909116",
+        "value_int": "67631526372636234995459169622636341434432099142789258154186190285266129817878",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6182",
+        "var_name": "./contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 2950,
+        "length": 32,
+        "value_hex": "0x8152600401602060405180830381865afa158015610ba7573d6000803e3d6000",
+        "value_int": "58493901602187126605151330765830393061721147233944044177403389551400812634112",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6182",
+        "var_name": "./contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 3542,
+        "length": 32,
+        "value_hex": "0x631e4fbdf760e01b8152600060048201526024015b60405180910390fd5b610d",
+        "value_int": "44832527781130028803140675004695894843998154061577503837179536050532751466765",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6182",
+        "var_name": "./contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 5724,
+        "length": 32,
+        "value_hex": "0x90869061167390600160281b900461ffff1684611c20565b61167d9190611c37",
+        "value_int": "65370804171623838655165404200776866367217313458306638133173912729855461497911",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6182",
+        "var_name": "./contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 5868,
+        "length": 32,
+        "value_hex": "0x00815181106116fc576116fc611c82565b60200260200101906001600160a01b",
+        "value_int": "228485792368558765436659500916046685226231766271070663988652649818410229787",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/token/OTSeaStaking.sol:OTSeaStaking": [
+      {
+        "label": "7484",
+        "var_name": "./contracts/token/OTSeaStaking.sol:_revenueDistributor",
+        "offset": 6362,
+        "length": 32,
+        "value_hex": "0x606091505b5050905080610e0c576001600160a01b0383166000908152600660",
+        "value_int": "43592653701844774277184686845723638395451922345339142061018197181874390959712",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/token/OTSeaERC20.sol:OTSeaERC20": [
+      {
+        "label": "14775",
+        "var_name": "contracts/token/OTSeaERC20.sol:migrationContract",
+        "offset": 510,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000e4eacc41aa1a8208d57c1b4766b6b69e1cfe50e9",
+        "value_int": "1306886063375081902706493920066439971942388617449",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14775",
+        "var_name": "contracts/token/OTSeaERC20.sol:migrationContract",
+        "offset": 4484,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000e4eacc41aa1a8208d57c1b4766b6b69e1cfe50e9",
+        "value_int": "1306886063375081902706493920066439971942388617449",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14778",
+        "var_name": "contracts/token/OTSeaERC20.sol:stakingContract",
+        "offset": 1319,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f2c8e860ca12cde3f3195423ecf54427a4f30916",
+        "value_int": "1386056158565120374726046221738184432937432451350",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14778",
+        "var_name": "contracts/token/OTSeaERC20.sol:stakingContract",
+        "offset": 4567,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f2c8e860ca12cde3f3195423ecf54427a4f30916",
+        "value_int": "1386056158565120374726046221738184432937432451350",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14778",
+        "var_name": "contracts/token/OTSeaERC20.sol:stakingContract",
+        "offset": 5519,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f2c8e860ca12cde3f3195423ecf54427a4f30916",
+        "value_int": "1386056158565120374726046221738184432937432451350",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14781",
+        "var_name": "contracts/token/OTSeaERC20.sol:revenueDistributor",
+        "offset": 1267,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000034bccf4af03870265fe99cec262524f343cca7ff",
+        "value_int": "301078117923554201213921385185264130412658862079",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14781",
+        "var_name": "contracts/token/OTSeaERC20.sol:revenueDistributor",
+        "offset": 5366,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000034bccf4af03870265fe99cec262524f343cca7ff",
+        "value_int": "301078117923554201213921385185264130412658862079",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/token/OTSeaMigration.sol:OTSeaMigration": [
+      {
+        "label": "15856",
+        "var_name": "contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 787,
+        "length": 32,
+        "value_hex": "0x0080fd5b50610249610325366004611a54565b6001600160a01b031660009081",
+        "value_int": "227905027937408411015968116741099489904601046587702911826194340261125984385",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15856",
+        "var_name": "contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 2651,
+        "length": 32,
+        "value_hex": "0x9586166004820152602481019490945260448401929092526064830152909116",
+        "value_int": "67631526372636234995459169622636341434432099142789258154186190285266129817878",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15856",
+        "var_name": "contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 2950,
+        "length": 32,
+        "value_hex": "0x8152600401602060405180830381865afa158015610ba7573d6000803e3d6000",
+        "value_int": "58493901602187126605151330765830393061721147233944044177403389551400812634112",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15856",
+        "var_name": "contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 3542,
+        "length": 32,
+        "value_hex": "0x631e4fbdf760e01b8152600060048201526024015b60405180910390fd5b610d",
+        "value_int": "44832527781130028803140675004695894843998154061577503837179536050532751466765",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15856",
+        "var_name": "contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 5724,
+        "length": 32,
+        "value_hex": "0x90869061167390600160281b900461ffff1684611c20565b61167d9190611c37",
+        "value_int": "65370804171623838655165404200776866367217313458306638133173912729855461497911",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15856",
+        "var_name": "contracts/token/OTSeaMigration.sol:multiSigAdmin",
+        "offset": 5868,
+        "length": 32,
+        "value_hex": "0x00815181106116fc576116fc611c82565b60200260200101906001600160a01b",
+        "value_int": "228485792368558765436659500916046685226231766271070663988652649818410229787",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/token/OTSeaStaking.sol:OTSeaStaking": [
+      {
+        "label": "17158",
+        "var_name": "contracts/token/OTSeaStaking.sol:_revenueDistributor",
+        "offset": 6362,
+        "length": 32,
+        "value_hex": "0x606091505b5050905080610e0c576001600160a01b0383166000908152600660",
+        "value_int": "43592653701844774277184686845723638395451922345339142061018197181874390959712",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

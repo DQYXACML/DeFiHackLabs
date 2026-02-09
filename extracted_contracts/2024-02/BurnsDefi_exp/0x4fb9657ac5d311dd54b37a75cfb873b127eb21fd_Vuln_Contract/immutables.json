@@ -1,0 +1,32 @@
+{
+  "compiler_version": "v0.8.23+commit.f704f362",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "paris",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 12818,
+  "values": {
+    "./contracts/burnsBuild.sol:BurnsBuild": [
+      {
+        "label": "3015",
+        "var_name": "./contracts/burnsBuild.sol:dead",
+        "offset": 9048,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000000dead",
+        "value_int": "57005",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/burnsBuild.sol:BurnsBuild": [
+      {
+        "label": "12677",
+        "var_name": "contracts/burnsBuild.sol:dead",
+        "offset": 9048,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000000000dead",
+        "value_int": "57005",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

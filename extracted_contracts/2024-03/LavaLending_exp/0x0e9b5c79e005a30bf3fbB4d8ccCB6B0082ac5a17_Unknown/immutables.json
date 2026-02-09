@@ -1,0 +1,1138 @@
+{
+  "compiler_version": "v0.7.6+commit.7338295f",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "istanbul",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 20818,
+  "values": {
+    "./AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "1945",
+        "var_name": "./OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "475",
+        "var_name": "./OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "475",
+        "var_name": "./OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "477",
+        "var_name": "./OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "477",
+        "var_name": "./OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "1945",
+        "var_name": "./OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "475",
+        "var_name": "./OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "475",
+        "var_name": "./OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "477",
+        "var_name": "./OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "477",
+        "var_name": "./OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contract/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "4229",
+        "var_name": "./contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4229",
+        "var_name": "./contract/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4231",
+        "var_name": "./contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4231",
+        "var_name": "./contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5699",
+        "var_name": "./contract/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contract/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "4229",
+        "var_name": "./contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4229",
+        "var_name": "./contract/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4231",
+        "var_name": "./contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4231",
+        "var_name": "./contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5699",
+        "var_name": "./contract/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "7983",
+        "var_name": "./contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7983",
+        "var_name": "./contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7985",
+        "var_name": "./contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7985",
+        "var_name": "./contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9453",
+        "var_name": "./contracts/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "7983",
+        "var_name": "./contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7983",
+        "var_name": "./contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7985",
+        "var_name": "./contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7985",
+        "var_name": "./contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9453",
+        "var_name": "./contracts/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/contract/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "11737",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11737",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11739",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11739",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13207",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/contract/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "11737",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11737",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11739",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11739",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13207",
+        "var_name": "./contracts/contract/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "15491",
+        "var_name": "./src/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15491",
+        "var_name": "./src/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15493",
+        "var_name": "./src/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15493",
+        "var_name": "./src/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16961",
+        "var_name": "./src/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "15491",
+        "var_name": "./src/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15491",
+        "var_name": "./src/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15493",
+        "var_name": "./src/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15493",
+        "var_name": "./src/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16961",
+        "var_name": "./src/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/contract/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "19245",
+        "var_name": "./src/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19245",
+        "var_name": "./src/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19247",
+        "var_name": "./src/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19247",
+        "var_name": "./src/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20715",
+        "var_name": "./src/contract/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/contract/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "19245",
+        "var_name": "./src/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19245",
+        "var_name": "./src/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19247",
+        "var_name": "./src/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19247",
+        "var_name": "./src/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20715",
+        "var_name": "./src/contract/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "22999",
+        "var_name": "OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "22999",
+        "var_name": "OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "23001",
+        "var_name": "OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "23001",
+        "var_name": "OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "24469",
+        "var_name": "OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "22999",
+        "var_name": "OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "22999",
+        "var_name": "OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "23001",
+        "var_name": "OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "23001",
+        "var_name": "OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "24469",
+        "var_name": "OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contract/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "26753",
+        "var_name": "contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "26753",
+        "var_name": "contract/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "26755",
+        "var_name": "contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "26755",
+        "var_name": "contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "28223",
+        "var_name": "contract/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contract/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "26753",
+        "var_name": "contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "26753",
+        "var_name": "contract/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "26755",
+        "var_name": "contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "26755",
+        "var_name": "contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "28223",
+        "var_name": "contract/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "30507",
+        "var_name": "contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30507",
+        "var_name": "contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30509",
+        "var_name": "contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30509",
+        "var_name": "contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "31977",
+        "var_name": "contracts/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "30507",
+        "var_name": "contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30507",
+        "var_name": "contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30509",
+        "var_name": "contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30509",
+        "var_name": "contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "31977",
+        "var_name": "contracts/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/contract/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "34261",
+        "var_name": "contracts/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34261",
+        "var_name": "contracts/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34263",
+        "var_name": "contracts/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34263",
+        "var_name": "contracts/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35731",
+        "var_name": "contracts/contract/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/contract/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "34261",
+        "var_name": "contracts/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34261",
+        "var_name": "contracts/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34263",
+        "var_name": "contracts/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34263",
+        "var_name": "contracts/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35731",
+        "var_name": "contracts/contract/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "38015",
+        "var_name": "src/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38015",
+        "var_name": "src/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38017",
+        "var_name": "src/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38017",
+        "var_name": "src/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "39485",
+        "var_name": "src/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "38015",
+        "var_name": "src/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38015",
+        "var_name": "src/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38017",
+        "var_name": "src/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38017",
+        "var_name": "src/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "39485",
+        "var_name": "src/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/contract/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "41769",
+        "var_name": "src/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3609,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41769",
+        "var_name": "src/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 13295,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41771",
+        "var_name": "src/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 6698,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41771",
+        "var_name": "src/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 13340,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43239",
+        "var_name": "src/contract/OffchainAggregator.sol:decimals",
+        "offset": 3742,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/contract/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "41769",
+        "var_name": "src/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 3124,
+        "length": 32,
+        "value_hex": "0x07b3613cec565b6000546001600160a01b03163314610c87576040805162461b",
+        "value_int": "3483126676559860243068225902618632935012314151564738944431548051002050627099",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41769",
+        "var_name": "src/contract/OffchainAggregator.sol:minAnswer",
+        "offset": 12029,
+        "length": 32,
+        "value_hex": "0x6020850152612f09614faf565b60005b8560400151518160ff161015612ff757",
+        "value_int": "43479490537966138381824943239894087520511662672482082136639522481370989328215",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41771",
+        "var_name": "src/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 5956,
+        "length": 32,
+        "value_hex": "0x01600160a01b0319166001600160a01b03959092029390930135939093169290",
+        "value_int": "621939673564296922059906535226522502869950822308234112629364102739109778064",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41771",
+        "var_name": "src/contract/OffchainAggregator.sol:maxAnswer",
+        "offset": 12074,
+        "length": 32,
+        "value_hex": "0x2d57fe5b1a90508281601f8110612f3c57fe5b602002015115612f9357604080",
+        "value_int": "20509549380607425549068657981661042912391024544259984155389376101827735470208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43239",
+        "var_name": "src/contract/OffchainAggregator.sol:decimals",
+        "offset": 3257,
+        "length": 32,
+        "value_hex": "0xdc385d248f53963890600090a15b565b6001600160a01b038116600090815260",
+        "value_int": "99608412972008569828375737606340580225908414945386115997303620713939399168608",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

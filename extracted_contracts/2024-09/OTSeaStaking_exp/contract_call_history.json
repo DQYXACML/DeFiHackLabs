@@ -1,0 +1,597 @@
+{
+  "protocol": "OTSeaStaking_exp",
+  "contract_address": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+  "target_functions": [
+    "withdraw",
+    "claim"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "claim": {},
+    "withdraw": {
+      "0": {
+        "avoid": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          70
+        ]
+      }
+    }
+  },
+  "attack_block": 20738190,
+  "generated_at": "2026-02-09T12:38:13.837762Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0xb14b1aefb0f2126892a497dcf7009fa058da9ac4",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20570190,
+      "time": "2024-08-16T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            596387,
+            228444
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x330d68e987ca7703200154c0fe994e8388d76af6"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0xc4b29b488eb42d943e85b2f3c453420c660026bd",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20576190,
+      "time": "2024-08-17T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            48750
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x1bae9912844de2655c6272e24c4b380284a23bc1"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0x6d78c882018f3126ea25d59c1e4220abe60940a5",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20576190,
+      "time": "2024-08-17T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            770575
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x7c4ef3db893febb9769a26632fb90f08981b9e01"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0xe6bb12e97a3d83fbadf3c9449d9eb766b04b0600",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20612190,
+      "time": "2024-08-23T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            777240
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0xefb18ba34bea0db4a03f046a9dbf33c94022c506"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0xa23c83e20844bc861a57ebaad59ee4cc289d80ee",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20708190,
+      "time": "2024-09-08T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            572180
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x49730f1d24c8c63020973dcc811df84cd1b84227"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x8ef28433cc9b6eb038943e0ebfaeaf9fb586e6a4",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20600190,
+      "time": "2024-08-21T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            1904,
+            996354
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0xf7aac868f624ed1894f9f09b1a6183017e90dd35"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0x11c0126272aaa213a1df362dbbfdc1e6d1c3d637",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20696190,
+      "time": "2024-09-06T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            826730
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0xbeb452fd713ab75756b814d0068c168a403c3cf4"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0x5302d98e07506755e8548148740b6a244b82cc61",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20648190,
+      "time": "2024-08-29T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            519155
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0xcd09681274114f76505d527b0f7e304d83becd6a"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0x782093288e3411cb1e79007669bb1d14f644e52a",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20624190,
+      "time": "2024-08-25T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            167080
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x8abdab6931106aac4ad41a5814816233d5401ac5"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0xd2c5cc7e0d277a98f6e8c3010a163224d2e8b2b2",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20612190,
+      "time": "2024-08-23T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            176598,
+            124063
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x4cdb8fe48c5bf105693d33d6e77fe999da7dbc45"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0x3a06b91ed84678fec083d440e4b9f0eb9c06fa4b",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20642190,
+      "time": "2024-08-28T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            394407,
+            123078
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x0d82dec1d47bd8537de0028ec189bc1e8ce7c594"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0xa668fe215a5733549d1a73ba0cf0eaaad15deb1d",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20696190,
+      "time": "2024-09-06T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            991709
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x72b195b2a17032f755b481987eb21fe01e7e1102"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0x0410ed42313db466bd0660025082c1ac04241470",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20642190,
+      "time": "2024-08-28T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            335014,
+            951678
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x5cf375542f7e7b34b787ac39e3a715db5429cf0d"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0xe61ed77ffe0e1506c0049aa448855a800d3a2a4f",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20558190,
+      "time": "2024-08-14T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            31772
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0xfd5863ae47a3372f97c13b8c1a144d83f21ca6ca"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0x7363d90f429664b8cc62c22ff9d1f6f177a1b418",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20588190,
+      "time": "2024-08-19T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            932727,
+            682176
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x0df22b2a1bbaa8ed61e9e2ecdaf57dc1c4eae3f5"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0x52f27b172c56cd8bde9e35b1ef7d1dc2e8f53b84",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20696190,
+      "time": "2024-09-06T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            756590,
+            77682
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0xd3ad6ccec77eb96e5afefbc31af7cf161ebcea17"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0x1f245758da75358b9d75c1a9e6da76c8aec45313",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20636190,
+      "time": "2024-08-27T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            248793
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0x05b0e6b7941de1229eeae989b5d8479d317e3281"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0xe5743ce9b6af41e61a921238daadab3eb7fe1460",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20576190,
+      "time": "2024-08-17T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            693442
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0xf1e61f175a9a8adc02abb1c7e92f1049fba2a853"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x66dc998ca65484df68a39dad5518d21de1126fdb",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20660190,
+      "time": "2024-08-31T08:44:59Z",
+      "function": "withdraw",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            592504
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0xb9a2c3709f734725244f8c32ea918007fc04bc1b"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x762565f8b9caf93d07dfb7be061584e2052763bb",
+      "to": "0xF2c8e860ca12Cde3F3195423eCf54427A4f30916",
+      "value": "0",
+      "blockNumber": 20708190,
+      "time": "2024-09-08T08:44:59Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_indexes",
+          "type": "uint256[]",
+          "value": [
+            308314
+          ]
+        },
+        {
+          "name": "_receiver",
+          "type": "address",
+          "value": "0xb203cc722411d4832937a49782df6fbd1c616d23"
+        }
+      ]
+    }
+  ]
+}

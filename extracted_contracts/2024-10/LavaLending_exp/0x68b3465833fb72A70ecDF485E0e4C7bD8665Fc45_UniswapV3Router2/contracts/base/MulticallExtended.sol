@@ -2,7 +2,7 @@
 pragma solidity =0.7.6;
 pragma abicoder v2;
 
-import '../../@uniswap/v3-periphery/contracts/base/Multicall.sol';
+import '@uniswap/v3-periphery/contracts/base/Multicall.sol';
 
 import '../interfaces/IMulticallExtended.sol';
 import '../base/PeripheryValidationExtended.sol';

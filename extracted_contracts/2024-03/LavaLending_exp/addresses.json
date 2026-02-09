@@ -60,6 +60,115 @@
     ]
   },
   {
+    "address": "0x16Cb622CaE7Ad9fd2b0780b2026ED301414781fE",
+    "name": "aUSDC",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "address private constant aUSDC = 0x16Cb622CaE7Ad9fd2b0780b2026ED301414781fE",
+    "onchain_name": null,
+    "symbol": "aUSDC",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "aUSDC",
+      "ausdc",
+      "AUSDC",
+      "IaUSDC"
+    ]
+  },
+  {
+    "address": "0x16cba9A6a9BB38e339D4250dA0Afd919c6bDBDfE",
+    "name": "aUSDCe",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "address private constant aUSDCe = 0x16cba9A6a9BB38e339D4250dA0Afd919c6bDBDfE",
+    "onchain_name": null,
+    "symbol": "aUSDCe",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "aUSDCe",
+      "ausdce",
+      "AUSDCE",
+      "IaUSDCe"
+    ]
+  },
+  {
+    "address": "0x8Da6Bc74B2534030cD38C996C395B914990fa684",
+    "name": "aUSDT",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "address private constant aUSDT = 0x8Da6Bc74B2534030cD38C996C395B914990fa684",
+    "onchain_name": null,
+    "symbol": "aUSDT",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "aUSDT",
+      "ausdt",
+      "AUSDT",
+      "IaUSDT"
+    ]
+  },
+  {
+    "address": "0xec9b99C8262b72d846F0F80fCE76AF7D3c7c6AF6",
+    "name": "aWETH",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "address private constant aWETH = 0xec9b99C8262b72d846F0F80fCE76AF7D3c7c6AF6",
+    "onchain_name": null,
+    "symbol": "aWETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "aWETH",
+      "aweth",
+      "AWETH",
+      "IaWETH"
+    ]
+  },
+  {
+    "address": "0xCB1332663a39f238BCD1cc7621E3E24A50251b94",
+    "name": "awstETH",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "address private constant awstETH = 0xCB1332663a39f238BCD1cc7621E3E24A50251b94",
+    "onchain_name": null,
+    "symbol": "awstETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "awstETH",
+      "awsteth",
+      "AWSTETH",
+      "IawstETH"
+    ]
+  },
+  {
+    "address": "0x1e482f0606152890F84dD59617e13EC06581B45a",
+    "name": "ausdcUsdcLP",
+    "chain": "arbitrum",
+    "source": "static",
+    "context": "address private constant ausdcUsdcLP = 0x1e482f0606152890F84dD59617e13EC06581B45a",
+    "onchain_name": null,
+    "symbol": "ausdcUsdcLP",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20",
+      "ausdcUsdcLP",
+      "ausdcusdclp",
+      "AUSDCUSDCLP",
+      "IausdcUsdcLP"
+    ]
+  },
+  {
     "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
     "name": "IERC20",
     "chain": "arbitrum",
@@ -89,6 +198,7 @@
     "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
+      "USDCe",
       "USDC",
       "IERC20",
       "usdc",
@@ -107,6 +217,7 @@
     "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
+      "USDT",
       "USD\u20ae0",
       "IUSDT",
       "usd\u20ae0",
@@ -151,25 +262,6 @@
     ]
   },
   {
-    "address": "0x1e482f0606152890F84dD59617e13EC06581B45a",
-    "name": "IERC20",
-    "chain": "arbitrum",
-    "source": "static",
-    "context": "IERC20 private constant ausdcUsdcLP = IERC20(0x1e482f0606152890F84dD59617e13EC06581B45a)",
-    "onchain_name": null,
-    "symbol": "ausdcUsdcLP",
-    "decimals": 18,
-    "is_erc20": true,
-    "semantic_type": "unknown",
-    "aliases": [
-      "ausdcUsdcLP",
-      "IERC20",
-      "ausdcusdclp",
-      "AUSDCUSDCLP",
-      "IausdcUsdcLP"
-    ]
-  },
-  {
     "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
     "name": "IBalancerVault",
     "chain": "arbitrum",
@@ -181,6 +273,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "BalancerVault",
       "IBalancerVault"
     ]
   },
@@ -196,6 +289,7 @@
     "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
+      "USDC_USDC_LP",
       "USDC-USDC LP",
       "IUniV3Wrapper",
       "usdc-usdc lp",
@@ -214,6 +308,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "WETH_USDC",
       "Uni_Pair_V3"
     ]
   },
@@ -229,6 +324,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "WETH_USDCe",
       "Uni_Pair_V3"
     ]
   },
@@ -244,6 +340,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "USDC_USDCe",
       "Uni_Pair_V3"
     ]
   },
@@ -259,6 +356,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "AaveFlashloan",
       "IAaveFlashloan"
     ]
   },
@@ -274,6 +372,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "LendingPool",
       "ILendingPoolProxy"
     ]
   },
@@ -357,7 +456,7 @@
     "decimals": 0,
     "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xF6b3C18023C1e387A673B3101C73FC985290FBD9",
@@ -368,9 +467,9 @@
     "onchain_name": null,
     "symbol": "",
     "decimals": 18,
-    "is_erc20": false,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
@@ -383,7 +482,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x03e8C5Cd5E194659b16456bb43Dd5D38886FE541",
@@ -396,7 +495,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb",
@@ -409,7 +508,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B",
@@ -422,7 +521,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x0063Bcd116694c21F6A94AA78E10eF4d7819a609",
@@ -435,7 +534,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x724dc807b04555b71ed48a6896b6F41593b8C637",
@@ -479,11 +578,16 @@
     "source": "dynamic",
     "context": "called with gas 17018",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "aArbUSDC",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "aArbUSDC",
+      "aarbusdc",
+      "AARBUSDC",
+      "IaArbUSDC"
+    ]
   },
   {
     "address": "0xDAF57DB465298eb268a5dba1484cde20DA65c4Fd",
@@ -496,7 +600,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xe8D44D6E06171b598cC10C95174Cc4e62B33de28",
@@ -509,7 +613,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x57aF4149a989F6E8028f1E72d6768774aE667ec1",
@@ -520,7 +624,7 @@
     "onchain_name": null,
     "symbol": "variableDebtWETH",
     "decimals": 18,
-    "is_erc20": false,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
       "variableDebtWETH",
@@ -553,11 +657,16 @@
     "source": "dynamic",
     "context": "called with gas 12056",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stableDebtWETH",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stableDebtWETH",
+      "stabledebtweth",
+      "STABLEDEBTWETH",
+      "IstableDebtWETH"
+    ]
   },
   {
     "address": "0x628cdA3335ab4240c25a01295618B21c95237fd9",
@@ -566,24 +675,15 @@
     "source": "dynamic",
     "context": "called with gas 6936",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "DEBTTOKEN_IMPL",
+    "decimals": 0,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0xec9b99C8262b72d846F0F80fCE76AF7D3c7c6AF6",
-    "name": null,
-    "chain": "arbitrum",
-    "source": "dynamic",
-    "context": "called with gas 66369",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "DEBTTOKEN_IMPL",
+      "debttoken_impl",
+      "IDEBTTOKEN_IMPL"
+    ]
   },
   {
     "address": "0xD095622D98a781e0bA1Ef15A76FFA0051eeA78E7",
@@ -594,7 +694,7 @@
     "onchain_name": null,
     "symbol": "ATOKEN_IMPL",
     "decimals": 0,
-    "is_erc20": false,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
       "ATOKEN_IMPL",
@@ -613,7 +713,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xd180B7a9A20ea4306e1887C50A2DeFC22674Fb7A",
@@ -626,7 +726,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xE759cc46454f8c1C08bA0fBf8F931E80f124a8eF",
@@ -639,7 +739,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x923212b6869005D658d383E538dA7bc07bAC004D",
@@ -652,7 +752,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x23Ca22a72E41E56F74d89b144023763a7A5fea64",
@@ -665,7 +765,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x9a88F515e6269C9b3c8cB5df8b7625712FBa4297",
@@ -678,7 +778,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x316432b7E6D1838F3871bA4fF7016feEe7eC5Fe9",
@@ -691,7 +791,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3",
@@ -704,7 +804,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x2946220288DbBF77dF0030fCecc2a8348CbBE32C",
@@ -717,7 +817,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
@@ -730,7 +830,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x3607e46698d218B3a5Cae44bF381475C0a5e2ca7",
@@ -743,7 +843,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xEA0011F2Ee37e4CCC4eAa2FE3D272350F34dbc07",
@@ -752,11 +852,16 @@
     "source": "dynamic",
     "context": "called with gas 5074",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "variableDebtusdcUsdcLP",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "variableDebtusdcUsdcLP",
+      "variabledebtusdcusdclp",
+      "VARIABLEDEBTUSDCUSDCLP",
+      "IvariableDebtusdcUsdcLP"
+    ]
   },
   {
     "address": "0x98E6b6Ab7835836564bA9bf666dBF55ce0eA1dB0",
@@ -765,11 +870,16 @@
     "source": "dynamic",
     "context": "called with gas 9556",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stableDebtusdcUsdcLP",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stableDebtusdcUsdcLP",
+      "stabledebtusdcusdclp",
+      "STABLEDEBTUSDCUSDCLP",
+      "IstableDebtusdcUsdcLP"
+    ]
   },
   {
     "address": "0x17359EEA0c646F1D3FaaE74ADE8A5Eb831F25B45",
@@ -782,20 +892,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x16cba9A6a9BB38e339D4250dA0Afd919c6bDBDfE",
-    "name": null,
-    "chain": "arbitrum",
-    "source": "dynamic",
-    "context": "called with gas 18287",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x04B0F0e19Cd662eFd156655e2A11DAca594d0C0f",
@@ -808,7 +905,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xC1d4418588726d4dB0561E1FE67049daba1ca751",
@@ -817,11 +914,16 @@
     "source": "dynamic",
     "context": "called with gas 5074",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "variableDebtUSDCe",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "variableDebtUSDCe",
+      "variabledebtusdce",
+      "VARIABLEDEBTUSDCE",
+      "IvariableDebtUSDCe"
+    ]
   },
   {
     "address": "0x8f6E8154eD5c81535E52EDb13f4b70F48aE59dcA",
@@ -830,11 +932,16 @@
     "source": "dynamic",
     "context": "called with gas 9556",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stableDebtUSDCe",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stableDebtUSDCe",
+      "stabledebtusdce",
+      "STABLEDEBTUSDCE",
+      "IstableDebtUSDCe"
+    ]
   },
   {
     "address": "0x440564f67B02B459Ca04f21d13d27DEC6eEBaa88",
@@ -847,20 +954,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x16Cb622CaE7Ad9fd2b0780b2026ED301414781fE",
-    "name": null,
-    "chain": "arbitrum",
-    "source": "dynamic",
-    "context": "called with gas 18287",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x8BF047567eFB281C7801cd9d3d0F2262b0D61631",
@@ -869,11 +963,16 @@
     "source": "dynamic",
     "context": "called with gas 5074",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "variableDebtUSDC",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "variableDebtUSDC",
+      "variabledebtusdc",
+      "VARIABLEDEBTUSDC",
+      "IvariableDebtUSDC"
+    ]
   },
   {
     "address": "0x3F111d2fFf581532Bb1edc08062a7919246B9bEF",
@@ -882,24 +981,16 @@
     "source": "dynamic",
     "context": "called with gas 9556",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stableDebtUSDC",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x8Da6Bc74B2534030cD38C996C395B914990fa684",
-    "name": null,
-    "chain": "arbitrum",
-    "source": "dynamic",
-    "context": "called with gas 18287",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stableDebtUSDC",
+      "stabledebtusdc",
+      "STABLEDEBTUSDC",
+      "IstableDebtUSDC"
+    ]
   },
   {
     "address": "0x5290104D1D02DBDd956C0744ee376E42b9735375",
@@ -912,7 +1003,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x11cF2e45B03bA7838e809a3cbE6212aD42E07EF6",
@@ -921,11 +1012,16 @@
     "source": "dynamic",
     "context": "called with gas 5074",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "variableDebtUSDT",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "variableDebtUSDT",
+      "variabledebtusdt",
+      "VARIABLEDEBTUSDT",
+      "IvariableDebtUSDT"
+    ]
   },
   {
     "address": "0x6289B840396DA0f425eB1CC2153Cfe28Ee26d37b",
@@ -934,24 +1030,16 @@
     "source": "dynamic",
     "context": "called with gas 9556",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stableDebtUSDT",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0xCB1332663a39f238BCD1cc7621E3E24A50251b94",
-    "name": null,
-    "chain": "arbitrum",
-    "source": "dynamic",
-    "context": "called with gas 18287",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stableDebtUSDT",
+      "stabledebtusdt",
+      "STABLEDEBTUSDT",
+      "IstableDebtUSDT"
+    ]
   },
   {
     "address": "0xb523AE262D20A936BC152e6023996e46FDC2A95D",
@@ -964,7 +1052,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x0e9b5c79e005a30bf3fbB4d8ccCB6B0082ac5a17",
@@ -977,7 +1065,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x52a86C896BCfe9459b61c2ac7530802613f43e43",
@@ -986,11 +1074,16 @@
     "source": "dynamic",
     "context": "called with gas 5074",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "variableDebtwstETH",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "variableDebtwstETH",
+      "variabledebtwsteth",
+      "VARIABLEDEBTWSTETH",
+      "IvariableDebtwstETH"
+    ]
   },
   {
     "address": "0x49BdB14c58318938E8D5Ec1b1560af92D2Dc3A8e",
@@ -999,11 +1092,16 @@
     "source": "dynamic",
     "context": "called with gas 9556",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stableDebtwstETH",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stableDebtwstETH",
+      "stabledebtwsteth",
+      "STABLEDEBTWSTETH",
+      "IstableDebtwstETH"
+    ]
   },
   {
     "address": "0xf611aEb5013fD2c0511c9CD55c7dc5C1140741A6",
@@ -1012,11 +1110,16 @@
     "source": "dynamic",
     "context": "called with gas 7524",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "variableDebtArbUSDCn",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "variableDebtArbUSDCn",
+      "variabledebtarbusdcn",
+      "VARIABLEDEBTARBUSDCN",
+      "IvariableDebtArbUSDCn"
+    ]
   },
   {
     "address": "0x5E76E98E0963EcDC6A065d1435F84065b7523f39",
@@ -1025,11 +1128,15 @@
     "source": "dynamic",
     "context": "called with gas 2419",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "VARIABLE_DEBT_TOKEN_IMPL",
+    "decimals": 0,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "VARIABLE_DEBT_TOKEN_IMPL",
+      "variable_debt_token_impl",
+      "IVARIABLE_DEBT_TOKEN_IMPL"
+    ]
   },
   {
     "address": "0xDC1fad70953Bb3918592b6fCc374fe05F5811B6a",
@@ -1038,11 +1145,16 @@
     "source": "dynamic",
     "context": "called with gas 10056",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stableDebtArbUSDCn",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stableDebtArbUSDCn",
+      "stabledebtarbusdcn",
+      "STABLEDEBTARBUSDCN",
+      "IstableDebtArbUSDCn"
+    ]
   },
   {
     "address": "0x0c2C95b24529664fE55D4437D7A31175CFE6c4f7",
@@ -1051,11 +1163,15 @@
     "source": "dynamic",
     "context": "called with gas 4939",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "STABLE_DEBT_TOKEN_IMPL",
+    "decimals": 0,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "STABLE_DEBT_TOKEN_IMPL",
+      "stable_debt_token_impl",
+      "ISTABLE_DEBT_TOKEN_IMPL"
+    ]
   },
   {
     "address": "0x06B1Ec378618EA736a65395eA5CAB69A2410493B",
@@ -1068,7 +1184,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xFCCf3cAbbe80101232d343252614b6A3eE81C989",
@@ -1077,11 +1193,16 @@
     "source": "dynamic",
     "context": "called with gas 4968",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "variableDebtArbUSDC",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "variableDebtArbUSDC",
+      "variabledebtarbusdc",
+      "VARIABLEDEBTARBUSDC",
+      "IvariableDebtArbUSDC"
+    ]
   },
   {
     "address": "0x307ffe186F84a3bc2613D1eA417A5737D69A7007",
@@ -1090,11 +1211,16 @@
     "source": "dynamic",
     "context": "called with gas 11724",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "stableDebtArbUSDC",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "stableDebtArbUSDC",
+      "stabledebtarbusdc",
+      "STABLEDEBTARBUSDC",
+      "IstableDebtArbUSDC"
+    ]
   },
   {
     "address": "0xCB7113D3d572613BbFCeCf80d1341cFFE2A92C00",
@@ -1103,11 +1229,15 @@
     "source": "dynamic",
     "context": "called with gas 6663",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "STABLE_DEBT_TOKEN_IMPL",
+    "decimals": 0,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": [
+      "STABLE_DEBT_TOKEN_IMPL",
+      "stable_debt_token_impl",
+      "ISTABLE_DEBT_TOKEN_IMPL"
+    ]
   },
   {
     "address": "0x642a8DAcC59b73491Dcaa3BCeF046D660901fCc1",
@@ -1120,7 +1250,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
@@ -1133,7 +1263,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x2e234DAe75C793f67A35089C9d99245E1C58470b",
@@ -1146,7 +1276,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
@@ -1159,7 +1289,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x3469adea6eadfd78cc25e772374da908cf332617",
@@ -1172,7 +1302,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x8c652a1614ca03bF665ba43358aF56b398Eda67E",
@@ -1185,6 +1315,84 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
+  },
+  {
+    "address": "0x3263cd783823d04a6b9819517e0e6840d37ca3f4",
+    "name": "IUSDT_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0xadcb7e98a462aa2375d03145083ee68a2148f077",
+    "name": "Unknown_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0xb76c1a8da369fc39aadcf39d2446828bcdf6ee56",
+    "name": "IAaveFlashloan_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0xc0442c25fe517ac37d6a0d485446307d97d24712",
+    "name": "Unknown_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0xce142f1e750522a3e7ed7305a224ae88dd9f6ce8",
+    "name": "AaveFlashloan_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0x3e5c63644e683549055b9be8653de26e0b4cd36e",
+    "name": "Unknown_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

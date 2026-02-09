@@ -1,0 +1,466 @@
+{
+  "protocol": "Matez_exp",
+  "contract_address": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+  "target_functions": [
+    "register",
+    "stake",
+    "claim"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "stake": {
+      "0": {
+        "avoid": [],
+        "max": 102084710076281535261119195933814292480
+      }
+    },
+    "claim": {
+      "0": {
+        "avoid": [],
+        "max": 1427925146128560169845574412982108772584028873821627672860557312
+      },
+      "1": {
+        "avoid": [],
+        "max": 0
+      },
+      "2": {
+        "avoid": [
+          0
+        ]
+      }
+    },
+    "register": {
+      "0": {
+        "avoid": [
+          "0x80d93e9451a6830e9a531f15cca42cb0357d511f"
+        ]
+      }
+    }
+  },
+  "attack_block": 44222631,
+  "generated_at": "2026-02-09T22:43:34.292375Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0xb61a5fc5f5ff3f6238a7100b98f7a3360ae34b27",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44204631,
+      "time": "2024-11-19T12:10:44Z",
+      "function": "register",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "sponsor",
+          "type": "address",
+          "value": "0xe45c53fe71d6d0298212c4db719026c334133f7c"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0xe966aada9f42de1355cfcc6ad862bc10df8b7e0f",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44192631,
+      "time": "2024-11-17T12:10:44Z",
+      "function": "stake",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amnt",
+          "type": "uint256",
+          "value": 833593
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0x33c9ba49cbccaf17456c21eec2f8a2f687e1f06d",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44072631,
+      "time": "2024-10-28T12:10:44Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "typ",
+          "type": "uint40",
+          "value": 224440
+        },
+        {
+          "name": "pkgid",
+          "type": "uint40",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 916977
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0x61245d85cdd8467a18d0693d645b1c36baaca45f",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44138631,
+      "time": "2024-11-08T12:10:44Z",
+      "function": "register",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "sponsor",
+          "type": "address",
+          "value": "0x552e7a25342fe56601288e81fa8fa59c4c0fb092"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0xdca4d92bcd74d9a48d627dc9b10663bd428b3beb",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44090631,
+      "time": "2024-10-31T12:10:44Z",
+      "function": "stake",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amnt",
+          "type": "uint256",
+          "value": 393244
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x88c6cac7e7af50af634c5449de7f5bcfb2337ec1",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44156631,
+      "time": "2024-11-11T12:10:44Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "typ",
+          "type": "uint40",
+          "value": 824586
+        },
+        {
+          "name": "pkgid",
+          "type": "uint40",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 721238
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0xe8bf31f402c6ac257b9d3d05d29520781cb93517",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44174631,
+      "time": "2024-11-14T12:10:44Z",
+      "function": "register",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "sponsor",
+          "type": "address",
+          "value": "0x4fe86615629cfabce313536f2e2c9a68d468ebb7"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0xe1757526732046816938e3ba69d20f9ca2981341",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44054631,
+      "time": "2024-10-25T12:10:44Z",
+      "function": "stake",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amnt",
+          "type": "uint256",
+          "value": 991540
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0xff4b5c9b9f01be79c88a00196fc5c0b54e08d55f",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44156631,
+      "time": "2024-11-11T12:10:44Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "typ",
+          "type": "uint40",
+          "value": 307421
+        },
+        {
+          "name": "pkgid",
+          "type": "uint40",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 599211
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0x620ebe835e350c2e0c8be40b59ac246b5ed01887",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44066631,
+      "time": "2024-10-27T12:10:44Z",
+      "function": "register",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "sponsor",
+          "type": "address",
+          "value": "0xac7b2ab6d08a84a06f9b27202f3cfaa2084baf5e"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0xe5b3f7a6b43fbad5cfc9a91f227f5a672f807ee4",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44048631,
+      "time": "2024-10-24T12:10:44Z",
+      "function": "stake",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amnt",
+          "type": "uint256",
+          "value": 709698
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0xd0a7e792f3d1c4c096cc88321957744d42ec97da",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44138631,
+      "time": "2024-11-08T12:10:44Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "typ",
+          "type": "uint40",
+          "value": 16870
+        },
+        {
+          "name": "pkgid",
+          "type": "uint40",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 971858
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0x83ffa060f14307744b655fefb0f004476caedcef",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44126631,
+      "time": "2024-11-06T12:10:44Z",
+      "function": "register",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "sponsor",
+          "type": "address",
+          "value": "0x1e4d0421b91f6d1b08fe0d6e6c81cd9fc81d3b7d"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x1ae18ac1b24f40f0a0aea2e78919f978f170b803",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44048631,
+      "time": "2024-10-24T12:10:44Z",
+      "function": "stake",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amnt",
+          "type": "uint256",
+          "value": 372874
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0x8626f8f331df0ff57112e10866e56482610c58d5",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44192631,
+      "time": "2024-11-17T12:10:44Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "typ",
+          "type": "uint40",
+          "value": 145355
+        },
+        {
+          "name": "pkgid",
+          "type": "uint40",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 381212
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0x6a76d6acdcce5c94a4b3698ada1136a9be332b1f",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44198631,
+      "time": "2024-11-18T12:10:44Z",
+      "function": "register",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "sponsor",
+          "type": "address",
+          "value": "0xe9d5e69200b27830fef9a8ef48a36a679f2ed270"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0xda1329af0550ccd10d1ba85fac4f9afb2aaca55e",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44102631,
+      "time": "2024-11-02T12:10:44Z",
+      "function": "stake",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amnt",
+          "type": "uint256",
+          "value": 7196
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0xbef00466dad8aed1bacec869f82265cd526ca6d3",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44072631,
+      "time": "2024-10-28T12:10:44Z",
+      "function": "claim",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "typ",
+          "type": "uint40",
+          "value": 513929
+        },
+        {
+          "name": "pkgid",
+          "type": "uint40",
+          "value": 0
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 536280
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x00c55d7c49492bee03314d685718e195904a3e41",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44120631,
+      "time": "2024-11-05T12:10:44Z",
+      "function": "register",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "sponsor",
+          "type": "address",
+          "value": "0x527906bbce1fb1cebcee78ed941899b414026d52"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0xbf128c6c0cbfd5f2190b316140e5fa43fcdc9bb6",
+      "to": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+      "value": "0",
+      "blockNumber": 44174631,
+      "time": "2024-11-14T12:10:44Z",
+      "function": "stake",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amnt",
+          "type": "uint256",
+          "value": 429881
+        }
+      ]
+    }
+  ]
+}

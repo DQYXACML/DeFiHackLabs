@@ -1,0 +1,428 @@
+{
+  "compiler_version": "v0.7.6+commit.7338295f",
+  "optimizer": true,
+  "runs": 1000000,
+  "evm_version": "istanbul",
+  "metadata_bytes": 12,
+  "runtime_bytes_without_metadata": 24485,
+  "values": {
+    "./contracts/SwapRouter02.sol:SwapRouter02": [
+      {
+        "label": "17000",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:factory",
+        "offset": 7756,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000001f98431c8ad98523631ae4a59f267346ea31f984",
+        "value_int": "180374273401342273892298139690832307271870052740",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17000",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:factory",
+        "offset": 9439,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000001f98431c8ad98523631ae4a59f267346ea31f984",
+        "value_int": "180374273401342273892298139690832307271870052740",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17000",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:factory",
+        "offset": 15579,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000001f98431c8ad98523631ae4a59f267346ea31f984",
+        "value_int": "180374273401342273892298139690832307271870052740",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 705,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 2876,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 4781,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 5079,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 5246,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 5807,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 6105,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 11663,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 11759,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 11888,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5445",
+        "var_name": "./contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 3170,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5445",
+        "var_name": "./contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 3382,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5445",
+        "var_name": "./contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 4066,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5445",
+        "var_name": "./contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 5707,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5445",
+        "var_name": "./contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 12226,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5445",
+        "var_name": "./contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 12677,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5449",
+        "var_name": "./contracts/base/ImmutableState.sol:positionManager",
+        "offset": 5743,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe88",
+        "value_int": "1115489085710619414828654646022418608911583149704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5449",
+        "var_name": "./contracts/base/ImmutableState.sol:positionManager",
+        "offset": 6938,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe88",
+        "value_int": "1115489085710619414828654646022418608911583149704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5449",
+        "var_name": "./contracts/base/ImmutableState.sol:positionManager",
+        "offset": 7836,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe88",
+        "value_int": "1115489085710619414828654646022418608911583149704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5449",
+        "var_name": "./contracts/base/ImmutableState.sol:positionManager",
+        "offset": 12966,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe88",
+        "value_int": "1115489085710619414828654646022418608911583149704",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/SwapRouter02.sol:SwapRouter02": [
+      {
+        "label": "17000",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:factory",
+        "offset": 7756,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000001f98431c8ad98523631ae4a59f267346ea31f984",
+        "value_int": "180374273401342273892298139690832307271870052740",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17000",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:factory",
+        "offset": 9439,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000001f98431c8ad98523631ae4a59f267346ea31f984",
+        "value_int": "180374273401342273892298139690832307271870052740",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17000",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:factory",
+        "offset": 15579,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000001f98431c8ad98523631ae4a59f267346ea31f984",
+        "value_int": "180374273401342273892298139690832307271870052740",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 705,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 2876,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 4781,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 5079,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 5246,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 5807,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 6105,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 11663,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 11759,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17004",
+        "var_name": "@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol:WETH9",
+        "offset": 11888,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20731",
+        "var_name": "contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 3170,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20731",
+        "var_name": "contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 3382,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20731",
+        "var_name": "contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 4066,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20731",
+        "var_name": "contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 5707,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20731",
+        "var_name": "contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 12226,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20731",
+        "var_name": "contracts/base/ImmutableState.sol:factoryV2",
+        "offset": 12677,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "value_int": "527585359103765554095092340981710322784165800559",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20735",
+        "var_name": "contracts/base/ImmutableState.sol:positionManager",
+        "offset": 5743,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe88",
+        "value_int": "1115489085710619414828654646022418608911583149704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20735",
+        "var_name": "contracts/base/ImmutableState.sol:positionManager",
+        "offset": 6938,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe88",
+        "value_int": "1115489085710619414828654646022418608911583149704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20735",
+        "var_name": "contracts/base/ImmutableState.sol:positionManager",
+        "offset": 7836,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe88",
+        "value_int": "1115489085710619414828654646022418608911583149704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20735",
+        "var_name": "contracts/base/ImmutableState.sol:positionManager",
+        "offset": 12966,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe88",
+        "value_int": "1115489085710619414828654646022418608911583149704",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

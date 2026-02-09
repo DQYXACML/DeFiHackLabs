@@ -1,0 +1,108 @@
+{
+  "compiler_version": "v0.8.10+commit.fc410830",
+  "optimizer": true,
+  "runs": 100000,
+  "evm_version": "Default",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 3997,
+  "values": {
+    "./contracts/token/ERC20Bridged.sol:ERC20Bridged": [
+      {
+        "label": "173",
+        "var_name": "./contracts/token/ERC20Bridged.sol:bridge",
+        "offset": 618,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000007d4692291b9e30e326fd31706f686f83f331b82",
+        "value_int": "44699851931181918452868719594938076239200721794",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "173",
+        "var_name": "./contracts/token/ERC20Bridged.sol:bridge",
+        "offset": 1041,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000007d4692291b9e30e326fd31706f686f83f331b82",
+        "value_int": "44699851931181918452868719594938076239200721794",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "173",
+        "var_name": "./contracts/token/ERC20Bridged.sol:bridge",
+        "offset": 1162,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000007d4692291b9e30e326fd31706f686f83f331b82",
+        "value_int": "44699851931181918452868719594938076239200721794",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "670",
+        "var_name": "./contracts/token/ERC20Metadata.sol:decimals",
+        "offset": 362,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/token/ERC20Metadata.sol:ERC20Metadata": [
+      {
+        "label": "670",
+        "var_name": "./contracts/token/ERC20Metadata.sol:decimals",
+        "offset": 105,
+        "length": 32,
+        "value_hex": "0x70a08231146101c657806374f4f547146101e65780638c2a993e146101f95780",
+        "value_int": "50942633121898998625055251812841741732459093523088497948834999012095468066688",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/token/ERC20Bridged.sol:ERC20Bridged": [
+      {
+        "label": "1011",
+        "var_name": "contracts/token/ERC20Bridged.sol:bridge",
+        "offset": 618,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000007d4692291b9e30e326fd31706f686f83f331b82",
+        "value_int": "44699851931181918452868719594938076239200721794",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1011",
+        "var_name": "contracts/token/ERC20Bridged.sol:bridge",
+        "offset": 1041,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000007d4692291b9e30e326fd31706f686f83f331b82",
+        "value_int": "44699851931181918452868719594938076239200721794",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1011",
+        "var_name": "contracts/token/ERC20Bridged.sol:bridge",
+        "offset": 1162,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000007d4692291b9e30e326fd31706f686f83f331b82",
+        "value_int": "44699851931181918452868719594938076239200721794",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1508",
+        "var_name": "contracts/token/ERC20Metadata.sol:decimals",
+        "offset": 362,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/token/ERC20Metadata.sol:ERC20Metadata": [
+      {
+        "label": "1508",
+        "var_name": "contracts/token/ERC20Metadata.sol:decimals",
+        "offset": 105,
+        "length": 32,
+        "value_hex": "0x70a08231146101c657806374f4f547146101e65780638c2a993e146101f95780",
+        "value_int": "50942633121898998625055251812841741732459093523088497948834999012095468066688",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

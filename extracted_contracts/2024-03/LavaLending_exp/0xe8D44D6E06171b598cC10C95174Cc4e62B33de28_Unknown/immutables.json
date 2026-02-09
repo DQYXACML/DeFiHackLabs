@@ -1,0 +1,3638 @@
+{
+  "compiler_version": "v0.6.12+commit.27d51765",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "istanbul",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 8236,
+  "values": {
+    "./contracts/adapters/FlashLiquidationAdapter.sol:FlashLiquidationAdapter": [
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 817,
+        "length": 32,
+        "value_hex": "0x1f19601f8201168201806040525081019061034b9190611ec0565b9061114556",
+        "value_int": "14066532899799401685354838549800121866435059827195884366173006447624462615894",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 3646,
+        "length": 32,
+        "value_hex": "0x2082015287610e5f5760405162461bcd60e51b81526004016101989190611f31",
+        "value_int": "14703710399804773844078449167289405040117852415342775342882050401807785598769",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 3707,
+        "length": 32,
+        "value_hex": "0x1115610e995760405162461bcd60e51b81526004016101989190611f31565b50",
+        "value_int": "7727092077259491717257370978310369133666372698440527991905743773247529704272",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 3813,
+        "length": 32,
+        "value_hex": "0x461bcd60e51b81526004016101989190611f31565b50604051633985c10960e2",
+        "value_int": "31711021741861465435015147055453926797759545733598636516353844028427502969058",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 5645,
+        "length": 32,
+        "value_hex": "0x0181815250506116b38160060160009054906101000a90046001600160a01b03",
+        "value_int": "681128664392090096089601042206976172479072498025670531860693032898165480195",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 6714,
+        "length": 32,
+        "value_hex": "0x611f31565b506000838581611a4a57fe5b0495945050505050565b6040805180",
+        "value_int": "43929459085327858601272407308175996513777606126132980497449807207591133073792",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 6775,
+        "length": 32,
+        "value_hex": "0x405162461bcd60e51b81526004016101989190611f31565b5060408051808201",
+        "value_int": "29091815182842269850181674338739978431865187548584018315242986565659801977345",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 6881,
+        "length": 32,
+        "value_hex": "0xa76400008602018161126557fe5b604051806101600160405280600081526020",
+        "value_int": "75712930433995997546233151300346163828241775681532447671422714376067277283360",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "565",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:ORACLE",
+        "offset": 900,
+        "length": 32,
+        "value_hex": "0x90611ed8565b60206040518083038186803b1580156103a157600080fd5b505a",
+        "value_int": "65304647246107193808634631131081936861605423271547525225896286310112643731546",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "565",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:ORACLE",
+        "offset": 7579,
+        "length": 32,
+        "value_hex": "0x80600060a08688031215611dac578081fd5b853594506020860135611dbe8161",
+        "value_int": "58065664541937012286375050506908180279324858317111563314960807980120089198945",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 1571,
+        "length": 32,
+        "value_hex": "0x908c90600401611eec565b60206040518083038186803b158015610645576000",
+        "value_int": "65381405225109968229459030355800819449038144318440705556509149027257598566400",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 3940,
+        "length": 32,
+        "value_hex": "0x00803e3d6000fd5b505050506040513d601f19601f8201168201806040525081",
+        "value_int": "226585987232268034022742696410095481926423298159008797389085766885592682625",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4184,
+        "length": 32,
+        "value_hex": "0x1561105e57fe5b145b8061108157506000821180156110815750600285600281",
+        "value_int": "9670066956975438070692170766562358859045788940514211362223661181792803619457",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 5466,
+        "length": 32,
+        "value_hex": "0x610180840152505b60e0820151611571908c9061199e565b156116e657806005",
+        "value_int": "43877000142026141576320128659760059244301889006910636423148955784784390414341",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 5519,
+        "length": 32,
+        "value_hex": "0x6001600160a01b03166370a082318e6040518263ffffffff1660e01b81526004",
+        "value_int": "43424462915843433818624737455874695423838853277326765031267298074798375198724",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 5923,
+        "length": 32,
+        "value_hex": "0x016082015261012081015161173857600061174d565b61012081015161018082",
+        "value_int": "622827429462533937761552405220887152647392768223288993980901086255374237826",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 7008,
+        "length": 32,
+        "value_hex": "0x5260200160008152602001600081526020016000815260200160008152602001",
+        "value_int": "37259491794999800519712935693277969195561767191958740316091615424458052870145",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 7249,
+        "length": 32,
+        "value_hex": "0x0135965060c08d0135955060e08d013594506101008d013593506101208d0135",
+        "value_int": "546993171953463519248645437027447201286650624631732049700318014546717245749",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6464",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 853,
+        "length": 32,
+        "value_hex": "0x565b905060006103d9876001600160a01b03166370a08231866040518263ffff",
+        "value_int": "39060684079435549484671411147232231569164900815323395238276807930499314221055",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1089,
+        "length": 32,
+        "value_hex": "0x6380031e37916004808301926020929190829003018186803b15801561046557",
+        "value_int": "45005149953924425905641603638235071675737441922901076085952735043242000934231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1438,
+        "length": 32,
+        "value_hex": "0x1ec0565b90506000811160405180604001604052806002815260200161313960",
+        "value_int": "13909216112674446502309301582685530274422840740989474949717349307945973791072",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2243,
+        "length": 32,
+        "value_hex": "0x61031360f41b815250906108e95760405162461bcd60e51b8152600401610198",
+        "value_int": "43879780600814158026969921443084070739538519071399218742453925673286429114776",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2390,
+        "length": 32,
+        "value_hex": "0x80610140015160405180604001604052806002815260200161189960f11b8152",
+        "value_int": "58067437411263322908699288388923740306751083708135196521430931423611980579154",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2966,
+        "length": 32,
+        "value_hex": "0x565b9350509250925082604051806040016040528060018152602001601960f9",
+        "value_int": "39060704783049627682327169203889702832062014821886616649985635910106192896249",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/adapters/ParaSwapLiquiditySwapAdapter.sol:ParaSwapLiquiditySwapAdapter": [
+      {
+        "label": "248",
+        "var_name": "./contracts/adapters/BaseParaSwapSellAdapter.sol:AUGUSTUS_REGISTRY",
+        "offset": 652,
+        "length": 32,
+        "value_hex": "0x206040518083038186803b1580156102a257600080fd5b505afa1580156102b6",
+        "value_int": "14644072381938993200556387425514329420535419118250846845617059514183678231222",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "248",
+        "var_name": "./contracts/adapters/BaseParaSwapSellAdapter.sol:AUGUSTUS_REGISTRY",
+        "offset": 3312,
+        "length": 32,
+        "value_hex": "0x20810190915288548152610d0c91600160a01b900460ff16611835565b158061",
+        "value_int": "14701945225303837076105939307782870160363830887690627926339325227611119255649",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "55",
+        "var_name": "./contracts/adapters/BaseParaSwapAdapter.sol:ORACLE",
+        "offset": 616,
+        "length": 32,
+        "value_hex": "0x0351856001600160a01b03166318160ddd6040518163ffffffff1660e01b8152",
+        "value_int": "1500973678560658101771221502509042558113877058318478807097340321725316563282",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "55",
+        "var_name": "./contracts/adapters/BaseParaSwapAdapter.sol:ORACLE",
+        "offset": 5432,
+        "length": 32,
+        "value_hex": "0x015260c08301516115599061154d908390611922565b61018085015190611145",
+        "value_int": "597862065650598246549860964399576223611181213587375702850790647606980710725",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6464",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 574,
+        "length": 32,
+        "value_hex": "0xf91b815250906102605760405162461bcd60e51b81526004016101989190611f",
+        "value_int": "112674496712461087156392424219397664971328262225393064461902218305010995847455",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 881,
+        "length": 32,
+        "value_hex": "0x8263ffffffff1660e01b81526004016103899190611ed8565b60206040518083",
+        "value_int": "58977355022302093506084979057905411337208655001655747582141811692856786649219",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1181,
+        "length": 32,
+        "value_hex": "0x5b90506b0311d253316c79d37600000083101580156104c657506104c281610f",
+        "value_int": "41415450223150633564228837767543812361367292891815918709798450924925850050831",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1571,
+        "length": 32,
+        "value_hex": "0x908c90600401611eec565b60206040518083038186803b158015610645576000",
+        "value_int": "65381405225109968229459030355800819449038144318440705556509149027257598566400",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1624,
+        "length": 32,
+        "value_hex": "0xfd5b505050506040513d601f19601f8201168201806040525081019061067d91",
+        "value_int": "114596488079422753944007022762533105002619287270533284538359479450186998513041",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1684,
+        "length": 32,
+        "value_hex": "0xf41b815250906106b65760405162461bcd60e51b81526004016101989190611f",
+        "value_int": "110412932469544755241742924224224915395513326039581763296575369177337217179935",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2371,
+        "length": 32,
+        "value_hex": "0x01989190611f31565b506001881415610b7b5780610140015160405180604001",
+        "value_int": "721878248110309742114510147563785322255536938539869853573364243835010433025",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2424,
+        "length": 32,
+        "value_hex": "0x6109945760405162461bcd60e51b81526004016101989190611f31565b506007",
+        "value_int": "43891271750270969028680137894847475632051822477226694040085673102363201658887",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2484,
+        "length": 32,
+        "value_hex": "0x0460ff16611835565b15806109ce57506109cc8c61188d565b155b80610a5857",
+        "value_int": "1980629261214299749187606802146823221518710974749957544853159765676982425687",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2640,
+        "length": 32,
+        "value_hex": "0x90611ec0565b8a115b60405180604001604052806002815260200161313360f0",
+        "value_int": "65304646599068541194141067824516635417803779206190939569947729501303019364592",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2683,
+        "length": 32,
+        "value_hex": "0x5162461bcd60e51b81526004016101989190611f31565b508c6001600160a01b",
+        "value_int": "36810975619384574537965590161408375948208993836512590176922363704230247702555",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2788,
+        "length": 32,
+        "value_hex": "0x15610aed57600080fd5b505afa158015610b01573d6000803e3d6000fd5b5050",
+        "value_int": "9670029401704587750370387304763116775064743292402722388352385630107015532624",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3111,
+        "length": 32,
+        "value_hex": "0x80518082019091526002815261313760f01b602082015286610c5b5760405162",
+        "value_int": "58040046159395386743054738114620424900385133709918672235348117948222893216098",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/adapters/UniswapLiquiditySwapAdapter.sol:UniswapLiquiditySwapAdapter": [
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 847,
+        "length": 32,
+        "value_hex": "0x45565b611173565b905060006103d9876001600160a01b03166370a082318660",
+        "value_int": "31362166075686462490835336446876376633232716430164075927914672455407826470496",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4337,
+        "length": 32,
+        "value_hex": "0x610e195760405162461bcd60e51b81526004016101989190611f31565b546001",
+        "value_int": "43899257070794205710982199907380130150500308410307495177329996142890137706497",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4398,
+        "length": 32,
+        "value_hex": "0x00008116151591670800000000000000909116151590565b6000828201838110",
+        "value_int": "890920617993336762347546207063853932476822685781603118173290939598209296",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4504,
+        "length": 32,
+        "value_hex": "0x8760f31b815250906111bc5760405162461bcd60e51b81526004016101989190",
+        "value_int": "61233529742859665376101663533017171415785410250054493098702149672318604448144",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 6727,
+        "length": 32,
+        "value_hex": "0x4a57fe5b0495945050505050565b604080518082019091526002815261035360",
+        "value_int": "33626621987207446232612384131662401253188399289680215000978999270639501792096",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 8157,
+        "length": 32,
+        "value_hex": "0x696f6e206f766572666c6f6040820152607760f81b606082015260800190565b",
+        "value_int": "47689729191988181529114184127150289964042695051067501551913183138471971149403",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 8218,
+        "length": 32,
+        "value_hex": "0x5b50565b801515811461201a57600080fdfea2646970667358221220303aaeda",
+        "value_int": "41302413003289129575979113952214280600430724944663172722341677508530903101146",
+        "used_stripped_runtime": false
+      },
+      {
+        "label": "565",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:ORACLE",
+        "offset": 930,
+        "length": 32,
+        "value_hex": "0x505afa1580156103b5573d6000803e3d6000fd5b505050506040513d601f1960",
+        "value_int": "36345770138725711439408041518493969012746989887957505019778405541925372238176",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 2912,
+        "length": 32,
+        "value_hex": "0x60405162461bcd60e51b81526004016101989190611f31565b50505b50505050",
+        "value_int": "43535673367051550900441391543643668485725717638476867836340511901762504904784",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4631,
+        "length": 32,
+        "value_hex": "0x01528304906b033b2e3c9fd0803ce800000082190485111561124b5760405162",
+        "value_int": "598098559715302575335303367892595039340766585688424486152553642368199315810",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4875,
+        "length": 32,
+        "value_hex": "0x5095509550955050611799565b600060e08201525b878160e0015110156116f8",
+        "value_int": "36448844264539494423359331151810900546859522345568170130541389580301590664952",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6548,
+        "length": 32,
+        "value_hex": "0x000000815250611a1d565b600060808210604051806040016040528060028152",
+        "value_int": "3486501794107314934466170130402841106529894300474822409042899534774610",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6601,
+        "length": 32,
+        "value_hex": "0x461bcd60e51b81526004016101989190611f31565b5050905160016002909202",
+        "value_int": "31711021741861465435015147055453926797759545733598636442271718922250253013506",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 7005,
+        "length": 32,
+        "value_hex": "0x6000815260200160008152602001600081526020016000815260200160008152",
+        "value_int": "43422926010111082219112418617535913229524185182710968259628478275063130390866",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6464",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 883,
+        "length": 32,
+        "value_hex": "0xffffffff1660e01b81526004016103899190611ed8565b602060405180830381",
+        "value_int": "115792089212712971409278933895361161007596034094686470191074502930015591793537",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1119,
+        "length": 32,
+        "value_hex": "0x6557600080fd5b505afa158015610479573d6000803e3d6000fd5b5050505060",
+        "value_int": "45837975982779114789089880242785632127224335124072207359069097302473638432864",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1845,
+        "length": 32,
+        "value_hex": "0x51806040016040528060018152602001603360f81b8152509061076a57604051",
+        "value_int": "36864161452766997007139647063634037676371698753271661570321088095135966707793",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2567,
+        "length": 32,
+        "value_hex": "0x206040518083038186803b158015610a1d57600080fd5b505afa158015610a31",
+        "value_int": "14644072381938993200556387425514329423080890730178960742227850034620538096177",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2657,
+        "length": 32,
+        "value_hex": "0x4052806002815260200161313360f01b81525090610a915760405162461bcd60",
+        "value_int": "29093789780591970087161677548406195636277829277945910326110867792330586049888",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2711,
+        "length": 32,
+        "value_hex": "0x0160a01b03166370a082318d60040160009054906101000a90046001600160a0",
+        "value_int": "623035174461184731194957584462642412219401248169733430252675630007486341280",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3515,
+        "length": 32,
+        "value_hex": "0x52806002815260200161313360f01b81525090610c5b5760405162461bcd60e5",
+        "value_int": "37316472643307835204846411835959980277845276553157498647122161830351747244261",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3575,
+        "length": 32,
+        "value_hex": "0x52600760fb1b6020820152905162461bcd60e51b81526101989190600401611f",
+        "value_int": "37259321828870523157337503821128936818712268511791325301946634187778683920671",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3640,
+        "length": 32,
+        "value_hex": "0x603160f81b602082015287610e5f5760405162461bcd60e51b81526004016101",
+        "value_int": "43509278226766755685970783263234800209185818225114481270718340629040174555393",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3826,
+        "length": 32,
+        "value_hex": "0x989190611f31565b50604051633985c10960e21b815273d3ebb07483fe533034",
+        "value_int": "69008742278923098557743636258808767759294507357541680573621663054510492430388",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3886,
+        "length": 32,
+        "value_hex": "0x8c908c908c908c908c90600401611eec565b60206040518083038186803b1580",
+        "value_int": "63579194920509437340684782669276284314145608374750295470703196886907456525696",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 5909,
+        "length": 32,
+        "value_hex": "0x608201516117219161195c565b61016082015261012081015161173857600061",
+        "value_int": "43651732678141597961021277229530719716481551023722228724851326057277695197281",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 6234,
+        "length": 32,
+        "value_hex": "0x745760405162461bcd60e51b81526004016101989190611f31565b5050815160",
+        "value_int": "52622670431951222226732102781758050586890040268164236383895897903741129544032",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/adapters/UniswapRepayAdapter.sol:UniswapRepayAdapter": [
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 847,
+        "length": 32,
+        "value_hex": "0x45565b611173565b905060006103d9876001600160a01b03166370a082318660",
+        "value_int": "31362166075686462490835336446876376633232716430164075927914672455407826470496",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4014,
+        "length": 32,
+        "value_hex": "0x5760405162461bcd60e51b81526004016101989190611f31565b6000610fd287",
+        "value_int": "39521279050834220909184051122263639264532087435739085700270118457054172533383",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4075,
+        "length": 32,
+        "value_hex": "0xf91b8152509061100d5760405162461bcd60e51b81526004016101989190611f",
+        "value_int": "112674496712461087242236694436541295261129429298244783691489508973247655338271",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4181,
+        "length": 32,
+        "value_hex": "0x0281111561105e57fe5b145b8061108157506000821180156110815750600285",
+        "value_int": "1132666874591745719610844597512576889031085731936765337015322727438916518533",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 5940,
+        "length": 32,
+        "value_hex": "0x61174d565b61012081015161018082015161174d9161195c565b610180820181",
+        "value_int": "43915517557714182598481754250717475079746199345829744967623696012798098276737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "562",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 7042,
+        "length": 32,
+        "value_hex": "0x8152602001600081526020016000815260200160008152602001600081526020",
+        "value_int": "58493902357065582070938945319586008133856991363514029302367656064239264751648",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "565",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:ORACLE",
+        "offset": 930,
+        "length": 32,
+        "value_hex": "0x505afa1580156103b5573d6000803e3d6000fd5b505050506040513d601f1960",
+        "value_int": "36345770138725711439408041518493969012746989887957505019778405541925372238176",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 1537,
+        "length": 32,
+        "value_hex": "0xa7be22e8a7c5bf0fdaa79063e61704249061062d908b90339086908c908c908c",
+        "value_int": "75872187587465298371864659386967117212191769422145394201026537896039404048524",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4308,
+        "length": 32,
+        "value_hex": "0x5b60405180604001604052806002815260200161189b60f11b81525090610e19",
+        "value_int": "41330530448337409168519751483287468205303219650716342808251873585156702932505",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4552,
+        "length": 32,
+        "value_hex": "0x8082019091526002815261035360f41b6020820152600090826111fd57604051",
+        "value_int": "58125745536362123952030529308011976347207208599565449547392790356700000436305",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6215,
+        "length": 32,
+        "value_hex": "0x6002815260200161373760f01b815250906118745760405162461bcd60e51b81",
+        "value_int": "43426459704240638995390200680461969608585040547851661019423423974525190347649",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6863,
+        "length": 32,
+        "value_hex": "0x6101989190611f31565b508281670de0b6b3a76400008602018161126557fe5b",
+        "value_int": "43877166149483520569642578394133143644172916527403988594864536296565629255259",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6916,
+        "length": 32,
+        "value_hex": "0x8152602001600081526020016000815260200160008152602001600081526020",
+        "value_int": "58493902357065582070938945319586008133856991363514029302367656064239264751648",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "568",
+        "var_name": "./contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 7320,
+        "length": 32,
+        "value_hex": "0x9295989b565b600080600080600080600080610100898b031215611cb9578384",
+        "value_int": "66301989359139764123033067356761669450860641856959391550350623052796234531716",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6464",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 883,
+        "length": 32,
+        "value_hex": "0xffffffff1660e01b81526004016103899190611ed8565b602060405180830381",
+        "value_int": "115792089212712971409278933895361161007596034094686470191074502930015591793537",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1119,
+        "length": 32,
+        "value_hex": "0x6557600080fd5b505afa158015610479573d6000803e3d6000fd5b5050505060",
+        "value_int": "45837975982779114789089880242785632127224335124072207359069097302473638432864",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1404,
+        "length": 32,
+        "value_hex": "0xfd5b505050506040513d601f19601f820116820180604052508101906105a191",
+        "value_int": "114596488079422753944007022762533105002619287270533284538359479450186998456721",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2071,
+        "length": 32,
+        "value_hex": "0x60e51b81526004016101989190611f31565b5060408051602081019091528554",
+        "value_int": "43826831275487413165573751725058975372300278017903851433504924774227722274132",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2124,
+        "length": 32,
+        "value_hex": "0x0152602080860191909152908452608084019190915260608301829052604080",
+        "value_int": "597857751797779403251386769011188669465019911877994728498298429626145325184",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2184,
+        "length": 32,
+        "value_hex": "0x60405162461bcd60e51b81526004016101989190611f31565b50670de0b6b3a7",
+        "value_int": "43535673367051550900441391543643668485725717638476867836340511926718687523751",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2727,
+        "length": 32,
+        "value_hex": "0x009054906101000a90046001600160a01b03166040518263ffffffff1660e01b",
+        "value_int": "255009616469241554801953326639038048691608379860460363717916942030547771419",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2780,
+        "length": 32,
+        "value_hex": "0x83038186803b158015610aed57600080fd5b505afa158015610b01573d600080",
+        "value_int": "59259177657018100486296499045315557825030689521248653189926481974494249353344",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2970,
+        "length": 32,
+        "value_hex": "0x509250925082604051806040016040528060018152602001601960f91b815250",
+        "value_int": "36443543642457528732464183308891440171655258846725481649191043296232986464848",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3504,
+        "length": 32,
+        "value_hex": "0x115b60405180604001604052806002815260200161313360f01b81525090610c",
+        "value_int": "7850765810479346606911041002464773053558175620963334151859268158909727138060",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3547,
+        "length": 32,
+        "value_hex": "0x1b81526004016101989190611f31565b60408051808201825260018152600760",
+        "value_int": "12440938714881737363109912961455698709071652921414710720967897592561942923104",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 5586,
+        "length": 32,
+        "value_hex": "0x505afa1580156115e5573d6000803e3d6000fd5b505050506040513d601f1960",
+        "value_int": "36345770138725711553572829330839225405010410022546937962639995188114999941472",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 6549,
+        "length": 32,
+        "value_hex": "0x0000815250611a1d565b60006080821060405180604001604052806002815260",
+        "value_int": "892544459291472623223339553383127323271652940921554536714982280902300256",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/misc/AaveOracle.sol:AaveOracle": [
+      {
+        "label": "8279",
+        "var_name": "./contracts/misc/AaveOracle.sol:BASE_CURRENCY",
+        "offset": 1555,
+        "length": 32,
+        "value_hex": "0x062d908b90339086908c908c908c908c908c90600401611eec565b6020604051",
+        "value_int": "2794382823507332627327934654555793018207420644875973428313709751168386744401",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8279",
+        "var_name": "./contracts/misc/AaveOracle.sol:BASE_CURRENCY",
+        "offset": 2036,
+        "length": 32,
+        "value_hex": "0x806040016040528060018152602001600760fb1b815250906108285760405162",
+        "value_int": "58066103685739404518499862586593109036227636949692367318681491683940604334434",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8281",
+        "var_name": "./contracts/misc/AaveOracle.sol:BASE_CURRENCY_UNIT",
+        "offset": 1079,
+        "length": 32,
+        "value_hex": "0x600160a01b03909216916380031e379160048083019260209291908290030181",
+        "value_int": "43424467195144008625952289064085770341981856731817184463720687488393929752961",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8281",
+        "var_name": "./contracts/misc/AaveOracle.sol:BASE_CURRENCY_UNIT",
+        "offset": 1597,
+        "length": 32,
+        "value_hex": "0x61064557600080fd5b505af4158015610659573d6000803e3d6000fd5b505050",
+        "value_int": "43885425971088985847793842599154985459573676427672776977996796942785459540048",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/misc/AaveProtocolDataProvider.sol:AaveProtocolDataProvider": [
+      {
+        "label": "8601",
+        "var_name": "./contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 347,
+        "length": 32,
+        "value_hex": "0x5b50506040805180820190915260018152603160f81b60208201529193509150",
+        "value_int": "41302371720914909161163863690748790366101203236946315828962856709580628463952",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8601",
+        "var_name": "./contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 405,
+        "length": 32,
+        "value_hex": "0x1f31565b60405180910390fd5b506040805180820190915260018152601960f9",
+        "value_int": "14108869825932808613021538819317157847486425332010432787648022855142417719545",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8601",
+        "var_name": "./contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 684,
+        "length": 32,
+        "value_hex": "0x573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040",
+        "value_int": "39459658078850526406767908557430175199958175965226613469518266831113329598528",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8601",
+        "var_name": "./contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 1959,
+        "length": 32,
+        "value_hex": "0x0151604051806040016040528060018152602001603760f81b815250906107e0",
+        "value_int": "596091762499300549642021464414349540458240808631494047028227156146758158304",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8601",
+        "var_name": "./contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 2859,
+        "length": 32,
+        "value_hex": "0x9052600090610b39908961126e565b9050808b11156040518060400160405280",
+        "value_int": "65278594238156370858352691134136209170702450780585181233176671278265740055168",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8601",
+        "var_name": "./contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 3195,
+        "length": 32,
+        "value_hex": "0x82019091526002815261062760f31b602082015285610cac5760405162461bcd",
+        "value_int": "58803434932230717502729422797140902793315878535619132021443793236477916617677",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8601",
+        "var_name": "./contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 4089,
+        "length": 32,
+        "value_hex": "0x461bcd60e51b81526004016101989190611f31565b5060408051808201909152",
+        "value_int": "31711021741861465435015147055453926797759545733598636516357225746846933094738",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "8601",
+        "var_name": "./contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 4393,
+        "length": 32,
+        "value_hex": "0x000000000000008116151591670800000000000000909116151590565b600082",
+        "value_int": "810287581765202742051357024196344293592867584976923461156994",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/misc/UiPoolDataProvider.sol:UiPoolDataProvider": [
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 1876,
+        "length": 32,
+        "value_hex": "0x5162461bcd60e51b81526004016101989190611f31565b506040805180820190",
+        "value_int": "36810975619384574537965590161408375948208993836512590176919184302469009244560",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 1942,
+        "length": 32,
+        "value_hex": "0x04016101989190611f31565b5080610120015160405180604001604052806001",
+        "value_int": "1811687753820779172206571994206178752581324532467430831019736218248159453185",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 2121,
+        "length": 32,
+        "value_hex": "0x60c0860152602080860191909152908452608084019190915260608301829052",
+        "value_int": "43762192970076591932786925904592546893867701207029997896353786506402584498258",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 2300,
+        "length": 32,
+        "value_hex": "0x611145565b906117a7565b604080830182905260608301518151808301909252",
+        "value_int": "43904861261374226857040714814997432290143460268754840999191923119256945857106",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 2474,
+        "length": 32,
+        "value_hex": "0x6109bc91600160a01b900460ff16611835565b15806109ce57506109cc8c6118",
+        "value_int": "43891549383775855141398680098080160710548365108281146977440938007001849159960",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 2513,
+        "length": 32,
+        "value_hex": "0x0a5857506004808d01546040516370a0823160e01b81526001600160a01b0390",
+        "value_int": "4679213646372897933749684690516405800598705728229718559796403532509562471312",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 3513,
+        "length": 32,
+        "value_hex": "0x604052806002815260200161313360f01b81525090610c5b5760405162461bcd",
+        "value_int": "43535681080324010666992094681181427146680454520232187735456573366040189606861",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 3578,
+        "length": 32,
+        "value_hex": "0x60fb1b6020820152905162461bcd60e51b81526101989190600401611f31565b",
+        "value_int": "43865701015982665498954028562235235694005397729130270753959188233012095571547",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 3767,
+        "length": 32,
+        "value_hex": "0x61110d565b505050905080604051806040016040528060018152602001601960",
+        "value_int": "43904474763552451551835006484676773221073482718983943130523861572396267870560",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 3931,
+        "length": 32,
+        "value_hex": "0x158015610f6b573d6000803e3d6000fd5b505050506040513d601f19601f8201",
+        "value_int": "9724873797952178476281783241719657609880156694894796768029895247584124961281",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 5071,
+        "length": 32,
+        "value_hex": "0x206040518083038186803b1580156113e557600080fd5b505afa1580156113f9",
+        "value_int": "14644072381938993200556387425514329426409277631624390087978982913562520916985",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 5131,
+        "length": 32,
+        "value_hex": "0x01806040525081019061141d9190611ec0565b825260c0820151158015906114",
+        "value_int": "679133574629503487117619417216089631549842687114101435533400248645275640084",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7377,
+        "length": 32,
+        "value_hex": "0x01359550606089013594506080890135935060a0890135925060c08901359150",
+        "value_int": "546986270167618191556876239779307060996593047605933044508923637728263115088",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7443,
+        "length": 32,
+        "value_hex": "0x208284031215611d20578081fd5b815161116a8161201d565b60008060008060",
+        "value_int": "14704612386387746951443290455404313464078658280090072364800518062064330113120",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7622,
+        "length": 32,
+        "value_hex": "0x611dce81612005565b92506060860135611dde81612005565b91506080860135",
+        "value_int": "43927010125264436641418019135683361006620233257225176664877626210113466794293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7801,
+        "length": 32,
+        "value_hex": "0x7e578384fd5b8635955060208701359450611e968860408901611bea565b9350",
+        "value_int": "57146042330293334686322714080347093637126150209472259367029508264326711710544",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7977,
+        "length": 32,
+        "value_hex": "0x01526101000190565b6000602080835283518082850152825b81811015611f5d",
+        "value_int": "597863804251322572526136981837165226078556333128681478378629349953268424541",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 8016,
+        "length": 32,
+        "value_hex": "0x858201604001528201611f41565b81811115611f6e5783604083870101525b50",
+        "value_int": "60387308476637377081426817167667133731456200224733300314376835066759608425296",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11185",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 8207,
+        "length": 32,
+        "value_hex": "0x16811461201a57600080fd5b50565b801515811461201a57600080fdfea26469",
+        "value_int": "10178946593610864166857575378800640068051661561246452234321552934966531351657",
+        "used_stripped_runtime": false
+      },
+      {
+        "label": "11187",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:oracle",
+        "offset": 1027,
+        "length": 32,
+        "value_hex": "0x015460078b0154604080516380031e3760e01b815290519394506fffffffffff",
+        "value_int": "601390773032524741284222903601151386641604872591900379621961369720220286975",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11187",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:oracle",
+        "offset": 2684,
+        "length": 32,
+        "value_hex": "0x62461bcd60e51b81526004016101989190611f31565b508c6001600160a01b03",
+        "value_int": "44450530339839252409941295616823706626633664230337398096060803641979911019267",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11187",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:oracle",
+        "offset": 5526,
+        "length": 32,
+        "value_hex": "0x03166370a082318e6040518263ffffffff1660e01b81526004016115b9919061",
+        "value_int": "1396495490480807805812195881789584213440462840296023652237040365670503649377",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11187",
+        "var_name": "./contracts/misc/UiPoolDataProvider.sol:oracle",
+        "offset": 6528,
+        "length": 32,
+        "value_hex": "0x206469766973696f6e206279207a65726f000000000000815250611a1d565b60",
+        "value_int": "14651423736887750903052602381313333527826933650776770339140725324863216442208",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/misc/UiPoolDataProviderV2.sol:UiPoolDataProviderV2": [
+      {
+        "label": "12480",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 351,
+        "length": 32,
+        "value_hex": "0x40805180820190915260018152603160f81b60208201529193509150836101a1",
+        "value_int": "29174741239639187085357803448787771554780795138530802622850724764446686773665",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12480",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 4372,
+        "length": 32,
+        "value_hex": "0x8116151591670200000000000000821615159167040000000000000081161515",
+        "value_int": "58387373620811308415580522672195076805600436596237805798095031829239724119317",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12480",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 4526,
+        "length": 32,
+        "value_hex": "0x81526004016101989190611f31565b5092915050565b60408051808201909152",
+        "value_int": "58493901602187488519721122898085357478718128979737788178325913015057357246802",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12482",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 2514,
+        "length": 32,
+        "value_hex": "0x5857506004808d01546040516370a0823160e01b81526001600160a01b039091",
+        "value_int": "39957801098299916804209430685320806420568819770402310913303464243316696256657",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12482",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 4861,
+        "length": 32,
+        "value_hex": "0x17576000806000806000199550955095509550955050611799565b600060e082",
+        "value_int": "10557573793219604512157769997946358560399070822591093687474126154627196969090",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12482",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 5051,
+        "length": 32,
+        "value_hex": "0x63b3596f07916113cd9190600401611ed8565b60206040518083038186803b15",
+        "value_int": "45095854883114639237031148765091727551347867030338680106150819939011461659413",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/misc/UiPoolDataProviderV2V3.sol:UiPoolDataProviderV2V3": [
+      {
+        "label": "13242",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2V3.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 352,
+        "length": 32,
+        "value_hex": "0x805180820190915260018152603160f81b60208201529193509150836101a157",
+        "value_int": "58040046159395386743054642333643415414604536862889372924500163191911517102423",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13242",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2V3.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 4841,
+        "length": 32,
+        "value_hex": "0x6112f0611b50565b6112f98a6118a1565b156113175760008060008060001995",
+        "value_int": "43907808596857387775531770173716718277228860887407228369438821101497219029397",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13242",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2V3.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 4995,
+        "length": 32,
+        "value_hex": "0x5260c08601929092525060a0840191909152600a0a60208301526101e0820151",
+        "value_int": "37260599650143611454249838302242386883342687725513712411425378911509425553745",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13244",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2V3.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 2518,
+        "length": 32,
+        "value_hex": "0x04808d01546040516370a0823160e01b81526001600160a01b03909116916370",
+        "value_int": "2036381000705370848777473044336856462194270504631681688656267321318789178224",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13244",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2V3.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 5330,
+        "length": 32,
+        "value_hex": "0x1ec0565b60408301819052602083015183516000926114fa92916114f4916119",
+        "value_int": "13909216107612930733110081588885295079587092444760467955981642842815771795737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13244",
+        "var_name": "./contracts/misc/UiPoolDataProviderV2V3.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 5520,
+        "length": 32,
+        "value_hex": "0x01600160a01b03166370a082318e6040518263ffffffff1660e01b8152600401",
+        "value_int": "621939673564296905118227869882874588827911094157700216500242388723605439489",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/misc/WETHGateway.sol:WETHGateway": [
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 176,
+        "length": 32,
+        "value_hex": "0x5b61014f565b005b6100b56100c5366004611d95565b610217565b6100d26105",
+        "value_int": "41331862427037171003176144003330856108612115658223144907452985819456332783877",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 611,
+        "length": 32,
+        "value_hex": "0x00610356610351856001600160a01b03166318160ddd6040518163ffffffff16",
+        "value_int": "171407199294614446074163153692156484498551509214382771633201224862207573782",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 848,
+        "length": 32,
+        "value_hex": "0x565b611173565b905060006103d9876001600160a01b03166370a08231866040",
+        "value_int": "39060358000916913427448164800886776231946464192804518823582852038397631291456",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 998,
+        "length": 32,
+        "value_hex": "0xf76103f08385611145565b84906111c3565b6103ff565b60005b60028a015460",
+        "value_int": "111892684954827320912538651112391423543335142291823056843680209721045442188384",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1158,
+        "length": 32,
+        "value_hex": "0x1f8201168201806040525081019061049d9190611ec0565b90506b0311d25331",
+        "value_int": "14251395933058837055597096472128860354156209067642022212125134551685656630065",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1308,
+        "length": 32,
+        "value_hex": "0x565b6004808901546040516370a0823160e01b81526000926001600160a01b03",
+        "value_int": "39060350750081154938062345583866382572298919741382448949020815875186588916483",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1436,
+        "length": 32,
+        "value_hex": "0x90611ec0565b9050600081116040518060400160405280600281526020016131",
+        "value_int": "65304646599068551231340171603510993159408360688285551100728477170803606118705",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1555,
+        "length": 32,
+        "value_hex": "0x062d908b90339086908c908c908c908c908c90600401611eec565b6020604051",
+        "value_int": "2794382823507332627327934654555793018207420644875973428313709751168386744401",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1842,
+        "length": 32,
+        "value_hex": "0x15604051806040016040528060018152602001603360f81b8152509061076a57",
+        "value_int": "9668631047508761982387060269974346100929509688011166862981411333527419972183",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 2278,
+        "length": 32,
+        "value_hex": "0x1f31565b50805160808201516109069190610900908c611145565b906117a756",
+        "value_int": "14108869824274139817969779238693707440648105462853793610409027445645121136470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 2428,
+        "length": 32,
+        "value_hex": "0x60405162461bcd60e51b81526004016101989190611f31565b5060078c015460",
+        "value_int": "43535673367051550900441391543643668485725717638476867836340511918994915152992",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 2747,
+        "length": 32,
+        "value_hex": "0x40518263ffffffff1660e01b8152600401610ad59190611ed8565b6020604051",
+        "value_int": "29092036844595847469216954851487797671744194272979493322758625375319666737233",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14125",
+        "var_name": "./contracts/misc/WETHGateway.sol:WETH",
+        "offset": 3106,
+        "length": 32,
+        "value_hex": "0x0c6157604080518082019091526002815261313760f01b602082015286610c5b",
+        "value_int": "5599741395162524547220683136527671943065694411305454708309148874428890811483",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/mocks/flashloan/MockFlashLoanReceiver.sol:MockFlashLoanReceiver": [
+      {
+        "label": "6464",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 905,
+        "length": 32,
+        "value_hex": "0x5b60206040518083038186803b1580156103a157600080fd5b505afa15801561",
+        "value_int": "41330309990107458226644486049051712872819707575545063018972549631399818171745",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1800,
+        "length": 32,
+        "value_hex": "0x60208201529061072a5760405162461bcd60e51b81526004016101989190611f",
+        "value_int": "43479469832746513021682255167551499265336554407771728286252223680182083412255",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6467",
+        "var_name": "./contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2233,
+        "length": 32,
+        "value_hex": "0x4052806002815260200161031360f41b815250906108e95760405162461bcd60",
+        "value_int": "29093789780591970087161677480994432962839075902841932001284522784101775428960",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/mocks/swap/MockParaSwapAugustus.sol:MockParaSwapAugustus": [
+      {
+        "label": "15952",
+        "var_name": "./contracts/mocks/swap/MockParaSwapAugustus.sol:TOKEN_TRANSFER_PROXY",
+        "offset": 236,
+        "length": 32,
+        "value_hex": "0x6100f6366004611d2b565b61051d565b6100b5610109366004611bf9565b6106",
+        "value_int": "43876045608127051737866384262306729747917494005363252204206775193925079228678",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "15952",
+        "var_name": "./contracts/mocks/swap/MockParaSwapAugustus.sol:TOKEN_TRANSFER_PROXY",
+        "offset": 514,
+        "length": 32,
+        "value_hex": "0x81526004016101989190611f31565b5050505050565b60006102228661110d56",
+        "value_int": "58493901602187488519721122898085357478630062432720178965735559520826397101398",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/mocks/swap/MockParaSwapAugustusRegistry.sol:MockParaSwapAugustusRegistry": [
+      {
+        "label": "16120",
+        "var_name": "./contracts/mocks/swap/MockParaSwapAugustusRegistry.sol:AUGUSTUS",
+        "offset": 82,
+        "length": 32,
+        "value_hex": "0x610121578063d09db04a14610129578063fa0c21491461013c5761009d565b80",
+        "value_int": "43876343276307456991562475251101219557413374639379371678309576443084601187200",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:DefaultReserveInterestRateStrategy": [
+      {
+        "label": "17422",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1285,
+        "length": 32,
+        "value_hex": "0x50505050505050565b6b0311d253316c79d37600000081565b60048089015460",
+        "value_int": "36326929956805080955133627208167527897617518872072947598341721361656127247456",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17422",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1365,
+        "length": 32,
+        "value_hex": "0x40518083038186803b15801561056957600080fd5b505afa15801561057d573d",
+        "value_int": "29092023877230721107082566501712678244429722340039481084748610258240928569149",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17422",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1661,
+        "length": 32,
+        "value_hex": "0x5b60405180604001604052806002815260200161032360f41b815250906106b6",
+        "value_int": "41330530448337409168519751483287468205303219650709698552002611815433646442166",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17422",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1781,
+        "length": 32,
+        "value_hex": "0x6040805180820190915260018152601960f91b60208201529061072a57604051",
+        "value_int": "43535997296960913858391298297979792669445335116819432874248656386662946848849",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17422",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1988,
+        "length": 32,
+        "value_hex": "0x6107e05760405162461bcd60e51b81526004016101989190611f31565b508760",
+        "value_int": "43888262588863768342868816341291522848954553793714827751547622241801625175904",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17425",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:EXCESS_UTILIZATION_RATE",
+        "offset": 513,
+        "length": 32,
+        "value_hex": "0x1b81526004016101989190611f31565b5050505050565b60006102228661110d",
+        "value_int": "12440938714881737363109912961455698709050467376582091437621446592712816005389",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17425",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:EXCESS_UTILIZATION_RATE",
+        "offset": 1329,
+        "length": 32,
+        "value_hex": "0x6000926001600160a01b03909216916370a082319161055191339101611ed856",
+        "value_int": "43423043707259891367123358133033968247522849714423268914141915654114968000598",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17427",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:addressesProvider",
+        "offset": 1024,
+        "length": 32,
+        "value_hex": "0x60028a015460078b0154604080516380031e3760e01b815290519394506fffff",
+        "value_int": "43426519634964670548102156965929158969650183723937860693213682216623760474111",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17427",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:addressesProvider",
+        "offset": 2060,
+        "length": 32,
+        "value_hex": "0x6108285760405162461bcd60e51b81526004016101989190611f31565b506040",
+        "value_int": "43888759514600737263461511643713606794787130273560824019379593943545738715200",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17429",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 848,
+        "length": 32,
+        "value_hex": "0x565b611173565b905060006103d9876001600160a01b03166370a08231866040",
+        "value_int": "39060358000916913427448164800886776231946464192804518823582852038397631291456",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17429",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 1570,
+        "length": 32,
+        "value_hex": "0x8c908c90600401611eec565b60206040518083038186803b1580156106455760",
+        "value_int": "63579194915817880185661706763953546558229828115266092465158480117715217766240",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17429",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 1857,
+        "length": 32,
+        "value_hex": "0x52602001603360f81b8152509061076a5760405162461bcd60e51b8152600401",
+        "value_int": "37259491795020728714179654558061217129723276810312329207401851073487737717761",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17429",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 2024,
+        "length": 32,
+        "value_hex": "0x07f05750876001145b604051806040016040528060018152602001600760fb1b",
+        "value_int": "3590835858614234328165491579688664733396513840177223961237719779059431439131",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17431",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 771,
+        "length": 32,
+        "value_hex": "0x038186803b15801561031357600080fd5b505afa158015610327573d6000803e",
+        "value_int": "1585790108212124004103967432384369440082935352673804961644720512555349475390",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17431",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 881,
+        "length": 32,
+        "value_hex": "0x8263ffffffff1660e01b81526004016103899190611ed8565b60206040518083",
+        "value_int": "58977355022302093506084979057905411337208655001655747582141811692856786649219",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17431",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 1603,
+        "length": 32,
+        "value_hex": "0x80fd5b505af4158015610659573d6000803e3d6000fd5b505050506040513d60",
+        "value_int": "58343687151338836838384810479237235921675437692383239801547379004357951438176",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17431",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 1819,
+        "length": 32,
+        "value_hex": "0x1b81526004016101989190611f31565b50806101000151156040518060400160",
+        "value_int": "12440938714881737363109912961455698709050716945348377924718493438165332787552",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17433",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 735,
+        "length": 32,
+        "value_hex": "0x0160a01b03166318160ddd6040518163ffffffff1660e01b8152600401602060",
+        "value_int": "623035174461184175415112629451832662011522703016453702833024870067002679392",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17433",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 812,
+        "length": 32,
+        "value_hex": "0x6040513d601f19601f8201168201806040525081019061034b9190611ec0565b",
+        "value_int": "43535672372273000050114432171502024206122012083804357435871490387908673689179",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17433",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 1528,
+        "length": 32,
+        "value_hex": "0xebb07483fe533034a0a7be22e8a7c5bf0fdaa79063e61704249061062d908b90",
+        "value_int": "106605288661581381778623603801453638427462752235940250244440566110132093619088",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17435",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 477,
+        "length": 32,
+        "value_hex": "0x5180820190915260018152603360f81b60208201528115610210576040516246",
+        "value_int": "36864394428745992004902356300673558901745047376735717971698601752442128392774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17435",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 1479,
+        "length": 32,
+        "value_hex": "0x5760405162461bcd60e51b81526004016101989190611f31565b50868061067d",
+        "value_int": "39521279050834220909184051122263639264532087435739085700270118440038037522045",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17435",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 1713,
+        "length": 32,
+        "value_hex": "0x90611f31565b50505050505050505050565b6106ca611aee565b6106d38c6111",
+        "value_int": "65304649645542421774942961203655802532736455136569271258466848588165064450321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17437",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope2",
+        "offset": 1431,
+        "length": 32,
+        "value_hex": "0x906105a19190611ec0565b905060008111604051806040016040528060028152",
+        "value_int": "65304473225886687091824001435629998987867759069535121123713832014733843267922",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "17437",
+        "var_name": "./contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope2",
+        "offset": 2096,
+        "length": 32,
+        "value_hex": "0x810190915285548152610848908c9088908787876112e0565b60c08601526020",
+        "value_int": "58351122083662803800430949826833380690578107101340660235170415458530343673888",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:BaseImmutableAdminUpgradeabilityProxy": [
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 359,
+        "length": 32,
+        "value_hex": "0x5260018152603160f81b60208201529193509150836101a15760405162461bcd",
+        "value_int": "37259281290301214970095796542108874489118364968510367979152224181734902995917",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 433,
+        "length": 32,
+        "value_hex": "0x601960f91b6020820152826101d85760405162461bcd60e51b81526004016101",
+        "value_int": "43466873924172021129211422047090370978418166276095119912921346106369427726593",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 624,
+        "length": 32,
+        "value_hex": "0xa01b03166318160ddd6040518163ffffffff1660e01b81526004016020604051",
+        "value_int": "72417781952865330907834560697161773236117262580831326976048313925665963393105",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 701,
+        "length": 32,
+        "value_hex": "0x513d601f19601f820116820180604052508101906102da9190611ec0565b8760",
+        "value_int": "36745781812276047510356177486608867839761762818870984505496694439054656898912",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 742,
+        "length": 32,
+        "value_hex": "0x18160ddd6040518163ffffffff1660e01b815260040160206040518083038186",
+        "value_int": "10894474692410678541109574590966339237597280134858990652671560352039748993414",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 789,
+        "length": 32,
+        "value_hex": "0x5afa158015610327573d6000803e3d6000fd5b505050506040513d601f19601f",
+        "value_int": "41150016528486493711431381614514770536948539970387530820130624985952020946975",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol:InitializableImmutableAdminUpgradeabilityProxy": [
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 552,
+        "length": 32,
+        "value_hex": "0x80604051806040016040528060018152602001601960f91b8152509061026057",
+        "value_int": "58066105845918265538332745410324370086475948591220074758315459910417661452375",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 626,
+        "length": 32,
+        "value_hex": "0x03166318160ddd6040518163ffffffff1660e01b815260040160206040518083",
+        "value_int": "1396493103424549941807298102691620204059006752046417054305700109132378505347",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 817,
+        "length": 32,
+        "value_hex": "0x1f19601f8201168201806040525081019061034b9190611ec0565b9061114556",
+        "value_int": "14066532899799401685354838549800121866435059827195884366173006447624462615894",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 1118,
+        "length": 32,
+        "value_hex": "0x046557600080fd5b505afa158015610479573d6000803e3d6000fd5b50505050",
+        "value_int": "1988305988015796470638178985459129935704313569479040873112888411461430300752",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 1159,
+        "length": 32,
+        "value_hex": "0x8201168201806040525081019061049d9190611ec0565b90506b0311d253316c",
+        "value_int": "58802592506260228102156161595663107212619996681500201080849340986221078458732",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21756",
+        "var_name": "./contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 1455,
+        "length": 32,
+        "value_hex": "0x604052806002815260200161313960f01b815250906105e05760405162461bcd",
+        "value_int": "43535681080324010666992094681181560951151645703971036919163060837925079358413",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/adapters/FlashLiquidationAdapter.sol:FlashLiquidationAdapter": [
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 817,
+        "length": 32,
+        "value_hex": "0x1f19601f8201168201806040525081019061034b9190611ec0565b9061114556",
+        "value_int": "14066532899799401685354838549800121866435059827195884366173006447624462615894",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 3646,
+        "length": 32,
+        "value_hex": "0x2082015287610e5f5760405162461bcd60e51b81526004016101989190611f31",
+        "value_int": "14703710399804773844078449167289405040117852415342775342882050401807785598769",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 3707,
+        "length": 32,
+        "value_hex": "0x1115610e995760405162461bcd60e51b81526004016101989190611f31565b50",
+        "value_int": "7727092077259491717257370978310369133666372698440527991905743773247529704272",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 3813,
+        "length": 32,
+        "value_hex": "0x461bcd60e51b81526004016101989190611f31565b50604051633985c10960e2",
+        "value_int": "31711021741861465435015147055453926797759545733598636516353844028427502969058",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 5645,
+        "length": 32,
+        "value_hex": "0x0181815250506116b38160060160009054906101000a90046001600160a01b03",
+        "value_int": "681128664392090096089601042206976172479072498025670531860693032898165480195",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 6714,
+        "length": 32,
+        "value_hex": "0x611f31565b506000838581611a4a57fe5b0495945050505050565b6040805180",
+        "value_int": "43929459085327858601272407308175996513777606126132980497449807207591133073792",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 6775,
+        "length": 32,
+        "value_hex": "0x405162461bcd60e51b81526004016101989190611f31565b5060408051808201",
+        "value_int": "29091815182842269850181674338739978431865187548584018315242986565659801977345",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 6881,
+        "length": 32,
+        "value_hex": "0xa76400008602018161126557fe5b604051806101600160405280600081526020",
+        "value_int": "75712930433995997546233151300346163828241775681532447671422714376067277283360",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30018",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:ORACLE",
+        "offset": 900,
+        "length": 32,
+        "value_hex": "0x90611ed8565b60206040518083038186803b1580156103a157600080fd5b505a",
+        "value_int": "65304647246107193808634631131081936861605423271547525225896286310112643731546",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30018",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:ORACLE",
+        "offset": 7579,
+        "length": 32,
+        "value_hex": "0x80600060a08688031215611dac578081fd5b853594506020860135611dbe8161",
+        "value_int": "58065664541937012286375050506908180279324858317111563314960807980120089198945",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 1571,
+        "length": 32,
+        "value_hex": "0x908c90600401611eec565b60206040518083038186803b158015610645576000",
+        "value_int": "65381405225109968229459030355800819449038144318440705556509149027257598566400",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 3940,
+        "length": 32,
+        "value_hex": "0x00803e3d6000fd5b505050506040513d601f19601f8201168201806040525081",
+        "value_int": "226585987232268034022742696410095481926423298159008797389085766885592682625",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4184,
+        "length": 32,
+        "value_hex": "0x1561105e57fe5b145b8061108157506000821180156110815750600285600281",
+        "value_int": "9670066956975438070692170766562358859045788940514211362223661181792803619457",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 5466,
+        "length": 32,
+        "value_hex": "0x610180840152505b60e0820151611571908c9061199e565b156116e657806005",
+        "value_int": "43877000142026141576320128659760059244301889006910636423148955784784390414341",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 5519,
+        "length": 32,
+        "value_hex": "0x6001600160a01b03166370a082318e6040518263ffffffff1660e01b81526004",
+        "value_int": "43424462915843433818624737455874695423838853277326765031267298074798375198724",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 5923,
+        "length": 32,
+        "value_hex": "0x016082015261012081015161173857600061174d565b61012081015161018082",
+        "value_int": "622827429462533937761552405220887152647392768223288993980901086255374237826",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 7008,
+        "length": 32,
+        "value_hex": "0x5260200160008152602001600081526020016000815260200160008152602001",
+        "value_int": "37259491794999800519712935693277969195561767191958740316091615424458052870145",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 7249,
+        "length": 32,
+        "value_hex": "0x0135965060c08d0135955060e08d013594506101008d013593506101208d0135",
+        "value_int": "546993171953463519248645437027447201286650624631732049700318014546717245749",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35917",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 853,
+        "length": 32,
+        "value_hex": "0x565b905060006103d9876001600160a01b03166370a08231866040518263ffff",
+        "value_int": "39060684079435549484671411147232231569164900815323395238276807930499314221055",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1089,
+        "length": 32,
+        "value_hex": "0x6380031e37916004808301926020929190829003018186803b15801561046557",
+        "value_int": "45005149953924425905641603638235071675737441922901076085952735043242000934231",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1438,
+        "length": 32,
+        "value_hex": "0x1ec0565b90506000811160405180604001604052806002815260200161313960",
+        "value_int": "13909216112674446502309301582685530274422840740989474949717349307945973791072",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2243,
+        "length": 32,
+        "value_hex": "0x61031360f41b815250906108e95760405162461bcd60e51b8152600401610198",
+        "value_int": "43879780600814158026969921443084070739538519071399218742453925673286429114776",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2390,
+        "length": 32,
+        "value_hex": "0x80610140015160405180604001604052806002815260200161189960f11b8152",
+        "value_int": "58067437411263322908699288388923740306751083708135196521430931423611980579154",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2966,
+        "length": 32,
+        "value_hex": "0x565b9350509250925082604051806040016040528060018152602001601960f9",
+        "value_int": "39060704783049627682327169203889702832062014821886616649985635910106192896249",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/adapters/ParaSwapLiquiditySwapAdapter.sol:ParaSwapLiquiditySwapAdapter": [
+      {
+        "label": "29508",
+        "var_name": "contracts/adapters/BaseParaSwapAdapter.sol:ORACLE",
+        "offset": 616,
+        "length": 32,
+        "value_hex": "0x0351856001600160a01b03166318160ddd6040518163ffffffff1660e01b8152",
+        "value_int": "1500973678560658101771221502509042558113877058318478807097340321725316563282",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "29508",
+        "var_name": "contracts/adapters/BaseParaSwapAdapter.sol:ORACLE",
+        "offset": 5432,
+        "length": 32,
+        "value_hex": "0x015260c08301516115599061154d908390611922565b61018085015190611145",
+        "value_int": "597862065650598246549860964399576223611181213587375702850790647606980710725",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "29701",
+        "var_name": "contracts/adapters/BaseParaSwapSellAdapter.sol:AUGUSTUS_REGISTRY",
+        "offset": 652,
+        "length": 32,
+        "value_hex": "0x206040518083038186803b1580156102a257600080fd5b505afa1580156102b6",
+        "value_int": "14644072381938993200556387425514329420535419118250846845617059514183678231222",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "29701",
+        "var_name": "contracts/adapters/BaseParaSwapSellAdapter.sol:AUGUSTUS_REGISTRY",
+        "offset": 3312,
+        "length": 32,
+        "value_hex": "0x20810190915288548152610d0c91600160a01b900460ff16611835565b158061",
+        "value_int": "14701945225303837076105939307782870160363830887690627926339325227611119255649",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35917",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 574,
+        "length": 32,
+        "value_hex": "0xf91b815250906102605760405162461bcd60e51b81526004016101989190611f",
+        "value_int": "112674496712461087156392424219397664971328262225393064461902218305010995847455",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 881,
+        "length": 32,
+        "value_hex": "0x8263ffffffff1660e01b81526004016103899190611ed8565b60206040518083",
+        "value_int": "58977355022302093506084979057905411337208655001655747582141811692856786649219",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1181,
+        "length": 32,
+        "value_hex": "0x5b90506b0311d253316c79d37600000083101580156104c657506104c281610f",
+        "value_int": "41415450223150633564228837767543812361367292891815918709798450924925850050831",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1571,
+        "length": 32,
+        "value_hex": "0x908c90600401611eec565b60206040518083038186803b158015610645576000",
+        "value_int": "65381405225109968229459030355800819449038144318440705556509149027257598566400",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1624,
+        "length": 32,
+        "value_hex": "0xfd5b505050506040513d601f19601f8201168201806040525081019061067d91",
+        "value_int": "114596488079422753944007022762533105002619287270533284538359479450186998513041",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1684,
+        "length": 32,
+        "value_hex": "0xf41b815250906106b65760405162461bcd60e51b81526004016101989190611f",
+        "value_int": "110412932469544755241742924224224915395513326039581763296575369177337217179935",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2371,
+        "length": 32,
+        "value_hex": "0x01989190611f31565b506001881415610b7b5780610140015160405180604001",
+        "value_int": "721878248110309742114510147563785322255536938539869853573364243835010433025",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2424,
+        "length": 32,
+        "value_hex": "0x6109945760405162461bcd60e51b81526004016101989190611f31565b506007",
+        "value_int": "43891271750270969028680137894847475632051822477226694040085673102363201658887",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2484,
+        "length": 32,
+        "value_hex": "0x0460ff16611835565b15806109ce57506109cc8c61188d565b155b80610a5857",
+        "value_int": "1980629261214299749187606802146823221518710974749957544853159765676982425687",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2640,
+        "length": 32,
+        "value_hex": "0x90611ec0565b8a115b60405180604001604052806002815260200161313360f0",
+        "value_int": "65304646599068541194141067824516635417803779206190939569947729501303019364592",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2683,
+        "length": 32,
+        "value_hex": "0x5162461bcd60e51b81526004016101989190611f31565b508c6001600160a01b",
+        "value_int": "36810975619384574537965590161408375948208993836512590176922363704230247702555",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2788,
+        "length": 32,
+        "value_hex": "0x15610aed57600080fd5b505afa158015610b01573d6000803e3d6000fd5b5050",
+        "value_int": "9670029401704587750370387304763116775064743292402722388352385630107015532624",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3111,
+        "length": 32,
+        "value_hex": "0x80518082019091526002815261313760f01b602082015286610c5b5760405162",
+        "value_int": "58040046159395386743054738114620424900385133709918672235348117948222893216098",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/adapters/UniswapLiquiditySwapAdapter.sol:UniswapLiquiditySwapAdapter": [
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 847,
+        "length": 32,
+        "value_hex": "0x45565b611173565b905060006103d9876001600160a01b03166370a082318660",
+        "value_int": "31362166075686462490835336446876376633232716430164075927914672455407826470496",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4337,
+        "length": 32,
+        "value_hex": "0x610e195760405162461bcd60e51b81526004016101989190611f31565b546001",
+        "value_int": "43899257070794205710982199907380130150500308410307495177329996142890137706497",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4398,
+        "length": 32,
+        "value_hex": "0x00008116151591670800000000000000909116151590565b6000828201838110",
+        "value_int": "890920617993336762347546207063853932476822685781603118173290939598209296",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4504,
+        "length": 32,
+        "value_hex": "0x8760f31b815250906111bc5760405162461bcd60e51b81526004016101989190",
+        "value_int": "61233529742859665376101663533017171415785410250054493098702149672318604448144",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 6727,
+        "length": 32,
+        "value_hex": "0x4a57fe5b0495945050505050565b604080518082019091526002815261035360",
+        "value_int": "33626621987207446232612384131662401253188399289680215000978999270639501792096",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 8157,
+        "length": 32,
+        "value_hex": "0x696f6e206f766572666c6f6040820152607760f81b606082015260800190565b",
+        "value_int": "47689729191988181529114184127150289964042695051067501551913183138471971149403",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 8218,
+        "length": 32,
+        "value_hex": "0x5b50565b801515811461201a57600080fdfea2646970667358221220303aaeda",
+        "value_int": "41302413003289129575979113952214280600430724944663172722341677508530903101146",
+        "used_stripped_runtime": false
+      },
+      {
+        "label": "30018",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:ORACLE",
+        "offset": 930,
+        "length": 32,
+        "value_hex": "0x505afa1580156103b5573d6000803e3d6000fd5b505050506040513d601f1960",
+        "value_int": "36345770138725711439408041518493969012746989887957505019778405541925372238176",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 2912,
+        "length": 32,
+        "value_hex": "0x60405162461bcd60e51b81526004016101989190611f31565b50505b50505050",
+        "value_int": "43535673367051550900441391543643668485725717638476867836340511901762504904784",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4631,
+        "length": 32,
+        "value_hex": "0x01528304906b033b2e3c9fd0803ce800000082190485111561124b5760405162",
+        "value_int": "598098559715302575335303367892595039340766585688424486152553642368199315810",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4875,
+        "length": 32,
+        "value_hex": "0x5095509550955050611799565b600060e08201525b878160e0015110156116f8",
+        "value_int": "36448844264539494423359331151810900546859522345568170130541389580301590664952",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6548,
+        "length": 32,
+        "value_hex": "0x000000815250611a1d565b600060808210604051806040016040528060028152",
+        "value_int": "3486501794107314934466170130402841106529894300474822409042899534774610",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6601,
+        "length": 32,
+        "value_hex": "0x461bcd60e51b81526004016101989190611f31565b5050905160016002909202",
+        "value_int": "31711021741861465435015147055453926797759545733598636442271718922250253013506",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 7005,
+        "length": 32,
+        "value_hex": "0x6000815260200160008152602001600081526020016000815260200160008152",
+        "value_int": "43422926010111082219112418617535913229524185182710968259628478275063130390866",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35917",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 883,
+        "length": 32,
+        "value_hex": "0xffffffff1660e01b81526004016103899190611ed8565b602060405180830381",
+        "value_int": "115792089212712971409278933895361161007596034094686470191074502930015591793537",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1119,
+        "length": 32,
+        "value_hex": "0x6557600080fd5b505afa158015610479573d6000803e3d6000fd5b5050505060",
+        "value_int": "45837975982779114789089880242785632127224335124072207359069097302473638432864",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1845,
+        "length": 32,
+        "value_hex": "0x51806040016040528060018152602001603360f81b8152509061076a57604051",
+        "value_int": "36864161452766997007139647063634037676371698753271661570321088095135966707793",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2567,
+        "length": 32,
+        "value_hex": "0x206040518083038186803b158015610a1d57600080fd5b505afa158015610a31",
+        "value_int": "14644072381938993200556387425514329423080890730178960742227850034620538096177",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2657,
+        "length": 32,
+        "value_hex": "0x4052806002815260200161313360f01b81525090610a915760405162461bcd60",
+        "value_int": "29093789780591970087161677548406195636277829277945910326110867792330586049888",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2711,
+        "length": 32,
+        "value_hex": "0x0160a01b03166370a082318d60040160009054906101000a90046001600160a0",
+        "value_int": "623035174461184731194957584462642412219401248169733430252675630007486341280",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3515,
+        "length": 32,
+        "value_hex": "0x52806002815260200161313360f01b81525090610c5b5760405162461bcd60e5",
+        "value_int": "37316472643307835204846411835959980277845276553157498647122161830351747244261",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3575,
+        "length": 32,
+        "value_hex": "0x52600760fb1b6020820152905162461bcd60e51b81526101989190600401611f",
+        "value_int": "37259321828870523157337503821128936818712268511791325301946634187778683920671",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3640,
+        "length": 32,
+        "value_hex": "0x603160f81b602082015287610e5f5760405162461bcd60e51b81526004016101",
+        "value_int": "43509278226766755685970783263234800209185818225114481270718340629040174555393",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3826,
+        "length": 32,
+        "value_hex": "0x989190611f31565b50604051633985c10960e21b815273d3ebb07483fe533034",
+        "value_int": "69008742278923098557743636258808767759294507357541680573621663054510492430388",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3886,
+        "length": 32,
+        "value_hex": "0x8c908c908c908c908c90600401611eec565b60206040518083038186803b1580",
+        "value_int": "63579194920509437340684782669276284314145608374750295470703196886907456525696",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 5909,
+        "length": 32,
+        "value_hex": "0x608201516117219161195c565b61016082015261012081015161173857600061",
+        "value_int": "43651732678141597961021277229530719716481551023722228724851326057277695197281",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 6234,
+        "length": 32,
+        "value_hex": "0x745760405162461bcd60e51b81526004016101989190611f31565b5050815160",
+        "value_int": "52622670431951222226732102781758050586890040268164236383895897903741129544032",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/adapters/UniswapRepayAdapter.sol:UniswapRepayAdapter": [
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 847,
+        "length": 32,
+        "value_hex": "0x45565b611173565b905060006103d9876001600160a01b03166370a082318660",
+        "value_int": "31362166075686462490835336446876376633232716430164075927914672455407826470496",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4014,
+        "length": 32,
+        "value_hex": "0x5760405162461bcd60e51b81526004016101989190611f31565b6000610fd287",
+        "value_int": "39521279050834220909184051122263639264532087435739085700270118457054172533383",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4075,
+        "length": 32,
+        "value_hex": "0xf91b8152509061100d5760405162461bcd60e51b81526004016101989190611f",
+        "value_int": "112674496712461087242236694436541295261129429298244783691489508973247655338271",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 4181,
+        "length": 32,
+        "value_hex": "0x0281111561105e57fe5b145b8061108157506000821180156110815750600285",
+        "value_int": "1132666874591745719610844597512576889031085731936765337015322727438916518533",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 5940,
+        "length": 32,
+        "value_hex": "0x61174d565b61012081015161018082015161174d9161195c565b610180820181",
+        "value_int": "43915517557714182598481754250717475079746199345829744967623696012798098276737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30015",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:WETH_ADDRESS",
+        "offset": 7042,
+        "length": 32,
+        "value_hex": "0x8152602001600081526020016000815260200160008152602001600081526020",
+        "value_int": "58493902357065582070938945319586008133856991363514029302367656064239264751648",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30018",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:ORACLE",
+        "offset": 930,
+        "length": 32,
+        "value_hex": "0x505afa1580156103b5573d6000803e3d6000fd5b505050506040513d601f1960",
+        "value_int": "36345770138725711439408041518493969012746989887957505019778405541925372238176",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 1537,
+        "length": 32,
+        "value_hex": "0xa7be22e8a7c5bf0fdaa79063e61704249061062d908b90339086908c908c908c",
+        "value_int": "75872187587465298371864659386967117212191769422145394201026537896039404048524",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4308,
+        "length": 32,
+        "value_hex": "0x5b60405180604001604052806002815260200161189b60f11b81525090610e19",
+        "value_int": "41330530448337409168519751483287468205303219650716342808251873585156702932505",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 4552,
+        "length": 32,
+        "value_hex": "0x8082019091526002815261035360f41b6020820152600090826111fd57604051",
+        "value_int": "58125745536362123952030529308011976347207208599565449547392790356700000436305",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6215,
+        "length": 32,
+        "value_hex": "0x6002815260200161373760f01b815250906118745760405162461bcd60e51b81",
+        "value_int": "43426459704240638995390200680461969608585040547851661019423423974525190347649",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6863,
+        "length": 32,
+        "value_hex": "0x6101989190611f31565b508281670de0b6b3a76400008602018161126557fe5b",
+        "value_int": "43877166149483520569642578394133143644172916527403988594864536296565629255259",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 6916,
+        "length": 32,
+        "value_hex": "0x8152602001600081526020016000815260200160008152602001600081526020",
+        "value_int": "58493902357065582070938945319586008133856991363514029302367656064239264751648",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "30021",
+        "var_name": "contracts/adapters/BaseUniswapAdapter.sol:UNISWAP_ROUTER",
+        "offset": 7320,
+        "length": 32,
+        "value_hex": "0x9295989b565b600080600080600080600080610100898b031215611cb9578384",
+        "value_int": "66301989359139764123033067356761669450860641856959391550350623052796234531716",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35917",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 883,
+        "length": 32,
+        "value_hex": "0xffffffff1660e01b81526004016103899190611ed8565b602060405180830381",
+        "value_int": "115792089212712971409278933895361161007596034094686470191074502930015591793537",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1119,
+        "length": 32,
+        "value_hex": "0x6557600080fd5b505afa158015610479573d6000803e3d6000fd5b5050505060",
+        "value_int": "45837975982779114789089880242785632127224335124072207359069097302473638432864",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1404,
+        "length": 32,
+        "value_hex": "0xfd5b505050506040513d601f19601f820116820180604052508101906105a191",
+        "value_int": "114596488079422753944007022762533105002619287270533284538359479450186998456721",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2071,
+        "length": 32,
+        "value_hex": "0x60e51b81526004016101989190611f31565b5060408051602081019091528554",
+        "value_int": "43826831275487413165573751725058975372300278017903851433504924774227722274132",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2124,
+        "length": 32,
+        "value_hex": "0x0152602080860191909152908452608084019190915260608301829052604080",
+        "value_int": "597857751797779403251386769011188669465019911877994728498298429626145325184",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2184,
+        "length": 32,
+        "value_hex": "0x60405162461bcd60e51b81526004016101989190611f31565b50670de0b6b3a7",
+        "value_int": "43535673367051550900441391543643668485725717638476867836340511926718687523751",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2727,
+        "length": 32,
+        "value_hex": "0x009054906101000a90046001600160a01b03166040518263ffffffff1660e01b",
+        "value_int": "255009616469241554801953326639038048691608379860460363717916942030547771419",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2780,
+        "length": 32,
+        "value_hex": "0x83038186803b158015610aed57600080fd5b505afa158015610b01573d600080",
+        "value_int": "59259177657018100486296499045315557825030689521248653189926481974494249353344",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2970,
+        "length": 32,
+        "value_hex": "0x509250925082604051806040016040528060018152602001601960f91b815250",
+        "value_int": "36443543642457528732464183308891440171655258846725481649191043296232986464848",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3504,
+        "length": 32,
+        "value_hex": "0x115b60405180604001604052806002815260200161313360f01b81525090610c",
+        "value_int": "7850765810479346606911041002464773053558175620963334151859268158909727138060",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 3547,
+        "length": 32,
+        "value_hex": "0x1b81526004016101989190611f31565b60408051808201825260018152600760",
+        "value_int": "12440938714881737363109912961455698709071652921414710720967897592561942923104",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 5586,
+        "length": 32,
+        "value_hex": "0x505afa1580156115e5573d6000803e3d6000fd5b505050506040513d601f1960",
+        "value_int": "36345770138725711553572829330839225405010410022546937962639995188114999941472",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 6549,
+        "length": 32,
+        "value_hex": "0x0000815250611a1d565b60006080821060405180604001604052806002815260",
+        "value_int": "892544459291472623223339553383127323271652940921554536714982280902300256",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/misc/AaveOracle.sol:AaveOracle": [
+      {
+        "label": "37732",
+        "var_name": "contracts/misc/AaveOracle.sol:BASE_CURRENCY",
+        "offset": 1555,
+        "length": 32,
+        "value_hex": "0x062d908b90339086908c908c908c908c908c90600401611eec565b6020604051",
+        "value_int": "2794382823507332627327934654555793018207420644875973428313709751168386744401",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "37732",
+        "var_name": "contracts/misc/AaveOracle.sol:BASE_CURRENCY",
+        "offset": 2036,
+        "length": 32,
+        "value_hex": "0x806040016040528060018152602001600760fb1b815250906108285760405162",
+        "value_int": "58066103685739404518499862586593109036227636949692367318681491683940604334434",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "37734",
+        "var_name": "contracts/misc/AaveOracle.sol:BASE_CURRENCY_UNIT",
+        "offset": 1079,
+        "length": 32,
+        "value_hex": "0x600160a01b03909216916380031e379160048083019260209291908290030181",
+        "value_int": "43424467195144008625952289064085770341981856731817184463720687488393929752961",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "37734",
+        "var_name": "contracts/misc/AaveOracle.sol:BASE_CURRENCY_UNIT",
+        "offset": 1597,
+        "length": 32,
+        "value_hex": "0x61064557600080fd5b505af4158015610659573d6000803e3d6000fd5b505050",
+        "value_int": "43885425971088985847793842599154985459573676427672776977996796942785459540048",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/misc/AaveProtocolDataProvider.sol:AaveProtocolDataProvider": [
+      {
+        "label": "38054",
+        "var_name": "contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 347,
+        "length": 32,
+        "value_hex": "0x5b50506040805180820190915260018152603160f81b60208201529193509150",
+        "value_int": "41302371720914909161163863690748790366101203236946315828962856709580628463952",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38054",
+        "var_name": "contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 405,
+        "length": 32,
+        "value_hex": "0x1f31565b60405180910390fd5b506040805180820190915260018152601960f9",
+        "value_int": "14108869825932808613021538819317157847486425332010432787648022855142417719545",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38054",
+        "var_name": "contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 684,
+        "length": 32,
+        "value_hex": "0x573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040",
+        "value_int": "39459658078850526406767908557430175199958175965226613469518266831113329598528",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38054",
+        "var_name": "contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 1959,
+        "length": 32,
+        "value_hex": "0x0151604051806040016040528060018152602001603760f81b815250906107e0",
+        "value_int": "596091762499300549642021464414349540458240808631494047028227156146758158304",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38054",
+        "var_name": "contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 2859,
+        "length": 32,
+        "value_hex": "0x9052600090610b39908961126e565b9050808b11156040518060400160405280",
+        "value_int": "65278594238156370858352691134136209170702450780585181233176671278265740055168",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38054",
+        "var_name": "contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 3195,
+        "length": 32,
+        "value_hex": "0x82019091526002815261062760f31b602082015285610cac5760405162461bcd",
+        "value_int": "58803434932230717502729422797140902793315878535619132021443793236477916617677",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38054",
+        "var_name": "contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 4089,
+        "length": 32,
+        "value_hex": "0x461bcd60e51b81526004016101989190611f31565b5060408051808201909152",
+        "value_int": "31711021741861465435015147055453926797759545733598636516357225746846933094738",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38054",
+        "var_name": "contracts/misc/AaveProtocolDataProvider.sol:ADDRESSES_PROVIDER",
+        "offset": 4393,
+        "length": 32,
+        "value_hex": "0x000000000000008116151591670800000000000000909116151590565b600082",
+        "value_int": "810287581765202742051357024196344293592867584976923461156994",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/misc/UiPoolDataProvider.sol:UiPoolDataProvider": [
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 1876,
+        "length": 32,
+        "value_hex": "0x5162461bcd60e51b81526004016101989190611f31565b506040805180820190",
+        "value_int": "36810975619384574537965590161408375948208993836512590176919184302469009244560",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 1942,
+        "length": 32,
+        "value_hex": "0x04016101989190611f31565b5080610120015160405180604001604052806001",
+        "value_int": "1811687753820779172206571994206178752581324532467430831019736218248159453185",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 2121,
+        "length": 32,
+        "value_hex": "0x60c0860152602080860191909152908452608084019190915260608301829052",
+        "value_int": "43762192970076591932786925904592546893867701207029997896353786506402584498258",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 2300,
+        "length": 32,
+        "value_hex": "0x611145565b906117a7565b604080830182905260608301518151808301909252",
+        "value_int": "43904861261374226857040714814997432290143460268754840999191923119256945857106",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 2474,
+        "length": 32,
+        "value_hex": "0x6109bc91600160a01b900460ff16611835565b15806109ce57506109cc8c6118",
+        "value_int": "43891549383775855141398680098080160710548365108281146977440938007001849159960",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 2513,
+        "length": 32,
+        "value_hex": "0x0a5857506004808d01546040516370a0823160e01b81526001600160a01b0390",
+        "value_int": "4679213646372897933749684690516405800598705728229718559796403532509562471312",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 3513,
+        "length": 32,
+        "value_hex": "0x604052806002815260200161313360f01b81525090610c5b5760405162461bcd",
+        "value_int": "43535681080324010666992094681181427146680454520232187735456573366040189606861",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 3578,
+        "length": 32,
+        "value_hex": "0x60fb1b6020820152905162461bcd60e51b81526101989190600401611f31565b",
+        "value_int": "43865701015982665498954028562235235694005397729130270753959188233012095571547",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 3767,
+        "length": 32,
+        "value_hex": "0x61110d565b505050905080604051806040016040528060018152602001601960",
+        "value_int": "43904474763552451551835006484676773221073482718983943130523861572396267870560",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 3931,
+        "length": 32,
+        "value_hex": "0x158015610f6b573d6000803e3d6000fd5b505050506040513d601f19601f8201",
+        "value_int": "9724873797952178476281783241719657609880156694894796768029895247584124961281",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 5071,
+        "length": 32,
+        "value_hex": "0x206040518083038186803b1580156113e557600080fd5b505afa1580156113f9",
+        "value_int": "14644072381938993200556387425514329426409277631624390087978982913562520916985",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 5131,
+        "length": 32,
+        "value_hex": "0x01806040525081019061141d9190611ec0565b825260c0820151158015906114",
+        "value_int": "679133574629503487117619417216089631549842687114101435533400248645275640084",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7377,
+        "length": 32,
+        "value_hex": "0x01359550606089013594506080890135935060a0890135925060c08901359150",
+        "value_int": "546986270167618191556876239779307060996593047605933044508923637728263115088",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7443,
+        "length": 32,
+        "value_hex": "0x208284031215611d20578081fd5b815161116a8161201d565b60008060008060",
+        "value_int": "14704612386387746951443290455404313464078658280090072364800518062064330113120",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7622,
+        "length": 32,
+        "value_hex": "0x611dce81612005565b92506060860135611dde81612005565b91506080860135",
+        "value_int": "43927010125264436641418019135683361006620233257225176664877626210113466794293",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7801,
+        "length": 32,
+        "value_hex": "0x7e578384fd5b8635955060208701359450611e968860408901611bea565b9350",
+        "value_int": "57146042330293334686322714080347093637126150209472259367029508264326711710544",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 7977,
+        "length": 32,
+        "value_hex": "0x01526101000190565b6000602080835283518082850152825b81811015611f5d",
+        "value_int": "597863804251322572526136981837165226078556333128681478378629349953268424541",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 8016,
+        "length": 32,
+        "value_hex": "0x858201604001528201611f41565b81811115611f6e5783604083870101525b50",
+        "value_int": "60387308476637377081426817167667133731456200224733300314376835066759608425296",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40638",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:incentivesController",
+        "offset": 8207,
+        "length": 32,
+        "value_hex": "0x16811461201a57600080fd5b50565b801515811461201a57600080fdfea26469",
+        "value_int": "10178946593610864166857575378800640068051661561246452234321552934966531351657",
+        "used_stripped_runtime": false
+      },
+      {
+        "label": "40640",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:oracle",
+        "offset": 1027,
+        "length": 32,
+        "value_hex": "0x015460078b0154604080516380031e3760e01b815290519394506fffffffffff",
+        "value_int": "601390773032524741284222903601151386641604872591900379621961369720220286975",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40640",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:oracle",
+        "offset": 2684,
+        "length": 32,
+        "value_hex": "0x62461bcd60e51b81526004016101989190611f31565b508c6001600160a01b03",
+        "value_int": "44450530339839252409941295616823706626633664230337398096060803641979911019267",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40640",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:oracle",
+        "offset": 5526,
+        "length": 32,
+        "value_hex": "0x03166370a082318e6040518263ffffffff1660e01b81526004016115b9919061",
+        "value_int": "1396495490480807805812195881789584213440462840296023652237040365670503649377",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40640",
+        "var_name": "contracts/misc/UiPoolDataProvider.sol:oracle",
+        "offset": 6528,
+        "length": 32,
+        "value_hex": "0x206469766973696f6e206279207a65726f000000000000815250611a1d565b60",
+        "value_int": "14651423736887750903052602381313333527826933650776770339140725324863216442208",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/misc/UiPoolDataProviderV2.sol:UiPoolDataProviderV2": [
+      {
+        "label": "41933",
+        "var_name": "contracts/misc/UiPoolDataProviderV2.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 351,
+        "length": 32,
+        "value_hex": "0x40805180820190915260018152603160f81b60208201529193509150836101a1",
+        "value_int": "29174741239639187085357803448787771554780795138530802622850724764446686773665",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41933",
+        "var_name": "contracts/misc/UiPoolDataProviderV2.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 4372,
+        "length": 32,
+        "value_hex": "0x8116151591670200000000000000821615159167040000000000000081161515",
+        "value_int": "58387373620811308415580522672195076805600436596237805798095031829239724119317",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41933",
+        "var_name": "contracts/misc/UiPoolDataProviderV2.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 4526,
+        "length": 32,
+        "value_hex": "0x81526004016101989190611f31565b5092915050565b60408051808201909152",
+        "value_int": "58493901602187488519721122898085357478718128979737788178325913015057357246802",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41935",
+        "var_name": "contracts/misc/UiPoolDataProviderV2.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 2514,
+        "length": 32,
+        "value_hex": "0x5857506004808d01546040516370a0823160e01b81526001600160a01b039091",
+        "value_int": "39957801098299916804209430685320806420568819770402310913303464243316696256657",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41935",
+        "var_name": "contracts/misc/UiPoolDataProviderV2.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 4861,
+        "length": 32,
+        "value_hex": "0x17576000806000806000199550955095509550955050611799565b600060e082",
+        "value_int": "10557573793219604512157769997946358560399070822591093687474126154627196969090",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41935",
+        "var_name": "contracts/misc/UiPoolDataProviderV2.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 5051,
+        "length": 32,
+        "value_hex": "0x63b3596f07916113cd9190600401611ed8565b60206040518083038186803b15",
+        "value_int": "45095854883114639237031148765091727551347867030338680106150819939011461659413",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/misc/UiPoolDataProviderV2V3.sol:UiPoolDataProviderV2V3": [
+      {
+        "label": "42695",
+        "var_name": "contracts/misc/UiPoolDataProviderV2V3.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 352,
+        "length": 32,
+        "value_hex": "0x805180820190915260018152603160f81b60208201529193509150836101a157",
+        "value_int": "58040046159395386743054642333643415414604536862889372924500163191911517102423",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "42695",
+        "var_name": "contracts/misc/UiPoolDataProviderV2V3.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 4841,
+        "length": 32,
+        "value_hex": "0x6112f0611b50565b6112f98a6118a1565b156113175760008060008060001995",
+        "value_int": "43907808596857387775531770173716718277228860887407228369438821101497219029397",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "42695",
+        "var_name": "contracts/misc/UiPoolDataProviderV2V3.sol:networkBaseTokenPriceInUsdProxyAggregator",
+        "offset": 4995,
+        "length": 32,
+        "value_hex": "0x5260c08601929092525060a0840191909152600a0a60208301526101e0820151",
+        "value_int": "37260599650143611454249838302242386883342687725513712411425378911509425553745",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "42697",
+        "var_name": "contracts/misc/UiPoolDataProviderV2V3.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 2518,
+        "length": 32,
+        "value_hex": "0x04808d01546040516370a0823160e01b81526001600160a01b03909116916370",
+        "value_int": "2036381000705370848777473044336856462194270504631681688656267321318789178224",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "42697",
+        "var_name": "contracts/misc/UiPoolDataProviderV2V3.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 5330,
+        "length": 32,
+        "value_hex": "0x1ec0565b60408301819052602083015183516000926114fa92916114f4916119",
+        "value_int": "13909216107612930733110081588885295079587092444760467955981642842815771795737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "42697",
+        "var_name": "contracts/misc/UiPoolDataProviderV2V3.sol:marketReferenceCurrencyPriceInUsdProxyAggregator",
+        "offset": 5520,
+        "length": 32,
+        "value_hex": "0x01600160a01b03166370a082318e6040518263ffffffff1660e01b8152600401",
+        "value_int": "621939673564296905118227869882874588827911094157700216500242388723605439489",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/misc/WETHGateway.sol:WETHGateway": [
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 176,
+        "length": 32,
+        "value_hex": "0x5b61014f565b005b6100b56100c5366004611d95565b610217565b6100d26105",
+        "value_int": "41331862427037171003176144003330856108612115658223144907452985819456332783877",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 611,
+        "length": 32,
+        "value_hex": "0x00610356610351856001600160a01b03166318160ddd6040518163ffffffff16",
+        "value_int": "171407199294614446074163153692156484498551509214382771633201224862207573782",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 848,
+        "length": 32,
+        "value_hex": "0x565b611173565b905060006103d9876001600160a01b03166370a08231866040",
+        "value_int": "39060358000916913427448164800886776231946464192804518823582852038397631291456",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 998,
+        "length": 32,
+        "value_hex": "0xf76103f08385611145565b84906111c3565b6103ff565b60005b60028a015460",
+        "value_int": "111892684954827320912538651112391423543335142291823056843680209721045442188384",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1158,
+        "length": 32,
+        "value_hex": "0x1f8201168201806040525081019061049d9190611ec0565b90506b0311d25331",
+        "value_int": "14251395933058837055597096472128860354156209067642022212125134551685656630065",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1308,
+        "length": 32,
+        "value_hex": "0x565b6004808901546040516370a0823160e01b81526000926001600160a01b03",
+        "value_int": "39060350750081154938062345583866382572298919741382448949020815875186588916483",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1436,
+        "length": 32,
+        "value_hex": "0x90611ec0565b9050600081116040518060400160405280600281526020016131",
+        "value_int": "65304646599068551231340171603510993159408360688285551100728477170803606118705",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1555,
+        "length": 32,
+        "value_hex": "0x062d908b90339086908c908c908c908c908c90600401611eec565b6020604051",
+        "value_int": "2794382823507332627327934654555793018207420644875973428313709751168386744401",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 1842,
+        "length": 32,
+        "value_hex": "0x15604051806040016040528060018152602001603360f81b8152509061076a57",
+        "value_int": "9668631047508761982387060269974346100929509688011166862981411333527419972183",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 2278,
+        "length": 32,
+        "value_hex": "0x1f31565b50805160808201516109069190610900908c611145565b906117a756",
+        "value_int": "14108869824274139817969779238693707440648105462853793610409027445645121136470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 2428,
+        "length": 32,
+        "value_hex": "0x60405162461bcd60e51b81526004016101989190611f31565b5060078c015460",
+        "value_int": "43535673367051550900441391543643668485725717638476867836340511918994915152992",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 2747,
+        "length": 32,
+        "value_hex": "0x40518263ffffffff1660e01b8152600401610ad59190611ed8565b6020604051",
+        "value_int": "29092036844595847469216954851487797671744194272979493322758625375319666737233",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "43578",
+        "var_name": "contracts/misc/WETHGateway.sol:WETH",
+        "offset": 3106,
+        "length": 32,
+        "value_hex": "0x0c6157604080518082019091526002815261313760f01b602082015286610c5b",
+        "value_int": "5599741395162524547220683136527671943065694411305454708309148874428890811483",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/mocks/flashloan/MockFlashLoanReceiver.sol:MockFlashLoanReceiver": [
+      {
+        "label": "35917",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:ADDRESSES_PROVIDER",
+        "offset": 905,
+        "length": 32,
+        "value_hex": "0x5b60206040518083038186803b1580156103a157600080fd5b505afa15801561",
+        "value_int": "41330309990107458226644486049051712872819707575545063018972549631399818171745",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 1800,
+        "length": 32,
+        "value_hex": "0x60208201529061072a5760405162461bcd60e51b81526004016101989190611f",
+        "value_int": "43479469832746513021682255167551499265336554407771728286252223680182083412255",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35920",
+        "var_name": "contracts/flashloan/base/FlashLoanReceiverBase.sol:LENDING_POOL",
+        "offset": 2233,
+        "length": 32,
+        "value_hex": "0x4052806002815260200161031360f41b815250906108e95760405162461bcd60",
+        "value_int": "29093789780591970087161677480994432962839075902841932001284522784101775428960",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/mocks/swap/MockParaSwapAugustus.sol:MockParaSwapAugustus": [
+      {
+        "label": "45405",
+        "var_name": "contracts/mocks/swap/MockParaSwapAugustus.sol:TOKEN_TRANSFER_PROXY",
+        "offset": 236,
+        "length": 32,
+        "value_hex": "0x6100f6366004611d2b565b61051d565b6100b5610109366004611bf9565b6106",
+        "value_int": "43876045608127051737866384262306729747917494005363252204206775193925079228678",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "45405",
+        "var_name": "contracts/mocks/swap/MockParaSwapAugustus.sol:TOKEN_TRANSFER_PROXY",
+        "offset": 514,
+        "length": 32,
+        "value_hex": "0x81526004016101989190611f31565b5050505050565b60006102228661110d56",
+        "value_int": "58493901602187488519721122898085357478630062432720178965735559520826397101398",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/mocks/swap/MockParaSwapAugustusRegistry.sol:MockParaSwapAugustusRegistry": [
+      {
+        "label": "45573",
+        "var_name": "contracts/mocks/swap/MockParaSwapAugustusRegistry.sol:AUGUSTUS",
+        "offset": 82,
+        "length": 32,
+        "value_hex": "0x610121578063d09db04a14610129578063fa0c21491461013c5761009d565b80",
+        "value_int": "43876343276307456991562475251101219557413374639379371678309576443084601187200",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:DefaultReserveInterestRateStrategy": [
+      {
+        "label": "46875",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1285,
+        "length": 32,
+        "value_hex": "0x50505050505050565b6b0311d253316c79d37600000081565b60048089015460",
+        "value_int": "36326929956805080955133627208167527897617518872072947598341721361656127247456",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46875",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1365,
+        "length": 32,
+        "value_hex": "0x40518083038186803b15801561056957600080fd5b505afa15801561057d573d",
+        "value_int": "29092023877230721107082566501712678244429722340039481084748610258240928569149",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46875",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1661,
+        "length": 32,
+        "value_hex": "0x5b60405180604001604052806002815260200161032360f41b815250906106b6",
+        "value_int": "41330530448337409168519751483287468205303219650709698552002611815433646442166",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46875",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1781,
+        "length": 32,
+        "value_hex": "0x6040805180820190915260018152601960f91b60208201529061072a57604051",
+        "value_int": "43535997296960913858391298297979792669445335116819432874248656386662946848849",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46875",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:OPTIMAL_UTILIZATION_RATE",
+        "offset": 1988,
+        "length": 32,
+        "value_hex": "0x6107e05760405162461bcd60e51b81526004016101989190611f31565b508760",
+        "value_int": "43888262588863768342868816341291522848954553793714827751547622241801625175904",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46878",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:EXCESS_UTILIZATION_RATE",
+        "offset": 513,
+        "length": 32,
+        "value_hex": "0x1b81526004016101989190611f31565b5050505050565b60006102228661110d",
+        "value_int": "12440938714881737363109912961455698709050467376582091437621446592712816005389",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46878",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:EXCESS_UTILIZATION_RATE",
+        "offset": 1329,
+        "length": 32,
+        "value_hex": "0x6000926001600160a01b03909216916370a082319161055191339101611ed856",
+        "value_int": "43423043707259891367123358133033968247522849714423268914141915654114968000598",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46880",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:addressesProvider",
+        "offset": 1024,
+        "length": 32,
+        "value_hex": "0x60028a015460078b0154604080516380031e3760e01b815290519394506fffff",
+        "value_int": "43426519634964670548102156965929158969650183723937860693213682216623760474111",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46880",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:addressesProvider",
+        "offset": 2060,
+        "length": 32,
+        "value_hex": "0x6108285760405162461bcd60e51b81526004016101989190611f31565b506040",
+        "value_int": "43888759514600737263461511643713606794787130273560824019379593943545738715200",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46882",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 848,
+        "length": 32,
+        "value_hex": "0x565b611173565b905060006103d9876001600160a01b03166370a08231866040",
+        "value_int": "39060358000916913427448164800886776231946464192804518823582852038397631291456",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46882",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 1570,
+        "length": 32,
+        "value_hex": "0x8c908c90600401611eec565b60206040518083038186803b1580156106455760",
+        "value_int": "63579194915817880185661706763953546558229828115266092465158480117715217766240",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46882",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 1857,
+        "length": 32,
+        "value_hex": "0x52602001603360f81b8152509061076a5760405162461bcd60e51b8152600401",
+        "value_int": "37259491795020728714179654558061217129723276810312329207401851073487737717761",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46882",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_baseVariableBorrowRate",
+        "offset": 2024,
+        "length": 32,
+        "value_hex": "0x07f05750876001145b604051806040016040528060018152602001600760fb1b",
+        "value_int": "3590835858614234328165491579688664733396513840177223961237719779059431439131",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46884",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 771,
+        "length": 32,
+        "value_hex": "0x038186803b15801561031357600080fd5b505afa158015610327573d6000803e",
+        "value_int": "1585790108212124004103967432384369440082935352673804961644720512555349475390",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46884",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 881,
+        "length": 32,
+        "value_hex": "0x8263ffffffff1660e01b81526004016103899190611ed8565b60206040518083",
+        "value_int": "58977355022302093506084979057905411337208655001655747582141811692856786649219",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46884",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 1603,
+        "length": 32,
+        "value_hex": "0x80fd5b505af4158015610659573d6000803e3d6000fd5b505050506040513d60",
+        "value_int": "58343687151338836838384810479237235921675437692383239801547379004357951438176",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46884",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope1",
+        "offset": 1819,
+        "length": 32,
+        "value_hex": "0x1b81526004016101989190611f31565b50806101000151156040518060400160",
+        "value_int": "12440938714881737363109912961455698709050716945348377924718493438165332787552",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46886",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 735,
+        "length": 32,
+        "value_hex": "0x0160a01b03166318160ddd6040518163ffffffff1660e01b8152600401602060",
+        "value_int": "623035174461184175415112629451832662011522703016453702833024870067002679392",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46886",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 812,
+        "length": 32,
+        "value_hex": "0x6040513d601f19601f8201168201806040525081019061034b9190611ec0565b",
+        "value_int": "43535672372273000050114432171502024206122012083804357435871490387908673689179",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46886",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_variableRateSlope2",
+        "offset": 1528,
+        "length": 32,
+        "value_hex": "0xebb07483fe533034a0a7be22e8a7c5bf0fdaa79063e61704249061062d908b90",
+        "value_int": "106605288661581381778623603801453638427462752235940250244440566110132093619088",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46888",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 477,
+        "length": 32,
+        "value_hex": "0x5180820190915260018152603360f81b60208201528115610210576040516246",
+        "value_int": "36864394428745992004902356300673558901745047376735717971698601752442128392774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46888",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 1479,
+        "length": 32,
+        "value_hex": "0x5760405162461bcd60e51b81526004016101989190611f31565b50868061067d",
+        "value_int": "39521279050834220909184051122263639264532087435739085700270118440038037522045",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46888",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope1",
+        "offset": 1713,
+        "length": 32,
+        "value_hex": "0x90611f31565b50505050505050505050565b6106ca611aee565b6106d38c6111",
+        "value_int": "65304649645542421774942961203655802532736455136569271258466848588165064450321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46890",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope2",
+        "offset": 1431,
+        "length": 32,
+        "value_hex": "0x906105a19190611ec0565b905060008111604051806040016040528060028152",
+        "value_int": "65304473225886687091824001435629998987867759069535121123713832014733843267922",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "46890",
+        "var_name": "contracts/protocol/lendingpool/DefaultReserveInterestRateStrategy.sol:_stableRateSlope2",
+        "offset": 2096,
+        "length": 32,
+        "value_hex": "0x810190915285548152610848908c9088908787876112e0565b60c08601526020",
+        "value_int": "58351122083662803800430949826833380690578107101340660235170415458530343673888",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:BaseImmutableAdminUpgradeabilityProxy": [
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 359,
+        "length": 32,
+        "value_hex": "0x5260018152603160f81b60208201529193509150836101a15760405162461bcd",
+        "value_int": "37259281290301214970095796542108874489118364968510367979152224181734902995917",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 433,
+        "length": 32,
+        "value_hex": "0x601960f91b6020820152826101d85760405162461bcd60e51b81526004016101",
+        "value_int": "43466873924172021129211422047090370978418166276095119912921346106369427726593",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 624,
+        "length": 32,
+        "value_hex": "0xa01b03166318160ddd6040518163ffffffff1660e01b81526004016020604051",
+        "value_int": "72417781952865330907834560697161773236117262580831326976048313925665963393105",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 701,
+        "length": 32,
+        "value_hex": "0x513d601f19601f820116820180604052508101906102da9190611ec0565b8760",
+        "value_int": "36745781812276047510356177486608867839761762818870984505496694439054656898912",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 742,
+        "length": 32,
+        "value_hex": "0x18160ddd6040518163ffffffff1660e01b815260040160206040518083038186",
+        "value_int": "10894474692410678541109574590966339237597280134858990652671560352039748993414",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 789,
+        "length": 32,
+        "value_hex": "0x5afa158015610327573d6000803e3d6000fd5b505050506040513d601f19601f",
+        "value_int": "41150016528486493711431381614514770536948539970387530820130624985952020946975",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/protocol/libraries/aave-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol:InitializableImmutableAdminUpgradeabilityProxy": [
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 552,
+        "length": 32,
+        "value_hex": "0x80604051806040016040528060018152602001601960f91b8152509061026057",
+        "value_int": "58066105845918265538332745410324370086475948591220074758315459910417661452375",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 626,
+        "length": 32,
+        "value_hex": "0x03166318160ddd6040518163ffffffff1660e01b815260040160206040518083",
+        "value_int": "1396493103424549941807298102691620204059006752046417054305700109132378505347",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 817,
+        "length": 32,
+        "value_hex": "0x1f19601f8201168201806040525081019061034b9190611ec0565b9061114556",
+        "value_int": "14066532899799401685354838549800121866435059827195884366173006447624462615894",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 1118,
+        "length": 32,
+        "value_hex": "0x046557600080fd5b505afa158015610479573d6000803e3d6000fd5b50505050",
+        "value_int": "1988305988015796470638178985459129935704313569479040873112888411461430300752",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 1159,
+        "length": 32,
+        "value_hex": "0x8201168201806040525081019061049d9190611ec0565b90506b0311d253316c",
+        "value_int": "58802592506260228102156161595663107212619996681500201080849340986221078458732",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "51209",
+        "var_name": "contracts/protocol/libraries/aave-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol:ADMIN",
+        "offset": 1455,
+        "length": 32,
+        "value_hex": "0x604052806002815260200161313960f01b815250906105e05760405162461bcd",
+        "value_int": "43535681080324010666992094681181560951151645703971036919163060837925079358413",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

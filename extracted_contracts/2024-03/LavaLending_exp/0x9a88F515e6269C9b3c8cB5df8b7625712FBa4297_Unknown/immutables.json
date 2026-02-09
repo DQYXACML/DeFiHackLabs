@@ -1,0 +1,86 @@
+{
+  "compiler_version": "v0.6.12+commit.27d51765",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "Default",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 2792,
+  "values": {
+    "./contracts/misc/AaveOracle.sol:AaveOracle": [
+      {
+        "label": "733",
+        "var_name": "./contracts/misc/AaveOracle.sol:BASE_CURRENCY",
+        "offset": 1555,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "733",
+        "var_name": "./contracts/misc/AaveOracle.sol:BASE_CURRENCY",
+        "offset": 2036,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "735",
+        "var_name": "./contracts/misc/AaveOracle.sol:BASE_CURRENCY_UNIT",
+        "offset": 1079,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "735",
+        "var_name": "./contracts/misc/AaveOracle.sol:BASE_CURRENCY_UNIT",
+        "offset": 1597,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/misc/AaveOracle.sol:AaveOracle": [
+      {
+        "label": "1751",
+        "var_name": "contracts/misc/AaveOracle.sol:BASE_CURRENCY",
+        "offset": 1555,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1751",
+        "var_name": "contracts/misc/AaveOracle.sol:BASE_CURRENCY",
+        "offset": 2036,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000082af49447d8a07e3bd95bd0d56f35241523fbab1",
+        "value_int": "746077813119786162781824270067693791825153211057",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1753",
+        "var_name": "contracts/misc/AaveOracle.sol:BASE_CURRENCY_UNIT",
+        "offset": 1079,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1753",
+        "var_name": "contracts/misc/AaveOracle.sol:BASE_CURRENCY_UNIT",
+        "offset": 1597,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

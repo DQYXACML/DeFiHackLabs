@@ -1,0 +1,247 @@
+{
+  "protocol": "Matez_exp",
+  "year_month": "2024-11",
+  "vulnerable_contract": {
+    "address": "0x326FB70eF9e70f8f4c38CFbfaF39F960A5C252fa",
+    "name": "MATEZ_STAKING_PROG"
+  },
+  "constraints": [
+    {
+      "function": "register",
+      "signature": "register(address)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x80d93e9451a6830e9a531f15cca42cb0357d511f"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "sponsor"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "stake",
+      "signature": "stake(uint256)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "amount > 102084710076281535261119195933814292480",
+        "semantics": "Direct deposit/mint: parameter directly increases address_31117676365743207889284016778936685604582507346676975001483734148041673742343",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "amount"
+          },
+          "address_31117676365743207889284016778936685604582507346676975001483734148041673742343": {
+            "source": "storage",
+            "slot": "31117676365743207889284016778936685604582507346676975001483734148041673742343",
+            "type": "uint256",
+            "semantic_name": "address_31117676365743207889284016778936685604582507346676975001483734148041673742343",
+            "before_value": 0,
+            "after_value": 340282366920938463463374607431768211456
+          }
+        },
+        "danger_condition": "amount >= 340282366920938463463374607431768211456",
+        "safe_condition": "amount <= 102084710076281535261119195933814292480",
+        "threshold_value": 102084710076281535261119195933814292480
+      },
+      "analysis": {
+        "state_value": 340282366920938463463374607431768211456,
+        "threshold": 170141183460469231731687303715884105728,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致address_31117676365743207889284016778936685604582507346676975001483734148041673742343增加340282366920938463463374607431768211456，阈值设为102084710076281535261119195933814292480",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "claim",
+      "signature": "claim(uint40,uint40,uint256)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "uint40 > 1427925146128560169845574412982108772584028873821627672860557312",
+        "semantics": "High-frequency operation: parameter affects balance_mapping_increased with estimated 54100247490053159777125167409791875513191739551693910765993984 iterations (capped)",
+        "variables": {
+          "uint40": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint40",
+            "value_expr": "uint40(3)"
+          },
+          "balance_mapping_increased": {
+            "source": "storage",
+            "slot": "52311155773743416571195745938463173507006867806778241594963819621658284657388",
+            "type": "uint256",
+            "semantic_name": "balance_mapping_increased",
+            "before_value": 4759750487095200809735520931757515609227568365452595518857281536,
+            "after_value": 4922051229565360289066896433986891235767143584107677251155263488
+          }
+        },
+        "danger_condition": "uint40 >= 4283775438385680874912132571672055868673294800535637932564807680",
+        "safe_condition": "uint40 <= 1427925146128560169845574412982108772584028873821627672860557312",
+        "threshold_value": 1427925146128560169845574412982108772584028873821627672860557312
+      },
+      "analysis": {
+        "state_value": 4759750487095200809735520931757515609227568365452595518857281536,
+        "threshold": 3331825340966640566814864652230260926459297855816816863200097075,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代54100247490053159777125167409791875513191739551693910765993984次超过上限10000，使用保守阈值1427925146128560169845574412982108772584028873821627672860557312",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 5.410024749005316e+61,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "claim",
+      "signature": "claim(uint40,uint40,uint256)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "uint40 > 0",
+        "semantics": "Direct deposit/mint: parameter directly increases flag_70490517561464303054594998460873855493489059245437974253906037680946138799307",
+        "variables": {
+          "uint40": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint40",
+            "value_expr": "uint40(1)"
+          },
+          "flag_70490517561464303054594998460873855493489059245437974253906037680946138799307": {
+            "source": "storage",
+            "slot": "70490517561464303054594998460873855493489059245437974253906037680946138799307",
+            "type": "uint256",
+            "semantic_name": "flag_70490517561464303054594998460873855493489059245437974253906037680946138799307",
+            "before_value": 0,
+            "after_value": 1
+          }
+        },
+        "danger_condition": "uint40 >= 1",
+        "safe_condition": "uint40 <= 0",
+        "threshold_value": 0
+      },
+      "analysis": {
+        "state_value": 1,
+        "threshold": 0,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致flag_70490517561464303054594998460873855493489059245437974253906037680946138799307增加1，阈值设为0",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "claim",
+      "signature": "claim(uint40,uint40,uint256)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "2 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "52311155773743416571195745938463173507006867806778241594963819621658284657388",
+        "before": 4759750487095200809735520931757515609227568365452595518857281536,
+        "after": 4922051229565360289066896433986891235767143584107677251155263488,
+        "change_pct": 3.41,
+        "is_new_slot": false
+      },
+      {
+        "slot": "20670878854535074703832439570421792131827079754860049524047025995167506583361",
+        "before": 0,
+        "after": 160693804426045913313461105108661476184342223271913278448423199,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "55447367420369899360690432649380843279743232255204502156813897947792881499330",
+        "before": 0,
+        "after": 1457073453480746532405135720160960478365957424151,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "67015079113390509164033522016485715067213694369650453733516239079545423528253",
+        "before": 0,
+        "after": 1456062707044453522430376008241913540713041923765,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "86368516476400876926317616953044959286184226480695654400975925883197430534568",
+        "before": 0,
+        "after": 1440491324463171245047879006914987702431121421975,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 858
+  },
+  "attack_metadata": {
+    "loop_count": 25,
+    "total_calls": 3
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

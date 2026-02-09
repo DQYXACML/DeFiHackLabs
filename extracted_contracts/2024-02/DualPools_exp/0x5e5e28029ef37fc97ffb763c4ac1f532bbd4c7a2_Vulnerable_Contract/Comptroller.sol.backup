@@ -195,26 +195,15 @@ contract CompDP is ComptrollerV8Storage, ComptrollerInterfaceG2, ComptrollerErro
         {
             IRouter _firewall = firewall();
             if (address(_firewall) != address(0)) {
-                bytes memory data = abi.encodeWithSignature("executeWithDetect(bytes)", msg.data);
-                bool ok;
+                bytes memory fwData = abi.encodeWithSignature("executeWithDetect(bytes)", msg.data);
+                bool fwOk;
                 assembly {
-                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
+                    fwOk := staticcall(gas(), _firewall, add(fwData, 0x20), mload(fwData), 0, 0)
                 }
-                ok;
+                fwOk;
             }
         }
         _;
-        {
-            IRouter _firewall = firewall();
-            if (address(_firewall) != address(0)) {
-                bytes memory data = abi.encodeWithSignature("releaseWithDetect(bytes)", msg.data);
-                bool ok;
-                assembly {
-                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
-                }
-                ok;
-            }
-        }
     }
 
     /**

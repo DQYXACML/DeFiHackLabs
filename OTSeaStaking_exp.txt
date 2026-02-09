@@ -1,0 +1,608 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-09/OTSeaStaking_exp.sol:ContractTest
+[PASS] testExploit() (gas: 5998047)
+Logs:
+  Attacker earned: 37944445168159512442507586
+
+Traces:
+  [6895247] ContractTest::testExploit()
+    ├─ [60873] OTSeaRevenueDistributor::distribute()
+    │   ├─ [7008] OTSeaStaking::getCurrentEpoch() [staticcall]
+    │   │   └─ ← [Return] 31
+    │   ├─ [38602] OTSeaStaking::distribute{value: 295647903437594148}()
+    │   │   ├─  emit topic 0: 0x07c9d3a8bea400ee1980880fb7f4e3532e56612ff7e6c67e7096e1b3c20818ff
+    │   │   │        topic 1: 0x000000000000000000000000000000000000000000000000000000000000001f
+    │   │   │           data: 0x0000000000000000000000000000000000000000000000000000000066d9ec6b000000000000000000000000000000000000000000241257038de0305320519c00000000000000000000000000000000000066dc1cf2ab51fadd0b4d78688d18000000000000000000000000000000000000000000000000041a5a33a6fc9e24
+    │   │   └─ ← [Stop]
+    │   └─ ← [Stop]
+    ├─ [0] VM::startPrank(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   └─ ← [Return]
+    ├─ [149896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261035}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], param3: 10261035 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [110891] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [37696] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283671151472 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283671151472 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], param3: 3026996647480283671151472 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261035}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], param3: 10261035 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283656016489 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283656016489 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], param3: 3026996647480283656016489 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261035}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22], param3: 10261035 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283640881506 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283640881506 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22], param3: 3026996647480283640881506 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 23], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261035}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 23], param3: 10261035 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 23], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283625746523 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283625746523 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 23], param3: 3026996647480283625746523 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 24], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261035}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 24], param3: 10261035 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 24], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283610611540 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283610611540 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 24], param3: 3026996647480283610611540 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 25], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261035}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 25], param3: 10261035 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 25], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283595476558 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283595476558 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 25], param3: 3026996647480283595476558 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 26], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261035}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 26], param3: 10261035 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 26], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283580341575 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283580341575 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 26], param3: 3026996647480283580341575 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 27], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261035}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 27], param3: 10261035 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 27], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283565206593 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283565206593 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 27], param3: 3026996647480283565206593 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 28], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261035}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 28], param3: 10261035 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 28], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283550071611 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283550071611 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 28], param3: 3026996647480283550071611 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261034}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29], param3: 10261034 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283534936629 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283534936629 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29], param3: 3026996647480283534936629 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 30], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261034}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 30], param3: 10261034 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 30], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283519801647 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283519801647 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 30], param3: 3026996647480283519801647 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 31], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261034}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 31], param3: 10261034 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 31], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283504666665 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283504666665 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 31], param3: 3026996647480283504666665 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 32], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261034}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 32], param3: 10261034 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 32], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283489531683 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283489531683 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 32], param3: 3026996647480283489531683 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [105896] OTSeaStaking::claim([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 33], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261034}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 33], param3: 10261034 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [75691] OTSeaStaking::withdraw([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 33], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 3026996647480283474396702 [3.026e24])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 3026996647480283474396702 [3.026e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 33], param3: 3026996647480283474396702 [3.026e24])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 34], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261034}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 34], param3: 10261034 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 34], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837378502045 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837378502045 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 34], param3: 151349833811837378502045 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 35], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261034}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 35], param3: 10261034 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 35], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837363367064 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837363367064 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 35], param3: 151349833811837363367064 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 36], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261034}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 36], param3: 10261034 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 36], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837348232083 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837348232083 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 36], param3: 151349833811837348232083 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 37], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261034}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 37], param3: 10261034 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 37], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837333097102 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837333097102 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 37], param3: 151349833811837333097102 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 38], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 38], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 38], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837317962121 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837317962121 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 38], param3: 151349833811837317962121 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 39], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 39], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 39], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837302827141 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837302827141 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 39], param3: 151349833811837302827141 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 40], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 40], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 40], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837287692160 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837287692160 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 40], param3: 151349833811837287692160 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 41], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 41], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 41], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837272557180 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837272557180 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 41], param3: 151349833811837272557180 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 42], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 42], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 42], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837257422200 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837257422200 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 42], param3: 151349833811837257422200 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [23074] OTSeaStaking::claim([0, 43], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 43], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [16533] OTSeaStaking::withdraw([0, 43], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 151349833811837242287220 [1.513e23])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 151349833811837242287220 [1.513e23])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [0, 43], param3: 151349833811837242287220 [1.513e23])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 43], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 16330700272191}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 43], param3: 16330700272191 [1.633e13])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 43], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416946177462 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416946177462 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 43], param3: 2408807514416946177462 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 44], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 44], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 44], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416931042482 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416931042482 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 44], param3: 2408807514416931042482 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 45], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 45], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 45], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416915907503 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416915907503 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 45], param3: 2408807514416915907503 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 46], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 46], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 46], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416900772523 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416900772523 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 46], param3: 2408807514416900772523 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 47], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261033}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 47], param3: 10261033 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 47], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416885637544 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416885637544 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 47], param3: 2408807514416885637544 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 48], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 48], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 48], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416870502565 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416870502565 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 48], param3: 2408807514416870502565 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 49], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 49], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 49], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416855367586 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416855367586 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 49], param3: 2408807514416855367586 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 50], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 50], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 50], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416840232607 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416840232607 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 50], param3: 2408807514416840232607 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 51], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 51], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 51], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416825097628 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416825097628 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 51], param3: 2408807514416825097628 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 52], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 52], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 52], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416809962650 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416809962650 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 52], param3: 2408807514416809962650 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 53], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 53], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 53], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416794827672 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416794827672 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 53], param3: 2408807514416794827672 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 54], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 54], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 54], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416779692693 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416779692693 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 54], param3: 2408807514416779692693 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 55], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 55], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 55], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416764557715 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416764557715 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 55], param3: 2408807514416764557715 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 56], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 56], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 56], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416749422737 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416749422737 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 56], param3: 2408807514416749422737 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 57], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261032}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 57], param3: 10261032 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 57], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416734287759 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416734287759 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 57], param3: 2408807514416734287759 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 58], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261031}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 58], param3: 10261031 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 58], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416719152782 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416719152782 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 58], param3: 2408807514416719152782 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 59], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261031}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 59], param3: 10261031 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 59], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416704017804 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416704017804 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 59], param3: 2408807514416704017804 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 60], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261031}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 60], param3: 10261031 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 60], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416688882827 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416688882827 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 60], param3: 2408807514416688882827 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 61], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261031}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 61], param3: 10261031 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 61], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416673747850 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416673747850 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 61], param3: 2408807514416673747850 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 62], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261031}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 62], param3: 10261031 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 62], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416658612873 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416658612873 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 62], param3: 2408807514416658612873 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 63], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261031}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 63], param3: 10261031 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 63], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416643477896 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416643477896 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 63], param3: 2408807514416643477896 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [56133] OTSeaStaking::claim([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 64], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [55] Attacker::fallback{value: 10261031}()
+    │   │   └─ ← [Stop]
+    │   ├─ emit Claimed(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 64], param3: 10261031 [1.026e7])
+    │   └─ ← [Stop]
+    ├─ [88147] OTSeaStaking::withdraw([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 64], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB])
+    │   ├─ [4996] OTSea: OTSea Token::transfer(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 2408807514416628342919 [2.408e21])
+    │   │   ├─ emit Transfer(from: OTSeaStaking: [0xF2c8e860ca12Cde3F3195423eCf54427A4f30916], to: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], value: 2408807514416628342919 [2.408e21])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawal(param0: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param1: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], param2: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 70, 64], param3: 2408807514416628342919 [2.408e21])
+    │   └─ ← [Stop]
+    ├─ [275] Uniswap V2: Router 2::WETH() [staticcall]
+    │   └─ ← [Return] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2
+    ├─ [24756] OTSea: OTSea Token::approve(Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], 6000000000000000000000000 [6e24])
+    │   ├─ emit Approval(owner: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], spender: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], value: 6000000000000000000000000 [6e24])
+    │   └─ ← [Return] true
+    ├─ [233047] Uniswap V2: Router 2::swapExactTokensForETHSupportingFeeOnTransferTokens(6000000000000000000000000 [6e24], 0, [0x5dA151B95657e788076D04d56234Bd93e409CB09, 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 1726188611 [1.726e9])
+    │   ├─ [171595] OTSea: OTSea Token::transferFrom(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f, 6000000000000000000000000 [6e24])
+    │   │   ├─ [275] Uniswap V2: Router 2::WETH() [staticcall]
+    │   │   │   └─ ← [Return] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2
+    │   │   ├─ emit Approval(owner: OTSea: OTSea Token: [0x5dA151B95657e788076D04d56234Bd93e409CB09], spender: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], value: 5000000000000000000000 [5e21])
+    │   │   ├─ [106612] Uniswap V2: Router 2::swapExactTokensForETH(5000000000000000000000 [5e21], 0, [0x5dA151B95657e788076D04d56234Bd93e409CB09, 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], OTSea: OTSea Token: [0x5dA151B95657e788076D04d56234Bd93e409CB09], 1726188299 [1.726e9])
+    │   │   │   ├─ [2504] 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f::getReserves() [staticcall]
+    │   │   │   │   └─ ← [Return] 10274423917024861241886191 [1.027e25], 30547446601855904341 [3.054e19], 1726187591 [1.726e9]
+    │   │   │   ├─ [11888] OTSea: OTSea Token::transferFrom(OTSea: OTSea Token: [0x5dA151B95657e788076D04d56234Bd93e409CB09], 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f, 5000000000000000000000 [5e21])
+    │   │   │   │   ├─ emit Transfer(from: OTSea: OTSea Token: [0x5dA151B95657e788076D04d56234Bd93e409CB09], to: 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f, value: 5000000000000000000000 [5e21])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [64917] 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f::swap(0, 14813986148371393 [1.481e16], Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], 0x)
+    │   │   │   │   ├─ [29962] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::transfer(Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], 14813986148371393 [1.481e16])
+    │   │   │   │   │   ├─ emit Transfer(from: 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f, to: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], value: 14813986148371393 [1.481e16])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   ├─ [598] OTSea: OTSea Token::balanceOf(0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f) [staticcall]
+    │   │   │   │   │   └─ ← [Return] 10279423917024861241886191 [1.027e25]
+    │   │   │   │   ├─ [534] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::balanceOf(0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f) [staticcall]
+    │   │   │   │   │   └─ ← [Return] 30532632615707532948 [3.053e19]
+    │   │   │   │   ├─ emit Sync(reserve0: 10279423917024861241886191 [1.027e25], reserve1: 30532632615707532948 [3.053e19])
+    │   │   │   │   ├─ emit Swap(sender: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], amount0In: 5000000000000000000000 [5e21], amount1In: 0, amount0Out: 0, amount1Out: 14813986148371393 [1.481e16], to: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D])
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   ├─ [9223] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::withdraw(14813986148371393 [1.481e16])
+    │   │   │   │   ├─ [83] Uniswap V2: Router 2::fallback{value: 14813986148371393}()
+    │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   ├─ emit Withdrawal(src: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], wad: 14813986148371393 [1.481e16])
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   ├─ [55] OTSea: OTSea Token::fallback{value: 14813986148371393}()
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   └─ ← [Return] [5000000000000000000000 [5e21], 14813986148371393 [1.481e16]]
+    │   │   ├─ [55] OTSeaRevenueDistributor::fallback{value: 7406993074185697}()
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [6329] 0x0adEDC7487c59eCe60178Cf69b8DF7E3c4730d90::fallback{value: 7406993074185696}()
+    │   │   │   ├─ [1504] 0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552::fallback{value: 7406993074185696}() [delegatecall]
+    │   │   │   │   ├─ emit SafeReceived(param0: OTSea: OTSea Token: [0x5dA151B95657e788076D04d56234Bd93e409CB09], param1: 7406993074185696 [7.406e15])
+    │   │   │   │   └─ ← [Stop]
+    │   │   │   └─ ← [Return]
+    │   │   ├─ emit DistributedETHFees(: 7406993074185697 [7.406e15], : 7406993074185696 [7.406e15])
+    │   │   ├─ emit Transfer(from: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], to: OTSea: OTSea Token: [0x5dA151B95657e788076D04d56234Bd93e409CB09], value: 240000000000000000000000 [2.4e23])
+    │   │   ├─ emit Transfer(from: Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB], to: 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f, value: 5760000000000000000000000 [5.76e24])
+    │   │   └─ ← [Return] true
+    │   ├─ [504] 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f::getReserves() [staticcall]
+    │   │   └─ ← [Return] 10279423917024861241886191 [1.027e25], 30532632615707532948 [3.053e19], 1726188299 [1.726e9]
+    │   ├─ [598] OTSea: OTSea Token::balanceOf(0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f) [staticcall]
+    │   │   └─ ← [Return] 16039423917024861241886191 [1.603e25]
+    │   ├─ [36401] 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f::swap(0, 10943626576001619837 [1.094e19], Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], 0x)
+    │   │   ├─ [23162] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::transfer(Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], 10943626576001619837 [1.094e19])
+    │   │   │   ├─ emit Transfer(from: 0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f, to: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], value: 10943626576001619837 [1.094e19])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [598] OTSea: OTSea Token::balanceOf(0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f) [staticcall]
+    │   │   │   └─ ← [Return] 16039423917024861241886191 [1.603e25]
+    │   │   ├─ [534] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::balanceOf(0x75eabb7cB05A5057E092fDBBD86fb801B4d02B1f) [staticcall]
+    │   │   │   └─ ← [Return] 19589006039705913111 [1.958e19]
+    │   │   ├─ emit Sync(reserve0: 16039423917024861241886191 [1.603e25], reserve1: 19589006039705913111 [1.958e19])
+    │   │   ├─ emit Swap(sender: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], amount0In: 5760000000000000000000000 [5.76e24], amount1In: 0, amount0Out: 0, amount1Out: 10943626576001619837 [1.094e19], to: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D])
+    │   │   └─ ← [Stop]
+    │   ├─ [534] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::balanceOf(Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D]) [staticcall]
+    │   │   └─ ← [Return] 10943626576001619837 [1.094e19]
+    │   ├─ [9223] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::withdraw(10943626576001619837 [1.094e19])
+    │   │   ├─ [83] Uniswap V2: Router 2::fallback{value: 10943626576001619837}()
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ emit Withdrawal(src: Uniswap V2: Router 2: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D], wad: 10943626576001619837 [1.094e19])
+    │   │   └─ ← [Stop]
+    │   ├─ [55] Attacker::fallback{value: 10943626576001619837}()
+    │   │   └─ ← [Stop]
+    │   └─ ← [Stop]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return]
+    ├─ [598] OTSea: OTSea Token::balanceOf(Attacker: [0x5AeC8469414332d62Bf5058fb91F2f8457e5C5CB]) [staticcall]
+    │   └─ ← [Return] 37944445168159512442507586 [3.794e25]
+    ├─ [0] console::log("Attacker earned:", 37944445168159512442507586 [3.794e25]) [staticcall]
+    │   └─ ← [Stop]
+    └─ ← [Stop]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 387.47ms (21.81ms CPU time)
+
+Ran 1 test suite in 403.20ms (387.47ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

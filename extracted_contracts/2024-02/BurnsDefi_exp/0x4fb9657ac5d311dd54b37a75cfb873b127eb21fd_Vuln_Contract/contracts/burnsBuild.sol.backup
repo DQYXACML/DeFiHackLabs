@@ -8,7 +8,6 @@ import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 import "../interfaces/IUniswapV2.sol";
-import {IRouter} from "./interfaces/IRouter.sol";
 
 interface burnsToken {
     function burnToholder(
@@ -451,21 +450,6 @@ contract SafemoonCore is Context, IERC20, Ownable {
 }
 
 contract BurnsBuild is SafemoonCore {
-    // 防火墙读取单槽位接口
-    function extsload(bytes32 slot) external view returns (bytes32 value) {
-        assembly {
-            value := sload(slot)
-        }
-    }
-
-    // 兼容接口: 与 ext/tools 读取保持一致
-    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
-        assembly {
-            value := sload(slot)
-        }
-    }
-
-
     using SafeMath for uint256;
     using EnumerableSet for EnumerableSet.AddressSet;
 
@@ -501,81 +485,7 @@ contract BurnsBuild is SafemoonCore {
     address immutable dead = 0x000000000000000000000000000000000000dEaD;
 
     //to recieve ETH from uniswapV2Router when swaping
-    // 防火墙路由器（使用普通变量而非immutable，支持构造后设置，避免子类stack too deep）
-    // ========== 防火墙存储槽位（ERC1967风格） ==========
-    /**
-     * @dev 防火墙路由器存储槽位
-     * 计算方式: bytes32(uint256(keccak256('firewall.router.storage')) - 1)
-     * 槽位值: 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc
-     *
-     * 此槽位在极高的存储空间，不会与合约原有变量（slot 0-N）冲突
-     * 参考: ERC1967 Proxy Standard
-     */
-    bytes32 private constant FIREWALL_ROUTER_SLOT =
-        bytes32(uint256(keccak256('firewall.router.storage')) - 1);
-
-    /**
-     * @dev 获取防火墙路由器地址
-     */
-    function firewall() public view returns (IRouter) {
-        bytes32 slot = FIREWALL_ROUTER_SLOT;
-        address firewallAddress;
-        assembly {
-            firewallAddress := sload(slot)
-        }
-        return IRouter(firewallAddress);
-    }
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        {
-            IRouter _firewall = firewall();
-            if (address(_firewall) != address(0)) {
-                _firewall.executeWithDetect(msg.data);
-            }
-        }
-        _;
-        {
-            IRouter _firewall = firewall();
-            if (address(_firewall) != address(0)) {
-                try _firewall.releaseWithDetect(msg.data) {} catch {}
-            }
-        }
-    }
-
-    /**
-     * @dev 设置防火墙路由器地址（internal，供子类在构造函数中调用）
-     */
-    function _setFirewall(address _firewall) internal {
-        bytes32 slot = FIREWALL_ROUTER_SLOT;
-        assembly {
-            sstore(slot, _firewall)
-        }
-        emit FirewallUpdated(_firewall);
-    }
-
-    /**
-     * @dev 公开设置防火墙地址（仅在未设置时可调用，支持动态更新）
-     */
-    function setFirewall(address _firewall) external {
-        require(msg.sender == this.owner() || address(firewall()) == address(0), "Not authorized");
-        require(_firewall != address(0), "Invalid firewall address");
-        bytes32 slot = FIREWALL_ROUTER_SLOT;
-        assembly {
-            sstore(slot, _firewall)
-        }
-        emit FirewallUpdated(_firewall);
-    }
-
-    event FirewallUpdated(address indexed newFirewall);
-
-
-    receive() external payable {
-        IRouter _firewall = firewall();
-        if (address(_firewall) != address(0)) {
-            /* firewall skipped for receive */
-        }
-    }
+    receive() external payable {}
 
     constructor() {
         _rOwned[address(this)] = _rTotal;
@@ -706,7 +616,7 @@ contract BurnsBuild is SafemoonCore {
         return amount > maxRewards ? maxRewards : amount;
     }
 
-    function receiveRewards(address payable to) external firewallProtected {
+    function receiveRewards(address payable to) external {
         address addr = msg.sender;
         uint256 balance = _balanceOf(addr);
         //  uint256 amount = balance.sub(burnAmount[addr]); //.sub(Rewards[addr]);
@@ -736,7 +646,7 @@ contract BurnsBuild is SafemoonCore {
         Invitation[sender] = from;
     }
 
-    function burnToHolder(uint256 amount, address _invitation) external firewallProtected {
+    function burnToHolder(uint256 amount, address _invitation) external {
         address sender = _msgSender();
         require(amount >= 0, "TeaFactory: insufficient funds");
 

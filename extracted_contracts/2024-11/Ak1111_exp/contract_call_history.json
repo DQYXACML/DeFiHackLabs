@@ -1,0 +1,698 @@
+{
+  "protocol": "Ak1111_exp",
+  "contract_address": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+  "target_functions": [
+    "nonblockingLzReceive1",
+    "nonblockingLzReceive1"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "nonblockingLzReceive1": {
+      "0": {
+        "avoid": [
+          0
+        ]
+      },
+      "1": {
+        "avoid": [
+          "0xc3b1b45e5784a8efececfc0be2e28247d3f49963"
+        ]
+      },
+      "2": {
+        "avoid": [],
+        "max": 34737626771194857341520860095414151922411321526762087194074880176139670650880
+      },
+      "3": {
+        "avoid": [
+          "\"\""
+        ]
+      }
+    }
+  },
+  "attack_block": 44280828,
+  "generated_at": "2026-02-09T15:21:44.670161Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0xf2944ebed26a01b917aba734f2591c85a32666a7",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44178828,
+      "time": "2024-11-07T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 49711
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x9a2fb643939c44933721045a49d1ce5cfe1a5fc7"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 475967
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0xfbe15b25694bc0812c08ec8b01a78388cfb6f048",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44118828,
+      "time": "2024-10-28T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 96
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x88d00a085aaecebe3b6c561915a16dc46c7684ea"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 151731
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0xa8b2"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0x518bd12181d412f1a601c9f7cb1f9d0f4b85f2e1",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44148828,
+      "time": "2024-11-02T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 39095
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x4da65b7ed5bc3da64f45a20859e1302e51731f5e"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 294872
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x69ef"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0x0aa6a0682c91f598aa9bf790ae400c5c186f5e67",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44124828,
+      "time": "2024-10-29T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 44549
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0xb15d4fffb5d3b156efabd8d76cb9a1c89c27e49b"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 348356
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0xf953"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0xc393c2e50d42dff06b3b841c91be9d871239e4ec",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44160828,
+      "time": "2024-11-04T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 4367
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x349fa057d4400ed0894bfed6bccd8031701c91b2"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 806106
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x5ba10474"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x1054ed75327c0bef8e29956a411ea6caa80beda3",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44166828,
+      "time": "2024-11-05T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 63912
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x5aae1f6cf86d3dee15545a9a45ee3ab48266eacd"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 316447
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0xfb6afd7252ea77b5d3c25706f26872e57e7140b6",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44238828,
+      "time": "2024-11-17T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 21352
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x3dec3b0c53e210be08d176af516eae96c20cecfc"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 913924
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0xe1551c2e"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0xd25d899e47e29231b16c490441b87467afca22d7",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44256828,
+      "time": "2024-11-20T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 34632
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x951888172d1c91fbd18de68a91245647b32e5790"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 975494
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x1aa1ef51"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0x173a51d7a51b0179dda06137e5b7554a5e2cf4a0",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44196828,
+      "time": "2024-11-10T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 9104
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x9063f5117997f25a0a8e02cde8cdbe915439e001"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 60754
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0xcdfc"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0xb02d1449f5da954cfa7e483817d34324df03188e",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44232828,
+      "time": "2024-11-16T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 37787
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x64e6f224093ef73bba4c374d25a840e5fc76d28f"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 149082
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0xcfab861c2879c34e893a9e06c35a76f0f53aa38a",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44256828,
+      "time": "2024-11-20T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 24554
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0xbbd7aca1eb181d59f64b228df7669dda5bcd6f6c"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 670591
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x99d9384c"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0x4aeb14c100c5ed437ec4cf9ae724b9b2380a9408",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44154828,
+      "time": "2024-11-03T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 57000
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0xaf7b0b048a571899d1465949d239db480a97b62a"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 662597
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0x5066ddcf044b2fe2f496929a5de3f5b9f2910e7d",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44130828,
+      "time": "2024-10-30T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 57591
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0xfc05d0e4216960cc21fcae9cf7d1717ecaaaec83"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 193491
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x12aaee35387633a59d56826dbd7c8a4823db825f",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44136828,
+      "time": "2024-10-31T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 51044
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x9ab6fdeb94495665103f7cfa871f7e26acf3cb61"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 815170
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0xf12d"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0xda938c1f4ba7409aab05bf9b548f6e0b60247680",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44178828,
+      "time": "2024-11-07T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 38744
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x6e29d9193770f0d183cadb14c9c42b1d6683d278"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 219400
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0xba8cb4dfa8ed6b1439b4149dcccd71adf21e0331",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44244828,
+      "time": "2024-11-18T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 47759
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x35c111c694fa11ed8afabb38ccc97797fcc80e09"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 823666
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x67d80a17"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0x69e5788587c0374495cfa90f6afe4bbe5b6604ab",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44232828,
+      "time": "2024-11-16T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 11339
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0xc60b200b82682099596aa1e6c35596591198a489"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 899795
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x05480db3"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0x05d544c4b5f865e807c8f9a49fd65476a576096a",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44250828,
+      "time": "2024-11-19T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 58186
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x76949de406a9a640d60cc8e52b8850abf5bac064"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 222065
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x307b8e7ede78d8572f52fd7937d094cebf1378fa",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44232828,
+      "time": "2024-11-16T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 1478
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0xb7ff7bba9249aa4c2538dc829a503c27668472fe"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 18554
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0xe31f"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x143db1e67058d5f14ae6372a64e01113b0002d7b",
+      "to": "0xc3B1b45e5784A8efececfC0BE2E28247d3f49963",
+      "value": "0",
+      "blockNumber": 44106828,
+      "time": "2024-10-26T12:40:50Z",
+      "function": "nonblockingLzReceive1",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_srcChainId",
+          "type": "uint16",
+          "value": 61775
+        },
+        {
+          "name": "_srcAddress",
+          "type": "address",
+          "value": "0x86487b9bbef6211c6c4c6a82ff134e86eadb5212"
+        },
+        {
+          "name": "_nonce",
+          "type": "uint256",
+          "value": 224664
+        },
+        {
+          "name": "_payload",
+          "type": "bytes",
+          "value": "0x5e43"
+        }
+      ]
+    }
+  ]
+}
