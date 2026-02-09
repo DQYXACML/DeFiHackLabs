@@ -1,0 +1,346 @@
+{
+  "compiler_version": "v0.6.12+commit.27d51765",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "Default",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 6439,
+  "values": {
+    "./WstETH.sol:WstETH": [
+      {
+        "label": "1154",
+        "var_name": "./WstETH.sol:_CACHED_DOMAIN_SEPARATOR",
+        "offset": 4940,
+        "length": 32,
+        "value_hex": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
+        "value_int": "96188918051358387464858745320676334206531367358614127528102460114242092652030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1156",
+        "var_name": "./WstETH.sol:_CACHED_CHAIN_ID",
+        "offset": 4892,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1158",
+        "var_name": "./WstETH.sol:_HASHED_NAME",
+        "offset": 5014,
+        "length": 32,
+        "value_hex": "0xb6d02a790ca4952ed9faa11074863de95b4c8bc405a22873605ff97356993b36",
+        "value_int": "82688735768459951468137770576678511342607442129888649533151650324375500569398",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1160",
+        "var_name": "./WstETH.sol:_HASHED_VERSION",
+        "offset": 5047,
+        "length": 32,
+        "value_hex": "0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+        "value_int": "90743482286830539503240959006302832933333810038750515972785732718729991261126",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1162",
+        "var_name": "./WstETH.sol:_TYPE_HASH",
+        "offset": 4981,
+        "length": 32,
+        "value_hex": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+        "value_int": "63076024560530113402979550242307453568063438748328787417531900361828837441551",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1318",
+        "var_name": "./WstETH.sol:_PERMIT_TYPEHASH",
+        "offset": 3038,
+        "length": 32,
+        "value_hex": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "value_int": "49955707469362902507454157297736832118868343942642399513960811609542965143241",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/WstETH.sol:WstETH": [
+      {
+        "label": "2801",
+        "var_name": "./contracts/WstETH.sol:_CACHED_DOMAIN_SEPARATOR",
+        "offset": 4940,
+        "length": 32,
+        "value_hex": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
+        "value_int": "96188918051358387464858745320676334206531367358614127528102460114242092652030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2803",
+        "var_name": "./contracts/WstETH.sol:_CACHED_CHAIN_ID",
+        "offset": 4892,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2805",
+        "var_name": "./contracts/WstETH.sol:_HASHED_NAME",
+        "offset": 5014,
+        "length": 32,
+        "value_hex": "0xb6d02a790ca4952ed9faa11074863de95b4c8bc405a22873605ff97356993b36",
+        "value_int": "82688735768459951468137770576678511342607442129888649533151650324375500569398",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2807",
+        "var_name": "./contracts/WstETH.sol:_HASHED_VERSION",
+        "offset": 5047,
+        "length": 32,
+        "value_hex": "0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+        "value_int": "90743482286830539503240959006302832933333810038750515972785732718729991261126",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2809",
+        "var_name": "./contracts/WstETH.sol:_TYPE_HASH",
+        "offset": 4981,
+        "length": 32,
+        "value_hex": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+        "value_int": "63076024560530113402979550242307453568063438748328787417531900361828837441551",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2965",
+        "var_name": "./contracts/WstETH.sol:_PERMIT_TYPEHASH",
+        "offset": 3038,
+        "length": 32,
+        "value_hex": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "value_int": "49955707469362902507454157297736832118868343942642399513960811609542965143241",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/WstETH.sol:WstETH": [
+      {
+        "label": "4448",
+        "var_name": "./src/WstETH.sol:_CACHED_DOMAIN_SEPARATOR",
+        "offset": 4940,
+        "length": 32,
+        "value_hex": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
+        "value_int": "96188918051358387464858745320676334206531367358614127528102460114242092652030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4450",
+        "var_name": "./src/WstETH.sol:_CACHED_CHAIN_ID",
+        "offset": 4892,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4452",
+        "var_name": "./src/WstETH.sol:_HASHED_NAME",
+        "offset": 5014,
+        "length": 32,
+        "value_hex": "0xb6d02a790ca4952ed9faa11074863de95b4c8bc405a22873605ff97356993b36",
+        "value_int": "82688735768459951468137770576678511342607442129888649533151650324375500569398",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4454",
+        "var_name": "./src/WstETH.sol:_HASHED_VERSION",
+        "offset": 5047,
+        "length": 32,
+        "value_hex": "0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+        "value_int": "90743482286830539503240959006302832933333810038750515972785732718729991261126",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4456",
+        "var_name": "./src/WstETH.sol:_TYPE_HASH",
+        "offset": 4981,
+        "length": 32,
+        "value_hex": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+        "value_int": "63076024560530113402979550242307453568063438748328787417531900361828837441551",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4612",
+        "var_name": "./src/WstETH.sol:_PERMIT_TYPEHASH",
+        "offset": 3038,
+        "length": 32,
+        "value_hex": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "value_int": "49955707469362902507454157297736832118868343942642399513960811609542965143241",
+        "used_stripped_runtime": true
+      }
+    ],
+    "WstETH.sol:WstETH": [
+      {
+        "label": "6095",
+        "var_name": "WstETH.sol:_CACHED_DOMAIN_SEPARATOR",
+        "offset": 4940,
+        "length": 32,
+        "value_hex": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
+        "value_int": "96188918051358387464858745320676334206531367358614127528102460114242092652030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6097",
+        "var_name": "WstETH.sol:_CACHED_CHAIN_ID",
+        "offset": 4892,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6099",
+        "var_name": "WstETH.sol:_HASHED_NAME",
+        "offset": 5014,
+        "length": 32,
+        "value_hex": "0xb6d02a790ca4952ed9faa11074863de95b4c8bc405a22873605ff97356993b36",
+        "value_int": "82688735768459951468137770576678511342607442129888649533151650324375500569398",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6101",
+        "var_name": "WstETH.sol:_HASHED_VERSION",
+        "offset": 5047,
+        "length": 32,
+        "value_hex": "0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+        "value_int": "90743482286830539503240959006302832933333810038750515972785732718729991261126",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6103",
+        "var_name": "WstETH.sol:_TYPE_HASH",
+        "offset": 4981,
+        "length": 32,
+        "value_hex": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+        "value_int": "63076024560530113402979550242307453568063438748328787417531900361828837441551",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6259",
+        "var_name": "WstETH.sol:_PERMIT_TYPEHASH",
+        "offset": 3038,
+        "length": 32,
+        "value_hex": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "value_int": "49955707469362902507454157297736832118868343942642399513960811609542965143241",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/WstETH.sol:WstETH": [
+      {
+        "label": "7742",
+        "var_name": "contracts/WstETH.sol:_CACHED_DOMAIN_SEPARATOR",
+        "offset": 4940,
+        "length": 32,
+        "value_hex": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
+        "value_int": "96188918051358387464858745320676334206531367358614127528102460114242092652030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7744",
+        "var_name": "contracts/WstETH.sol:_CACHED_CHAIN_ID",
+        "offset": 4892,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7746",
+        "var_name": "contracts/WstETH.sol:_HASHED_NAME",
+        "offset": 5014,
+        "length": 32,
+        "value_hex": "0xb6d02a790ca4952ed9faa11074863de95b4c8bc405a22873605ff97356993b36",
+        "value_int": "82688735768459951468137770576678511342607442129888649533151650324375500569398",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7748",
+        "var_name": "contracts/WstETH.sol:_HASHED_VERSION",
+        "offset": 5047,
+        "length": 32,
+        "value_hex": "0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+        "value_int": "90743482286830539503240959006302832933333810038750515972785732718729991261126",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7750",
+        "var_name": "contracts/WstETH.sol:_TYPE_HASH",
+        "offset": 4981,
+        "length": 32,
+        "value_hex": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+        "value_int": "63076024560530113402979550242307453568063438748328787417531900361828837441551",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7906",
+        "var_name": "contracts/WstETH.sol:_PERMIT_TYPEHASH",
+        "offset": 3038,
+        "length": 32,
+        "value_hex": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "value_int": "49955707469362902507454157297736832118868343942642399513960811609542965143241",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/WstETH.sol:WstETH": [
+      {
+        "label": "9389",
+        "var_name": "src/WstETH.sol:_CACHED_DOMAIN_SEPARATOR",
+        "offset": 4940,
+        "length": 32,
+        "value_hex": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
+        "value_int": "96188918051358387464858745320676334206531367358614127528102460114242092652030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9391",
+        "var_name": "src/WstETH.sol:_CACHED_CHAIN_ID",
+        "offset": 4892,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9393",
+        "var_name": "src/WstETH.sol:_HASHED_NAME",
+        "offset": 5014,
+        "length": 32,
+        "value_hex": "0xb6d02a790ca4952ed9faa11074863de95b4c8bc405a22873605ff97356993b36",
+        "value_int": "82688735768459951468137770576678511342607442129888649533151650324375500569398",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9395",
+        "var_name": "src/WstETH.sol:_HASHED_VERSION",
+        "offset": 5047,
+        "length": 32,
+        "value_hex": "0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+        "value_int": "90743482286830539503240959006302832933333810038750515972785732718729991261126",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9397",
+        "var_name": "src/WstETH.sol:_TYPE_HASH",
+        "offset": 4981,
+        "length": 32,
+        "value_hex": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+        "value_int": "63076024560530113402979550242307453568063438748328787417531900361828837441551",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9553",
+        "var_name": "src/WstETH.sol:_PERMIT_TYPEHASH",
+        "offset": 3038,
+        "length": 32,
+        "value_hex": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "value_int": "49955707469362902507454157297736832118868343942642399513960811609542965143241",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

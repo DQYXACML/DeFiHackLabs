@@ -1,5 +1,0 @@
-// AUTO-GENERATED SHIM - DO NOT EDIT
-// SPDX-License-Identifier: BUSL-1.1
-pragma solidity ^0.8.0;
-
-import "./@aave/core-v3/contracts/protocol/libraries/math/PercentageMath.sol";

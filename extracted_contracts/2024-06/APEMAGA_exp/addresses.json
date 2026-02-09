@@ -42,6 +42,7 @@
     "semantic_type": "unknown",
     "aliases": [
       "APEMAGA",
+      "Apemaga",
       "Vulnerable_Contract",
       "apemaga",
       "IAPEMAGA"
@@ -59,6 +60,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "uniswapv2",
       "IUniswapV2Router"
     ]
   },
@@ -84,12 +86,16 @@
     "source": "static",
     "context": "Uni_Pair_V2 Pair = Uni_Pair_V2(0x85705829c2f71EE3c40A7C28f6903e7c797c9433)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "UNI-V2",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "Uni_Pair_V2"
+      "Pair",
+      "UNI-V2",
+      "Uni_Pair_V2",
+      "uni-v2",
+      "IUNI-V2"
     ]
   },
   {
@@ -117,12 +123,15 @@
     "source": "static",
     "context": "IERC20 WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IERC20"
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
     ]
   },
   {
@@ -136,6 +145,6 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   }
 ]

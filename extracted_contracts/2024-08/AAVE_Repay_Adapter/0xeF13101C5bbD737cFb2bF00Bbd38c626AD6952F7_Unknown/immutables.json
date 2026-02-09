@@ -1,0 +1,50 @@
+{
+  "compiler_version": "v0.7.5+commit.eb77ed08",
+  "optimizer": true,
+  "runs": 1000000,
+  "evm_version": "Default",
+  "metadata_bytes": 12,
+  "runtime_bytes_without_metadata": 5380,
+  "values": {
+    "./contracts/fee/FeeClaimer.sol:FeeClaimer": [
+      {
+        "label": "4788",
+        "var_name": "./contracts/fee/FeeClaimer.sol:augustusSwapper",
+        "offset": 2121,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000def171fe48cf0115b1d80b88dc8eab59176fee57",
+        "value_int": "1272780360932548984530580534978151615773564464727",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4788",
+        "var_name": "./contracts/fee/FeeClaimer.sol:augustusSwapper",
+        "offset": 2627,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000def171fe48cf0115b1d80b88dc8eab59176fee57",
+        "value_int": "1272780360932548984530580534978151615773564464727",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/fee/FeeClaimer.sol:FeeClaimer": [
+      {
+        "label": "13901",
+        "var_name": "contracts/fee/FeeClaimer.sol:augustusSwapper",
+        "offset": 2121,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000def171fe48cf0115b1d80b88dc8eab59176fee57",
+        "value_int": "1272780360932548984530580534978151615773564464727",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13901",
+        "var_name": "contracts/fee/FeeClaimer.sol:augustusSwapper",
+        "offset": 2627,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000def171fe48cf0115b1d80b88dc8eab59176fee57",
+        "value_int": "1272780360932548984530580534978151615773564464727",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

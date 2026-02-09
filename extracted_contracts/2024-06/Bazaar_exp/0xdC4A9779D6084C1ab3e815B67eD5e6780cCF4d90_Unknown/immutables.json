@@ -1,0 +1,4068 @@
+{
+  "compiler_version": "v0.7.6+commit.7338295f",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "istanbul",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 20892,
+  "values": {
+    "./@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:BalancerPoolToken": [
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 2392,
+        "length": 32,
+        "value_hex": "0x610a27565b6001600160a01b0316336001600160a01b0316146101486115f856",
+        "value_int": "43892286279510474583239007405415677608364649916390176705035316152883165395030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 2425,
+        "length": 32,
+        "value_hex": "0x60005b600e548110156105ec576000600e828154811061099457fe5b60009182",
+        "value_int": "43422664112575146346634290817746168285612748257324419105693530903280623849858",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 2359,
+        "length": 32,
+        "value_hex": "0x6001600160a01b031660009081526006602052604090205490565b6109786109",
+        "value_int": "43424462915843433818624408185396834216807435346598780216671174788489296765193",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 1625,
+        "length": 32,
+        "value_hex": "0x9e6115f8565b610669858585611606565b336001600160a01b03861614801590",
+        "value_int": "71636965873274096923568262736751138569658053310279346509182500480141534172560",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "90",
+        "var_name": "./@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 1372,
+        "length": 32,
+        "value_hex": "0x909252828152606093909290918301828280156105b95780601f1061058e5761",
+        "value_int": "65391579329060680934632837535628011536421299315718415898504599503574446004065",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:LiquidityBootstrappingPool": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2591,
+        "length": 32,
+        "value_hex": "0x98611ee8611cde565b7f000000000000000000000000b66585c4e460d49154d5",
+        "value_int": "68923150467265192914648255593849083528871505323791322808992411670224871445717",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2555,
+        "length": 32,
+        "value_hex": "0x0120919050565b60006060610a1286516107e5611850565b6107ff8989898989",
+        "value_int": "509856598569287903801304215772961151358368630591808810772667980084836665737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2432,
+        "length": 32,
+        "value_hex": "0x10156105ec576000600e828154811061099457fe5b6000918252602090912001",
+        "value_int": "7274778994777625131643800022563186952678091102338427571195493385945010479105",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4829,
+        "length": 32,
+        "value_hex": "0x12e89085838161124b57fe5b8281816112f157fe5b049150506105d5565b6000",
+        "value_int": "8552537244523358445783790670423337353242544898987178526349494782130007007232",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4865,
+        "length": 32,
+        "value_hex": "0x13148415806111e45750838583816111e157fe5b670de0b6b3a7640000900493",
+        "value_int": "8630192674574191000625454762902252412557354453886759322692738639829696251027",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4419",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7738,
+        "length": 32,
+        "value_hex": "0x611497565b9050611e4a8882612211565b6000806000611e5f8e8e8e8e8e8e8a",
+        "value_int": "43910727745768971979458447662402590522817781721203749946524903715849806712458",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4419",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 12023,
+        "length": 32,
+        "value_hex": "0x81831015612f0a5760009350505050610850565b8181038284038115612f2557",
+        "value_int": "58579925437062404694759096397848190731357773033352162685624242795693252486487",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4421",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7835,
+        "length": 32,
+        "value_hex": "0x606080611ec4611ea8610a27565b6001600160a01b03168b6001600160a01b03",
+        "value_int": "43592536824099668624053410117440180391348814762372116754682792163077271853827",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4421",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 12089,
+        "length": 32,
+        "value_hex": "0x565b6000811580612f4857508284145b15612f5457508261069c565b670de0b6",
+        "value_int": "39060350642299165090499264029397277659966182214816143496572316907718681944246",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4423",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7932,
+        "length": 32,
+        "value_hex": "0x1f2a838281518110611f0957fe5b6020026020010151838381518110611f1d57",
+        "value_int": "14096813529985260965207249188411247777078805685973931515902131382517812370775",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4423",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 12155,
+        "length": 32,
+        "value_hex": "0x036112fa565b9050612f8c8582611108565b91505061069c565b6000612fa283",
+        "value_int": "1528453691548735678702149809933918554161398197021337652663538397960320557699",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5535,
+        "length": 32,
+        "value_hex": "0x5250506115af565b91506105c19050565b60038211156115a6577f0000000000",
+        "value_int": "37231556106116372272567956110110840677112996197896578017820668423953321033728",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5568,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000816003815181",
+        "value_int": "142249375650177",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5502,
+        "length": 32,
+        "value_hex": "0x00000000000000000000008160028151811061159557fe5b6020026020010181",
+        "value_int": "189081830196395274478825574575156623590875572797825",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4425",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8029,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000046001600160a01b0316826001600160a0",
+        "value_int": "1488742494796418542189362175881892683936",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4425",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 12221,
+        "length": 32,
+        "value_hex": "0xe0565b6000612fcb8585611215565b90506000612fe1670de0b6b3a764000088",
+        "value_int": "101470657577335030324863549719627690971992801806458513420823397551522290073736",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4427",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4984,
+        "length": 32,
+        "value_hex": "0xc3b9259281900390910190a3505050565b600061139f6000356001600160e01b",
+        "value_int": "88528131495132521006204429107536702310787174798849241656182836867690584399899",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4427",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7797,
+        "length": 32,
+        "value_hex": "0x611c7d565b611e838185611c7d565b909550935050505b509750979550505050",
+        "value_int": "43924683076862767689840471894888177296473739874812711137555408134175374463056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4429",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5042,
+        "length": 32,
+        "value_hex": "0x6115f8565b80156113d6576113d16113c761144f565b42106101936115f8565b",
+        "value_int": "43913164062222712220645187765669793134595385194903510836418824894181275096667",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4429",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7894,
+        "length": 32,
+        "value_hex": "0x5092509250985098509895505050505050565b60005b611ef3611850565b8110",
+        "value_int": "36443543642466553848883493180453132014878424867913892454515682996843313856784",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4431",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5109,
+        "length": 32,
+        "value_hex": "0x19909116811790915560408051918252517f9e3a5e37224532dea67b89face18",
+        "value_int": "11563248551843837949656364353181739294907149554143130743590525370865494445592",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4431",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7991,
+        "length": 32,
+        "value_hex": "0x6020908102919091010152600101611eeb565b60007f00000000000000000000",
+        "value_int": "43479569899644045918826488563040621567443207662962090023669917956190351917056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4433",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5190,
+        "length": 32,
+        "value_hex": "0x60075460ff161590565b7f000000000000000000000000000000000000000000",
+        "value_int": "43434983755158751730232173292929181976305904220904163075206850249486975893504",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4433",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8088,
+        "length": 32,
+        "value_hex": "0x00000000000000000de0b6b3a7640000610850565b7f00000000000000000000",
+        "value_int": "340282366920938463592352890832480267581897936801852555264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3406,
+        "length": 32,
+        "value_hex": "0x5083565b60006040518083038186803b158015610d6957600080fd5b505afa15",
+        "value_int": "36417080865798384786201958545660966636402296342462402263100572307017304832533",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./@balancer-labs/v2-pool-weighted/contracts/smart/NoProtocolFeeLiquidityBootstrappingPool.sol:NoProtocolFeeLiquidityBootstrappingPool": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2463,
+        "length": 32,
+        "value_hex": "0x015560010161097b565b604080517f000000000000000000000000b66585c4e4",
+        "value_int": "603157443843898631489112140430568642899603216001829045056446717823499486436",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2427,
+        "length": 32,
+        "value_hex": "0x5b600e548110156105ec576000600e828154811061099457fe5b600091825260",
+        "value_int": "41330185441972243344355458298861363953926649230628677021656698925890593247840",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2304,
+        "length": 32,
+        "value_hex": "0x806010850201611286565b61128e565b84828151811061091b57fe5b60209081",
+        "value_int": "58065775950702469936229691537307791236440075889491456187110037495141070049409",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4454,
+        "length": 32,
+        "value_hex": "0x16911b1790565b61ffff811b1992909216911b1790565b600082820161069c84",
+        "value_int": "10207262475655358156462276651223090322974067760532149676259457502331539987588",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4490,
+        "length": 32,
+        "value_hex": "0x6115f8565b63ffffffff811b1992909216911b1790565b60006001821b198416",
+        "value_int": "43913164062211159333679685610610615386207526005272266417669311755556973282326",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4419",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7382,
+        "length": 32,
+        "value_hex": "0x52600101611c80565b333014611d9c576000306001600160a01b031660003660",
+        "value_int": "37259277840979879253854931196846320469323042716231304802836946781631949059680",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4419",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 11766,
+        "length": 32,
+        "value_hex": "0x821415612e0657610f9183846111c7565b673782dace9d900000821415612e2e",
+        "value_int": "58836154813755281577035470626180430488283467224903392802344311879964318314030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4421",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7479,
+        "length": 32,
+        "value_hex": "0x2084013e611d44565b606091505b505090508060008114611d5357fe5b600460",
+        "value_int": "14707243550705643327103752419378467747227480924236852220404384042361301238880",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4421",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 11832,
+        "length": 32,
+        "value_hex": "0x40565b90506000612e4d612d4d836127106111c7565b9050612d73828261117c",
+        "value_int": "29100603106514343972108177256509168583881686502079864745626848969064993329532",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4423",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7576,
+        "length": 32,
+        "value_hex": "0x016000f35b6000611da6611497565b9050611db28782612211565b600080611d",
+        "value_int": "621936727691942662439085985677397756598548422128345894566241645773545562397",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4423",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 11898,
+        "length": 32,
+        "value_hex": "0x00000390565b6000612e91633806be4b60e21b6109a8565b821480612eac5750",
+        "value_int": "24596565807021993610492917329942100134121496730412616300252235542845264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5160,
+        "length": 32,
+        "value_hex": "0x81900360200190a150565b600061143c611473565b4211806106285750506007",
+        "value_int": "58602806741334008982966372707930310437072757702115437815704928790928451198983",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5193,
+        "length": 32,
+        "value_hex": "0x60ff161590565b7f000000000000000000000000000000000000000000000000",
+        "value_int": "43872731885291066067258208270213755738053635797044401895235608931768951898112",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5127,
+        "length": 32,
+        "value_hex": "0x9e3a5e37224532dea67b89face185703738a228a6e8a23dee546960180d3be64",
+        "value_int": "71568557456475985275227930336490470085043111771756769671698395862488849825380",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4425",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 7673,
+        "length": 32,
+        "value_hex": "0x016044820181fd5b600082820261069c8415806111e45750838583816111e157",
+        "value_int": "622402990505426714471623096210471118805531328130718539555824502683030643031",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4425",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 11964,
+        "length": 32,
+        "value_hex": "0x60004281612eca8460c06112a8565b90506000612ed98560e06112a8565b9050",
+        "value_int": "43422492467320122550175573366987293003357995733913346489868671212009809481808",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4427",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4609,
+        "length": 32,
+        "value_hex": "0x64000060001982015b046001019150506105d5565b6000611224821515600461",
+        "value_int": "45231287446492012197731681799658773062111313272878758602607069906130113135713",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4427",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7441,
+        "length": 32,
+        "value_hex": "0x9150503d8060008114611d3f576040519150601f19603f3d011682016040523d",
+        "value_int": "65727264607539853254987542260075687851615772330006690360095117194871263220285",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4429",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 4667,
+        "length": 32,
+        "value_hex": "0x838102906112549085838161124b57fe5b041460056115f8565b826001820381",
+        "value_int": "59480924131712155058571522076528793531553163269649532953409231794582472229761",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4429",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7538,
+        "length": 32,
+        "value_hex": "0x1d7e573d6000803e3d6000fd5b506020600460003e604060205260243d036024",
+        "value_int": "13340297445675905242528804088198108287691763897177208128964195373574598647844",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4431",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 4734,
+        "length": 32,
+        "value_hex": "0xa76400006111c7565b1c61ffff1690565b60006105d561ffff61113884670de0",
+        "value_int": "75712930430105931300257715560377251125058258962246574030862946757904817393120",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4431",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7635,
+        "length": 32,
+        "value_hex": "0x848663ffffffff16565b8051601f1982018390526343adbafb603f1983015260",
+        "value_int": "59942743694306144355097366347343361686892808830074939061354623138877306655328",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4433",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 4815,
+        "length": 32,
+        "value_hex": "0x670de0b6b3a7640000838102906112e89085838161124b57fe5b8281816112f1",
+        "value_int": "46612743332730292224198717627641853818146229113349147835678626689033588249329",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4433",
+        "var_name": "./@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 7732,
+        "length": 32,
+        "value_hex": "0x5b6000611e3e611497565b9050611e4a8882612211565b6000806000611e5f8e",
+        "value_int": "41330089157595823024162857992781504806472111058527343647846607667687237509006",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3315,
+        "length": 32,
+        "value_hex": "0x600020905b815481526020019060010190808311610cf7575050505050905090",
+        "value_int": "43422258211745612509946443324699124973187862293433624380185014863824373698704",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/BalancerPoolToken.sol:BalancerPoolToken": [
+      {
+        "label": "11331",
+        "var_name": "./contracts/BalancerPoolToken.sol:_vault",
+        "offset": 1372,
+        "length": 32,
+        "value_hex": "0x909252828152606093909290918301828280156105b95780601f1061058e5761",
+        "value_int": "65391579329060680934632837535628011536421299315718415898504599503574446004065",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 2392,
+        "length": 32,
+        "value_hex": "0x610a27565b6001600160a01b0316336001600160a01b0316146101486115f856",
+        "value_int": "43892286279510474583239007405415677608364649916390176705035316152883165395030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 2425,
+        "length": 32,
+        "value_hex": "0x60005b600e548110156105ec576000600e828154811061099457fe5b60009182",
+        "value_int": "43422664112575146346634290817746168285612748257324419105693530903280623849858",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 2359,
+        "length": 32,
+        "value_hex": "0x6001600160a01b031660009081526006602052604090205490565b6109786109",
+        "value_int": "43424462915843433818624408185396834216807435346598780216671174788489296765193",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 1625,
+        "length": 32,
+        "value_hex": "0x9e6115f8565b610669858585611606565b336001600160a01b03861614801590",
+        "value_int": "71636965873274096923568262736751138569658053310279346509182500480141534172560",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/contracts/BalancerPoolToken.sol:BalancerPoolToken": [
+      {
+        "label": "15722",
+        "var_name": "./contracts/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 1372,
+        "length": 32,
+        "value_hex": "0x909252828152606093909290918301828280156105b95780601f1061058e5761",
+        "value_int": "65391579329060680934632837535628011536421299315718415898504599503574446004065",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 2392,
+        "length": 32,
+        "value_hex": "0x610a27565b6001600160a01b0316336001600160a01b0316146101486115f856",
+        "value_int": "43892286279510474583239007405415677608364649916390176705035316152883165395030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 2425,
+        "length": 32,
+        "value_hex": "0x60005b600e548110156105ec576000600e828154811061099457fe5b60009182",
+        "value_int": "43422664112575146346634290817746168285612748257324419105693530903280623849858",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 2359,
+        "length": 32,
+        "value_hex": "0x6001600160a01b031660009081526006602052604090205490565b6109786109",
+        "value_int": "43424462915843433818624408185396834216807435346598780216671174788489296765193",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 1625,
+        "length": 32,
+        "value_hex": "0x9e6115f8565b610669858585611606565b336001600160a01b03861614801590",
+        "value_int": "71636965873274096923568262736751138569658053310279346509182500480141534172560",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:LiquidityBootstrappingPool": [
+      {
+        "label": "25568",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7738,
+        "length": 32,
+        "value_hex": "0x611497565b9050611e4a8882612211565b6000806000611e5f8e8e8e8e8e8e8a",
+        "value_int": "43910727745768971979458447662402590522817781721203749946524903715849806712458",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25568",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 12023,
+        "length": 32,
+        "value_hex": "0x81831015612f0a5760009350505050610850565b8181038284038115612f2557",
+        "value_int": "58579925437062404694759096397848190731357773033352162685624242795693252486487",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25570",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7835,
+        "length": 32,
+        "value_hex": "0x606080611ec4611ea8610a27565b6001600160a01b03168b6001600160a01b03",
+        "value_int": "43592536824099668624053410117440180391348814762372116754682792163077271853827",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25570",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 12089,
+        "length": 32,
+        "value_hex": "0x565b6000811580612f4857508284145b15612f5457508261069c565b670de0b6",
+        "value_int": "39060350642299165090499264029397277659966182214816143496572316907718681944246",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25572",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7932,
+        "length": 32,
+        "value_hex": "0x1f2a838281518110611f0957fe5b6020026020010151838381518110611f1d57",
+        "value_int": "14096813529985260965207249188411247777078805685973931515902131382517812370775",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25572",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 12155,
+        "length": 32,
+        "value_hex": "0x036112fa565b9050612f8c8582611108565b91505061069c565b6000612fa283",
+        "value_int": "1528453691548735678702149809933918554161398197021337652663538397960320557699",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25574",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8029,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000046001600160a01b0316826001600160a0",
+        "value_int": "1488742494796418542189362175881892683936",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25574",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 12221,
+        "length": 32,
+        "value_hex": "0xe0565b6000612fcb8585611215565b90506000612fe1670de0b6b3a764000088",
+        "value_int": "101470657577335030324863549719627690971992801806458513420823397551522290073736",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25576",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4984,
+        "length": 32,
+        "value_hex": "0xc3b9259281900390910190a3505050565b600061139f6000356001600160e01b",
+        "value_int": "88528131495132521006204429107536702310787174798849241656182836867690584399899",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25576",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7797,
+        "length": 32,
+        "value_hex": "0x611c7d565b611e838185611c7d565b909550935050505b509750979550505050",
+        "value_int": "43924683076862767689840471894888177296473739874812711137555408134175374463056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25578",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5042,
+        "length": 32,
+        "value_hex": "0x6115f8565b80156113d6576113d16113c761144f565b42106101936115f8565b",
+        "value_int": "43913164062222712220645187765669793134595385194903510836418824894181275096667",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25578",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7894,
+        "length": 32,
+        "value_hex": "0x5092509250985098509895505050505050565b60005b611ef3611850565b8110",
+        "value_int": "36443543642466553848883493180453132014878424867913892454515682996843313856784",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25580",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5109,
+        "length": 32,
+        "value_hex": "0x19909116811790915560408051918252517f9e3a5e37224532dea67b89face18",
+        "value_int": "11563248551843837949656364353181739294907149554143130743590525370865494445592",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25580",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7991,
+        "length": 32,
+        "value_hex": "0x6020908102919091010152600101611eeb565b60007f00000000000000000000",
+        "value_int": "43479569899644045918826488563040621567443207662962090023669917956190351917056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25582",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5190,
+        "length": 32,
+        "value_hex": "0x60075460ff161590565b7f000000000000000000000000000000000000000000",
+        "value_int": "43434983755158751730232173292929181976305904220904163075206850249486975893504",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25582",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8088,
+        "length": 32,
+        "value_hex": "0x00000000000000000de0b6b3a7640000610850565b7f00000000000000000000",
+        "value_int": "340282366920938463592352890832480267581897936801852555264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2591,
+        "length": 32,
+        "value_hex": "0x98611ee8611cde565b7f000000000000000000000000b66585c4e460d49154d5",
+        "value_int": "68923150467265192914648255593849083528871505323791322808992411670224871445717",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2555,
+        "length": 32,
+        "value_hex": "0x0120919050565b60006060610a1286516107e5611850565b6107ff8989898989",
+        "value_int": "509856598569287903801304215772961151358368630591808810772667980084836665737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2432,
+        "length": 32,
+        "value_hex": "0x10156105ec576000600e828154811061099457fe5b6000918252602090912001",
+        "value_int": "7274778994777625131643800022563186952678091102338427571195493385945010479105",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4829,
+        "length": 32,
+        "value_hex": "0x12e89085838161124b57fe5b8281816112f157fe5b049150506105d5565b6000",
+        "value_int": "8552537244523358445783790670423337353242544898987178526349494782130007007232",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4865,
+        "length": 32,
+        "value_hex": "0x13148415806111e45750838583816111e157fe5b670de0b6b3a7640000900493",
+        "value_int": "8630192674574191000625454762902252412557354453886759322692738639829696251027",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5535,
+        "length": 32,
+        "value_hex": "0x5250506115af565b91506105c19050565b60038211156115a6577f0000000000",
+        "value_int": "37231556106116372272567956110110840677112996197896578017820668423953321033728",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5568,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000816003815181",
+        "value_int": "142249375650177",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5502,
+        "length": 32,
+        "value_hex": "0x00000000000000000000008160028151811061159557fe5b6020026020010181",
+        "value_int": "189081830196395274478825574575156623590875572797825",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3406,
+        "length": 32,
+        "value_hex": "0x5083565b60006040518083038186803b158015610d6957600080fd5b505afa15",
+        "value_int": "36417080865798384786201958545660966636402296342462402263100572307017304832533",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/contracts/smart/NoProtocolFeeLiquidityBootstrappingPool.sol:NoProtocolFeeLiquidityBootstrappingPool": [
+      {
+        "label": "25568",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7382,
+        "length": 32,
+        "value_hex": "0x52600101611c80565b333014611d9c576000306001600160a01b031660003660",
+        "value_int": "37259277840979879253854931196846320469323042716231304802836946781631949059680",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25568",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 11766,
+        "length": 32,
+        "value_hex": "0x821415612e0657610f9183846111c7565b673782dace9d900000821415612e2e",
+        "value_int": "58836154813755281577035470626180430488283467224903392802344311879964318314030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25570",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7479,
+        "length": 32,
+        "value_hex": "0x2084013e611d44565b606091505b505090508060008114611d5357fe5b600460",
+        "value_int": "14707243550705643327103752419378467747227480924236852220404384042361301238880",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25570",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 11832,
+        "length": 32,
+        "value_hex": "0x40565b90506000612e4d612d4d836127106111c7565b9050612d73828261117c",
+        "value_int": "29100603106514343972108177256509168583881686502079864745626848969064993329532",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25572",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7576,
+        "length": 32,
+        "value_hex": "0x016000f35b6000611da6611497565b9050611db28782612211565b600080611d",
+        "value_int": "621936727691942662439085985677397756598548422128345894566241645773545562397",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25572",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 11898,
+        "length": 32,
+        "value_hex": "0x00000390565b6000612e91633806be4b60e21b6109a8565b821480612eac5750",
+        "value_int": "24596565807021993610492917329942100134121496730412616300252235542845264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25574",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 7673,
+        "length": 32,
+        "value_hex": "0x016044820181fd5b600082820261069c8415806111e45750838583816111e157",
+        "value_int": "622402990505426714471623096210471118805531328130718539555824502683030643031",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25574",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 11964,
+        "length": 32,
+        "value_hex": "0x60004281612eca8460c06112a8565b90506000612ed98560e06112a8565b9050",
+        "value_int": "43422492467320122550175573366987293003357995733913346489868671212009809481808",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25576",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4609,
+        "length": 32,
+        "value_hex": "0x64000060001982015b046001019150506105d5565b6000611224821515600461",
+        "value_int": "45231287446492012197731681799658773062111313272878758602607069906130113135713",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25576",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7441,
+        "length": 32,
+        "value_hex": "0x9150503d8060008114611d3f576040519150601f19603f3d011682016040523d",
+        "value_int": "65727264607539853254987542260075687851615772330006690360095117194871263220285",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25578",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 4667,
+        "length": 32,
+        "value_hex": "0x838102906112549085838161124b57fe5b041460056115f8565b826001820381",
+        "value_int": "59480924131712155058571522076528793531553163269649532953409231794582472229761",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25578",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7538,
+        "length": 32,
+        "value_hex": "0x1d7e573d6000803e3d6000fd5b506020600460003e604060205260243d036024",
+        "value_int": "13340297445675905242528804088198108287691763897177208128964195373574598647844",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25580",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 4734,
+        "length": 32,
+        "value_hex": "0xa76400006111c7565b1c61ffff1690565b60006105d561ffff61113884670de0",
+        "value_int": "75712930430105931300257715560377251125058258962246574030862946757904817393120",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25580",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7635,
+        "length": 32,
+        "value_hex": "0x848663ffffffff16565b8051601f1982018390526343adbafb603f1983015260",
+        "value_int": "59942743694306144355097366347343361686892808830074939061354623138877306655328",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25582",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 4815,
+        "length": 32,
+        "value_hex": "0x670de0b6b3a7640000838102906112e89085838161124b57fe5b8281816112f1",
+        "value_int": "46612743332730292224198717627641853818146229113349147835678626689033588249329",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25582",
+        "var_name": "./contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 7732,
+        "length": 32,
+        "value_hex": "0x5b6000611e3e611497565b9050611e4a8882612211565b6000806000611e5f8e",
+        "value_int": "41330089157595823024162857992781504806472111058527343647846607667687237509006",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2463,
+        "length": 32,
+        "value_hex": "0x015560010161097b565b604080517f000000000000000000000000b66585c4e4",
+        "value_int": "603157443843898631489112140430568642899603216001829045056446717823499486436",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2427,
+        "length": 32,
+        "value_hex": "0x5b600e548110156105ec576000600e828154811061099457fe5b600091825260",
+        "value_int": "41330185441972243344355458298861363953926649230628677021656698925890593247840",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2304,
+        "length": 32,
+        "value_hex": "0x806010850201611286565b61128e565b84828151811061091b57fe5b60209081",
+        "value_int": "58065775950702469936229691537307791236440075889491456187110037495141070049409",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4454,
+        "length": 32,
+        "value_hex": "0x16911b1790565b61ffff811b1992909216911b1790565b600082820161069c84",
+        "value_int": "10207262475655358156462276651223090322974067760532149676259457502331539987588",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4490,
+        "length": 32,
+        "value_hex": "0x6115f8565b63ffffffff811b1992909216911b1790565b60006001821b198416",
+        "value_int": "43913164062211159333679685610610615386207526005272266417669311755556973282326",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5160,
+        "length": 32,
+        "value_hex": "0x81900360200190a150565b600061143c611473565b4211806106285750506007",
+        "value_int": "58602806741334008982966372707930310437072757702115437815704928790928451198983",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5193,
+        "length": 32,
+        "value_hex": "0x60ff161590565b7f000000000000000000000000000000000000000000000000",
+        "value_int": "43872731885291066067258208270213755738053635797044401895235608931768951898112",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5127,
+        "length": 32,
+        "value_hex": "0x9e3a5e37224532dea67b89face185703738a228a6e8a23dee546960180d3be64",
+        "value_int": "71568557456475985275227930336490470085043111771756769671698395862488849825380",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3315,
+        "length": 32,
+        "value_hex": "0x600020905b815481526020019060010190808311610cf7575050505050905090",
+        "value_int": "43422258211745612509946443324699124973187862293433624380185014863824373698704",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/smart/LiquidityBootstrappingPool.sol:LiquidityBootstrappingPool": [
+      {
+        "label": "32500",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7738,
+        "length": 32,
+        "value_hex": "0x611497565b9050611e4a8882612211565b6000806000611e5f8e8e8e8e8e8e8a",
+        "value_int": "43910727745768971979458447662402590522817781721203749946524903715849806712458",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32500",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 12023,
+        "length": 32,
+        "value_hex": "0x81831015612f0a5760009350505050610850565b8181038284038115612f2557",
+        "value_int": "58579925437062404694759096397848190731357773033352162685624242795693252486487",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32502",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7835,
+        "length": 32,
+        "value_hex": "0x606080611ec4611ea8610a27565b6001600160a01b03168b6001600160a01b03",
+        "value_int": "43592536824099668624053410117440180391348814762372116754682792163077271853827",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32502",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 12089,
+        "length": 32,
+        "value_hex": "0x565b6000811580612f4857508284145b15612f5457508261069c565b670de0b6",
+        "value_int": "39060350642299165090499264029397277659966182214816143496572316907718681944246",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32504",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7932,
+        "length": 32,
+        "value_hex": "0x1f2a838281518110611f0957fe5b6020026020010151838381518110611f1d57",
+        "value_int": "14096813529985260965207249188411247777078805685973931515902131382517812370775",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32504",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 12155,
+        "length": 32,
+        "value_hex": "0x036112fa565b9050612f8c8582611108565b91505061069c565b6000612fa283",
+        "value_int": "1528453691548735678702149809933918554161398197021337652663538397960320557699",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32506",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8029,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000046001600160a01b0316826001600160a0",
+        "value_int": "1488742494796418542189362175881892683936",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32506",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 12221,
+        "length": 32,
+        "value_hex": "0xe0565b6000612fcb8585611215565b90506000612fe1670de0b6b3a764000088",
+        "value_int": "101470657577335030324863549719627690971992801806458513420823397551522290073736",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32508",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4984,
+        "length": 32,
+        "value_hex": "0xc3b9259281900390910190a3505050565b600061139f6000356001600160e01b",
+        "value_int": "88528131495132521006204429107536702310787174798849241656182836867690584399899",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32508",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7797,
+        "length": 32,
+        "value_hex": "0x611c7d565b611e838185611c7d565b909550935050505b509750979550505050",
+        "value_int": "43924683076862767689840471894888177296473739874812711137555408134175374463056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32510",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5042,
+        "length": 32,
+        "value_hex": "0x6115f8565b80156113d6576113d16113c761144f565b42106101936115f8565b",
+        "value_int": "43913164062222712220645187765669793134595385194903510836418824894181275096667",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32510",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7894,
+        "length": 32,
+        "value_hex": "0x5092509250985098509895505050505050565b60005b611ef3611850565b8110",
+        "value_int": "36443543642466553848883493180453132014878424867913892454515682996843313856784",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32512",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5109,
+        "length": 32,
+        "value_hex": "0x19909116811790915560408051918252517f9e3a5e37224532dea67b89face18",
+        "value_int": "11563248551843837949656364353181739294907149554143130743590525370865494445592",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32512",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7991,
+        "length": 32,
+        "value_hex": "0x6020908102919091010152600101611eeb565b60007f00000000000000000000",
+        "value_int": "43479569899644045918826488563040621567443207662962090023669917956190351917056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32514",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5190,
+        "length": 32,
+        "value_hex": "0x60075460ff161590565b7f000000000000000000000000000000000000000000",
+        "value_int": "43434983755158751730232173292929181976305904220904163075206850249486975893504",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32514",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8088,
+        "length": 32,
+        "value_hex": "0x00000000000000000de0b6b3a7640000610850565b7f00000000000000000000",
+        "value_int": "340282366920938463592352890832480267581897936801852555264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2591,
+        "length": 32,
+        "value_hex": "0x98611ee8611cde565b7f000000000000000000000000b66585c4e460d49154d5",
+        "value_int": "68923150467265192914648255593849083528871505323791322808992411670224871445717",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2555,
+        "length": 32,
+        "value_hex": "0x0120919050565b60006060610a1286516107e5611850565b6107ff8989898989",
+        "value_int": "509856598569287903801304215772961151358368630591808810772667980084836665737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2432,
+        "length": 32,
+        "value_hex": "0x10156105ec576000600e828154811061099457fe5b6000918252602090912001",
+        "value_int": "7274778994777625131643800022563186952678091102338427571195493385945010479105",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4829,
+        "length": 32,
+        "value_hex": "0x12e89085838161124b57fe5b8281816112f157fe5b049150506105d5565b6000",
+        "value_int": "8552537244523358445783790670423337353242544898987178526349494782130007007232",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4865,
+        "length": 32,
+        "value_hex": "0x13148415806111e45750838583816111e157fe5b670de0b6b3a7640000900493",
+        "value_int": "8630192674574191000625454762902252412557354453886759322692738639829696251027",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5535,
+        "length": 32,
+        "value_hex": "0x5250506115af565b91506105c19050565b60038211156115a6577f0000000000",
+        "value_int": "37231556106116372272567956110110840677112996197896578017820668423953321033728",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5568,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000816003815181",
+        "value_int": "142249375650177",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5502,
+        "length": 32,
+        "value_hex": "0x00000000000000000000008160028151811061159557fe5b6020026020010181",
+        "value_int": "189081830196395274478825574575156623590875572797825",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3406,
+        "length": 32,
+        "value_hex": "0x5083565b60006040518083038186803b158015610d6957600080fd5b505afa15",
+        "value_int": "36417080865798384786201958545660966636402296342462402263100572307017304832533",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/smart/NoProtocolFeeLiquidityBootstrappingPool.sol:NoProtocolFeeLiquidityBootstrappingPool": [
+      {
+        "label": "32500",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7382,
+        "length": 32,
+        "value_hex": "0x52600101611c80565b333014611d9c576000306001600160a01b031660003660",
+        "value_int": "37259277840979879253854931196846320469323042716231304802836946781631949059680",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32500",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 11766,
+        "length": 32,
+        "value_hex": "0x821415612e0657610f9183846111c7565b673782dace9d900000821415612e2e",
+        "value_int": "58836154813755281577035470626180430488283467224903392802344311879964318314030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32502",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7479,
+        "length": 32,
+        "value_hex": "0x2084013e611d44565b606091505b505090508060008114611d5357fe5b600460",
+        "value_int": "14707243550705643327103752419378467747227480924236852220404384042361301238880",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32502",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 11832,
+        "length": 32,
+        "value_hex": "0x40565b90506000612e4d612d4d836127106111c7565b9050612d73828261117c",
+        "value_int": "29100603106514343972108177256509168583881686502079864745626848969064993329532",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32504",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7576,
+        "length": 32,
+        "value_hex": "0x016000f35b6000611da6611497565b9050611db28782612211565b600080611d",
+        "value_int": "621936727691942662439085985677397756598548422128345894566241645773545562397",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32504",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 11898,
+        "length": 32,
+        "value_hex": "0x00000390565b6000612e91633806be4b60e21b6109a8565b821480612eac5750",
+        "value_int": "24596565807021993610492917329942100134121496730412616300252235542845264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32506",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 7673,
+        "length": 32,
+        "value_hex": "0x016044820181fd5b600082820261069c8415806111e45750838583816111e157",
+        "value_int": "622402990505426714471623096210471118805531328130718539555824502683030643031",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32506",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 11964,
+        "length": 32,
+        "value_hex": "0x60004281612eca8460c06112a8565b90506000612ed98560e06112a8565b9050",
+        "value_int": "43422492467320122550175573366987293003357995733913346489868671212009809481808",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32508",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4609,
+        "length": 32,
+        "value_hex": "0x64000060001982015b046001019150506105d5565b6000611224821515600461",
+        "value_int": "45231287446492012197731681799658773062111313272878758602607069906130113135713",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32508",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7441,
+        "length": 32,
+        "value_hex": "0x9150503d8060008114611d3f576040519150601f19603f3d011682016040523d",
+        "value_int": "65727264607539853254987542260075687851615772330006690360095117194871263220285",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32510",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 4667,
+        "length": 32,
+        "value_hex": "0x838102906112549085838161124b57fe5b041460056115f8565b826001820381",
+        "value_int": "59480924131712155058571522076528793531553163269649532953409231794582472229761",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32510",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7538,
+        "length": 32,
+        "value_hex": "0x1d7e573d6000803e3d6000fd5b506020600460003e604060205260243d036024",
+        "value_int": "13340297445675905242528804088198108287691763897177208128964195373574598647844",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32512",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 4734,
+        "length": 32,
+        "value_hex": "0xa76400006111c7565b1c61ffff1690565b60006105d561ffff61113884670de0",
+        "value_int": "75712930430105931300257715560377251125058258962246574030862946757904817393120",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32512",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7635,
+        "length": 32,
+        "value_hex": "0x848663ffffffff16565b8051601f1982018390526343adbafb603f1983015260",
+        "value_int": "59942743694306144355097366347343361686892808830074939061354623138877306655328",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32514",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 4815,
+        "length": 32,
+        "value_hex": "0x670de0b6b3a7640000838102906112e89085838161124b57fe5b8281816112f1",
+        "value_int": "46612743332730292224198717627641853818146229113349147835678626689033588249329",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "32514",
+        "var_name": "./contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 7732,
+        "length": 32,
+        "value_hex": "0x5b6000611e3e611497565b9050611e4a8882612211565b6000806000611e5f8e",
+        "value_int": "41330089157595823024162857992781504806472111058527343647846607667687237509006",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2463,
+        "length": 32,
+        "value_hex": "0x015560010161097b565b604080517f000000000000000000000000b66585c4e4",
+        "value_int": "603157443843898631489112140430568642899603216001829045056446717823499486436",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2427,
+        "length": 32,
+        "value_hex": "0x5b600e548110156105ec576000600e828154811061099457fe5b600091825260",
+        "value_int": "41330185441972243344355458298861363953926649230628677021656698925890593247840",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2304,
+        "length": 32,
+        "value_hex": "0x806010850201611286565b61128e565b84828151811061091b57fe5b60209081",
+        "value_int": "58065775950702469936229691537307791236440075889491456187110037495141070049409",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4454,
+        "length": 32,
+        "value_hex": "0x16911b1790565b61ffff811b1992909216911b1790565b600082820161069c84",
+        "value_int": "10207262475655358156462276651223090322974067760532149676259457502331539987588",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4490,
+        "length": 32,
+        "value_hex": "0x6115f8565b63ffffffff811b1992909216911b1790565b60006001821b198416",
+        "value_int": "43913164062211159333679685610610615386207526005272266417669311755556973282326",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5160,
+        "length": 32,
+        "value_hex": "0x81900360200190a150565b600061143c611473565b4211806106285750506007",
+        "value_int": "58602806741334008982966372707930310437072757702115437815704928790928451198983",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5193,
+        "length": 32,
+        "value_hex": "0x60ff161590565b7f000000000000000000000000000000000000000000000000",
+        "value_int": "43872731885291066067258208270213755738053635797044401895235608931768951898112",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5127,
+        "length": 32,
+        "value_hex": "0x9e3a5e37224532dea67b89face185703738a228a6e8a23dee546960180d3be64",
+        "value_int": "71568557456475985275227930336490470085043111771756769671698395862488849825380",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3315,
+        "length": 32,
+        "value_hex": "0x600020905b815481526020019060010190808311610cf7575050505050905090",
+        "value_int": "43422258211745612509946443324699124973187862293433624380185014863824373698704",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/lbp/BazaarLBP.sol:BazaarLBP": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2618,
+        "length": 32,
+        "value_hex": "0x60d49154d50325ce60adc44bc900e990565b7f000000000000000000000000ef",
+        "value_int": "43797608082015208440095522685401272891085637410614491213891409713635386196207",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2582,
+        "length": 32,
+        "value_hex": "0x89898989898989611e98611ee8611cde565b7f000000000000000000000000b6",
+        "value_int": "62209867551028700816996562737760189188981563606338215578947726934266282508470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1726,
+        "length": 32,
+        "value_hex": "0x5b6106c66117ac565b6105ec816117c1565b7fdc4a9779d6084c1ab3e815b67e",
+        "value_int": "41331900145133296339621094699597973271980198125020889591002885260431964092030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7979,
+        "length": 32,
+        "value_hex": "0x838281518110611f3657fe5b6020908102919091010152600101611eeb565b60",
+        "value_int": "59483565805455526574067809196828917607824577541339001925343759650711615724384",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 9517,
+        "length": 32,
+        "value_hex": "0xad35ee4ecbe2e0f298420b28a3955392573f9061182c908390615060565b6000",
+        "value_int": "78345410439316443443103953829296215555187412511730907732609752790264551530496",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 8076,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000de0b6b3a764000061085056",
+        "value_int": "4294967296000000001627934806",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 9583,
+        "length": 32,
+        "value_hex": "0x6001600160a01b0316836001600160a01b0316141561258f5750600061266056",
+        "value_int": "43424462915843433818627796228071780251149442991105216581509968159972492992598",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 8173,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000de0b6b3a764000061085056",
+        "value_int": "4294967296000000001627934806",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 9649,
+        "length": 32,
+        "value_hex": "0x6001600160a01b0316836001600160a01b031614156125d15750600161266056",
+        "value_int": "43424462915843433818627796228071780251149442991105216582727453268841618366550",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8270,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000061085056",
+        "value_int": "1627934806",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 9715,
+        "length": 32,
+        "value_hex": "0x6001600160a01b0316836001600160a01b031614156126135750600261266056",
+        "value_int": "43424462915843433818627796228071780251149442991105216583944938377710743740502",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 5322,
+        "length": 32,
+        "value_hex": "0x602001820160405280156114e7578160200160208202803683370190505b5090",
+        "value_int": "43478582976750802865474785239194803146964780333821012192200573501870920388752",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 8038,
+        "length": 32,
+        "value_hex": "0x000000000000046001600160a01b0316826001600160a01b03161415611fac57",
+        "value_int": "7030387659050344122303894407480963462483632618007765522033751",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5380,
+        "length": 32,
+        "value_hex": "0x0de0b6b3a76400008160008151811061151857fe5b6020026020010181815250",
+        "value_int": "6277101735386680767008055381799074043989956378041594216520342738074228314704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 8135,
+        "length": 32,
+        "value_hex": "0xf6000aa78b2ebb6001600160a01b0316826001600160a01b0316141561200d57",
+        "value_int": "111269034285915725804020864729796113231871378434985263544719020993781289717079",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5447,
+        "length": 32,
+        "value_hex": "0x60018151811061155257fe5b60200260200101818152505060028211156115a6",
+        "value_int": "43424692833684791340400758861017629406520427467890588986436021830732214244774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 8232,
+        "length": 32,
+        "value_hex": "0x000000000000006001600160a01b0316826001600160a01b0316141561206e57",
+        "value_int": "602635482014383020136046038116313052394820642876594180877911",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5528,
+        "length": 32,
+        "value_hex": "0x026020010181815250506115af565b91506105c19050565b60038211156115a6",
+        "value_int": "1074463898386889262919993474030944734490761616856196602089659096418532529574",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8329,
+        "length": 32,
+        "value_hex": "0x000000000000006001600160a01b0316826001600160a01b031614156120cf57",
+        "value_int": "602635482014383020136046038116313052394820642876594180902743",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2459,
+        "length": 32,
+        "value_hex": "0x20909120015560010161097b565b604080517f000000000000000000000000b6",
+        "value_int": "14729438748071623287850817079112164050137276301627325419103532229862310805686",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 5167,
+        "length": 32,
+        "value_hex": "0xa150565b600061143c611473565b42118061062857505060075460ff16159056",
+        "value_int": "72964312400739265973860106172074397789233004763242022770538380044982065401942",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 5203,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000006666021b9056",
+        "value_int": "112588308058198",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5873,
+        "length": 32,
+        "value_hex": "0x7f8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b3940",
+        "value_int": "57690122491014402078892557212287780277083404262830782892299394802214048053568",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5906,
+        "length": 32,
+        "value_hex": "0x7fa3ad6ff8d42f4883fa9d7407dd3755aa0ec0135d5c1fd9425adf60a4889118",
+        "value_int": "57732924862510518847006215406013387104842486865438517768367227864982173028632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5840,
+        "length": 32,
+        "value_hex": "0x8daa952ba7f163c4a11628f55a4df523b3ef92918290030190a3505050565b60",
+        "value_int": "64077505188422719257505511748666102188361962791054356333328772088621407034208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3557,
+        "length": 32,
+        "value_hex": "0x565b6001600160a01b0380881660008181526006602090815260408083205481",
+        "value_int": "39060350665775527582743911635545126742443301342817557823131863924390651516033",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/lbp/blast/BazaarLBPBlast.sol:BazaarLBPBlast": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2637,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000efb4e3cc438ef2854727a7df0d0baf844484edab",
+        "value_int": "1368482772358943020678625529899654021156801146283",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2601,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000b66585c4e460d49154d50325ce60adc44bc900e9",
+        "value_int": "1041300348487929981887024091190763560693502902505",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1745,
+        "length": 32,
+        "value_hex": "0xdc4a9779d6084c1ab3e815b67ed5e6780ccf4d90000200000000000000000001",
+        "value_int": "99640618819504361703972982766626249389784576203401428572348805805931526881281",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 8013,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000004300000000000000000000000000000000000004",
+        "value_int": "382502381645197248123620639812464696550576095236",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 9551,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000004300000000000000000000000000000000000004",
+        "value_int": "382502381645197248123620639812464696550576095236",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 8110,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000086cba7808127d76deac14ec26ef6000aa78b2ebb",
+        "value_int": "769546406045267063046611031896131393074594787003",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 9617,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000086cba7808127d76deac14ec26ef6000aa78b2ebb",
+        "value_int": "769546406045267063046611031896131393074594787003",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 8207,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 9683,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8304,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 9749,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 5356,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 8072,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5414,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 8169,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5481,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 8266,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5562,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8363,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2478,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000b66585c4e460d49154d50325ce60adc44bc900e9",
+        "value_int": "1041300348487929981887024091190763560693502902505",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 5201,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000006666021b",
+        "value_int": "1717961243",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 5237,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000006666021b",
+        "value_int": "1717961243",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5907,
+        "length": 32,
+        "value_hex": "0xa3ad6ff8d42f4883fa9d7407dd3755aa0ec0135d5c1fd9425adf60a488911884",
+        "value_int": "74033431663536006040076047836062801474388585015908915690897164430468831058052",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5940,
+        "length": 32,
+        "value_hex": "0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+        "value_int": "90743482286830539503240959006302832933333810038750515972785732718729991261126",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5874,
+        "length": 32,
+        "value_hex": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+        "value_int": "63076024560530113402979550242307453568063438748328787417531900361828837441551",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3591,
+        "length": 32,
+        "value_hex": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "value_int": "49955707469362902507454157297736832118868343942642399513960811609542965143241",
+        "used_stripped_runtime": true
+      }
+    ],
+    "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:BalancerPoolToken": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 1372,
+        "length": 32,
+        "value_hex": "0x909252828152606093909290918301828280156105b95780601f1061058e5761",
+        "value_int": "65391579329060680934632837535628011536421299315718415898504599503574446004065",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 2392,
+        "length": 32,
+        "value_hex": "0x610a27565b6001600160a01b0316336001600160a01b0316146101486115f856",
+        "value_int": "43892286279510474583239007405415677608364649916390176705035316152883165395030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 2425,
+        "length": 32,
+        "value_hex": "0x60005b600e548110156105ec576000600e828154811061099457fe5b60009182",
+        "value_int": "43422664112575146346634290817746168285612748257324419105693530903280623849858",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 2359,
+        "length": 32,
+        "value_hex": "0x6001600160a01b031660009081526006602052604090205490565b6109786109",
+        "value_int": "43424462915843433818624408185396834216807435346598780216671174788489296765193",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 1625,
+        "length": 32,
+        "value_hex": "0x9e6115f8565b610669858585611606565b336001600160a01b03861614801590",
+        "value_int": "71636965873274096923568262736751138569658053310279346509182500480141534172560",
+        "used_stripped_runtime": true
+      }
+    ],
+    "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:LiquidityBootstrappingPool": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2591,
+        "length": 32,
+        "value_hex": "0x98611ee8611cde565b7f000000000000000000000000b66585c4e460d49154d5",
+        "value_int": "68923150467265192914648255593849083528871505323791322808992411670224871445717",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2555,
+        "length": 32,
+        "value_hex": "0x0120919050565b60006060610a1286516107e5611850565b6107ff8989898989",
+        "value_int": "509856598569287903801304215772961151358368630591808810772667980084836665737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7738,
+        "length": 32,
+        "value_hex": "0x611497565b9050611e4a8882612211565b6000806000611e5f8e8e8e8e8e8e8a",
+        "value_int": "43910727745768971979458447662402590522817781721203749946524903715849806712458",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 12023,
+        "length": 32,
+        "value_hex": "0x81831015612f0a5760009350505050610850565b8181038284038115612f2557",
+        "value_int": "58579925437062404694759096397848190731357773033352162685624242795693252486487",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7835,
+        "length": 32,
+        "value_hex": "0x606080611ec4611ea8610a27565b6001600160a01b03168b6001600160a01b03",
+        "value_int": "43592536824099668624053410117440180391348814762372116754682792163077271853827",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 12089,
+        "length": 32,
+        "value_hex": "0x565b6000811580612f4857508284145b15612f5457508261069c565b670de0b6",
+        "value_int": "39060350642299165090499264029397277659966182214816143496572316907718681944246",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7932,
+        "length": 32,
+        "value_hex": "0x1f2a838281518110611f0957fe5b6020026020010151838381518110611f1d57",
+        "value_int": "14096813529985260965207249188411247777078805685973931515902131382517812370775",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 12155,
+        "length": 32,
+        "value_hex": "0x036112fa565b9050612f8c8582611108565b91505061069c565b6000612fa283",
+        "value_int": "1528453691548735678702149809933918554161398197021337652663538397960320557699",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8029,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000046001600160a01b0316826001600160a0",
+        "value_int": "1488742494796418542189362175881892683936",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 12221,
+        "length": 32,
+        "value_hex": "0xe0565b6000612fcb8585611215565b90506000612fe1670de0b6b3a764000088",
+        "value_int": "101470657577335030324863549719627690971992801806458513420823397551522290073736",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4984,
+        "length": 32,
+        "value_hex": "0xc3b9259281900390910190a3505050565b600061139f6000356001600160e01b",
+        "value_int": "88528131495132521006204429107536702310787174798849241656182836867690584399899",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7797,
+        "length": 32,
+        "value_hex": "0x611c7d565b611e838185611c7d565b909550935050505b509750979550505050",
+        "value_int": "43924683076862767689840471894888177296473739874812711137555408134175374463056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5042,
+        "length": 32,
+        "value_hex": "0x6115f8565b80156113d6576113d16113c761144f565b42106101936115f8565b",
+        "value_int": "43913164062222712220645187765669793134595385194903510836418824894181275096667",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7894,
+        "length": 32,
+        "value_hex": "0x5092509250985098509895505050505050565b60005b611ef3611850565b8110",
+        "value_int": "36443543642466553848883493180453132014878424867913892454515682996843313856784",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5109,
+        "length": 32,
+        "value_hex": "0x19909116811790915560408051918252517f9e3a5e37224532dea67b89face18",
+        "value_int": "11563248551843837949656364353181739294907149554143130743590525370865494445592",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7991,
+        "length": 32,
+        "value_hex": "0x6020908102919091010152600101611eeb565b60007f00000000000000000000",
+        "value_int": "43479569899644045918826488563040621567443207662962090023669917956190351917056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5190,
+        "length": 32,
+        "value_hex": "0x60075460ff161590565b7f000000000000000000000000000000000000000000",
+        "value_int": "43434983755158751730232173292929181976305904220904163075206850249486975893504",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8088,
+        "length": 32,
+        "value_hex": "0x00000000000000000de0b6b3a7640000610850565b7f00000000000000000000",
+        "value_int": "340282366920938463592352890832480267581897936801852555264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2432,
+        "length": 32,
+        "value_hex": "0x10156105ec576000600e828154811061099457fe5b6000918252602090912001",
+        "value_int": "7274778994777625131643800022563186952678091102338427571195493385945010479105",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4829,
+        "length": 32,
+        "value_hex": "0x12e89085838161124b57fe5b8281816112f157fe5b049150506105d5565b6000",
+        "value_int": "8552537244523358445783790670423337353242544898987178526349494782130007007232",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4865,
+        "length": 32,
+        "value_hex": "0x13148415806111e45750838583816111e157fe5b670de0b6b3a7640000900493",
+        "value_int": "8630192674574191000625454762902252412557354453886759322692738639829696251027",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5535,
+        "length": 32,
+        "value_hex": "0x5250506115af565b91506105c19050565b60038211156115a6577f0000000000",
+        "value_int": "37231556106116372272567956110110840677112996197896578017820668423953321033728",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5568,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000816003815181",
+        "value_int": "142249375650177",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5502,
+        "length": 32,
+        "value_hex": "0x00000000000000000000008160028151811061159557fe5b6020026020010181",
+        "value_int": "189081830196395274478825574575156623590875572797825",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3406,
+        "length": 32,
+        "value_hex": "0x5083565b60006040518083038186803b158015610d6957600080fd5b505afa15",
+        "value_int": "36417080865798384786201958545660966636402296342462402263100572307017304832533",
+        "used_stripped_runtime": true
+      }
+    ],
+    "@balancer-labs/v2-pool-weighted/contracts/smart/NoProtocolFeeLiquidityBootstrappingPool.sol:NoProtocolFeeLiquidityBootstrappingPool": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2463,
+        "length": 32,
+        "value_hex": "0x015560010161097b565b604080517f000000000000000000000000b66585c4e4",
+        "value_int": "603157443843898631489112140430568642899603216001829045056446717823499486436",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2427,
+        "length": 32,
+        "value_hex": "0x5b600e548110156105ec576000600e828154811061099457fe5b600091825260",
+        "value_int": "41330185441972243344355458298861363953926649230628677021656698925890593247840",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7382,
+        "length": 32,
+        "value_hex": "0x52600101611c80565b333014611d9c576000306001600160a01b031660003660",
+        "value_int": "37259277840979879253854931196846320469323042716231304802836946781631949059680",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 11766,
+        "length": 32,
+        "value_hex": "0x821415612e0657610f9183846111c7565b673782dace9d900000821415612e2e",
+        "value_int": "58836154813755281577035470626180430488283467224903392802344311879964318314030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7479,
+        "length": 32,
+        "value_hex": "0x2084013e611d44565b606091505b505090508060008114611d5357fe5b600460",
+        "value_int": "14707243550705643327103752419378467747227480924236852220404384042361301238880",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 11832,
+        "length": 32,
+        "value_hex": "0x40565b90506000612e4d612d4d836127106111c7565b9050612d73828261117c",
+        "value_int": "29100603106514343972108177256509168583881686502079864745626848969064993329532",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7576,
+        "length": 32,
+        "value_hex": "0x016000f35b6000611da6611497565b9050611db28782612211565b600080611d",
+        "value_int": "621936727691942662439085985677397756598548422128345894566241645773545562397",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 11898,
+        "length": 32,
+        "value_hex": "0x00000390565b6000612e91633806be4b60e21b6109a8565b821480612eac5750",
+        "value_int": "24596565807021993610492917329942100134121496730412616300252235542845264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 7673,
+        "length": 32,
+        "value_hex": "0x016044820181fd5b600082820261069c8415806111e45750838583816111e157",
+        "value_int": "622402990505426714471623096210471118805531328130718539555824502683030643031",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 11964,
+        "length": 32,
+        "value_hex": "0x60004281612eca8460c06112a8565b90506000612ed98560e06112a8565b9050",
+        "value_int": "43422492467320122550175573366987293003357995733913346489868671212009809481808",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4609,
+        "length": 32,
+        "value_hex": "0x64000060001982015b046001019150506105d5565b6000611224821515600461",
+        "value_int": "45231287446492012197731681799658773062111313272878758602607069906130113135713",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7441,
+        "length": 32,
+        "value_hex": "0x9150503d8060008114611d3f576040519150601f19603f3d011682016040523d",
+        "value_int": "65727264607539853254987542260075687851615772330006690360095117194871263220285",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 4667,
+        "length": 32,
+        "value_hex": "0x838102906112549085838161124b57fe5b041460056115f8565b826001820381",
+        "value_int": "59480924131712155058571522076528793531553163269649532953409231794582472229761",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7538,
+        "length": 32,
+        "value_hex": "0x1d7e573d6000803e3d6000fd5b506020600460003e604060205260243d036024",
+        "value_int": "13340297445675905242528804088198108287691763897177208128964195373574598647844",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 4734,
+        "length": 32,
+        "value_hex": "0xa76400006111c7565b1c61ffff1690565b60006105d561ffff61113884670de0",
+        "value_int": "75712930430105931300257715560377251125058258962246574030862946757904817393120",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7635,
+        "length": 32,
+        "value_hex": "0x848663ffffffff16565b8051601f1982018390526343adbafb603f1983015260",
+        "value_int": "59942743694306144355097366347343361686892808830074939061354623138877306655328",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 4815,
+        "length": 32,
+        "value_hex": "0x670de0b6b3a7640000838102906112e89085838161124b57fe5b8281816112f1",
+        "value_int": "46612743332730292224198717627641853818146229113349147835678626689033588249329",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 7732,
+        "length": 32,
+        "value_hex": "0x5b6000611e3e611497565b9050611e4a8882612211565b6000806000611e5f8e",
+        "value_int": "41330089157595823024162857992781504806472111058527343647846607667687237509006",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2304,
+        "length": 32,
+        "value_hex": "0x806010850201611286565b61128e565b84828151811061091b57fe5b60209081",
+        "value_int": "58065775950702469936229691537307791236440075889491456187110037495141070049409",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4454,
+        "length": 32,
+        "value_hex": "0x16911b1790565b61ffff811b1992909216911b1790565b600082820161069c84",
+        "value_int": "10207262475655358156462276651223090322974067760532149676259457502331539987588",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4490,
+        "length": 32,
+        "value_hex": "0x6115f8565b63ffffffff811b1992909216911b1790565b60006001821b198416",
+        "value_int": "43913164062211159333679685610610615386207526005272266417669311755556973282326",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5160,
+        "length": 32,
+        "value_hex": "0x81900360200190a150565b600061143c611473565b4211806106285750506007",
+        "value_int": "58602806741334008982966372707930310437072757702115437815704928790928451198983",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5193,
+        "length": 32,
+        "value_hex": "0x60ff161590565b7f000000000000000000000000000000000000000000000000",
+        "value_int": "43872731885291066067258208270213755738053635797044401895235608931768951898112",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5127,
+        "length": 32,
+        "value_hex": "0x9e3a5e37224532dea67b89face185703738a228a6e8a23dee546960180d3be64",
+        "value_int": "71568557456475985275227930336490470085043111771756769671698395862488849825380",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3315,
+        "length": 32,
+        "value_hex": "0x600020905b815481526020019060010190808311610cf7575050505050905090",
+        "value_int": "43422258211745612509946443324699124973187862293433624380185014863824373698704",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/BalancerPoolToken.sol:BalancerPoolToken": [
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 2392,
+        "length": 32,
+        "value_hex": "0x610a27565b6001600160a01b0316336001600160a01b0316146101486115f856",
+        "value_int": "43892286279510474583239007405415677608364649916390176705035316152883165395030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 2425,
+        "length": 32,
+        "value_hex": "0x60005b600e548110156105ec576000600e828154811061099457fe5b60009182",
+        "value_int": "43422664112575146346634290817746168285612748257324419105693530903280623849858",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 2359,
+        "length": 32,
+        "value_hex": "0x6001600160a01b031660009081526006602052604090205490565b6109786109",
+        "value_int": "43424462915843433818624408185396834216807435346598780216671174788489296765193",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 1625,
+        "length": 32,
+        "value_hex": "0x9e6115f8565b610669858585611606565b336001600160a01b03861614801590",
+        "value_int": "71636965873274096923568262736751138569658053310279346509182500480141534172560",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "45883",
+        "var_name": "contracts/BalancerPoolToken.sol:_vault",
+        "offset": 1372,
+        "length": 32,
+        "value_hex": "0x909252828152606093909290918301828280156105b95780601f1061058e5761",
+        "value_int": "65391579329060680934632837535628011536421299315718415898504599503574446004065",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/contracts/BalancerPoolToken.sol:BalancerPoolToken": [
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 2392,
+        "length": 32,
+        "value_hex": "0x610a27565b6001600160a01b0316336001600160a01b0316146101486115f856",
+        "value_int": "43892286279510474583239007405415677608364649916390176705035316152883165395030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 2425,
+        "length": 32,
+        "value_hex": "0x60005b600e548110156105ec576000600e828154811061099457fe5b60009182",
+        "value_int": "43422664112575146346634290817746168285612748257324419105693530903280623849858",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 2359,
+        "length": 32,
+        "value_hex": "0x6001600160a01b031660009081526006602052604090205490565b6109786109",
+        "value_int": "43424462915843433818624408185396834216807435346598780216671174788489296765193",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 1625,
+        "length": 32,
+        "value_hex": "0x9e6115f8565b610669858585611606565b336001600160a01b03861614801590",
+        "value_int": "71636965873274096923568262736751138569658053310279346509182500480141534172560",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "50274",
+        "var_name": "contracts/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 1372,
+        "length": 32,
+        "value_hex": "0x909252828152606093909290918301828280156105b95780601f1061058e5761",
+        "value_int": "65391579329060680934632837535628011536421299315718415898504599503574446004065",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/contracts/smart/LiquidityBootstrappingPool.sol:LiquidityBootstrappingPool": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2591,
+        "length": 32,
+        "value_hex": "0x98611ee8611cde565b7f000000000000000000000000b66585c4e460d49154d5",
+        "value_int": "68923150467265192914648255593849083528871505323791322808992411670224871445717",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2555,
+        "length": 32,
+        "value_hex": "0x0120919050565b60006060610a1286516107e5611850565b6107ff8989898989",
+        "value_int": "509856598569287903801304215772961151358368630591808810772667980084836665737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2432,
+        "length": 32,
+        "value_hex": "0x10156105ec576000600e828154811061099457fe5b6000918252602090912001",
+        "value_int": "7274778994777625131643800022563186952678091102338427571195493385945010479105",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4829,
+        "length": 32,
+        "value_hex": "0x12e89085838161124b57fe5b8281816112f157fe5b049150506105d5565b6000",
+        "value_int": "8552537244523358445783790670423337353242544898987178526349494782130007007232",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4865,
+        "length": 32,
+        "value_hex": "0x13148415806111e45750838583816111e157fe5b670de0b6b3a7640000900493",
+        "value_int": "8630192674574191000625454762902252412557354453886759322692738639829696251027",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5535,
+        "length": 32,
+        "value_hex": "0x5250506115af565b91506105c19050565b60038211156115a6577f0000000000",
+        "value_int": "37231556106116372272567956110110840677112996197896578017820668423953321033728",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5568,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000816003815181",
+        "value_int": "142249375650177",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5502,
+        "length": 32,
+        "value_hex": "0x00000000000000000000008160028151811061159557fe5b6020026020010181",
+        "value_int": "189081830196395274478825574575156623590875572797825",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3406,
+        "length": 32,
+        "value_hex": "0x5083565b60006040518083038186803b158015610d6957600080fd5b505afa15",
+        "value_int": "36417080865798384786201958545660966636402296342462402263100572307017304832533",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60120",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7738,
+        "length": 32,
+        "value_hex": "0x611497565b9050611e4a8882612211565b6000806000611e5f8e8e8e8e8e8e8a",
+        "value_int": "43910727745768971979458447662402590522817781721203749946524903715849806712458",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60120",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 12023,
+        "length": 32,
+        "value_hex": "0x81831015612f0a5760009350505050610850565b8181038284038115612f2557",
+        "value_int": "58579925437062404694759096397848190731357773033352162685624242795693252486487",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60122",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7835,
+        "length": 32,
+        "value_hex": "0x606080611ec4611ea8610a27565b6001600160a01b03168b6001600160a01b03",
+        "value_int": "43592536824099668624053410117440180391348814762372116754682792163077271853827",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60122",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 12089,
+        "length": 32,
+        "value_hex": "0x565b6000811580612f4857508284145b15612f5457508261069c565b670de0b6",
+        "value_int": "39060350642299165090499264029397277659966182214816143496572316907718681944246",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60124",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7932,
+        "length": 32,
+        "value_hex": "0x1f2a838281518110611f0957fe5b6020026020010151838381518110611f1d57",
+        "value_int": "14096813529985260965207249188411247777078805685973931515902131382517812370775",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60124",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 12155,
+        "length": 32,
+        "value_hex": "0x036112fa565b9050612f8c8582611108565b91505061069c565b6000612fa283",
+        "value_int": "1528453691548735678702149809933918554161398197021337652663538397960320557699",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60126",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8029,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000046001600160a01b0316826001600160a0",
+        "value_int": "1488742494796418542189362175881892683936",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60126",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 12221,
+        "length": 32,
+        "value_hex": "0xe0565b6000612fcb8585611215565b90506000612fe1670de0b6b3a764000088",
+        "value_int": "101470657577335030324863549719627690971992801806458513420823397551522290073736",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60128",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4984,
+        "length": 32,
+        "value_hex": "0xc3b9259281900390910190a3505050565b600061139f6000356001600160e01b",
+        "value_int": "88528131495132521006204429107536702310787174798849241656182836867690584399899",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60128",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7797,
+        "length": 32,
+        "value_hex": "0x611c7d565b611e838185611c7d565b909550935050505b509750979550505050",
+        "value_int": "43924683076862767689840471894888177296473739874812711137555408134175374463056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60130",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5042,
+        "length": 32,
+        "value_hex": "0x6115f8565b80156113d6576113d16113c761144f565b42106101936115f8565b",
+        "value_int": "43913164062222712220645187765669793134595385194903510836418824894181275096667",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60130",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7894,
+        "length": 32,
+        "value_hex": "0x5092509250985098509895505050505050565b60005b611ef3611850565b8110",
+        "value_int": "36443543642466553848883493180453132014878424867913892454515682996843313856784",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60132",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5109,
+        "length": 32,
+        "value_hex": "0x19909116811790915560408051918252517f9e3a5e37224532dea67b89face18",
+        "value_int": "11563248551843837949656364353181739294907149554143130743590525370865494445592",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60132",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7991,
+        "length": 32,
+        "value_hex": "0x6020908102919091010152600101611eeb565b60007f00000000000000000000",
+        "value_int": "43479569899644045918826488563040621567443207662962090023669917956190351917056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60134",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5190,
+        "length": 32,
+        "value_hex": "0x60075460ff161590565b7f000000000000000000000000000000000000000000",
+        "value_int": "43434983755158751730232173292929181976305904220904163075206850249486975893504",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60134",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8088,
+        "length": 32,
+        "value_hex": "0x00000000000000000de0b6b3a7640000610850565b7f00000000000000000000",
+        "value_int": "340282366920938463592352890832480267581897936801852555264",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/contracts/smart/NoProtocolFeeLiquidityBootstrappingPool.sol:NoProtocolFeeLiquidityBootstrappingPool": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2463,
+        "length": 32,
+        "value_hex": "0x015560010161097b565b604080517f000000000000000000000000b66585c4e4",
+        "value_int": "603157443843898631489112140430568642899603216001829045056446717823499486436",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2427,
+        "length": 32,
+        "value_hex": "0x5b600e548110156105ec576000600e828154811061099457fe5b600091825260",
+        "value_int": "41330185441972243344355458298861363953926649230628677021656698925890593247840",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2304,
+        "length": 32,
+        "value_hex": "0x806010850201611286565b61128e565b84828151811061091b57fe5b60209081",
+        "value_int": "58065775950702469936229691537307791236440075889491456187110037495141070049409",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4454,
+        "length": 32,
+        "value_hex": "0x16911b1790565b61ffff811b1992909216911b1790565b600082820161069c84",
+        "value_int": "10207262475655358156462276651223090322974067760532149676259457502331539987588",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4490,
+        "length": 32,
+        "value_hex": "0x6115f8565b63ffffffff811b1992909216911b1790565b60006001821b198416",
+        "value_int": "43913164062211159333679685610610615386207526005272266417669311755556973282326",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5160,
+        "length": 32,
+        "value_hex": "0x81900360200190a150565b600061143c611473565b4211806106285750506007",
+        "value_int": "58602806741334008982966372707930310437072757702115437815704928790928451198983",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5193,
+        "length": 32,
+        "value_hex": "0x60ff161590565b7f000000000000000000000000000000000000000000000000",
+        "value_int": "43872731885291066067258208270213755738053635797044401895235608931768951898112",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5127,
+        "length": 32,
+        "value_hex": "0x9e3a5e37224532dea67b89face185703738a228a6e8a23dee546960180d3be64",
+        "value_int": "71568557456475985275227930336490470085043111771756769671698395862488849825380",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3315,
+        "length": 32,
+        "value_hex": "0x600020905b815481526020019060010190808311610cf7575050505050905090",
+        "value_int": "43422258211745612509946443324699124973187862293433624380185014863824373698704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60120",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7382,
+        "length": 32,
+        "value_hex": "0x52600101611c80565b333014611d9c576000306001600160a01b031660003660",
+        "value_int": "37259277840979879253854931196846320469323042716231304802836946781631949059680",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60120",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 11766,
+        "length": 32,
+        "value_hex": "0x821415612e0657610f9183846111c7565b673782dace9d900000821415612e2e",
+        "value_int": "58836154813755281577035470626180430488283467224903392802344311879964318314030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60122",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7479,
+        "length": 32,
+        "value_hex": "0x2084013e611d44565b606091505b505090508060008114611d5357fe5b600460",
+        "value_int": "14707243550705643327103752419378467747227480924236852220404384042361301238880",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60122",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 11832,
+        "length": 32,
+        "value_hex": "0x40565b90506000612e4d612d4d836127106111c7565b9050612d73828261117c",
+        "value_int": "29100603106514343972108177256509168583881686502079864745626848969064993329532",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60124",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7576,
+        "length": 32,
+        "value_hex": "0x016000f35b6000611da6611497565b9050611db28782612211565b600080611d",
+        "value_int": "621936727691942662439085985677397756598548422128345894566241645773545562397",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60124",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 11898,
+        "length": 32,
+        "value_hex": "0x00000390565b6000612e91633806be4b60e21b6109a8565b821480612eac5750",
+        "value_int": "24596565807021993610492917329942100134121496730412616300252235542845264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60126",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 7673,
+        "length": 32,
+        "value_hex": "0x016044820181fd5b600082820261069c8415806111e45750838583816111e157",
+        "value_int": "622402990505426714471623096210471118805531328130718539555824502683030643031",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60126",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 11964,
+        "length": 32,
+        "value_hex": "0x60004281612eca8460c06112a8565b90506000612ed98560e06112a8565b9050",
+        "value_int": "43422492467320122550175573366987293003357995733913346489868671212009809481808",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60128",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4609,
+        "length": 32,
+        "value_hex": "0x64000060001982015b046001019150506105d5565b6000611224821515600461",
+        "value_int": "45231287446492012197731681799658773062111313272878758602607069906130113135713",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60128",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7441,
+        "length": 32,
+        "value_hex": "0x9150503d8060008114611d3f576040519150601f19603f3d011682016040523d",
+        "value_int": "65727264607539853254987542260075687851615772330006690360095117194871263220285",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60130",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 4667,
+        "length": 32,
+        "value_hex": "0x838102906112549085838161124b57fe5b041460056115f8565b826001820381",
+        "value_int": "59480924131712155058571522076528793531553163269649532953409231794582472229761",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60130",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7538,
+        "length": 32,
+        "value_hex": "0x1d7e573d6000803e3d6000fd5b506020600460003e604060205260243d036024",
+        "value_int": "13340297445675905242528804088198108287691763897177208128964195373574598647844",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60132",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 4734,
+        "length": 32,
+        "value_hex": "0xa76400006111c7565b1c61ffff1690565b60006105d561ffff61113884670de0",
+        "value_int": "75712930430105931300257715560377251125058258962246574030862946757904817393120",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60132",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7635,
+        "length": 32,
+        "value_hex": "0x848663ffffffff16565b8051601f1982018390526343adbafb603f1983015260",
+        "value_int": "59942743694306144355097366347343361686892808830074939061354623138877306655328",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60134",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 4815,
+        "length": 32,
+        "value_hex": "0x670de0b6b3a7640000838102906112e89085838161124b57fe5b8281816112f1",
+        "value_int": "46612743332730292224198717627641853818146229113349147835678626689033588249329",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "60134",
+        "var_name": "contracts/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 7732,
+        "length": 32,
+        "value_hex": "0x5b6000611e3e611497565b9050611e4a8882612211565b6000806000611e5f8e",
+        "value_int": "41330089157595823024162857992781504806472111058527343647846607667687237509006",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/smart/LiquidityBootstrappingPool.sol:LiquidityBootstrappingPool": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2591,
+        "length": 32,
+        "value_hex": "0x98611ee8611cde565b7f000000000000000000000000b66585c4e460d49154d5",
+        "value_int": "68923150467265192914648255593849083528871505323791322808992411670224871445717",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2555,
+        "length": 32,
+        "value_hex": "0x0120919050565b60006060610a1286516107e5611850565b6107ff8989898989",
+        "value_int": "509856598569287903801304215772961151358368630591808810772667980084836665737",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2432,
+        "length": 32,
+        "value_hex": "0x10156105ec576000600e828154811061099457fe5b6000918252602090912001",
+        "value_int": "7274778994777625131643800022563186952678091102338427571195493385945010479105",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4829,
+        "length": 32,
+        "value_hex": "0x12e89085838161124b57fe5b8281816112f157fe5b049150506105d5565b6000",
+        "value_int": "8552537244523358445783790670423337353242544898987178526349494782130007007232",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4865,
+        "length": 32,
+        "value_hex": "0x13148415806111e45750838583816111e157fe5b670de0b6b3a7640000900493",
+        "value_int": "8630192674574191000625454762902252412557354453886759322692738639829696251027",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5535,
+        "length": 32,
+        "value_hex": "0x5250506115af565b91506105c19050565b60038211156115a6577f0000000000",
+        "value_int": "37231556106116372272567956110110840677112996197896578017820668423953321033728",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5568,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000816003815181",
+        "value_int": "142249375650177",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5502,
+        "length": 32,
+        "value_hex": "0x00000000000000000000008160028151811061159557fe5b6020026020010181",
+        "value_int": "189081830196395274478825574575156623590875572797825",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3406,
+        "length": 32,
+        "value_hex": "0x5083565b60006040518083038186803b158015610d6957600080fd5b505afa15",
+        "value_int": "36417080865798384786201958545660966636402296342462402263100572307017304832533",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67052",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7738,
+        "length": 32,
+        "value_hex": "0x611497565b9050611e4a8882612211565b6000806000611e5f8e8e8e8e8e8e8a",
+        "value_int": "43910727745768971979458447662402590522817781721203749946524903715849806712458",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67052",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 12023,
+        "length": 32,
+        "value_hex": "0x81831015612f0a5760009350505050610850565b8181038284038115612f2557",
+        "value_int": "58579925437062404694759096397848190731357773033352162685624242795693252486487",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67054",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7835,
+        "length": 32,
+        "value_hex": "0x606080611ec4611ea8610a27565b6001600160a01b03168b6001600160a01b03",
+        "value_int": "43592536824099668624053410117440180391348814762372116754682792163077271853827",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67054",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 12089,
+        "length": 32,
+        "value_hex": "0x565b6000811580612f4857508284145b15612f5457508261069c565b670de0b6",
+        "value_int": "39060350642299165090499264029397277659966182214816143496572316907718681944246",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67056",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7932,
+        "length": 32,
+        "value_hex": "0x1f2a838281518110611f0957fe5b6020026020010151838381518110611f1d57",
+        "value_int": "14096813529985260965207249188411247777078805685973931515902131382517812370775",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67056",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 12155,
+        "length": 32,
+        "value_hex": "0x036112fa565b9050612f8c8582611108565b91505061069c565b6000612fa283",
+        "value_int": "1528453691548735678702149809933918554161398197021337652663538397960320557699",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67058",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8029,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000046001600160a01b0316826001600160a0",
+        "value_int": "1488742494796418542189362175881892683936",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67058",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 12221,
+        "length": 32,
+        "value_hex": "0xe0565b6000612fcb8585611215565b90506000612fe1670de0b6b3a764000088",
+        "value_int": "101470657577335030324863549719627690971992801806458513420823397551522290073736",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67060",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4984,
+        "length": 32,
+        "value_hex": "0xc3b9259281900390910190a3505050565b600061139f6000356001600160e01b",
+        "value_int": "88528131495132521006204429107536702310787174798849241656182836867690584399899",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67060",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7797,
+        "length": 32,
+        "value_hex": "0x611c7d565b611e838185611c7d565b909550935050505b509750979550505050",
+        "value_int": "43924683076862767689840471894888177296473739874812711137555408134175374463056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67062",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5042,
+        "length": 32,
+        "value_hex": "0x6115f8565b80156113d6576113d16113c761144f565b42106101936115f8565b",
+        "value_int": "43913164062222712220645187765669793134595385194903510836418824894181275096667",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67062",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7894,
+        "length": 32,
+        "value_hex": "0x5092509250985098509895505050505050565b60005b611ef3611850565b8110",
+        "value_int": "36443543642466553848883493180453132014878424867913892454515682996843313856784",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67064",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5109,
+        "length": 32,
+        "value_hex": "0x19909116811790915560408051918252517f9e3a5e37224532dea67b89face18",
+        "value_int": "11563248551843837949656364353181739294907149554143130743590525370865494445592",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67064",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7991,
+        "length": 32,
+        "value_hex": "0x6020908102919091010152600101611eeb565b60007f00000000000000000000",
+        "value_int": "43479569899644045918826488563040621567443207662962090023669917956190351917056",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67066",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5190,
+        "length": 32,
+        "value_hex": "0x60075460ff161590565b7f000000000000000000000000000000000000000000",
+        "value_int": "43434983755158751730232173292929181976305904220904163075206850249486975893504",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67066",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8088,
+        "length": 32,
+        "value_hex": "0x00000000000000000de0b6b3a7640000610850565b7f00000000000000000000",
+        "value_int": "340282366920938463592352890832480267581897936801852555264",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/smart/NoProtocolFeeLiquidityBootstrappingPool.sol:NoProtocolFeeLiquidityBootstrappingPool": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2463,
+        "length": 32,
+        "value_hex": "0x015560010161097b565b604080517f000000000000000000000000b66585c4e4",
+        "value_int": "603157443843898631489112140430568642899603216001829045056446717823499486436",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2427,
+        "length": 32,
+        "value_hex": "0x5b600e548110156105ec576000600e828154811061099457fe5b600091825260",
+        "value_int": "41330185441972243344355458298861363953926649230628677021656698925890593247840",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1658,
+        "length": 32,
+        "value_hex": "0x068457506000198114155b15610696576106968533858403611326565b600191",
+        "value_int": "2947703522888270196716794942861318452968704663424229947076339270724270162321",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2304,
+        "length": 32,
+        "value_hex": "0x806010850201611286565b61128e565b84828151811061091b57fe5b60209081",
+        "value_int": "58065775950702469936229691537307791236440075889491456187110037495141070049409",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 4454,
+        "length": 32,
+        "value_hex": "0x16911b1790565b61ffff811b1992909216911b1790565b600082820161069c84",
+        "value_int": "10207262475655358156462276651223090322974067760532149676259457502331539987588",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 4490,
+        "length": 32,
+        "value_hex": "0x6115f8565b63ffffffff811b1992909216911b1790565b60006001821b198416",
+        "value_int": "43913164062211159333679685610610615386207526005272266417669311755556973282326",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5160,
+        "length": 32,
+        "value_hex": "0x81900360200190a150565b600061143c611473565b4211806106285750506007",
+        "value_int": "58602806741334008982966372707930310437072757702115437815704928790928451198983",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5193,
+        "length": 32,
+        "value_hex": "0x60ff161590565b7f000000000000000000000000000000000000000000000000",
+        "value_int": "43872731885291066067258208270213755738053635797044401895235608931768951898112",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5127,
+        "length": 32,
+        "value_hex": "0x9e3a5e37224532dea67b89face185703738a228a6e8a23dee546960180d3be64",
+        "value_int": "71568557456475985275227930336490470085043111771756769671698395862488849825380",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3315,
+        "length": 32,
+        "value_hex": "0x600020905b815481526020019060010190808311610cf7575050505050905090",
+        "value_int": "43422258211745612509946443324699124973187862293433624380185014863824373698704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67052",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7382,
+        "length": 32,
+        "value_hex": "0x52600101611c80565b333014611d9c576000306001600160a01b031660003660",
+        "value_int": "37259277840979879253854931196846320469323042716231304802836946781631949059680",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67052",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 11766,
+        "length": 32,
+        "value_hex": "0x821415612e0657610f9183846111c7565b673782dace9d900000821415612e2e",
+        "value_int": "58836154813755281577035470626180430488283467224903392802344311879964318314030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67054",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 7479,
+        "length": 32,
+        "value_hex": "0x2084013e611d44565b606091505b505090508060008114611d5357fe5b600460",
+        "value_int": "14707243550705643327103752419378467747227480924236852220404384042361301238880",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67054",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 11832,
+        "length": 32,
+        "value_hex": "0x40565b90506000612e4d612d4d836127106111c7565b9050612d73828261117c",
+        "value_int": "29100603106514343972108177256509168583881686502079864745626848969064993329532",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67056",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 7576,
+        "length": 32,
+        "value_hex": "0x016000f35b6000611da6611497565b9050611db28782612211565b600080611d",
+        "value_int": "621936727691942662439085985677397756598548422128345894566241645773545562397",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67056",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 11898,
+        "length": 32,
+        "value_hex": "0x00000390565b6000612e91633806be4b60e21b6109a8565b821480612eac5750",
+        "value_int": "24596565807021993610492917329942100134121496730412616300252235542845264",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67058",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 7673,
+        "length": 32,
+        "value_hex": "0x016044820181fd5b600082820261069c8415806111e45750838583816111e157",
+        "value_int": "622402990505426714471623096210471118805531328130718539555824502683030643031",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67058",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 11964,
+        "length": 32,
+        "value_hex": "0x60004281612eca8460c06112a8565b90506000612ed98560e06112a8565b9050",
+        "value_int": "43422492467320122550175573366987293003357995733913346489868671212009809481808",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67060",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 4609,
+        "length": 32,
+        "value_hex": "0x64000060001982015b046001019150506105d5565b6000611224821515600461",
+        "value_int": "45231287446492012197731681799658773062111313272878758602607069906130113135713",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67060",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 7441,
+        "length": 32,
+        "value_hex": "0x9150503d8060008114611d3f576040519150601f19603f3d011682016040523d",
+        "value_int": "65727264607539853254987542260075687851615772330006690360095117194871263220285",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67062",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 4667,
+        "length": 32,
+        "value_hex": "0x838102906112549085838161124b57fe5b041460056115f8565b826001820381",
+        "value_int": "59480924131712155058571522076528793531553163269649532953409231794582472229761",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67062",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 7538,
+        "length": 32,
+        "value_hex": "0x1d7e573d6000803e3d6000fd5b506020600460003e604060205260243d036024",
+        "value_int": "13340297445675905242528804088198108287691763897177208128964195373574598647844",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67064",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 4734,
+        "length": 32,
+        "value_hex": "0xa76400006111c7565b1c61ffff1690565b60006105d561ffff61113884670de0",
+        "value_int": "75712930430105931300257715560377251125058258962246574030862946757904817393120",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67064",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 7635,
+        "length": 32,
+        "value_hex": "0x848663ffffffff16565b8051601f1982018390526343adbafb603f1983015260",
+        "value_int": "59942743694306144355097366347343361686892808830074939061354623138877306655328",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67066",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 4815,
+        "length": 32,
+        "value_hex": "0x670de0b6b3a7640000838102906112e89085838161124b57fe5b8281816112f1",
+        "value_int": "46612743332730292224198717627641853818146229113349147835678626689033588249329",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "67066",
+        "var_name": "contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 7732,
+        "length": 32,
+        "value_hex": "0x5b6000611e3e611497565b9050611e4a8882612211565b6000806000611e5f8e",
+        "value_int": "41330089157595823024162857992781504806472111058527343647846607667687237509006",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/lbp/BazaarLBP.sol:BazaarLBP": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2618,
+        "length": 32,
+        "value_hex": "0x60d49154d50325ce60adc44bc900e990565b7f000000000000000000000000ef",
+        "value_int": "43797608082015208440095522685401272891085637410614491213891409713635386196207",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2582,
+        "length": 32,
+        "value_hex": "0x89898989898989611e98611ee8611cde565b7f000000000000000000000000b6",
+        "value_int": "62209867551028700816996562737760189188981563606338215578947726934266282508470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1726,
+        "length": 32,
+        "value_hex": "0x5b6106c66117ac565b6105ec816117c1565b7fdc4a9779d6084c1ab3e815b67e",
+        "value_int": "41331900145133296339621094699597973271980198125020889591002885260431964092030",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 7979,
+        "length": 32,
+        "value_hex": "0x838281518110611f3657fe5b6020908102919091010152600101611eeb565b60",
+        "value_int": "59483565805455526574067809196828917607824577541339001925343759650711615724384",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 9517,
+        "length": 32,
+        "value_hex": "0xad35ee4ecbe2e0f298420b28a3955392573f9061182c908390615060565b6000",
+        "value_int": "78345410439316443443103953829296215555187412511730907732609752790264551530496",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 8076,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000de0b6b3a764000061085056",
+        "value_int": "4294967296000000001627934806",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 9583,
+        "length": 32,
+        "value_hex": "0x6001600160a01b0316836001600160a01b0316141561258f5750600061266056",
+        "value_int": "43424462915843433818627796228071780251149442991105216581509968159972492992598",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 8173,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000de0b6b3a764000061085056",
+        "value_int": "4294967296000000001627934806",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 9649,
+        "length": 32,
+        "value_hex": "0x6001600160a01b0316836001600160a01b031614156125d15750600161266056",
+        "value_int": "43424462915843433818627796228071780251149442991105216582727453268841618366550",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8270,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000061085056",
+        "value_int": "1627934806",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 9715,
+        "length": 32,
+        "value_hex": "0x6001600160a01b0316836001600160a01b031614156126135750600261266056",
+        "value_int": "43424462915843433818627796228071780251149442991105216583944938377710743740502",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 5322,
+        "length": 32,
+        "value_hex": "0x602001820160405280156114e7578160200160208202803683370190505b5090",
+        "value_int": "43478582976750802865474785239194803146964780333821012192200573501870920388752",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 8038,
+        "length": 32,
+        "value_hex": "0x000000000000046001600160a01b0316826001600160a01b03161415611fac57",
+        "value_int": "7030387659050344122303894407480963462483632618007765522033751",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5380,
+        "length": 32,
+        "value_hex": "0x0de0b6b3a76400008160008151811061151857fe5b6020026020010181815250",
+        "value_int": "6277101735386680767008055381799074043989956378041594216520342738074228314704",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 8135,
+        "length": 32,
+        "value_hex": "0xf6000aa78b2ebb6001600160a01b0316826001600160a01b0316141561200d57",
+        "value_int": "111269034285915725804020864729796113231871378434985263544719020993781289717079",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5447,
+        "length": 32,
+        "value_hex": "0x60018151811061155257fe5b60200260200101818152505060028211156115a6",
+        "value_int": "43424692833684791340400758861017629406520427467890588986436021830732214244774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 8232,
+        "length": 32,
+        "value_hex": "0x000000000000006001600160a01b0316826001600160a01b0316141561206e57",
+        "value_int": "602635482014383020136046038116313052394820642876594180877911",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5528,
+        "length": 32,
+        "value_hex": "0x026020010181815250506115af565b91506105c19050565b60038211156115a6",
+        "value_int": "1074463898386889262919993474030944734490761616856196602089659096418532529574",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8329,
+        "length": 32,
+        "value_hex": "0x000000000000006001600160a01b0316826001600160a01b031614156120cf57",
+        "value_int": "602635482014383020136046038116313052394820642876594180902743",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2459,
+        "length": 32,
+        "value_hex": "0x20909120015560010161097b565b604080517f000000000000000000000000b6",
+        "value_int": "14729438748071623287850817079112164050137276301627325419103532229862310805686",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 5167,
+        "length": 32,
+        "value_hex": "0xa150565b600061143c611473565b42118061062857505060075460ff16159056",
+        "value_int": "72964312400739265973860106172074397789233004763242022770538380044982065401942",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 5203,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000006666021b9056",
+        "value_int": "112588308058198",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5873,
+        "length": 32,
+        "value_hex": "0x7f8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b3940",
+        "value_int": "57690122491014402078892557212287780277083404262830782892299394802214048053568",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5906,
+        "length": 32,
+        "value_hex": "0x7fa3ad6ff8d42f4883fa9d7407dd3755aa0ec0135d5c1fd9425adf60a4889118",
+        "value_int": "57732924862510518847006215406013387104842486865438517768367227864982173028632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5840,
+        "length": 32,
+        "value_hex": "0x8daa952ba7f163c4a11628f55a4df523b3ef92918290030190a3505050565b60",
+        "value_int": "64077505188422719257505511748666102188361962791054356333328772088621407034208",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3557,
+        "length": 32,
+        "value_hex": "0x565b6001600160a01b0380881660008181526006602090815260408083205481",
+        "value_int": "39060350665775527582743911635545126742443301342817557823131863924390651516033",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/lbp/blast/BazaarLBPBlast.sol:BazaarLBPBlast": [
+      {
+        "label": "34642",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BalancerPoolToken.sol:_vault",
+        "offset": 2637,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000efb4e3cc438ef2854727a7df0d0baf844484edab",
+        "value_int": "1368482772358943020678625529899654021156801146283",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "34851",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/BasePoolAuthorization.sol:_owner",
+        "offset": 2601,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000b66585c4e460d49154d50325ce60adc44bc900e9",
+        "value_int": "1041300348487929981887024091190763560693502902505",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "35254",
+        "var_name": "@balancer-labs/v2-pool-utils/contracts/LegacyBasePool.sol:_poolId",
+        "offset": 1745,
+        "length": 32,
+        "value_hex": "0xdc4a9779d6084c1ab3e815b67ed5e6780ccf4d90000200000000000000000001",
+        "value_int": "99640618819504361703972982766626249389784576203401428572348805805931526881281",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 8013,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000004300000000000000000000000000000000000004",
+        "value_int": "382502381645197248123620639812464696550576095236",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38971",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token0",
+        "offset": 9551,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000004300000000000000000000000000000000000004",
+        "value_int": "382502381645197248123620639812464696550576095236",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 8110,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000086cba7808127d76deac14ec26ef6000aa78b2ebb",
+        "value_int": "769546406045267063046611031896131393074594787003",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38973",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token1",
+        "offset": 9617,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000086cba7808127d76deac14ec26ef6000aa78b2ebb",
+        "value_int": "769546406045267063046611031896131393074594787003",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 8207,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38975",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token2",
+        "offset": 9683,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 8304,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38977",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_token3",
+        "offset": 9749,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 5356,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38979",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor0",
+        "offset": 8072,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 5414,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38981",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor1",
+        "offset": 8169,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "value_int": "1000000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 5481,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38983",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor2",
+        "offset": 8266,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 5562,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "38985",
+        "var_name": "@balancer-labs/v2-pool-weighted/contracts/smart/LiquidityBootstrappingPool.sol:_scalingFactor3",
+        "offset": 8363,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value_int": "0",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "40448",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/Authentication.sol:_actionIdDisambiguator",
+        "offset": 2478,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000b66585c4e460d49154d50325ce60adc44bc900e9",
+        "value_int": "1041300348487929981887024091190763560693502902505",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41135",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_pauseWindowEndTime",
+        "offset": 5201,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000006666021b",
+        "value_int": "1717961243",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "41137",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.sol:_bufferPeriodEndTime",
+        "offset": 5237,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000006666021b",
+        "value_int": "1717961243",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44234",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_NAME",
+        "offset": 5907,
+        "length": 32,
+        "value_hex": "0xa3ad6ff8d42f4883fa9d7407dd3755aa0ec0135d5c1fd9425adf60a488911884",
+        "value_int": "74033431663536006040076047836062801474388585015908915690897164430468831058052",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44236",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_HASHED_VERSION",
+        "offset": 5940,
+        "length": 32,
+        "value_hex": "0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+        "value_int": "90743482286830539503240959006302832933333810038750515972785732718729991261126",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44238",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/EIP712.sol:_TYPE_HASH",
+        "offset": 5874,
+        "length": 32,
+        "value_hex": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+        "value_int": "63076024560530113402979550242307453568063438748328787417531900361828837441551",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "44821",
+        "var_name": "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol:_PERMIT_TYPEHASH",
+        "offset": 3591,
+        "length": 32,
+        "value_hex": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "value_int": "49955707469362902507454157297736832118868343942642399513960811609542965143241",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

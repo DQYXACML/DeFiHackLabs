@@ -2,11 +2,11 @@
 pragma solidity >=0.8.13;
 
 import {IStrategyMigrator} from "./IStrategyMigrator.sol";
-import {IERC20} from "../../../utils-v2/src/token/IERC20.sol";
-import {IFYToken} from "../../../vault-v2/src/interfaces/IFYToken.sol";
-import {ICauldron} from "../../../vault-v2/src/interfaces/ICauldron.sol";
-import {ILadle} from "../../../vault-v2/src/interfaces/ILadle.sol";
-import {IPool} from "../../../yieldspace-tv/src/interfaces/IPool.sol";
+import {IERC20} from "@yield-protocol/utils-v2/src/token/IERC20.sol";
+import {IFYToken} from "@yield-protocol/vault-v2/src/interfaces/IFYToken.sol";
+import {ICauldron} from "@yield-protocol/vault-v2/src/interfaces/ICauldron.sol";
+import {ILadle} from "@yield-protocol/vault-v2/src/interfaces/ILadle.sol";
+import {IPool} from "@yield-protocol/yieldspace-tv/src/interfaces/IPool.sol";
 
 
 /// @dev The Strategy contract allows liquidity providers to provide liquidity in underlying

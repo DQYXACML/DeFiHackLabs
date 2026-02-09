@@ -1,0 +1,183 @@
+{
+  "protocol": "RedKeysCoin_exp",
+  "year_month": "2024-05",
+  "vulnerable_contract": {
+    "address": "0x71e3056aa4985de9f5441f079e6c74454a3c95f0",
+    "name": "game"
+  },
+  "constraints": [
+    {
+      "function": "playGame",
+      "signature": "playGame(uint16,uint16,uint256)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "betResultExpectation > 370242291687047403544520082777441405042755183549499258641055744",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 1234140972290158103158919275772903737872819323266019590632636416 iterations (capped)",
+        "variables": {
+          "betResultExpectation": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint16",
+            "value_expr": "betResultExpectation"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "25051437171989016816651723402170747443206233668421321293779038723531336755126",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 1234140972290158143483589284290447952531675923735498234085085579
+          }
+        },
+        "danger_condition": "betResultExpectation >= 1110726875061142256305486414923040408993416573032342140171059200",
+        "safe_condition": "betResultExpectation <= 370242291687047403544520082777441405042755183549499258641055744",
+        "threshold_value": 370242291687047403544520082777441405042755183549499258641055744
+      },
+      "analysis": {
+        "state_value": 1234140972290158143483589284290447952531675923735498234085085579,
+        "threshold": 863898680603110700438512499003313566772173146614848763859559905,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代1234140972290158103158919275772903737872819323266019590632636416次超过上限10000，使用保守阈值370242291687047403544520082777441405042755183549499258641055744",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.2341409722901581e+63,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "playGame",
+      "signature": "playGame(uint16,uint16,uint256)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 370242291687047403544520082777441405042755183549499258641055744",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 617070486145079051579459637886451868936409661633009795316318208 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint16",
+            "value_expr": "2"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "25051437171989016816651723402170747443206233668421321293779038723531336755126",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 1234140972290158143483589284290447952531675923735498234085085579
+          }
+        },
+        "danger_condition": "amount >= 1110726875061142256305486414923040408993416573032342140171059200",
+        "safe_condition": "amount <= 370242291687047403544520082777441405042755183549499258641055744",
+        "threshold_value": 370242291687047403544520082777441405042755183549499258641055744
+      },
+      "analysis": {
+        "state_value": 1234140972290158143483589284290447952531675923735498234085085579,
+        "threshold": 863898680603110700438512499003313566772173146614848763859559905,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代617070486145079051579459637886451868936409661633009795316318208次超过上限10000，使用保守阈值370242291687047403544520082777441405042755183549499258641055744",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 6.1707048614507905e+62,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "playGame",
+      "signature": "playGame(uint16,uint16,uint256)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "amount > 300000000",
+        "semantics": "Direct deposit/mint: parameter directly increases address_41697008073466531294692241538111885469694281755740583279109305070077571924498",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "1e9"
+          },
+          "address_41697008073466531294692241538111885469694281755740583279109305070077571924498": {
+            "source": "storage",
+            "slot": "41697008073466531294692241538111885469694281755740583279109305070077571924498",
+            "type": "uint256",
+            "semantic_name": "address_41697008073466531294692241538111885469694281755740583279109305070077571924498",
+            "before_value": 0,
+            "after_value": 1000000000
+          }
+        },
+        "danger_condition": "amount >= 1000000000",
+        "safe_condition": "amount <= 300000000",
+        "threshold_value": 300000000
+      },
+      "analysis": {
+        "state_value": 1000000000,
+        "threshold": 500000000,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致address_41697008073466531294692241538111885469694281755740583279109305070077571924498增加1000000000，阈值设为300000000",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "25051437171989016816651723402170747443206233668421321293779038723531336755126",
+        "before": 0,
+        "after": 1234140972290158143483589284290447952531675923735498234085085579,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "23941551705137402929412979375304096320366853093532692222947943753062571948072",
+        "before": 0,
+        "after": 1234140972290158143483589284290447952531675923735498234085085579,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "56623989543430191341096719614808891048009155813053398061274547432941834307288",
+        "before": 0,
+        "after": 1234140972290158143483589284290447952531675923735498234085085579,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "49726561182455242127099081586817880526220756417947761581840642515987975638377",
+        "before": 0,
+        "after": 1234140972290158143483589284290447952531675923735498234085085579,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "2270802989860815180785276750229747072138260684475665731360798595067253139395",
+        "before": 0,
+        "after": 1234140972290158143483589284290447952531675923735498234085085579,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 208
+  },
+  "attack_metadata": {
+    "loop_count": 50,
+    "total_calls": 2
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

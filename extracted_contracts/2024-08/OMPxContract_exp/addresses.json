@@ -4,41 +4,148 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://etherscan.io/address/0x40d115198d71cab59668b51dd112a07d273d5831"
+    "context": "// Attacker : https://etherscan.io/address/0x40d115198d71cab59668b51dd112a07d273d5831",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0xfaddf57d079b01e53d1fe3476cc83e9bcc705854",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract : https://etherscan.io/address/0xfaddf57d079b01e53d1fe3476cc83e9bcc705854"
+    "context": "// Attack Contract : https://etherscan.io/address/0xfaddf57d079b01e53d1fe3476cc83e9bcc705854",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x09a80172ed7335660327cd664876b5df6fe06108",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://etherscan.io/address/0x09a80172ed7335660327cd664876b5df6fe06108"
+    "context": "// Vulnerable Contract : https://etherscan.io/address/0x09a80172ed7335660327cd664876b5df6fe06108",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "OMPxContract",
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x633B041C41f61D04089880D7B5C7ED0F10fF6f85",
     "name": "OMPX",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant OMPX = 0x633B041C41f61D04089880D7B5C7ED0F10fF6f85"
+    "context": "address constant OMPX = 0x633B041C41f61D04089880D7B5C7ED0F10fF6f85",
+    "onchain_name": null,
+    "symbol": "OMPX",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "OMPX",
+      "ompx",
+      "IOMPX"
+    ]
   },
   {
     "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "name": "weth",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant weth = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    "context": "address constant weth = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
     "name": "BalancerVault",
     "chain": "mainnet",
     "source": "static",
-    "context": "address constant BalancerVault = 0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+    "context": "address constant BalancerVault = 0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IBalancerVault",
+      "Balancer",
+      "BalancerVault"
+    ]
+  },
+  {
+    "address": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "called with gas 2350",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x959951c51b3e4B4eaa55a13D1d761e14Ad0A1d6a",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "contract created",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x9dF0C6b0066D5317aA5b38B36850548DaCCa6B4e",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0x3078303030303030303030303030303030303030",
+    "name": null,
+    "chain": "mainnet",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": null
   }
 ]

@@ -1,0 +1,221 @@
+{
+  "compiler_version": "v0.8.20+commit.a1b79de6",
+  "optimizer": true,
+  "runs": 100,
+  "evm_version": "Default",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 11042,
+  "values": {
+    "contracts/SwapERC20.sol:SwapERC20": [
+      {
+        "label": "2057",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_cachedDomainSeparator",
+        "offset": 1553,
+        "length": 32,
+        "value_hex": "0x05f1565b6040513d89823e3d90fd5b5080fd5b50346102995780600319360112",
+        "value_int": "2687970399205331885845261297587859494932599626072506963998540037265431068946",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2059",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_cachedChainId",
+        "offset": 1511,
+        "length": 32,
+        "value_hex": "0x8281813d831161060d575b6105fb8183611c09565b8101031261024657519461",
+        "value_int": "59029485570819584259895629083943070096793367370518587279219060995804456129633",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2061",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_cachedThis",
+        "offset": 1469,
+        "length": 32,
+        "value_hex": "0x09565b8101031261024657518361056761058f565b503d6105b5565b6040513d",
+        "value_int": "4223396021677592505347261382161654188533414465067656169881511724397392580925",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2063",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_hashedName",
+        "offset": 1634,
+        "length": 32,
+        "value_hex": "0x54146122ea565b600e8290556040516303e21fa960e61b815260209160016001",
+        "value_int": "38030286633002371110504395907440299569255573078635525411005769259886640717825",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2065",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_hashedVersion",
+        "offset": 1674,
+        "length": 32,
+        "value_hex": "0x6004817f000000000000000000000000b792c6ecc48eb1a55112b7032fc2b6a5",
+        "value_int": "43429994601444649532017285574478086907060026763423230767419482335476573189797",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2068",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_name",
+        "offset": 1813,
+        "length": 32,
+        "value_hex": "0x1b958682523060048301525afa92831561028e57849186946107cf575b506009",
+        "value_int": "12476635471859216682200790050525807453933510758789242284825012058546800451593",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2071",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_version",
+        "offset": 1858,
+        "length": 32,
+        "value_hex": "0x523060048301525afa92831561025257849361079b575b600a54859061079090",
+        "value_int": "37175124932222738781881854741241732532124984565610718506859244401480675332240",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/SwapPair.sol:SwapPair": [
+      {
+        "label": "2057",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_cachedDomainSeparator",
+        "offset": 7453,
+        "length": 32,
+        "value_hex": "0x0160a01b03908116918215611d935716918215611d7a5760207f8c5be1e5ebec",
+        "value_int": "623035174511420263027616483118438821037824909182467975936030583285661166572",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2059",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_cachedChainId",
+        "offset": 7411,
+        "length": 32,
+        "value_hex": "0x2490fd5b91908201809211611d0357565b634e487b7160e01b60005260116004",
+        "value_int": "16539437136836291415625859199613601783664801430681811862111712501768981143556",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2061",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_cachedThis",
+        "offset": 7369,
+        "length": 32,
+        "value_hex": "0xec442f0560e01b815260006004820152602490fd5b604051634b637e8f60e11b",
+        "value_int": "106866302393136002737252000023966486940438178163747180357839018254627128795419",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2063",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_hashedName",
+        "offset": 7534,
+        "length": 32,
+        "value_hex": "0x60002055604051908152a3565b604051634a1406b160e11b8152600060048201",
+        "value_int": "43422256621608576431838549878456060035286280089965296430547444874142015586817",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2065",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_hashedVersion",
+        "offset": 7574,
+        "length": 32,
+        "value_hex": "0x5163e602df0560e01b815260006004820152602490fd5b9160018060a01b0380",
+        "value_int": "36813846073724146266422759381133382693712077219985615285679027282154618553216",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2068",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_name",
+        "offset": 8521,
+        "length": 32,
+        "value_hex": "0x61576040519161215783611bee565b8252602082015290565b604051632cd44a",
+        "value_int": "44028726308888538948287224680597226115639529076975029133877807101494468334666",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "2071",
+        "var_name": "@openzeppelin/contracts/utils/cryptography/EIP712.sol:_version",
+        "offset": 8566,
+        "length": 32,
+        "value_hex": "0x405160055481600061218683611bb4565b80835260019380851690811561220f",
+        "value_int": "29091799632924577507032091679021238330639924735511772286986301030604025700879",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3554",
+        "var_name": "contracts/SwapPair.sol:factory",
+        "offset": 947,
+        "length": 32,
+        "value_hex": "0x6103f8936103ef936040525190206103c861200b565b906040519161190160f0",
+        "value_int": "43881362460194250359719172013183324621790512158678254983156725776173261480176",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3554",
+        "var_name": "contracts/SwapPair.sol:factory",
+        "offset": 1098,
+        "length": 32,
+        "value_hex": "0x9063313c898160e11b82526004820152fd5b8480fd5b50346102995780600319",
+        "value_int": "65308307873052219900692000720658407879347127350049120293902656282455508517657",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3554",
+        "var_name": "contracts/SwapPair.sol:factory",
+        "offset": 2193,
+        "length": 32,
+        "value_hex": "0x60009060045461089f81611bb4565b80835260019180831690811561093a5750",
+        "value_int": "43423029904078351860982072083722480902387477169205615628771529700515497269072",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3554",
+        "var_name": "contracts/SwapPair.sol:factory",
+        "offset": 2355,
+        "length": 32,
+        "value_hex": "0x92810161090e565b6108dc95506108c893506020915091849260ff1916828401",
+        "value_int": "66265608682328186446432405234789069503587135938754407692218012715078811550721",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3554",
+        "var_name": "contracts/SwapPair.sol:factory",
+        "offset": 2950,
+        "length": 32,
+        "value_hex": "0xfd5b8281939295503d8311610bb1575b610b9f8183611c09565b810103126102",
+        "value_int": "114596834494860639797233125974023602776989170971971911755059320641166643454210",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3554",
+        "var_name": "contracts/SwapPair.sol:factory",
+        "offset": 4871,
+        "length": 32,
+        "value_hex": "0x346102995780600319360112610299576008546040516001600160a01b039091",
+        "value_int": "23691670229192868937058378336123205600054495324783495167354742254098486366353",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3554",
+        "var_name": "contracts/SwapPair.sol:factory",
+        "offset": 7710,
+        "length": 32,
+        "value_hex": "0x565b8451634a1406b160e11b815260048101879052602490fd5b845163e602df",
+        "value_int": "39060601285785589657990128559395633220983330032135481423907900597495841293023",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3554",
+        "var_name": "contracts/SwapPair.sol:factory",
+        "offset": 7859,
+        "length": 32,
+        "value_hex": "0x0283398151915292602092858752868452036040862055806002540360025560",
+        "value_int": "1136479548617466101580018993413462300054851486228844878883055032440537109856",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3554",
+        "var_name": "contracts/SwapPair.sol:factory",
+        "offset": 8069,
+        "length": 32,
+        "value_hex": "0x565b6004811015611ff55780611f98575050565b60018103611fb25760405163",
+        "value_int": "39060350750136722935658687308088547200883942780600269551539101282659700068707",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

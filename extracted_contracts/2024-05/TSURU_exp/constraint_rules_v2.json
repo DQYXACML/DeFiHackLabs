@@ -1,0 +1,224 @@
+{
+  "protocol": "TSURU_exp",
+  "year_month": "2024-05",
+  "vulnerable_contract": {
+    "address": "0x75Ac62EA5D058A7F88f0C3a5F8f73195277c93dA",
+    "name": "tsuruwrapper"
+  },
+  "constraints": [
+    {
+      "function": "onERC1155Received",
+      "signature": "onERC1155Received(address,address,uint256,uint256,uint256[])",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(0)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "onERC1155Received",
+      "signature": "onERC1155Received(address,address,uint256,uint256,uint256[])",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x75ac62ea5d058a7f88f0c3a5f8f73195277c93da"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "onERC1155Received",
+      "signature": "onERC1155Received(address,address,uint256,uint256,uint256[])",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "2 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "onERC1155Received",
+      "signature": "onERC1155Received(address,address,uint256,uint256,uint256[])",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 79223879999999995635826688",
+        "semantics": "High-frequency operation: parameter affects address_2 with estimated 400029665071770313424896 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "418"
+          },
+          "address_2": {
+            "source": "storage",
+            "slot": "2",
+            "type": "uint256",
+            "semantic_name": "address_2",
+            "before_value": 264079600000000000000000000,
+            "after_value": 431292000000000000000000000
+          }
+        },
+        "danger_condition": "amount >= 237671640000000021267218432",
+        "safe_condition": "amount <= 79223879999999995635826688",
+        "threshold_value": 79223879999999995635826688
+      },
+      "analysis": {
+        "state_value": 264079600000000000000000000,
+        "threshold": 184855720000000000000000000,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代400029665071770313424896次超过上限10000，使用保守阈值79223879999999995635826688",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 4.000296650717703e+23,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "onERC1155Received",
+      "signature": "onERC1155Received(address,address,uint256,uint256,uint256[])",
+      "attack_pattern": "inflate_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "4 length in [12,12]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "new bytes(0)"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 4,
+            "type": "bytes",
+            "value_expr": "new bytes(0)"
+          }
+        },
+        "range": {
+          "min_len": 12,
+          "max_len": 12
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "2",
+        "before": 264079600000000000000000000,
+        "after": 431292000000000000000000000,
+        "change_pct": 63.32,
+        "is_new_slot": false
+      },
+      {
+        "slot": "88978693094876282901979132822004708562182916891058221400776344777276531102798",
+        "before": 0,
+        "after": 167200000000000000000000000,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "111141141965367953891251968560572836771628463321627031873536160722001862685576",
+        "before": 0,
+        "after": 167200000000000000000000000,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "8",
+        "before": 280,
+        "after": 281,
+        "change_pct": 0.36,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 4
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 3
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

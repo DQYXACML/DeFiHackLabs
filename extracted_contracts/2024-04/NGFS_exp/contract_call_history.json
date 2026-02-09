@@ -1,0 +1,385 @@
+{
+  "protocol": "NGFS_exp",
+  "contract_address": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+  "target_functions": [
+    "setProxySync",
+    "delegateCallReserves",
+    "reserveMultiSync"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "reserveMultiSync": {
+      "0": {
+        "avoid": [
+          "0xa608985f5b40cdf6862bec775207f84280a91e3a"
+        ]
+      },
+      "1": {
+        "avoid": [],
+        "max": 34737626771194857341520860095414151922411321526762087194074880176139670650880
+      }
+    },
+    "delegateCallReserves": {},
+    "setProxySync": {
+      "0": {
+        "avoid": [
+          "0xa608985f5b40cdf6862bec775207f84280a91e3a"
+        ]
+      }
+    }
+  },
+  "attack_block": 38167372,
+  "generated_at": "2026-02-07T18:04:27.757660Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0x903f0a43472dff067d076e3e53bb1a790762cf46",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38089372,
+      "time": "2024-04-12T19:18:02Z",
+      "function": "setProxySync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_addr",
+          "type": "address",
+          "value": "0xa27fcb55d217af41bb20e48325a4d44c203752d9"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0x0c1a0731fd62a09d205c3aa981550d07ddbea7b6",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38113372,
+      "time": "2024-04-16T19:18:02Z",
+      "function": "delegateCallReserves",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0xfb27e704152ecb1d44529054d7d7fd2be7990903",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38017372,
+      "time": "2024-03-31T19:18:02Z",
+      "function": "reserveMultiSync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "syncAddr",
+          "type": "address",
+          "value": "0xffda6085064b74e253fbd6feef6ac391acd4fa94"
+        },
+        {
+          "name": "syncAmount",
+          "type": "uint256",
+          "value": 626228
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0x9e1951d46f37cbc65e29c7620574d692830d51e9",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38155372,
+      "time": "2024-04-23T19:18:02Z",
+      "function": "setProxySync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_addr",
+          "type": "address",
+          "value": "0x22c67be2e1bf6cea958b7b7aa35e78cac0fb233a"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0x78f5152599b0289ba2ca7237728665cbd716483f",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38053372,
+      "time": "2024-04-06T19:18:02Z",
+      "function": "delegateCallReserves",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x09651012339232cf027ffc111473598c37572d70",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38119372,
+      "time": "2024-04-17T19:18:02Z",
+      "function": "reserveMultiSync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "syncAddr",
+          "type": "address",
+          "value": "0x557788a58ff1657b1cdad36b7575b75bf00ce503"
+        },
+        {
+          "name": "syncAmount",
+          "type": "uint256",
+          "value": 747211
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0x3223b0a348711f62e320cd0451e467a40221a8a5",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38029372,
+      "time": "2024-04-02T19:18:02Z",
+      "function": "setProxySync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_addr",
+          "type": "address",
+          "value": "0xedb5b3d36d0861957bbd29db09ea21a849572f27"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0xbb9fdea4062ec9fe6f09f2cac4571f24a3d7c49a",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38047372,
+      "time": "2024-04-05T19:18:02Z",
+      "function": "delegateCallReserves",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0xad89056033f73b4ce7eabe80ad89ae39c66f3432",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38077372,
+      "time": "2024-04-10T19:18:02Z",
+      "function": "reserveMultiSync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "syncAddr",
+          "type": "address",
+          "value": "0xaa948e35a73f85d2a59319d19d6062a8255c8e03"
+        },
+        {
+          "name": "syncAmount",
+          "type": "uint256",
+          "value": 702582
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0xb9c509edfd2a7d740d9a5eaa3dc227df31e1b25d",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38065372,
+      "time": "2024-04-08T19:18:02Z",
+      "function": "setProxySync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_addr",
+          "type": "address",
+          "value": "0xb50b0c049ade3b22a58cb917b0f6c6231065aa86"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0x5625e1e6e0a7b567b79e0ced8db8bcc143225232",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38095372,
+      "time": "2024-04-13T19:18:02Z",
+      "function": "delegateCallReserves",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0x3fea70af7b6c7aeee254a09f6a11130103e7e3f4",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38089372,
+      "time": "2024-04-12T19:18:02Z",
+      "function": "reserveMultiSync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "syncAddr",
+          "type": "address",
+          "value": "0xc57081511f4faa3fedfd1b972d9d1525cc5ad5fe"
+        },
+        {
+          "name": "syncAmount",
+          "type": "uint256",
+          "value": 968422
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0xd9c350dc6b7e4b5fba9563b3542f6631ee694899",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38047372,
+      "time": "2024-04-05T19:18:02Z",
+      "function": "setProxySync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_addr",
+          "type": "address",
+          "value": "0xada2a3cc383597e30d18b5e035a46f5e8b6cd896"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x370c7fe04e9fd3972324f5f60c85cd88cebc233a",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38029372,
+      "time": "2024-04-02T19:18:02Z",
+      "function": "delegateCallReserves",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0xc1ab8224b7a41f45609b99734ff6457a13009fc3",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38071372,
+      "time": "2024-04-09T19:18:02Z",
+      "function": "reserveMultiSync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "syncAddr",
+          "type": "address",
+          "value": "0x279a0103f72949e730ba5ad54044f42352510f71"
+        },
+        {
+          "name": "syncAmount",
+          "type": "uint256",
+          "value": 789489
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0x43fe57568705b3afe7de1d610717c35b6f010939",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38149372,
+      "time": "2024-04-22T19:18:02Z",
+      "function": "setProxySync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_addr",
+          "type": "address",
+          "value": "0xd1a22927abc24f3a17bbc91d750ef5ea57b74e9b"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0x2578a39afedd411df962a87aee2b48b4e9d2eb52",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38059372,
+      "time": "2024-04-07T19:18:02Z",
+      "function": "delegateCallReserves",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0xb2c6cdb25548086b3661939d0a5946b3be4cecc4",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38119372,
+      "time": "2024-04-17T19:18:02Z",
+      "function": "reserveMultiSync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "syncAddr",
+          "type": "address",
+          "value": "0xff801657958d1e227938faf86b55af85aa16281b"
+        },
+        {
+          "name": "syncAmount",
+          "type": "uint256",
+          "value": 50056
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0xb6c2f741ed027c3fa24329f6f2c455d598983a9d",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38101372,
+      "time": "2024-04-14T19:18:02Z",
+      "function": "setProxySync",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_addr",
+          "type": "address",
+          "value": "0x65b397f1a8538e3934697084452295d0b47ed26f"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x8dd96af9db6c3a15e5436fdfdd1e9663a944e5f9",
+      "to": "0xa608985f5b40cdf6862bec775207f84280a91e3a",
+      "value": "0",
+      "blockNumber": 38089372,
+      "time": "2024-04-12T19:18:02Z",
+      "function": "delegateCallReserves",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    }
+  ]
+}

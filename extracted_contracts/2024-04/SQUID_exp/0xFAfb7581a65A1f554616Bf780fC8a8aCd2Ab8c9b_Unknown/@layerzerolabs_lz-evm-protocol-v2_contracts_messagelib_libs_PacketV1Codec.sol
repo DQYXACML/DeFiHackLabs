@@ -1,5 +1,0 @@
-// AUTO-GENERATED SHIM - DO NOT EDIT
-// SPDX-License-Identifier: LZBL-1.2
-pragma solidity ^0.8.20;
-
-import "./@layerzerolabs/lz-evm-protocol-v2/contracts/messagelib/libs/PacketV1Codec.sol";

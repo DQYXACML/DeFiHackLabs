@@ -1,0 +1,21 @@
+{
+  "protocol": "OMPxContract_exp",
+  "year_month": "2024-08",
+  "injection_timestamp": "2026-02-08T12:58:32.977950Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "OMPxContract",
+    "address": "0x09a80172ed7335660327cd664876b5df6fe06108"
+  },
+  "injected_contracts": [
+    {
+      "file": "OMPxContract.sol",
+      "functions": [
+        "purchase",
+        "buyBack"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

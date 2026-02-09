@@ -1,0 +1,143 @@
+{
+  "protocol": "OMPxContract_exp",
+  "year_month": "2024-08",
+  "vulnerable_contract": {
+    "address": "0x09a80172ed7335660327cd664876b5df6fe06108",
+    "name": "OMPxContract"
+  },
+  "constraints": [
+    {
+      "function": "buyBack",
+      "signature": "buyBack(uint256,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "iterated_threshold",
+        "expression": "amount * 7 > address_6 * 0.5",
+        "semantics": "Loop attack: parameter applied 7 times affects address_6",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "IERC20(OMPX).balanceOf(address(this))"
+          },
+          "address_6": {
+            "source": "storage",
+            "slot": "6",
+            "type": "uint256",
+            "semantic_name": "address_6",
+            "before_value": 3118496000000000000574900,
+            "after_value": 15715794000000000004599200
+          }
+        },
+        "danger_condition": "amount >= 445499428571428571510700",
+        "safe_condition": "amount <= 133649828571428560044032",
+        "threshold_value": 133649828571428560044032
+      },
+      "analysis": {
+        "state_value": 3118496000000000000574900,
+        "threshold": 1559248000000000000287450,
+        "coefficient": 0.5,
+        "attack_intensity": 0.5771,
+        "reasoning": "循环攻击7次，单次参数1799614000000000000574900，阈值设为133649828571428560044032",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 7.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "buyBack",
+      "signature": "buyBack(uint256,uint256)",
+      "attack_pattern": "price_manipulation",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 935548799999999987417088",
+        "semantics": "High-frequency operation: parameter affects address_6 with estimated 12597297999999999705874432 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "1"
+          },
+          "address_6": {
+            "source": "storage",
+            "slot": "6",
+            "type": "uint256",
+            "semantic_name": "address_6",
+            "before_value": 3118496000000000000574900,
+            "after_value": 15715794000000000004599200
+          }
+        },
+        "danger_condition": "amount >= 2806646400000000364904448",
+        "safe_condition": "amount <= 935548799999999987417088",
+        "threshold_value": 935548799999999987417088
+      },
+      "analysis": {
+        "state_value": 3118496000000000000574900,
+        "threshold": 2182947200000000000402430,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代12597297999999999705874432次超过上限10000，使用保守阈值935548799999999987417088",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.2597298e+25,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "6",
+        "before": 3118496000000000000574900,
+        "after": 15715794000000000004599200,
+        "change_pct": 403.95,
+        "is_new_slot": false
+      },
+      {
+        "slot": "8",
+        "before": 2648577000000000000000000,
+        "after": 15245875000000000004024300,
+        "change_pct": 475.63,
+        "is_new_slot": false
+      },
+      {
+        "slot": "14",
+        "before": 3290236251591961390,
+        "after": 691521655506432131950,
+        "change_pct": 20917.39,
+        "is_new_slot": false
+      },
+      {
+        "slot": "11",
+        "before": 12810566820656800070,
+        "after": 28952017480759927789,
+        "change_pct": 126.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "10",
+        "before": 17443707085562889768,
+        "after": 29212287830722719208,
+        "change_pct": 67.47,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 8
+  },
+  "attack_metadata": {
+    "loop_count": 7,
+    "total_calls": 3
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

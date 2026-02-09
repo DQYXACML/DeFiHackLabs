@@ -1,0 +1,93 @@
+{
+  "protocol": "APEMAGA_exp",
+  "year_month": "2024-06",
+  "vulnerable_contract": {
+    "address": "0x56ff4afd909aa66a1530fe69bf94c74e6d44500c",
+    "name": "Unknown"
+  },
+  "constraints": [
+    {
+      "function": "family",
+      "signature": "family(address)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x85705829c2f71ee3c40a7c28f6903e7c797c9433"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(Pair)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "67993842289799983473886500796747531484948948616828469628567925031232800398327",
+        "before": 0,
+        "after": 57896044618658097711785492504343953926634992332820282019728732371339749183086,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "2",
+        "before": 90893058149534049122,
+        "after": 37511084127380562803,
+        "change_pct": 58.73,
+        "is_new_slot": false
+      },
+      {
+        "slot": "115790818543842975927261184680958426427806340854592396136395208271049066046238",
+        "before": 53382027404180890500,
+        "after": 59685998843041062,
+        "change_pct": 99.89,
+        "is_new_slot": false
+      },
+      {
+        "slot": "26575652181739279932187577139813231261961201037421932776022737021697830632755",
+        "before": 59632616815636881,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "9034479905623194801579429123726196955697593306139810377500147182960090935318",
+        "before": 11111111111111111111111111111111111111111111111111,
+        "after": 11111111111111111111111111111111051478494295474230,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 5
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 6
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

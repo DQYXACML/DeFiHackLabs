@@ -1,0 +1,20 @@
+{
+  "protocol": "APEMAGA_exp",
+  "year_month": "2024-06",
+  "injection_timestamp": "2026-02-08T06:07:17.177660Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "Tonken",
+    "address": "0x56ff4afd909aa66a1530fe69bf94c74e6d44500c"
+  },
+  "injected_contracts": [
+    {
+      "file": "Tonken.sol",
+      "functions": [
+        "family"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

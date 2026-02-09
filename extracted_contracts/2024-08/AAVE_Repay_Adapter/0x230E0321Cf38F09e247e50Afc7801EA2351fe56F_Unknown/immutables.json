@@ -1,0 +1,306 @@
+{
+  "compiler_version": "v0.8.17+commit.8df45f5f",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "london",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 1157,
+  "values": {
+    "./contracts/CLSynchronicityPriceAdapterPegToBase.sol:CLSynchronicityPriceAdapterPegToBase": [
+      {
+        "label": "12",
+        "var_name": "./contracts/CLSynchronicityPriceAdapterPegToBase.sol:PEG_TO_BASE",
+        "offset": 302,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f4030086522a5beea4988f8ca5b36dbc97bee88c",
+        "value_int": "1393060696023666239917003968693327223581040371852",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12",
+        "var_name": "./contracts/CLSynchronicityPriceAdapterPegToBase.sol:PEG_TO_BASE",
+        "offset": 475,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f4030086522a5beea4988f8ca5b36dbc97bee88c",
+        "value_int": "1393060696023666239917003968693327223581040371852",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16",
+        "var_name": "./contracts/CLSynchronicityPriceAdapterPegToBase.sol:ASSET_TO_PEG",
+        "offset": 200,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000fdfd9c85ad200c506cf9e21f1fd8dd01932fbb23",
+        "value_int": "1450030388557942648900244728639436321082955512611",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16",
+        "var_name": "./contracts/CLSynchronicityPriceAdapterPegToBase.sol:ASSET_TO_PEG",
+        "offset": 341,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000fdfd9c85ad200c506cf9e21f1fd8dd01932fbb23",
+        "value_int": "1450030388557942648900244728639436321082955512611",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19",
+        "var_name": "./contracts/CLSynchronicityPriceAdapterPegToBase.sol:DECIMALS",
+        "offset": 139,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19",
+        "var_name": "./contracts/CLSynchronicityPriceAdapterPegToBase.sol:DECIMALS",
+        "offset": 674,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "22",
+        "var_name": "./contracts/CLSynchronicityPriceAdapterPegToBase.sol:DENOMINATOR",
+        "offset": 263,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000002386f26fc10000",
+        "value_int": "10000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "22",
+        "var_name": "./contracts/CLSynchronicityPriceAdapterPegToBase.sol:DENOMINATOR",
+        "offset": 638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000002386f26fc10000",
+        "value_int": "10000000000000000",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:CLSynchronicityPriceAdapterPegToBase": [
+      {
+        "label": "219",
+        "var_name": "./src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:PEG_TO_BASE",
+        "offset": 302,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f4030086522a5beea4988f8ca5b36dbc97bee88c",
+        "value_int": "1393060696023666239917003968693327223581040371852",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "219",
+        "var_name": "./src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:PEG_TO_BASE",
+        "offset": 475,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f4030086522a5beea4988f8ca5b36dbc97bee88c",
+        "value_int": "1393060696023666239917003968693327223581040371852",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "223",
+        "var_name": "./src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:ASSET_TO_PEG",
+        "offset": 200,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000fdfd9c85ad200c506cf9e21f1fd8dd01932fbb23",
+        "value_int": "1450030388557942648900244728639436321082955512611",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "223",
+        "var_name": "./src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:ASSET_TO_PEG",
+        "offset": 341,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000fdfd9c85ad200c506cf9e21f1fd8dd01932fbb23",
+        "value_int": "1450030388557942648900244728639436321082955512611",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "226",
+        "var_name": "./src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:DECIMALS",
+        "offset": 139,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "226",
+        "var_name": "./src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:DECIMALS",
+        "offset": 674,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "229",
+        "var_name": "./src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:DENOMINATOR",
+        "offset": 263,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000002386f26fc10000",
+        "value_int": "10000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "229",
+        "var_name": "./src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:DENOMINATOR",
+        "offset": 638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000002386f26fc10000",
+        "value_int": "10000000000000000",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/CLSynchronicityPriceAdapterPegToBase.sol:CLSynchronicityPriceAdapterPegToBase": [
+      {
+        "label": "426",
+        "var_name": "contracts/CLSynchronicityPriceAdapterPegToBase.sol:PEG_TO_BASE",
+        "offset": 302,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f4030086522a5beea4988f8ca5b36dbc97bee88c",
+        "value_int": "1393060696023666239917003968693327223581040371852",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "426",
+        "var_name": "contracts/CLSynchronicityPriceAdapterPegToBase.sol:PEG_TO_BASE",
+        "offset": 475,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f4030086522a5beea4988f8ca5b36dbc97bee88c",
+        "value_int": "1393060696023666239917003968693327223581040371852",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "430",
+        "var_name": "contracts/CLSynchronicityPriceAdapterPegToBase.sol:ASSET_TO_PEG",
+        "offset": 200,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000fdfd9c85ad200c506cf9e21f1fd8dd01932fbb23",
+        "value_int": "1450030388557942648900244728639436321082955512611",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "430",
+        "var_name": "contracts/CLSynchronicityPriceAdapterPegToBase.sol:ASSET_TO_PEG",
+        "offset": 341,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000fdfd9c85ad200c506cf9e21f1fd8dd01932fbb23",
+        "value_int": "1450030388557942648900244728639436321082955512611",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "433",
+        "var_name": "contracts/CLSynchronicityPriceAdapterPegToBase.sol:DECIMALS",
+        "offset": 139,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "433",
+        "var_name": "contracts/CLSynchronicityPriceAdapterPegToBase.sol:DECIMALS",
+        "offset": 674,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "436",
+        "var_name": "contracts/CLSynchronicityPriceAdapterPegToBase.sol:DENOMINATOR",
+        "offset": 263,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000002386f26fc10000",
+        "value_int": "10000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "436",
+        "var_name": "contracts/CLSynchronicityPriceAdapterPegToBase.sol:DENOMINATOR",
+        "offset": 638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000002386f26fc10000",
+        "value_int": "10000000000000000",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:CLSynchronicityPriceAdapterPegToBase": [
+      {
+        "label": "633",
+        "var_name": "src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:PEG_TO_BASE",
+        "offset": 302,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f4030086522a5beea4988f8ca5b36dbc97bee88c",
+        "value_int": "1393060696023666239917003968693327223581040371852",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "633",
+        "var_name": "src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:PEG_TO_BASE",
+        "offset": 475,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000f4030086522a5beea4988f8ca5b36dbc97bee88c",
+        "value_int": "1393060696023666239917003968693327223581040371852",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "637",
+        "var_name": "src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:ASSET_TO_PEG",
+        "offset": 200,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000fdfd9c85ad200c506cf9e21f1fd8dd01932fbb23",
+        "value_int": "1450030388557942648900244728639436321082955512611",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "637",
+        "var_name": "src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:ASSET_TO_PEG",
+        "offset": 341,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000fdfd9c85ad200c506cf9e21f1fd8dd01932fbb23",
+        "value_int": "1450030388557942648900244728639436321082955512611",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "640",
+        "var_name": "src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:DECIMALS",
+        "offset": 139,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "640",
+        "var_name": "src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:DECIMALS",
+        "offset": 674,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "643",
+        "var_name": "src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:DENOMINATOR",
+        "offset": 263,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000002386f26fc10000",
+        "value_int": "10000000000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "643",
+        "var_name": "src/contracts/CLSynchronicityPriceAdapterPegToBase.sol:DENOMINATOR",
+        "offset": 638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000002386f26fc10000",
+        "value_int": "10000000000000000",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

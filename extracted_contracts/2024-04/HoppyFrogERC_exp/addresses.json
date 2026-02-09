@@ -30,6 +30,26 @@
     ]
   },
   {
+    "address": "0xE5c6F5fEF89B64f36BfcCb063962820136bAc42F",
+    "name": "Vulnerable_Contract",
+    "chain": "mainnet",
+    "source": "comment",
+    "context": "// Vulnerable Contract: 0xE5c6F5fEF89B64f36BfcCb063962820136bAc42F",
+    "onchain_name": null,
+    "symbol": "HOPPY",
+    "decimals": 9,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IERC20",
+      "Hoppy",
+      "HOPPY",
+      "Vulnerable_Contract",
+      "hoppy",
+      "IHOPPY"
+    ]
+  },
+  {
     "address": "0x7109709ECfa91a80626fF3989D68f67F5b1DD12D",
     "name": "CheatCodes",
     "chain": "mainnet",
@@ -56,25 +76,8 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "Pair",
       "Uni_Pair_V3"
-    ]
-  },
-  {
-    "address": "0xE5c6F5fEF89B64f36BfcCb063962820136bAc42F",
-    "name": "IERC20",
-    "chain": "mainnet",
-    "source": "static",
-    "context": "IERC20 Hoppy = IERC20(0xE5c6F5fEF89B64f36BfcCb063962820136bAc42F)",
-    "onchain_name": null,
-    "symbol": "HOPPY",
-    "decimals": 9,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": [
-      "HOPPY",
-      "IERC20",
-      "hoppy",
-      "IHOPPY"
     ]
   },
   {
@@ -107,6 +110,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "Router",
       "Uni_Router_V2"
     ]
   },
@@ -138,7 +142,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
@@ -151,6 +155,6 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   }
 ]

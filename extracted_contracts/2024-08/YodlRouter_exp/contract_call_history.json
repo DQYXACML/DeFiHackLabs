@@ -1,0 +1,167 @@
+{
+  "protocol": "YodlRouter_exp",
+  "contract_address": "0xe3a0bc3483ae5a04db7ef2954315133a6f7d228e",
+  "target_functions": [
+    "transferFee"
+  ],
+  "tx_count": 4,
+  "missing_target_functions": [],
+  "txs": [
+    {
+      "hash": "0x54f659773dae6e01f83184d4b6d717c7f1bb71c0aa59e8c8f4a57c25271424b3",
+      "from": "0x802cfff8d7cb27879e00496843bb69361ff09ab3",
+      "to": "0xe3a0bc3483ae5a04db7ef2954315133a6f7d228e",
+      "value": "0x0",
+      "blockNumber": 20520368,
+      "time": "2024-08-13T14:41:59Z",
+      "function": "transferFee",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 45588747326
+        },
+        {
+          "name": "feeBps",
+          "type": "uint256",
+          "value": 10000
+        },
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "from",
+          "type": "address",
+          "value": "0x5322bff39339eda261bf878fa7d92791cc969bb0"
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xedee6379fe90bd9b85d8d0b767d4a6deb0dc9dcf"
+        }
+      ],
+      "trace_id": "0"
+    },
+    {
+      "hash": "0x54f659773dae6e01f83184d4b6d717c7f1bb71c0aa59e8c8f4a57c25271424b3",
+      "from": "0x802cfff8d7cb27879e00496843bb69361ff09ab3",
+      "to": "0xe3a0bc3483ae5a04db7ef2954315133a6f7d228e",
+      "value": "0x0",
+      "blockNumber": 20520368,
+      "time": "2024-08-13T14:41:59Z",
+      "function": "transferFee",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 1219608225
+        },
+        {
+          "name": "feeBps",
+          "type": "uint256",
+          "value": 10000
+        },
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "from",
+          "type": "address",
+          "value": "0xa7b7d4ebf1f5035f3b289139bada62f981f2916e"
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xedee6379fe90bd9b85d8d0b767d4a6deb0dc9dcf"
+        }
+      ],
+      "trace_id": "1"
+    },
+    {
+      "hash": "0x54f659773dae6e01f83184d4b6d717c7f1bb71c0aa59e8c8f4a57c25271424b3",
+      "from": "0x802cfff8d7cb27879e00496843bb69361ff09ab3",
+      "to": "0xe3a0bc3483ae5a04db7ef2954315133a6f7d228e",
+      "value": "0x0",
+      "blockNumber": 20520368,
+      "time": "2024-08-13T14:41:59Z",
+      "function": "transferFee",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 1000000000
+        },
+        {
+          "name": "feeBps",
+          "type": "uint256",
+          "value": 10000
+        },
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "from",
+          "type": "address",
+          "value": "0x2c349022df145c1a2ed895b5577905e6f1bc7881"
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xedee6379fe90bd9b85d8d0b767d4a6deb0dc9dcf"
+        }
+      ],
+      "trace_id": "2"
+    },
+    {
+      "hash": "0x54f659773dae6e01f83184d4b6d717c7f1bb71c0aa59e8c8f4a57c25271424b3",
+      "from": "0x802cfff8d7cb27879e00496843bb69361ff09ab3",
+      "to": "0xe3a0bc3483ae5a04db7ef2954315133a6f7d228e",
+      "value": "0x0",
+      "blockNumber": 20520368,
+      "time": "2024-08-13T14:41:59Z",
+      "function": "transferFee",
+      "is_injected_function": true,
+      "is_internal": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 1000000
+        },
+        {
+          "name": "feeBps",
+          "type": "uint256",
+          "value": 10000
+        },
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+          "name": "from",
+          "type": "address",
+          "value": "0x96d0f726fd900e199680277aaad326fbdebc6bf9"
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0xedee6379fe90bd9b85d8d0b767d4a6deb0dc9dcf"
+        }
+      ],
+      "trace_id": "3"
+    }
+  ]
+}

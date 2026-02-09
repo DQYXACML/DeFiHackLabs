@@ -41,6 +41,9 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "IRedKeysGame",
+      "game",
+      "RedKeysGame",
       "Vulnerable_Contract"
     ]
   },
@@ -51,12 +54,16 @@
     "source": "static",
     "context": "IERC20 constant coin = IERC20(0x00e62b6CCf1fe3e5E01CE07F6232d7F378518b6b)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "REDKEYS",
+    "decimals": 4,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IERC20"
+      "coin",
+      "REDKEYS",
+      "IERC20",
+      "redkeys",
+      "IREDKEYS"
     ]
   },
   {
@@ -70,6 +77,6 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   }
 ]

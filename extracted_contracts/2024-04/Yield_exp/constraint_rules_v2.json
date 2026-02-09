@@ -1,0 +1,95 @@
+{
+  "protocol": "Yield_exp",
+  "year_month": "2024-04",
+  "vulnerable_contract": {
+    "address": "0x3b4ffd93ce5fcf97e61aa8275ec241c76cc01a47",
+    "name": "YieldStrategy_2"
+  },
+  "constraints": [
+    {
+      "function": "mint",
+      "signature": "mint(address)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x3b4ffd93ce5fcf97e61aa8275ec241c76cc01a47"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(YieldStrategy_2)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "burn",
+      "signature": "burn(address)",
+      "attack_pattern": "drain_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x3b4ffd93ce5fcf97e61aa8275ec241c76cc01a47"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "16",
+        "before": 95117907443,
+        "after": 30421236,
+        "change_pct": 99.97,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 1
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 7
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

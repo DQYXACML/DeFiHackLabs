@@ -1,0 +1,1558 @@
+{
+  "compiler_version": "v0.7.6+commit.7338295f",
+  "optimizer": true,
+  "runs": 20000,
+  "evm_version": "istanbul",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 22758,
+  "values": {
+    "./AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "1868",
+        "var_name": "./OffchainAggregator.sol:decimals",
+        "offset": 4179,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 3982,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 11367,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 11607,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 15720,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 17398,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 19573,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "466",
+        "var_name": "./OffchainAggregator.sol:minAnswer",
+        "offset": 4018,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "466",
+        "var_name": "./OffchainAggregator.sol:minAnswer",
+        "offset": 14593,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "468",
+        "var_name": "./OffchainAggregator.sol:maxAnswer",
+        "offset": 7127,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "468",
+        "var_name": "./OffchainAggregator.sol:maxAnswer",
+        "offset": 14638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "1868",
+        "var_name": "./OffchainAggregator.sol:decimals",
+        "offset": 3784,
+        "length": 32,
+        "value_hex": "0x616c6c61626c65206279206f776e657200000000000000000000604482015290",
+        "value_int": "44065913809658380984899099895923180799952924473465257729859730699017617756816",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 3587,
+        "length": 32,
+        "value_hex": "0x0000008104831660608301819052700100000000000000000000000000000000",
+        "value_int": "3478308295460964233073137517041282680626080697114117141678958122631168",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 10614,
+        "length": 32,
+        "value_hex": "0x7300000000000000000000000000000000000000000000006044820152905190",
+        "value_int": "52015977587075634662932278421871521105961125924018222127107023378322975379856",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 10880,
+        "length": 32,
+        "value_hex": "0x803e3d6000fd5b505050506040513d6020811015612a9c57600080fd5b50515b",
+        "value_int": "58006012731460616709822130280984443373166231932180111944921158010198752776539",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 15045,
+        "length": 32,
+        "value_hex": "0x14d599a9d023d451998c999298949793969095909492939185019260c0860192",
+        "value_int": "9423655941804865349397423124498547832853746847279170719249201242767842738578",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 16763,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffffff000000000000000000000000000000000000000016",
+        "value_int": "115792089237316195423570984634543488696558837605497246864089130975994398638102",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 18045,
+        "length": 32,
+        "value_hex": "0x20818303038152906040528051906020012090509a9950505050505050505050",
+        "value_int": "14702838636041342643932325428852401997984181183901020004741242648757791641680",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "466",
+        "var_name": "./OffchainAggregator.sol:minAnswer",
+        "offset": 3623,
+        "length": 32,
+        "value_hex": "0x921660808201528251909160009160019060049060ff16601f8110610e4757fe",
+        "value_int": "66077212560795624327156227868513514306995469718268848298945772138042015307774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "466",
+        "var_name": "./OffchainAggregator.sol:minAnswer",
+        "offset": 13918,
+        "length": 32,
+        "value_hex": "0x602002013560405160008152602001604052604051808581526020018460ff16",
+        "value_int": "43478586406140268753307274079952617383462785877028866314687503905238357704470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "468",
+        "var_name": "./OffchainAggregator.sol:maxAnswer",
+        "offset": 6629,
+        "length": 32,
+        "value_hex": "0x6020018a67ffffffffffffffff16815260200180602001806020018760ff1681",
+        "value_int": "43478583203237946773267811413663950893458289298837064481923041592739394164353",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "468",
+        "var_name": "./OffchainAggregator.sol:maxAnswer",
+        "offset": 13963,
+        "length": 32,
+        "value_hex": "0x526020019450505050506020604051602081039080840390855afa1580156136",
+        "value_int": "37259491800508871024718275440007201630615756181172698305305591917552470417718",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./OffchainAggregatorBilling.sol:OffchainAggregatorBilling": [
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 1481,
+        "length": 32,
+        "value_hex": "0x80601f0160208091040260200160405190810160405280939291908181526020",
+        "value_int": "58065875928096870417041322930873542344545566743100164785635951144697486008352",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 3988,
+        "length": 32,
+        "value_hex": "0x000000000000514910771af9ca656af840dff83e8264ecf986ca81565b7f0000",
+        "value_int": "130620613738548311155854300571218470176534185073923512019648512",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 4280,
+        "length": 32,
+        "value_hex": "0x52602001838380828437600092019190915250611bad92505050565b61112457",
+        "value_int": "37259491798739619697612501563281149590528433089095998200033590278619372004439",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 4596,
+        "length": 32,
+        "value_hex": "0x1bcd60e51b81526004018080602001828103825260248152602001806158c260",
+        "value_int": "12575319304401471713908707371817176383543897965275198632794204940277024080480",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 6047,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffff00ff166101008360028111156117ba57fe5b02179055",
+        "value_int": "115792089237316195423570889600527282311125876661365886849956284070499972517973",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1997",
+        "var_name": "./OffchainAggregatorBilling.sol:LINK",
+        "offset": 7022,
+        "length": 32,
+        "value_hex": "0x0960248201527f4e6f2061636365737300000000000000000000000000000000",
+        "value_int": "4240684923268923289443446631118519233281396425285278709702377264507244249088",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "4046",
+        "var_name": "./contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 4018,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4046",
+        "var_name": "./contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 14593,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4048",
+        "var_name": "./contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 7127,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4048",
+        "var_name": "./contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 14638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5448",
+        "var_name": "./contracts/OffchainAggregator.sol:decimals",
+        "offset": 4179,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3982,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 11367,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 11607,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 15720,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 17398,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 19573,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "4046",
+        "var_name": "./contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 3623,
+        "length": 32,
+        "value_hex": "0x921660808201528251909160009160019060049060ff16601f8110610e4757fe",
+        "value_int": "66077212560795624327156227868513514306995469718268848298945772138042015307774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4046",
+        "var_name": "./contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 13918,
+        "length": 32,
+        "value_hex": "0x602002013560405160008152602001604052604051808581526020018460ff16",
+        "value_int": "43478586406140268753307274079952617383462785877028866314687503905238357704470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4048",
+        "var_name": "./contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 6629,
+        "length": 32,
+        "value_hex": "0x6020018a67ffffffffffffffff16815260200180602001806020018760ff1681",
+        "value_int": "43478583203237946773267811413663950893458289298837064481923041592739394164353",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4048",
+        "var_name": "./contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 13963,
+        "length": 32,
+        "value_hex": "0x526020019450505050506020604051602081039080840390855afa1580156136",
+        "value_int": "37259491800508871024718275440007201630615756181172698305305591917552470417718",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5448",
+        "var_name": "./contracts/OffchainAggregator.sol:decimals",
+        "offset": 3784,
+        "length": 32,
+        "value_hex": "0x616c6c61626c65206279206f776e657200000000000000000000604482015290",
+        "value_int": "44065913809658380984899099895923180799952924473465257729859730699017617756816",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3587,
+        "length": 32,
+        "value_hex": "0x0000008104831660608301819052700100000000000000000000000000000000",
+        "value_int": "3478308295460964233073137517041282680626080697114117141678958122631168",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 10614,
+        "length": 32,
+        "value_hex": "0x7300000000000000000000000000000000000000000000006044820152905190",
+        "value_int": "52015977587075634662932278421871521105961125924018222127107023378322975379856",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 10880,
+        "length": 32,
+        "value_hex": "0x803e3d6000fd5b505050506040513d6020811015612a9c57600080fd5b50515b",
+        "value_int": "58006012731460616709822130280984443373166231932180111944921158010198752776539",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 15045,
+        "length": 32,
+        "value_hex": "0x14d599a9d023d451998c999298949793969095909492939185019260c0860192",
+        "value_int": "9423655941804865349397423124498547832853746847279170719249201242767842738578",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 16763,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffffff000000000000000000000000000000000000000016",
+        "value_int": "115792089237316195423570984634543488696558837605497246864089130975994398638102",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 18045,
+        "length": 32,
+        "value_hex": "0x20818303038152906040528051906020012090509a9950505050505050505050",
+        "value_int": "14702838636041342643932325428852401997984181183901020004741242648757791641680",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/OffchainAggregatorBilling.sol:OffchainAggregatorBilling": [
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 1481,
+        "length": 32,
+        "value_hex": "0x80601f0160208091040260200160405190810160405280939291908181526020",
+        "value_int": "58065875928096870417041322930873542344545566743100164785635951144697486008352",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3988,
+        "length": 32,
+        "value_hex": "0x000000000000514910771af9ca656af840dff83e8264ecf986ca81565b7f0000",
+        "value_int": "130620613738548311155854300571218470176534185073923512019648512",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 4280,
+        "length": 32,
+        "value_hex": "0x52602001838380828437600092019190915250611bad92505050565b61112457",
+        "value_int": "37259491798739619697612501563281149590528433089095998200033590278619372004439",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 4596,
+        "length": 32,
+        "value_hex": "0x1bcd60e51b81526004018080602001828103825260248152602001806158c260",
+        "value_int": "12575319304401471713908707371817176383543897965275198632794204940277024080480",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 6047,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffff00ff166101008360028111156117ba57fe5b02179055",
+        "value_int": "115792089237316195423570889600527282311125876661365886849956284070499972517973",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5577",
+        "var_name": "./contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 7022,
+        "length": 32,
+        "value_hex": "0x0960248201527f4e6f2061636365737300000000000000000000000000000000",
+        "value_int": "4240684923268923289443446631118519233281396425285278709702377264507244249088",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "7626",
+        "var_name": "./src/OffchainAggregator.sol:minAnswer",
+        "offset": 4018,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7626",
+        "var_name": "./src/OffchainAggregator.sol:minAnswer",
+        "offset": 14593,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7628",
+        "var_name": "./src/OffchainAggregator.sol:maxAnswer",
+        "offset": 7127,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7628",
+        "var_name": "./src/OffchainAggregator.sol:maxAnswer",
+        "offset": 14638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9028",
+        "var_name": "./src/OffchainAggregator.sol:decimals",
+        "offset": 4179,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3982,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 11367,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 11607,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 15720,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 17398,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 19573,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "7626",
+        "var_name": "./src/OffchainAggregator.sol:minAnswer",
+        "offset": 3623,
+        "length": 32,
+        "value_hex": "0x921660808201528251909160009160019060049060ff16601f8110610e4757fe",
+        "value_int": "66077212560795624327156227868513514306995469718268848298945772138042015307774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7626",
+        "var_name": "./src/OffchainAggregator.sol:minAnswer",
+        "offset": 13918,
+        "length": 32,
+        "value_hex": "0x602002013560405160008152602001604052604051808581526020018460ff16",
+        "value_int": "43478586406140268753307274079952617383462785877028866314687503905238357704470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7628",
+        "var_name": "./src/OffchainAggregator.sol:maxAnswer",
+        "offset": 6629,
+        "length": 32,
+        "value_hex": "0x6020018a67ffffffffffffffff16815260200180602001806020018760ff1681",
+        "value_int": "43478583203237946773267811413663950893458289298837064481923041592739394164353",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7628",
+        "var_name": "./src/OffchainAggregator.sol:maxAnswer",
+        "offset": 13963,
+        "length": 32,
+        "value_hex": "0x526020019450505050506020604051602081039080840390855afa1580156136",
+        "value_int": "37259491800508871024718275440007201630615756181172698305305591917552470417718",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9028",
+        "var_name": "./src/OffchainAggregator.sol:decimals",
+        "offset": 3784,
+        "length": 32,
+        "value_hex": "0x616c6c61626c65206279206f776e657200000000000000000000604482015290",
+        "value_int": "44065913809658380984899099895923180799952924473465257729859730699017617756816",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3587,
+        "length": 32,
+        "value_hex": "0x0000008104831660608301819052700100000000000000000000000000000000",
+        "value_int": "3478308295460964233073137517041282680626080697114117141678958122631168",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 10614,
+        "length": 32,
+        "value_hex": "0x7300000000000000000000000000000000000000000000006044820152905190",
+        "value_int": "52015977587075634662932278421871521105961125924018222127107023378322975379856",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 10880,
+        "length": 32,
+        "value_hex": "0x803e3d6000fd5b505050506040513d6020811015612a9c57600080fd5b50515b",
+        "value_int": "58006012731460616709822130280984443373166231932180111944921158010198752776539",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 15045,
+        "length": 32,
+        "value_hex": "0x14d599a9d023d451998c999298949793969095909492939185019260c0860192",
+        "value_int": "9423655941804865349397423124498547832853746847279170719249201242767842738578",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 16763,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffffff000000000000000000000000000000000000000016",
+        "value_int": "115792089237316195423570984634543488696558837605497246864089130975994398638102",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 18045,
+        "length": 32,
+        "value_hex": "0x20818303038152906040528051906020012090509a9950505050505050505050",
+        "value_int": "14702838636041342643932325428852401997984181183901020004741242648757791641680",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/OffchainAggregatorBilling.sol:OffchainAggregatorBilling": [
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 1481,
+        "length": 32,
+        "value_hex": "0x80601f0160208091040260200160405190810160405280939291908181526020",
+        "value_int": "58065875928096870417041322930873542344545566743100164785635951144697486008352",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3988,
+        "length": 32,
+        "value_hex": "0x000000000000514910771af9ca656af840dff83e8264ecf986ca81565b7f0000",
+        "value_int": "130620613738548311155854300571218470176534185073923512019648512",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 4280,
+        "length": 32,
+        "value_hex": "0x52602001838380828437600092019190915250611bad92505050565b61112457",
+        "value_int": "37259491798739619697612501563281149590528433089095998200033590278619372004439",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 4596,
+        "length": 32,
+        "value_hex": "0x1bcd60e51b81526004018080602001828103825260248152602001806158c260",
+        "value_int": "12575319304401471713908707371817176383543897965275198632794204940277024080480",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 6047,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffff00ff166101008360028111156117ba57fe5b02179055",
+        "value_int": "115792089237316195423570889600527282311125876661365886849956284070499972517973",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9157",
+        "var_name": "./src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 7022,
+        "length": 32,
+        "value_hex": "0x0960248201527f4e6f2061636365737300000000000000000000000000000000",
+        "value_int": "4240684923268923289443446631118519233281396425285278709702377264507244249088",
+        "used_stripped_runtime": true
+      }
+    ],
+    "AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "11206",
+        "var_name": "OffchainAggregator.sol:minAnswer",
+        "offset": 4018,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11206",
+        "var_name": "OffchainAggregator.sol:minAnswer",
+        "offset": 14593,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11208",
+        "var_name": "OffchainAggregator.sol:maxAnswer",
+        "offset": 7127,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11208",
+        "var_name": "OffchainAggregator.sol:maxAnswer",
+        "offset": 14638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12608",
+        "var_name": "OffchainAggregator.sol:decimals",
+        "offset": 4179,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 3982,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 11367,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 11607,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 15720,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 17398,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 19573,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      }
+    ],
+    "OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "11206",
+        "var_name": "OffchainAggregator.sol:minAnswer",
+        "offset": 3623,
+        "length": 32,
+        "value_hex": "0x921660808201528251909160009160019060049060ff16601f8110610e4757fe",
+        "value_int": "66077212560795624327156227868513514306995469718268848298945772138042015307774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11206",
+        "var_name": "OffchainAggregator.sol:minAnswer",
+        "offset": 13918,
+        "length": 32,
+        "value_hex": "0x602002013560405160008152602001604052604051808581526020018460ff16",
+        "value_int": "43478586406140268753307274079952617383462785877028866314687503905238357704470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11208",
+        "var_name": "OffchainAggregator.sol:maxAnswer",
+        "offset": 6629,
+        "length": 32,
+        "value_hex": "0x6020018a67ffffffffffffffff16815260200180602001806020018760ff1681",
+        "value_int": "43478583203237946773267811413663950893458289298837064481923041592739394164353",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "11208",
+        "var_name": "OffchainAggregator.sol:maxAnswer",
+        "offset": 13963,
+        "length": 32,
+        "value_hex": "0x526020019450505050506020604051602081039080840390855afa1580156136",
+        "value_int": "37259491800508871024718275440007201630615756181172698305305591917552470417718",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12608",
+        "var_name": "OffchainAggregator.sol:decimals",
+        "offset": 3784,
+        "length": 32,
+        "value_hex": "0x616c6c61626c65206279206f776e657200000000000000000000604482015290",
+        "value_int": "44065913809658380984899099895923180799952924473465257729859730699017617756816",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 3587,
+        "length": 32,
+        "value_hex": "0x0000008104831660608301819052700100000000000000000000000000000000",
+        "value_int": "3478308295460964233073137517041282680626080697114117141678958122631168",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 10614,
+        "length": 32,
+        "value_hex": "0x7300000000000000000000000000000000000000000000006044820152905190",
+        "value_int": "52015977587075634662932278421871521105961125924018222127107023378322975379856",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 10880,
+        "length": 32,
+        "value_hex": "0x803e3d6000fd5b505050506040513d6020811015612a9c57600080fd5b50515b",
+        "value_int": "58006012731460616709822130280984443373166231932180111944921158010198752776539",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 15045,
+        "length": 32,
+        "value_hex": "0x14d599a9d023d451998c999298949793969095909492939185019260c0860192",
+        "value_int": "9423655941804865349397423124498547832853746847279170719249201242767842738578",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 16763,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffffff000000000000000000000000000000000000000016",
+        "value_int": "115792089237316195423570984634543488696558837605497246864089130975994398638102",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 18045,
+        "length": 32,
+        "value_hex": "0x20818303038152906040528051906020012090509a9950505050505050505050",
+        "value_int": "14702838636041342643932325428852401997984181183901020004741242648757791641680",
+        "used_stripped_runtime": true
+      }
+    ],
+    "OffchainAggregatorBilling.sol:OffchainAggregatorBilling": [
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 1481,
+        "length": 32,
+        "value_hex": "0x80601f0160208091040260200160405190810160405280939291908181526020",
+        "value_int": "58065875928096870417041322930873542344545566743100164785635951144697486008352",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 3988,
+        "length": 32,
+        "value_hex": "0x000000000000514910771af9ca656af840dff83e8264ecf986ca81565b7f0000",
+        "value_int": "130620613738548311155854300571218470176534185073923512019648512",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 4280,
+        "length": 32,
+        "value_hex": "0x52602001838380828437600092019190915250611bad92505050565b61112457",
+        "value_int": "37259491798739619697612501563281149590528433089095998200033590278619372004439",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 4596,
+        "length": 32,
+        "value_hex": "0x1bcd60e51b81526004018080602001828103825260248152602001806158c260",
+        "value_int": "12575319304401471713908707371817176383543897965275198632794204940277024080480",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 6047,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffff00ff166101008360028111156117ba57fe5b02179055",
+        "value_int": "115792089237316195423570889600527282311125876661365886849956284070499972517973",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12737",
+        "var_name": "OffchainAggregatorBilling.sol:LINK",
+        "offset": 7022,
+        "length": 32,
+        "value_hex": "0x0960248201527f4e6f2061636365737300000000000000000000000000000000",
+        "value_int": "4240684923268923289443446631118519233281396425285278709702377264507244249088",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "14786",
+        "var_name": "contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 4018,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14786",
+        "var_name": "contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 14593,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14788",
+        "var_name": "contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 7127,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14788",
+        "var_name": "contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 14638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16188",
+        "var_name": "contracts/OffchainAggregator.sol:decimals",
+        "offset": 4179,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3982,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 11367,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 11607,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 15720,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 17398,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 19573,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "14786",
+        "var_name": "contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 3623,
+        "length": 32,
+        "value_hex": "0x921660808201528251909160009160019060049060ff16601f8110610e4757fe",
+        "value_int": "66077212560795624327156227868513514306995469718268848298945772138042015307774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14786",
+        "var_name": "contracts/OffchainAggregator.sol:minAnswer",
+        "offset": 13918,
+        "length": 32,
+        "value_hex": "0x602002013560405160008152602001604052604051808581526020018460ff16",
+        "value_int": "43478586406140268753307274079952617383462785877028866314687503905238357704470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14788",
+        "var_name": "contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 6629,
+        "length": 32,
+        "value_hex": "0x6020018a67ffffffffffffffff16815260200180602001806020018760ff1681",
+        "value_int": "43478583203237946773267811413663950893458289298837064481923041592739394164353",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14788",
+        "var_name": "contracts/OffchainAggregator.sol:maxAnswer",
+        "offset": 13963,
+        "length": 32,
+        "value_hex": "0x526020019450505050506020604051602081039080840390855afa1580156136",
+        "value_int": "37259491800508871024718275440007201630615756181172698305305591917552470417718",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16188",
+        "var_name": "contracts/OffchainAggregator.sol:decimals",
+        "offset": 3784,
+        "length": 32,
+        "value_hex": "0x616c6c61626c65206279206f776e657200000000000000000000604482015290",
+        "value_int": "44065913809658380984899099895923180799952924473465257729859730699017617756816",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3587,
+        "length": 32,
+        "value_hex": "0x0000008104831660608301819052700100000000000000000000000000000000",
+        "value_int": "3478308295460964233073137517041282680626080697114117141678958122631168",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 10614,
+        "length": 32,
+        "value_hex": "0x7300000000000000000000000000000000000000000000006044820152905190",
+        "value_int": "52015977587075634662932278421871521105961125924018222127107023378322975379856",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 10880,
+        "length": 32,
+        "value_hex": "0x803e3d6000fd5b505050506040513d6020811015612a9c57600080fd5b50515b",
+        "value_int": "58006012731460616709822130280984443373166231932180111944921158010198752776539",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 15045,
+        "length": 32,
+        "value_hex": "0x14d599a9d023d451998c999298949793969095909492939185019260c0860192",
+        "value_int": "9423655941804865349397423124498547832853746847279170719249201242767842738578",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 16763,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffffff000000000000000000000000000000000000000016",
+        "value_int": "115792089237316195423570984634543488696558837605497246864089130975994398638102",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 18045,
+        "length": 32,
+        "value_hex": "0x20818303038152906040528051906020012090509a9950505050505050505050",
+        "value_int": "14702838636041342643932325428852401997984181183901020004741242648757791641680",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/OffchainAggregatorBilling.sol:OffchainAggregatorBilling": [
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 1481,
+        "length": 32,
+        "value_hex": "0x80601f0160208091040260200160405190810160405280939291908181526020",
+        "value_int": "58065875928096870417041322930873542344545566743100164785635951144697486008352",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3988,
+        "length": 32,
+        "value_hex": "0x000000000000514910771af9ca656af840dff83e8264ecf986ca81565b7f0000",
+        "value_int": "130620613738548311155854300571218470176534185073923512019648512",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 4280,
+        "length": 32,
+        "value_hex": "0x52602001838380828437600092019190915250611bad92505050565b61112457",
+        "value_int": "37259491798739619697612501563281149590528433089095998200033590278619372004439",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 4596,
+        "length": 32,
+        "value_hex": "0x1bcd60e51b81526004018080602001828103825260248152602001806158c260",
+        "value_int": "12575319304401471713908707371817176383543897965275198632794204940277024080480",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 6047,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffff00ff166101008360028111156117ba57fe5b02179055",
+        "value_int": "115792089237316195423570889600527282311125876661365886849956284070499972517973",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16317",
+        "var_name": "contracts/OffchainAggregatorBilling.sol:LINK",
+        "offset": 7022,
+        "length": 32,
+        "value_hex": "0x0960248201527f4e6f2061636365737300000000000000000000000000000000",
+        "value_int": "4240684923268923289443446631118519233281396425285278709702377264507244249088",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/AccessControlledOffchainAggregator.sol:AccessControlledOffchainAggregator": [
+      {
+        "label": "18366",
+        "var_name": "src/OffchainAggregator.sol:minAnswer",
+        "offset": 4018,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18366",
+        "var_name": "src/OffchainAggregator.sol:minAnswer",
+        "offset": 14593,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+        "value_int": "1000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18368",
+        "var_name": "src/OffchainAggregator.sol:maxAnswer",
+        "offset": 7127,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18368",
+        "var_name": "src/OffchainAggregator.sol:maxAnswer",
+        "offset": 14638,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000000000000000000000000000000000174876e800",
+        "value_int": "100000000000",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19768",
+        "var_name": "src/OffchainAggregator.sol:decimals",
+        "offset": 4179,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3982,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 11367,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 11607,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 15720,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 17398,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 19573,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000514910771af9ca656af840dff83e8264ecf986ca",
+        "value_int": "464057641162257223597913127019930606481545201354",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/OffchainAggregator.sol:OffchainAggregator": [
+      {
+        "label": "18366",
+        "var_name": "src/OffchainAggregator.sol:minAnswer",
+        "offset": 3623,
+        "length": 32,
+        "value_hex": "0x921660808201528251909160009160019060049060ff16601f8110610e4757fe",
+        "value_int": "66077212560795624327156227868513514306995469718268848298945772138042015307774",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18366",
+        "var_name": "src/OffchainAggregator.sol:minAnswer",
+        "offset": 13918,
+        "length": 32,
+        "value_hex": "0x602002013560405160008152602001604052604051808581526020018460ff16",
+        "value_int": "43478586406140268753307274079952617383462785877028866314687503905238357704470",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18368",
+        "var_name": "src/OffchainAggregator.sol:maxAnswer",
+        "offset": 6629,
+        "length": 32,
+        "value_hex": "0x6020018a67ffffffffffffffff16815260200180602001806020018760ff1681",
+        "value_int": "43478583203237946773267811413663950893458289298837064481923041592739394164353",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "18368",
+        "var_name": "src/OffchainAggregator.sol:maxAnswer",
+        "offset": 13963,
+        "length": 32,
+        "value_hex": "0x526020019450505050506020604051602081039080840390855afa1580156136",
+        "value_int": "37259491800508871024718275440007201630615756181172698305305591917552470417718",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19768",
+        "var_name": "src/OffchainAggregator.sol:decimals",
+        "offset": 3784,
+        "length": 32,
+        "value_hex": "0x616c6c61626c65206279206f776e657200000000000000000000604482015290",
+        "value_int": "44065913809658380984899099895923180799952924473465257729859730699017617756816",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3587,
+        "length": 32,
+        "value_hex": "0x0000008104831660608301819052700100000000000000000000000000000000",
+        "value_int": "3478308295460964233073137517041282680626080697114117141678958122631168",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 10614,
+        "length": 32,
+        "value_hex": "0x7300000000000000000000000000000000000000000000006044820152905190",
+        "value_int": "52015977587075634662932278421871521105961125924018222127107023378322975379856",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 10880,
+        "length": 32,
+        "value_hex": "0x803e3d6000fd5b505050506040513d6020811015612a9c57600080fd5b50515b",
+        "value_int": "58006012731460616709822130280984443373166231932180111944921158010198752776539",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 15045,
+        "length": 32,
+        "value_hex": "0x14d599a9d023d451998c999298949793969095909492939185019260c0860192",
+        "value_int": "9423655941804865349397423124498547832853746847279170719249201242767842738578",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 16763,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffffff000000000000000000000000000000000000000016",
+        "value_int": "115792089237316195423570984634543488696558837605497246864089130975994398638102",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 18045,
+        "length": 32,
+        "value_hex": "0x20818303038152906040528051906020012090509a9950505050505050505050",
+        "value_int": "14702838636041342643932325428852401997984181183901020004741242648757791641680",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/OffchainAggregatorBilling.sol:OffchainAggregatorBilling": [
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 1481,
+        "length": 32,
+        "value_hex": "0x80601f0160208091040260200160405190810160405280939291908181526020",
+        "value_int": "58065875928096870417041322930873542344545566743100164785635951144697486008352",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 3988,
+        "length": 32,
+        "value_hex": "0x000000000000514910771af9ca656af840dff83e8264ecf986ca81565b7f0000",
+        "value_int": "130620613738548311155854300571218470176534185073923512019648512",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 4280,
+        "length": 32,
+        "value_hex": "0x52602001838380828437600092019190915250611bad92505050565b61112457",
+        "value_int": "37259491798739619697612501563281149590528433089095998200033590278619372004439",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 4596,
+        "length": 32,
+        "value_hex": "0x1bcd60e51b81526004018080602001828103825260248152602001806158c260",
+        "value_int": "12575319304401471713908707371817176383543897965275198632794204940277024080480",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 6047,
+        "length": 32,
+        "value_hex": "0xffffffffffffffffffff00ff166101008360028111156117ba57fe5b02179055",
+        "value_int": "115792089237316195423570889600527282311125876661365886849956284070499972517973",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "19897",
+        "var_name": "src/OffchainAggregatorBilling.sol:LINK",
+        "offset": 7022,
+        "length": 32,
+        "value_hex": "0x0960248201527f4e6f2061636365737300000000000000000000000000000000",
+        "value_int": "4240684923268923289443446631118519233281396425285278709702377264507244249088",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

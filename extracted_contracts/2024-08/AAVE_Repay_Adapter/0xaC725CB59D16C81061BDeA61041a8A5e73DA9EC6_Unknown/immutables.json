@@ -1,0 +1,508 @@
+{
+  "compiler_version": "v0.8.10+commit.fc410830",
+  "optimizer": true,
+  "runs": 100000,
+  "evm_version": "berlin",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 9350,
+  "values": {
+    "./@aave/core-v3/contracts/protocol/tokenization/VariableDebtToken.sol:VariableDebtToken": [
+      {
+        "label": "3191",
+        "var_name": "./@aave/core-v3/contracts/protocol/tokenization/base/EIP712Base.sol:_chainId",
+        "offset": 2744,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3373",
+        "var_name": "./@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:_addressesProvider",
+        "offset": 4153,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000002f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "value_int": "269612010477420749305553385520076614301071789726",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3376",
+        "var_name": "./@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 894,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3376",
+        "var_name": "./@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2617,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3376",
+        "var_name": "./@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2943,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3376",
+        "var_name": "./@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3150,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3376",
+        "var_name": "./@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3602,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3376",
+        "var_name": "./@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3949,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3376",
+        "var_name": "./@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 4685,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/contracts/protocol/tokenization/VariableDebtToken.sol:VariableDebtToken": [
+      {
+        "label": "7605",
+        "var_name": "./contracts/contracts/protocol/tokenization/base/EIP712Base.sol:_chainId",
+        "offset": 2744,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7787",
+        "var_name": "./contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:_addressesProvider",
+        "offset": 4153,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000002f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "value_int": "269612010477420749305553385520076614301071789726",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7790",
+        "var_name": "./contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 894,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7790",
+        "var_name": "./contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2617,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7790",
+        "var_name": "./contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2943,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7790",
+        "var_name": "./contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3150,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7790",
+        "var_name": "./contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3602,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7790",
+        "var_name": "./contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3949,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7790",
+        "var_name": "./contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 4685,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/protocol/tokenization/VariableDebtToken.sol:VariableDebtToken": [
+      {
+        "label": "12019",
+        "var_name": "./contracts/protocol/tokenization/base/EIP712Base.sol:_chainId",
+        "offset": 2744,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12201",
+        "var_name": "./contracts/protocol/tokenization/base/IncentivizedERC20.sol:_addressesProvider",
+        "offset": 4153,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000002f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "value_int": "269612010477420749305553385520076614301071789726",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12204",
+        "var_name": "./contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 894,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12204",
+        "var_name": "./contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2617,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12204",
+        "var_name": "./contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2943,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12204",
+        "var_name": "./contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3150,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12204",
+        "var_name": "./contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3602,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12204",
+        "var_name": "./contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3949,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12204",
+        "var_name": "./contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 4685,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      }
+    ],
+    "@aave/core-v3/contracts/protocol/tokenization/VariableDebtToken.sol:VariableDebtToken": [
+      {
+        "label": "16433",
+        "var_name": "@aave/core-v3/contracts/protocol/tokenization/base/EIP712Base.sol:_chainId",
+        "offset": 2744,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16615",
+        "var_name": "@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:_addressesProvider",
+        "offset": 4153,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000002f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "value_int": "269612010477420749305553385520076614301071789726",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16618",
+        "var_name": "@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 894,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16618",
+        "var_name": "@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2617,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16618",
+        "var_name": "@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2943,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16618",
+        "var_name": "@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3150,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16618",
+        "var_name": "@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3602,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16618",
+        "var_name": "@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3949,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16618",
+        "var_name": "@aave/core-v3/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 4685,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/contracts/protocol/tokenization/VariableDebtToken.sol:VariableDebtToken": [
+      {
+        "label": "20847",
+        "var_name": "contracts/contracts/protocol/tokenization/base/EIP712Base.sol:_chainId",
+        "offset": 2744,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21029",
+        "var_name": "contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:_addressesProvider",
+        "offset": 4153,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000002f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "value_int": "269612010477420749305553385520076614301071789726",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21032",
+        "var_name": "contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 894,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21032",
+        "var_name": "contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2617,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21032",
+        "var_name": "contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2943,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21032",
+        "var_name": "contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3150,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21032",
+        "var_name": "contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3602,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21032",
+        "var_name": "contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3949,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "21032",
+        "var_name": "contracts/contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 4685,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/protocol/tokenization/VariableDebtToken.sol:VariableDebtToken": [
+      {
+        "label": "25261",
+        "var_name": "contracts/protocol/tokenization/base/EIP712Base.sol:_chainId",
+        "offset": 2744,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25443",
+        "var_name": "contracts/protocol/tokenization/base/IncentivizedERC20.sol:_addressesProvider",
+        "offset": 4153,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000002f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "value_int": "269612010477420749305553385520076614301071789726",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25446",
+        "var_name": "contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 894,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25446",
+        "var_name": "contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2617,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25446",
+        "var_name": "contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 2943,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25446",
+        "var_name": "contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3150,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25446",
+        "var_name": "contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3602,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25446",
+        "var_name": "contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 3949,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "25446",
+        "var_name": "contracts/protocol/tokenization/base/IncentivizedERC20.sol:POOL",
+        "offset": 4685,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000087870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "value_int": "773725381719276160229242488166406195640368342242",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

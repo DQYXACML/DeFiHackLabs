@@ -1,0 +1,106 @@
+{
+  "protocol": "Bazaar_exp",
+  "year_month": "2024-06",
+  "vulnerable_contract": {
+    "address": "0xefb4e3Cc438eF2854727A7Df0d0baf844484EdaB",
+    "name": "Unknown"
+  },
+  "constraints": [
+    {
+      "function": "exitPool",
+      "signature": "exitPool(uint256,uint256,uint256,uint256)",
+      "attack_pattern": "large_withdraw",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "0 length in [9,9]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "TARGET_ID"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "bytes32",
+            "value_expr": "TARGET_ID"
+          }
+        },
+        "range": {
+          "min_len": 9,
+          "max_len": 9
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "exitPool",
+      "signature": "exitPool(uint256,uint256,uint256,uint256)",
+      "attack_pattern": "large_withdraw",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "2 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xefb4e3cc438ef2854727a7df0d0baf844484edab"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "address",
+            "value_expr": "payable(address(this))"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "90104667933694361572383036089304688617867447332657902809300826186007300895998",
+        "before": 881713336083352162952662931,
+        "after": 1173655402388490978696832,
+        "change_pct": 99.87,
+        "is_new_slot": false
+      },
+      {
+        "slot": "88489762615989702645935086453804222828906143409085752250306115293356029383656",
+        "before": 392891897707746872010,
+        "after": 522981426534498803,
+        "change_pct": 99.87,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 2
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 2
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

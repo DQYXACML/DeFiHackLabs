@@ -1,5 +1,7 @@
 pragma solidity ^0.4.13;
 
+import {IRouter} from "./interfaces/IRouter.sol";
+
 library SafeMath {
 
   /**
@@ -59,9 +61,7 @@ library SafeERC20 {
 contract Ownable {
   address public owner;
 
-
   event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
-
 
   /**
    * @dev The Ownable constructor sets the original `owner` of the contract to the sender
@@ -194,18 +194,15 @@ contract Haltable is Ownable {
         _;
     }
 
-
     modifier onlyInEmergency {
         require(halted);
         _;
     }
 
-
     /// @dev called by the owner on emergency, triggers stopped state
     function halt() external onlyOwner {
         halted = true;
     }
-
 
     /// @dev called by the owner on end of emergency, returns to normal state
     function unhalt() external onlyOwner onlyInEmergency {
@@ -290,6 +287,21 @@ contract ERC20 is ERC20Basic {
 }
 
 contract OMPxContract is BasicToken, Haltable, Discountable, TransferStatistics {
+    // 防火墙读取单槽位接口
+    function extsload(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+    // 兼容接口: 与 ext/tools 读取保持一致
+    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+
     using SafeMath for uint256;
     using SafeERC20 for ERC20Basic;
     using SafeERC20 for OMPxToken;
@@ -304,6 +316,85 @@ contract OMPxContract is BasicToken, Haltable, Discountable, TransferStatistics 
     event Purchase(address indexed received, uint256 tokensAmount, uint256 value);
     event BuyBack(address indexed received, uint256 tokensAmount, uint256 value);
     event NewReceiverSet(address newReceiver);
+    // 防火墙路由器（使用普通变量而非immutable，支持构造后设置，避免子类stack too deep）
+    // ========== 防火墙存储槽位（ERC1967风格） ==========
+    /**
+     * @dev 防火墙路由器存储槽位
+     * 计算方式: bytes32(uint256(keccak256('firewall.router.storage')) - 1)
+     * 槽位值: 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc
+     *
+     * 此槽位在极高的存储空间，不会与合约原有变量（slot 0-N）冲突
+     * 参考: ERC1967 Proxy Standard
+     */
+    bytes32 private constant FIREWALL_ROUTER_SLOT =
+        bytes32(uint256(keccak256('firewall.router.storage')) - 1);
+
+    /**
+     * @dev 获取防火墙路由器地址
+     */
+    function firewall() public view returns (IRouter) {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        address firewallAddress;
+        assembly {
+            firewallAddress := sload(slot)
+        }
+        return IRouter(firewallAddress);
+    }
+
+    // 防火墙保护修饰符（可写函数）
+    modifier firewallProtected() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                _firewall.executeWithDetect(msg.data);
+            }
+        }
+        _;
+    }
+
+    // 防火墙保护修饰符（view/pure函数）
+                                                                                                                                                                                                                                                                modifier firewallProtectedView() {
+                                                                                                                                        {
+                                                                                                                                            IRouter _firewall = firewall();
+                                                                                                                                            if (address(_firewall) != address(0)) {
+                                                                                                                                                bytes memory fwData = abi.encodeWithSignature("executeWithDetect(bytes)", msg.data);
+                                                                                                                                                bool fwOk;
+                                                                                                                                                assembly {
+                                                                                                                                                    fwOk := staticcall(gas(), _firewall, add(fwData, 0x20), mload(fwData), 0, 0)
+                                                                                                                                                }
+                                                                                                                                                fwOk;
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                        _;
+                                                                                                                                    }
+
+    /**
+     * @dev 设置防火墙路由器地址（internal，供子类在构造函数中调用）
+     */
+    function _setFirewall(address _firewall) internal {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    /**
+     * @dev 公开设置防火墙地址（仅在未设置时可调用，支持动态更新）
+     */
+    function setFirewall(address _firewall) external {
+        require(msg.sender == owner || address(firewall()) == address(0), "Not authorized");
+        require(_firewall != address(0), "Invalid firewall address");
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    event FirewallUpdated(address indexed newFirewall);
+
+
 
     function OMPxContract() public payable{
         addDiscount(1000 * 1e18,198);
@@ -318,6 +409,11 @@ contract OMPxContract is BasicToken, Haltable, Discountable, TransferStatistics 
     // payable fallback
 
     function() public payable {
+        IRouter _firewall = firewall();
+        if (address(_firewall) != address(0)) {
+            _firewall.executeWithDetect(msg.data);
+        }
+
         emit Donation(msg.sender, msg.value);
     }
 
@@ -371,7 +467,7 @@ contract OMPxContract is BasicToken, Haltable, Discountable, TransferStatistics 
 
     // Purchase tokens to user.
     // Money back should happens if current price is lower, then expected
-    function purchase(uint256 tokensToPurchase, uint256 maxPrice) public payable returns(uint256 tokensBought_) {
+    function purchase(uint256 tokensToPurchase, uint256 maxPrice) public payable firewallProtected returns(uint256 tokensBought_) {
         require(tokensToPurchase > 0);
         require(msg.value > 0);
         return purchaseSafe(tokensToPurchase, maxPrice);
@@ -419,7 +515,7 @@ contract OMPxContract is BasicToken, Haltable, Discountable, TransferStatistics 
     }
 
     // buyback tokens from user
-    function buyBack(uint256 tokensToBuyBack, uint256 minPrice) public {
+    function buyBack(uint256 tokensToBuyBack, uint256 minPrice) public firewallProtected {
         uint currentPrice = getBuyBackPrice(0);
         require(currentPrice >= minPrice);
         uint256 totalPrice = tokensToBuyBack.mul(currentPrice).div(1e18);
@@ -677,7 +773,6 @@ contract MintableToken is StandardToken, Ownable {
   event MintFinished();
 
   bool public mintingFinished = false;
-
 
   modifier canMint() {
     require(!mintingFinished);

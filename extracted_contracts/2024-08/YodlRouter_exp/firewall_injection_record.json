@@ -1,0 +1,20 @@
+{
+  "protocol": "YodlRouter_exp",
+  "year_month": "2024-08",
+  "injection_timestamp": "2026-02-09T02:28:10.274764Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "AbstractYodlRouter",
+    "address": "0xe3a0bc3483ae5a04db7ef2954315133a6f7d228e"
+  },
+  "injected_contracts": [
+    {
+      "file": "AbstractYodlRouter.sol",
+      "functions": [
+        "transferFee"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

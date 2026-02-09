@@ -167,7 +167,7 @@ class Logger:
 
     def __init__(self, log_file=None):
         self.log_file = log_file
-        self.file_handler = None
+        self.file_logger = None
         self.timers = {}  # 存储各个任务的开始时间
 
         if self.log_file:
@@ -175,31 +175,33 @@ class Logger:
             log_path = Path(self.log_file)
             log_path.parent.mkdir(parents=True, exist_ok=True)
 
-            # 配置文件日志
-            logging.basicConfig(
-                level=logging.INFO,
-                format='%(asctime)s [%(levelname)s] %(message)s',
-                handlers=[
-                    logging.FileHandler(self.log_file, encoding='utf-8'),
-                ]
-            )
-            self.file_handler = logging.getLogger()
+            # 仅写文件，避免复用root logger导致重复输出 WARNING:root
+            file_logger = logging.getLogger(f"extract_constraints_file_{id(self)}")
+            file_logger.setLevel(logging.INFO)
+            file_logger.handlers.clear()
+            file_logger.propagate = False
+
+            file_handler = logging.FileHandler(self.log_file, encoding='utf-8')
+            file_handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(message)s'))
+            file_logger.addHandler(file_handler)
+
+            self.file_logger = file_logger
 
     def _log_to_file(self, level, msg):
         """写入日志文件"""
-        if self.file_handler:
+        if self.file_logger:
             if level == 'info':
-                self.file_handler.info(msg)
+                self.file_logger.info(msg)
             elif level == 'success':
-                self.file_handler.info(f"✓ {msg}")
+                self.file_logger.info(f"✓ {msg}")
             elif level == 'warning':
-                self.file_handler.warning(msg)
+                self.file_logger.warning(msg)
             elif level == 'error':
-                self.file_handler.error(msg)
+                self.file_logger.error(msg)
             elif level == 'debug':
-                self.file_handler.debug(msg)
+                self.file_logger.debug(msg)
             elif level == 'timer':
-                self.file_handler.info(f"⏱ {msg}")
+                self.file_logger.info(f"⏱ {msg}")
 
     def info(self, msg):
         print(f"{self.COLORS['info']}[INFO]{self.COLORS['reset']} {msg}")
@@ -1248,11 +1250,11 @@ class AttackScriptParser:
         # 收集所有外部调用(使用新的调用图遍历)
         all_external_calls = self._collect_all_external_calls()
 
-        # 获取被攻击合约信息
-        vuln_contract = self._extract_vulnerable_contract()
-
         # 提取脚本中的变量地址映射
         address_book = self._extract_address_book()
+
+        # 获取被攻击合约信息（缺少注释时可结合地址映射推断）
+        vuln_contract = self._extract_vulnerable_contract(address_book)
 
         # 将外部调用转换为attack_calls格式
         attack_calls = self._convert_external_calls_to_attack_calls(
@@ -1438,8 +1440,8 @@ class AttackScriptParser:
 
         return result.strip()
 
-    def _extract_vulnerable_contract(self) -> Dict:
-        """从注释中提取被攻击合约信息"""
+    def _extract_vulnerable_contract(self, address_book: Optional[Dict[str, str]] = None) -> Dict:
+        """从注释中提取被攻击合约信息，缺省时尝试从调用语句推断"""
         patterns = [
             r'//\s*Vuln(?:erable)?\s+Contract\s*:\s*https?://[^/]+/address/(0x[a-fA-F0-9]{40})',
             r'-\s*Vuln(?:erable)?\s+Contract\s*:\s*https?://[^/]+/address/(0x[a-fA-F0-9]{40})',
@@ -1465,7 +1467,46 @@ class AttackScriptParser:
                 name = self._infer_contract_name(address)
                 return {"address": address, "name": name}
 
+        # 二次回退: 脚本未标注Vuln注释时，从外部调用语句推断目标合约
+        inferred = self._infer_vulnerable_contract_from_calls(address_book or {})
+        if inferred:
+            return inferred
+
         return {"address": None, "name": None}
+
+    def _infer_vulnerable_contract_from_calls(self, address_book: Dict[str, str]) -> Optional[Dict]:
+        """从调用语句推断攻击目标，优先 flash/borrow 等高风险入口"""
+        call_pattern = re.compile(r'(\w+)\.(\w+)\s*(?:\{[^}]*\})?\s*\(')
+        preferred = {'flash', 'flashloan', 'borrow'}
+        ignored_vars = {'msg', 'tx', 'block', 'abi', 'this', 'super', 'address', 'type'}
+
+        candidates = []
+        for match in call_pattern.finditer(self.script_content):
+            var_name = match.group(1)
+            func_name = match.group(2)
+
+            if var_name in ignored_vars:
+                continue
+            if self._should_skip_function(var_name, func_name):
+                continue
+
+            addr = address_book.get(var_name) or self._resolve_address_from_var(var_name)
+            if not addr:
+                continue
+
+            candidates.append((func_name.lower(), var_name, addr.lower()))
+
+        if not candidates:
+            return None
+
+        for func_name, var_name, addr in candidates:
+            if func_name in preferred or func_name.startswith('flash'):
+                logger.debug(f"  从调用语句推断Vulnerable Contract: {var_name}.{func_name} -> {addr}")
+                return {"address": addr, "name": var_name}
+
+        func_name, var_name, addr = candidates[0]
+        logger.debug(f"  从首个外部调用推断Vulnerable Contract: {var_name}.{func_name} -> {addr}")
+        return {"address": addr, "name": var_name}
 
     def _should_skip_function(self, contract_var: str, func_name: str) -> bool:
         """
@@ -2247,7 +2288,7 @@ class AttackScriptParser:
         """
         patterns = [
             # address constant/immutable varName = 0x...
-            rf'address\s+(?:constant|immutable)?\s*{var_name}\s*=\s*(0x[a-fA-F0-9]{{40}})',
+            rf'address\s+(?:public\s+|private\s+|internal\s+)?(?:constant\s+|immutable\s+)?{var_name}\s*=\s*(0x[a-fA-F0-9]{{40}})',
             # IContract varName = IContract(0x...)
             rf'\w+\s+{var_name}\s*=\s*\w+\s*\(\s*(?:payable\s*\()?\s*(0x[a-fA-F0-9]{{40}})',
             # 直接赋值 varName = 0x...

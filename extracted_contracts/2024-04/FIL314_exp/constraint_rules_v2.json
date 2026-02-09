@@ -1,0 +1,62 @@
+{
+  "protocol": "FIL314_exp",
+  "year_month": "2024-04",
+  "vulnerable_contract": {
+    "address": "0xe8a290c6fc6fa6c0b79c9cfae1878d195aeb59af",
+    "name": "FIL314"
+  },
+  "constraints": [],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "14",
+        "before": 20854000000000000000,
+        "after": 5834044047197468,
+        "change_pct": 99.97,
+        "is_new_slot": false
+      },
+      {
+        "slot": "8953338217803204866046628694716147867758827069464214167940010168925137645815",
+        "before": 113631835397830362,
+        "after": 191,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "75973257307432057174558624811006213907274451857738254948930123838991190270032",
+        "before": 999999000000000000000000,
+        "after": 999998999802083986123149,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "58869174802984989314147872423567203002565876878776856032691197321655296912391",
+        "before": 0,
+        "after": 78610867062822,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "75506153327051474587906755573858019282972751592871715030499431892688993766217",
+        "before": 0,
+        "after": 4026087240400,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 6
+  },
+  "attack_metadata": {
+    "loop_count": 6000,
+    "total_calls": 2
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

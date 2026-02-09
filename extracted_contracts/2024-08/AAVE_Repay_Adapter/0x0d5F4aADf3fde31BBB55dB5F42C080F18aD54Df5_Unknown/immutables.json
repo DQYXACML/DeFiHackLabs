@@ -1,0 +1,270 @@
+{
+  "compiler_version": "v0.8.19+commit.7dd6d404",
+  "optimizer": true,
+  "runs": 10000,
+  "evm_version": "paris",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 22284,
+  "values": {
+    "./src/AccessControlledOCR2Aggregator.sol:AccessControlledOCR2Aggregator": [
+      {
+        "label": "2062",
+        "var_name": "./src/OCR2Aggregator.sol:decimals",
+        "offset": 1128,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "628",
+        "var_name": "./src/OCR2Aggregator.sol:minAnswer",
+        "offset": 868,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "628",
+        "var_name": "./src/OCR2Aggregator.sol:minAnswer",
+        "offset": 9861,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "628",
+        "var_name": "./src/OCR2Aggregator.sol:minAnswer",
+        "offset": 15522,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "630",
+        "var_name": "./src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 1303,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "630",
+        "var_name": "./src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 9901,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "630",
+        "var_name": "./src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 15567,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/OCR2Aggregator.sol:OCR2Aggregator": [
+      {
+        "label": "2062",
+        "var_name": "./src/OCR2Aggregator.sol:decimals",
+        "offset": 1097,
+        "length": 32,
+        "value_hex": "0x9216606082015262ffffff909116608082015260a001610341565b61048a7f00",
+        "value_int": "66077211698077330781745639407243885308662839646292508568456170357306375700224",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "628",
+        "var_name": "./src/OCR2Aggregator.sol:minAnswer",
+        "offset": 837,
+        "length": 32,
+        "value_hex": "0x80910390f35b610352610a05565b6040516103419190614b7a565b6103867f00",
+        "value_int": "58152262056150801878938544164616568957104114569952804937507131673595613708032",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "628",
+        "var_name": "./src/OCR2Aggregator.sol:minAnswer",
+        "offset": 8644,
+        "length": 32,
+        "value_hex": "0x61421c565b6000546001600160a01b031633148061226b57506012546040517f",
+        "value_int": "43991153795928247729551015246646754061681316044377040024931927230181353214335",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "628",
+        "var_name": "./src/OCR2Aggregator.sol:minAnswer",
+        "offset": 13627,
+        "length": 32,
+        "value_hex": "0x615192565b6020020151600b5490870363ffffffff9081169250720100000000",
+        "value_int": "44018470907968895685995025266464980696627705810325075296949203322114844655616",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "630",
+        "var_name": "./src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 1289,
+        "length": 32,
+        "value_hex": "0x8152602001610341565b6103867f00000000000000000000ffffffffffffffff",
+        "value_int": "58493902357065997866255522465608711952517154548839821804279770804168628895743",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "630",
+        "var_name": "./src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 8684,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000081526001600160a0",
+        "value_int": "9318616138004914336",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "630",
+        "var_name": "./src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 13672,
+        "length": 32,
+        "value_hex": "0x00909104168102633b9aca00028201801561372d576000601360008787815181",
+        "value_int": "255426840758100419264261019195931979211836381430313896023201282128426914177",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/AccessControlledOCR2Aggregator.sol:AccessControlledOCR2Aggregator": [
+      {
+        "label": "4638",
+        "var_name": "src/OCR2Aggregator.sol:minAnswer",
+        "offset": 868,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4638",
+        "var_name": "src/OCR2Aggregator.sol:minAnswer",
+        "offset": 9861,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4638",
+        "var_name": "src/OCR2Aggregator.sol:minAnswer",
+        "offset": 15522,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value_int": "1",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4640",
+        "var_name": "src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 1303,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4640",
+        "var_name": "src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 9901,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4640",
+        "var_name": "src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 15567,
+        "length": 32,
+        "value_hex": "0x00000000000000000000ffffffffffffffffffffffffffffffffffffffffffff",
+        "value_int": "95780971304118053647396689196894323976171195136475135",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6072",
+        "var_name": "src/OCR2Aggregator.sol:decimals",
+        "offset": 1128,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/OCR2Aggregator.sol:OCR2Aggregator": [
+      {
+        "label": "4638",
+        "var_name": "src/OCR2Aggregator.sol:minAnswer",
+        "offset": 837,
+        "length": 32,
+        "value_hex": "0x80910390f35b610352610a05565b6040516103419190614b7a565b6103867f00",
+        "value_int": "58152262056150801878938544164616568957104114569952804937507131673595613708032",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4638",
+        "var_name": "src/OCR2Aggregator.sol:minAnswer",
+        "offset": 8644,
+        "length": 32,
+        "value_hex": "0x61421c565b6000546001600160a01b031633148061226b57506012546040517f",
+        "value_int": "43991153795928247729551015246646754061681316044377040024931927230181353214335",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4638",
+        "var_name": "src/OCR2Aggregator.sol:minAnswer",
+        "offset": 13627,
+        "length": 32,
+        "value_hex": "0x615192565b6020020151600b5490870363ffffffff9081169250720100000000",
+        "value_int": "44018470907968895685995025266464980696627705810325075296949203322114844655616",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4640",
+        "var_name": "src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 1289,
+        "length": 32,
+        "value_hex": "0x8152602001610341565b6103867f00000000000000000000ffffffffffffffff",
+        "value_int": "58493902357065997866255522465608711952517154548839821804279770804168628895743",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4640",
+        "var_name": "src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 8684,
+        "length": 32,
+        "value_hex": "0x00000000000000000000000000000000000000000000000081526001600160a0",
+        "value_int": "9318616138004914336",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "4640",
+        "var_name": "src/OCR2Aggregator.sol:maxAnswer",
+        "offset": 13672,
+        "length": 32,
+        "value_hex": "0x00909104168102633b9aca00028201801561372d576000601360008787815181",
+        "value_int": "255426840758100419264261019195931979211836381430313896023201282128426914177",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6072",
+        "var_name": "src/OCR2Aggregator.sol:decimals",
+        "offset": 1097,
+        "length": 32,
+        "value_hex": "0x9216606082015262ffffff909116608082015260a001610341565b61048a7f00",
+        "value_int": "66077211698077330781745639407243885308662839646292508568456170357306375700224",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

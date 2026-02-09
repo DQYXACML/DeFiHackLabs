@@ -5,14 +5,13 @@ pragma solidity >=0.8.13;
 
 import { IStrategy } from "./interfaces/IStrategy.sol";
 import { StrategyMigrator } from "./StrategyMigrator.sol";
-import { AccessControl } from "../../utils-v2/src/access/AccessControl.sol";
-import { SafeERC20Namer } from "../../utils-v2/src/token/SafeERC20Namer.sol";
-import { MinimalTransferHelper } from "../../utils-v2/src/token/MinimalTransferHelper.sol";
-import { IERC20 } from "../../utils-v2/src/token/IERC20.sol";
-import { ERC20Rewards } from "../../utils-v2/src/token/ERC20Rewards.sol";
-import { IFYToken } from "../../vault-v2/src/interfaces/IFYToken.sol";
-import { IPool } from "../../yieldspace-tv/src/interfaces/IPool.sol";
-import {IRouter} from "../../../../../../../../src/Interface/IRouter.sol";
+import { AccessControl } from "@yield-protocol/utils-v2/src/access/AccessControl.sol";
+import { SafeERC20Namer } from "@yield-protocol/utils-v2/src/token/SafeERC20Namer.sol";
+import { MinimalTransferHelper } from "@yield-protocol/utils-v2/src/token/MinimalTransferHelper.sol";
+import { IERC20 } from "@yield-protocol/utils-v2/src/token/IERC20.sol";
+import { ERC20Rewards } from "@yield-protocol/utils-v2/src/token/ERC20Rewards.sol";
+import { IFYToken } from "@yield-protocol/vault-v2/src/interfaces/IFYToken.sol";
+import { IPool } from "@yield-protocol/yieldspace-tv/src/interfaces/IPool.sol";
 
 /// @dev The Strategy contract allows liquidity providers to provide liquidity in yieldspace
 /// pool tokens and receive strategy tokens that represent a stake in a YieldSpace pool contract.
@@ -22,19 +21,7 @@ import {IRouter} from "../../../../../../../../src/Interface/IRouter.sol";
 /// The strategy can also `eject` from a Pool before maturity. Any fyToken obtained will be available
 /// to be bought by anyone at face value. If the pool tokens can't be burned, they will be ejected
 /// and the strategy can be recapitalized.
-contract Strategy is AccessControl, ERC20Rewards, StrategyMigrator {
-    // 防火墙路由器
-    IRouter public immutable firewall;
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
-        }
-        _;
-    }
-
- // TODO: I'd like to import IStrategy
+contract Strategy is AccessControl, ERC20Rewards, StrategyMigrator { // TODO: I'd like to import IStrategy
     enum State {DEPLOYED, DIVESTED, INVESTED, EJECTED, DRAINED}
     using MinimalTransferHelper for IERC20;
     using MinimalTransferHelper for IFYToken;
@@ -56,11 +43,12 @@ contract Strategy is AccessControl, ERC20Rewards, StrategyMigrator {
     uint256 public poolCached;                   // Pool tokens held by the strategy
     uint256 public fyTokenCached;                // In emergencies, the strategy can keep fyToken
 
-    constructor(address _firewall, string memory name_, string memory symbol_, IFYToken fyToken_) ERC20Rewards(name_, symbol_, SafeERC20Namer.tokenDecimals(address(fyToken_)))
+    constructor(string memory name_, string memory symbol_, IFYToken fyToken_)
+        ERC20Rewards(name_, symbol_, SafeERC20Namer.tokenDecimals(address(fyToken_)))
         StrategyMigrator(
             IERC20(fyToken_.underlying()),
-            fyToken_){
-        firewall = IRouter(_firewall);
+            fyToken_)
+    {
         // Deploy with a seriesId_ matching the migrating strategy if using the migration feature
         // Deploy with any series matching the desired base in any other case
         fyToken = fyToken_;

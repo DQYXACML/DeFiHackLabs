@@ -1,0 +1,180 @@
+{
+  "protocol": "SQUID_exp",
+  "year_month": "2024-04",
+  "vulnerable_contract": {
+    "address": "0x36696169c63e42cd08ce11f5deebbcebae652050",
+    "name": "pool"
+  },
+  "constraints": [
+    {
+      "function": "flash",
+      "signature": "flash(address,uint256,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x36696169c63e42cd08ce11f5deebbcebae652050"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,uint256,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "1 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "0"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,uint256,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "borrow_amount > 705712253723891446302894260047425374687510244222182621184",
+        "semantics": "High-frequency operation: parameter affects slot_4 with estimated 57848002376559542944456188188688384 iterations (capped)",
+        "variables": {
+          "borrow_amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "borrow_amount"
+          },
+          "slot_4": {
+            "source": "storage",
+            "slot": "4",
+            "type": "uint256",
+            "semantic_name": "slot_4",
+            "before_value": 2352374179079638205385335904965520772632495710881929592004,
+            "after_value": 2930854202845233593273072737599526732107695710881929592004
+          }
+        },
+        "danger_condition": "borrow_amount >= 2117136761171674426020968711902522770686430235199209996288",
+        "safe_condition": "borrow_amount <= 705712253723891446302894260047425374687510244222182621184",
+        "threshold_value": 705712253723891446302894260047425374687510244222182621184
+      },
+      "analysis": {
+        "state_value": 2352374179079638205385335904965520772632495710881929592004,
+        "threshold": 705712253723891461615600771489656231789748713264578877601,
+        "coefficient": 0.3,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代57848002376559542944456188188688384次超过上限10000，使用保守阈值705712253723891446302894260047425374687510244222182621184",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 5.784800237655954e+34,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "flash",
+      "signature": "flash(address,uint256,uint256,bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "3 length in [2,2]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "\"\""
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bytes",
+            "value_expr": "\"\""
+          }
+        },
+        "range": {
+          "min_len": 2,
+          "max_len": 2
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "4",
+        "before": 2352374179079638205385335904965520772632495710881929592004,
+        "after": 2930854202845233593273072737599526732107695710881929592004,
+        "change_pct": 24.59,
+        "is_new_slot": false
+      },
+      {
+        "slot": "3",
+        "before": 335704356958562459817374202780764739,
+        "after": 335891995138673334487612858186389030,
+        "change_pct": 0.06,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 2
+  },
+  "attack_metadata": {
+    "loop_count": 8000,
+    "total_calls": 7
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

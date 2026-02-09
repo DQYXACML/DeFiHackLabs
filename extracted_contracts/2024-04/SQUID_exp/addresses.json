@@ -38,12 +38,16 @@
     "source": "static",
     "context": "IERC20 SQUID_1 = IERC20(0x87230146E138d3F296a9a77e497A2A83012e9Bc5)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "SQUID",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IERC20"
+      "SQUID_1",
+      "SQUID",
+      "IERC20",
+      "squid",
+      "ISQUID"
     ]
   },
   {
@@ -53,12 +57,16 @@
     "source": "static",
     "context": "IERC20 SQUID_2 = IERC20(0xFAfb7581a65A1f554616Bf780fC8a8aCd2Ab8c9b)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "SQUID",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IERC20"
+      "SQUID_2",
+      "SQUID",
+      "IERC20",
+      "squid",
+      "ISQUID"
     ]
   },
   {
@@ -73,6 +81,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "SQUID_SWAP",
       "IsquidSwap"
     ]
   },
@@ -88,6 +97,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "pool",
       "Uni_Pair_V3"
     ]
   },
@@ -98,12 +108,17 @@
     "source": "static",
     "context": "Uni_Pair_V2 wbnb_atm = Uni_Pair_V2(0xAea45F6d5801Fc716C654872Eb1E2235472A18B9)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "Cake-LP",
+    "decimals": 18,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "Uni_Pair_V2"
+      "wbnb_atm",
+      "Cake-LP",
+      "Uni_Pair_V2",
+      "cake-lp",
+      "CAKE-LP",
+      "ICake-LP"
     ]
   },
   {
@@ -118,6 +133,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "router",
       "Uni_Router_V2"
     ]
   },
@@ -149,7 +165,7 @@
     "decimals": 0,
     "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x683c425D917E8fEf34c8bbbeab57246Dd2a8B718",
@@ -198,6 +214,6 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   }
 ]

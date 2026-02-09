@@ -2,10 +2,9 @@
 pragma solidity ^0.8.13;
 
 import {IStrategyMigrator} from "./interfaces/IStrategyMigrator.sol";
-import {IFYToken} from "../../vault-v2/src/interfaces/IFYToken.sol";
-import {IERC20} from "../../utils-v2/src/token/IERC20.sol";
-import {ERC20Permit} from "../../utils-v2/src/token/ERC20Permit.sol";
-import {IRouter} from "../../../../../../../../src/Interface/IRouter.sol";
+import {IFYToken} from "@yield-protocol/vault-v2/src/interfaces/IFYToken.sol";
+import {IERC20} from "@yield-protocol/utils-v2/src/token/IERC20.sol";
+import {ERC20Permit} from "@yield-protocol/utils-v2/src/token/ERC20Permit.sol";
 
 
 /// @dev The Migrator contract poses as a Pool to receive all assets from a Strategy
@@ -14,18 +13,6 @@ import {IRouter} from "../../../../../../../../src/Interface/IRouter.sol";
 /// There will be no state changes on pool or fyToken.
 /// TODO: For this to work, the implementing class must inherit from ERC20 and make sure that totalSupply is not zero after the `mint` call.
 abstract contract StrategyMigrator is IStrategyMigrator {
-    // 防火墙路由器
-    IRouter public immutable firewall;
-
-    // 防火墙保护修饰符
-    modifier firewallProtected() {
-        if (address(firewall) != address(0)) {
-            firewall.executeWithDetect(msg.data);
-        }
-        _;
-    }
-
-
 
     /// Mock pool base - Must match that of the calling strategy
     IERC20 public base;
@@ -36,8 +23,7 @@ abstract contract StrategyMigrator is IStrategyMigrator {
     /// Mock pool maturity - Its contents don't matter
     uint32 public maturity;
 
-    constructor(address _firewall, IERC20 base_, IFYToken fyToken_) {
-        firewall = IRouter(_firewall);
+    constructor(IERC20 base_, IFYToken fyToken_) {
         base = base_;
         fyToken = fyToken_;
     }

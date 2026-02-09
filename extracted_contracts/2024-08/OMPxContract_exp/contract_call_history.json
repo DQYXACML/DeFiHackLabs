@@ -1,0 +1,452 @@
+{
+  "protocol": "OMPxContract_exp",
+  "contract_address": "0x09a80172ed7335660327cd664876b5df6fe06108",
+  "target_functions": [
+    "purchase",
+    "buyBack"
+  ],
+  "tx_count": 20,
+  "missing_target_functions": [],
+  "txs": [
+    {
+      "hash": "0x4b392dbb158db09935f8e87100e16b3a83a6edc75604f52f4fa35ac9736c67df",
+      "from": "0xe2facbebbe29a94a17590f9a56e721fb7d610795",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 15606396,
+      "time": "2022-09-24T23:07:23Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 998999999999999999001
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 2510639429054
+        }
+      ]
+    },
+    {
+      "hash": "0x22a0240c66fb95ee114819dc42f8c3a3f34f1b6e0908537490cd7fdb3deb3aac",
+      "from": "0xe2facbebbe29a94a17590f9a56e721fb7d610795",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 15606313,
+      "time": "2022-09-24T22:50:35Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 999999999999999999
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 2069983528661
+        }
+      ]
+    },
+    {
+      "hash": "0x407117bf8b3e974d3a751ee525f606a4c60a3a62cbe41e2c8e5510106e8a44d7",
+      "from": "0xe2facbebbe29a94a17590f9a56e721fb7d610795",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 15606296,
+      "time": "2022-09-24T22:47:11Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 1000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 2510643584545
+        }
+      ]
+    },
+    {
+      "hash": "0xccc5c75b838e40f0003e5a99853926ab2e624abd2a0de84b3aa5ee079834f3e9",
+      "from": "0xe2facbebbe29a94a17590f9a56e721fb7d610795",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "10000000000000000",
+      "blockNumber": 15048324,
+      "time": "2022-06-30T03:20:34Z",
+      "function": "purchase",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToPurchase",
+          "type": "uint256",
+          "value": 1000000000000000000000
+        },
+        {
+          "name": "maxPrice",
+          "type": "uint256",
+          "value": 6919499173236
+        }
+      ]
+    },
+    {
+      "hash": "0x7c93689b9a1f49620e78137080dcd7df535e7cc643361e863ecd643ee75de0ec",
+      "from": "0x32fc085cf787868bbff0f6bb90631f897d58ab81",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 14173838,
+      "time": "2022-02-09T19:47:56Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 900
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 2508697934514
+        }
+      ]
+    },
+    {
+      "hash": "0x3cc7270413c31d53ee6d7ba687b16421735a3ef5866eaf527a758915faba1d63",
+      "from": "0xdbf0e8e739ad2c51a5398c48e69be2bc020c4a73",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 14169528,
+      "time": "2022-02-09T03:45:32Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 62000000000000000000000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 2579163050829
+        }
+      ]
+    },
+    {
+      "hash": "0xce545c611a8448e464a2556f97acc7adb866041c47128dee61f10c001ffab4df",
+      "from": "0xeb79db7b4ce44bfb549104cafc8f51cc93a686fb",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 14169303,
+      "time": "2022-02-09T02:54:45Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 574000000000000000000000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 3452411332043
+        }
+      ]
+    },
+    {
+      "hash": "0x529ca617a2edbb47d4a74f0359673fca7692253e5c0d78c80c8222babcd94550",
+      "from": "0xeb79db7b4ce44bfb549104cafc8f51cc93a686fb",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 14169289,
+      "time": "2022-02-09T02:52:33Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 574000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 3452412332043
+        }
+      ]
+    },
+    {
+      "hash": "0x07d1f112a6508278cfb7661de4c86ec10473e618e2c14d092741d153b697738d",
+      "from": "0xaa8df4df95af3e5c65c9150237c7d02a4e802145",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 8048567,
+      "time": "2019-06-28T20:44:01Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 5000000000000000000000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 3425108643000
+        }
+      ]
+    },
+    {
+      "hash": "0x834627432fe01267f424880dd90da839daaa9f9759a6741982bd869ff6796ff2",
+      "from": "0x8ffba7fb87e3405ce4239d308c033b8e3fba2106",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 7458640,
+      "time": "2019-03-28T18:39:39Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 1000000000000000000000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 3426618492000
+        }
+      ]
+    },
+    {
+      "hash": "0xb0e01ca6f1be0a4966be39c97d2aa532252e8e978ea384558b6dff2f2216e44b",
+      "from": "0x2d5bcdf685949507f9a392f78e3189ab3ad0eba0",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "349543247131100",
+      "blockNumber": 7418994,
+      "time": "2019-03-22T14:09:50Z",
+      "function": "purchase",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToPurchase",
+          "type": "uint256",
+          "value": 50000000000000000000
+        },
+        {
+          "name": "maxPrice",
+          "type": "uint256",
+          "value": 6990864942622
+        }
+      ]
+    },
+    {
+      "hash": "0x4d16da316c5230dda692b7e2eb5f8c3a29a057e2d245b93e713a1977429d0efb",
+      "from": "0x2d5bcdf685949507f9a392f78e3189ab3ad0eba0",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "699086494262200",
+      "blockNumber": 7418991,
+      "time": "2019-03-22T14:09:22Z",
+      "function": "purchase",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToPurchase",
+          "type": "uint256",
+          "value": 100000000000000000000
+        },
+        {
+          "name": "maxPrice",
+          "type": "uint256",
+          "value": 6990864942622
+        }
+      ]
+    },
+    {
+      "hash": "0xe7170ec1ff0762a3d1c4ed57911b21a169028f007fa8aa6e8f3a9662fc9bf46f",
+      "from": "0xfb05b4c31235ed2119ee356b714c68e2f4a276fc",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 7411131,
+      "time": "2019-03-21T08:40:44Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 490000000000000000000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 3426955785000
+        }
+      ]
+    },
+    {
+      "hash": "0x486f808246bb63ce444aaac41959aff4fbeda4567e7a97972b177ad76a9e6906",
+      "from": "0x4a9ae0c4d82ce24b94f07f7fc4024c970eea9284",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 7242340,
+      "time": "2019-02-19T23:54:45Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 1000000000000000000000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 3428466426000
+        }
+      ]
+    },
+    {
+      "hash": "0x1f6e09e038b9d2d5db2fd7e073141d5619e4adc15cbb69b860f07e371f6edf22",
+      "from": "0x37296480121603169b62eced0ea5a89add48d68e",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "6919499173236000",
+      "blockNumber": 7217830,
+      "time": "2019-02-14T03:43:57Z",
+      "function": "purchase",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToPurchase",
+          "type": "uint256",
+          "value": 1000000000000000000000
+        },
+        {
+          "name": "maxPrice",
+          "type": "uint256",
+          "value": 6919499173236
+        }
+      ]
+    },
+    {
+      "hash": "0xd17bfa62d774787d97b391ec0833d462616fd34e77736a04f1fef6eb099d24ab",
+      "from": "0xe6c34bf92be592e4f9155476743e05c5f4dc97f3",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 7099478,
+      "time": "2019-01-20T17:15:09Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 10000000000000000000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 3425509692000
+        }
+      ]
+    },
+    {
+      "hash": "0x19ee1b8bd2c17e377a979c8d7a3650ca3c79d4982f3f2c2946abebabd18e5b40",
+      "from": "0xe6c34bf92be592e4f9155476743e05c5f4dc97f3",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 7099424,
+      "time": "2019-01-20T17:02:16Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 200000000000000000000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 3251755683000
+        }
+      ]
+    },
+    {
+      "hash": "0x025e1a405740dc21e473e566373a8fa6070f4f8a191d3649bd5361ad7524d81a",
+      "from": "0x499116adb41f8cb8d46431f9e180af03c27b48b0",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "0",
+      "blockNumber": 7046482,
+      "time": "2019-01-11T05:58:31Z",
+      "function": "buyBack",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToBuyBack",
+          "type": "uint256",
+          "value": 1000000000000000000000
+        },
+        {
+          "name": "minPrice",
+          "type": "uint256",
+          "value": 3427321590000
+        }
+      ]
+    },
+    {
+      "hash": "0xea0763f51aafb387dc50d3aadb3217925f82fe289a376b684ce64afe07b7a35c",
+      "from": "0x87bdd579703fd6f7c0baafa81a37692f464bd444",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "6904322086637000",
+      "blockNumber": 7014966,
+      "time": "2019-01-05T14:34:06Z",
+      "function": "purchase",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToPurchase",
+          "type": "uint256",
+          "value": 1000000000000000000000
+        },
+        {
+          "name": "maxPrice",
+          "type": "uint256",
+          "value": 6904322086637
+        }
+      ]
+    },
+    {
+      "hash": "0x722c5754ab250ace8f80712a9f411ce6e72c1427caefeee3b70389ed219b737b",
+      "from": "0x87bdd579703fd6f7c0baafa81a37692f464bd444",
+      "to": "0x09a80172ed7335660327cd664876b5df6fe06108",
+      "value": "6904322086637000",
+      "blockNumber": 7013895,
+      "time": "2019-01-05T10:07:50Z",
+      "function": "purchase",
+      "is_injected_function": true,
+      "params": [
+        {
+          "name": "tokensToPurchase",
+          "type": "uint256",
+          "value": 1000000000000000000000
+        },
+        {
+          "name": "maxPrice",
+          "type": "uint256",
+          "value": 6904322086637
+        }
+      ]
+    }
+  ]
+}

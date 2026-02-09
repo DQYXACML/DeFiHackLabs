@@ -1,0 +1,270 @@
+{
+  "compiler_version": "v0.8.21+commit.d9974bed",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "paris",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 1666,
+  "values": {
+    "./contracts/PriceCapAdapterStable.sol:PriceCapAdapterStable": [
+      {
+        "label": "168",
+        "var_name": "./contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 192,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "168",
+        "var_name": "./contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 685,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "168",
+        "var_name": "./contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 941,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "168",
+        "var_name": "./contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 1221,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "172",
+        "var_name": "./contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 322,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "172",
+        "var_name": "./contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 377,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "172",
+        "var_name": "./contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 521,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/contracts/PriceCapAdapterStable.sol:PriceCapAdapterStable": [
+      {
+        "label": "6591",
+        "var_name": "./src/contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 192,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6591",
+        "var_name": "./src/contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 685,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6591",
+        "var_name": "./src/contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 941,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6591",
+        "var_name": "./src/contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 1221,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6595",
+        "var_name": "./src/contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 322,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6595",
+        "var_name": "./src/contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 377,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "6595",
+        "var_name": "./src/contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 521,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/PriceCapAdapterStable.sol:PriceCapAdapterStable": [
+      {
+        "label": "7051",
+        "var_name": "contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 192,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7051",
+        "var_name": "contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 685,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7051",
+        "var_name": "contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 941,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7051",
+        "var_name": "contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 1221,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7055",
+        "var_name": "contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 322,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7055",
+        "var_name": "contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 377,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7055",
+        "var_name": "contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 521,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/contracts/PriceCapAdapterStable.sol:PriceCapAdapterStable": [
+      {
+        "label": "13474",
+        "var_name": "src/contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 192,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13474",
+        "var_name": "src/contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 685,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13474",
+        "var_name": "src/contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 941,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13474",
+        "var_name": "src/contracts/PriceCapAdapterStable.sol:ASSET_TO_USD_AGGREGATOR",
+        "offset": 1221,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000003e7d1eab13ad0104d2750b8863b489d65364e32d",
+        "value_int": "356747692523910694623919067480585070650524492589",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13478",
+        "var_name": "src/contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 322,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13478",
+        "var_name": "src/contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 377,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "13478",
+        "var_name": "src/contracts/PriceCapAdapterStable.sol:ACL_MANAGER",
+        "offset": 521,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

@@ -41,7 +41,54 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "VULN_VAULT_ADDRESS",
+      "vulnVault",
       "Vulnerable_Contract"
+    ]
+  },
+  {
+    "address": "0x4300000000000000000000000000000000000004",
+    "name": "WETH_ADDRESS",
+    "chain": "blast",
+    "source": "static",
+    "context": "address private constant WETH_ADDRESS = 0x4300000000000000000000000000000000000004",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH_ADDRESS"
+    ]
+  },
+  {
+    "address": "0x86cba7808127d76deaC14ec26eF6000Aa78b2eBb",
+    "name": "RYOLO_ADDRESS",
+    "chain": "blast",
+    "source": "static",
+    "context": "address private constant RYOLO_ADDRESS = 0x86cba7808127d76deaC14ec26eF6000Aa78b2eBb",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "RYOLO_ADDRESS"
+    ]
+  },
+  {
+    "address": "0xb66585C4E460D49154D50325CE60aDC44bc900E9",
+    "name": "HOLDER_TO_TAKE_FROM",
+    "chain": "blast",
+    "source": "static",
+    "context": "address private constant HOLDER_TO_TAKE_FROM = 0xb66585C4E460D49154D50325CE60aDC44bc900E9",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "HOLDER_TO_TAKE_FROM"
     ]
   },
   {
@@ -55,7 +102,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xdC4A9779D6084C1ab3e815B67eD5e6780cCF4d90",
@@ -68,20 +115,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x86cba7808127d76deaC14ec26eF6000Aa78b2eBb",
-    "name": null,
-    "chain": "blast",
-    "source": "dynamic",
-    "context": "called with gas 34582",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
@@ -94,19 +128,6 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0xb66585C4E460D49154D50325CE60aDC44bc900E9",
-    "name": null,
-    "chain": "blast",
-    "source": "dynamic",
-    "context": "trace reference",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   }
 ]

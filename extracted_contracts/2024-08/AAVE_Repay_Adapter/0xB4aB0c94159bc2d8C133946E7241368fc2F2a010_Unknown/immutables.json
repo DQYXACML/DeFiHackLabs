@@ -1,0 +1,522 @@
+{
+  "compiler_version": "v0.8.21+commit.d9974bed",
+  "optimizer": true,
+  "runs": 200,
+  "evm_version": "paris",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 3339,
+  "values": {
+    "./contracts/WstETHPriceCapAdapter.sol:WstETHPriceCapAdapter": [
+      {
+        "label": "190",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:BASE_TO_USD_AGGREGATOR",
+        "offset": 671,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "value_int": "544110644340816939372220746866710871299132720153",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "190",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:BASE_TO_USD_AGGREGATOR",
+        "offset": 853,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "value_int": "544110644340816939372220746866710871299132720153",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "194",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 575,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "194",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 1311,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "194",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 1455,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "197",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:RATIO_PROVIDER",
+        "offset": 710,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "value_int": "996101235222674412020337938588541139382869425796",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "197",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:RATIO_PROVIDER",
+        "offset": 1626,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "value_int": "996101235222674412020337938588541139382869425796",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "200",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:DECIMALS",
+        "offset": 366,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "200",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:DECIMALS",
+        "offset": 420,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "203",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 536,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "203",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 1045,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "203",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 1668,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "206",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:MINIMUM_SNAPSHOT_DELAY",
+        "offset": 299,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000093a80",
+        "value_int": "604800",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "206",
+        "var_name": "./contracts/PriceCapAdapterBase.sol:MINIMUM_SNAPSHOT_DELAY",
+        "offset": 1980,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000093a80",
+        "value_int": "604800",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./src/contracts/WstETHPriceCapAdapter.sol:WstETHPriceCapAdapter": [
+      {
+        "label": "7027",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:BASE_TO_USD_AGGREGATOR",
+        "offset": 671,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "value_int": "544110644340816939372220746866710871299132720153",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7027",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:BASE_TO_USD_AGGREGATOR",
+        "offset": 853,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "value_int": "544110644340816939372220746866710871299132720153",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7031",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 575,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7031",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 1311,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7031",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 1455,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7034",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:RATIO_PROVIDER",
+        "offset": 710,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "value_int": "996101235222674412020337938588541139382869425796",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7034",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:RATIO_PROVIDER",
+        "offset": 1626,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "value_int": "996101235222674412020337938588541139382869425796",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7037",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:DECIMALS",
+        "offset": 366,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7037",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:DECIMALS",
+        "offset": 420,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7040",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 536,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7040",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 1045,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7040",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 1668,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7043",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:MINIMUM_SNAPSHOT_DELAY",
+        "offset": 299,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000093a80",
+        "value_int": "604800",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7043",
+        "var_name": "./src/contracts/PriceCapAdapterBase.sol:MINIMUM_SNAPSHOT_DELAY",
+        "offset": 1980,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000093a80",
+        "value_int": "604800",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/WstETHPriceCapAdapter.sol:WstETHPriceCapAdapter": [
+      {
+        "label": "7911",
+        "var_name": "contracts/PriceCapAdapterBase.sol:BASE_TO_USD_AGGREGATOR",
+        "offset": 671,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "value_int": "544110644340816939372220746866710871299132720153",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7911",
+        "var_name": "contracts/PriceCapAdapterBase.sol:BASE_TO_USD_AGGREGATOR",
+        "offset": 853,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "value_int": "544110644340816939372220746866710871299132720153",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7915",
+        "var_name": "contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 575,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7915",
+        "var_name": "contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 1311,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7915",
+        "var_name": "contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 1455,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7918",
+        "var_name": "contracts/PriceCapAdapterBase.sol:RATIO_PROVIDER",
+        "offset": 710,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "value_int": "996101235222674412020337938588541139382869425796",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7918",
+        "var_name": "contracts/PriceCapAdapterBase.sol:RATIO_PROVIDER",
+        "offset": 1626,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "value_int": "996101235222674412020337938588541139382869425796",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7921",
+        "var_name": "contracts/PriceCapAdapterBase.sol:DECIMALS",
+        "offset": 366,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7921",
+        "var_name": "contracts/PriceCapAdapterBase.sol:DECIMALS",
+        "offset": 420,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7924",
+        "var_name": "contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 536,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7924",
+        "var_name": "contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 1045,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7924",
+        "var_name": "contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 1668,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7927",
+        "var_name": "contracts/PriceCapAdapterBase.sol:MINIMUM_SNAPSHOT_DELAY",
+        "offset": 299,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000093a80",
+        "value_int": "604800",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "7927",
+        "var_name": "contracts/PriceCapAdapterBase.sol:MINIMUM_SNAPSHOT_DELAY",
+        "offset": 1980,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000093a80",
+        "value_int": "604800",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/contracts/WstETHPriceCapAdapter.sol:WstETHPriceCapAdapter": [
+      {
+        "label": "14748",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:BASE_TO_USD_AGGREGATOR",
+        "offset": 671,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "value_int": "544110644340816939372220746866710871299132720153",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14748",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:BASE_TO_USD_AGGREGATOR",
+        "offset": 853,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "value_int": "544110644340816939372220746866710871299132720153",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14752",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 575,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14752",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 1311,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14752",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:ACL_MANAGER",
+        "offset": 1455,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000c2aacf6553d20d1e9d78e365aaba8032af9c85b0",
+        "value_int": "1111353402946698579108476990992763831943851443632",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14755",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:RATIO_PROVIDER",
+        "offset": 710,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "value_int": "996101235222674412020337938588541139382869425796",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14755",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:RATIO_PROVIDER",
+        "offset": 1626,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "value_int": "996101235222674412020337938588541139382869425796",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14758",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:DECIMALS",
+        "offset": 366,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14758",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:DECIMALS",
+        "offset": 420,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "value_int": "8",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14761",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 536,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14761",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 1045,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14761",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:RATIO_DECIMALS",
+        "offset": 1668,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value_int": "18",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14764",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:MINIMUM_SNAPSHOT_DELAY",
+        "offset": 299,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000093a80",
+        "value_int": "604800",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "14764",
+        "var_name": "src/contracts/PriceCapAdapterBase.sol:MINIMUM_SNAPSHOT_DELAY",
+        "offset": 1980,
+        "length": 32,
+        "value_hex": "0x0000000000000000000000000000000000000000000000000000000000093a80",
+        "value_int": "604800",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "protocol": "HedgeyFinance_exp",
+  "year_month": "2024-04",
+  "vulnerable_contract": {
+    "address": "0xBc452fdC8F851d7c5B72e1Fe74DFB63bb793D511",
+    "name": "HedgeyFinance"
+  },
+  "constraints": [
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(address,address[],uint256[],bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address[]",
+            "value_expr": "tokens"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(address,address[],uint256[],bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "capped_array",
+        "expression": "2 elements in [1305000000000,1305000000000]",
+        "semantics": "Restrict numeric array elements to observed range",
+        "attack_values": [
+          1305000000000
+        ],
+        "range": {
+          "min": 1305000000000,
+          "max": 1305000000000
+        },
+        "variables": {
+          "values": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256[]",
+            "value_expr": "amounts"
+          }
+        },
+        "len_range": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Numeric array bounded by observed values",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "flashLoan",
+      "signature": "flashLoan(address,address[],uint256[],bytes)",
+      "attack_pattern": "flashloan_attack",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "3 length in [2,2]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "\"\""
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bytes",
+            "value_expr": "\"\""
+          }
+        },
+        "range": {
+          "min_len": 2,
+          "max_len": 2
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "transferFrom",
+      "signature": "transferFrom(address,address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xbc452fdc8f851d7c5b72e1fe74dfb63bb793d511"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(HedgeyFinance)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transferFrom",
+      "signature": "transferFrom(address,address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "1 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xbc452fdc8f851d7c5b72e1fe74dfb63bb793d511"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "address",
+            "value_expr": "address(this)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transferFrom",
+      "signature": "transferFrom(address,address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          1305000000000,
+          1303910120000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "HedgeyFinance_balance"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 1303910120000,
+          "max": 1305000000000
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xbc452fdc8f851d7c5b72e1fe74dfb63bb793d511"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(HedgeyFinance)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "approve",
+      "signature": "approve(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          1305000000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "loan"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 1305000000000,
+          "max": 1305000000000
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "createLockedCampaign",
+      "signature": "createLockedCampaign(bytes16,Campaign,ClaimLockup,Donation)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "0 length in [16,16]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x00000000000000000000000000000001"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "bytes16",
+            "value_expr": "campaign_id"
+          }
+        },
+        "range": {
+          "min_len": 16,
+          "max_len": 16
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "cancelCampaign",
+      "signature": "cancelCampaign(bytes16)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "0 length in [16,16]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x00000000000000000000000000000001"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "bytes16",
+            "value_expr": "campaign_id"
+          }
+        },
+        "range": {
+          "min_len": 16,
+          "max_len": 16
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "0 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xba12222222228d8ba445958a75a0704d566bf2c8"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "address",
+            "value_expr": "address(BalancerVault)"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transfer",
+      "signature": "transfer(address,uint256)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          1305000000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "loan"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 1305000000000,
+          "max": 1305000000000
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "47641547386848826537590095757326542042342274734919655646192970356883622989563",
+        "before": 1303910120000,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "68181106592176756115354593227515007711191529574137226232362340062763682744724",
+        "before": 1305000000000,
+        "after": 1089880000,
+        "change_pct": 99.92,
+        "is_new_slot": false
+      },
+      {
+        "slot": "56522839540691169057613967758777148022649144153718075172029520304989781422879",
+        "before": 0,
+        "after": 1303910120000,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "110162997555976872826844233347028138945178733694896414162471604121427216089410",
+        "before": 0,
+        "after": 1,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "34818966274568848417945697972117064349659819536717817144469989389215420313205",
+        "before": 0,
+        "after": 1,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 5
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 6
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

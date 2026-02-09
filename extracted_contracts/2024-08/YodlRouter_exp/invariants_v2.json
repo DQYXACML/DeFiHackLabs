@@ -1,0 +1,55 @@
+{
+  "project": "YodlRouter_exp",
+  "protocol_type": "unknown",
+  "invariants": [
+    {
+      "id": "PATTERN_flash_change_001",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 5.0",
+      "threshold": 5.0,
+      "severity": "critical",
+      "contracts": [
+        "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "40226549229576280186288884461007683697683156381046293517882284572523656760074",
+          "threshold": 5.0,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    }
+  ],
+  "statistics": {
+    "total_invariants": 1,
+    "by_category": {
+      "bounded_value": 1
+    },
+    "by_severity": {
+      "critical": 1
+    }
+  },
+  "errors": [],
+  "protocol_confidence": 0.0,
+  "semantic_mapping_coverage": 0.0,
+  "state_changes": {
+    "contracts_changed": 2,
+    "slots_changed": 9,
+    "extreme_changes": 5
+  },
+  "attack_patterns": [
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    }
+  ]
+}

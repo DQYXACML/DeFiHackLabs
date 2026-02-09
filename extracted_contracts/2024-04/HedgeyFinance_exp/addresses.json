@@ -41,6 +41,8 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "IClaimCampaigns",
+      "HedgeyFinance",
       "Vulnerable_Contract"
     ]
   },
@@ -56,6 +58,7 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "BalancerVault",
       "IBalancerVault"
     ]
   },
@@ -66,12 +69,15 @@
     "source": "static",
     "context": "IERC20 private constant USDC = IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
     "semantic_type": "unknown",
     "aliases": [
-      "IERC20"
+      "USDC",
+      "IERC20",
+      "usdc",
+      "IUSDC"
     ]
   },
   {
@@ -81,11 +87,11 @@
     "source": "dynamic",
     "context": "called with gas 2553",
     "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
@@ -98,7 +104,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496",
@@ -111,7 +117,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xce04f3b9b2dfc43b1d1e78376db74a3b32c0a78d",
@@ -124,7 +130,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x08e5218da97ab939144e67510d646e499712fb36",
@@ -137,6 +143,19 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
+  },
+  {
+    "address": "0x800c32eaa2a6c93cf4cb51794450ed77fbfbb172",
+    "name": "Unknown_Implementation",
+    "chain": "mainnet",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

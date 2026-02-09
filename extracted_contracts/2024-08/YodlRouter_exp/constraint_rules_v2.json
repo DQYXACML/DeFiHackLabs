@@ -1,0 +1,213 @@
+{
+  "protocol": "YodlRouter_exp",
+  "year_month": "2024-08",
+  "vulnerable_contract": {
+    "address": "0xe3a0bc3483ae5a04db7ef2954315133a6f7d228e",
+    "name": "Unknown"
+  },
+  "constraints": [
+    {
+      "function": "transferFee",
+      "signature": "transferFee(uint256,uint256,address,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          45588747326,
+          1219608225,
+          1000000000,
+          1000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "amount"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 1000000,
+          "max": 45588747326
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transferFee",
+      "signature": "transferFee(uint256,uint256,address,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Suspicious operation detected",
+        "attack_values": [
+          10000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "feeBps"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 10000,
+          "max": 10000
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transferFee",
+      "signature": "transferFee(uint256,uint256,address,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "2 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "address",
+            "value_expr": "token"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    },
+    {
+      "function": "transferFee",
+      "signature": "transferFee(uint256,uint256,address,address,address)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_addresses",
+        "expression": "3 in observed_addresses",
+        "semantics": "Restrict addresses to observed attack set",
+        "attack_values": [
+          "0x96d0f726fd900e199680277aaad326fbdebc6bf9",
+          "0x5322bff39339eda261bf878fa7d92791cc969bb0",
+          "0xa7b7d4ebf1f5035f3b289139bada62f981f2916e",
+          "0x2c349022df145c1a2ed895b5577905e6f1bc7881"
+        ],
+        "variables": {
+          "addresses": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "address",
+            "value_expr": "from"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Address whitelist derived from attack script",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "40226549229576280186288884461007683697683156381046293517882284572523656760074",
+        "before": 141863421,
+        "after": 47951218972,
+        "change_pct": 33700.97,
+        "is_new_slot": false
+      },
+      {
+        "slot": "89385282585029631346870318306687679049297393384422124186616013451670956628651",
+        "before": 45588747326,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "97253534368022520387838454415704339256318871580401292751902892506182426947657",
+        "before": 115792089237316195423570985008687907853269984665640564039457584007870853959935,
+        "after": 115792089237316195423570985008687907853269984665640564039457584007825265212609,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "28632160386560196315281565681439304524104189109256351287769043349024245899930",
+        "before": 1219608225,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "6153890943034925838185145511114744844329653290205606172103234668848984788614",
+        "before": 8219608225,
+        "after": 7000000000,
+        "change_pct": 14.84,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 9
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 1
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

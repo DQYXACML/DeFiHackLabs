@@ -1593,16 +1593,13 @@ class ImmutableExtractor:
             self.logger.info("  Immutable提取跳过: 未获取到runtime字节码")
             return
 
-        # 允许从当前合约输出目录解析相对依赖
+        # 仅允许从当前合约输出目录解析依赖，避免跨地址目录串扰。
         if output_dir:
             try:
-                candidate_roots = [output_dir.resolve()]
-                if output_dir.parent:
-                    candidate_roots.append(output_dir.parent.resolve())
-                for root in candidate_roots:
-                    if root in self._search_roots:
-                        self._search_roots.remove(root)
-                    self._search_roots.insert(0, root)
+                root = output_dir.resolve()
+                if root in self._search_roots:
+                    self._search_roots.remove(root)
+                self._search_roots.insert(0, root)
             except Exception:
                 pass
 
@@ -1614,10 +1611,28 @@ class ImmutableExtractor:
             self.logger.info("  Immutable提取跳过: 源码解析失败")
             return
 
+        source_settings = self._extract_source_settings(source_code)
+        source_remappings = self._extract_source_remappings(source_settings)
+
         compiler_version = source_code.get('CompilerVersion', '')
         optimizer_enabled = source_code.get('OptimizationUsed') == '1'
         runs = int(source_code.get('Runs') or 200)
         evm_version = source_code.get('EVMVersion') or None
+
+        # 优先使用标准JSON settings中的编译参数，避免浏览器返回字段缺失/不完整。
+        optimizer_cfg = source_settings.get('optimizer') if isinstance(source_settings, dict) else None
+        if isinstance(optimizer_cfg, dict):
+            enabled = optimizer_cfg.get('enabled')
+            if isinstance(enabled, bool):
+                optimizer_enabled = enabled
+            if optimizer_cfg.get('runs') is not None:
+                try:
+                    runs = int(optimizer_cfg.get('runs'))
+                except Exception:
+                    pass
+        source_evm_version = source_settings.get('evmVersion') if isinstance(source_settings, dict) else None
+        if source_evm_version:
+            evm_version = source_evm_version
 
         normalized_version = compiler_version.lstrip('v').split('+')[0] if compiler_version else ''
         if normalized_version in self.failed_versions:
@@ -1633,14 +1648,27 @@ class ImmutableExtractor:
 
         self.logger.info(f"  尝试解析Immutable (solc={solc_bin}, 优化={optimizer_enabled}, runs={runs})")
 
-        immutable_refs, immutable_names = self._compile_for_immutable_refs(
-            sources,
-            solc_bin,
-            optimizer_enabled,
-            runs,
-            evm_version,
-            compiler_version
-        )
+        # 对当前合约临时注入浏览器metadata里的remappings，便于补齐依赖与相对路径解析。
+        original_remappings = self._remapping_entries
+        if output_dir and source_remappings:
+            runtime_remappings = self._build_runtime_remapping_entries(source_remappings, output_dir)
+            if runtime_remappings:
+                merged = runtime_remappings + [entry for entry in self._remapping_entries if entry not in runtime_remappings]
+                merged.sort(key=lambda item: len(item[0]), reverse=True)
+                self._remapping_entries = merged
+
+        try:
+            immutable_refs, immutable_names = self._compile_for_immutable_refs(
+                sources,
+                solc_bin,
+                optimizer_enabled,
+                runs,
+                evm_version,
+                compiler_version,
+                source_remappings
+            )
+        finally:
+            self._remapping_entries = original_remappings
         if not immutable_refs:
             self.logger.info("  Immutable提取跳过: 编译未返回immutableReferences")
             return
@@ -1741,6 +1769,84 @@ class ImmutableExtractor:
 
     IMPORT_PATTERN = re.compile(r'import\s+(?:\{[^}]*\}\s+from\s+)?["\']([^"\']+)["\'];?')
     PRAGMA_PATTERN = re.compile(r'pragma\s+solidity\s+([^;]+);')
+    # 同一依赖若通过不同别名同时引入，会导致solc将类型视为不同来源。
+    # 例如 balancer-lbp-patch/* 与 @balancer-labs/* 的 IERC20 不是同一类型，
+    # 会触发 "override does not override anything"。这里统一到 canonical 前缀。
+    SOURCE_ALIAS_CANONICAL_RULES: Tuple[Tuple[str, str], ...] = (
+        # OpenZeppelin在不同源码快照中常见三种前缀：
+        # 1) ../lib/openzeppelin-contracts/contracts/*
+        # 2) @openzeppelin/contracts/*
+        # 3) contracts/contracts/* (经remapping落盘)
+        # 若同一编译单元混用(1)+(2)/(3)，solc会把IERC20等符号视为重复声明。
+        # 统一收敛到 contracts/contracts/*，避免同一文件被当作多个source unit。
+        ("../lib/openzeppelin-contracts/contracts/", "contracts/contracts/"),
+        ("./lib/openzeppelin-contracts/contracts/", "contracts/contracts/"),
+        ("lib/openzeppelin-contracts/contracts/", "contracts/contracts/"),
+        ("@openzeppelin/contracts/", "contracts/contracts/"),
+        ("openzeppelin/", "contracts/contracts/"),
+        ("lib/balancer-lbp-patch/node_modules/@balancer-labs/", "@balancer-labs/"),
+        ("balancer-lbp-patch/", "@balancer-labs/"),
+        # Aave地址簿经常混用 aave-v3-core / aave-v3-origin 前缀。
+        # 统一去掉这些根前缀，避免同一源码被当成多个source unit。
+        ("lib/aave-v3-origin/src/core/", ""),
+        ("aave-v3-origin/core/", ""),
+        ("aave-v3-core/", ""),
+    )
+
+    def _canonicalize_alias_path(self, path_key: str) -> str:
+        if not path_key:
+            return path_key
+
+        for alias_prefix, canonical_prefix in self.SOURCE_ALIAS_CANONICAL_RULES:
+            if path_key.startswith(alias_prefix):
+                return f"{canonical_prefix}{path_key[len(alias_prefix):]}"
+            dot_alias = f"./{alias_prefix}"
+            if path_key.startswith(dot_alias):
+                return f"./{canonical_prefix}{path_key[len(dot_alias):]}"
+
+        return path_key
+
+    def _canonicalize_alias_sources(self, sources: Dict[str, str]) -> Dict[str, str]:
+        canonical_sources: Dict[str, str] = {}
+        conflict_count = 0
+
+        for key, content in sources.items():
+            canonical_key = self._canonicalize_alias_path(key)
+            canonical_content = content
+
+            for alias_prefix, canonical_prefix in self.SOURCE_ALIAS_CANONICAL_RULES:
+                canonical_content = canonical_content.replace(
+                    f'"{alias_prefix}',
+                    f'"{canonical_prefix}'
+                )
+                canonical_content = canonical_content.replace(
+                    f"'{alias_prefix}",
+                    f"'{canonical_prefix}"
+                )
+
+            previous = canonical_sources.get(canonical_key)
+            if previous is not None and previous != canonical_content:
+                conflict_count += 1
+                # Aave v3在部分地址簿快照中会出现老/新版DataTypes并存，
+                # 优先保留包含ReserveDataLegacy的版本以兼容Pool.sol签名。
+                if canonical_key.endswith("libraries/types/DataTypes.sol"):
+                    prev_has_legacy = "ReserveDataLegacy" in previous
+                    cand_has_legacy = "ReserveDataLegacy" in canonical_content
+                    if cand_has_legacy and not prev_has_legacy:
+                        canonical_sources[canonical_key] = canonical_content
+                elif canonical_key.endswith("interfaces/IPool.sol"):
+                    prev_has_swap = "swapToVariable(" in previous
+                    cand_has_swap = "swapToVariable(" in canonical_content
+                    if cand_has_swap and not prev_has_swap:
+                        canonical_sources[canonical_key] = canonical_content
+                continue
+
+            canonical_sources[canonical_key] = canonical_content
+
+        if conflict_count:
+            self.logger.debug("  源码别名规范化: 合并冲突 %d 项，保留首个版本", conflict_count)
+
+        return canonical_sources
 
     def _discover_search_roots(self) -> List[Path]:
         roots: List[Path] = []
@@ -1783,6 +1889,141 @@ class ImmutableExtractor:
                 remappings.append(entry)
         remappings.sort(key=lambda item: len(item[0]), reverse=True)
         return remappings
+
+    def _extract_source_settings(self, source_code: Dict[str, Any]) -> Dict[str, Any]:
+        """从浏览器返回的标准JSON源码中提取编译settings。"""
+        source = source_code.get('SourceCode', '')
+        if not source:
+            return {}
+
+        is_multi, json_str = self._is_multi_file_json(source)
+        if not is_multi:
+            return {}
+
+        try:
+            parsed = json.loads(json_str)
+        except Exception:
+            return {}
+
+        settings = parsed.get('settings') if isinstance(parsed, dict) else None
+        return settings if isinstance(settings, dict) else {}
+
+    def _extract_source_remappings(self, source_settings: Dict[str, Any]) -> List[str]:
+        """提取并规范化标准JSON中的remappings条目。"""
+        raw = source_settings.get('remappings') if isinstance(source_settings, dict) else None
+        if not isinstance(raw, list):
+            return []
+
+        remappings: List[str] = []
+        seen: Set[str] = set()
+
+        for item in raw:
+            entry: Optional[str] = None
+
+            if isinstance(item, str):
+                entry = item.strip()
+            elif isinstance(item, dict):
+                prefix = item.get('prefix') or item.get('name')
+                target = item.get('target') or item.get('path')
+                if isinstance(prefix, str) and isinstance(target, str):
+                    entry = f"{prefix.strip()}={target.strip()}"
+
+            if not entry or '=' not in entry:
+                continue
+
+            prefix, target = entry.split('=', 1)
+            prefix = prefix.strip()
+            target = target.strip()
+            if not prefix or not target:
+                continue
+
+            normalized = f"{prefix}={target}"
+            if normalized in seen:
+                continue
+            seen.add(normalized)
+            remappings.append(normalized)
+
+        return remappings
+
+    def _build_runtime_remapping_entries(self, remappings: List[str], output_dir: Path) -> List[Tuple[str, Path]]:
+        """将solc remappings转为本地可解析的prefix->path映射。"""
+        entries: List[Tuple[str, Path]] = []
+        seen: Set[Tuple[str, Path]] = set()
+
+        for item in remappings:
+            if '=' not in item:
+                continue
+            prefix, target = item.split('=', 1)
+            prefix = prefix.strip()
+            target = target.strip()
+            if not prefix or not target:
+                continue
+
+            if not prefix.endswith('/'):
+                prefix = f"{prefix}/"
+
+            target_path = Path(target)
+            if target_path.is_absolute():
+                base_path = target_path.resolve()
+            else:
+                base_path = (output_dir / target).resolve()
+
+            entry = (prefix, base_path)
+            if entry in seen:
+                continue
+            seen.add(entry)
+            entries.append(entry)
+
+        entries.sort(key=lambda item: len(item[0]), reverse=True)
+        return entries
+
+
+    def _expand_sources_for_solc_remappings(
+        self,
+        sources: Dict[str, str],
+        remappings: Optional[List[str]]
+    ) -> Dict[str, str]:
+        """为solc remapping可能重写出的路径补齐等价源码键。"""
+        if not remappings:
+            return sources
+
+        expanded = dict(sources)
+
+        for item in remappings:
+            if '=' not in item:
+                continue
+
+            raw_prefix, target = item.split('=', 1)
+            raw_prefix = raw_prefix.strip()
+            target = target.strip()
+            if not raw_prefix or not target:
+                continue
+
+            # 兼容 context:prefix=target 语法，仅使用prefix部分匹配source key。
+            prefix = raw_prefix.rsplit(':', 1)[-1].strip()
+            if not prefix:
+                continue
+            if not prefix.endswith('/'):
+                prefix = f"{prefix}/"
+
+            target_prefix = target
+            if not target_prefix.endswith('/'):
+                target_prefix = f"{target_prefix}/"
+            target_prefix = posixpath.normpath(target_prefix).lstrip('./')
+            if target_prefix and not target_prefix.endswith('/'):
+                target_prefix = f"{target_prefix}/"
+
+            for source_key, content in list(expanded.items()):
+                normalized_key = source_key[2:] if source_key.startswith('./') else source_key
+                if not normalized_key.startswith(prefix):
+                    continue
+
+                suffix = normalized_key[len(prefix):]
+                remapped_key = f"{target_prefix}{suffix}" if target_prefix else suffix
+                local_path = self._source_path_map.get(source_key) or self._source_path_map.get(normalized_key)
+                self._add_source_variants(expanded, remapped_key, content, local_path, existing=expanded)
+
+        return expanded
 
     def _is_within_root(self, path: Path, root: Path) -> bool:
         try:
@@ -1848,24 +2089,109 @@ class ImmutableExtractor:
             _add(f"@openzeppelin/contracts/{rest}")
             _add(f"openzeppelin/{rest}")
 
+        def _add_openzeppelin_upgradeable_variants(rest: str) -> None:
+            _add(f"contracts/{rest}")
+            _add(f"@openzeppelin/contracts-upgradeable/{rest}")
+            _add(f"lib/openzeppelin-contracts-upgradeable/contracts/{rest}")
+
         if path_key.startswith("lib/openzeppelin-contracts/contracts/"):
             remainder = path_key[len("lib/openzeppelin-contracts/contracts/"):]
             _add_openzeppelin_variants(remainder)
+        elif path_key.startswith("lib/openzeppelin-contracts-upgradeable/contracts/"):
+            remainder = path_key[len("lib/openzeppelin-contracts-upgradeable/contracts/"):]
+            _add_openzeppelin_upgradeable_variants(remainder)
+        elif path_key.startswith("openzeppelin-contracts/contracts/"):
+            remainder = path_key[len("openzeppelin-contracts/contracts/"):]
+            _add_openzeppelin_variants(remainder)
+        elif path_key.startswith("openzeppelin-contracts-upgradeable/contracts/"):
+            remainder = path_key[len("openzeppelin-contracts-upgradeable/contracts/"):]
+            _add_openzeppelin_upgradeable_variants(remainder)
+        elif path_key.startswith("lib/openzeppelin-0.7/contracts/"):
+            remainder = path_key[len("lib/openzeppelin-0.7/contracts/"):]
+            _add(f"openzeppelin-0.7/{remainder}")
+            _add(f"lib/openzeppelin-0.7/contracts/{remainder}")
+            _add(f"contracts/{remainder}")
         elif path_key.startswith("openzeppelin/"):
             remainder = path_key[len("openzeppelin/"):]
             _add_openzeppelin_variants(remainder)
         elif path_key.startswith("@openzeppelin/contracts/"):
             remainder = path_key[len("@openzeppelin/contracts/"):]
             _add_openzeppelin_variants(remainder)
+        elif path_key.startswith("@openzeppelin/contracts-upgradeable/"):
+            remainder = path_key[len("@openzeppelin/contracts-upgradeable/"):]
+            _add_openzeppelin_upgradeable_variants(remainder)
+        elif path_key.startswith("openzeppelin-0.7/"):
+            remainder = path_key[len("openzeppelin-0.7/"):]
+            _add(f"lib/openzeppelin-0.7/contracts/{remainder}")
+            _add_openzeppelin_variants(remainder)
+        elif path_key.startswith("lib/balancer-lbp-patch/node_modules/@balancer-labs/"):
+            remainder = path_key[len("lib/balancer-lbp-patch/node_modules/@balancer-labs/"):]
+            _add(f"@balancer-labs/{remainder}")
+            _add(f"balancer-lbp-patch/{remainder}")
+        elif path_key.startswith("balancer-lbp-patch/"):
+            remainder = path_key[len("balancer-lbp-patch/"):]
+            _add(f"@balancer-labs/{remainder}")
+            _add(f"lib/balancer-lbp-patch/node_modules/@balancer-labs/{remainder}")
+        elif path_key.startswith("@balancer-labs/"):
+            remainder = path_key[len("@balancer-labs/"):]
+            _add(f"balancer-lbp-patch/{remainder}")
+            _add(f"lib/balancer-lbp-patch/node_modules/@balancer-labs/{remainder}")
+        elif path_key.startswith("solmate/"):
+            remainder = path_key[len("solmate/"):]
+            _add(f"lib/solmate/src/{remainder}")
+            _add(f"src/{remainder}")
+        elif path_key.startswith("lib/solmate/src/"):
+            remainder = path_key[len("lib/solmate/src/"):]
+            _add(f"solmate/{remainder}")
+            _add(f"src/{remainder}")
         elif path_key.startswith("arb-bridge-eth/"):
             remainder = path_key[len("arb-bridge-eth/"):]
             _add(remainder)
+
+        # 通用包路径退化：把 @scope/pkg/contracts/x.sol 映射到 contracts/x.sol。
+        # 本地工程源码(contracts/src/lib开头)不做该降级，避免生成会破坏相对import的伪路径别名。
+        allow_package_fallback = not path_key.startswith(("contracts/", "src/", "lib/", "./contracts/", "./src/", "./lib/"))
+        if allow_package_fallback:
+            for marker in ("contracts", "src", "lib"):
+                needle = f"/{marker}/"
+                if needle in path_key:
+                    remainder = path_key.split(needle, 1)[1]
+                    _add(f"{marker}/{remainder}")
+                    if marker == "contracts":
+                        _add(f"contracts/contracts/{remainder}")
+
+        # 部分源码快照会把 src/core/contracts/* 落盘为 contracts/*，补一层兼容别名。
+        if path_key.startswith(("src/", "./src/")) and "/contracts/" in path_key:
+            remainder = path_key.split("/contracts/", 1)[1]
+            _add(f"contracts/{remainder}")
 
         stripped = path_key
         while stripped.startswith("./"):
             stripped = stripped[2:]
         if stripped != path_key:
             _add(stripped)
+
+        # 对未映射的包前缀做一次“去首段”尝试：
+        # 例如 aave-address-book/AaveV3.sol -> src/AaveV3.sol
+        #      aave-v3-origin/core/instances/PoolInstance.sol -> src/core/instances/PoolInstance.sol
+        if stripped and "/" in stripped:
+            package_prefix, package_remainder = stripped.split("/", 1)
+            if package_prefix and package_remainder and not package_prefix.startswith(("@", ".")):
+                if package_prefix not in {
+                    "contracts",
+                    "src",
+                    "lib",
+                    "test",
+                    "script",
+                    "node_modules",
+                    "openzeppelin",
+                    "openzeppelin-contracts",
+                    "openzeppelin-contracts-upgradeable",
+                    "hardhat",
+                }:
+                    _add(package_remainder)
+                    _add(f"src/{package_remainder}")
+                    _add(f"contracts/{package_remainder}")
 
         if stripped and not stripped.startswith((
             "contracts/",
@@ -1875,6 +2201,8 @@ class ImmutableExtractor:
             "script/",
             "@",
             "openzeppelin/",
+            "openzeppelin-contracts/",
+            "openzeppelin-contracts-upgradeable/",
             "hardhat/",
             "node_modules/"
         )):
@@ -1916,7 +2244,11 @@ class ImmutableExtractor:
         if not pragma:
             return True
         for segment in pragma.split("||"):
-            tokens = segment.strip().split()
+            # 兼容"< 0.9.0"、">= 0.7.0"、"a,b"这类常见写法
+            normalized_segment = segment.strip().replace(",", " ")
+            normalized_segment = re.sub(r'([<>]=?|=)\s+(\d)', r'\1\2', normalized_segment)
+            normalized_segment = re.sub(r'(\^|~)\s+(\d)', r'\1\2', normalized_segment)
+            tokens = normalized_segment.split()
             if not tokens:
                 continue
             ok = True
@@ -1969,8 +2301,107 @@ class ImmutableExtractor:
         pragma = match.group(1).strip()
         return self._pragma_allows_version(pragma, target)
 
-    def _resolve_import_target(self, file_name: str, import_path: str) -> Optional[Tuple[str, Path]]:
+    def _find_alternative_dependency(
+        self,
+        local_path: Path,
+        target_version: Optional[Tuple[int, int, int]],
+        required_tokens: Optional[List[str]] = None
+    ) -> Optional[Tuple[Path, str]]:
+        """在同协议兄弟目录中寻找满足特征约束的替代依赖。"""
+        tokens = [token for token in (required_tokens or []) if token]
+        if not tokens:
+            return None
+
+        if not self._search_roots:
+            return None
+
+        primary_root = self._search_roots[0]
+        try:
+            rel_path = local_path.relative_to(primary_root)
+        except Exception:
+            return None
+
+        parent_dir = primary_root.parent
+        if not parent_dir.exists() or not parent_dir.is_dir():
+            return None
+
+        for sibling in sorted(parent_dir.iterdir(), key=lambda item: item.name):
+            if sibling == primary_root or not sibling.is_dir():
+                continue
+
+            candidate = sibling / rel_path
+            if not candidate.exists() or not candidate.is_file():
+                continue
+
+            try:
+                content = candidate.read_text(encoding='utf-8')
+            except Exception:
+                continue
+
+            if target_version and not self._content_compatible(content, target_version):
+                continue
+
+            if any(token not in content for token in tokens):
+                continue
+
+            return candidate, content
+
+        return None
+
+    def _required_dependency_tokens(self, import_path: str, importer_content: str) -> List[str]:
+        tokens: List[str] = []
+
+        if import_path.endswith("DataTypes.sol"):
+            tokens.extend(
+                re.findall(r"\bDataTypes\.([A-Za-z_][A-Za-z0-9_]*)", importer_content)
+            )
+
+        if import_path.endswith("Errors.sol"):
+            tokens.extend(
+                re.findall(r"\bErrors\.([A-Za-z_][A-Za-z0-9_]*)", importer_content)
+            )
+
+        if import_path.endswith("IPool.sol"):
+            override_funcs = re.findall(
+                r"function\s+([A-Za-z_][A-Za-z0-9_]*)\s*\([^)]*\)[^{;]*\boverride\b",
+                importer_content
+            )
+            tokens.extend(f"function {name}(" for name in override_funcs)
+
+        return sorted(set(token for token in tokens if token))
+
+    def _resolve_import_target(
+        self,
+        file_name: str,
+        import_path: str,
+        target_version: Optional[Tuple[int, int, int]] = None
+    ) -> Optional[Tuple[str, Path]]:
         if import_path.startswith(('http://', 'https://', 'ipfs://')):
+            return None
+
+        fallback: Optional[Tuple[str, Path]] = None
+
+        def _consider(source_key: str, local_path: Path) -> Optional[Tuple[str, Path]]:
+            nonlocal fallback
+            if not local_path.exists() or not local_path.is_file():
+                return None
+
+            candidate = (source_key, local_path)
+            if fallback is None:
+                fallback = candidate
+
+            if not target_version:
+                return candidate
+
+            try:
+                content = local_path.read_text(encoding='utf-8')
+            except Exception:
+                # 文件可读性异常时保守返回候选，避免把可用依赖误判为缺失。
+                return candidate
+
+            if self._content_compatible(content, target_version):
+                return candidate
+
             return None
 
         if import_path.startswith(('.', '..')):
@@ -1979,54 +2410,67 @@ class ImmutableExtractor:
             local_origin = self._source_path_map.get(file_name)
             if local_origin:
                 local_path = (local_origin.parent / import_path).resolve()
-                if local_path.exists() and local_path.is_file():
-                    return normalized_key, local_path
+                hit = _consider(normalized_key, local_path)
+                if hit:
+                    return hit
 
             for prefix, base_path in self._remapping_entries:
                 if file_name.startswith(prefix):
                     remainder = file_name[len(prefix):]
                     origin_path = (base_path / remainder).resolve()
                     local_path = (origin_path.parent / import_path).resolve()
-                    if local_path.exists() and local_path.is_file():
-                        return normalized_key, local_path
+                    hit = _consider(normalized_key, local_path)
+                    if hit:
+                        return hit
 
             for root in self._search_roots:
                 local_path = (root / resolved_key).resolve()
-                if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
-                    return normalized_key, local_path
+                if self._is_within_root(local_path, root):
+                    hit = _consider(normalized_key, local_path)
+                    if hit:
+                        return hit
 
             # 尝试对相对路径做别名匹配（例如lib/openzeppelin-contracts -> contracts/contracts）
-            for alias_key in self._alias_import_variants(resolved_key):
+            # 对 a/../b 先归一化，避免别名生成被中间路径片段干扰。
+            for alias_key in self._alias_import_variants(normalized_key):
                 if alias_key == resolved_key:
                     continue
                 normalized_alias = posixpath.normpath(alias_key)
                 for root in self._search_roots:
                     local_path = (root / normalized_alias).resolve()
-                    if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
-                        return normalized_alias, local_path
+                    if self._is_within_root(local_path, root):
+                        hit = _consider(normalized_key, local_path)
+                        if hit:
+                            return hit
 
         # 优先从本地搜索根目录解析包路径（例如输出目录下的@openzeppelin快照）
         for candidate_key in self._alias_import_variants(import_path):
             for root in self._search_roots:
                 local_path = (root / candidate_key).resolve()
-                if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
-                    return candidate_key, local_path
+                if self._is_within_root(local_path, root):
+                    hit = _consider(candidate_key, local_path)
+                    if hit:
+                        return hit
 
         if import_path.startswith(('src/', 'test/', 'script/', 'lib/')):
             for root in self._search_roots:
                 local_path = (root / import_path).resolve()
-                if self._is_within_root(local_path, root) and local_path.exists() and local_path.is_file():
-                    return import_path, local_path
+                if self._is_within_root(local_path, root):
+                    hit = _consider(import_path, local_path)
+                    if hit:
+                        return hit
 
         for candidate_key in self._alias_import_variants(import_path):
             for prefix, base_path in self._remapping_entries:
                 if candidate_key.startswith(prefix):
                     remainder = candidate_key[len(prefix):]
                     local_path = (base_path / remainder).resolve()
-                    if self._is_within_root(local_path, base_path) and local_path.exists() and local_path.is_file():
-                        return candidate_key, local_path
+                    if self._is_within_root(local_path, base_path):
+                        hit = _consider(candidate_key, local_path)
+                        if hit:
+                            return hit
 
-        return None
+        return fallback
 
     def _add_source_variants(
         self,
@@ -2082,13 +2526,27 @@ class ImmutableExtractor:
             if local_path:
                 self._source_path_map[variant] = local_path
 
+    def _expand_source_aliases(self, sources: Dict[str, str]) -> Dict[str, str]:
+        """为已提供源码预生成路径别名，避免后续import解析误判为缺失。"""
+        expanded = dict(sources)
+        # 用初始快照迭代，避免在遍历过程中重复扩展新增别名。
+        initial_items = list(sources.items())
+        for source_key, content in initial_items:
+            self._add_source_variants(expanded, source_key, content, existing=expanded)
+            for alias_key in self._alias_import_variants(source_key):
+                self._add_source_variants(expanded, alias_key, content, existing=expanded)
+        return expanded
+
     def _augment_sources_with_local_deps(
         self,
         sources: Dict[str, str],
         target_version: Optional[Tuple[int, int, int]]
     ) -> Tuple[Dict[str, str], Set[str]]:
+        sources = self._expand_source_aliases(sources)
         added = 0
         unresolved: Set[str] = set()
+        logged_incompatible: Set[Tuple[str, str, str]] = set()
+        logged_dependency_patch: Set[Tuple[str, str, str]] = set()
         self._seed_source_paths(sources)
 
         while True:
@@ -2097,6 +2555,56 @@ class ImmutableExtractor:
             for file_name, content in sources.items():
                 for match in self.IMPORT_PATTERN.finditer(content):
                     import_path = match.group(1)
+                    normalized_file = file_name[2:] if file_name.startswith("./") else file_name
+
+                    required_tokens = self._required_dependency_tokens(import_path, content)
+
+                    # 先检查源码集合中是否已存在目标文件，避免误判为“依赖缺失”。
+                    existing_key: Optional[str] = None
+                    if import_path.startswith(('.', '..')):
+                        resolved_key = posixpath.normpath((Path(file_name).parent / import_path).as_posix())
+                        if resolved_key in sources:
+                            existing_key = resolved_key
+                        elif f"./{resolved_key}" in sources:
+                            existing_key = f"./{resolved_key}"
+                    else:
+                        if import_path in sources:
+                            existing_key = import_path
+
+                    if existing_key:
+                        if required_tokens and any(token not in sources.get(existing_key, "") for token in required_tokens):
+                            paired_key = existing_key[2:] if existing_key.startswith("./") else f"./{existing_key}"
+                            existing_path = self._source_path_map.get(existing_key) or self._source_path_map.get(paired_key)
+                            if not existing_path:
+                                resolved_existing = self._resolve_import_target(file_name, import_path, target_version)
+                                if resolved_existing:
+                                    _, existing_path = resolved_existing
+
+                            if existing_path and existing_path.exists() and existing_path.is_file():
+                                alternative = self._find_alternative_dependency(
+                                    existing_path,
+                                    target_version,
+                                    required_tokens
+                                )
+                                if alternative:
+                                    alt_path, alt_content = alternative
+                                    patch_key = (normalized_file, import_path, str(alt_path))
+                                    if patch_key not in logged_dependency_patch:
+                                        self.logger.info(
+                                            "  依赖补丁: %s -> %s 使用替代文件 %s",
+                                            file_name,
+                                            import_path,
+                                            alt_path
+                                        )
+                                        logged_dependency_patch.add(patch_key)
+
+                                    new_sources[existing_key] = alt_content
+                                    self._source_path_map[existing_key] = alt_path
+                                    if paired_key in sources:
+                                        new_sources[paired_key] = alt_content
+                                        self._source_path_map[paired_key] = alt_path
+                        continue
+
                     if import_path == "hardhat/console.sol":
                         console_stub = (
                             "// SPDX-License-Identifier: MIT\n"
@@ -2129,14 +2637,35 @@ class ImmutableExtractor:
                             if self._content_compatible(alias_content, target_version):
                                 self._add_source_variants(new_sources, alias_key, alias_content, existing=sources)
                                 continue
-                    resolved = self._resolve_import_target(file_name, import_path)
+                    resolved = self._resolve_import_target(file_name, import_path, target_version)
                     if not resolved:
-                        unresolved.add(f"{file_name} -> {import_path}")
+                        unresolved.add(f"{normalized_file} -> {import_path}")
                         continue
                     source_key, local_path = resolved
                     if local_path.exists() and local_path.is_file():
                         try:
                             content_text = local_path.read_text(encoding='utf-8')
+
+                            if required_tokens and any(token not in content_text for token in required_tokens):
+                                alternative = self._find_alternative_dependency(
+                                    local_path,
+                                    target_version,
+                                    required_tokens
+                                )
+                                if alternative:
+                                    alt_path, alt_content = alternative
+                                    patch_key = (normalized_file, import_path, str(alt_path))
+                                    if patch_key not in logged_dependency_patch:
+                                        self.logger.info(
+                                            "  依赖补丁: %s -> %s 使用替代文件 %s",
+                                            file_name,
+                                            import_path,
+                                            alt_path
+                                        )
+                                        logged_dependency_patch.add(patch_key)
+                                    local_path = alt_path
+                                    content_text = alt_content
+
                             if self._content_compatible(content_text, target_version):
                                 self._add_source_variants(new_sources, source_key, content_text, local_path, sources)
                                 if source_key != import_path and not import_path.startswith("."):
@@ -2147,17 +2676,24 @@ class ImmutableExtractor:
                                 target_text = (
                                     ".".join(str(part) for part in target_version) if target_version else "unknown"
                                 )
-                                self.logger.info(
-                                    "  依赖版本不兼容: %s -> %s resolved %s (pragma %s, target %s)",
-                                    file_name,
+                                log_key = (
+                                    normalized_file,
                                     import_path,
-                                    local_path,
-                                    pragma_text,
-                                    target_text
+                                    str(local_path)
                                 )
-                                unresolved.add(f"{file_name} -> {import_path} (pragma mismatch)")
+                                if log_key not in logged_incompatible:
+                                    self.logger.info(
+                                        "  依赖版本不兼容: %s -> %s resolved %s (pragma %s, target %s)",
+                                        file_name,
+                                        import_path,
+                                        local_path,
+                                        pragma_text,
+                                        target_text
+                                    )
+                                    logged_incompatible.add(log_key)
+                                unresolved.add(f"{log_key[0]} -> {import_path} (pragma mismatch)")
                         except Exception:
-                            unresolved.add(f"{file_name} -> {import_path}")
+                            unresolved.add(f"{normalized_file} -> {import_path}")
 
             if not new_sources:
                 break
@@ -2311,10 +2847,13 @@ class ImmutableExtractor:
     def _compile_for_immutable_refs(self, sources: Dict[str, str], solc_bin: str,
                                     optimizer: bool, runs: int,
                                     evm_version: Optional[str],
-                                    compiler_version: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, str]]:
+                                    compiler_version: str,
+                                    source_remappings: Optional[List[str]] = None) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, str]]:
         """调用solc获取immutableReferences，若evmVersion不被支持则回退为默认；同时提取AST中的immutable变量名称映射"""
         target_version = self._parse_version_tuple(compiler_version or "")
         sources, unresolved = self._augment_sources_with_local_deps(dict(sources), target_version)
+        sources = self._canonicalize_alias_sources(sources)
+        sources = self._expand_sources_for_solc_remappings(sources, source_remappings)
         if unresolved:
             sample = list(unresolved)[:3]
             sample_text = "; ".join(sample)
@@ -2355,6 +2894,8 @@ class ImmutableExtractor:
             }
             if evm:
                 settings["evmVersion"] = evm
+            if source_remappings:
+                settings["remappings"] = source_remappings
 
             return {
                 "language": "Solidity",
@@ -2378,7 +2919,7 @@ class ImmutableExtractor:
                 )
             except Exception as e:
                 self.logger.info(f"  Immutable提取跳过: 调用solc失败({e})")
-                return {}
+                return {}, {}
 
             if result.returncode != 0:
                 last_err = result.stderr.strip().splitlines()
@@ -2862,6 +3403,13 @@ class SourceDownloader:
         # 移除绝对路径前缀
         if file_path.startswith('/'):
             file_path = file_path[1:]
+
+        # 优先保留 npm scoped package 路径，避免 @scope/pkg 前缀被裁剪。
+        scoped_match = re.search(r'@[^/]+/[^/]+/', file_path)
+        if scoped_match:
+            scoped_path = file_path[scoped_match.start():]
+            self.logger.debug(f"  保留scoped package路径: {file_path} -> {scoped_path}")
+            return self._clean_path_parts(scoped_path)
 
         # 常见的项目目录关键词（按优先级排序）
         # 注意：包名（@开头）优先级最高，然后是具体目录

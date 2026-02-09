@@ -1,0 +1,454 @@
+{
+  "compiler_version": "v0.8.10+commit.fc410830",
+  "optimizer": true,
+  "runs": 100000,
+  "evm_version": "berlin",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 18592,
+  "values": {
+    "./@aave/periphery-v3/contracts/rewards/RewardsController.sol:RewardsController": [
+      {
+        "label": "1735",
+        "var_name": "./@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1268,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1735",
+        "var_name": "./@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1548,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1735",
+        "var_name": "./@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 3223,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1735",
+        "var_name": "./@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 4054,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1735",
+        "var_name": "./@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 5757,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1735",
+        "var_name": "./@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6195,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1735",
+        "var_name": "./@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6364,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "1735",
+        "var_name": "./@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6647,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/contracts/rewards/RewardsController.sol:RewardsController": [
+      {
+        "label": "5398",
+        "var_name": "./contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1268,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5398",
+        "var_name": "./contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1548,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5398",
+        "var_name": "./contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 3223,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5398",
+        "var_name": "./contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 4054,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5398",
+        "var_name": "./contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 5757,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5398",
+        "var_name": "./contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6195,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5398",
+        "var_name": "./contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6364,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "5398",
+        "var_name": "./contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6647,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      }
+    ],
+    "./contracts/rewards/RewardsController.sol:RewardsController": [
+      {
+        "label": "9061",
+        "var_name": "./contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1268,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9061",
+        "var_name": "./contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1548,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9061",
+        "var_name": "./contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 3223,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9061",
+        "var_name": "./contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 4054,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9061",
+        "var_name": "./contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 5757,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9061",
+        "var_name": "./contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6195,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9061",
+        "var_name": "./contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6364,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "9061",
+        "var_name": "./contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6647,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      }
+    ],
+    "@aave/periphery-v3/contracts/rewards/RewardsController.sol:RewardsController": [
+      {
+        "label": "12724",
+        "var_name": "@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1268,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12724",
+        "var_name": "@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1548,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12724",
+        "var_name": "@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 3223,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12724",
+        "var_name": "@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 4054,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12724",
+        "var_name": "@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 5757,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12724",
+        "var_name": "@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6195,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12724",
+        "var_name": "@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6364,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "12724",
+        "var_name": "@aave/periphery-v3/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6647,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/contracts/rewards/RewardsController.sol:RewardsController": [
+      {
+        "label": "16387",
+        "var_name": "contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1268,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16387",
+        "var_name": "contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1548,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16387",
+        "var_name": "contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 3223,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16387",
+        "var_name": "contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 4054,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16387",
+        "var_name": "contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 5757,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16387",
+        "var_name": "contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6195,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16387",
+        "var_name": "contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6364,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "16387",
+        "var_name": "contracts/contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6647,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      }
+    ],
+    "contracts/rewards/RewardsController.sol:RewardsController": [
+      {
+        "label": "20050",
+        "var_name": "contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1268,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20050",
+        "var_name": "contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 1548,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20050",
+        "var_name": "contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 3223,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20050",
+        "var_name": "contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 4054,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20050",
+        "var_name": "contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 5757,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20050",
+        "var_name": "contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6195,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20050",
+        "var_name": "contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6364,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "20050",
+        "var_name": "contracts/rewards/RewardsDistributor.sol:EMISSION_MANAGER",
+        "offset": 6647,
+        "length": 32,
+        "value_hex": "0x000000000000000000000000223d844fc4b006d67c0cdbd39371a9f73f69d974",
+        "value_int": "195477557630613561050878265764278921844128078196",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}
