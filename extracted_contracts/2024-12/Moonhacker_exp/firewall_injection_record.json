@@ -1,0 +1,20 @@
+{
+  "protocol": "Moonhacker_exp",
+  "year_month": "2024-12",
+  "injection_timestamp": "2026-02-09T16:52:06.489107Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "MoonHacker",
+    "address": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847"
+  },
+  "injected_contracts": [
+    {
+      "file": "MoonHacker.sol",
+      "functions": [
+        "executeOperation"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

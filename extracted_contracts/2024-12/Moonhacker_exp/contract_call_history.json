@@ -1,0 +1,802 @@
+{
+  "protocol": "Moonhacker_exp",
+  "contract_address": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+  "target_functions": [
+    "executeOperation"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "executeOperation": {
+      "0": {
+        "avoid": [
+          "0x0b2c639c533813f4aa9d7837caf62653d097ff85"
+        ]
+      },
+      "1": {
+        "avoid": [
+          0,
+          485984777954,
+          595813431745
+        ]
+      },
+      "2": {
+        "avoid": [
+          0
+        ]
+      },
+      "4": {
+        "avoid": [
+          "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000005615deb798bb3e4dfa0139dfa1b3d433cc23b72f0000000000000000000000000000000000000000000000000000000000000000",
+          "0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000008e08617b0d66359d73aa11e11017834c291555250000000000000000000000000000000000000000000000000000000000000000",
+          "0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000008e08617b0d66359d73aa11e11017834c29155525000000000000000000000000000000000000000000000000000a5a8a2e93ffa7"
+        ]
+      }
+    }
+  },
+  "attack_block": 129697250,
+  "generated_at": "2026-02-10T09:25:34.195966Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0xb19382b58f119eb85c9c63ce5c7ab6c70835e278",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129655250,
+      "time": "2024-12-17T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x5dedbf2d9d9b637b24f946fdd9c26b9310ece878"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 548969
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 943252
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0xa419acb6ffad1d8207db65b7b4870436b0624126"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x09cbb478"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0xd4d5b33ff35c6e0b5d6eacb7994072cae93b5504",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129673250,
+      "time": "2024-12-20T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x1759c462fe9b1e655c73968d1bae94753002402e"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 72969
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 282160
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0xf54151a448feb6d57574b989c296e14de52d9be9"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x7ef7c316"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0xd5c6996ecf6013b3ef4b493e3aea68d087b6eb0f",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129685250,
+      "time": "2024-12-22T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0xd65952d0eef7254f64b478e2b49af01666d79d5f"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 301834
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 808167
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x44dd608ff99ef3af0bf7fdb151389bb7c142175d"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x67c4f6d3"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0x2d8ad5504c95b87a8217f76ca1a23a11c2a7b510",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129529250,
+      "time": "2024-11-26T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x60c232b051601dd78af2b61161ac5b6e7c871ed1"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 459121
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 969744
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x96b8bead3a8112421bac35a1c4a257be108d5315"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0x34d0ac39a18b0be45427d8e459b3db2b606b8bbf",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129589250,
+      "time": "2024-12-06T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x5839f325c0bc45fa3e49df5c7f907480a6d1c566"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 275053
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 85754
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x9123e87322f00b7a4a34f83c3f6f6eb1aaafcf31"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0xf775a2c6"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0xb068d053bcad267d1ab2524fcddb248896991613",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129649250,
+      "time": "2024-12-16T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x064d04b360bd7db48120ab86b0f92c4854d0680a"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 767957
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 247461
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0xfcb10da56190f3ec70b8bdd2a0b97637a0c1e01a"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x57f8"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0x59c5b73286a30e41287b5a76961225987d89de53",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129643250,
+      "time": "2024-12-15T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x8b60ec6231485695ce8e66a4e31ff76789a78568"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 989988
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 928985
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x8d0687250f0c8d3359fb4e01b1e62e15c73c5cb2"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0x6ded7d75d9d9f81b9d414f8e801261d510134824",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129577250,
+      "time": "2024-12-04T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x6146cb3a932b5f9e94b0a0c7be2cd6be1047b480"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 484108
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 13163
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x2467ef7739e2f86619ddac340451818d327cac74"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x01f97b7b"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0x79331fdb0c8a566cfb11a98f7db2d888e7b2bafa",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129661250,
+      "time": "2024-12-18T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x4c8f05ea9af9677061b05681cf6e56c256e157b9"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 63977
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 459440
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x2cb8aef1139379030421c2183d51450e19084b46"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0x49155af008dc9bd51875d0c0c1c15e9f5f19e7ec",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129607250,
+      "time": "2024-12-09T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0xefe58294cd7c1601f3d30cb5aa547af721a6eb4e"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 637062
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 355962
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x0863085ff258f1a91e13f14380b6caa0936ee549"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0x7cbb23115bb6e482a736c64b601363d04c69ab32",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129529250,
+      "time": "2024-11-26T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x283d9fa7d8f14ecd3abf16583cac9a9c9bd5582e"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 821885
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 532193
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x33eae7d90cd11bbd2664c97b5773cefd04f0c9d2"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0xdbea401382c60b8d0b07a4b3e0791640308e14ab",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129535250,
+      "time": "2024-11-27T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x57d2a701af63e734d670834faba1ee1804488358"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 930698
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 625949
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0xa4db5c656102821581da2d2765f15ffe727954d3"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0x695884ce6e969948086df8e411a81ba480652418",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129685250,
+      "time": "2024-12-22T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x746a7077db84cdfd2a461faa3620c341649b258a"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 127453
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 982084
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x0e83b7e58f7fe4e47add152ddbc0f91d0732db80"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x97f7"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x766a9b3f5d0037e257ec65f0df9d694dbc88ef3f",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129637250,
+      "time": "2024-12-14T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0xc5cca3b77cecbc0d194093d1582302dbf2dc0875"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 735490
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 359216
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0xd6232656381170f743bc273cfe1c35a109d527db"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0xf64a"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0xc8b7a5c3292a7e50394f5c856ce0e7d995c23f55",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129529250,
+      "time": "2024-11-26T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x377ec44019c9c2d9014915c33fde566d0871324d"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 863779
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 949354
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x4f76699c7e7781d1a75f06f7fb65e23fb8e3f7d2"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x274bcad1"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0xe4dd4e8c5fd0ae74634ce747ad2902861d9437e2",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129589250,
+      "time": "2024-12-06T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x6e24670ebb45bf290e1fdc0baf85427f14479a98"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 111462
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 728544
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x86a9356129ccde522581e1e9302119af9beb81cc"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0x7910c39993f6dd99bde9ce3f65894d04a58dbaea",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129679250,
+      "time": "2024-12-21T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0xa1a07808c19f3293fa1403f28a836a117e174d9c"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 204478
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 367100
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0xc4a6e8595d3d27e5d6fb628011ddb02da39fa4bf"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0xfc61"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0x6378a97f91c91b497d243f548876f76304eb316f",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129577250,
+      "time": "2024-12-04T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x6620755cc0de8853d1f66b9dea883e550a95ff7b"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 171423
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 601889
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x54c32ba3280835054e54ae0a5605476ff060651f"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0x754e"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x1732d3715b43c1e333be6fa64b6227231e6d014a",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129637250,
+      "time": "2024-12-14T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0xc2f9492cf5f4340977aab9d4ad1aad9ab62d263e"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 731986
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 224592
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0x53563fa016f0b98b7e012cc1ea9df11ed20b0198"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0xc22b0afc"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x275ca5ab04a054b4a0a5e813379bc0ffd49b0f0b",
+      "to": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+      "value": "0",
+      "blockNumber": 129643250,
+      "time": "2024-12-15T06:34:37Z",
+      "function": "executeOperation",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "token",
+          "type": "address",
+          "value": "0x6262e3d5d672e4a03374d9dff75c3e43f0224335"
+        },
+        {
+          "name": "amountBorrowed",
+          "type": "uint256",
+          "value": 814744
+        },
+        {
+          "name": "premium",
+          "type": "uint256",
+          "value": 328184
+        },
+        {
+          "name": "initiator",
+          "type": "address",
+          "value": "0xb2bc48f7b5619688a9473986af6fae276f60ebf2"
+        },
+        {
+          "name": "params",
+          "type": "bytes",
+          "value": "0xef6a5541"
+        }
+      ]
+    }
+  ]
+}

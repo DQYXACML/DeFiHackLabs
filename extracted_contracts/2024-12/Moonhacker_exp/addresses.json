@@ -4,48 +4,154 @@
     "name": "Attacker",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attacker : https://optimistic.etherscan.io/address/0x36491840ebcf040413003df9fb65b6bc9a181f52"
+    "context": "// Attacker : https://optimistic.etherscan.io/address/0x36491840ebcf040413003df9fb65b6bc9a181f52",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x4e258f1705822c2565d54ec8795d303fdf9f768e",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract1 : https://optimistic.etherscan.io/address/0x4e258f1705822c2565d54ec8795d303fdf9f768e"
+    "context": "// Attack Contract1 : https://optimistic.etherscan.io/address/0x4e258f1705822c2565d54ec8795d303fdf9f768e",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0x3a6eaaf2b1b02ceb2da4a768cfeda86cff89b287",
     "name": "Attack_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Attack Contract2 : https://optimistic.etherscan.io/address/0x3a6eaaf2b1b02ceb2da4a768cfeda86cff89b287"
+    "context": "// Attack Contract2 : https://optimistic.etherscan.io/address/0x3a6eaaf2b1b02ceb2da4a768cfeda86cff89b287",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
     "name": "Vulnerable_Contract",
     "chain": "mainnet",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://optimistic.etherscan.io/address/0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847"
+    "context": "// Vulnerable Contract : https://optimistic.etherscan.io/address/0xd9b45e2c389b6ad55dd3631abc1de6f2d2229847",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "IMoonhacker",
+      "moonhacker",
+      "Vulnerable_Contract"
+    ]
   },
   {
     "address": "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
-    "name": null,
+    "name": "IAaveFlashloan",
     "chain": "optimism",
     "source": "static",
-    "context": "IAaveFlashloan(0x794a61358D6845594F94dc1DB02A252b5b4814aD)"
+    "context": "IAaveFlashloan aaveV3 = IAaveFlashloan(0x794a61358D6845594F94dc1DB02A252b5b4814aD)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "aaveV3",
+      "AAVE V3",
+      "IAaveFlashloan"
+    ]
   },
   {
     "address": "0x8E08617b0d66359D73Aa11E11017834C29155525",
-    "name": null,
+    "name": "IMusdc",
     "chain": "optimism",
     "source": "static",
-    "context": "IMusdc(0x8E08617b0d66359D73Aa11E11017834C29155525)"
+    "context": "IMusdc mUSDC = IMusdc(0x8E08617b0d66359D73Aa11E11017834C29155525)",
+    "onchain_name": null,
+    "symbol": "mUSDC",
+    "decimals": 8,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "mUSDC",
+      "IMusdc",
+      "musdc",
+      "MUSDC",
+      "ImUSDC"
+    ]
   },
   {
     "address": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
-    "name": null,
+    "name": "IERC20",
     "chain": "optimism",
     "source": "static",
-    "context": "IERC20(0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85)"
+    "context": "IERC20 USDC = IERC20(0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85)",
+    "onchain_name": null,
+    "symbol": "USDC",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDC",
+      "IERC20",
+      "usdc",
+      "IUSDC"
+    ]
+  },
+  {
+    "address": "0xdEd3b9a8DBeDC2F9CB725B55d0E686A81E6d06dC",
+    "name": null,
+    "chain": "optimism",
+    "source": "dynamic",
+    "context": "trace reference",
+    "onchain_name": null,
+    "symbol": "",
+    "decimals": 0,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": null
+  },
+  {
+    "address": "0xa9ce0a4de55791c5792b50531b18befc30b09dcc",
+    "name": "IMusdc_Implementation",
+    "chain": "optimism",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0x9b8e56d890bffbbd385fe8b0e73803a82fcef2f1",
+    "name": "IAaveFlashloan_Implementation",
+    "chain": "optimism",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]
