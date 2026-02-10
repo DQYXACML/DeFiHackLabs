@@ -1,0 +1,91 @@
+{
+  "protocol": "Pledge_exp",
+  "year_month": "2024-12",
+  "vulnerable_contract": {
+    "address": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+    "name": "Unknown"
+  },
+  "constraints": [
+    {
+      "function": "swapTokenU",
+      "signature": "swapTokenU(uint256,address)",
+      "attack_pattern": "swap_manipulation",
+      "constraint": {
+        "type": "inequality",
+        "expression": "amount > state * 0.5",
+        "semantics": "Large swap causing price manipulation",
+        "attack_values": [
+          989644233342705000000000000
+        ],
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "amount"
+          },
+          "state": {
+            "source": "storage",
+            "slot": "0x2",
+            "type": "uint256",
+            "semantic_name": "estimated_state"
+          }
+        },
+        "danger_condition": "amount > state * 0.5",
+        "safe_condition": "amount <= state * 0.1",
+        "range": {
+          "min": 989644233342705000000000000,
+          "max": 989644233342705000000000000
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": 0.5,
+        "attack_intensity": null,
+        "reasoning": "Heuristic constraint (no state diff available)",
+        "correlation_type": "heuristic",
+        "correlation_confidence": 0.3
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "8",
+        "before": 46728242178687751558108258642018016688339194606470362881879784809319972732928,
+        "after": 46728242340447431560934242532165226170777564341153824917279029712513174343680,
+        "change_pct": 0.0,
+        "is_new_slot": false
+      },
+      {
+        "slot": "10",
+        "before": 0,
+        "after": 778844528780224144279574449383014400,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "9",
+        "before": 0,
+        "after": 1246151246048358630847319119012818,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 3
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 1
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

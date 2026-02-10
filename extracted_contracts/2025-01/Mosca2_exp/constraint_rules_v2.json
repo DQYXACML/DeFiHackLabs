@@ -1,0 +1,319 @@
+{
+  "protocol": "Mosca2_exp",
+  "year_month": "2025-01",
+  "vulnerable_contract": {
+    "address": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+    "name": "Unknown"
+  },
+  "constraints": [
+    {
+      "function": "join",
+      "signature": "join(uint256,uint256,uint8,bool)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 407298387851471493519709704005530593031419330560",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 1357661292838238316729991168 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "amount"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "89717814153306320011181716697424560163256864414616650038987186496166826726344",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 1357661292838238438271777512456668179729552822100
+          }
+        },
+        "danger_condition": "amount >= 1221895163554414642818405941229955170672268279808",
+        "safe_condition": "amount <= 407298387851471493519709704005530593031419330560",
+        "threshold_value": 407298387851471493519709704005530593031419330560
+      },
+      "analysis": {
+        "state_value": 1357661292838238438271777512456668179729552822100,
+        "threshold": 950362904986766906790244258719667725810686975470,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代1357661292838238316729991168次超过上限10000，使用保守阈值407298387851471493519709704005530593031419330560",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.3576612928382383e+27,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "join",
+      "signature": "join(uint256,uint256,uint8,bool)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "discrete_numeric",
+        "expression": "1 == 0",
+        "semantics": "Observed parameter value is zero",
+        "attack_values": [
+          0
+        ],
+        "variables": {
+          "value": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "uint256",
+            "value_expr": "_refCode"
+          }
+        },
+        "range": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Parameter value observed as zero",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "join",
+      "signature": "join(uint256,uint256,uint8,bool)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "fiat > 407298387851471493519709704005530593031419330560",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 1357661292838238419905216899494010904490071293952 iterations (capped)",
+        "variables": {
+          "fiat": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint8",
+            "value_expr": "fiat"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "89717814153306320011181716697424560163256864414616650038987186496166826726344",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 1357661292838238438271777512456668179729552822100
+          }
+        },
+        "danger_condition": "fiat >= 1221895163554414642818405941229955170672268279808",
+        "safe_condition": "fiat <= 407298387851471493519709704005530593031419330560",
+        "threshold_value": 407298387851471493519709704005530593031419330560
+      },
+      "analysis": {
+        "state_value": 1357661292838238438271777512456668179729552822100,
+        "threshold": 950362904986766906790244258719667725810686975470,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代1357661292838238419905216899494010904490071293952次超过上限10000，使用保守阈值407298387851471493519709704005530593031419330560",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.3576612928382384e+48,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "join",
+      "signature": "join(uint256,uint256,uint8,bool)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "discrete_bool",
+        "expression": "3 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
+        "variables": {
+          "flag": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bool",
+            "value_expr": "enterpriseJoin"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "withdrawFiat",
+      "signature": "withdrawFiat(uint256,bool,uint8)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 407298387851471493519709704005530593031419330560",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 72714270369996534420865024 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 0,
+            "type": "uint256",
+            "value_expr": "18_671_180_855_284_200_248_407"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "89717814153306320011181716697424560163256864414616650038987186496166826726344",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 1357661292838238438271777512456668179729552822100
+          }
+        },
+        "danger_condition": "amount >= 1221895163554414642818405941229955170672268279808",
+        "safe_condition": "amount <= 407298387851471493519709704005530593031419330560",
+        "threshold_value": 407298387851471493519709704005530593031419330560
+      },
+      "analysis": {
+        "state_value": 1357661292838238438271777512456668179729552822100,
+        "threshold": 950362904986766906790244258719667725810686975470,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代72714270369996534420865024次超过上限10000，使用保守阈值407298387851471493519709704005530593031419330560",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 7.2714270369996534e+25,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "withdrawFiat",
+      "signature": "withdrawFiat(uint256,bool,uint8)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "discrete_bool",
+        "expression": "1 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
+        "variables": {
+          "flag": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "bool",
+            "value_expr": "false"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "withdrawFiat",
+      "signature": "withdrawFiat(uint256,bool,uint8)",
+      "attack_pattern": "loop_attack",
+      "constraint": {
+        "type": "capped_iterated_threshold",
+        "expression": "amount > 407298387851471493519709704005530593031419330560",
+        "semantics": "High-frequency operation: parameter affects new_mapping_entry with estimated 1357661292838238419905216899494010904490071293952 iterations (capped)",
+        "variables": {
+          "amount": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint8",
+            "value_expr": "1"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "89717814153306320011181716697424560163256864414616650038987186496166826726344",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 1357661292838238438271777512456668179729552822100
+          }
+        },
+        "danger_condition": "amount >= 1221895163554414642818405941229955170672268279808",
+        "safe_condition": "amount <= 407298387851471493519709704005530593031419330560",
+        "threshold_value": 407298387851471493519709704005530593031419330560
+      },
+      "analysis": {
+        "state_value": 1357661292838238438271777512456668179729552822100,
+        "threshold": 950362904986766906790244258719667725810686975470,
+        "coefficient": 0.7,
+        "attack_intensity": 0.0,
+        "reasoning": "高频操作，原始迭代1357661292838238419905216899494010904490071293952次超过上限10000，使用保守阈值407298387851471493519709704005530593031419330560",
+        "correlation_type": "multiple",
+        "correlation_confidence": 0.75,
+        "ratio": 1.3576612928382384e+48,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "89717814153306320011181716697424560163256864414616650038987186496166826726344",
+        "before": 0,
+        "after": 1357661292838238438271777512456668179729552822100,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "89717814153306320011181716697424560163256864414616650038987186496166826726343",
+        "before": 0,
+        "after": 1357661292838238438271777512456668179729552822100,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "89717814153306320011181716697424560163256864414616650038987186496166826726346",
+        "before": 0,
+        "after": 1357661292838238438271777512456668179729552822100,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "89717814153306320011181716697424560163256864414616650038987186496166826726345",
+        "before": 0,
+        "after": 1357661292838238438271777512456668179729552822100,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "89717814153306320011181716697424560163256864414616650038987186496166826726340",
+        "before": 0,
+        "after": 1357661292838238438271777512456668179729552822100,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 18
+  },
+  "attack_metadata": {
+    "loop_count": 7,
+    "total_calls": 6
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

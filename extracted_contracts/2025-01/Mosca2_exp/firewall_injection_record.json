@@ -1,0 +1,21 @@
+{
+  "protocol": "Mosca2_exp",
+  "year_month": "2025-01",
+  "injection_timestamp": "2026-02-10T05:28:44.841947Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "Mosca",
+    "address": "0xd8791f0c10b831b605c5d48959eb763b266940b9"
+  },
+  "injected_contracts": [
+    {
+      "file": "Mosca.sol",
+      "functions": [
+        "join",
+        "withdrawFiat"
+      ]
+    }
+  ],
+  "total_functions": 2,
+  "status": "success"
+}

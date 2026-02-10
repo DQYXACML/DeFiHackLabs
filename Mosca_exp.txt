@@ -1,0 +1,676 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2025-01/Mosca_exp.sol:Mosca
+[PASS] testExploit() (gas: 3603932)
+Logs:
+  Attacker USDC Balance Before exploit: 30.000000000000000000
+  Attacker USDC Balance After exploit: 11228.018226600985221667
+
+Traces:
+  [4510181] Mosca::testExploit()
+    ├─ [10328] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::symbol() [staticcall]
+    │   ├─ [3082] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::symbol() [delegatecall]
+    │   │   └─ ← [Return] "USDC"
+    │   └─ ← [Return] "USDC"
+    ├─ [3296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   ├─ [2553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   └─ ← [Return] 30000000000000000000 [3e19]
+    │   └─ ← [Return] 30000000000000000000 [3e19]
+    ├─ [3076] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::decimals() [staticcall]
+    │   ├─ [2336] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::decimals() [delegatecall]
+    │   │   └─ ← [Return] 18
+    │   └─ ← [Return] 18
+    ├─ emit log_named_decimal_uint(key: "Attacker USDC Balance Before exploit", val: 30000000000000000000 [3e19], decimals: 18)
+    ├─ [25308] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::approve(0x1962b3356122d6A56f978e112d14f5E23a25037D, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   ├─ [24562] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::approve(0x1962b3356122d6A56f978e112d14f5E23a25037D, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+    │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return] true
+    ├─ [271916] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   ├─ [14386] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   ├─ [13634] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564039436584007913129639935 [1.157e77])
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Return] true
+    │   ├─ [11586] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   ├─ [10834] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564039427584007913129639935 [1.157e77])
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Return] true
+    │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   └─ ← [Stop]
+    ├─ [4158175] 0x92b7807bF19b7DDdf89b706143896d05228f3121::flash(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0, 1000000000000000000000 [1e21], 0x00000000000000000000000000000000000000000000003635c9adc5dea00000)
+    │   ├─ [2531] 0x55d398326f99059fF775485246999027B3197955::balanceOf(0x92b7807bF19b7DDdf89b706143896d05228f3121) [staticcall]
+    │   │   └─ ← [Return] 13986341869234771473452036 [1.398e25]
+    │   ├─ [3296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x92b7807bF19b7DDdf89b706143896d05228f3121) [staticcall]
+    │   │   ├─ [2553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x92b7807bF19b7DDdf89b706143896d05228f3121) [delegatecall]
+    │   │   │   └─ ← [Return] 4583852324446402108678012 [4.583e24]
+    │   │   └─ ← [Return] 4583852324446402108678012 [4.583e24]
+    │   ├─ [6839] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1000000000000000000000 [1e21])
+    │   │   ├─ [6093] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1000000000000000000000 [1e21]) [delegatecall]
+    │   │   │   ├─ emit Transfer(from: 0x92b7807bF19b7DDdf89b706143896d05228f3121, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 1000000000000000000000 [1e21])
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Return] true
+    │   ├─ [4113903] Mosca::pancakeV3FlashCallback(0, 100000000000000000 [1e17], 0x00000000000000000000000000000000000000000000003635c9adc5dea00000)
+    │   │   ├─ [39810] 0x1962b3356122d6A56f978e112d14f5E23a25037D::buy(1000000000000000000000 [1e21], true, 2)
+    │   │   │   ├─ emit BoughtUSDC(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 985221674876847290640 [9.852e20])
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 1000000000000000000000 [1e21])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 1000000000000000000000 [1e21]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 1000000000000000000000 [1e21])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038427584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 4926108374384236453 [4.926e18])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [365830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 12942680000000000000000 [1.294e22]
+    │   │   │   │   └─ ← [Return] 12942680000000000000000 [1.294e22]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038406584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038397584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 11976901674876847290641 [1.197e22]
+    │   │   │   │   └─ ← [Return] 11976901674876847290641 [1.197e22]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038376584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038367584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 11011123349753694581282 [1.101e22]
+    │   │   │   │   └─ ← [Return] 11011123349753694581282 [1.101e22]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038346584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038337584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 10045345024630541871923 [1.004e22]
+    │   │   │   │   └─ ← [Return] 10045345024630541871923 [1.004e22]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038316584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038307584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 9079566699507389162564 [9.079e21]
+    │   │   │   │   └─ ← [Return] 9079566699507389162564 [9.079e21]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038286584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038277584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 8113788374384236453205 [8.113e21]
+    │   │   │   │   └─ ← [Return] 8113788374384236453205 [8.113e21]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038256584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038247584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 7148010049261083743846 [7.148e21]
+    │   │   │   │   └─ ← [Return] 7148010049261083743846 [7.148e21]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038226584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038217584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 6182231724137931034487 [6.182e21]
+    │   │   │   │   └─ ← [Return] 6182231724137931034487 [6.182e21]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038196584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038187584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 5216453399014778325128 [5.216e21]
+    │   │   │   │   └─ ← [Return] 5216453399014778325128 [5.216e21]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038166584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038157584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 4250675073891625615769 [4.25e21]
+    │   │   │   │   └─ ← [Return] 4250675073891625615769 [4.25e21]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038136584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038127584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 3284896748768472906410 [3.284e21]
+    │   │   │   │   └─ ← [Return] 3284896748768472906410 [3.284e21]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038106584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038097584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 2319118423645320197051 [2.319e21]
+    │   │   │   │   └─ ← [Return] 2319118423645320197051 [2.319e21]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038076584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038067584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91830] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 1353340098522167487692 [1.353e21]
+    │   │   │   │   └─ ← [Return] 1353340098522167487692 [1.353e21]
+    │   │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 2)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038046584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038037584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [102663] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 387561773399014778333 [3.875e20]
+    │   │   │   │   └─ ← [Return] 387561773399014778333 [3.875e20]
+    │   │   │   ├─ [12871] 0x55d398326f99059fF775485246999027B3197955::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 1)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038016584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564038007584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91063] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 408561773399014778333 [4.085e20]
+    │   │   │   │   └─ ← [Return] 408561773399014778333 [4.085e20]
+    │   │   │   ├─ [3271] 0x55d398326f99059fF775485246999027B3197955::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 1)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037986584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037977584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91063] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 429561773399014778333 [4.295e20]
+    │   │   │   │   └─ ← [Return] 429561773399014778333 [4.295e20]
+    │   │   │   ├─ [3271] 0x55d398326f99059fF775485246999027B3197955::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 1)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037956584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037947584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91063] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 450561773399014778333 [4.505e20]
+    │   │   │   │   └─ ← [Return] 450561773399014778333 [4.505e20]
+    │   │   │   ├─ [3271] 0x55d398326f99059fF775485246999027B3197955::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 1)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037926584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037917584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91063] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 471561773399014778333 [4.715e20]
+    │   │   │   │   └─ ← [Return] 471561773399014778333 [4.715e20]
+    │   │   │   ├─ [3271] 0x55d398326f99059fF775485246999027B3197955::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 1)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037896584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037887584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91063] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 492561773399014778333 [4.925e20]
+    │   │   │   │   └─ ← [Return] 492561773399014778333 [4.925e20]
+    │   │   │   ├─ [3271] 0x55d398326f99059fF775485246999027B3197955::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 1)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037866584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037857584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91063] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 513561773399014778333 [5.135e20]
+    │   │   │   │   └─ ← [Return] 513561773399014778333 [5.135e20]
+    │   │   │   ├─ [3271] 0x55d398326f99059fF775485246999027B3197955::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 1)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [92216] 0x1962b3356122d6A56f978e112d14f5E23a25037D::join(30000000000000000000 [3e19], 0, 2, false)
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x1962b3356122d6A56f978e112d14f5E23a25037D, 21000000000000000000 [2.1e19]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 21000000000000000000 [2.1e19])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037836584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [6786] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18])
+    │   │   │   │   ├─ [6034] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transferFrom(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, 9000000000000000000 [9e18]) [delegatecall]
+    │   │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a, value: 9000000000000000000 [9e18])
+    │   │   │   │   │   ├─ emit Approval(owner: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: 0x1962b3356122d6A56f978e112d14f5E23a25037D, value: 115792089237316195423570985008687907853269984665640564037827584007913129639935 [1.157e77])
+    │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit Joined(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 30000000000000000000 [3e19], param3: 2)
+    │   │   │   ├─ emit TransferFeeEarned(param0: 0x0000000000000000000000000000000000000000, param1: 1736140963 [1.736e9], param2: 147783251231527093 [1.477e17])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [91063] 0x1962b3356122d6A56f978e112d14f5E23a25037D::exitProgram()
+    │   │   │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [staticcall]
+    │   │   │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x1962b3356122d6A56f978e112d14f5E23a25037D) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 534561773399014778333 [5.345e20]
+    │   │   │   │   └─ ← [Return] 534561773399014778333 [5.345e20]
+    │   │   │   ├─ [3271] 0x55d398326f99059fF775485246999027B3197955::transfer(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 986778325123152709359 [9.867e20])
+    │   │   │   │   ├─ emit Transfer(from: 0x1962b3356122d6A56f978e112d14f5E23a25037D, to: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 986778325123152709359 [9.867e20])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ emit WithdrawAll(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9], param2: 986778325123152709359 [9.867e20], param3: 1)
+    │   │   │   ├─ emit ExitProgram(param0: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], param1: 1736140963 [1.736e9])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [4039] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::transfer(0x92b7807bF19b7DDdf89b706143896d05228f3121, 1000100000000000000000 [1e21])
+    │   │   │   ├─ [3293] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::transfer(0x92b7807bF19b7DDdf89b706143896d05228f3121, 1000100000000000000000 [1e21]) [delegatecall]
+    │   │   │   │   ├─ emit Transfer(from: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: 0x92b7807bF19b7DDdf89b706143896d05228f3121, value: 1000100000000000000000 [1e21])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   └─ ← [Return] true
+    │   │   └─ ← [Stop]
+    │   ├─ [531] 0x55d398326f99059fF775485246999027B3197955::balanceOf(0x92b7807bF19b7DDdf89b706143896d05228f3121) [staticcall]
+    │   │   └─ ← [Return] 13986341869234771473452036 [1.398e25]
+    │   ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(0x92b7807bF19b7DDdf89b706143896d05228f3121) [staticcall]
+    │   │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(0x92b7807bF19b7DDdf89b706143896d05228f3121) [delegatecall]
+    │   │   │   └─ ← [Return] 4583852424446402108678012 [4.583e24]
+    │   │   └─ ← [Return] 4583852424446402108678012 [4.583e24]
+    │   ├─ emit Flash(sender: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], recipient: Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], qty0: 0, qty1: 1000000000000000000000 [1e21], paid0: 0, paid1: 100000000000000000 [1e17])
+    │   └─ ← [Stop]
+    ├─ [1828] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::symbol() [staticcall]
+    │   ├─ [1082] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::symbol() [delegatecall]
+    │   │   └─ ← [Return] "USDC"
+    │   └─ ← [Return] "USDC"
+    ├─ [1296] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::balanceOf(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   ├─ [553] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::balanceOf(Mosca: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [delegatecall]
+    │   │   └─ ← [Return] 11228018226600985221667 [1.122e22]
+    │   └─ ← [Return] 11228018226600985221667 [1.122e22]
+    ├─ [1076] 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d::decimals() [staticcall]
+    │   ├─ [336] 0xBA5Fe23f8a3a24BEd3236F05F2FcF35fd0BF0B5C::decimals() [delegatecall]
+    │   │   └─ ← [Return] 18
+    │   └─ ← [Return] 18
+    ├─ emit log_named_decimal_uint(key: "Attacker USDC Balance After exploit", val: 11228018226600985221667 [1.122e22], decimals: 18)
+    └─ ← [Stop]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 309.50ms (14.86ms CPU time)
+
+Ran 1 test suite in 325.63ms (309.50ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

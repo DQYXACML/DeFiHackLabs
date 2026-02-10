@@ -41,15 +41,49 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "Mosca",
       "Vulnerable_Contract"
     ]
   },
   {
-    "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
-    "name": null,
+    "address": "0x6098A5638d8D7e9Ed2f952d35B2b67c34EC6B476",
+    "name": "DPP",
     "chain": "bsc",
-    "source": "dynamic",
-    "context": "called with gas 10328",
+    "source": "static",
+    "context": "address internal constant DPP = 0x6098A5638d8D7e9Ed2f952d35B2b67c34EC6B476",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "DPP"
+    ]
+  },
+  {
+    "address": "0x55d398326f99059fF775485246999027B3197955",
+    "name": "BUSD",
+    "chain": "bsc",
+    "source": "static",
+    "context": "address internal constant BUSD = 0x55d398326f99059fF775485246999027B3197955",
+    "onchain_name": null,
+    "symbol": "USDT",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "BUSD",
+      "usdt",
+      "IUSDT"
+    ]
+  },
+  {
+    "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+    "name": "USDC",
+    "chain": "bsc",
+    "source": "static",
+    "context": "address internal constant USDC = 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
     "onchain_name": null,
     "symbol": "USDC",
     "decimals": 18,
@@ -79,19 +113,6 @@
     ]
   },
   {
-    "address": "0x6098A5638d8D7e9Ed2f952d35B2b67c34EC6B476",
-    "name": null,
-    "chain": "bsc",
-    "source": "dynamic",
-    "context": "called with gas 748947",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
     "address": "0x85351262f7474Ebe23FfAcD633cf20A491F1325D",
     "name": null,
     "chain": "bsc",
@@ -102,24 +123,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
-  },
-  {
-    "address": "0x55d398326f99059fF775485246999027B3197955",
-    "name": null,
-    "chain": "bsc",
-    "source": "dynamic",
-    "context": "called with gas 12871",
-    "onchain_name": null,
-    "symbol": "USDT",
-    "decimals": 18,
-    "is_erc20": true,
-    "semantic_type": "unknown",
-    "aliases": [
-      "USDT",
-      "usdt",
-      "IUSDT"
-    ]
+    "aliases": null
   },
   {
     "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
@@ -149,7 +153,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xD7CFeEDBB70463F66b3fA1449812A162A53586C5",
@@ -162,7 +166,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0xFB5C0a225012abEbC46AcD94635371BcF0868812",
@@ -175,6 +179,6 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   }
 ]

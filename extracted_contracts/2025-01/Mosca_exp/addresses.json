@@ -41,15 +41,16 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "MOSCA",
       "Vulnerable_Contract"
     ]
   },
   {
     "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
-    "name": null,
+    "name": "USDC",
     "chain": "bsc",
-    "source": "dynamic",
-    "context": "called with gas 10328",
+    "source": "static",
+    "context": "address internal constant USDC = 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
     "onchain_name": null,
     "symbol": "USDC",
     "decimals": 18,
@@ -59,6 +60,21 @@
       "USDC",
       "usdc",
       "IUSDC"
+    ]
+  },
+  {
+    "address": "0x92b7807bF19b7DDdf89b706143896d05228f3121",
+    "name": "PancakePool",
+    "chain": "bsc",
+    "source": "static",
+    "context": "address internal constant PancakePool = 0x92b7807bF19b7DDdf89b706143896d05228f3121",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "PancakePool"
     ]
   },
   {
@@ -77,19 +93,6 @@
       "usdc",
       "IUSDC"
     ]
-  },
-  {
-    "address": "0x92b7807bF19b7DDdf89b706143896d05228f3121",
-    "name": null,
-    "chain": "bsc",
-    "source": "dynamic",
-    "context": "called with gas 4158175",
-    "onchain_name": null,
-    "symbol": null,
-    "decimals": null,
-    "is_erc20": false,
-    "semantic_type": "unknown",
-    "aliases": []
   },
   {
     "address": "0x55d398326f99059fF775485246999027B3197955",
@@ -119,7 +122,7 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   },
   {
     "address": "0x2fE70eF3DB7eA49b5f14B5edf6208116458fa74a",
@@ -132,6 +135,6 @@
     "decimals": null,
     "is_erc20": false,
     "semantic_type": "unknown",
-    "aliases": []
+    "aliases": null
   }
 ]

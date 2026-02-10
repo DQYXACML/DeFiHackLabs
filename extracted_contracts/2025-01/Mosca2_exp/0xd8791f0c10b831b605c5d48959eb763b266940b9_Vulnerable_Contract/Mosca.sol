@@ -8,6 +8,8 @@
 
 pragma solidity ^0.8.20;
 
+import {IRouter} from "./interfaces/IRouter.sol";
+
 
 /**
  * @dev Contract module that helps prevent reentrant calls to a function.
@@ -174,6 +176,21 @@ pragma solidity ^0.8.0;
 
 
 contract Mosca is ReentrancyGuard{
+    // 防火墙读取单槽位接口
+    function extsload(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+    // 兼容接口: 与 ext/tools 读取保持一致
+    function getStorageAt(bytes32 slot) external view returns (bytes32 value) {
+        assembly {
+            value := sload(slot)
+        }
+    }
+
+
    
      IERC20 public usdt;
     IERC20 public usdc;
@@ -217,6 +234,102 @@ contract Mosca is ReentrancyGuard{
     uint256[] public tierRewards = [250, 125, 125, 125, 125, 125, 63, 63, 63, 187]; // Tier rewards in cents
     uint256[] public enterprise_tierRewards = [750, 375, 375, 375, 375, 375, 189, 189, 189, 561]; // Tier rewards in cents
     uint256[] public tierSizes = [3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 59049]; // Number of users per tier
+    // 防火墙路由器（使用普通变量而非immutable，支持构造后设置，避免子类stack too deep）
+    // ========== 防火墙存储槽位（ERC1967风格） ==========
+    /**
+     * @dev 防火墙路由器存储槽位
+     * 计算方式: bytes32(uint256(keccak256('firewall.router.storage')) - 1)
+     * 槽位值: 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc
+     *
+     * 此槽位在极高的存储空间，不会与合约原有变量（slot 0-N）冲突
+     * 参考: ERC1967 Proxy Standard
+     */
+    bytes32 private constant FIREWALL_ROUTER_SLOT =
+        bytes32(uint256(keccak256('firewall.router.storage')) - 1);
+
+    /**
+     * @dev 获取防火墙路由器地址
+     */
+    function firewall() public view returns (IRouter) {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        address firewallAddress;
+        assembly {
+            firewallAddress := sload(slot)
+        }
+        return IRouter(firewallAddress);
+    }
+
+    // 防火墙保护修饰符（可写函数）
+    modifier firewallProtected() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                _firewall.executeWithDetect(msg.data);
+            }
+        }
+        _;
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                try _firewall.releaseWithDetect(msg.data) {} catch {}
+            }
+        }
+    }
+
+    // 防火墙保护修饰符（view/pure函数）
+    modifier firewallProtectedView() {
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                bytes memory data = abi.encodeWithSignature("executeWithDetect(bytes)", msg.data);
+                bool ok;
+                assembly {
+                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
+                }
+                ok;
+            }
+        }
+        _;
+        {
+            IRouter _firewall = firewall();
+            if (address(_firewall) != address(0)) {
+                bytes memory data = abi.encodeWithSignature("releaseWithDetect(bytes)", msg.data);
+                bool ok;
+                assembly {
+                    ok := staticcall(gas(), _firewall, add(data, 0x20), mload(data), 0, 0)
+                }
+                ok;
+            }
+        }
+    }
+
+    /**
+     * @dev 设置防火墙路由器地址（internal，供子类在构造函数中调用）
+     */
+    function _setFirewall(address _firewall) internal {
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    /**
+     * @dev 公开设置防火墙地址（仅在未设置时可调用，支持动态更新）
+     */
+    function setFirewall(address _firewall) external {
+        require(msg.sender == owner || address(firewall()) == address(0), "Not authorized");
+        require(_firewall != address(0), "Invalid firewall address");
+        bytes32 slot = FIREWALL_ROUTER_SLOT;
+        assembly {
+            sstore(slot, _firewall)
+        }
+        emit FirewallUpdated(_firewall);
+    }
+
+    event FirewallUpdated(address indexed newFirewall);
+
+
 
     modifier onlyOwnerOrAdmin() {
         require(msg.sender == owner || msg.sender == admin, "Not the owner");
@@ -337,7 +450,7 @@ function getAdminBalances() external view returns (uint256, uint256, uint256){
     }
     
 
-     function join(uint256 amount, uint256 _refCode, uint8 fiat, bool enterpriseJoin) external nonReentrant{
+     function join(uint256 amount, uint256 _refCode, uint8 fiat, bool enterpriseJoin) external nonReentrant firewallProtected {
            User storage user = users[msg.sender];
            uint256 diff = user.balance > 127 * 10 ** 18 ? user.balance - 127 * 10 ** 18 : 0;
             uint256 tax_remainder;
@@ -799,7 +912,7 @@ function distributeFeesFiat(address tempAddress, uint256 amount, uint256 fiat) p
 
     
     
-    function withdrawFiat(uint256 amount, bool isFiat, uint8 fiatToWithdraw) external nonReentrant {
+    function withdrawFiat(uint256 amount, bool isFiat, uint8 fiatToWithdraw) external nonReentrant firewallProtected {
         require(!isBlacklisted[msg.sender], "Blacklisted user");
          User storage user = users[msg.sender];
          uint limit = user.enterprise ? 127 * 10 ** 18 : 28 * 10 ** 18;

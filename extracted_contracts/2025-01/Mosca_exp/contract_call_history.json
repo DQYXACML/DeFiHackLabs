@@ -1,0 +1,555 @@
+{
+  "protocol": "Mosca_exp",
+  "contract_address": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+  "target_functions": [
+    "join",
+    "buy",
+    "exitProgram"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "exitProgram": {},
+    "buy": {
+      "0": {
+        "avoid": [],
+        "max": 227912732520025435294488066346125997135993241600
+      },
+      "1": {
+        "avoid": [
+          false,
+          true
+        ]
+      },
+      "2": {
+        "avoid": [],
+        "max": 227912732520025435294488066346125997135993241600
+      }
+    },
+    "join": {
+      "0": {
+        "avoid": [],
+        "max": 227912732520025435294488066346125997135993241600
+      },
+      "1": {
+        "avoid": [
+          0
+        ]
+      },
+      "2": {
+        "avoid": [],
+        "max": 227912732520025435294488066346125997135993241600
+      },
+      "3": {
+        "avoid": [
+          false,
+          true
+        ]
+      }
+    }
+  },
+  "attack_block": 45519929,
+  "generated_at": "2026-02-10T11:59:33.434252Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0x6ef31254b7cb814adb21ebe9c6fc14423471ce46",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45441929,
+      "time": "2024-12-24T13:22:43Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 543146
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 624688
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 157
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0x53b7c6f5808d2c9d04af61b9853fb5446a6b14a3",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45507929,
+      "time": "2025-01-04T13:22:43Z",
+      "function": "buy",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 195533
+        },
+        {
+          "name": "buyFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 110
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0xabea5f9bac945eee3599bd2fd8ab311b3159bc2e",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45441929,
+      "time": "2024-12-24T13:22:43Z",
+      "function": "exitProgram",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0x6770a32c685111c2a6ca2b6bcedcdb1d4a13868f",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45471929,
+      "time": "2024-12-29T13:22:43Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 18756
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 746568
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 121
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0xe31588e57f3fd0f344afdef7625928ffe657f98d",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45471929,
+      "time": "2024-12-29T13:22:43Z",
+      "function": "buy",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 787050
+        },
+        {
+          "name": "buyFiat",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 78
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x6c1a9b040ce44c5c6bacd8a790c9d8126212d146",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45369929,
+      "time": "2024-12-12T13:22:43Z",
+      "function": "exitProgram",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0xdf0c276d85da40e96136c5be346953de5cfc5f70",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45507929,
+      "time": "2025-01-04T13:22:43Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 825098
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 761577
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 138
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0x79a92c97a091c57b904fb650a585343a6c904e74",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45405929,
+      "time": "2024-12-18T13:22:43Z",
+      "function": "buy",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 570768
+        },
+        {
+          "name": "buyFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0x1957501c24853122d5249e8cd8fda23f876ff83a",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45423929,
+      "time": "2024-12-21T13:22:43Z",
+      "function": "exitProgram",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0xb36dab3ec76bb2f0e37d2a8517102e3ed068922f",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45447929,
+      "time": "2024-12-25T13:22:43Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 113005
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 562773
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 40
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0xc3fbce6c83fedef30436ce42348228c0fe4b88a7",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45459929,
+      "time": "2024-12-27T13:22:43Z",
+      "function": "buy",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 634341
+        },
+        {
+          "name": "buyFiat",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 77
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0x4a2d58a0c66c16ba1d29c074f7a29eaa44cf6b84",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45489929,
+      "time": "2025-01-01T13:22:43Z",
+      "function": "exitProgram",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0xa042910f6eb34abd98b863c874efabb761035f74",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45357929,
+      "time": "2024-12-10T13:22:43Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 526410
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 956712
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 53
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x84764ccfeca7b6fb19e0d05c279e47c5c9a0bf1a",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45381929,
+      "time": "2024-12-14T13:22:43Z",
+      "function": "buy",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 156226
+        },
+        {
+          "name": "buyFiat",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0x6202fa55c90cdfbd24fc38817675e8ce6bec4770",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45381929,
+      "time": "2024-12-14T13:22:43Z",
+      "function": "exitProgram",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0xe4bf05a7a9a888ff5773835b129de9f3b127bd6b",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45459929,
+      "time": "2024-12-27T13:22:43Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 13850
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 498961
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 216
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0xfea6d7dd1141b3c4239db486ba8f9125a712f821",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45513929,
+      "time": "2025-01-05T13:22:43Z",
+      "function": "buy",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 27622
+        },
+        {
+          "name": "buyFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 204
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0x3f41aa5b41c9fb6db303ad84a422df9e95a12160",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45339929,
+      "time": "2024-12-07T13:22:43Z",
+      "function": "exitProgram",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": []
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x901ee9dde818ccb57b81e38d3ca9ff2d0778ecc8",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45339929,
+      "time": "2024-12-07T13:22:43Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 498177
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 321490
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 80
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0xcea968e50e95806ec1b5fc579d0128c52a02c899",
+      "to": "0x1962b3356122d6a56f978e112d14f5e23a25037d",
+      "value": "0",
+      "blockNumber": 45345929,
+      "time": "2024-12-08T13:22:43Z",
+      "function": "buy",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 542016
+        },
+        {
+          "name": "buyFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 131
+        }
+      ]
+    }
+  ]
+}

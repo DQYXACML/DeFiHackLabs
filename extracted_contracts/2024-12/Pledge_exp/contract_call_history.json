@@ -1,0 +1,483 @@
+{
+  "protocol": "Pledge_exp",
+  "contract_address": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+  "target_functions": [
+    "swapTokenU"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "swapTokenU": {
+      "0": {
+        "avoid": [
+          989644233342705000000000000
+        ]
+      }
+    }
+  },
+  "attack_block": 44555337,
+  "generated_at": "2026-02-10T11:31:17.856896Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0x722126a995f42b6d3a83ce45cdbd8bdb06fba1f6",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44381337,
+      "time": "2024-11-05T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 49479
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x16b06be6ed75fa21b954c9df79b9d4c2e6c5687c"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0x46cb0bfc07696fefb33f7ada4a56d0134e138da4",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44543337,
+      "time": "2024-12-02T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 235037
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0xfe3bf42b7062f1dbd4dd6f1039453360bf77c782"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0x05042b85e10b014096a61414e6ecaf9863b9ff9b",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44507337,
+      "time": "2024-11-26T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 910466
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x1fba258e33a83eef8bed11eecb740c4e6795cacc"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0x227ddd6554417122a8b5abcc194dedaeba6fbbe7",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44393337,
+      "time": "2024-11-07T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 690295
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x1716710489776cab93b02718e005d96beec21948"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0xec1c4b186fd5ddbca94776688f1b056305370b3e",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44465337,
+      "time": "2024-11-19T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 550930
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x0768157abca63f1e4a7a79900bdcddbe8482e062"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x680260d4b83743f0f78d82c10c07105db178ed18",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44459337,
+      "time": "2024-11-18T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 543231
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0xa950aa7f3a2e4980aa14d4e39286e9f7eb94fd1b"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0x27a0b32467777c0aa9967ab2f43d88a8c31c5a83",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44465337,
+      "time": "2024-11-19T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 409195
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0xc5ad6f9c788be633c60a27b6707d4114ec5e2c6d"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0xb23e610e2450dca093f96f25caa50d160eb38a7a",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44489337,
+      "time": "2024-11-23T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 137095
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x92c0d344f1a84ce6cf35fb0aae2dc58ebf2e14ce"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0xd77e39d0dd5da9fe2d9ad2ee9e4f1e869d9f0357",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44393337,
+      "time": "2024-11-07T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 78043
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0xdbde977c7b74a8c865a34f947ff79cd47cfca457"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0x887dd9794d023481a4fe9df16f65a7c3e68700cd",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44477337,
+      "time": "2024-11-21T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 554582
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x0204e26a9dc38f6a83b871c89b3255824db97bd6"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0x620c6629d07599f5fb2db9724d307fe80fb0656b",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44399337,
+      "time": "2024-11-08T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 960232
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x1426734e80b677ec831d4d336b30c5bffbfd342f"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0x4d19753c74dcfaeef99476685ca50312426a5bd9",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44465337,
+      "time": "2024-11-19T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 12306
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0xe7a5969882f5a3911e02ea2c6fbda9b00ec75ae7"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0xac7b37827f813069b351c7757006bc23efa63ff9",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44501337,
+      "time": "2024-11-25T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 838226
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0xa7930da39072c322bef211cd84a5c16724352797"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x78000ee3fad40d7daff721bc50c753896ec6764f",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44381337,
+      "time": "2024-11-05T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 894282
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0xe536d5085709c789f1fe66dbd992e3ae0be85268"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0xfaf2c6ef26133d7187202ab60585aab4c3fc3bc7",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44441337,
+      "time": "2024-11-15T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 129816
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x70a4c99fc00da3abc4267d9e023e77a1a8a5caa7"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0x08de6c30c2a3da0c971bee5aa21ad6d33c923514",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44405337,
+      "time": "2024-11-09T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 617299
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x46ba775bd3910b8893e1c5a8f431157a2600e2ad"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0xe9fe1051d2ee3c5c0d1d8b1b9ef6d1623888a449",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44417337,
+      "time": "2024-11-11T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 39660
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0xd7ed03ee4da7723109c8155936727c2b3c9f883f"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0x0436497d563300b6d9bcd43fcac1612714b76306",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44465337,
+      "time": "2024-11-19T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 291481
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x8896c171c85a7d27c57ba42b04de94f0acdad4d7"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x4e0cb25db3a4d47313d5e42454b7c41deb89257c",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44387337,
+      "time": "2024-11-06T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 355830
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x5cc7219f762f60789cfbcbff4aba572332f99274"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0xcce36e2abf66fd39b018c281cf57758b9f1a9a81",
+      "to": "0x061944c0f3c2d7dabafb50813efb05c4e0c952e1",
+      "value": "0",
+      "blockNumber": 44495337,
+      "time": "2024-11-24T01:27:16Z",
+      "function": "swapTokenU",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 81090
+        },
+        {
+          "name": "_target",
+          "type": "address",
+          "value": "0x21984744ad110004cfc40ed75bc7a957d883746b"
+        }
+      ]
+    }
+  ]
+}

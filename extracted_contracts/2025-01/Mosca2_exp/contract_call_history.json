@@ -1,0 +1,664 @@
+{
+  "protocol": "Mosca2_exp",
+  "contract_address": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+  "target_functions": [
+    "join",
+    "withdrawFiat"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "withdrawFiat": {
+      "0": {
+        "avoid": [],
+        "max": 407298387851471493519709704005530593031419330560
+      },
+      "1": {
+        "avoid": [
+          false,
+          true
+        ]
+      },
+      "2": {
+        "avoid": [],
+        "max": 407298387851471493519709704005530593031419330560
+      }
+    },
+    "join": {
+      "0": {
+        "avoid": [],
+        "max": 407298387851471493519709704005530593031419330560
+      },
+      "1": {
+        "avoid": [
+          0
+        ]
+      },
+      "2": {
+        "avoid": [],
+        "max": 407298387851471493519709704005530593031419330560
+      },
+      "3": {
+        "avoid": [
+          false,
+          true
+        ]
+      }
+    }
+  },
+  "attack_block": 45722243,
+  "generated_at": "2026-02-10T13:32:16.982469Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0x6da4707d0b8f0b228fb4ef1b37d4d5d61645a0ad",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45614243,
+      "time": "2024-12-26T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 826710
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 233042
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 247
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0x3300af9d429718adb4bd13704b01f6e541e3ab01",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45578243,
+      "time": "2024-12-20T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 972843
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 72
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0x92c1bc1de2c9538a9c393622b768215c1e8b17a7",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45674243,
+      "time": "2025-01-05T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 991388
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 785981
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 19
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0x1017724a26bfca2785050b4485afdb144b225c42",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45590243,
+      "time": "2024-12-22T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 40262
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 125
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0x5998ff05b478188bc97fb713d3ca4cf1d1dfa52e",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45680243,
+      "time": "2025-01-06T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 790073
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 812339
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 192
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x1595aa7158ca88d13f033f82c6c438cad6b02dda",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45602243,
+      "time": "2024-12-24T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 318757
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 88
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0x09224b2622939aa04ce6373e99b96937f2792712",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45590243,
+      "time": "2024-12-22T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 305730
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 195576
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 129
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0x61b09518184f1727b6e81649832209f0749eefea",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45578243,
+      "time": "2024-12-20T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 318095
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 187
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0x8261182d69285da04feeba0c39950616a65b63b4",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45578243,
+      "time": "2024-12-20T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 872122
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 335402
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 143
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0xbdec67d67788b8a8a5d86f592faf0e9a50ac9984",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45566243,
+      "time": "2024-12-18T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 190116
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 108
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0xe3fa43b07da11b268c541ac31c17be7d59b6a0c4",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45572243,
+      "time": "2024-12-19T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 697165
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 980603
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 179
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0x20f3d57dbbed0afc8cdbcd3aca7bb243f1e4f998",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45668243,
+      "time": "2025-01-04T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 711347
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 115
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0x2fb6da405c48eaeca36d4fcefd696c7e3fbb460a",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45710243,
+      "time": "2025-01-11T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 960781
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 558212
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 253
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0xee3b47283356e12618b9f96003a4d163989ca93a",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45668243,
+      "time": "2025-01-04T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 129220
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 89
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0x004a3b17f1a8702b9d39855a99fc012e752c3983",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45590243,
+      "time": "2024-12-22T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 886515
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 288376
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 243
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0x54b18eada933856e1f020f843ce1b4195b3c71e5",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45650243,
+      "time": "2025-01-01T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 977304
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 155
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0x00eafbb2b122d713c3b20d629438df2b5535397e",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45626243,
+      "time": "2024-12-28T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 553746
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 660878
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 110
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0xc1b5d01d4108a0987f7a5514cf09ada17df52d1a",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45542243,
+      "time": "2024-12-14T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 65171
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 67
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x96f1f3285285b85d1e3ad2f9f0138df789378e58",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45548243,
+      "time": "2024-12-15T14:00:00Z",
+      "function": "join",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 928630
+        },
+        {
+          "name": "_refCode",
+          "type": "uint256",
+          "value": 405598
+        },
+        {
+          "name": "fiat",
+          "type": "uint8",
+          "value": 219
+        },
+        {
+          "name": "enterpriseJoin",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x54ffb9f2e9995c1be0df4616a1156a3501dd3e96",
+      "to": "0xd8791f0c10b831b605c5d48959eb763b266940b9",
+      "value": "0",
+      "blockNumber": 45632243,
+      "time": "2024-12-29T14:00:00Z",
+      "function": "withdrawFiat",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": 710029
+        },
+        {
+          "name": "isFiat",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "fiatToWithdraw",
+          "type": "uint8",
+          "value": 92
+        }
+      ]
+    }
+  ]
+}
