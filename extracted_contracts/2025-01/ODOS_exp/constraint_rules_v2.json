@@ -1,0 +1,142 @@
+{
+  "protocol": "ODOS_exp",
+  "year_month": "2025-01",
+  "vulnerable_contract": {
+    "address": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+    "name": "Unknown"
+  },
+  "constraints": [
+    {
+      "function": "isValidSigImpl",
+      "signature": "isValidSigImpl(address,bytes32,bytes,bool)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "1 length in [0,32]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 1,
+            "type": "bytes32",
+            "value_expr": "bytes32(0x0)"
+          }
+        },
+        "range": {
+          "min_len": 0,
+          "max_len": 32
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "isValidSigImpl",
+      "signature": "isValidSigImpl(address,bytes32,bytes,bool)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "bytes_pattern",
+        "expression": "2 length in [320,320]",
+        "semantics": "Restrict bytes payload length",
+        "attack_values": [
+          "0x000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda02913000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000044a9059cbb0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e149600000000000000000000000000000000000000000000000000000003a08a84a500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101000000000000000000000000000000000000000000000000000000000000006492649264926492649264926492649264926492649264926492649264926492"
+        ],
+        "variables": {
+          "bytes": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "bytes",
+            "value_expr": "signature"
+          }
+        },
+        "range": {
+          "min_len": 320,
+          "max_len": 320
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Bytes payload constrained by observed length",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    },
+    {
+      "function": "isValidSigImpl",
+      "signature": "isValidSigImpl(address,bytes32,bytes,bool)",
+      "attack_pattern": "unknown",
+      "constraint": {
+        "type": "discrete_bool",
+        "expression": "3 in [true,false]",
+        "semantics": "Boolean flag must be explicit",
+        "attack_values": [
+          true,
+          false
+        ],
+        "variables": {
+          "flag": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "bool",
+            "value_expr": "true"
+          }
+        }
+      },
+      "analysis": {
+        "state_value": null,
+        "threshold": null,
+        "coefficient": null,
+        "attack_intensity": null,
+        "reasoning": "Boolean parameter limited to true/false",
+        "correlation_type": "discrete",
+        "correlation_confidence": 0.2
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "112608754849082142809318926621919487171846225487323147701519066153336967863387",
+        "before": 0,
+        "after": 15578334373,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "114090134945872675573844398883678493837170945604230436960070792119745656572360",
+        "before": 15578334373,
+        "after": 0,
+        "change_pct": 100.0,
+        "is_new_slot": false
+      }
+    ],
+    "total_changed_slots": 2
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 1
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

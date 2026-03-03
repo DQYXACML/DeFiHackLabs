@@ -1,0 +1,695 @@
+{
+  "protocol": "ODOS_exp",
+  "contract_address": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+  "target_functions": [
+    "isValidSigImpl"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "isValidSigImpl": {
+      "1": {
+        "avoid": [
+          "0x0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      "2": {
+        "avoid": [
+          "0x000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda02913000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000044a9059cbb0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e149600000000000000000000000000000000000000000000000000000003a08a84a500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101000000000000000000000000000000000000000000000000000000000000006492649264926492649264926492649264926492649264926492649264926492"
+        ]
+      },
+      "3": {
+        "avoid": [
+          false,
+          true
+        ]
+      }
+    }
+  },
+  "attack_block": 25431000,
+  "generated_at": "2026-03-03T05:49:53.328119Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0xedf61c08573b3963bdaf9e00b0cdc5ac96fbdd87",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25293000,
+      "time": "2024-12-31T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0xc67fca99829f21407bfde17dc9a834dd4354b369"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0xfc89bc28b6137921ed0131f04a2418ad0b1bee64a926534f4b3f1398769bade7"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x0fb21420"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0x108b3fcb0b8b5fa7d1e3a9292d1144eecbd23c8f",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25371000,
+      "time": "2025-01-13T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x7f4b00f4a6d5f95031fb496eb5f8fddc393b3934"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x3f9e4d5a69d9c45873eca7cdcb5c499e77762af42063ed5f46406a91307358bb"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x453f"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0x5b2dc23a60294d7c0018502a710b3681e0c573c9",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25287000,
+      "time": "2024-12-30T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x5c36e1869c94ed8d5ed6a8aa7e905bf47312f03c"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x58a2899dede371c47cf799660d763ea8d5c05e32f1396070fbb94d5b3a9b9487"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x8f57"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0xdb0b2e81e854659c2874f67a4c3574fc125eae37",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25281000,
+      "time": "2024-12-29T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x1d7cd3962419d5f873408bdb56815c63bd7fce6b"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x0d80bce6d7decb6f20e29044d75dd1e7cad271c0e9d344c77d03483c5ef85aeb"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0x92598bce7267cb242f7aa936b4de0c96a59ce24a",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25359000,
+      "time": "2025-01-11T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0xac194e6f6ff32a5453341d14e62cad566aa284b8"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x3dd9e99c1abd0aeb96cfc5f75d533003b83a8de11984a3085c27196909486d34"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x9531"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x49e41c4c3b0a8f005d0761f8b980bb7622fb491a",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25359000,
+      "time": "2025-01-11T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0xa898da02b0460d6c2d20c097ed827385dccd5fe6"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x8840b7056735dfcb2aa29b2a9cfcf5953392c8edae617942ef6ef45c04e20706"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x047d"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0xc8ea3817774886bc5368af65fc939f16a5cfdeee",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25263000,
+      "time": "2024-12-26T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x3a8f4a243bb5fb01e0901e60974e088d17fc214b"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0xab9ea37bdf97889ae7245e24790de80fb826fa09ad9b69177d90fa82ef7e0c13"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0x2f62c54ec431d4aadf5d7d0710345cbb495e1d01",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25347000,
+      "time": "2025-01-09T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x8b65afb63f73ee8faab85c809b11b7955745223b"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0xd158c6d96033cd273f379fd11c638cb255d6ef102bc64975c590ab6b75447796"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0xd2cdac9f"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0x369542922bb0d9cf74b93dbe17dd3f7935f1ab66",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25359000,
+      "time": "2025-01-11T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0xb0d6e02209cafcb98721e93c3a8f178158f0a110"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0xcb29487fbae1fe5bc2983555ad25cb0b5a4c69f71981e8bbab0de8e582c11ad2"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0xfc55ca3a5abbec7359c642bb6acfe9a50f9aedd9",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25299000,
+      "time": "2025-01-01T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x15eea204ed6e73202052a2934d49fd6c2ca37337"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x01ea884b7125b7b5233ae3b436be24d0217bf3c6afd271e93d7c3d45f500e1c4"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0xd17cd8dc73cf77c6c7fbbf98cc21c16bb690f621",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25419000,
+      "time": "2025-01-21T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x03a4c33f22422461ed23409f26b508044ea86aac"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0xcbe4abe432202c8717e39c0ac9d246e744a40bb2f4c19f1aae6b78a412b966df"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x832d"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0x7f5218f9d9642b978d67452d9090bd426c60679d",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25275000,
+      "time": "2024-12-28T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x13e3528c4a6e5abc6c725fd4b1ab43dd4fe00817"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x7eda2699f6dcf79f0f1f7f3d8d54fca39b8b2a186ee7ddf78214a467c391738e"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x4d59"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0xfd3cb46d1fb45ece2afbcb97b716800d31f0f939",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25365000,
+      "time": "2025-01-12T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x1fd8ad2f7378c33da6141dc745310677ee946323"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x48c78cf738588108dd23c5dbe3fba90d69b34168ad46d2305c3ecbcdd7c3de3f"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x272e1dd94d0e644b9b31767d953bd02f061cc8f9",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25299000,
+      "time": "2025-01-01T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x06286424b01146dea5c047d172b93ae00201a8c8"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0xcd19cf3bcbacda95d71516bc7913b2d508de175b713058ba44fa903f6f3626d5"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x6e64"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0xdff6b37293765746574a228554d6e0c39417838b",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25365000,
+      "time": "2025-01-12T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x89400683f5dd9be3f166cc790be7184d9ea49915"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x2c6074693349eda74b80f0f25f0e0d87dc85a51c21ff51e9fe2462ae0868af13"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x62cf"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0x179dbe0843f013c5665b04a493f034897b2e56b2",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25335000,
+      "time": "2025-01-07T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0xe1ba6c2e72bf6d407556d30f246c8a7301097ec5"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x86ff5009b9960117d1d19258546283417ce545aaa48f8f9216511a44be6968a4"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x797779d5"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0xc36531cd6a114ae48cd2bd77f63c60fca5256ea9",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25335000,
+      "time": "2025-01-07T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0xc7ba37d5fedfbc9a97840604d53133d59bfc92be"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x00c12f3cce910d73eedf61d409f17173250d83d9acc4e9c0438d07d1a29706ea"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0xdecc6b065508b78f5a218f2b7c91588fd44fac1f",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25413000,
+      "time": "2025-01-20T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0xad926628f6f08588de0ea7ff385c631e9e7af6a4"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x273a60f7c4a7db900bd20aa42bb4e2d1f3d9e5fc9ebe0e6d37611d0a12040580"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0xb613c299"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x350183568b726160c1bd19a92155d08598a43a2c",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25359000,
+      "time": "2025-01-11T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x0aa52168202d8afa963008c955b7adf975bbbad1"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x503840fefc8fa45885dd49baf6d2e387c27dd959df46000b77953ed2410ef3fe"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x5b60869cfb40c9a4c95ca1a16320d74303286b15",
+      "to": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7",
+      "value": "0",
+      "blockNumber": 25383000,
+      "time": "2025-01-15T16:55:47Z",
+      "function": "isValidSigImpl",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "_signer",
+          "type": "address",
+          "value": "0x4e7fe5f6b1e8abbf83e62c2c7e15423c4c7e1b5f"
+        },
+        {
+          "name": "_hash",
+          "type": "bytes32",
+          "value": "0x63af94996eab1722b42fd1cbd6ac941fa75a67c30ae8fd71dcfbbea9583ee15f"
+        },
+        {
+          "name": "_signature",
+          "type": "bytes",
+          "value": "0x"
+        },
+        {
+          "name": "allowSideEffects",
+          "type": "bool",
+          "value": false
+        }
+      ]
+    }
+  ]
+}

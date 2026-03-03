@@ -4,118 +4,372 @@
     "name": "Attacker",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Attacker : https://arbiscan.io/address/0x56190CAC88b8D4b5D5Ed668ef81828913932e7Ed"
+    "context": "// Attacker : https://arbiscan.io/address/0x56190CAC88b8D4b5D5Ed668ef81828913932e7Ed",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attacker"
+    ]
   },
   {
     "address": "0x43aa42d2f11afe42832a9619bc8066dfb83a9217",
     "name": "Attack_Contract",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Attack Contract : https://arbiscan.io/tx/0x43aa42d2f11afe42832a9619bc8066dfb83a921798b91eaf9d0345dd27dcfb06"
+    "context": "// Attack Contract : https://arbiscan.io/tx/0x43aa42d2f11afe42832a9619bc8066dfb83a921798b91eaf9d0345dd27dcfb06",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Attack_Contract"
+    ]
   },
   {
     "address": "0xaffd437801434643b734d0b2853654876f66f7d7",
     "name": "Vulnerable_Contract",
     "chain": "arbitrum",
     "source": "comment",
-    "context": "// Vulnerable Contract : https://arbiscan.io/address/0xaffd437801434643b734d0b2853654876f66f7d7"
+    "context": "// Vulnerable Contract : https://arbiscan.io/address/0xaffd437801434643b734d0b2853654876f66f7d7",
+    "onchain_name": null,
+    "symbol": "pETH",
+    "decimals": 8,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "PBXToken",
+      "pETH",
+      "Vulnerable_Contract",
+      "peth",
+      "PETH",
+      "IpETH"
+    ]
   },
   {
     "address": "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
-    "name": "Aave",
+    "name": "IAaveFlashloan",
     "chain": "arbitrum",
     "source": "static",
-    "context": "private constant Aave = IAaveFlashloan(0x794a61358D6845594F94dc1DB02A252b5b4814aD)"
+    "context": "IAaveFlashloan private constant Aave = IAaveFlashloan(0x794a61358D6845594F94dc1DB02A252b5b4814aD)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "Aave",
+      "IAaveFlashloan"
+    ]
   },
   {
     "address": "0x1F721E2E82F6676FCE4eA07A5958cF098D339e18",
-    "name": null,
+    "name": "CamelotRouter",
     "chain": "arbitrum",
     "source": "static",
-    "context": "CamelotRouter(0x1F721E2E82F6676FCE4eA07A5958cF098D339e18)"
+    "context": "CamelotRouter CamelotRouterV3 = CamelotRouter(0x1F721E2E82F6676FCE4eA07A5958cF098D339e18)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CamelotRouterV3",
+      "CamelotRouter"
+    ]
   },
   {
     "address": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
-    "name": null,
+    "name": "Uni_Router_V3",
     "chain": "arbitrum",
     "source": "static",
-    "context": "Uni_Router_V3(0xE592427A0AEce92De3Edee1F18E0157C05861564)"
+    "context": "Uni_Router_V3 UniswapRouterV3 = Uni_Router_V3(0xE592427A0AEce92De3Edee1F18E0157C05861564)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "UniswapRouterV3",
+      "Uni_Router_V3"
+    ]
   },
   {
     "address": "0x00c7f3082833e796A5b3e4Bd59f6642FF44DCD15",
-    "name": null,
+    "name": "NFTPositionManager",
     "chain": "arbitrum",
     "source": "static",
-    "context": "NFTPositionManager(0x00c7f3082833e796A5b3e4Bd59f6642FF44DCD15)"
+    "context": "NFTPositionManager CamelotNFTPositionManager = NFTPositionManager(0x00c7f3082833e796A5b3e4Bd59f6642FF44DCD15)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "CamelotNFTPositionManager",
+      "NFTPositionManager"
+    ]
   },
   {
     "address": "0x712E2B12D75fe092838A3D2ad14B6fF73d3fdbc9",
-    "name": null,
+    "name": "ControllerNFT",
     "chain": "arbitrum",
     "source": "static",
-    "context": "ControllerNFT(0x712E2B12D75fe092838A3D2ad14B6fF73d3fdbc9)"
+    "context": "ControllerNFT ComptrollerNFT = ControllerNFT(0x712E2B12D75fe092838A3D2ad14B6fF73d3fdbc9)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ComptrollerNFT",
+      "ControllerNFT"
+    ]
   },
   {
     "address": "0xa26B6Df27F520017a2F0A5b0C0aA9C97D05f1f26",
-    "name": null,
+    "name": "NFTPositionManager",
     "chain": "arbitrum",
     "source": "static",
-    "context": "NFTPositionManager(0xa26B6Df27F520017a2F0A5b0C0aA9C97D05f1f26)"
+    "context": "NFTPositionManager PNFTTokenDelegator = NFTPositionManager(0xa26B6Df27F520017a2F0A5b0C0aA9C97D05f1f26)",
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": false,
+    "semantic_type": "unknown",
+    "aliases": [
+      "PNFTTokenDelegator",
+      "NFTPositionManager"
+    ]
   },
   {
     "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
-    "name": null,
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IERC20(0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f)"
+    "context": "IERC20 WBTC = IERC20(0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f)",
+    "onchain_name": null,
+    "symbol": "WBTC",
+    "decimals": 8,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WBTC",
+      "IERC20",
+      "wbtc",
+      "IWBTC"
+    ]
   },
   {
     "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-    "name": null,
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IERC20(0x82aF49447D8a07e3bd95BD0d56f35241523fBab1)"
+    "context": "IERC20 WETH = IERC20(0x82aF49447D8a07e3bd95BD0d56f35241523fBab1)",
+    "onchain_name": null,
+    "symbol": "WETH",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "WETH",
+      "IERC20",
+      "weth",
+      "IWETH"
+    ]
   },
   {
     "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
-    "name": null,
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IERC20(0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9)"
+    "context": "IERC20 USDT = IERC20(0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9)",
+    "onchain_name": null,
+    "symbol": "USD\u20ae0",
+    "decimals": 6,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "USDT",
+      "USD\u20ae0",
+      "IERC20",
+      "usd\u20ae0",
+      "IUSD\u20ae0"
+    ]
   },
   {
     "address": "0xbAD58ed9b5f26A002ea250D7A60dC6729a4a2403",
-    "name": null,
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IERC20(0xbAD58ed9b5f26A002ea250D7A60dC6729a4a2403)"
+    "context": "IERC20 PBX = IERC20(0xbAD58ed9b5f26A002ea250D7A60dC6729a4a2403)",
+    "onchain_name": null,
+    "symbol": "PBX",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "PBX",
+      "IERC20",
+      "pbx",
+      "IPBX"
+    ]
   },
   {
     "address": "0x912CE59144191C1204E64559FE8253a0e49E6548",
-    "name": null,
+    "name": "IERC20",
     "chain": "arbitrum",
     "source": "static",
-    "context": "IERC20(0x912CE59144191C1204E64559FE8253a0e49E6548)"
+    "context": "IERC20 ARB_DAO = IERC20(0x912CE59144191C1204E64559FE8253a0e49E6548)",
+    "onchain_name": null,
+    "symbol": "ARB",
+    "decimals": 18,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "ARB_DAO",
+      "ARB",
+      "IERC20",
+      "arb",
+      "IARB"
+    ]
   },
   {
     "address": "0xFc2737a742A741d13fE6326011a78cd881dE3Eb9",
-    "name": null,
+    "name": "PBXToken",
     "chain": "arbitrum",
     "source": "static",
-    "context": "PBXToken(0xFc2737a742A741d13fE6326011a78cd881dE3Eb9)"
+    "context": "PBXToken pARB = PBXToken(0xFc2737a742A741d13fE6326011a78cd881dE3Eb9)",
+    "onchain_name": null,
+    "symbol": "pARB",
+    "decimals": 8,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "pARB",
+      "PBXToken",
+      "parb",
+      "PARB",
+      "IpARB"
+    ]
   },
   {
     "address": "0x1c762E00f1D9317a4214d22b2576995C427F61c9",
-    "name": null,
+    "name": "PBXToken",
     "chain": "arbitrum",
     "source": "static",
-    "context": "PBXToken(0x1c762E00f1D9317a4214d22b2576995C427F61c9)"
+    "context": "PBXToken pWBTC = PBXToken(0x1c762E00f1D9317a4214d22b2576995C427F61c9)",
+    "onchain_name": null,
+    "symbol": "pWBTC",
+    "decimals": 8,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "pWBTC",
+      "PBXToken",
+      "pwbtc",
+      "PWBTC",
+      "IpWBTC"
+    ]
   },
   {
     "address": "0xFB1dcFc67cC496Eb0cC592050AF7Fdf3bF3b5C13",
-    "name": null,
+    "name": "PBXToken",
     "chain": "arbitrum",
     "source": "static",
-    "context": "PBXToken(0xFB1dcFc67cC496Eb0cC592050AF7Fdf3bF3b5C13)"
+    "context": "PBXToken pUSDT = PBXToken(0xFB1dcFc67cC496Eb0cC592050AF7Fdf3bF3b5C13)",
+    "onchain_name": null,
+    "symbol": "pUSDT",
+    "decimals": 8,
+    "is_erc20": true,
+    "semantic_type": "unknown",
+    "aliases": [
+      "pUSDT",
+      "PBXToken",
+      "pusdt",
+      "PUSDT",
+      "IpUSDT"
+    ]
+  },
+  {
+    "address": "0x724e4c7a72bc285e0d602222f7e220e5eaf347e5",
+    "name": "NFTPositionManager_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0xc4ed0a9ea70d5bcc69f748547650d32cc219d882",
+    "name": "IERC20_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0x3f770ac673856f105b586bb393d122721265ad46",
+    "name": "IERC20_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0x8b194beae1d3e0788a1a35173978001acdfba668",
+    "name": "IERC20_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0xb76c1a8da369fc39aadcf39d2446828bcdf6ee56",
+    "name": "IAaveFlashloan_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
+  },
+  {
+    "address": "0x3263cd783823d04a6b9819517e0e6840d37ca3f4",
+    "name": "IERC20_Implementation",
+    "chain": "arbitrum",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

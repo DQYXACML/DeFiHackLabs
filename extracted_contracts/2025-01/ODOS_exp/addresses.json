@@ -41,6 +41,8 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "OdosLimitOrderRouter",
+      "odosLimitOrderRouterInstance",
       "Vulnerable_Contract"
     ]
   },
@@ -56,7 +58,22 @@
     "is_erc20": false,
     "semantic_type": "unknown",
     "aliases": [
+      "USDCInstance",
+      "USDC",
       "IUSDC"
     ]
+  },
+  {
+    "address": "0x2ce6311ddae708829bc0784c967b7d77d19fd779",
+    "name": "IUSDC_Implementation",
+    "chain": "base",
+    "source": "proxy_implementation",
+    "context": null,
+    "onchain_name": null,
+    "symbol": null,
+    "decimals": null,
+    "is_erc20": null,
+    "semantic_type": null,
+    "aliases": null
   }
 ]

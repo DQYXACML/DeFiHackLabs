@@ -1,0 +1,55 @@
+{
+  "project": "ODOS_exp",
+  "protocol_type": "unknown",
+  "invariants": [
+    {
+      "id": "PATTERN_flash_change_001",
+      "type": "flash_change_prevention",
+      "category": "bounded_value",
+      "description": "Prevent extreme value changes (flash loan attack)",
+      "formula": "abs(value_after - value_before) / value_before <= 0.1",
+      "threshold": 0.1,
+      "severity": "critical",
+      "contracts": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "slots": {
+        "slot_0": {
+          "index": "112608754849082142809318926621919487171846225487323147701519066153336967863387",
+          "threshold": 0.1,
+          "severity": "critical"
+        }
+      },
+      "detection_confidence": {
+        "pattern_match": 0.9
+      },
+      "protocol_type": null,
+      "attack_pattern": "flash_change"
+    }
+  ],
+  "statistics": {
+    "total_invariants": 1,
+    "by_category": {
+      "bounded_value": 1
+    },
+    "by_severity": {
+      "critical": 1
+    }
+  },
+  "errors": [],
+  "protocol_confidence": 0.0,
+  "semantic_mapping_coverage": 0.0,
+  "state_changes": {
+    "contracts_changed": 2,
+    "slots_changed": 2,
+    "extreme_changes": 2
+  },
+  "attack_patterns": [
+    {
+      "type": "flash_change",
+      "severity": "critical",
+      "confidence": 0.9,
+      "description": "Extreme value changes indicating potential flash loan attack"
+    }
+  ]
+}

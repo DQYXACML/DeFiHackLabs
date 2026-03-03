@@ -1,0 +1,20 @@
+{
+  "protocol": "ODOS_exp",
+  "year_month": "2025-01",
+  "injection_timestamp": "2026-03-03T05:47:39.895841Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "UniversalSigValidator",
+    "address": "0xb6333e994fd02a9255e794c177efbdeb1fe779c7"
+  },
+  "injected_contracts": [
+    {
+      "file": "OdosLimitOrderRouter.sol",
+      "functions": [
+        "isValidSigImpl"
+      ]
+    }
+  ],
+  "total_functions": 1,
+  "status": "success"
+}

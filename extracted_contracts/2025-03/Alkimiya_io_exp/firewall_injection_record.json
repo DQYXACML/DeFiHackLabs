@@ -1,0 +1,29 @@
+{
+  "protocol": "Alkimiya_io_exp",
+  "year_month": "2025-03",
+  "injection_timestamp": "2026-03-03T09:03:12.074213Z",
+  "main_contract": {
+    "name": "Vulnerable_Contract",
+    "actual_contract_name": "SilicaPools",
+    "address": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde"
+  },
+  "injected_contracts": [
+    {
+      "file": "SilicaPools.sol",
+      "functions": [
+        "collateralizedMint",
+        "startPool",
+        "endPool",
+        "redeemShort"
+      ]
+    },
+    {
+      "file": "ERC1155.sol",
+      "functions": [
+        "safeTransferFrom"
+      ]
+    }
+  ],
+  "total_functions": 5,
+  "status": "success"
+}

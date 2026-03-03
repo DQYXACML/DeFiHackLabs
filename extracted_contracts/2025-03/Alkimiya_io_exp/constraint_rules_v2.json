@@ -1,0 +1,143 @@
+{
+  "protocol": "Alkimiya_io_exp",
+  "year_month": "2025-03",
+  "vulnerable_contract": {
+    "address": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+    "name": "silicaPools"
+  },
+  "constraints": [
+    {
+      "function": "collateralizedMint",
+      "signature": "collateralizedMint(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "type > 102084710076281535261119195933814292480",
+        "semantics": "Direct deposit/mint: parameter directly increases new_mapping_entry",
+        "variables": {
+          "type": {
+            "source": "function_parameter",
+            "index": 2,
+            "type": "uint256",
+            "value_expr": "uint256(type(uint128).max) + 2"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "47114612938465072327966550130549165494643613755080684668914265665664150223121",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 340282366920938463463374607431938352640
+          }
+        },
+        "danger_condition": "type >= 340282366920938463463374607431938352640",
+        "safe_condition": "type <= 102084710076281535261119195933814292480",
+        "threshold_value": 102084710076281535261119195933814292480
+      },
+      "analysis": {
+        "state_value": 340282366920938463463374607431938352640,
+        "threshold": 170141183460469231731687303715969176320,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致new_mapping_entry增加340282366920938463463374607431938352640，阈值设为102084710076281535261119195933814292480",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    },
+    {
+      "function": "safeTransferFrom",
+      "signature": "safeTransferFrom(...)",
+      "attack_pattern": "large_deposit",
+      "constraint": {
+        "type": "absolute_threshold",
+        "expression": "type > 102084710076281535261119195933814292480",
+        "semantics": "Direct deposit/mint: parameter directly increases new_mapping_entry",
+        "variables": {
+          "type": {
+            "source": "function_parameter",
+            "index": 3,
+            "type": "uint256",
+            "value_expr": "type(uint128).max"
+          },
+          "new_mapping_entry": {
+            "source": "storage",
+            "slot": "47114612938465072327966550130549165494643613755080684668914265665664150223121",
+            "type": "uint256",
+            "semantic_name": "new_mapping_entry",
+            "before_value": 0,
+            "after_value": 340282366920938463463374607431938352640
+          }
+        },
+        "danger_condition": "type >= 340282366920938463463374607431938352640",
+        "safe_condition": "type <= 102084710076281535261119195933814292480",
+        "threshold_value": 102084710076281535261119195933814292480
+      },
+      "analysis": {
+        "state_value": 340282366920938463463374607431938352640,
+        "threshold": 170141183460469231731687303715969176320,
+        "coefficient": 0.5,
+        "attack_intensity": 1.0,
+        "reasoning": "参数直接导致new_mapping_entry增加340282366920938463463374607431938352640，阈值设为102084710076281535261119195933814292480",
+        "correlation_type": "direct",
+        "correlation_confidence": 0.95,
+        "ratio": 1.0,
+        "change_direction": "increase"
+      }
+    }
+  ],
+  "state_analysis": {
+    "slot_changes": [
+      {
+        "slot": "47114612938465072327966550130549165494643613755080684668914265665664150223121",
+        "before": 0,
+        "after": 340282366920938463463374607431938352640,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "110029947122304751002227221128730656632136728177059582076800429053252069494251",
+        "before": 0,
+        "after": 340282366920938463463374607431768211455,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "88875023951530437185397551408010117644992242052785062408884591078614351267039",
+        "before": 0,
+        "after": 340282366920938463463374607431768211455,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "47114612938465072327966550130549165494643613755080684668914265665664150223123",
+        "before": 0,
+        "after": 3248355153745286332234502422935,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      },
+      {
+        "slot": "71133478709410515324994290582223304164250368439703148732251110264043662818833",
+        "before": 0,
+        "after": 2,
+        "change_pct": 100.0,
+        "is_new_slot": true
+      }
+    ],
+    "total_changed_slots": 6
+  },
+  "attack_metadata": {
+    "loop_count": 1,
+    "total_calls": 5
+  },
+  "metadata": {
+    "extraction_version": "2.0.0",
+    "generated_by": "extract_param_state_constraints_v2.py",
+    "improvements": [
+      "Based on actual state diff analysis",
+      "Dynamic threshold inference",
+      "Parameter-slot correlation"
+    ]
+  }
+}

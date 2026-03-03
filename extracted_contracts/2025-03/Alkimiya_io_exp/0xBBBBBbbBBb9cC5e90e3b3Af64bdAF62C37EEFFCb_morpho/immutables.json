@@ -1,0 +1,50 @@
+{
+  "compiler_version": "v0.8.19+commit.7dd6d404",
+  "optimizer": true,
+  "runs": 999999,
+  "evm_version": "paris",
+  "metadata_bytes": 53,
+  "runtime_bytes_without_metadata": 15570,
+  "values": {
+    "./src/Morpho.sol:Morpho": [
+      {
+        "label": "64",
+        "var_name": "./src/Morpho.sol:DOMAIN_SEPARATOR",
+        "offset": 748,
+        "length": 32,
+        "value_hex": "0xfffffffffffffffffffffc3601126101b85761036c610308612c5a565b7fffff",
+        "value_int": "115792089237316195423570983591037438496955600795187995031011077092245866807295",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "64",
+        "var_name": "./src/Morpho.sol:DOMAIN_SEPARATOR",
+        "offset": 9260,
+        "length": 32,
+        "value_hex": "0x8152a180f35b50346101b857807fffffffffffffffffffffffffffffffffffff",
+        "value_int": "58494353584216649279206200367901903699975063133131344031550417731938435465215",
+        "used_stripped_runtime": true
+      }
+    ],
+    "src/Morpho.sol:Morpho": [
+      {
+        "label": "3666",
+        "var_name": "src/Morpho.sol:DOMAIN_SEPARATOR",
+        "offset": 748,
+        "length": 32,
+        "value_hex": "0xfffffffffffffffffffffc3601126101b85761036c610308612c5a565b7fffff",
+        "value_int": "115792089237316195423570983591037438496955600795187995031011077092245866807295",
+        "used_stripped_runtime": true
+      },
+      {
+        "label": "3666",
+        "var_name": "src/Morpho.sol:DOMAIN_SEPARATOR",
+        "offset": 9260,
+        "length": 32,
+        "value_hex": "0x8152a180f35b50346101b857807fffffffffffffffffffffffffffffffffffff",
+        "value_int": "58494353584216649279206200367901903699975063133131344031550417731938435465215",
+        "used_stripped_runtime": true
+      }
+    ]
+  }
+}

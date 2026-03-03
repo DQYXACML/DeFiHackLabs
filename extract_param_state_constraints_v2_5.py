@@ -1606,16 +1606,24 @@ class AttackScriptParser:
         if not contract_name or contract_name == "Unknown":
             return calls
 
-        pattern = rf'{contract_name}\.(\w+)\s*\('
+        # 支持两种调用形式：
+        # 1) silicaPools.func(...)
+        # 2) IFS(silicaPools).func(...)
+        pattern = re.compile(
+            rf'(?:\b\w+\s*\(\s*{re.escape(contract_name)}\s*\)|\b{re.escape(contract_name)})\s*\.\s*(\w+)\s*\('
+        )
 
-        for line_no, line in enumerate(self.script_content.split('\n'), 1):
+        line_start = 0
+        for line_no, line in enumerate(self.script_content.splitlines(keepends=True), 1):
             if line.strip().startswith('//') or 'interface' in line:
+                line_start += len(line)
                 continue
 
             if contract_name not in line:
+                line_start += len(line)
                 continue
 
-            for match in re.finditer(pattern, line):
+            for match in pattern.finditer(line):
                 func_name = match.group(1)
 
                 # 跳过ERC20标准函数
@@ -1623,8 +1631,9 @@ class AttackScriptParser:
                     continue
 
                 # 提取参数
-                start_pos = match.end()
-                params_str = self._extract_balanced_parens(line[start_pos:])
+                start_pos = line_start + match.end()
+                # 使用全文切片，支持多行参数调用
+                params_str = self._extract_balanced_parens(self.script_content[start_pos:])
                 params = self._parse_parameters(func_name, params_str)
 
                 calls.append({
@@ -1633,6 +1642,8 @@ class AttackScriptParser:
                     "parameters": params,
                     "line_number": line_no
                 })
+
+            line_start += len(line)
 
         return calls
 
@@ -1653,19 +1664,72 @@ class AttackScriptParser:
                 result += char
         return result.strip()
 
+    def _extract_interface_bodies(self) -> List[str]:
+        """提取完整的interface body（支持内部struct的嵌套大括号）"""
+        bodies: List[str] = []
+        for match in re.finditer(r'interface\s+\w+(?:\s+is\s+[^{]+)?\s*\{', self.script_content):
+            start = match.end()
+            depth = 1
+            i = start
+            while i < len(self.script_content) and depth > 0:
+                ch = self.script_content[i]
+                if ch == '{':
+                    depth += 1
+                elif ch == '}':
+                    depth -= 1
+                i += 1
+            if depth == 0:
+                bodies.append(self.script_content[start:i - 1])
+        return bodies
+
+    def _split_top_level_commas(self, text: str) -> List[str]:
+        """按顶层逗号拆分，忽略括号/方括号/大括号内部逗号"""
+        parts: List[str] = []
+        current = ""
+        paren_depth = 0
+        bracket_depth = 0
+        brace_depth = 0
+
+        for char in text:
+            if char == '(':
+                paren_depth += 1
+            elif char == ')':
+                paren_depth = max(0, paren_depth - 1)
+            elif char == '[':
+                bracket_depth += 1
+            elif char == ']':
+                bracket_depth = max(0, bracket_depth - 1)
+            elif char == '{':
+                brace_depth += 1
+            elif char == '}':
+                brace_depth = max(0, brace_depth - 1)
+            elif char == ',' and paren_depth == 0 and bracket_depth == 0 and brace_depth == 0:
+                if current.strip():
+                    parts.append(current.strip())
+                current = ""
+                continue
+            current += char
+
+        if current.strip():
+            parts.append(current.strip())
+        return parts
+
     def _collect_interface_signatures(self) -> Dict[str, List[List[str]]]:
         """从脚本中的interface定义提取函数参数类型映射"""
         signatures: Dict[str, List[List[str]]] = {}
-        pattern = r'interface\s+\w+\s*\{([\s\S]*?)\}'
-        for body in re.findall(pattern, self.script_content, re.DOTALL):
-            for match in re.finditer(r'function\s+(\w+)\s*\(([^)]*)\)', body):
+        for body in self._extract_interface_bodies():
+            # 去掉注释，避免误匹配
+            clean_body = re.sub(r'/\*[\s\S]*?\*/', '', body)
+            clean_body = re.sub(r'//.*?$', '', clean_body, flags=re.MULTILINE)
+
+            for match in re.finditer(r'function\s+(\w+)\s*\((.*?)\)', clean_body, re.DOTALL):
                 func_name = match.group(1)
                 params_raw = match.group(2).strip()
                 if not params_raw:
                     params = []
                 else:
                     params = []
-                    for param in params_raw.split(','):
+                    for param in self._split_top_level_commas(params_raw):
                         cleaned = param.strip()
                         if not cleaned:
                             continue
@@ -1693,23 +1757,11 @@ class AttackScriptParser:
         if not params_str.strip():
             return []
 
-        params = []
-        current = ""
-        depth = 0
+        # 去除注释，避免将注释文本当作参数内容
+        params_str = re.sub(r'/\*[\s\S]*?\*/', '', params_str)
+        params_str = re.sub(r'//.*?$', '', params_str, flags=re.MULTILINE)
 
-        for char in params_str:
-            if char == '(':
-                depth += 1
-            elif char == ')':
-                depth -= 1
-            elif char == ',' and depth == 0:
-                params.append(current.strip())
-                current = ""
-                continue
-            current += char
-
-        if current.strip():
-            params.append(current.strip())
+        params = self._split_top_level_commas(params_str)
 
         result = []
         override_types = self._get_interface_param_types(func_name, len(params))
@@ -3381,6 +3433,32 @@ class ConstraintGeneratorV2:
         - 变量名
         """
         value_expr = value_expr.strip()
+        if not value_expr:
+            return None
+
+        # 去掉注释，避免注释片段污染表达式解析
+        value_expr = re.sub(r'/\*[\s\S]*?\*/', '', value_expr)
+        value_expr = re.sub(r'//.*?$', '', value_expr, flags=re.MULTILINE).strip()
+
+        # 0. 处理 type(uintN).max / 显式数字表达式（如 uint256(type(uint128).max) + 2）
+        try:
+            expr = value_expr
+            expr = re.sub(
+                r'type\s*\(\s*uint(\d+)\s*\)\s*\.max',
+                lambda m: str((1 << int(m.group(1))) - 1),
+                expr
+            )
+            # 移除常见数值类型强转外壳: uint256(...), int256(...)
+            expr = re.sub(r'\b(?:u?int(?:8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?)\s*\(', '(', expr)
+            expr = expr.replace('_', '')
+
+            # 仅在纯数字算术表达式时求值，避免执行任意标识符
+            if re.fullmatch(r'[0-9a-fA-FxX\+\-\*/%\(\)\s]+', expr):
+                val = eval(expr, {"__builtins__": None}, {})
+                if isinstance(val, (int, float)):
+                    return int(val)
+        except Exception:
+            pass
 
         # 1. 数字字面量
         if value_expr.isdigit():
@@ -3440,13 +3518,31 @@ class ConstraintGeneratorV2:
                     if slot in storage:
                         return to_int(storage[slot])
 
-        # 3. 算术表达式
-        numbers = re.findall(r'\d+', value_expr)
-        if numbers:
-            return max(int(n) for n in numbers)
+        # 3. 科学计数法 / 十六进制 / 十进制字面量
+        numbers: List[int] = []
+        for base, exp in re.findall(r'\b(\d+)\s*e(\d+)\b', value_expr):
+            try:
+                numbers.append(int(base) * (10 ** int(exp)))
+            except Exception:
+                pass
 
-        # 4. 变量名 - 使用默认值
-        return 10**18
+        for hex_num in re.findall(r'0x[0-9a-fA-F]+', value_expr):
+            try:
+                numbers.append(int(hex_num, 16))
+            except Exception:
+                pass
+
+        for num in re.findall(r'\b\d[\d_]*\b', value_expr):
+            try:
+                numbers.append(int(num.replace('_', '')))
+            except Exception:
+                pass
+
+        if numbers:
+            return max(numbers)
+
+        # 4. 无法解析的变量/表达式：返回None，交给上层跳过，避免制造伪约束
+        return None
 
     def _select_param_value_from_observed(self, observed_values: List[int], slot_changes: List[Dict]) -> Optional[int]:
         """根据slot变化选择更匹配的trace参数值"""

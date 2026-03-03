@@ -1,0 +1,555 @@
+{
+  "protocol": "Alkimiya_io_exp",
+  "contract_address": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+  "target_functions": [
+    "collateralizedMint",
+    "startPool",
+    "endPool",
+    "redeemShort",
+    "safeTransferFrom"
+  ],
+  "tx_count": 20,
+  "data_source": "synthetic",
+  "synthesis_method": "abi_inferred",
+  "param_hints": {
+    "redeemShort": {},
+    "startPool": {},
+    "collateralizedMint": {
+      "2": {
+        "avoid": [],
+        "max": 102084710076281535261119195933814292480
+      }
+    },
+    "endPool": {},
+    "safeTransferFrom": {
+      "3": {
+        "avoid": [],
+        "max": 102084710076281535261119195933814292480
+      }
+    }
+  },
+  "attack_block": 22146339,
+  "generated_at": "2026-03-03T08:25:47.751614Z",
+  "txs": [
+    {
+      "hash": "0x_synthetic_normal_0000",
+      "from": "0x1cad36e92112a21939037112cfb3d5e83bd520d1",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22122339,
+      "time": "2025-03-24T15:34:35Z",
+      "function": "collateralizedMint",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(218343,361001,0x73844eb3a4805386d84dde284034897c9207ebb8,431961,678443,0xfcb60167207b079bc03cd71d0a8375fcaaa3bf09)"
+        },
+        {
+          "name": "orderHash",
+          "type": "bytes32",
+          "value": "0x6b5b081b4171c49b4c1732c71168ff031cb75fffa393a0eadb1de26edce9c7f8"
+        },
+        {
+          "name": "shares",
+          "type": "uint256",
+          "value": 175492
+        },
+        {
+          "name": "longRecipient",
+          "type": "address",
+          "value": "0xe4edc24b2babe521886ded08f45d88a0dd3c3ba2"
+        },
+        {
+          "name": "shortRecipient",
+          "type": "address",
+          "value": "0xd51f7481639b7a7bc68aa7e4983c4bc19e655ae1"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0001",
+      "from": "0x7e9c671d98a90ff86b8ac36d7a15da6afae1ca9f",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22002339,
+      "time": "2025-03-04T15:34:35Z",
+      "function": "startPool",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(383689,2734,0xe87e6854e035b025d23bd4c1c03d333525abbd56,639328,313332,0x6cee468e80441c3665dcdb2f64111fe71fcc4c05)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0002",
+      "from": "0xe323c8c3f607f48ad3216fcfd4665ff7ced95340",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22104339,
+      "time": "2025-03-21T15:34:35Z",
+      "function": "endPool",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(233026,816805,0x9a66f0a1e195352949170ea1681147250af1ce93,411627,845020,0xe08817fe8a5bb445f7025c89c85b094744280028)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0003",
+      "from": "0x88b61930b972f3467975627c1a57369190c24be3",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22008339,
+      "time": "2025-03-05T15:34:35Z",
+      "function": "redeemShort",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "shortParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(256982,988428,0xc959e0d90ba76ff43c3ac7b9cc0b5bef703cd8ea,338927,961315,0xf3578f12ad951fd47e2f2f438a8f0b0086a7b235)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0004",
+      "from": "0xce5fcef7c8e5f3373be82388126ea45585fc9f30",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22056339,
+      "time": "2025-03-13T15:34:35Z",
+      "function": "safeTransferFrom",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "from",
+          "type": "address",
+          "value": "0xd812c7927ea1cdcd20f14571f23174bbb580be8e"
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x00a6e03458179c00a91df8af67755eb74a5480a4"
+        },
+        {
+          "name": "id",
+          "type": "uint256",
+          "value": 260924
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "value": 458209
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x5d247587"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0005",
+      "from": "0x6f7cf44b0b54c98b3016d33d9137bc693ac8e91a",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22008339,
+      "time": "2025-03-05T15:34:35Z",
+      "function": "collateralizedMint",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(894906,114996,0xe18bf79ce519b9dcbdc7d470d5592831e5af23b7,25813,974042,0xa825af437ca55782a811a458c022781356970b87)"
+        },
+        {
+          "name": "orderHash",
+          "type": "bytes32",
+          "value": "0xb13e4d92fdc8621359c9b17da0b6f2083cbbe49c6930357f1fb03cb77d8a4c3a"
+        },
+        {
+          "name": "shares",
+          "type": "uint256",
+          "value": 223537
+        },
+        {
+          "name": "longRecipient",
+          "type": "address",
+          "value": "0xb7056e46f1a7d848ab18866267c19973bec97dda"
+        },
+        {
+          "name": "shortRecipient",
+          "type": "address",
+          "value": "0x5a3690d7b9a24590e09b84131c36633ccab93777"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0006",
+      "from": "0x7937268e024e93685f3250a744140e36835ff669",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 21996339,
+      "time": "2025-03-03T15:34:35Z",
+      "function": "startPool",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(894492,408504,0x14e581052b95ed5b953e7fcaab8c61471701dec5,403138,778402,0x429af304cba4a5654b70a7090fc22cf054e4baa7)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0007",
+      "from": "0xcea8c404a1d717d90dd254d367dd2ce3ab75f865",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22098339,
+      "time": "2025-03-20T15:34:35Z",
+      "function": "endPool",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(637530,56921,0x7add964950a3a7248d0deca01a600806318aca8f,627370,464822,0x2ab4fda69e5d2c7d69ef48ff52d3c83dfedbe236)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0008",
+      "from": "0xe245e15c026942b9211b17707c95c34627058bcd",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22092339,
+      "time": "2025-03-19T15:34:35Z",
+      "function": "redeemShort",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "shortParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(759522,348183,0x485c7716b1ea23b087af90ecd8d85b0b74e7403c,534393,791290,0xb07fbe3488b99adf83c88a99b34b347ee6766c63)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0009",
+      "from": "0xba18253f715ad3e2f7abbe656c80a3d7d7598bd7",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22080339,
+      "time": "2025-03-17T15:34:35Z",
+      "function": "safeTransferFrom",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "from",
+          "type": "address",
+          "value": "0xb119ee71fe6ba599b0f955f989f77244b1c303da"
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x149cf11cec6532c48cceff463b315464085ca7f2"
+        },
+        {
+          "name": "id",
+          "type": "uint256",
+          "value": 882602
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "value": 52688
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x10e90b24"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0010",
+      "from": "0x4919c28511f7a1e3bcc8325da80358eee8a91ff4",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22062339,
+      "time": "2025-03-14T15:34:35Z",
+      "function": "collateralizedMint",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(221880,619644,0xa3713b4f803f152be938221685ccbf38c2b19ff6,134755,609608,0x35c5eef1aee3ad6ac885076c04e19a76a797e8e6)"
+        },
+        {
+          "name": "orderHash",
+          "type": "bytes32",
+          "value": "0x721f218ff5863689dab6b3b31393048a30bd531a543ef3e852c84101f8cf5546"
+        },
+        {
+          "name": "shares",
+          "type": "uint256",
+          "value": 984016
+        },
+        {
+          "name": "longRecipient",
+          "type": "address",
+          "value": "0x5050a26b1e2e966cdf624e1068c17540457c8a56"
+        },
+        {
+          "name": "shortRecipient",
+          "type": "address",
+          "value": "0xbc0da10ef9c8bbaae5f238e28072d4e382bf94ce"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0011",
+      "from": "0xa69d5e96d7918c800c832a49f18e251e75677f4e",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 21996339,
+      "time": "2025-03-03T15:34:35Z",
+      "function": "startPool",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(938629,864077,0x649fb4ccdd2b1c97344e3ec32ef89389519514be,183168,268320,0xb65369d9a0d3e6ca78691ca64a45d04b32f684ed)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0012",
+      "from": "0x02895c2710396c2b7196d4b10cd956a659f07b5e",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 21990339,
+      "time": "2025-03-02T15:34:35Z",
+      "function": "endPool",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(212432,626756,0x51f5c0addf83e86f4ffbfde00bf697c5688a1c17,555720,949337,0x9923efca06ff43ed0f052d706ab99915a664e3b3)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0013",
+      "from": "0x4d9e31759e49f54d31a47aa7bc0bf7a8217f058d",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22050339,
+      "time": "2025-03-12T15:34:35Z",
+      "function": "redeemShort",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "shortParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(869770,982235,0xeadd985689fecb1ac1ad773ae54568bd1f34e6f5,978608,414848,0x24cffabd3c8b71a3bb8e403875824e6b9bcd5b9d)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0014",
+      "from": "0xc0ab0792c3e25bda33468744eaedbed68d9ec02f",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22008339,
+      "time": "2025-03-05T15:34:35Z",
+      "function": "safeTransferFrom",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "from",
+          "type": "address",
+          "value": "0x86de9705d751ff9db1622bd2e3bc5494d9735128"
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x5bee8e897ea1a19faaeeba5819a8b0d6e4fd77fd"
+        },
+        {
+          "name": "id",
+          "type": "uint256",
+          "value": 194476
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "value": 962182
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0xe52d3605"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0015",
+      "from": "0xb3d0b744d29b6b22e37772a8d6c69551739ca2fe",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22110339,
+      "time": "2025-03-22T15:34:35Z",
+      "function": "collateralizedMint",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(145917,225720,0x093b1cef31748d81bfbda426097ca2dea8f35139,821168,603224,0xc8532e3211541f6f6a8475f03950090c4df5d9da)"
+        },
+        {
+          "name": "orderHash",
+          "type": "bytes32",
+          "value": "0x509c30c90de0dce94024e4b6e691f24ef39ac7af0d9e1895e7fc31a262dffea9"
+        },
+        {
+          "name": "shares",
+          "type": "uint256",
+          "value": 678457
+        },
+        {
+          "name": "longRecipient",
+          "type": "address",
+          "value": "0x702dd6ff4efc236117a02fa2adc22355bcf83d93"
+        },
+        {
+          "name": "shortRecipient",
+          "type": "address",
+          "value": "0xad6b09d7db0b0d5561091b7be25869a762ad0ab5"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0016",
+      "from": "0x66e6b9bbf980b308a0047121d6155ba2f4b87322",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 21984339,
+      "time": "2025-03-01T15:34:35Z",
+      "function": "startPool",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(506334,910987,0x9a21d3134a640288daae06983d25310865537a91,245307,534739,0xea5254c3da32101018f05df68b6a9d5d9e00715f)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0017",
+      "from": "0x0b345756b783bfcec1bbc24c9c35085f2ac9730f",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22080339,
+      "time": "2025-03-17T15:34:35Z",
+      "function": "endPool",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "poolParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(672260,524301,0xad359075414ea9034f8a52acc279bd3878dd0b26,648779,462343,0xfa160d4f63670291e34d8d5e39463d16e766670b)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0018",
+      "from": "0x265053b6e40ca1835e6489af8d9c114ecc94564f",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22134339,
+      "time": "2025-03-26T15:34:35Z",
+      "function": "redeemShort",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "shortParams",
+          "type": "(uint128,uint128,address,uint48,uint48,address)",
+          "value": "(931573,195586,0x115aeec89be0a73800f5da4c090a5944199cc97d,318453,958489,0xddb4db338bf4fb0d53ca0fe67f3df36674cd98a5)"
+        }
+      ]
+    },
+    {
+      "hash": "0x_synthetic_normal_0019",
+      "from": "0x210c4308eeb4869b4560b4268eb4b5cbc1a28735",
+      "to": "0xf3f84ce038442ae4c4dcb6a8ca8bacd7f28c9bde",
+      "value": "0",
+      "blockNumber": 22098339,
+      "time": "2025-03-20T15:34:35Z",
+      "function": "safeTransferFrom",
+      "is_injected_function": true,
+      "is_synthetic": true,
+      "params": [
+        {
+          "name": "from",
+          "type": "address",
+          "value": "0x068f1df4921e5c128ffd6f36e7e96bfabd6df860"
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": "0x144ec374e61e20d6ec109c3a24ab66b6070ca7c3"
+        },
+        {
+          "name": "id",
+          "type": "uint256",
+          "value": 275088
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "value": 665212
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "value": "0x"
+        }
+      ]
+    }
+  ]
+}
